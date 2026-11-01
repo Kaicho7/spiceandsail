@@ -1,4 +1,4 @@
-/* Dhow Coast Travels – Professional Tourism Website CSS */
+/* Spice and Sail – Professional Tourism Website CSS */
 :root {
   /* Brand colors inspired by Zanzibar: ocean blue, spice gold, palm green, coral sunset */
   --dct-ocean: #005f8a;
@@ -573,6 +573,72 @@ p { margin-bottom: 1rem; }
   color: var(--dct-ocean);
 }
 .card-price .price-basis { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; color: var(--dct-gray); }
+
+/* Hotel card image tag — indicates zone photo is representative, not property photo */
+.image-tag {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  background: rgba(0,0,0,0.65);
+  color: var(--dct-white);
+  font-size: 0.625rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Hotel contact info — phone, WhatsApp, email */
+.card-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--dct-charcoal);
+  text-decoration: none;
+  border: 1px solid var(--dct-gray-light);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  transition: var(--transition);
+}
+.contact-item:hover {
+  border-color: var(--dct-ocean);
+  color: var(--dct-ocean);
+}
+.contact-phone { border-color: var(--dct-palm); }
+.contact-phone:hover { border-color: var(--dct-palm); color: var(--dct-palm); }
+.contact-whatsapp { border-color: #25d366; }
+.contact-whatsapp:hover { border-color: #25d366; color: #25d366; }
+.contact-email { border-color: var(--dct-coral); }
+.contact-email:hover { border-color: var(--dct-coral); color: var(--dct-coral); }
+
+/* Social media buttons */
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--dct-gray-light);
+  border-radius: 6px;
+  background: var(--dct-white);
+  color: var(--dct-charcoal);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-social:hover {
+  border-color: var(--dct-ocean);
+  color: var(--dct-ocean);
+}
 
 /* ==========================================
    FILTERS

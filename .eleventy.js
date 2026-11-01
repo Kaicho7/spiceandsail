@@ -21,57 +21,50 @@ module.exports = function(eleventyConfig) {
   
   // Map tour slug → existing image filename (keyword-scored heroes from SEO re-tag)
   const slugMap = {
-    "stone-town-walking-tour": "mariola-grobelska-4DhGPppqcDE-unsplash.jpg",
-    "stone-town-spice-prison-combo": "zanzibar-stone-town-nakupenda-dhow-boats.jpg",
-    "spice-farm": "nutmeg-spice-farm-zanzibar.jpg",
-    "village-community-tour": "stone-town-darajani-market-fresh-produce-vegetables.jpg",
-    "safari-blue": "zanzibar-traditional-wooden-boat-turquoise-water.jpg",
-    "mnemba-snorkeling": "mnemba-atoll-snorkeling-green-sea-turtle.jpg",
-    "prison-island-nakupenda": "prison-island-wooden-pier-boats-zanzibar.jpg",
-    "nakupenda-sandbank": "zanzibar-nakupenda-sandbank-prison-island-tour.jpg",
-    "chumbe-island": "mnemba-atoll-snorkeling-tropical-fish-coral.jpg",
-    "sunset-dhow-cruise": "zanzibar-nungwi-sunset-dhow-cruise-ocean.jpg",
-    "kizimkazi-dolphin-tour": "kizimkazi-zanzibar-dolphins-jumping-indian-ocean.jpg",
-    "jozani-forest": "jozani-forest-red-colobus-monkeys.jpg",
-    "kuza-cave-seaweed": "seaweed-farming-zanzibar-coast.jpg",
-    "mikumi-nyerere-day-safari": "lukasz-lu8BMgAs64Q-unsplash.jpg",
-    "serengeti-3day-flyin": "masai-giraffe-close-up-tanzania-safari.jpg",
-    "zanzibar-essentials-3day": "packing-beach.jpg",
-    "zanzibar-essentials-3-day-pass": "packing-beach.jpg"
+    "stone-town-walking-tour": "stone-town-alley-walking-tour-people.jpg",
+    "stone-town-spice-prison-combo": "dhows-floating-turquoise-sea-zanzibar.jpg",
+    "spice-farm": "hand-holding-nutmeg-fruits-zanzibar.jpg",
+    "village-community-tour": "vegetable-stall-at-outdoor-market.jpg",
+    "safari-blue": "dhow-boat-turquoise-water-zanzibar.jpg",
+    "mnemba-snorkeling": "sea-turtle-snorkeling-coral-reef.jpg",
+    "prison-island-nakupenda": "boats-pier-under-cloudy-sky-water.jpg",
+    "nakupenda-sandbank": "beach-stairs-people-boats-cloudy-sky.jpg",
+    "chumbe-island": "underwater-fish-coral-reef-zanzibar.jpg",
+    "sunset-dhow-cruise": "dhow-sail-at-sunset-ocean.jpg",
+    "kizimkazi-dolphin-tour": "dolphins-leaping-ocean-zanzibar.jpg",
+    "jozani-forest": "jozani-forest-tourists-monkeys-wildlife.jpg",
+    "kuza-cave-seaweed": "people-collecting-sea-items-zanzibar-beach.jpg",
+    "mikumi-nyerere-day-safari": "safari-vehicle-lion-afar.jpg",
+    "serengeti-3day-flyin": "giraffe-head-profile-trees-background.jpg",
+    "zanzibar-essentials-3day": "stone-town-ornate-carved-door-calligraphy.jpg",
+    "zanzibar-essentials-3-day-pass": "stone-town-ornate-carved-door-calligraphy.jpg"
   };
 
   // Map area zone name → existing image filename (for /areas/ cards and zone pages)
   const zoneImage = {
-    "Stone Town": "mariola-grobelska-4DhGPppqcDE-unsplash.jpg",
-    "Nungwi": "nungwi-beach-children-swimming-traditional-dhow-boats.jpg",
-    "Kendwa": "zanzibar-kendwa-beach-aerial-dhow-kayak.jpg",
-    "Paje": "paje-beach-zanzibar-kitesurfing-indian-ocean.jpg",
-    "Jambiani": "zanzibar-jambiani-beach-village-life-women.jpg",
-    "Kiwengwa": "zanzibar-northeast-coast-fishing-boats-low-tide.jpg",
-    "Pongwe / Michamvi": "the-rock-restaurant-michamvi-pingwe-zanzibar.jpg",
-    "Bwejuu / Dongwe": "zanzibar-jambiani-beach-low-tide-local-children.jpg",
-    "Michamvi / Pingwe": "the-rock-restaurant-michamvi-pingwe-zanzibar.jpg",
-    "Kizimkazi / Dimbani": "kizimkazi-zanzibar-dolphins-jumping-indian-ocean.jpg",
-    "Fumba / Mbweni": "zanzibar-fumba-beach-aerial-view-turquoise-water.jpg",
-    "Matemwe / Kigomani": "zanzibar-local-snorkeling-mnemba-atoll-matemwe.jpg",
-    "Chake Chake (Pemba)": "chake-chake-town.jpg",
-    "Wambaa Gulf / Makangale (Pemba)": "zanzibar-traditional-wooden-boat-turquoise-water.jpg"
+    "Stone Town": "stone-town-alley-walking-tour-people.jpg",
+    "Nungwi": "children-wading-beach-dhow-boats.jpg",
+    "Kendwa": "aerial-beach-boat-turquoise-water.jpg",
+    "Paje": "zanzibar-beach-palm-trees-thatched-huts.jpg",
+    "Jambiani": "women-walking-beach-zanzibar-palm-trees.jpg",
+    "Kiwengwa": "dhow-boats-beach-zanzibar-sand.jpg",
+    "Pongwe / Michamvi": "zanzibar-rock-house-with-tourists.jpg",
+    "Bwejuu / Dongwe": "children-walking-tidal-flats-zanzibar.jpg",
+    "Michamvi / Pingwe": "zanzibar-rock-house-with-tourists.jpg",
+    "Kizimkazi / Dimbani": "dolphins-leaping-ocean-zanzibar.jpg",
+    "Fumba / Mbweni": "aerial-beach-zanzibar-turquoise-water.jpg",
+    "Matemwe / Kigomani": "boys-snorkeling-shallow-water-zanzibar.jpg",
+    "Chake Chake (Pemba)": "zanzibar-beach-people-playing-kites.jpg",
+    "Wambaa Gulf / Makangale (Pemba)": "dhow-boat-turquoise-water-zanzibar.jpg"
   };
 
-  // Load all 6 metadata JSON files to build a filename→metadata lookup
-  const metadataFiles = [
-    "complete-image-metadata.json",
-    "image-metadata.json",
-    "personal-photo-metadata-updated.json",
-    "personal-photo-metadata.json",
-    "stock-photo-metadata-updated.json",
-    "stock-photo-metadata.json"
-  ];
+  // Load single canonical image catalog (vision-audited)
+  const metadataFiles = ["canonical-image-catalog.json"];
   const metadataIndex = {};
   metadataFiles.forEach(metadataFile => {
     try {
       const metadata = JSON.parse(fs.readFileSync(path.join(__dirname, "src", "data", metadataFile), "utf8"));
-      const entries = Array.isArray(metadata) ? metadata : (metadata.images || metadata.metadata || []);
+      const entries = Object.values(metadata);
       entries.forEach(entry => {
         if (entry && entry.file) {
           metadataIndex[entry.file] = entry;
@@ -114,52 +107,52 @@ module.exports = function(eleventyConfig) {
 
   // Map an attraction name/category → existing image filename (real local photos preferred)
   const attractionImage = {
-    "Baraka Aquarium (Main)": "mnemba-atoll-snorkeling-green-sea-turtle.jpg",
-    "Baraka Natural Aquarium": "migration-turtle.jpg",
-    "Cheetah's Rock": "jozani-forest-sykes-monkey-zanzibar-wildlife-2.jpg",
-    "Forodhani Market (Official)": "stone-town-forodhani-gardens-night-food-market.jpg",
-    "Fukuchani Ruins": "stone-town-old-fort-guided-walking-tour.jpg",
-    "House of Wonders": "stone-town-house-of-wonders.jpg",
-    "House of Wonders (Official)": "stone-town-house-of-wonders.jpg",
-    "Jozani Chwaka Bay Nat. Park": "jozani-forest-red-colobus-monkey.jpg",
-    "Kuza Cave": "zanzibar-jambiani-beach-low-tide-local-children.jpg",
-    "Mangapwani Slave Chambers": "stone-town-former-slave-market.jpg",
-    "Menai Bay Conservation": "zanzibar-traditional-wooden-boat-turquoise-water.jpg",
-    "Mnarani Marine Turtle Pond": "migration-turtle.jpg",
-    "Mrembo Spa & Traditional Services": "stone-town-courtyard-restaurant-emerson-spice.jpg",
-    "Nakupenda Sandbank": "zanzibar-nakupenda-sandbank-prison-island-tour.jpg",
-    "Nakupenda Sandbank (Tour)": "zanzibar-nakupenda-sandbank-prison-island-tour.jpg",
-    "Old Fort (Cultural Desk)": "stone-town-old-fort-guided-walking-tour.jpg",
-    "Old Fort (Ngome Kongwe)": "stone-town-old-fort-guided-walking-tour.jpg",
-    "Palace Museum": "stone-town-port-and-beach.jpg",
-    "Palace Museum (Official)": "stone-town-port-and-beach.jpg",
-    "Princess Salme Spice Garden": "nutmeg-spice-farm-zanzibar.jpg",
-    "Prison Island (Changuu)": "prison-island-wooden-pier-boats-zanzibar.jpg",
-    "Prison Island (Tour Desk)": "prison-island-wooden-pier-boats-zanzibar.jpg",
-    "Seaweed Center Paje": "seaweed-farming-zanzibar-coast.jpg",
-    "Spice Farm Tour (Kidichi)": "nutmeg-spice-farm-zanzibar.jpg",
-    "Stone Town Food Market": "stone-town-darajani-market-fresh-produce-vegetables.jpg",
-    "Zanzibar Butterfly (Park)": "jozani-forest-red-colobus-monkeys.jpg",
-    "Zanzibar Horse Riding (Nungwi)": "horse-riding-in-zanzibar-ocean-2.jpg",
-    "ZIFF Festival Center": "stone-town-courtyard-restaurant-emerson-spice.jpg",
-    "The Rock Restaurant": "the-rock-restaurant-michamvi-pingwe-zanzibar.jpg",
-    "Old Fort": "stone-town-old-fort-guided-walking-tour.jpg",
-    "Palace Museum": "stone-town-port-and-beach.jpg",
-    "Nakupenda Sandbank": "zanzibar-nakupenda-sandbank-prison-island-tour.jpg",
-    "House of Wonders": "stone-town-house-of-wonders.jpg",
-    "Forodhani Market": "stone-town-forodhani-gardens-night-food-market.jpg",
-    "Prison Island": "prison-island-wooden-pier-boats-zanzibar.jpg",
-    "Baraka Aquarium": "mnemba-atoll-snorkeling-green-sea-turtle.jpg",
-    "Spice Farm Tour": "nutmeg-spice-farm-zanzibar.jpg",
-    "Nungwi Beach": "nungwi-beach-children-swimming-traditional-dhow-boats.jpg",
-    "Mnarani Marine Turtle Pond": "migration-turtle.jpg",
-    "Kuza Cave": "zanzibar-jambiani-beach-low-tide-local-children.jpg"
+    "Baraka Aquarium (Main)": "sea-turtle-snorkeling-coral-reef.jpg",
+    "Baraka Natural Aquarium": "josephine-monkey-jozani-forest-zanzibar-1.jpg",
+    "Cheetah's Rock": "janzibar-jozani-forest-monkey-peeking-leaves.jpg",
+    "Forodhani Market (Official)": "zanzibar-night-food-stall-skewers-bread.jpg",
+    "Fukuchani Ruins": "stone-town-walking-tour-people-photograph.jpg",
+    "House of Wonders": "stone-town-colonial-building-clock-tower.jpg",
+    "House of Wonders (Official)": "stone-town-colonial-building-clock-tower.jpg",
+    "Jozani Chwaka Bay Nat. Park": "woman-smiling-next-to-monkey-jozani-forest.jpg",
+    "Kuza Cave": "children-walking-tidal-flats-zanzibar.jpg",
+    "Mangapwani Slave Chambers": "stone-town-church-palm-tree-statues.jpg",
+    "Menai Bay Conservation": "dhow-boat-turquoise-water-zanzibar.jpg",
+    "Mnarani Marine Turtle Pond": "josephine-monkey-jozani-forest-zanzibar-1.jpg",
+    "Mrembo Spa & Traditional Services": "zanzibar-restaurant-patio-with-palm-trees.jpg",
+    "Nakupenda Sandbank": "beach-stairs-people-boats-cloudy-sky.jpg",
+    "Nakupenda Sandbank (Tour)": "beach-stairs-people-boats-cloudy-sky.jpg",
+    "Old Fort (Cultural Desk)": "stone-town-walking-tour-people-photograph.jpg",
+    "Old Fort (Ngome Kongwe)": "stone-town-walking-tour-people-photograph.jpg",
+    "Palace Museum": "aerial-port-coastal-beach-zebra.jpg",
+    "Palace Museum (Official)": "aerial-port-coastal-beach-zebra.jpg",
+    "Princess Salme Spice Garden": "hand-holding-nutmeg-fruits-zanzibar.jpg",
+    "Prison Island (Changuu)": "boats-pier-under-cloudy-sky-water.jpg",
+    "Prison Island (Tour Desk)": "boats-pier-under-cloudy-sky-water.jpg",
+    "Seaweed Center Paje": "people-collecting-sea-items-zanzibar-beach.jpg",
+    "Spice Farm Tour (Kidichi)": "hand-holding-nutmeg-fruits-zanzibar.jpg",
+    "Stone Town Food Market": "vegetable-stall-at-outdoor-market.jpg",
+    "Zanzibar Butterfly (Park)": "jozani-forest-tourists-monkeys-wildlife.jpg",
+    "Zanzibar Horse Riding (Nungwi)": "women-horse-riding-ocean-water-zanzibar.jpg",
+    "ZIFF Festival Center": "zanzibar-restaurant-patio-with-palm-trees.jpg",
+    "The Rock Restaurant": "zanzibar-rock-house-with-tourists.jpg",
+    "Old Fort": "stone-town-walking-tour-people-photograph.jpg",
+    "Palace Museum": "aerial-port-coastal-beach-zebra.jpg",
+    "Nakupenda Sandbank": "beach-stairs-people-boats-cloudy-sky.jpg",
+    "House of Wonders": "stone-town-colonial-building-clock-tower.jpg",
+    "Forodhani Market": "zanzibar-night-food-stall-skewers-bread.jpg",
+    "Prison Island": "boats-pier-under-cloudy-sky-water.jpg",
+    "Baraka Aquarium": "sea-turtle-snorkeling-coral-reef.jpg",
+    "Spice Farm Tour": "hand-holding-nutmeg-fruits-zanzibar.jpg",
+    "Nungwi Beach": "children-wading-beach-dhow-boats.jpg",
+    "Mnarani Marine Turtle Pond": "josephine-monkey-jozani-forest-zanzibar-1.jpg",
+    "Kuza Cave": "children-walking-tidal-flats-zanzibar.jpg"
   };
   const attrCategoryArrays = {
-    "Dive Center": ["zanzibar-marine-1.jpg","jozani-forest-red-colobus-monkey.jpg","zanzibar-snorkeling-coral-reef-shallow-water.jpg","mnemba-atoll-snorkeling-blue-tang-fish.jpg","mnemba-atoll-snorkeling-coral-reef-fish-2.jpg","mnemba-atoll-snorkeling-coral-reef-fish-3.jpg","mnemba-atoll-snorkeling-coral-reef-fish-4.jpg","mnemba-atoll-snorkeling-coral-reef-fish-5.jpg","mnemba-atoll-snorkeling-coral-reef-fish-6.jpg","mnemba-atoll-snorkeling-coral-reef-fish-7.jpg","zanzibar-diving-boat-trip.jpg","snorkeling-underwater-boat-ladder.jpg","zanzibar-local-snorkeling-mnemba-atoll-matemwe.jpg","mnemba-atoll-snorkeling-tropical-fish-coral.jpg","mnemba-atoll-snorkeling-green-sea-turtle.jpg"],
-    "Water Sports": ["zanzibar-marine-1.jpg","jozani-forest-red-colobus-monkey.jpg","paje-beach-zanzibar-kitesurfing-indian-ocean.jpg","horse-riding-in-zanzibar-ocean-2.jpg","quad-biking-zanzibar-countryside.jpg"],
-    "Restaurant": ["zanzibar-food-1.jpg","zanzibar-food-2.jpg","the-rock-restaurant-michamvi-pingwe-zanzibar.jpg"],
-    "Attraction": ["kizimkazi-dolphin-snorkeling.jpg","stone-town-culture-2.jpg","zanzibar-stone-town-waterfront-view-from-ocean.jpg","zanzibar-market-scene-local-life.jpg","maasai-herder-traditional-village-zanzibar.jpg"]
+    "Dive Center": ["jozani-forest-group-coconut-pose.jpg","woman-smiling-next-to-monkey-jozani-forest.jpg","snorkeling-zanzibar-shallow-water-coral.jpg","tropical-fish-swimming-clear-water.jpg","coral-reef-underwater-fish-zanzibar.jpg","coral-reef-fish-snorkeling-zanzibar.jpg","underwater-coral-reef-fish-zanzibar-1.jpg","underwater-coral-reef-fish-zanzibar.jpg","underwater-coral-reef-fish-swimming.jpg","coral-reef-snorkeling-zanzibar-1.jpg","divers-on-boat-zanzibar-ocean.jpg","snorkeling-underwater-selfie-zanzibar.jpg","boys-snorkeling-shallow-water-zanzibar.jpg","underwater-fish-coral-reef-zanzibar.jpg","sea-turtle-snorkeling-coral-reef.jpg"],
+    "Water Sports": ["jozani-forest-group-coconut-pose.jpg","woman-smiling-next-to-monkey-jozani-forest.jpg","kitesurfing-turquoise-ocean-zanzibar.jpg","women-horse-riding-ocean-water-zanzibar.jpg","atv-ride-dirt-path-green-landscape.jpg"],
+    "Restaurant": ["zanzibar-night-food-stall-skewers-bread.jpg","street-food-stall-waterfront-zanzibar.jpg","zanzibar-rock-house-with-tourists.jpg"],
+    "Attraction": ["snorkeling-with-dolphin-zanzibar-ocean.jpg","zanzibar-classroom-children-students.jpg","ocean-view-with-coastal-buildings.jpg","zanzibar-market-stalls-people-umbrellas.jpg","man-herding-sheep-village-huts.jpg"]
   };
   function hashPick(str, arr) { let h=0; const st=String(str||""); for (let i=0;i<st.length;i++) h=(h*31+st.charCodeAt(i))>>>0; return arr[h%arr.length]; }
 eleventyConfig.addFilter("attractionImg", (name, category) =>
@@ -220,19 +213,20 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
     "north,": "Wambaa Gulf / Makangale (Pemba)", "wambaa gulf": "Wambaa Gulf / Makangale (Pemba)"
   };
   // Hotel/attraction card photo pools — several distinct existing images per zone, rotated by seed (name) so cards don't repeat
+  // All pools are neutral beach/resort/landscape images suitable for hotel cards (no marine/wildlife/attraction photos)
   const zoneFiles = {
-    "Stone Town": ["mariola-grobelska-4DhGPppqcDE-unsplash.jpg","stone-town-house-of-wonders.jpg","anglican-cathedral-stone-town.jpg","stone-town-st-josephs-cathedral.jpg","stone-town-port-and-beach.jpg","stone-town-courtyard-restaurant-emerson-spice.jpg","stone-town-forodhani-gardens-night-food-market.jpg","stone-town-former-slave-market.jpg"],
-    "Nungwi": ["nungwi-beach-children-swimming-traditional-dhow-boats.jpg","nungwi-beach-aerial-view-resorts-coastline.jpg","zanzibar-fishermen-traditional-ngalawa-boat-nungwi.jpg","zanzibar-beach-bicycle-coconuts-nungwi.jpg","zanzibar-nungwi-sunset-dhow-cruise-ocean.jpg"],
-    "Kendwa": ["zanzibar-kendwa-beach-aerial-dhow-kayak.jpg","zanzibar-beach-wedding-setup-nungwi-kendwa.jpg"],
-    "Paje": ["paje-beach-zanzibar-kitesurfing-indian-ocean.jpg","zanzibar-paje-beach-women-walking-palm-trees.jpg","traditional-zanzibar-ngalawa-fishing-boat-paje.jpg"],
-    "Jambiani": ["zanzibar-jambiani-beach-village-life-women.jpg","zanzibar-jambiani-beach-low-tide-local-children.jpg","seaweed-farming-zanzibar-coast.jpg"],
-    "Bwejuu / Dongwe": ["zanzibar-jambiani-beach-low-tide-local-children.jpg","zanzibar-jambiani-beach-village-life-women.jpg"],
-    "Michamvi / Pingwe": ["the-rock-restaurant-michamvi-pingwe-zanzibar.jpg","the-rock-restaurant-michamvi-pingwe-zanzibar-3.jpg","michamvi-rock-restaurant-interaction.jpg"],
-    "Kizimkazi / Dimbani": ["kizimkazi-zanzibar-dolphins-jumping-indian-ocean.jpg","kizimkazi-dolphin-snorkeling.jpg"],
-    "Fumba / Mbweni": ["zanzibar-fumba-beach-aerial-view-turquoise-water.jpg","zanzibar-traditional-wooden-boat-turquoise-water.jpg"],
-    "Matemwe / Kigomani": ["zanzibar-local-snorkeling-mnemba-atoll-matemwe.jpg","mnemba-atoll-snorkeling-coral-reef-fish-6.jpg"],
-    "Chake Chake (Pemba)": ["chake-chake-town.jpg"],
-    "Wambaa Gulf / Makangale (Pemba)": ["zanzibar-traditional-wooden-boat-turquoise-water.jpg","zanzibar-diving-boat-trip.jpg"]
+    "Stone Town": ["stone-town-alley-walking-tour-people.jpg","stone-town-colonial-building-clock-tower.jpg","church-altar-colorful-lights-religious-icons.jpg","stone-town-church-twin-towers-green-gate.jpg","aerial-port-coastal-beach-zebra.jpg","zanzibar-restaurant-patio-with-palm-trees.jpg","zanzibar-night-food-stall-skewers-bread.jpg","stone-town-church-palm-tree-statues.jpg"],
+    "Nungwi": ["nungwi-beach-children-playing-sand.jpg","nungwi-beach-aerial-resort-turquoise-water.jpg","beach-bicycle-white-sand-zanzibar.jpg","zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg"],
+    "Kendwa": ["aerial-beach-boat-turquoise-water.jpg","beach-wedding-arch-nungwi-zanzibar.jpg","turquoise-water-sandbar-lone-boat.jpg"],
+    "Paje": ["zanzibar-beach-palm-trees-thatched-huts.jpg","women-walking-beach-zanzibar-palm-trees.jpg","zanzibar-beach-women-walking-white-sand.jpg"],
+    "Jambiani": ["women-walking-beach-zanzibar-palm-trees.jpg","children-walking-beach-zanzibar-sand-water.jpg","rock-overhang-beach-zanzibar-coast.jpg"],
+    "Bwejuu / Dongwe": ["children-walking-tidal-flats-zanzibar.jpg","women-walking-beach-zanzibar-palm-trees.jpg","beach-children-sand-zanzibar.jpg"],
+    "Michamvi / Pingwe": ["zanzibar-rock-house-with-tourists.jpg","zanzibar-house-on-rock-ocean-people.jpg","man-child-beach-fist-bump-nungwi-zanzibar.jpg"],
+    "Kizimkazi / Dimbani": ["zanzibar-beach-people-playing-kites.jpg","children-walking-beach-zanzibar-sand-water.jpg","woman-walking-beach-palm-trees-zanzibar.jpg"],
+    "Fumba / Mbweni": ["aerial-beach-zanzibar-turquoise-water.jpg","aerial-coastal-town-beach-turquoise-water.jpg","waterfront-buildings-zanzibar-coast.jpg"],
+    "Matemwe / Kigomani": ["zanzibar-beach-palm-trees-thatched-huts.jpg","beach-children-sand-zanzibar.jpg","woman-child-beach-zanzibar-ocean.jpg"],
+    "Chake Chake (Pemba)": ["zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg","turquoise-water-sandbar-lone-boat.jpg"],
+    "Wambaa Gulf / Makangale (Pemba)": ["woman-child-beach-zanzibar-ocean.jpg","turquoise-water-sandbar-lone-boat.jpg","zanzibar-beach-people-playing-kites.jpg"]
   };
   const zoneDefault = new Map(Object.entries(zoneImage).map(([k, v]) => [k, v]));
   eleventyConfig.addFilter("zoneImg", (zone, seed) => {
@@ -240,7 +234,7 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
     for (const [frag, key] of Object.entries(zoneAliases)) if (z.startsWith(frag)) {
       return hashPick(seed || zone, zoneFiles[key] || [zoneImage[key]]);
     }
-    return hashPick(seed || z, ["zanzibar-beach-1.jpg", "zanzibar-beach-2.jpg", "zanzibar-northeast-coast-fishing-boats-low-tide.jpg", "zanzibar-kendwa-beach-aerial-dhow-kayak.jpg", "zanzibar-jambiani-beach-village-life-women.jpg", "zanzibar-stone-town-waterfront-view-from-ocean.jpg"]);
+    return hashPick(seed || z, ["zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg","turquoise-water-sandbar-lone-boat.jpg","aerial-beach-boat-turquoise-water.jpg","women-walking-beach-zanzibar-palm-trees.jpg","thatched-hut-beach-zanzibar-coast.jpg"]);
   });
 
   eleventyConfig.addGlobalData("__intentMap", intentMap);

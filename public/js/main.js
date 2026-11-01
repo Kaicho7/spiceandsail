@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return (el.value || '').trim() || '-';
       }
       var msg = [
-        'Hello Dhow Coast Travels!',
+        'Hello Spice and Sail!',
         'Name: ' + field('name'),
         'Email: ' + field('email'),
         'WhatsApp: ' + field('phone'),

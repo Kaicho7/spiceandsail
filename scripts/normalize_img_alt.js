@@ -5,10 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const catalogs = [
-  'src/data/complete-image-metadata.json',
-  'src/data/image-metadata.json',
-  'src/data/stock-photo-metadata-updated.json',
-  'src/data/personal-photo-metadata-updated.json',
+  'src/data/canonical-image-catalog.json',
 ];
 
 const canon = {};

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 {% set computedTitle = title or (page.fileSlug | replace("-", " ") | capitalize) %}
-{% set pageTitle = (computedTitle + " | Dhow Coast Travels") if (computedTitle and not computedTitle.includes("Dhow Coast Travels")) else (title | default("Zanzibar Tours & Transfers | Dhow Coast Travels")) %}
-{% set pageDesc = description | default("Book " + computedTitle + " with Dhow Coast Travels in Zanzibar. Clear pricing, verified local guides, and fast WhatsApp booking.") %}
+{% set pageTitle = (computedTitle + " | Spice and Sail Zanzibar") if (computedTitle and not computedTitle.includes("Spice and Sail Zanzibar")) else (title | default("Zanzibar Tours & Transfers | Spice and Sail Zanzibar")) %}
+{% set pageDesc = description | default("Book " + computedTitle + " with Spice and Sail in Zanzibar. Clear pricing, verified local guides, and fast WhatsApp booking.") %}
 
 {% set ogImage = page.inputPath | rawImage %}
 
@@ -18,7 +18,7 @@
 <meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:description" content="{{ pageDesc }}">
 <meta property="og:image" content="{{ SITE_URL }}{{ ogImage }}">
-<meta property="og:site_name" content="Dhow Coast Travels">
+<meta property="og:site_name" content="Spice and Sail Zanzibar">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ pageTitle }}">
 <meta name="twitter:description" content="{{ pageDesc }}">
@@ -33,7 +33,7 @@
 {
   "@context": "https://schema.org",
   "@type": "TourOperator",
-  "name": "Dhow Coast Travels",
+  "name": "Spice and Sail Zanzibar",
   "url": "{{ SITE_URL | safe }}",
   "logo": "{{ SITE_URL | safe }}/images/logo.png",
   "description": "Zanzibar tour operator based in Stone Town — tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
@@ -51,9 +51,7 @@
   },
   "sameAs": [
     "https://wa.me/255672450934",
-    "https://wa.me/255774600924",
-    "https://facebook.com/dhowcoasttravels",
-    "https://instagram.com/dhowcoasttravels"
+    "https://wa.me/255774600924"
   ],
   "priceRange": "$$",
   "currenciesAccepted": "USD, TZS",

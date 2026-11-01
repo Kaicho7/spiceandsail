@@ -1,6 +1,6 @@
 ---
 title: "Zanzibar Hotels & Resorts"
-description: "Browse 213 hand-picked Zanzibar hotels and resorts by zone, beach and budget, with direct booking or WhatsApp referral rates."
+description: "Browse 213 hand-picked Zanzibar hotels and resorts by zone, beach and budget. Book direct or message us on WhatsApp for negotiated referral rates."
 permalink: "/hotels/index.html"
 ---
 {% include "seo.njk" %}
@@ -9,7 +9,7 @@ permalink: "/hotels/index.html"
 <main class="content">
   <header class="page-header">
     <h1>Where to Stay in Zanzibar — Hotels & Resorts</h1>
-    <p class="page-meta">213 hand-picked hotels and resorts across all zones. Filter by tier, beach, or island. Book direct (we arrange negotiated referral rates) or use our WhatsApp-first booking service.</p>
+    <p class="page-meta">213 hand-picked hotels and resorts across all zones. Images shown are representative zone photos (no property photos available). Book direct or WhatsApp us for negotiated referral rates.</p>
   </header>
 
   <div class="filters-bar">
@@ -24,18 +24,34 @@ permalink: "/hotels/index.html"
     {% for hotel in hotels %}
       <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
         <div class="card-image" style="position:relative;">
-          <img src="/images/{{ hotel.zone | zoneImg(hotel.name) }}" alt="{{ hotel.name }}" loading="lazy">
+          <img src="/images/{{ hotel.zone | zoneImg(hotel.name) }}" alt="Representative {{ hotel.zone }} zone image — {{ hotel.name }}" loading="lazy">
+          <span class="image-tag">Zone image</span>
+        </div>
         <div class="card-content">
           <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
           <h3 class="card-title"><a href="{{ hotel.website }}" target="_blank" rel="noopener">{{ hotel.name }}</a></h3>
           <p class="card-meta">{{ hotel.zone }}{% if hotel.zone %}, {% endif %}{{ hotel.island }}{% if hotel.star_rating %} • {{ hotel.star_rating }}{% endif %}</p>
           {% if hotel.category %}<p class="card-description">{{ hotel.category }}</p>{% endif %}
+          <div class="card-contact">
+            {% if hotel.phone %}
+              <a href="tel:{{ hotel.phone | replace(' ', '') | replace('+', '') }}" class="contact-item contact-phone" title="Call {{ hotel.name }}">📞 {{ hotel.phone }}</a>
+            {% endif %}
+            {% if hotel.whatsapp %}
+              <a href="https://wa.me/{{ hotel.whatsapp | replace('+', '') | replace(' ', '') }}" target="_blank" rel="noopener" class="contact-item contact-whatsapp" title="WhatsApp {{ hotel.name }}">💬 WhatsApp</a>
+            {% endif %}
+            {% if hotel.email %}
+              <a href="mailto:{{ hotel.email }}" class="contact-item contact-email" title="Email {{ hotel.name }}">✉️ {{ hotel.email }}</a>
+            {% endif %}
+          </div>
           <div class="card-footer">
             <span class="card-price">{{ hotel.price_range or 'Contact for rates' }}</span>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
               <a href="{{ hotel.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Website</a>
-              {% if hotel.whatsapp %}
-                <a href="https://wa.me/{{ hotel.whatsapp | replace('+', '') | replace(' ', '') }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
+              {% if hotel.facebook %}
+                <a href="{{ hotel.facebook }}" target="_blank" rel="noopener" class="btn btn-social btn-sm" title="Facebook">📘</a>
+              {% endif %}
+              {% if hotel.instagram %}
+                <a href="{{ hotel.instagram }}" target="_blank" rel="noopener" class="btn btn-social btn-sm" title="Instagram">📷</a>
               {% endif %}
             </div>
           </div>
@@ -56,7 +72,7 @@ permalink: "/hotels/index.html"
       <div class="area-quick-picks">
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/nungwi-beach-aerial-view-resorts-coastline.jpg" alt="Nungwi and Kendwa — north-coast beach, nightlife and watersports" loading="lazy">
+            <img src="/images/nungwi-beach-aerial-resort-turquoise-water.jpg" alt="Nungwi and Kendwa — north-coast beach, nightlife and watersports" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Nungwi & Kendwa — Nightlife & Watersports</h3>
@@ -65,7 +81,7 @@ permalink: "/hotels/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/paje-beach-zanzibar-kitesurfing-indian-ocean.jpg" alt="Paje and Jambiani — kitesurfing over the southeast lagoon" loading="lazy">
+            <img src="/images/zanzibar-beach-women-walking-white-sand.jpg" alt="Paje and Jambiani — white sand beaches and turquoise lagoon" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Paje & Jambiani — Kitesurfing & Adventure</h3>
@@ -74,7 +90,7 @@ permalink: "/hotels/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/packing-beach.jpg" alt="Beach packing essentials — sunscreen, hat and sunglasses for a Zanzibar trip" loading="lazy">
+            <img src="/images/stone-town-ornate-carved-door-calligraphy.jpg" alt="Stone Town — culture and history" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Stone Town — Culture & History</h3>
@@ -83,7 +99,7 @@ permalink: "/hotels/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/the-rock-restaurant-michamvi-pingwe-zanzibar.jpg" alt="Bwejuu and Michamvi — The Rock Restaurant on the southeast coast" loading="lazy">
+            <img src="/images/zanzibar-rock-house-with-tourists.jpg" alt="Bwejuu and Michamvi — The Rock Restaurant on the southeast coast" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Bwejuu & Michamvi — Luxury & Seclusion</h3>
@@ -94,7 +110,7 @@ permalink: "/hotels/index.html"
     </div>
   </section>
 
-  <p class="hotel-disclaimer reveal">* We partner with select properties for referral bookings. Contact us on WhatsApp for current availability and negotiated rates.</p>
+  <p class="hotel-disclaimer reveal">* We partner with select properties for referral bookings. Images shown are representative zone photos — not property photos. Contact us on WhatsApp for current availability and negotiated rates.</p>
 </main>
 
 {% include "footer.njk" %}
