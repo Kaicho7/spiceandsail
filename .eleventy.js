@@ -140,7 +140,7 @@ module.exports = function(eleventyConfig) {
     "Spice Farm Tour (Kidichi)": "nutmeg-spice-farm-zanzibar.jpg",
     "Stone Town Food Market": "stone-town-darajani-market-fresh-produce-vegetables.jpg",
     "Zanzibar Butterfly (Park)": "jozani-forest-red-colobus-monkeys.jpg",
-    "Zanzibar Horse Riding (Nungwi)": "horse-riding-in-zanzibar-ocean.jpg",
+    "Zanzibar Horse Riding (Nungwi)": "horse-riding-in-zanzibar-ocean-2.jpg",
     "ZIFF Festival Center": "stone-town-courtyard-restaurant-emerson-spice.jpg",
     "The Rock Restaurant": "the-rock-restaurant-michamvi-pingwe-zanzibar.jpg",
     "Old Fort": "stone-town-old-fort-guided-walking-tour.jpg",
@@ -156,10 +156,10 @@ module.exports = function(eleventyConfig) {
     "Kuza Cave": "zanzibar-jambiani-beach-low-tide-local-children.jpg"
   };
   const attrCategoryArrays = {
-    "Dive Center": ["zanzibar-marine-1.jpg","zanzibar-marine-2.jpg","zanzibar-snorkeling-coral-reef-shallow-water.jpg","mnemba-atoll-snorkeling-blue-tang-fish.jpg","mnemba-atoll-snorkeling-coral-reef-fish-2.jpg","mnemba-atoll-snorkeling-coral-reef-fish-3.jpg","mnemba-atoll-snorkeling-coral-reef-fish-4.jpg","mnemba-atoll-snorkeling-coral-reef-fish-5.jpg","mnemba-atoll-snorkeling-coral-reef-fish-6.jpg","mnemba-atoll-snorkeling-coral-reef-fish-7.jpg","zanzibar-diving-boat-trip.jpg","snorkeling-underwater-boat-ladder.jpg","zanzibar-local-snorkeling-mnemba-atoll-matemwe.jpg","mnemba-atoll-snorkeling-tropical-fish-coral.jpg","mnemba-atoll-snorkeling-green-sea-turtle.jpg"],
-    "Water Sports": ["zanzibar-marine-1.jpg","zanzibar-marine-2.jpg","paje-beach-zanzibar-kitesurfing-indian-ocean.jpg","horse-riding-in-zanzibar-ocean.jpg","quad-biking-zanzibar-countryside.jpg"],
+    "Dive Center": ["zanzibar-marine-1.jpg","jozani-forest-red-colobus-monkey.jpg","zanzibar-snorkeling-coral-reef-shallow-water.jpg","mnemba-atoll-snorkeling-blue-tang-fish.jpg","mnemba-atoll-snorkeling-coral-reef-fish-2.jpg","mnemba-atoll-snorkeling-coral-reef-fish-3.jpg","mnemba-atoll-snorkeling-coral-reef-fish-4.jpg","mnemba-atoll-snorkeling-coral-reef-fish-5.jpg","mnemba-atoll-snorkeling-coral-reef-fish-6.jpg","mnemba-atoll-snorkeling-coral-reef-fish-7.jpg","zanzibar-diving-boat-trip.jpg","snorkeling-underwater-boat-ladder.jpg","zanzibar-local-snorkeling-mnemba-atoll-matemwe.jpg","mnemba-atoll-snorkeling-tropical-fish-coral.jpg","mnemba-atoll-snorkeling-green-sea-turtle.jpg"],
+    "Water Sports": ["zanzibar-marine-1.jpg","jozani-forest-red-colobus-monkey.jpg","paje-beach-zanzibar-kitesurfing-indian-ocean.jpg","horse-riding-in-zanzibar-ocean-2.jpg","quad-biking-zanzibar-countryside.jpg"],
     "Restaurant": ["zanzibar-food-1.jpg","zanzibar-food-2.jpg","the-rock-restaurant-michamvi-pingwe-zanzibar.jpg"],
-    "Attraction": ["stone-town-culture-1.jpg","stone-town-culture-2.jpg","zanzibar-stone-town-waterfront-view-from-ocean.jpg","zanzibar-market-scene-local-life.jpg","maasai-herder-traditional-village-zanzibar.jpg"]
+    "Attraction": ["kizimkazi-dolphin-snorkeling.jpg","stone-town-culture-2.jpg","zanzibar-stone-town-waterfront-view-from-ocean.jpg","zanzibar-market-scene-local-life.jpg","maasai-herder-traditional-village-zanzibar.jpg"]
   };
   function hashPick(str, arr) { let h=0; const st=String(str||""); for (let i=0;i<st.length;i++) h=(h*31+st.charCodeAt(i))>>>0; return arr[h%arr.length]; }
 eleventyConfig.addFilter("attractionImg", (name, category) =>
@@ -226,7 +226,7 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
     "Kendwa": ["zanzibar-kendwa-beach-aerial-dhow-kayak.jpg","zanzibar-beach-wedding-setup-nungwi-kendwa.jpg"],
     "Paje": ["paje-beach-zanzibar-kitesurfing-indian-ocean.jpg","zanzibar-paje-beach-women-walking-palm-trees.jpg","traditional-zanzibar-ngalawa-fishing-boat-paje.jpg"],
     "Jambiani": ["zanzibar-jambiani-beach-village-life-women.jpg","zanzibar-jambiani-beach-low-tide-local-children.jpg","seaweed-farming-zanzibar-coast.jpg"],
-    "Bwejuu / Dongwe": ["zanzibar-jambiani-beach-low-tide-local-children.jpg","zanzibar-local-children-beach.jpg"],
+    "Bwejuu / Dongwe": ["zanzibar-jambiani-beach-low-tide-local-children.jpg","zanzibar-jambiani-beach-village-life-women.jpg"],
     "Michamvi / Pingwe": ["the-rock-restaurant-michamvi-pingwe-zanzibar.jpg","the-rock-restaurant-michamvi-pingwe-zanzibar-3.jpg","michamvi-rock-restaurant-interaction.jpg"],
     "Kizimkazi / Dimbani": ["kizimkazi-zanzibar-dolphins-jumping-indian-ocean.jpg","kizimkazi-dolphin-snorkeling.jpg"],
     "Fumba / Mbweni": ["zanzibar-fumba-beach-aerial-view-turquoise-water.jpg","zanzibar-traditional-wooden-boat-turquoise-water.jpg"],
