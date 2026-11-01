@@ -43,9 +43,6 @@ permalink: "/areas/kendwa/index.html"
 {% for hotel in hotels %}
   {% if hotel.name in ["Gold Zanzibar Beach House & Spa", "Kilindi Zanzibar", "Nungwi Beach Resort by Turaco", "Spanish Dancer (Kendwa)", "One Ocean (Kendwa)", "Zuri Zanzibar"] %}
   <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
-    <div class="card-image" style="position:relative;">
-      {% set imgFile = hotel.name | hotelImg %}{% set meta = __metadataIndex[imgFile] %}<img src="{{ imgFile | cdnFile }}" alt="{% if meta and meta.alt_text %}{{ meta.alt_text }}{% else %}{{ hotel.name }}{% endif %}" loading="lazy">
-    </div>
     <div class="card-content">
       <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
       <h3 class="card-title"><a href="{{ hotel.website }}" target="_blank" rel="noopener">{{ hotel.name }}</a></h3>
