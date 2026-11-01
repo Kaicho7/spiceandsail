@@ -24,7 +24,7 @@ permalink: "/transfers/index.html"
           <article class="card transfer-card reveal" data-category="TRF">
             <div class="card-image" style="position:relative;">
               {% set trImg = ["white-nissan-elgrand-van-parked-gravel.jpg","silver-van-parked-by-ocean-palms.jpg","silver-private-hire-minivan-parked-outside.jpg"][loop.index0 % 3] %}
-              <img src="/images/{{ trImg }}" alt="{{ transfer.title }} — private transfer vehicle, Zanzibar" loading="lazy">
+              <img src="{{ trImg | cdnFile }}" alt="{{ transfer.title }} — private transfer vehicle, Zanzibar" loading="lazy">
               <span class="card-badge badge-transfer" style="position: absolute; top: 1rem; left: 1rem; right: auto;">Transfer</span>
             </div>
             <div class="card-content">
@@ -100,7 +100,7 @@ permalink: "/transfers/index.html"
       <div class="area-quick-picks" style="max-width: 900px; margin: 0 auto;">
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/zanzibar-beach-boat-sand-palm-trees.jpg" alt="Stone Town seafront — beach boats and historic buildings" loading="lazy">
+            <img src="{{ 'zanzibar-beach-boat-sand-palm-trees.jpg' | cdnFile }}" alt="Stone Town seafront — beach boats and historic buildings" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Stone Town</h3>
@@ -109,7 +109,7 @@ permalink: "/transfers/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/aerial-beach-boat-turquoise-water.jpg" alt="Nungwi/Kendwa north coast beach, Zanzibar" loading="lazy">
+            <img src="{{ 'aerial-beach-boat-turquoise-water.jpg' | cdnFile }}" alt="Nungwi/Kendwa north coast beach, Zanzibar" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Nungwi / Kendwa</h3>
@@ -118,7 +118,7 @@ permalink: "/transfers/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/kitesurfing-turquoise-ocean-zanzibar.jpg" alt="Paje/Jambiani southeast coast, Zanzibar" loading="lazy">
+            <img src="{{ 'kitesurfing-turquoise-ocean-zanzibar.jpg' | cdnFile }}" alt="Paje/Jambiani southeast coast, Zanzibar" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Paje / Jambiani</h3>
@@ -127,7 +127,7 @@ permalink: "/transfers/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/dhow-boats-beach-zanzibar-sand.jpg" alt="Kiwengwa/Pongwe — northeast coast fishing boats at low tide, Zanzibar" loading="lazy">
+            <img src="{{ 'dhow-boats-beach-zanzibar-sand.jpg' | cdnFile }}" alt="Kiwengwa/Pongwe — northeast coast fishing boats at low tide, Zanzibar" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Kiwengwa / Pongwe</h3>
@@ -136,7 +136,7 @@ permalink: "/transfers/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/children-walking-tidal-flats-zanzibar.jpg" alt="Bwejuu/Dongwe southeast luxury coast, Zanzibar" loading="lazy">
+            <img src="{{ 'children-walking-tidal-flats-zanzibar.jpg' | cdnFile }}" alt="Bwejuu/Dongwe southeast luxury coast, Zanzibar" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Bwejuu / Dongwe</h3>
@@ -145,7 +145,7 @@ permalink: "/transfers/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/zanzibar-rock-house-with-tourists.jpg" alt="Michamvi/Pingwe — The Rock Restaurant east coast, Zanzibar" loading="lazy">
+            <img src="{{ 'zanzibar-rock-house-with-tourists.jpg' | cdnFile }}" alt="Michamvi/Pingwe — The Rock Restaurant east coast, Zanzibar" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Michamvi / Pingwe</h3>

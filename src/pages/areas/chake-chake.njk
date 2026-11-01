@@ -43,7 +43,8 @@ permalink: "/areas/chake-chake/index.html"
   {% if hotel.name in ["Pemba Island Divers", "Pemba Dive Center"] %}
   <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
     <div class="card-image" style="position:relative;">
-      <img src="/images/{{ hotel.zone | zoneImg(hotel.name) }}" alt="{{ hotel.name }}" loading="lazy">
+      {% set imgFile = hotel.name | hotelImg %}{% set meta = __metadataIndex[imgFile] %}<img src="{{ imgFile | cdnFile }}" alt="{% if meta and meta.alt_text %}{{ meta.alt_text }}{% else %}{{ hotel.name }}{% endif %}" loading="lazy">
+    </div>
     <div class="card-content">
       <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
       <h3 class="card-title"><a href="{{ hotel.website }}" target="_blank" rel="noopener">{{ hotel.name }}</a></h3>
@@ -78,7 +79,7 @@ permalink: "/areas/chake-chake/index.html"
   {% if attraction.name in ["Pemba Island Divers", "Pemba Dive Center"] %}
   <article class="card attraction-card reveal" data-type="{{ attraction.category }}">
     <div class="card-image" style="position:relative;">
-      <img src="/images/{{ attraction.name | attractionImg(attraction.category) }}" alt="{{ attraction.name }}" loading="lazy">
+      <img src="{{ (attraction.name | attractionImg(attraction.category)) | cdnFile }}" alt="{{ attraction.name }}" loading="lazy">
     <div class="card-content">
       <span class="card-badge badge-cultural">{{ attraction.type | attractionTypeLabel }}</span>
       <h3 class="card-title">{{ attraction.name }}</h3>
@@ -108,7 +109,7 @@ permalink: "/areas/chake-chake/index.html"
   {% if tour.seo_slug in ["serengeti-3day-flyin"] %}
   <article class="card tour-card reveal" data-category="{{ tour.category }}">
     <div class="card-image" style="position:relative;">
-      <img src="/images/{{ __slugMap[tour.seo_slug] or __slugMap[tour.slug] or 'excursions.png' }}" alt="{{ tour.title }}" loading="lazy">
+      <img src="{{ (__slugMap[tour.seo_slug] or __slugMap[tour.slug] or 'excursions.png') | cdnFile }}" alt="{{ tour.title }}" loading="lazy">
     <div class="card-content">
       <span class="card-badge badge-{{ tour.category | lower }}">{{ tour.category | attractionTypeLabel }}</span>
       <h3 class="card-title"><a href="/tours/{{ tour.seo_slug }}/">{{ tour.title }}</a></h3>

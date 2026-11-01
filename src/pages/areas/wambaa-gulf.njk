@@ -44,7 +44,8 @@ permalink: "/areas/wambaa-gulf/index.html"
   {% if hotel.name in ["Fundu Lagoon", "The Manta Resort", "Dive 360 Pemba", "Fun Divers Zanzibar", "Swahili Divers"] %}
   <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
     <div class="card-image" style="position:relative;">
-      <img src="/images/{{ hotel.zone | zoneImg(hotel.name) }}" alt="{{ hotel.name }}" loading="lazy">
+      {% set imgFile = hotel.name | hotelImg %}{% set meta = __metadataIndex[imgFile] %}<img src="{{ imgFile | cdnFile }}" alt="{% if meta and meta.alt_text %}{{ meta.alt_text }}{% else %}{{ hotel.name }}{% endif %}" loading="lazy">
+    </div>
     <div class="card-content">
       <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
       <h3 class="card-title"><a href="{{ hotel.website }}" target="_blank" rel="noopener">{{ hotel.name }}</a></h3>
@@ -79,7 +80,7 @@ permalink: "/areas/wambaa-gulf/index.html"
   {% if attraction.name in ["Dive 360 Pemba", "Fundu Lagoon / 710 Dive", "Fun Divers Zanzibar"] %}
   <article class="card attraction-card reveal" data-type="{{ attraction.category }}">
     <div class="card-image" style="position:relative;">
-      <img src="/images/{{ attraction.name | attractionImg(attraction.category) }}" alt="{{ attraction.name }}" loading="lazy">
+      <img src="{{ (attraction.name | attractionImg(attraction.category)) | cdnFile }}" alt="{{ attraction.name }}" loading="lazy">
     <div class="card-content">
       <span class="card-badge badge-cultural">{{ attraction.type | attractionTypeLabel }}</span>
       <h3 class="card-title">{{ attraction.name }}</h3>

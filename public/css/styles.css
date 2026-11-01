@@ -255,7 +255,7 @@ p { margin-bottom: 1rem; }
    ========================================== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 62vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1098,9 +1098,10 @@ p { margin-bottom: 1rem; }
 .delay-5 { animation-delay: 0.5s; }
 .delay-6 { animation-delay: 0.6s; }
 
-/* Intersection Observer triggered */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* Intersection Observer triggered — only hide when JS is confirmed running (html.js),
+   so headings/content are never permanently invisible if JS fails */
+.js .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ==========================================
    FOCUS STATES

@@ -10,7 +10,7 @@ permalink: "/tours/zanzibar-essentials-3day/index.html"
   <section class="tour-hero" style="background: linear-gradient(135deg, var(--dct-spice) 0%, var(--dct-coral) 100%);">
     <div class="tour-hero-content">
       {% set featured = page.inputPath | featuredImage %}
-{% set cdnSrc = page.inputPath | rawImage %}
+{% set cdnSrc = page.inputPath | cdnImage %}
 <img src="{{ cdnSrc }}" alt="{{ featured.featuredAlt or page.title }}" class="tour-hero-image" loading="lazy">
 
       <span class="card-badge badge-package">PKG — Package</span>

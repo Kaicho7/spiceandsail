@@ -102,12 +102,12 @@ permalink: "/index.html"
                 {% if meta %}
                   {% set imgFile = meta.file if meta.file else mapSlug %}
                   {% set imgAlt = meta.alt_text if meta.alt_text else tour.title %}
-                  <img src="/images/{{ imgFile }}" alt="{{ imgAlt }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                  <img src="{{ imgFile | cdnFile }}" alt="{{ imgAlt }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
                 {% else %}
-                  <img src="/images/{{ mapSlug }}" alt="{{ tour.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                  <img src="{{ mapSlug | cdnFile }}" alt="{{ tour.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
                 {% endif %}
               {% else %}
-                <img src="/images/default-tour-hero.jpg" alt="{{ tour.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                <img src="{{ 'default-tour-hero.jpg' | cdnFile }}" alt="{{ tour.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
               {% endif %}
             </div>
             <button class="card-favorite" aria-label="Add to favorites">♡</button>
@@ -141,7 +141,7 @@ permalink: "/index.html"
       <div class="area-quick-picks">
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-                <img src="/images/children-wading-beach-dhow-boats.jpg" alt="Nungwi beach — children swimming beside traditional dhow boats" loading="lazy">
+                <img src="{{ 'children-wading-beach-dhow-boats.jpg' | cdnFile }}" alt="Nungwi beach — children swimming beside traditional dhow boats" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/nungwi/">Nungwi</a></h3>
@@ -151,7 +151,7 @@ permalink: "/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-                <img src="/images/aerial-beach-boat-turquoise-water.jpg" alt="Kendwa beach, Zanzibar — aerial view with dhow and kayak" loading="lazy">
+                <img src="{{ 'aerial-beach-boat-turquoise-water.jpg' | cdnFile }}" alt="Kendwa beach, Zanzibar — aerial view with dhow and kayak" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/kendwa/">Kendwa</a></h3>
@@ -161,7 +161,7 @@ permalink: "/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-                <img src="/images/kitesurfing-turquoise-ocean-zanzibar.jpg" alt="Paje, Zanzibar — kitesurfing on the turquoise Indian Ocean lagoon" loading="lazy">
+                <img src="{{ 'kitesurfing-turquoise-ocean-zanzibar.jpg' | cdnFile }}" alt="Paje, Zanzibar — kitesurfing on the turquoise Indian Ocean lagoon" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/paje/">Paje</a></h3>
@@ -171,7 +171,7 @@ permalink: "/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-                <img src="/images/women-walking-beach-zanzibar-palm-trees.jpg" alt="Jambiani, Zanzibar — authentic fishing village beach life" loading="lazy">
+                <img src="{{ 'women-walking-beach-zanzibar-palm-trees.jpg' | cdnFile }}" alt="Jambiani, Zanzibar — authentic fishing village beach life" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/jambiani/">Jambiani</a></h3>
@@ -181,7 +181,7 @@ permalink: "/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-                <img src="/images/stone-town-alley-walking-tour-people.jpg" alt="Stone Town, Zanzibar — seafront historic architecture" loading="lazy">
+                <img src="{{ 'stone-town-alley-walking-tour-people.jpg' | cdnFile }}" alt="Stone Town, Zanzibar — seafront historic architecture" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/stone-town/">Stone Town</a></h3>
@@ -191,7 +191,7 @@ permalink: "/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-                <img src="/images/island-pier-boat-turquoise-water.jpg" alt="Kiwengwa, Zanzibar — island resort pier and boats" loading="lazy">
+                <img src="{{ 'island-pier-boat-turquoise-water.jpg' | cdnFile }}" alt="Kiwengwa, Zanzibar — island resort pier and boats" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/kiwengwa/">Kiwengwa</a></h3>
@@ -214,7 +214,7 @@ permalink: "/index.html"
       <div class="cards-grid">
         <article class="card reveal" data-category="PKG">
           <div class="card-image" style="position:relative;">
-                <img src="/images/stone-town-ornate-carved-door-calligraphy.jpg" alt="Zanzibar Essentials package — carved wooden door in Stone Town" loading="lazy">
+                <img src="{{ 'stone-town-ornate-carved-door-calligraphy.jpg' | cdnFile }}" alt="Zanzibar Essentials package — carved wooden door in Stone Town" loading="lazy">
             <button class="card-favorite" aria-label="Add to favorites">♡</button>
           </div>
           <div class="card-content">
@@ -230,7 +230,7 @@ permalink: "/index.html"
         </article>
         <article class="card reveal" data-category="PKG">
           <div class="card-image" style="position:relative;">
-                <img src="/images/dhow-boat-turquoise-water-zanzibar.jpg" alt="Beach & Culture Combo — traditional wooden boat on turquoise water" loading="lazy">
+                <img src="{{ 'dhow-boat-turquoise-water-zanzibar.jpg' | cdnFile }}" alt="Beach & Culture Combo — traditional wooden boat on turquoise water" loading="lazy">
             <button class="card-favorite" aria-label="Add to favorites">♡</button>
           </div>
           <div class="card-content">
@@ -246,7 +246,7 @@ permalink: "/index.html"
         </article>
         <article class="card reveal" data-category="SAF">
           <div class="card-image" style="position:relative;">
-                <img src="/images/safari-vehicle-lion-afar.jpg" alt="Ultimate Zanzibar + Safari — mainland Tanzania safari" loading="lazy">
+                <img src="{{ 'safari-vehicle-lion-afar.jpg' | cdnFile }}" alt="Ultimate Zanzibar + Safari — mainland Tanzania safari" loading="lazy">
             <button class="card-favorite" aria-label="Add to favorites">♡</button>
           </div>
           <div class="card-content">

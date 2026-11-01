@@ -218,6 +218,8 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
     "Stone Town": ["stone-town-alley-walking-tour-people.jpg","stone-town-colonial-building-clock-tower.jpg","church-altar-colorful-lights-religious-icons.jpg","stone-town-church-twin-towers-green-gate.jpg","aerial-port-coastal-beach-zebra.jpg","zanzibar-restaurant-patio-with-palm-trees.jpg","zanzibar-night-food-stall-skewers-bread.jpg","stone-town-church-palm-tree-statues.jpg"],
     "Nungwi": ["nungwi-beach-children-playing-sand.jpg","nungwi-beach-aerial-resort-turquoise-water.jpg","beach-bicycle-white-sand-zanzibar.jpg","zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg"],
     "Kendwa": ["aerial-beach-boat-turquoise-water.jpg","beach-wedding-arch-nungwi-zanzibar.jpg","turquoise-water-sandbar-lone-boat.jpg"],
+    "Kiwengwa": ["nungwi-beach-aerial-resort-turquoise-water.jpg","zanzibar-beach-palm-trees-sand-water.jpg","beach-front-hotel-palm-trees-people.jpg","zanzibar-beach-palm-trees-thatched-huts.jpg"],
+    "Pongwe / Michamvi": ["zanzibar-rock-house-with-tourists.jpg","beach-front-hotel-palm-trees-people.jpg","zanzibar-house-on-rock-ocean-people.jpg","zanzibar-beach-palm-trees-sand-water.jpg"],
     "Paje": ["zanzibar-beach-palm-trees-thatched-huts.jpg","women-walking-beach-zanzibar-palm-trees.jpg","zanzibar-beach-women-walking-white-sand.jpg"],
     "Jambiani": ["women-walking-beach-zanzibar-palm-trees.jpg","children-walking-beach-zanzibar-sand-water.jpg","rock-overhang-beach-zanzibar-coast.jpg"],
     "Bwejuu / Dongwe": ["children-walking-tidal-flats-zanzibar.jpg","women-walking-beach-zanzibar-palm-trees.jpg","beach-children-sand-zanzibar.jpg"],
@@ -236,6 +238,27 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
     }
     return hashPick(seed || z, ["zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg","turquoise-water-sandbar-lone-boat.jpg","aerial-beach-boat-turquoise-water.jpg","women-walking-beach-zanzibar-palm-trees.jpg","thatched-hut-beach-zanzibar-coast.jpg"]);
   });
+
+  // Dedicated hotel-only photo pool: real accommodation imagery (rooms, resorts,
+  // beachfront hotels). NEVER contains dhow/marine/tour/excursion photos.
+  const hotelPhotoPool = [
+    "nungwi-beach-aerial-resort-turquoise-water.jpg",
+    "beach-front-hotel-palm-trees-people.jpg",
+    "hotel-room-red-plaid-bed.jpg",
+    "hotel-room-with-red-accent-bed.jpg",
+    "hotel-room-with-two-beds-red-blankets.jpg",
+    "zanzibar-hotel-room-orange-bed.jpg",
+    "zanzibar-hotel-room-two-beds-red-linens.jpg",
+    "zanzibar-hotel-room-three-beds.jpg",
+    "zanzibar-hotel-room-bed-mosquito-net.jpg",
+    "zanzibar-hotel-room-two-beds-mosquito-net.jpg",
+    "zanzibar-hotel-room-bed-plaid-curtains.jpg",
+    "zanzibar-hotel-room-three-beds-plaid.jpg",
+    "zanzibar-hotel-room-two-beds.jpg",
+    "zanzibar-hotel-room-two-single-beds.jpg",
+    "zanzibar-hotel-room-two-beds-red-blankets.jpg"
+  ];
+  eleventyConfig.addFilter("hotelImg", (name) => hashPick(name || "hotel", hotelPhotoPool));
 
   eleventyConfig.addGlobalData("__intentMap", intentMap);
 
@@ -307,11 +330,19 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
     return getFeaturedImage(inputPath);
   });
 
-  // Add filter to get hero image with Netlify Image CDN wrapper (fixes IMG_BIG)
+  // Add filter to get hero image with Netlify Image CDN wrapper (fixes IMG_BIG).
+  // NB the Netlify CDN needs the path WITH the /images/ prefix, else it 404s.
   eleventyConfig.addNunjucksFilter("cdnImage", function(inputPath) {
     const result = getFeaturedImage(inputPath);
-    const cdnUrl = `/.netlify/images?url=${encodeURIComponent(result.featuredImage || "default-tour-hero.jpg")}&fm=webp&q=85`;
-    return cdnUrl;
+    const file = result.featuredImage || "default-tour-hero.jpg";
+    return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&q=85`;
+  });
+
+  // Wrap an arbitrary image filename in the Netlify Image CDN URL (for card images
+  // selected by hotelImg/zoneImg/trImg/etc, which return bare filenames).
+  eleventyConfig.addNunjucksFilter("cdnFile", function(file) {
+    const f = String(file || "default-tour-hero.jpg");
+    return `/.netlify/images?url=${encodeURIComponent("/images/" + f)}&fm=webp&q=85`;
   });
 
   // Add filter to get raw hero image path (for GitHub Pages / non-Netlify hosts)

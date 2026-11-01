@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js');
 document.addEventListener('DOMContentLoaded', function () {
   // Header scroll effect
   var header = document.getElementById('siteHeader');

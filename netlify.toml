@@ -2,6 +2,12 @@
   publish = "dist"
   command = "npm install && npm run build"
 
+[images]
+  # Netlify Image CDN — used via /.netlify/images?url=...&fm=webp&q=85
+  # Serve, resize and convert images at the edge with caching.
+  cache = "public"
+  config = false
+
 # 404 fallback: unknown routes serve the branded 404 page with real 404 status
 # force=false (default) ensures static files are served first
 [[redirects]]

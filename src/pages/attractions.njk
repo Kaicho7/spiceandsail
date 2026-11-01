@@ -24,7 +24,7 @@ permalink: "/attractions/index.html"
         {% for attraction in __attractionsDedup %}
           <article class="card attraction-card reveal" data-type="{{ attraction.category }}">
             <div class="card-image" style="position:relative;">
-              <img src="/images/{{ attraction.name | attractionImg(attraction.category) }}" alt="{{ attraction.name }}" loading="lazy">
+              <img src="{{ (attraction.name | attractionImg(attraction.category)) | cdnFile }}" alt="{{ attraction.name }}" loading="lazy">
             <div class="card-content">
               <span class="card-badge badge-cultural">{{ attraction.type }}</span>
               <h3 class="card-title">{{ attraction.name }}</h3>

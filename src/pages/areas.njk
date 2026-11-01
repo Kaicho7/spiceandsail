@@ -22,7 +22,7 @@ permalink: "/areas/index.html"
       <div class="area-quick-picks">
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/zanzibar-beach-sunset-walk-group.jpg" alt="Nungwi and Kendwa — sunset on the north-coast beach, Zanzibar nightlife hub" loading="lazy">
+            <img src="{{ 'zanzibar-beach-sunset-walk-group.jpg' | cdnFile }}" alt="Nungwi and Kendwa — sunset on the north-coast beach, Zanzibar nightlife hub" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/nungwi/">Best Nightlife & Sunsets</a></h3>
@@ -31,7 +31,7 @@ permalink: "/areas/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/kitesurfing-turquoise-ocean-zanzibar.jpg" alt="Paje and Jambiani — kitesurfing over the turquoise southeast lagoon" loading="lazy">
+            <img src="{{ 'kitesurfing-turquoise-ocean-zanzibar.jpg' | cdnFile }}" alt="Paje and Jambiani — kitesurfing over the turquoise southeast lagoon" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/paje/">Best for Kitesurfing & Adventure</a></h3>
@@ -40,7 +40,7 @@ permalink: "/areas/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/stone-town-alley-walking-tour-people.jpg" alt="Stone Town — winding alleys and carved doors, UNESCO World Heritage" loading="lazy">
+            <img src="{{ 'stone-town-alley-walking-tour-people.jpg' | cdnFile }}" alt="Stone Town — winding alleys and carved doors, UNESCO World Heritage" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/stone-town/">Best for Culture & History</a></h3>
@@ -49,7 +49,7 @@ permalink: "/areas/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/zanzibar-rock-house-with-tourists.jpg" alt="Bwejuu, Dongwe, Michamvi and Pongwe — The Rock Restaurant on the southeast coast" loading="lazy">
+            <img src="{{ 'zanzibar-rock-house-with-tourists.jpg' | cdnFile }}" alt="Bwejuu, Dongwe, Michamvi and Pongwe — The Rock Restaurant on the southeast coast" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/bwejuu/">Best Luxury & Seclusion</a></h3>
@@ -58,7 +58,7 @@ permalink: "/areas/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/dolphins-leaping-ocean-zanzibar.jpg" alt="Kizimkazi — dolphins jumping in the Indian Ocean" loading="lazy">
+            <img src="{{ 'dolphins-leaping-ocean-zanzibar.jpg' | cdnFile }}" alt="Kizimkazi — dolphins jumping in the Indian Ocean" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3><a href="/areas/kizimkazi/">Best for Dolphin Watching & Village Life</a></h3>
@@ -80,7 +80,7 @@ permalink: "/areas/index.html"
         {% for zone in areas.zones %}
           <article class="card area-card reveal">
             <div class="card-image" style="position:relative;">
-              <img src="/images/{{ __zoneImage[zone.name] or 'excursions.png' }}" alt="{{ zone.name }}" loading="lazy">
+              <img src="{{ (__zoneImage[zone.name] or 'excursions.png') | cdnFile }}" alt="{{ zone.name }}" loading="lazy">
             </div>
 
             <div class="card-content">
@@ -114,7 +114,7 @@ permalink: "/areas/index.html"
       <div class="area-quick-picks">
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/ocean-view-with-coastal-buildings.jpg" alt="Unguja — Zanzibar main island aerial coastline" loading="lazy">
+            <img src="{{ 'ocean-view-with-coastal-buildings.jpg' | cdnFile }}" alt="Unguja — Zanzibar main island aerial coastline" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Unguja (Main Island — Zanzibar)</h3>
@@ -124,7 +124,7 @@ permalink: "/areas/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="/images/pineapples-growing-in-tropical-plantation.jpg" alt="Pemba Island — Chake Chake town, clove plantations and Fundu Lagoon" loading="lazy">
+            <img src="{{ 'pineapples-growing-in-tropical-plantation.jpg' | cdnFile }}" alt="Pemba Island — Chake Chake town, clove plantations and Fundu Lagoon" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Pemba Island</h3>
