@@ -26,7 +26,7 @@ permalink: "/tours/index.html"
       <article class="card tour-card reveal" data-category="{{ tour.category }}">
         <div class="card-image">
           {% set imgFile = __slugMap[tour.slug] or __slugMap[tour.seo_slug] or "default-tour-hero.jpg" %}
-          <img src="{{ imgFile | cdnFile }}" alt="{{ tour.title }}" class="tour-card-image" loading="lazy">
+          <img src="{{ imgFile | cdnFile }}" alt="{{ imgFile | canonicalAlt(tour.title) }}" class="tour-card-image" loading="lazy">
         </div>
         <div class="card-content">
           <span class="tour-category">{{ tour.category | attractionTypeLabel }}</span>

@@ -4,5 +4,6 @@ node_modules/
 .env
 .aider*
 dist/
+.vision/
 public/images/*.bak
 public/images/*.bak

@@ -52,9 +52,7 @@ permalink: "/areas/michamvi/index.html"
         <span class="card-price">{{ hotel.price_range or "Contact for rates" }}</span>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
           <a href="{{ hotel.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Website</a>
-          {% if hotel.whatsapp %}
-          <a href="https://wa.me/{{ hotel.whatsapp | replace('+', '') | replace(' ', '') }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
-          {% endif %}
+          <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20inquire%20about%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
         </div>
       </div>
     </div>

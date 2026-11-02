@@ -14,7 +14,7 @@ for (const c of catalogs) {
   if (!fs.existsSync(p)) continue;
   let d;
   try { d = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) { console.error('bad json', c); continue; }
-  const out = d.images || d.metadata || {};
+  const out = d.images || d.metadata || d;
   let entries = [];
   try { entries = Array.isArray(out) ? out : Object.entries(out); } catch (e) { entries = []; }
   for (const pair of entries) {
@@ -38,7 +38,9 @@ function walk(dir) {
     const before = t;
     t = t.replace(/<img\b[^>]*>/g, (tag) => {
       const srcm = tag.match(/src="([^"]+)"/);
-      const m = srcm && srcm[1].match(/([A-Za-z0-9_\-]+\.(?:jpg|jpeg|png|JPG|PNG))/);
+      if (!srcm) return tag;
+      const decoded = decodeURIComponent(srcm[1]);
+      const m = decoded.match(/([A-Za-z0-9_\-]+\.(?:jpg|jpeg|png|JPG|PNG))/i);
       if (!m) return tag;
       const alt = canon[m[1]];
       if (!alt) return tag;

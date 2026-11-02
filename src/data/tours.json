@@ -4,8 +4,8 @@
     "slug": "stone-town-walking-tour",
     "seo_slug": "stone-town-walking-tour",
     "title": "Stone Town walking tour",
-    "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling-forbidden market scene, the House of Wonders, and the Old Fort.",
-    "short_description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling-forbidden market scene, the House ",
+    "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House of Wonders, and the Old Fort.",
+    "short_description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House ",
     "duration": "2–4 hours",
     "location": "Stone Town",
     "price": {
@@ -14,17 +14,17 @@
       "basis": "per person; private guide at high end; floor priced from partner rate (Madebe partner rate: $35pp for 2pax)",
       "display": "$45–$80"
     },
-    "price_display": "$13–$80",
+    "price_display": "$45–$80",
     "includes": [
       "Licensed guide",
       "entry fees vary"
     ],
     "product_type": "Tour",
     "source_quality": "Competitor price + 2026 market range",
-    "source_files": "ZTrans (13 USD); zanzibar things to do.docx (30 USD); 2026 market guides",
+    "source_files": "Madebe rate card ($35pp for 2pax); 2026 market guides",
     "category": "CUL",
-    "meta_description": "Book Stone Town walking tour with a licensed Zanzibar guide. Explore UNESCO-listed architecture, markets, museums, and Sultan Ahmed Said's legacy. From $13 per person.",
-    "overview": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling-forbidden market scene, the House of Wonders, and the Old Fort.",
+    "meta_description": "Book Stone Town walking tour with a licensed Zanzibar guide. Explore UNESCO-listed architecture, markets, museums, and Sultan Ahmed Said's legacy. From $45 per person.",
+    "overview": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House of Wonders, and the Old Fort.",
     "what_to_expect": [
       "2–4 hour guided walk led by a Zanzibar-licensed guide",
       "Visit Forodhani Gardens night market (if evening)",
@@ -59,7 +59,7 @@
       "basis": "per person; floor priced from partner rate (Madebe partner rate: $27pp for 2pax)",
       "display": "$35–$80"
     },
-    "price_display": "$15–$80",
+    "price_display": "$35–$80",
     "includes": [
       "Farm walk, spice/fruit tasting, guide",
       "lunch varies"
@@ -68,7 +68,7 @@
     "source_quality": "Competitor price + 2026 market range",
     "source_files": "ZTrans (15 USD); zanzibar things to do.docx (30 USD); 2026 market guides",
     "category": "CUL",
-    "meta_description": "Book Zanzibar spice farm tour with expert guide. Taste cloves, cinnamon, vanilla, and cardamom. Learn the island's spice trade history. From $15 per person.",
+    "meta_description": "Book Zanzibar spice farm tour with expert guide. Taste cloves, cinnamon, vanilla, and cardamom. Learn the island's spice trade history. From $35 per person.",
     "overview": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade — how Zanzibar became the \"Spice Island\" — while you taste fresh nutmeg, cloves, cinnamon, and cardamom straight from the source.",
     "what_to_expect": [
       "3–4 hour farm tour with a local expert guide",
@@ -103,7 +103,7 @@
       "basis": "per person; floor priced from partner rate (Animation team partner rate: $41 total small group)",
       "display": "$30–$50"
     },
-    "price_display": "$15–$50",
+    "price_display": "$30–$50",
     "includes": [
       "Village walk, seaweed/craft visit, local lunch",
       "donation varies"
@@ -112,7 +112,7 @@
     "source_quality": "Historical price list + 2026 market range",
     "source_files": "zanzibar things to do.docx (50 USD); 2026 market guides",
     "category": "CUL",
-    "meta_description": "Experience Zanzibar village life with a community tour. Visit seaweed farms, craft workshops, and traditional households. From $15 per person.",
+    "meta_description": "Experience Zanzibar village life with a community tour. Visit seaweed farms, craft workshops, and traditional households. From $30 per person.",
     "overview": "Go beyond the tourist trail to a local village in Kizimbani, Jambiani, or the southeast coast. Meet families, learn about seaweed farming, traditional crafts, and daily life in rural Zanzibar.",
     "what_to_expect": [
       "2–4 hour guided village visit",
@@ -410,12 +410,12 @@
     "duration": "2–3 hours",
     "location": "Nungwi, Kendwa or Stone Town",
     "price": {
-      "min": 15.0,
+      "min": 30.0,
       "max": 85.0,
       "basis": "per person; private charter higher; floor priced from partner rate (Amran local boat rate: $10pp for 2pax)",
-      "display": "$15–$85"
+      "display": "$30–$85"
     },
-    "price_display": "$10–$85",
+    "price_display": "$30–$85",
     "includes": [
       "Dhow, drinks/fruit varies"
     ],
@@ -423,7 +423,7 @@
     "source_quality": "2026 market range",
     "source_files": "2026 market guides",
     "category": "MAR",
-    "meta_description": "Book sunset dhow cruise in Zanzibar. Sail the Indian Ocean at golden hour, enjoy drinks and fresh fruit. From $10 per person (group) or $85 private.",
+    "meta_description": "Book sunset dhow cruise in Zanzibar. Sail the Indian Ocean at golden hour, enjoy drinks and fresh fruit. From $30 per person (group) or $85 private.",
     "overview": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and purple.",
     "what_to_expect": [
       "2–3 hour sunset cruise on a traditional wooden dhow",
@@ -499,12 +499,12 @@
     "duration": "2–4 hours",
     "location": "Jozani Chwaka Bay National Park",
     "price": {
-      "min": 60.0,
+      "min": 45.0,
       "max": 98.0,
       "basis": "per person; floor priced from partner rate (Madebe partner rate: $45pp for 2pax (Jozani + Butterfly Centre))",
-      "display": "$60–$98"
+      "display": "$45–$98"
     },
-    "price_display": "$12–$98",
+    "price_display": "$45–$98",
     "includes": [
       "Guide, park entry varies"
     ],
@@ -512,7 +512,7 @@
     "source_quality": "Competitor price + official park + 2026 market range",
     "source_files": "ZTrans (35 USD); zanzibar things to do.docx (50 USD); OCGS attraction data",
     "category": "NAT",
-    "meta_description": "Book Jozani Forest tour — see rare red colobus monkeys and explore Zanzibar's only national park. From $12 per person.",
+    "meta_description": "Book Jozani Forest tour — see rare red colobus monkeys and explore Zanzibar's only national park. From $45 per person.",
     "overview": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabies, and over 200 bird species.",
     "what_to_expect": [
       "2–4 hour guided walk through mangrove and coastal forest",

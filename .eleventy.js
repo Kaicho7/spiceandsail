@@ -28,7 +28,7 @@ module.exports = function(eleventyConfig) {
     "safari-blue": "dhow-boat-turquoise-water-zanzibar.jpg",
     "mnemba-snorkeling": "sea-turtle-snorkeling-coral-reef.jpg",
     "prison-island-nakupenda": "boats-pier-under-cloudy-sky-water.jpg",
-    "nakupenda-sandbank": "beach-stairs-people-boats-cloudy-sky.jpg",
+    "nakupenda-sandbank": "turquoise-water-sandbar-lone-boat.jpg",
     "chumbe-island": "underwater-fish-coral-reef-zanzibar.jpg",
     "sunset-dhow-cruise": "dhow-sail-at-sunset-ocean.jpg",
     "kizimkazi-dolphin-tour": "dolphins-leaping-ocean-zanzibar.jpg",
@@ -107,52 +107,52 @@ module.exports = function(eleventyConfig) {
 
   // Map an attraction name/category → existing image filename (real local photos preferred)
   const attractionImage = {
-    "Baraka Aquarium (Main)": "sea-turtle-snorkeling-coral-reef.jpg",
-    "Baraka Natural Aquarium": "josephine-monkey-jozani-forest-zanzibar-1.jpg",
+    "Baraka Aquarium (Main)": "sea-turtles-swimming-zanzibar-water.jpg",
+    "Baraka Natural Aquarium": "sea-turtles-swimming-zanzibar-water.jpg",
     "Cheetah's Rock": "janzibar-jozani-forest-monkey-peeking-leaves.jpg",
     "Forodhani Market (Official)": "zanzibar-night-food-stall-skewers-bread.jpg",
     "Fukuchani Ruins": "stone-town-walking-tour-people-photograph.jpg",
     "House of Wonders": "stone-town-colonial-building-clock-tower.jpg",
     "House of Wonders (Official)": "stone-town-colonial-building-clock-tower.jpg",
     "Jozani Chwaka Bay Nat. Park": "woman-smiling-next-to-monkey-jozani-forest.jpg",
-    "Kuza Cave": "children-walking-tidal-flats-zanzibar.jpg",
-    "Mangapwani Slave Chambers": "stone-town-church-palm-tree-statues.jpg",
+    "Kuza Cave": "people-swimming-turquoise-water-steps.jpg",
+    "Mangapwani Slave Chambers": "stone-statue-chained-person-zanzibar.jpg",
     "Menai Bay Conservation": "dhow-boat-turquoise-water-zanzibar.jpg",
-    "Mnarani Marine Turtle Pond": "josephine-monkey-jozani-forest-zanzibar-1.jpg",
-    "Mrembo Spa & Traditional Services": "zanzibar-restaurant-patio-with-palm-trees.jpg",
-    "Nakupenda Sandbank": "beach-stairs-people-boats-cloudy-sky.jpg",
-    "Nakupenda Sandbank (Tour)": "beach-stairs-people-boats-cloudy-sky.jpg",
+    "Mnarani Marine Turtle Pond": "sea-turtles-with-child-zanzibar.jpg",
+    "Mrembo Spa & Traditional Services": "hand-holding-nutmeg-fruits-zanzibar.jpg",
+    "Nakupenda Sandbank": "turquoise-water-sandbar-lone-boat.jpg",
+    "Nakupenda Sandbank (Tour)": "turquoise-water-sandbar-lone-boat.jpg",
     "Old Fort (Cultural Desk)": "stone-town-walking-tour-people-photograph.jpg",
     "Old Fort (Ngome Kongwe)": "stone-town-walking-tour-people-photograph.jpg",
-    "Palace Museum": "aerial-port-coastal-beach-zebra.jpg",
-    "Palace Museum (Official)": "aerial-port-coastal-beach-zebra.jpg",
+    "Palace Museum": "waterfront-buildings-zanzibar-coast.jpg",
+    "Palace Museum (Official)": "waterfront-buildings-zanzibar-coast.jpg",
     "Princess Salme Spice Garden": "hand-holding-nutmeg-fruits-zanzibar.jpg",
     "Prison Island (Changuu)": "boats-pier-under-cloudy-sky-water.jpg",
     "Prison Island (Tour Desk)": "boats-pier-under-cloudy-sky-water.jpg",
     "Seaweed Center Paje": "people-collecting-sea-items-zanzibar-beach.jpg",
     "Spice Farm Tour (Kidichi)": "hand-holding-nutmeg-fruits-zanzibar.jpg",
     "Stone Town Food Market": "vegetable-stall-at-outdoor-market.jpg",
-    "Zanzibar Butterfly (Park)": "jozani-forest-tourists-monkeys-wildlife.jpg",
+    "Zanzibar Butterfly (Park)": "jozani-forest-walking-path-green-arches.jpg",
     "Zanzibar Horse Riding (Nungwi)": "women-horse-riding-ocean-water-zanzibar.jpg",
-    "ZIFF Festival Center": "zanzibar-restaurant-patio-with-palm-trees.jpg",
+    "ZIFF Festival Center": "stone-town-colonial-building-clock-tower.jpg",
     "The Rock Restaurant": "zanzibar-rock-house-with-tourists.jpg",
     "Old Fort": "stone-town-walking-tour-people-photograph.jpg",
-    "Palace Museum": "aerial-port-coastal-beach-zebra.jpg",
-    "Nakupenda Sandbank": "beach-stairs-people-boats-cloudy-sky.jpg",
+    "Palace Museum": "waterfront-buildings-zanzibar-coast.jpg",
+    "Nakupenda Sandbank": "turquoise-water-sandbar-lone-boat.jpg",
     "House of Wonders": "stone-town-colonial-building-clock-tower.jpg",
     "Forodhani Market": "zanzibar-night-food-stall-skewers-bread.jpg",
     "Prison Island": "boats-pier-under-cloudy-sky-water.jpg",
-    "Baraka Aquarium": "sea-turtle-snorkeling-coral-reef.jpg",
+    "Baraka Aquarium": "sea-turtles-swimming-zanzibar-water.jpg",
     "Spice Farm Tour": "hand-holding-nutmeg-fruits-zanzibar.jpg",
     "Nungwi Beach": "children-wading-beach-dhow-boats.jpg",
-    "Mnarani Marine Turtle Pond": "josephine-monkey-jozani-forest-zanzibar-1.jpg",
-    "Kuza Cave": "children-walking-tidal-flats-zanzibar.jpg"
+    "Mnarani Marine Turtle Pond": "sea-turtles-with-child-zanzibar.jpg",
+    "Kuza Cave": "people-swimming-turquoise-water-steps.jpg"
   };
   const attrCategoryArrays = {
-    "Dive Center": ["jozani-forest-group-coconut-pose.jpg","woman-smiling-next-to-monkey-jozani-forest.jpg","snorkeling-zanzibar-shallow-water-coral.jpg","tropical-fish-swimming-clear-water.jpg","coral-reef-underwater-fish-zanzibar.jpg","coral-reef-fish-snorkeling-zanzibar.jpg","underwater-coral-reef-fish-zanzibar-1.jpg","underwater-coral-reef-fish-zanzibar.jpg","underwater-coral-reef-fish-swimming.jpg","coral-reef-snorkeling-zanzibar-1.jpg","divers-on-boat-zanzibar-ocean.jpg","snorkeling-underwater-selfie-zanzibar.jpg","boys-snorkeling-shallow-water-zanzibar.jpg","underwater-fish-coral-reef-zanzibar.jpg","sea-turtle-snorkeling-coral-reef.jpg"],
-    "Water Sports": ["jozani-forest-group-coconut-pose.jpg","woman-smiling-next-to-monkey-jozani-forest.jpg","kitesurfing-turquoise-ocean-zanzibar.jpg","women-horse-riding-ocean-water-zanzibar.jpg","atv-ride-dirt-path-green-landscape.jpg"],
+    "Dive Center": ["snorkeling-zanzibar-shallow-water-coral.jpg","tropical-fish-swimming-clear-water.jpg","coral-reef-underwater-fish-zanzibar.jpg","coral-reef-fish-snorkeling-zanzibar.jpg","underwater-coral-reef-fish-zanzibar-1.jpg","underwater-coral-reef-fish-zanzibar.jpg","underwater-coral-reef-fish-swimming.jpg","coral-reef-snorkeling-zanzibar-1.jpg","divers-on-boat-zanzibar-ocean.jpg","snorkeling-underwater-selfie-zanzibar.jpg","boys-snorkeling-shallow-water-zanzibar.jpg","underwater-fish-coral-reef-zanzibar.jpg","sea-turtle-snorkeling-coral-reef.jpg"],
+    "Water Sports": ["kitesurfing-turquoise-ocean-zanzibar.jpg","women-horse-riding-ocean-water-zanzibar.jpg","atv-ride-dirt-path-green-landscape.jpg","dhow-boat-turquoise-water-zanzibar.jpg"],
     "Restaurant": ["zanzibar-night-food-stall-skewers-bread.jpg","street-food-stall-waterfront-zanzibar.jpg","zanzibar-rock-house-with-tourists.jpg"],
-    "Attraction": ["snorkeling-with-dolphin-zanzibar-ocean.jpg","zanzibar-classroom-children-students.jpg","ocean-view-with-coastal-buildings.jpg","zanzibar-market-stalls-people-umbrellas.jpg","man-herding-sheep-village-huts.jpg"]
+    "Attraction": ["snorkeling-with-dolphin-zanzibar-ocean.jpg","ocean-view-with-coastal-buildings.jpg","zanzibar-market-stalls-people-umbrellas.jpg","stone-town-colonial-building-clock-tower.jpg"]
   };
   function hashPick(str, arr) { let h=0; const st=String(str||""); for (let i=0;i<st.length;i++) h=(h*31+st.charCodeAt(i))>>>0; return arr[h%arr.length]; }
 eleventyConfig.addFilter("attractionImg", (name, category) =>
@@ -343,6 +343,15 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
   eleventyConfig.addNunjucksFilter("cdnFile", function(file) {
     const f = String(file || "default-tour-hero.jpg");
     return `/.netlify/images?url=${encodeURIComponent("/images/" + f)}&fm=webp&q=85`;
+  });
+
+  // Canonical alt text filter ensuring exact identical alt text for every image site-wide
+  eleventyConfig.addNunjucksFilter("canonicalAlt", function(file, fallback) {
+    const f = String(file || "").replace(/^\/images\//, "").replace(/\?.*$/, "");
+    if (metadataIndex[f] && metadataIndex[f].alt_text) {
+      return metadataIndex[f].alt_text;
+    }
+    return fallback || metadataIndex["default-tour-hero.jpg"]?.alt_text || "Spice and Sail Zanzibar";
   });
 
   // Add filter to get raw hero image path (for GitHub Pages / non-Netlify hosts)

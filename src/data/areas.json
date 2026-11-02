@@ -157,19 +157,19 @@
       "name": "Kiwengwa",
       "island": "Unguja",
       "description": "Northeast coast \u2014 long white-sand beach, all-inclusive resorts, calm waters protected by reef, and easy access to Mnemba Atoll.",
-      "hotel_count": 5,
+      "hotel_count": 7,
       "attraction_count": 1,
       "hotels": [
         "Bluebay Beach Resort & Spa",
         "Kiwengwa Beach Resort",
         "Melia Zanzibar",
         "Villa Stecchini",
-        "Blue Bay Diving Center",
-        "The Z Hotel"
+        "Mvuvi Resort",
+        "Shooting Star Lodge",
+        "Sultan Sands Island Resort"
       ],
       "attractions": [
-        "Kiwengwa Beach",
-        "Blue Bay Diving Center"
+        "Kiwengwa Beach"
       ],
       "tours": [
         "mnemba-snorkeling",

@@ -34,6 +34,8 @@ permalink: "/hotels/index.html"
             {% endif %}
             {% if hotel.whatsapp %}
               <a href="https://wa.me/{{ hotel.whatsapp | replace('+', '') | replace(' ', '') }}" target="_blank" rel="noopener" class="contact-item contact-whatsapp" title="WhatsApp {{ hotel.name }}">💬 WhatsApp</a>
+            {% else %}
+              <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20inquire%20about%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="contact-item contact-whatsapp" title="WhatsApp Inquiry for {{ hotel.name }}">💬 WhatsApp Inquiry</a>
             {% endif %}
             {% if hotel.email %}
               <a href="mailto:{{ hotel.email }}" class="contact-item contact-email" title="Email {{ hotel.name }}">✉️ {{ hotel.email }}</a>
@@ -68,7 +70,7 @@ permalink: "/hotels/index.html"
       <div class="area-quick-picks">
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="{{ 'nungwi-beach-aerial-resort-turquoise-water.jpg' | cdnFile }}" alt="Nungwi and Kendwa — north-coast beach, nightlife and watersports" loading="lazy">
+            <img src="{{ 'nungwi-beach-aerial-resort-turquoise-water.jpg' | cdnFile }}" alt="{{ 'nungwi-beach-aerial-resort-turquoise-water.jpg' | canonicalAlt }}" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Nungwi & Kendwa — Nightlife & Watersports</h3>
@@ -77,7 +79,7 @@ permalink: "/hotels/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="{{ 'zanzibar-beach-women-walking-white-sand.jpg' | cdnFile }}" alt="Paje and Jambiani — white sand beaches and turquoise lagoon" loading="lazy">
+            <img src="{{ 'zanzibar-beach-women-walking-white-sand.jpg' | cdnFile }}" alt="{{ 'zanzibar-beach-women-walking-white-sand.jpg' | canonicalAlt }}" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Paje & Jambiani — Kitesurfing & Adventure</h3>
@@ -86,7 +88,7 @@ permalink: "/hotels/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="{{ 'stone-town-ornate-carved-door-calligraphy.jpg' | cdnFile }}" alt="Stone Town — culture and history" loading="lazy">
+            <img src="{{ 'stone-town-ornate-carved-door-calligraphy.jpg' | cdnFile }}" alt="{{ 'stone-town-ornate-carved-door-calligraphy.jpg' | canonicalAlt }}" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Stone Town — Culture & History</h3>
@@ -95,7 +97,7 @@ permalink: "/hotels/index.html"
         </article>
         <article class="quick-pick reveal">
           <div class="quick-pick-image">
-            <img src="{{ 'zanzibar-rock-house-with-tourists.jpg' | cdnFile }}" alt="Bwejuu and Michamvi — The Rock Restaurant on the southeast coast" loading="lazy">
+            <img src="{{ 'zanzibar-rock-house-with-tourists.jpg' | cdnFile }}" alt="{{ 'zanzibar-rock-house-with-tourists.jpg' | canonicalAlt }}" loading="lazy">
           </div>
           <div class="quick-pick-content">
             <h3>Bwejuu & Michamvi — Luxury & Seclusion</h3>
