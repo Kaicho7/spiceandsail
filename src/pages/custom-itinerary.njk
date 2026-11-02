@@ -1,0 +1,875 @@
+---
+title: Custom Itinerary Builder
+description: Drag and drop items to create your personalized Zanzibar travel itinerary
+permalink: /custom-itinerary/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} - Spice & Sail Tours</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Custom itinerary builder for Zanzibar activities -->
+  </div>
+
+  <!-- Scripts loaded via build process -->
+  <script>
+    // Create Vue app instance
+    const { createApp } = Vue;
+
+    // Simple inline component for custom itinerary builder
+    const ItineraryScheduler = {
+      template: "<!-- Custom itinerary builder for Zanzibar activities -->",
+        <div class="itinerary-container">
+          <header class="header">
+            <h1>🎒 Custom Itinerary Builder</h1>
+            <p>Drag and drop items to create your perfect Zanzibar adventure</p>
+          </header>
+
+          <main class="itinerary-content">
+            <section class="items-sidebar">
+              <h2>Available Activities</h2>
+              <div class="search-box">
+                <input type="text" placeholder="Search tours, beaches, experiences..." v-model="searchQuery" @input="filterItems()">
+              </div>
+              <div class="category-filters">
+                <button
+                  v-for="(label, type) in categories"
+                  :key="type"
+                  :class="{ active: selectedCategory === type }"
+                  @click="selectedCategory = type"
+                >
+                  {{ label }}
+                </button>
+              </div>
+              <div class="items-grid">
+                <div class="item-card"
+                  :draggable="true"
+                  @dragstart="startDrag($event, item)"
+                  @dragend="endDrag($event, item)"
+                >
+                  <div class="item-image">
+                    <img src="https://picsum.photos/seed/{{ item.id }}" alt="{{ item.title or item.name }}">
+                  <div class="item-info">
+                    <h3>{{ item.title or item.name }}</h3>
+                    <p class="item-meta">{{ item.zone or item.island or 'Various locations' }}</p>
+                    <p class="item-description">{% if item.description %}{{ item.description.substring(0, 100) }}...{% endif %}</p>
+                    <div class="item-footer">
+                      <span class="price">{{ item.price_display or item.price or 'From $0' }}</span>
+                      <span class="category-tag">{{ item.type | getCategoryName }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="itinerary-main">
+              <h2>Your Planned Itinerary</h2>
+              <div class="day-planner">
+                <div
+                  v-for="day in 5"
+                  :key="day"
+                  class="day-column"
+                  @dragover.prevent
+                  @drop="dropItem($event, day)"
+                >
+                  <div class="day-header">
+                    <h3>Day {{ day }}</h3>
+                    <span class="day-stats">0 items</span>
+                  </div>
+                  <div class="day-items">
+                    <div
+                      v-for="item in getItemsForDay(day)"
+                      :key="item.id || item.slug"
+                      class="day-item"
+                      @dragover.prevent
+                      @drop="reorderItem($event, item, day)"
+                    >
+                      <div class="item-indicator" :style="{ backgroundColor: getCategoryColor(item.type) }">
+                        {{ item.type | getCategoryIcon }}
+                      </div>
+                      <div class="day-item-info">
+                        <h4>{{ item.title or item.name }}</h4>
+                        <p>{% if item.description %}{{ item.description.substring(0, 60) }}...{% else %}{{ item.short_description or '' }}{% endif %}</p>
+                        <div class="item-meta">
+                          <span>⏰ {{ item.startTime or 'Flexible' }}</span>
+                          <span>💰 {{ item.price_display or item.price }}</span>
+                        </div>
+                      </div>
+                      <button class="remove-day-item" @click="removeItem(item)">×</button>
+                    </div>
+                    <div v-if="getItemsForDay(day).length === 0" class="empty-day">
+                      <p>Drop items here</p>
+                      <small>Drag from left panel</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <section class="itinerary-summary">
+                <h3>Travel Summary</h3>
+                <div class="summary-cards">
+                  <div class="summary-card">
+                    <span class="card-icon">📅</span>
+                    <div>
+                      <h4>Days</h4>
+                      <p>{{ totalDays }} days planned</p>
+                    </div>
+                  </div>
+                  <div class="summary-card">
+                    <span class="card-icon">🗂️</span>
+                    <div>
+                      <h4>Items</h4>
+                      <p>{{ allItems.length }} activities</p>
+                    </div>
+                  </div>
+                  <div class="summary-card">
+                    <span class="card-icon">💰</span>
+                    <div>
+                      <h4>Budget</h4>
+                      <p>Estimated: ${{ totalCost }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="action-buttons">
+                  <button class="whatsapp-btn" @click="shareItinerary">
+                    📱 Share via WhatsApp
+                  </button>
+                  <button class="save-btn" @click="saveItinerary">💾 Save Itinerary</button>
+                  <button class="reset-btn" @click="resetItinerary">🔄 Reset</button>
+                </div>
+              </section>
+            </section>
+          </main>
+
+          <footer class="footer">
+            <p>Need help booking? Contact us at <strong>+255 672 450 934</strong> or <a href="mailto:info@spicesail.com">info@spicesail.com</a></p>
+          </footer>
+        </div>
+      `,
+      data() {
+        return {
+          items: [],
+          categories: {
+            'tours': 'Tours',
+            'attractions': 'Attractions',
+            'hotels': 'Hotels',
+            'transfers': 'Transfers',
+            'experiences': 'Experiences'
+          },
+          selectedCategory: 'all',
+          searchQuery: '',
+          filteredItems: [],
+          itinerary: {
+            items: [],
+            days: 5
+          },
+          draggingItem: null
+        };
+      },
+      computed: {
+        allItems() {
+          return this.itinerary.items;
+        },
+        totalDays() {
+          return this.itinerary.days;
+        },
+        totalCost() {
+          return this.itinerary.items.reduce((sum, item) => sum + (item.price || 0), 0);
+        }
+      },
+      async mounted() {
+        await this.loadItems();
+        this.filterItems();
+      },
+      methods: {
+        async loadItems() {
+          try {
+            const dataDir = './src/data';
+            const [tours, attractions, hotels, transfers, experiences] = await Promise.all([
+              fetch('/data/tours.json').then(r => r.json()),
+              fetch('/data/attractions.json').then(r => r.json()),
+              fetch('/data/hotels.json').then(r => r.json()),
+              fetch('/data/transfers.json').then(r => r.json()),
+              fetch('/data/experiences.json').then(r => r.json())
+            ]);
+
+            this.items = [
+              ...tours.map(t => ({ ...t, type: 'tours' })),
+              ...attractions.map(a => ({ ...a, type: 'attractions' })),
+              ...hotels.map(h => ({ ...h, type: 'hotels' })).slice(0, 15),
+              ...transfers.map(t => ({ ...t, type: 'transfers' })),
+              ...experiences.map(e => ({ ...e, type: 'experiences' }))
+            ];
+          } catch (error) {
+            console.error('Failed to load items:', error);
+            // Fallback to local development data
+            this.loadLocalData();
+          }
+        },
+
+        loadLocalData() {
+          // Fallback mock data for demonstration
+          this.items = [
+            {
+              id: 1,
+              type: 'tours',
+              title: 'Stone Town Walking Tour',
+              description: 'Historic walking tour of Zanzibar\'s famous Stone Town',
+              zone: 'Stone Town',
+              price_display: '$50',
+              price: 50,
+              startTime: '09:00'
+            },
+            {
+              id: 2,
+              type: 'hotels',
+              title: 'Blue Beach Resort',
+              description: 'Luxury beach resort in Nungwi',
+              zone: 'Nungwi',
+              price_display: '$150/night',
+              price: 150,
+              startTime: '12:00'
+            },
+            {
+              id: 3,
+              type: 'experiences',
+              title: 'Spice Farm Visit',
+              description: 'Tour of Zanzibar\'s famous spice farms',
+              zone: 'Stone Town',
+              price_display: '$30',
+              price: 30,
+              startTime: '14:00'
+            },
+            {
+              id: 4,
+              type: 'transfers',
+              title: 'Airport Transfer',
+              description: 'Transfer from Abeid Amani Karume Airport',
+              zone: 'Nungwi',
+              price_display: '$40',
+              price: 40,
+              startTime: '15:00'
+            }
+          ];
+        },
+
+        filterItems() {
+          let filtered = this.items;
+
+          if (this.selectedCategory !== 'all') {
+            filtered = filtered.filter(item => item.type === this.selectedCategory);
+          }
+
+          if (this.searchQuery) {
+            const q = this.searchQuery.toLowerCase();
+            filtered = filtered.filter(item => {
+              const title = (item.title || item.name || '').toLowerCase();
+              const description = (item.description || '').toLowerCase();
+              const zone = (item.zone || '').toLowerCase();
+              return title.includes(q) || description.includes(q) || zone.includes(q);
+            });
+          }
+
+          this.filteredItems = filtered;
+        },
+
+        startDrag(event, item) {
+          this.draggingItem = item;
+          event.dataTransfer.effectAllowed = 'move';
+          event.dataTransfer.setData('text/plain', item.id);
+        },
+
+        endDrag() {
+          this.draggingItem = null;
+        },
+
+        dropItem(event, day) {
+          event.preventDefault();
+          if (this.draggingItem) {
+            this.addItemToItinerary(this.draggingItem, day);
+          }
+        },
+
+        reorderItem(event, item, day) {
+          if (this.draggingItem && this.draggingItem.id !== item.id) {
+            this.removeItemFromItinerary(this.draggingItem);
+            this.addItemToItinerary(this.draggingItem, day);
+          }
+        },
+
+        addItemToItinerary(item, day) {
+          const newItem = {
+            ...item,
+            id: item.id || Date.now(),
+            day,
+            startTime: item.startTime || '09:00',
+            endTime: item.endTime || '12:00'
+          };
+          this.itinerary.items.push(newItem);
+        },
+
+        removeItemFromItinerary(item) {
+          this.itinerary.items = this.itinerary.items.filter(i => i.id !== item.id);
+        },
+
+        getItemsForDay(day) {
+          return this.itinerary.items.filter(item => item.day === day);
+        },
+
+        getCategoryColor(type) {
+          const colors = {
+            tours: '#3B82F6',
+            hotels: '#10B981',
+            experiences: '#F59E0B',
+            attractions: '#EF4444',
+            transfers: '#8B5CF6'
+          };
+          return colors[type] || '#CBD5E1';
+        },
+
+        getCategoryIcon(type) {
+          const icons = {
+            tours: '🚌',
+            hotels: '🏨',
+            experiences: '📸',
+            attractions: '📍',
+            transfers: '🚗'
+          };
+          return icons[type] || '📍';
+        },
+
+        getCategoryName(type) {
+          const names = {
+            tours: 'Tour',
+            hotels: 'Hotel',
+            experiences: 'Experience',
+            attractions: 'Attraction',
+            transfers: 'Transfer'
+          };
+          return names[type] || type;
+        },
+
+        getItemImage(item) {
+          // Return appropriate image based on item type and id
+          const images = {
+            tours: [
+              '/images/tours/stone-town.jpg',
+              '/images/tours/spice-farm.jpg',
+              '/images/tours/breakfast-boat.jpg',
+              '/images/tours/dolphin-safari.jpg'
+            ],
+            hotels: [
+              '/images/hotels/blue-beach.jpg',
+              '/images/hotels/saffire-beach.jpg',
+              '/images/hotels/tamu-piali.jpg'
+            ],
+            experiences: [
+              '/images/experiences/spice-farm.jpg',
+              '/images/experiences/dolphin-watching.jpg',
+              '/images/experiences/snorkeling.jpg'
+            ],
+            attractions: [
+              '/images/attractions/stone-town.jpg',
+              '/images/attractions/dolphins-park.jpg',
+              '/images/attractions/kibwenji-forest.jpg'
+            ],
+            transfers: [
+              '/images/transfers/airport-transfer.jpg',
+              '/images/transfers/boat-transfer.jpg'
+            ]
+          };
+
+          const category = item.type;
+          const imageArray = images[category] || images.attractions;
+          return imageArray[Math.abs(item.id || 0) % imageArray.length];
+        },
+
+        useFallbackImage(event) {
+          event.target.src = '/images/placeholder.jpg';
+        },
+
+        shareItinerary() {
+          const message = this.formatForWhatsApp();
+          const encoded = encodeURIComponent(message);
+          const phone = '255672450934';
+          window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
+        },
+
+        formatForWhatsApp() {
+          let message = 'Hello! Here is my custom Zanzibar itinerary:\n\n';
+          for (let day = 1; day <= this.itinerary.days; day++) {
+            const items = this.getItemsForDay(day);
+            if (items.length > 0) {
+              message += `Day ${day}:\n`;
+              items.forEach(item => {
+                message += `• ${item.title || item.name} (${this.getCategoryName(item.type)})\n`;
+                if (item.price_display) message += `  Price: ${item.price_display}\n`;
+              });
+              message += '\n';
+            }
+          }
+          message += `Total Cost: ~$${this.totalCost}\n`;
+          message += '\nPlease contact me for booking! 📞 +255 672 450 934';
+          return message;
+        },
+
+        saveItinerary() {
+          const itineraryData = {
+            items: this.itinerary.items,
+            days: this.itinerary.days,
+            totalCost: this.totalCost,
+            generatedAt: new Date().toISOString()
+          };
+          localStorage.setItem('zanzibar-itinerary', JSON.stringify(itineraryData));
+          alert('Itinerary saved! You can share it with us for booking assistance.');
+        },
+
+        resetItinerary() {
+          if (confirm('Are you sure you want to reset your itinerary?')) {
+            this.itinerary.items = [];
+          }
+        }
+      }
+    };
+
+    // Create and mount the app
+    const app = createApp({
+      template: '#app-template',
+      components: { ItineraryScheduler }
+    });
+
+    // Store the component for manual mounting
+    window.ItineraryScheduler = ItineraryScheduler;
+
+    // Mount the app when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      app.mount('#app');
+    });
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    .itinerary-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      min-height: 100vh;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .itinerary-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      min-height: 600px;
+    }
+
+    .items-sidebar {
+      background: #F8FAFC;
+      padding: 1.5rem;
+      border-right: 1px solid #E2E8F0;
+    }
+
+    .items-sidebar h2 {
+      color: #1E3A8A;
+      margin-bottom: 1rem;
+    }
+
+    .search-box {
+      margin-bottom: 1rem;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .category-filters button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #D1D5DB;
+      background: white;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .category-filters button.active {
+      background: #3B82F6;
+      color: white;
+      border-color: #3B82F6;
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .item-card {
+      display: flex;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: grab;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .item-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .item-image {
+      width: 120px;
+      height: 120px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item-info {
+      padding: 1rem;
+      flex: 1;
+    }
+
+    .item-info h3 {
+      color: #1E3A8A;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .item-meta {
+      color: #64748B;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-description {
+      color: #6B7280;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .item-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #059669;
+      font-size: 1.1rem;
+    }
+
+    .category-tag {
+      background: #E0F2FE;
+      color: #0369A1;
+      padding: 0.25rem 0.5rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    .itinerary-main {
+      padding: 1.5rem;
+    }
+
+    .itinerary-main h2 {
+      color: #1E3A8A;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .day-planner {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .day-column {
+      background: #F9FAFB;
+      border-radius: 8px;
+      padding: 1rem;
+      min-height: 400px;
+      border: 2px dashed #E5E7EB;
+      transition: border-color 0.2s;
+    }
+
+    .day-column:hover {
+      border-color: #3B82F6;
+    }
+
+    .day-header {
+      text-align: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .day-header h3 {
+      color: #374151;
+      margin-bottom: 0.25rem;
+    }
+
+    .day-stats {
+      font-size: 0.85rem;
+      color: #6B7280;
+    }
+
+    .day-items {
+      min-height: 200px;
+    }
+
+    .day-item {
+      background: white;
+      border-radius: 6px;
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .item-indicator {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .day-item-info {
+      flex: 1;
+    }
+
+    .day-item-info h4 {
+      color: #1F2937;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .day-item-info p {
+      color: #6B7280;
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: #9CA3AF;
+    }
+
+    .remove-day-item {
+      background: #EF4444;
+      color: white;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .empty-day {
+      border: 2px dashed #D1D5DB;
+      border-radius: 6px;
+      padding: 2rem;
+      text-align: center;
+      color: #9CA3AF;
+      margin-top: 2rem;
+    }
+
+    .itinerary-summary {
+      background: #F8FAFC;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .itinerary-summary h3 {
+      color: #1E3A8A;
+      margin-bottom: 1rem;
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+    }
+
+    .summary-card h4 {
+      color: #374151;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .summary-card p {
+      color: #059669;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .action-buttons button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+    }
+
+    .save-btn {
+      background: #3B82F6;
+      color: white;
+    }
+
+    .reset-btn {
+      background: #EF4444;
+      color: white;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #6B7280;
+      border-top: 1px solid #E5E7EB;
+      margin-top: 2rem;
+    }
+
+    .footer strong {
+      color: #3B82F6;
+    }
+
+    .footer a {
+      color: #3B82F6;
+      text-decoration: none;
+    }
+
+    @media (max-width: 968px) {
+      .itinerary-content {
+        grid-template-columns: 1fr;
+      }
+
+      .day-planner {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .summary-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Animation for drag and drop */
+    .day-item {
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+
+  <style id="app-template">
+    [hidden] {
+      display: none !important;
+    }
+  </style>
+</body>
+</html>

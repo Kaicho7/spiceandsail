@@ -1,0 +1,26 @@
+[
+  {
+    "id": "27e3033a-686f-4bab-9dc0-b5d92a6f4f3f",
+    "activityId": "9aaa2f0f-5e6d-4846-a00e-e084c2123e57",
+    "userId": "user-v1",
+    "userName": "Salma H.",
+    "userAvatar": "",
+    "rating": 5,
+    "comment": "Great paddle!",
+    "photos": [],
+    "createdAt": "2026-11-02T17:41:37.400Z",
+    "verified": true
+  },
+  {
+    "id": "fd3cfee6-a3f1-44b4-a550-31ce20a7c223",
+    "activityId": "b77a7a6e-ea81-4a05-af01-08bc9efb4ce2",
+    "userId": "user-x1",
+    "userName": "Amadou K.",
+    "userAvatar": "",
+    "rating": 4,
+    "comment": "Good trip!",
+    "photos": [],
+    "createdAt": "2026-11-02T17:42:50.312Z",
+    "verified": true
+  }
+]

@@ -1,0 +1,1081 @@
+---
+layout: layouts/base.njk
+permalink: /marketplace/
+navOrder: 5
+eleventyNavigation:
+  key: marketplace
+  title: Local Activities Marketplace
+  parent: main
+---
+
+<div class="marketplace-page">
+  <div class="marketplace-header">
+    <h1>Local Activities Marketplace</h1>
+    <p>Discover unique experiences created by local Zanzibari people</p>
+    <div class="marketplace-actions">
+      <a href="/marketplace/submit" class="submit-activity-btn">
+        <span class="plus-icon">+</span> Share Your Experience
+      </a>
+    </div>
+  </div>
+
+  <div class="marketplace-layout">
+    <!-- Sidebar Filters -->
+    <aside class="marketplace-sidebar">
+      <h3>Filter Activities</h3>
+
+      <div class="filter-group">
+        <label>Category</label>
+        <div class="checkbox-group">
+          {% for category, metadata in categoryMetadata %}
+          <label class="checkbox-label">
+            <input type="checkbox" value="{{ category }}" class="category-filter" />
+            <span>{{ metadata.icon }} {{ metadata.label }}</span>
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label>Price Range</label>
+        <div class="price-range">
+          <input type="range" id="priceMin" min="0" max="100" step="5" value="0" />
+          <input type="range" id="priceMax" min="0" max="100" step="5" value="100" />
+          <div class="price-display">
+            <span id="priceMinDisplay">$0</span>
+            <span id="priceMaxDisplay">$100</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label>Location</label>
+        <select class="location-filter">
+          <option value="">All Locations</option>
+          <option>Stone Town</option>
+          <option>Mnemba Island</option>
+          <option>Deep Sea</option>
+          <option>Mafia Island</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Sort By</label>
+        <select class="sort-filter">
+          <option value="rating">Highest Rated</option>
+          <option value="newest">Newest First</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+
+      <button class="clear-filters-btn" id="clearFilters">Clear All Filters</button>
+    </aside>
+
+    <!-- Activity List -->
+    <div class="marketplace-content">
+      <div class="marketplace-status">
+        <span class="activity-count" id="activityCount">0 activities found</span>
+        <span class="marketplace-loading" id="marketplaceLoading" style="display: none;">Loading...</span>
+      </div>
+
+      <div class="activities-grid" id="activitiesGrid">
+        <!-- Activities will be rendered by activity-list component or JS -->
+        <div class="activity-loading" id="initialLoading">
+          <div class="spinner"></div>
+          <p>Loading activities...</p>
+        </div>
+      </div>
+
+      <div class="no-results" id="noResults" style="display: none;">
+        <div class="no-results-icon">🔍</div>
+        <h3>No activities found</h3>
+        <p>Try adjusting your filters or search for something else.</p>
+        <button class="submit-activity-btn" onclick="location.href='/marketplace/submit'">
+          Be the first to share an activity
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity Detail Modal -->
+  <div class="activity-modal" id="activityModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+  const state = {
+    activities: [],
+    filters: {
+      categories: new Set(),
+      priceRange: [0, 100],
+      location: '',
+      sort: 'rating'
+    }
+  };
+
+    const elements = {
+      grid: document.getElementById('activitiesGrid'),
+      count: document.getElementById('activityCount'),
+      loading: document.getElementById('marketplaceLoading'),
+      initialLoading: document.getElementById('initialLoading'),
+      noResults: document.getElementById('noResults'),
+      modal: document.getElementById('activityModal'),
+      modalBody: document.getElementById('modalBody'),
+      modalOverlay: document.getElementById('modalOverlay'),
+      modalClose: document.getElementById('modalClose'),
+      clearFilters: document.getElementById('clearFilters'),
+      priceMin: document.getElementById('priceMin'),
+      priceMax: document.getElementById('priceMax'),
+      priceMinDisplay: document.getElementById('priceMinDisplay'),
+      priceMaxDisplay: document.getElementById('priceMaxDisplay')
+    };
+
+    async function loadActivities() {
+      elements.loading.style.display = 'block';
+      elements.initialLoading.style.display = 'block';
+
+      try {
+        // Fetch activities from the Netlify function instead of Node require
+        const response = await fetch('/.netlify/functions/marketplace', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        const result = await response.json();
+        if (result.success) {
+          state.activities = result.activities;
+          renderActivities();
+        } else {
+          console.error('Failed to load activities:', result.error);
+          elements.initialLoading.innerHTML = '<p class="error-text">Failed to load activities. Please refresh the page.</p>';
+        }
+      } catch (error) {
+        console.error('Failed to load activities:', error);
+        elements.initialLoading.innerHTML = `
+          <p class="error-text">Failed to load activities. Please refresh the page.</p>
+        `;
+      } finally {
+        elements.loading.style.display = 'none';
+        elements.initialLoading.style.display = 'none';
+      }
+    }
+
+    function renderActivities() {
+      const activities = applyFilters(state.activities);
+
+      elements.count.textContent = `${activities.length} activit${activities.length === 1 ? 'y' : 'ies'} found`;
+
+      if (activities.length === 0) {
+        elements.grid.style.display = 'none';
+        elements.noResults.style.display = 'block';
+        return;
+      }
+
+      elements.grid.style.display = 'grid';
+      elements.noResults.style.display = 'none';
+
+      elements.grid.innerHTML = activities.map(activity => `
+        <div class="activity-card" data-id="${activity.id}" onclick="openActivityDetail('${activity.id}')">
+          <div class="activity-card-image" style="background-image: url('${activity.images[0] || '/assets/images/placeholder-activity.jpg'}')">
+            <span class="activity-category">${activity.categoryMetadata.icon} ${activity.categoryMetadata.label}</span>
+            <span class="activity-price">$${activity.pricing.basePrice}</span>
+          </div>
+          <div class="activity-card-body">
+            <h3 class="activity-card-title">${activity.title}</h3>
+            <div class="activity-card-location">
+              <span class="location-icon">📍</span>
+              <span>${activity.location.area}</span>
+            </div>
+            <p class="activity-card-duration">${activity.duration}</p>
+            <div class="activity-card-footer">
+              <div class="activity-rating">
+                <span class="star-icon">★</span>
+                <span>${activity.rating.toFixed(1)}</span>
+                <span class="review-count">(${activity.reviewCount} reviews)</span>
+              </div>
+              <div class="activity-host">
+                <span class="host-avatar">${getInitials(activity.host.name)}</span>
+                <span class="host-name">${activity.host.name}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function getInitials(name) {
+      const parts = name.split(' ');
+      return parts.slice(0, 2).map(p => p[0]).join('').toUpperCase();
+    }
+
+    function applyFilters(activities) {
+      let filtered = [...activities];
+
+      // Category filter
+      if (state.filters.categories.size > 0) {
+        filtered = filtered.filter(a => state.filters.categories.has(a.category));
+      }
+
+      // Price filter
+      const [min, max] = state.filters.priceRange;
+      filtered = filtered.filter(a => a.pricing.basePrice >= min && a.pricing.basePrice <= max);
+
+      // Location filter
+      if (state.filters.location) {
+        filtered = filtered.filter(a => a.location.area.toLowerCase().includes(state.filters.location.toLowerCase()));
+      }
+
+      // Sort
+      switch (state.filters.sort) {
+        case 'newest':
+          filtered.sort((a, b) => new Date(b.metadata.createdAt) - new Date(a.metadata.createdAt));
+          break;
+        case 'price-low':
+          filtered.sort((a, b) => a.pricing.basePrice - b.pricing.basePrice);
+          break;
+        case 'price-high':
+          filtered.sort((a, b) => b.pricing.basePrice - a.pricing.basePrice);
+          break;
+        default: // rating
+          filtered.sort((a, b) => b.rating - a.rating);
+      }
+
+      return filtered;
+    }
+
+    function openActivityDetail(activityId) {
+      const activity = state.activities.find(a => a.id === activityId);
+      if (!activity) return;
+
+      elements.modalBody.innerHTML = `
+        <div class="modal-header">
+          <div class="modal-image" style="background-image: url('${activity.images[0] || '/assets/images/placeholder-activity.jpg'}')"></div>
+          <div class="modal-title-section">
+            <h2>${activity.title}</h2>
+            <div class="modal-meta">
+              <span>${activity.categoryMetadata.icon} ${activity.categoryMetadata.label}</span>
+              <span>📍 ${activity.location.area}</span>
+              <span>⏱ ${activity.duration}</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="modal-description">
+            <h3>About this experience</h3>
+            <p>${activity.longDescription || activity.description}</p>
+          </div>
+
+          <div class="modal-highlights">
+            <h3>Highlights</h3>
+            <ul>
+              ${activity.highlights.map(h => `<li>${h}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="modal-pricing">
+            <div class="price-block">
+              <span class="price-amount">$${activity.pricing.basePrice}</span>
+              <span class="price-unit">${activity.pricing.priceUnit}</span>
+            </div>
+            ${activity.pricing.discountPrice ? `
+              <div class="discount-block">
+                <span class="discount-price">$${activity.pricing.discountPrice}</span>
+                <span class="discount-tag">DISCOUNT</span>
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="modal-includes">
+            <h3>What's included</h3>
+            <div class="includes-list">
+              ${activity.included.map(item => `
+                <div class="include-item">
+                  <span class="check-icon">✓</span> <span>${item}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="modal-host">
+            <div class="host-card">
+              <div class="host-avatar-large">${getInitials(activity.host.name)}</div>
+              <div class="host-info">
+                <h4>${activity.host.name}</h4>
+                <p>${activity.host.bio}</p>
+                <div class="host-contact">
+                  <button class="contact-btn" onclick="window.location.href='https://wa.me/${activity.contact.whatsapp.replace(/\\D/g, '')}'">
+                    WhatsApp Host
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-reviews">
+            <h3>Reviews (${activity.reviewCount})</h3>
+            ${activity.reviews.length > 0 ? `
+              <div class="reviews-list">
+                ${activity.reviews.map(review => `
+                  <div class="review-card">
+                    <div class="review-header">
+                      <span class="review-avatar">${getInitials(review.userName)}</span>
+                      <div class="review-author">
+                        <strong>${review.userName}</strong>
+                        <div class="review-stars">${'★'.repeat(Math.round(review.rating))}</div>
+                      </div>
+                    </div>
+                    <p class="review-comment">${review.comment}</p>
+                  </div>
+                `).join('')}
+              </div>
+            ` : '<p class="no-reviews">No reviews yet. Be the first to review!</p>'}
+          </div>
+
+          <div class="modal-booking">
+            <h3>Book this experience</h3>
+            <button class="book-activity-btn" onclick="location.href='/bookings?activity=${activity.id}'">
+              Book Now — $${activity.pricing.basePrice}
+            </button>
+          </div>
+        </div>
+      `;
+
+      elements.modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      elements.modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    document.querySelectorAll('.category-filter').forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          state.filters.categories.add(checkbox.value);
+        } else {
+          state.filters.categories.delete(checkbox.value);
+        }
+        loadActivities();
+      });
+    });
+
+    document.querySelector('.location-filter').addEventListener('change', (e) => {
+      state.filters.location = e.target.value;
+      loadActivities();
+    });
+
+    document.querySelector('.sort-filter').addEventListener('change', (e) => {
+      state.filters.sort = e.target.value;
+      renderActivities();
+    });
+
+    elements.priceMin.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      const max = parseInt(elements.priceMax.value);
+      if (val < max) {
+        state.filters.priceRange[0] = val;
+        elements.priceMinDisplay.textContent = `$${val}`;
+        renderActivities();
+      }
+    });
+
+    elements.priceMax.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      const min = parseInt(elements.priceMin.value);
+      if (val > min) {
+        state.filters.priceRange[1] = val;
+        elements.priceMaxDisplay.textContent = `$${val}`;
+        renderActivities();
+      }
+    });
+
+    elements.clearFilters.addEventListener('click', () => {
+      state.filters = {
+        categories: new Set(),
+        priceRange: [0, 100],
+        location: '',
+        sort: 'rating'
+      };
+
+      document.querySelectorAll('.category-filter').forEach(cb => cb.checked = false);
+      document.querySelector('.location-filter').value = '';
+      document.querySelector('.sort-filter').value = 'rating';
+      elements.priceMin.value = '0';
+      elements.priceMax.value = '100';
+      elements.priceMinDisplay.textContent = '$0';
+      elements.priceMaxDisplay.textContent = '$100';
+
+      loadActivities();
+    });
+
+    // Make openActivityDetail accessible globally for inline onclick handlers
+    window.openActivityDetail = openActivityDetail;
+
+    elements.modalClose.addEventListener('click', closeModal);
+    elements.modalOverlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Initial load
+    loadActivities();
+  });
+</script>
+
+<style>
+.marketplace-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.marketplace-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.marketplace-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.marketplace-header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.marketplace-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-activity-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.submit-activity-btn:hover {
+  background: #357abd;
+}
+
+.plus-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.marketplace-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+.marketplace-sidebar {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+.marketplace-sidebar h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group > label {
+  display: block;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  cursor: pointer;
+}
+
+.checkbox-label input[type='checkbox'] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.price-range {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.price-range input[type='range'] {
+  width: 100%;
+}
+
+.price-display {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #7f8c8d;
+}
+
+.marketplace-sidebar select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.clear-filters-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  color: #2c3e50;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background 0.3s;
+}
+
+.clear-filters-btn:hover {
+  background: #e0e0e0;
+}
+
+.marketplace-content {
+  min-width: 0;
+}
+
+.marketplace-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.activity-count {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.marketplace-loading {
+  color: #4a90e2;
+  font-size: 0.9rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.activity-category {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  align-self: flex-start;
+}
+
+.activity-price {
+  background: #4a90e2;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.activity-card-body {
+  padding: 1rem;
+}
+
+.activity-card-title {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.activity-card-location {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #7f8c8d;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.activity-card-duration {
+  color: #95a5a6;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.activity-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.activity-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.star-icon {
+  color: #f1c40f;
+}
+
+.review-count {
+  color: #95a5a6;
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
+.activity-host {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.host-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #4a90e2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.host-name {
+  color: #7f8c8d;
+  font-size: 0.8rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.no-results h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.no-results p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+.activity-loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #7f8c8d;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f0f0f0;
+  border-top-color: #4a90e2;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.activity-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.activity-modal.active {
+  display: block;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  max-width: 720px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 12px;
+  overflow-y: auto;
+  max-height: calc(100vh - 4rem);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-image {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+}
+
+.modal-title-section {
+  padding: 1.5rem;
+}
+
+.modal-title-section h2 {
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+}
+
+.modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.modal-body {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.modal-body h3 {
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.modal-description p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modal-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.modal-highlights li {
+  padding: 0.5rem 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-highlights li::before {
+  content: '✦';
+  color: #4a90e2;
+}
+
+.modal-pricing {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.price-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.price-unit {
+  color: #7f8c8d;
+}
+
+.discount-block {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.discount-price {
+  color: #7f8c8d;
+  text-decoration: line-through;
+}
+
+.discount-tag {
+  background: #e74c3c;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.includes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.include-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+}
+
+.check-icon {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.host-card {
+  display: flex;
+  gap: 1rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.host-avatar-large {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #4a90e2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.host-info h4 {
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.host-info p {
+  color: #7f8c8d;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-btn, .book-activity-btn {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover {
+  background: #1fb958;
+}
+
+.review-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.review-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.review-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #9b59b6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.review-stars {
+  color: #f1c40f;
+  font-size: 0.875rem;
+}
+
+.review-comment {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.no-reviews {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.modal-booking {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+.book-activity-btn {
+  background: #4a90e2;
+  font-size: 1rem;
+  padding: 0.75rem 2.5rem;
+}
+
+.book-activity-btn:hover {
+  background: #357abd;
+}
+
+.error-text {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .marketplace-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .marketplace-sidebar {
+    position: static;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    margin: 0;
+    border-radius: 0;
+    height: 100%;
+    max-height: none;
+  }
+}
+</style>

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "9aaa2f0f-5e6d-4846-a00e-e084c2123e57",
+    "slug": "mangrove-kayak-paddle",
+    "title": "Mangrove Kayak Paddle",
+    "category": "community-tour",
+    "categoryMetadata": {
+      "label": "Community Tours",
+      "icon": "🚶",
+      "color": "#2196F3",
+      "description": "Guided tours led by local community members"
+    },
+    "description": "Paddle through mangrove forests with a local guide.",
+    "longDescription": "",
+    "location": {
+      "area": "Mangapwani",
+      "address": "Mangrove Boardwalk",
+      "coordinates": {
+        "lat": -6.1,
+        "lng": 39.1
+      }
+    },
+    "pricing": {
+      "basePrice": 40,
+      "currency": "USD",
+      "priceUnit": "per-person",
+      "discountPrice": null,
+      "minimumGuests": 1,
+      "maximumGuests": 20
+    },
+    "images": [
+      "https://example.com/kayak.jpg"
+    ],
+    "highlights": [
+      "Mangrove forest",
+      "Birdwatching"
+    ],
+    "included": [
+      "Kayak",
+      "Life vest"
+    ],
+    "notIncluded": [
+      "Transport"
+    ],
+    "duration": "2 hours",
+    "schedule": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "times": [
+        "08:00",
+        "15:00"
+      ]
+    },
+    "contact": {
+      "name": "Salma H.",
+      "phone": "+255111222333",
+      "email": "salma@example.com",
+      "whatsapp": "+255 +255111222333"
+    },
+    "host": {
+      "name": "Salma H.",
+      "bio": "",
+      "experience": "",
+      "avatar": "",
+      "verified": false
+    },
+    "reviews": [],
+    "rating": 5,
+    "reviewCount": 1,
+    "capacity": {
+      "currentBookings": 1,
+      "maximumBookings": 100
+    },
+    "features": {
+      "cancellationPolicy": "flexible",
+      "paymentMethods": [
+        "cash",
+        "mobile-money"
+      ],
+      "languages": [
+        "English",
+        "Swahili"
+      ],
+      "ageRestriction": "all-ages"
+    },
+    "metadata": {
+      "createdAt": "2026-11-02T17:41:34.241Z",
+      "lastUpdated": "2026-11-02T17:41:34.241Z",
+      "isActive": true,
+      "isFeatured": false,
+      "isApproved": true,
+      "approvedAt": "2026-11-02T17:41:34.249Z",
+      "reviewedBy": {
+        "id": "mod-1",
+        "name": "Mod"
+      },
+      "reviewFeedback": "Approved"
+    }
+  },
+  {
+    "id": "b77a7a6e-ea81-4a05-af01-08bc9efb4ce2",
+    "slug": "ocean-fishing-charter",
+    "title": "Ocean Fishing Charter",
+    "category": "fish-market",
+    "categoryMetadata": {
+      "label": "Fish Markets",
+      "icon": "🐟",
+      "color": "#2E7D32",
+      "description": "Local fish markets and seafood experiences"
+    },
+    "description": "Deep sea fishing with local crew.",
+    "longDescription": "",
+    "location": {
+      "area": "Mikindani",
+      "address": "Boat harbor",
+      "coordinates": {
+        "lat": -6.15,
+        "lng": 39.25
+      }
+    },
+    "pricing": {
+      "basePrice": 150,
+      "currency": "USD",
+      "priceUnit": "per-person",
+      "discountPrice": null,
+      "minimumGuests": 1,
+      "maximumGuests": 20
+    },
+    "images": [],
+    "highlights": [
+      "Snapper",
+      "Tuna"
+    ],
+    "included": [
+      "Boat",
+      "Gear",
+      "Snacks"
+    ],
+    "notIncluded": [
+      "Lunch"
+    ],
+    "duration": "6 hours",
+    "schedule": {
+      "days": [
+        "Saturday"
+      ],
+      "times": [
+        "07:00"
+      ]
+    },
+    "contact": {
+      "name": "Amadou K.",
+      "phone": "+255234567890",
+      "email": "amadou@example.com",
+      "whatsapp": "+255 +255234567890"
+    },
+    "host": {
+      "name": "Amadou K.",
+      "bio": "",
+      "experience": "",
+      "avatar": "",
+      "verified": false
+    },
+    "reviews": [],
+    "rating": 4,
+    "reviewCount": 1,
+    "capacity": {
+      "currentBookings": 1,
+      "maximumBookings": 100
+    },
+    "features": {
+      "cancellationPolicy": "flexible",
+      "paymentMethods": [
+        "cash",
+        "mobile-money"
+      ],
+      "languages": [
+        "English",
+        "Swahili"
+      ],
+      "ageRestriction": "all-ages"
+    },
+    "metadata": {
+      "createdAt": "2026-11-02T17:42:29.946Z",
+      "lastUpdated": "2026-11-02T17:42:29.947Z",
+      "isActive": true,
+      "isFeatured": false,
+      "isApproved": true,
+      "approvedAt": "2026-11-02T17:42:29.953Z",
+      "reviewedBy": {
+        "id": "mod-1",
+        "name": "Moderator"
+      },
+      "reviewFeedback": "Approved"
+    }
+  }
+]

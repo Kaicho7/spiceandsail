@@ -19,43 +19,43 @@ module.exports = function(eleventyConfig) {
     }
   }
   
-  // Map tour slug → existing image filename (keyword-scored heroes from SEO re-tag)
+  // Map tour slug → existing image filename (1-to-1 mandatory verified assets)
   const slugMap = {
-    "stone-town-walking-tour": "stone-town-alley-walking-tour-people.jpg",
-    "stone-town-spice-prison-combo": "dhows-floating-turquoise-sea-zanzibar.jpg",
-    "spice-farm": "hand-holding-nutmeg-fruits-zanzibar.jpg",
+    "stone-town-walking-tour": "stone-town-ornate-carved-door-arch.jpg",
+    "stone-town-spice-prison-combo": "stone-town-ornate-carved-door-arch.jpg",
+    "spice-farm": "pineapples-growing-in-tropical-plantation.jpg",
     "village-community-tour": "vegetable-stall-at-outdoor-market.jpg",
-    "safari-blue": "dhow-boat-turquoise-water-zanzibar.jpg",
-    "mnemba-snorkeling": "sea-turtle-snorkeling-coral-reef.jpg",
+    "safari-blue": "aerial-beach-dhow-people-turquoise-water.jpg",
+    "mnemba-snorkeling": "dolphins-swimming-near-boat-tour.jpg",
     "prison-island-nakupenda": "boats-pier-under-cloudy-sky-water.jpg",
     "nakupenda-sandbank": "turquoise-water-sandbar-lone-boat.jpg",
     "chumbe-island": "underwater-fish-coral-reef-zanzibar.jpg",
-    "sunset-dhow-cruise": "dhow-sail-at-sunset-ocean.jpg",
-    "kizimkazi-dolphin-tour": "dolphins-leaping-ocean-zanzibar.jpg",
-    "jozani-forest": "jozani-forest-tourists-monkeys-wildlife.jpg",
-    "kuza-cave-seaweed": "people-collecting-sea-items-zanzibar-beach.jpg",
-    "mikumi-nyerere-day-safari": "safari-vehicle-lion-afar.jpg",
-    "serengeti-3day-flyin": "giraffe-head-profile-trees-background.jpg",
-    "zanzibar-essentials-3day": "stone-town-ornate-carved-door-calligraphy.jpg",
-    "zanzibar-essentials-3-day-pass": "stone-town-ornate-carved-door-calligraphy.jpg"
+    "sunset-dhow-cruise": "dhow-sail-nungwi-beach-zanzibar.jpg",
+    "kizimkazi-dolphin-tour": "dolphins-swimming-near-boat-tour.jpg",
+    "jozani-forest": "red-colobus-monkey-baby-jozani-forest.jpg",
+    "kuza-cave-seaweed": "people-swimming-turquoise-water-steps.jpg",
+    "mikumi-nyerere-day-safari": "elephant-savanna-landscape-tanzania.jpg",
+    "serengeti-3day-flyin": "elephant-savanna-landscape-tanzania.jpg",
+    "zanzibar-essentials-3day": "aerial-beach-dhow-people-turquoise-water.jpg",
+    "zanzibar-essentials-3-day-pass": "aerial-beach-dhow-people-turquoise-water.jpg"
   };
 
   // Map area zone name → existing image filename (for /areas/ cards and zone pages)
   const zoneImage = {
-    "Stone Town": "stone-town-alley-walking-tour-people.jpg",
-    "Nungwi": "children-wading-beach-dhow-boats.jpg",
-    "Kendwa": "aerial-beach-boat-turquoise-water.jpg",
+    "Stone Town": "stone-town-ornate-carved-door-arch.jpg",
+    "Nungwi": "nungwi-beach-aerial-resort-turquoise-water.jpg",
+    "Kendwa": "nungwi-beach-aerial-resort-turquoise-water.jpg",
     "Paje": "zanzibar-beach-palm-trees-thatched-huts.jpg",
     "Jambiani": "women-walking-beach-zanzibar-palm-trees.jpg",
-    "Kiwengwa": "dhow-boats-beach-zanzibar-sand.jpg",
+    "Kiwengwa": "beach-front-hotel-palm-trees-people.jpg",
     "Pongwe / Michamvi": "zanzibar-rock-house-with-tourists.jpg",
-    "Bwejuu / Dongwe": "children-walking-tidal-flats-zanzibar.jpg",
+    "Bwejuu / Dongwe": "beach-front-hotel-palm-trees-people.jpg",
     "Michamvi / Pingwe": "zanzibar-rock-house-with-tourists.jpg",
-    "Kizimkazi / Dimbani": "dolphins-leaping-ocean-zanzibar.jpg",
-    "Fumba / Mbweni": "aerial-beach-zanzibar-turquoise-water.jpg",
-    "Matemwe / Kigomani": "boys-snorkeling-shallow-water-zanzibar.jpg",
+    "Kizimkazi / Dimbani": "dolphins-swimming-near-boat-tour.jpg",
+    "Fumba / Mbweni": "aerial-beach-dhow-people-turquoise-water.jpg",
+    "Matemwe / Kigomani": "sea-turtle-snorkeling-coral-reef.jpg",
     "Chake Chake (Pemba)": "zanzibar-beach-people-playing-kites.jpg",
-    "Wambaa Gulf / Makangale (Pemba)": "dhow-boat-turquoise-water-zanzibar.jpg"
+    "Wambaa Gulf / Makangale (Pemba)": "dhow-sail-nungwi-beach-zanzibar.jpg"
   };
 
   // Load single canonical image catalog (vision-audited)
@@ -91,6 +91,35 @@ module.exports = function(eleventyConfig) {
   // Add global data
   eleventyConfig.addGlobalData("__slugMap", slugMap);
   eleventyConfig.addGlobalData("__zoneImage", zoneImage);
+
+  // Marketplace category metadata (used by /marketplace/ sidebar filters)
+  eleventyConfig.addGlobalData("categoryMetadata", () => {
+    try {
+      const fs = require("fs");
+      const path = require("path");
+      const marketplaceApiPath = path.join(__dirname, "src", "api", "marketplace.js");
+      const marketplaceApi = require(marketplaceApiPath);
+      return marketplaceApi.categoryMetadata || {};
+    } catch (e) {
+      console.error("Error loading marketplace API:", e);
+      return {};
+    }
+  });
+
+  // Category label / icon filters (replaces Vue methods once used on the
+  // custom-itinerary page; backed by the same category metadata map)
+  function loadCategoryMetadata() {
+    try { return require("./src/api/marketplace.js").getCategoryMetadata || (() => null); }
+    catch (e) { return () => null; }
+  }
+  eleventyConfig.addNunjucksFilter("getCategoryName", (cat) => {
+    const meta = loadCategoryMetadata()(cat);
+    return (meta && meta.label) || cat || "Activity";
+  });
+  eleventyConfig.addNunjucksFilter("getCategoryIcon", (cat) => {
+    const meta = loadCategoryMetadata()(cat);
+    return (meta && meta.icon) || "📍";
+  });
 
   // Deduplicated attractions: drop duplicate official/tour/listing variants
   eleventyConfig.addGlobalData("__attractionsDedup", () => {

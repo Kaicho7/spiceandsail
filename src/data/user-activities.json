@@ -1,0 +1,24 @@
+[
+  {
+    "id": "dc49f744-8c59-476b-ab25-354661c64fc1",
+    "userId": "user-v1",
+    "activityId": "9aaa2f0f-5e6d-4846-a00e-e084c2123e57",
+    "bookingId": "e725be0f-948d-4c42-8516-572251173e5f",
+    "status": "upcoming",
+    "checkIn": "2026-12-05",
+    "checkOut": "2026-12-06",
+    "totalCost": 45.2,
+    "createdAt": "2026-11-02T17:41:37.394Z"
+  },
+  {
+    "id": "cffda1e2-e5ea-47d9-9113-584fb88ae1fd",
+    "userId": "user-x1",
+    "activityId": "b77a7a6e-ea81-4a05-af01-08bc9efb4ce2",
+    "bookingId": "475e82e9-e976-464d-bb1d-97efde44c7dd",
+    "status": "upcoming",
+    "checkIn": "2026-12-08",
+    "checkOut": "2026-12-09",
+    "totalCost": 169.5,
+    "createdAt": "2026-11-02T17:42:50.306Z"
+  }
+]

@@ -1,0 +1,159 @@
+[
+  {
+    "id": "spice-farm-1",
+    "name": "Traditional Spice Farm Experience",
+    "description": "Guided tour of authentic Zanzibar spice farms with sampling and cultural history",
+    "category": "Cultural",
+    "zone": "Stone Town",
+    "price": 45,
+    "duration": "3 hours",
+    "image": "spice-farm-experience.jpg",
+    "highlights": [
+      "Spice sampling",
+      "Cultural history",
+      "Farm tour",
+      "Local guide"
+    ],
+    "suitable_for": [
+      "families",
+      "culture",
+      "adventure"
+    ],
+    "available_time": [
+      "morning",
+      "afternoon"
+    ],
+    "age_range": "all ages"
+  },
+  {
+    "id": "dhow-cruise-1",
+    "name": "Traditional Dhow Sunset Cruise",
+    "description": "Sail on authentic wooden dhow with spice, seafood dinner, and live music",
+    "category": "Ocean Adventure",
+    "zone": "Nungwi",
+    "price": 120,
+    "duration": "4 hours",
+    "image": "dhow-cruise-sunset.jpg",
+    "highlights": [
+      "Spice dinner",
+      "Live music",
+      "Sunset views",
+      "Cultural experience"
+    ],
+    "suitable_for": [
+      "honeymoon",
+      "couples",
+      "adventure",
+      "romantic"
+    ],
+    "available_time": [
+      "sunset",
+      "evening"
+    ],
+    "age_range": "adults"
+  },
+  {
+    "id": "turtle-spotting-1",
+    "name": "Turtle Beach Spotting",
+    "description": "Visit pristine beaches for turtle nesting season viewing (seasonal)",
+    "category": "Nature",
+    "zone": "Paje",
+    "price": 30,
+    "duration": "2 hours",
+    "image": "turtle-spotting-beach.jpg",
+    "highlights": [
+      "Turtle watching",
+      "Beach relaxation",
+      "Educational guide",
+      "Photography"
+    ],
+    "suitable_for": [
+      "families",
+      "nature",
+      "relaxation",
+      "photography"
+    ],
+    "available_time": [
+      "morning",
+      "afternoon"
+    ],
+    "age_range": "all ages"
+  },
+  {
+    "id": "diving-lesson-1",
+    "name": "Snorkeling & Diving Lesson",
+    "description": "Professional instructor led snorkeling or diving lesson with equipment",
+    "category": "Ocean Adventure",
+    "zone": "Kiwengwa",
+    "price": 80,
+    "duration": "2.5 hours",
+    "image": "diving-lesson-beach.jpg",
+    "highlights": [
+      "Professional instructor",
+      "Equipment included",
+      "Beach location",
+      "All levels"
+    ],
+    "suitable_for": [
+      "adventure",
+      "learning",
+      "self-drive"
+    ],
+    "available_time": [
+      "morning",
+      "afternoon"
+    ],
+    "age_range": "12+"
+  },
+  {
+    "id": "local-market-1",
+    "name": "Local Market Tour & Cooking",
+    "description": "Explore Zanzibar's central market and learn traditional cooking techniques",
+    "category": "Cultural",
+    "zone": "Stone Town",
+    "price": 65,
+    "duration": "4 hours",
+    "image": "local-market-tour.jpg",
+    "highlights": [
+      "Market exploration",
+      "Cooking lesson",
+      "Local ingredients",
+      "Cultural immersion"
+    ],
+    "suitable_for": [
+      "culture",
+      "families",
+      "adventure"
+    ],
+    "available_time": [
+      "morning",
+      "afternoon"
+    ],
+    "age_range": "all ages"
+  },
+  {
+    "id": "whale-watching-1",
+    "name": "Whale Watching Experience",
+    "description": "Seasonal humpback whale watching from traditional dhow",
+    "category": "Ocean Adventure",
+    "zone": "Matemwe",
+    "price": 150,
+    "duration": "3 hours",
+    "image": "whale-watching-boat.jpg",
+    "highlights": [
+      "Whale watching",
+      "Seasonal",
+      "Ocean views",
+      "Natural spectacle"
+    ],
+    "suitable_for": [
+      "adventure",
+      "nature",
+      "romantic"
+    ],
+    "available_time": [
+      "seasonal"
+    ],
+    "age_range": "adults"
+  }
+]

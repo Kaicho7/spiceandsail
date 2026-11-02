@@ -10,9 +10,10 @@
 
   // Complete Pricing Model Matrix
   const PRICING = {
-    // Transfers
-    'transfer-nungwi': { type: 'vehicle', base: 55, name: 'Airport ⇄ Nungwi / Kendwa Transfer' },
-    'transfer-paje': { type: 'vehicle', base: 50, name: 'Airport ⇄ Paje / Jambiani Transfer' },
+    // Transfers (Guaranteed Direct Flat Rates)
+    'transfer-stone-town': { type: 'vehicle', base: 25, name: 'Airport ⇄ Stone Town Hotel Transfer' },
+    'transfer-paje': { type: 'vehicle', base: 45, name: 'Airport ⇄ Paje / Jambiani / Matemwe Transfer' },
+    'transfer-nungwi': { type: 'vehicle', base: 55, name: 'Airport ⇄ Nungwi / Kendwa Beach Transfer' },
 
     // Classic Tours
     'safari-blue': { type: 'person', base: 75, name: 'Safari Blue / Menai Bay Dhow Experience' },

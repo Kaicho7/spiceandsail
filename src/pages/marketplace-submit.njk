@@ -1,0 +1,457 @@
+---
+layout: layouts/base.njk
+permalink: /marketplace/submit/
+navOrder: 4
+eleventyNavigation:
+  key: marketplace-submit
+  title: Share Your Experience
+  parent: main
+---
+
+<div class="activity-submission-page">
+  <div class="submission-header">
+    <h1>Share Your Local Experience</h1>
+    <p>Help others discover Zanzibar's hidden gems by sharing your unique activities</p>
+    <div class="progress-indicator">
+      <span>Activity sharing is reviewed by our team before going live</span>
+    </div>
+  </div>
+
+  <div class="submission-container">
+    <div class="submission-sidebar">
+      <h3>What Makes a Great Experience?</h3>
+
+      <div class="guideline-section">
+        <h4>📝 Content Requirements</h4>
+        <ul>
+          <li>Original, authentic experiences from local Zanzibaris</li>
+          <li>Clear, honest descriptions of what participants will do</li>
+          <li>Real pricing that reflects time, materials, and your expertise</li>
+          <li>Photos showing the actual activity, not stock images</li>
+          <li>Complete information about what's included and not included</li>
+        </ul>
+      </div>
+
+      <div class="guideline-section">
+        <h4>⏰ Scheduling & Availability</h4>
+        <ul>
+          <li>Flexible timing options when possible</li>
+          <li>Clear description of duration and pace</li>
+          <li>Information about minimum and maximum participants</li>
+        </ul>
+      </div>
+
+      <div class="guideline-section">
+        <h4>💰 Pricing Guidelines</h4>
+        <ul>
+          <li>Fair pricing reflecting your time and expertise</li>
+          <li>Include discounts for advance booking or group rates</li>
+          <li>Clear about any additional costs</li>
+        </ul>
+      </div>
+
+      <div class="guideline-section">
+        <h4>📞 Contact & Communication</h4>
+        <ul>
+          <li>Real, working contact information</li>
+          <li>Clear response time expectations</li>
+          <li>Professional and helpful communication style</li>
+        </ul>
+      </div>
+
+      <div class="guidelines-note">
+        <p><strong>Note:</strong> All submitted activities undergo review by our Zanzibar-based team to ensure quality, accuracy, and adherence to our community standards. Approved activities typically go live within 24-48 hours.</p>
+      </div>
+    </div>
+
+    <div class="submission-main">
+      <form class="activity-form" id="activityForm">
+        <div id="formMessages"></div>
+
+        <div class="form-section">
+          <h3>Basic Activity Details</h3>
+
+          <div class="form-group">
+            <label for="title">Activity Title *</label>
+            <input type="text" id="title" name="title" placeholder="e.g., Beachside Cooking Class" required />
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category *</label>
+            <select id="category" name="category" required>
+              <option value="">Select category</option>
+              <option value="spice-farm">🌶️ Spice Farms</option>
+              <option value="fish-market">🐟 Fish Markets</option>
+              <option value="local-cooking">👨‍🍳 Cooking Classes</option>
+              <option value="artisan-workshop">🎨 Artisan Workshops</option>
+              <option value="farm-stay">🏡 Farm Stays</option>
+              <option value="homestay">🏠 Homestays</option>
+              <option value="community-tour">🚶 Community Tours</option>
+              <option value="cultural-center">📚 Cultural Centers</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description *</label>
+            <textarea id="description" name="description" rows="3" placeholder="Brief description" required></textarea>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Location & Pricing</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="area">Area</label>
+              <input type="text" id="area" name="area" placeholder="Stone Town" />
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" placeholder="123 Beach Road" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="basePrice">Base Price (USD) *</label>
+              <input type="number" id="basePrice" name="basePrice" placeholder="25" min="0" step="1" required />
+            </div>
+            <div class="form-group">
+              <label for="priceUnit">Price Unit</label>
+              <select id="priceUnit" name="priceUnit">
+                <option value="per-person">Per Person</option>
+                <option value="per-day">Per Day</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Contact Information</h3>
+
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+255 XXX XXXX" required />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit Activity</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('activityForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const messagesDiv = document.getElementById('formMessages');
+
+    function showMessage(type, title, text) {
+      messagesDiv.innerHTML = `
+        <div class="${type}-message">
+          <h3>${title}</h3>
+          <p>${text}</p>
+        </div>
+      `;
+      messagesDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function buildActivityData() {
+      const data = new FormData(form);
+      return {
+        title: data.get('title') || '',
+        category: data.get('category') || '',
+        description: data.get('description') || '',
+        location: {
+          area: data.get('area') || '',
+          address: data.get('address') || ''
+        },
+        pricing: {
+          basePrice: parseFloat(data.get('basePrice')) || 0,
+          priceUnit: data.get('priceUnit') || 'per-person'
+        },
+        contact: {
+          name: data.get('name') || '',
+          email: data.get('email') || '',
+          phone: data.get('phone') || ''
+        }
+      };
+    }
+
+    function validate(activityData) {
+      if (!activityData.title || !activityData.category || !activityData.description ||
+          activityData.pricing.basePrice <= 0 || !activityData.contact.name ||
+          !activityData.contact.email || !activityData.contact.phone) {
+        showMessage('error', '❌ Submission Failed', 'Please fill in all required fields.');
+        return false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(activityData.contact.email)) {
+        showMessage('error', '❌ Submission Failed', 'Please enter a valid email address.');
+        return false;
+      }
+
+      return true;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      messagesDiv.innerHTML = '';
+
+      const activityData = buildActivityData();
+      if (!validate(activityData)) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        const userInfo = {
+          id: 'guest-' + Date.now(),
+          name: activityData.contact.name,
+          email: activityData.contact.email,
+          phone: activityData.contact.phone
+        };
+
+        const response = await fetch('/.netlify/functions/marketplace', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ activityData, userInfo })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          showMessage('success', '✅ Activity Submitted Successfully!',
+            'Your activity has been submitted and is pending approval.');
+          form.reset();
+        } else {
+          showMessage('error', '❌ Submission Failed', result.error || 'Submission failed. Please try again.');
+        }
+      } catch (error) {
+        showMessage('error', '❌ Submission Failed', 'Network error. Please try again.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Activity';
+      }
+    });
+  });
+</script>
+
+<style>
+.activity-submission-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.activity-submission-page .submission-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.activity-submission-page .submission-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.activity-submission-page .submission-header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.progress-indicator {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: #e8f4fd;
+  border-radius: 20px;
+  color: #2c5282;
+}
+
+.submission-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+}
+
+.submission-sidebar {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submission-sidebar h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.guideline-section {
+  margin-bottom: 1.5rem;
+}
+
+.guideline-section h4 {
+  color: #4a90e2;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.guideline-section ul {
+  padding-left: 1.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.guideline-section li {
+  margin-bottom: 0.5rem;
+}
+
+.guidelines-note {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.guidelines-note p {
+  font-size: 0.875rem;
+  color: #7f8c8d;
+}
+
+.submission-main {
+  min-width: 0;
+}
+
+.activity-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.form-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #357abd;
+}
+
+.submit-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.success-message,
+.error-message {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.success-message h3,
+.error-message h3 {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .submission-container {
+    grid-template-columns: 1fr;
+  }
+
+  .submission-sidebar {
+    order: 2;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
