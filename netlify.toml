@@ -16,6 +16,21 @@
   status = 301
 
 [[redirects]]
+  from = "/transfers/zanzibar-airport-to-nungwi/*"
+  to = "/transfers/airport-to-nungwi/"
+  status = 301
+
+[[redirects]]
+  from = "/transfers/nungwi/*"
+  to = "/transfers/airport-to-nungwi/"
+  status = 301
+
+[[redirects]]
+  from = "/safaris/mikumi/*"
+  to = "/safaris/mikumi-day-trip/"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404

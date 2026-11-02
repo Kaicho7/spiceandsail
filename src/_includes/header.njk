@@ -4,7 +4,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/concierge.css">
 <script src="/js/main.js" defer></script>
+<script src="/js/concierge.js" defer></script>
 </head>
 <body>
 <header class="site-header" id="siteHeader">
@@ -21,6 +23,7 @@
     <ul class="nav-list">
       <li><a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
       <li><a href="/tours/" {% if page.url == '/tours/' %}class="active"{% endif %}>Tours</a></li>
+      <li><a href="/experiences/" {% if page.url == '/experiences/' %}class="active"{% endif %}>Rare Experiences</a></li>
       <li><a href="/transfers/" {% if page.url == '/transfers/' %}class="active"{% endif %}>Transfers</a></li>
       <li><a href="/packages/" {% if page.url == '/packages/' %}class="active"{% endif %}>Packages</a></li>
       <li><a href="/hotels/" {% if page.url == '/hotels/' %}class="active"{% endif %}>Hotels</a></li>

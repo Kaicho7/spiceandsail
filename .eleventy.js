@@ -148,11 +148,19 @@ module.exports = function(eleventyConfig) {
     "Mnarani Marine Turtle Pond": "sea-turtles-with-child-zanzibar.jpg",
     "Kuza Cave": "people-swimming-turquoise-water-steps.jpg"
   };
+  // Read and index all available images from public/images
+  let allPublicImages = [];
+  try {
+    allPublicImages = fs.readdirSync(path.join(__dirname, "public", "images")).filter(f => /\.(jpg|jpeg|png)$/i.test(f));
+  } catch (e) {
+    allPublicImages = [];
+  }
+
   const attrCategoryArrays = {
-    "Dive Center": ["snorkeling-zanzibar-shallow-water-coral.jpg","tropical-fish-swimming-clear-water.jpg","coral-reef-underwater-fish-zanzibar.jpg","coral-reef-fish-snorkeling-zanzibar.jpg","underwater-coral-reef-fish-zanzibar-1.jpg","underwater-coral-reef-fish-zanzibar.jpg","underwater-coral-reef-fish-swimming.jpg","coral-reef-snorkeling-zanzibar-1.jpg","divers-on-boat-zanzibar-ocean.jpg","snorkeling-underwater-selfie-zanzibar.jpg","boys-snorkeling-shallow-water-zanzibar.jpg","underwater-fish-coral-reef-zanzibar.jpg","sea-turtle-snorkeling-coral-reef.jpg"],
-    "Water Sports": ["kitesurfing-turquoise-ocean-zanzibar.jpg","women-horse-riding-ocean-water-zanzibar.jpg","atv-ride-dirt-path-green-landscape.jpg","dhow-boat-turquoise-water-zanzibar.jpg"],
-    "Restaurant": ["zanzibar-night-food-stall-skewers-bread.jpg","street-food-stall-waterfront-zanzibar.jpg","zanzibar-rock-house-with-tourists.jpg"],
-    "Attraction": ["snorkeling-with-dolphin-zanzibar-ocean.jpg","ocean-view-with-coastal-buildings.jpg","zanzibar-market-stalls-people-umbrellas.jpg","stone-town-colonial-building-clock-tower.jpg"]
+    "Dive Center": allPublicImages.filter(f => /snorkel|dive|coral|turtle|dolphin|underwater|fish|reef|sea-turtle/i.test(f)),
+    "Water Sports": allPublicImages.filter(f => /kitesurf|atv|horse|boat|dhow|sail|surf|ocean-water/i.test(f)),
+    "Restaurant": allPublicImages.filter(f => /food|stall|patio|dining|restaurant|rock-house|skewers|market-stall|vegetable/i.test(f)),
+    "Attraction": allPublicImages.filter(f => /door|fort|church|tower|alley|palace|monkey|jozani|cave|acrobat|monument|ruins|market|stone-town/i.test(f))
   };
   function hashPick(str, arr) { let h=0; const st=String(str||""); for (let i=0;i<st.length;i++) h=(h*31+st.charCodeAt(i))>>>0; return arr[h%arr.length]; }
 eleventyConfig.addFilter("attractionImg", (name, category) =>
@@ -212,24 +220,30 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
     "wamba": "Wambaa Gulf / Makangale (Pemba)", "makang": "Wambaa Gulf / Makangale (Pemba)", "wesha": "Wambaa Gulf / Makangale (Pemba)",
     "north,": "Wambaa Gulf / Makangale (Pemba)", "wambaa gulf": "Wambaa Gulf / Makangale (Pemba)"
   };
-  // Hotel/attraction card photo pools — several distinct existing images per zone, rotated by seed (name) so cards don't repeat
-  // All pools are neutral beach/resort/landscape images suitable for hotel cards (no marine/wildlife/attraction photos)
-  const zoneFiles = {
-    "Stone Town": ["stone-town-alley-walking-tour-people.jpg","stone-town-colonial-building-clock-tower.jpg","church-altar-colorful-lights-religious-icons.jpg","stone-town-church-twin-towers-green-gate.jpg","aerial-port-coastal-beach-zebra.jpg","zanzibar-restaurant-patio-with-palm-trees.jpg","zanzibar-night-food-stall-skewers-bread.jpg","stone-town-church-palm-tree-statues.jpg"],
-    "Nungwi": ["nungwi-beach-children-playing-sand.jpg","nungwi-beach-aerial-resort-turquoise-water.jpg","beach-bicycle-white-sand-zanzibar.jpg","zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg"],
-    "Kendwa": ["aerial-beach-boat-turquoise-water.jpg","beach-wedding-arch-nungwi-zanzibar.jpg","turquoise-water-sandbar-lone-boat.jpg"],
-    "Kiwengwa": ["nungwi-beach-aerial-resort-turquoise-water.jpg","zanzibar-beach-palm-trees-sand-water.jpg","beach-front-hotel-palm-trees-people.jpg","zanzibar-beach-palm-trees-thatched-huts.jpg"],
-    "Pongwe / Michamvi": ["zanzibar-rock-house-with-tourists.jpg","beach-front-hotel-palm-trees-people.jpg","zanzibar-house-on-rock-ocean-people.jpg","zanzibar-beach-palm-trees-sand-water.jpg"],
-    "Paje": ["zanzibar-beach-palm-trees-thatched-huts.jpg","women-walking-beach-zanzibar-palm-trees.jpg","zanzibar-beach-women-walking-white-sand.jpg"],
-    "Jambiani": ["women-walking-beach-zanzibar-palm-trees.jpg","children-walking-beach-zanzibar-sand-water.jpg","rock-overhang-beach-zanzibar-coast.jpg"],
-    "Bwejuu / Dongwe": ["children-walking-tidal-flats-zanzibar.jpg","women-walking-beach-zanzibar-palm-trees.jpg","beach-children-sand-zanzibar.jpg"],
-    "Michamvi / Pingwe": ["zanzibar-rock-house-with-tourists.jpg","zanzibar-house-on-rock-ocean-people.jpg","man-child-beach-fist-bump-nungwi-zanzibar.jpg"],
-    "Kizimkazi / Dimbani": ["zanzibar-beach-people-playing-kites.jpg","children-walking-beach-zanzibar-sand-water.jpg","woman-walking-beach-palm-trees-zanzibar.jpg"],
-    "Fumba / Mbweni": ["aerial-beach-zanzibar-turquoise-water.jpg","aerial-coastal-town-beach-turquoise-water.jpg","waterfront-buildings-zanzibar-coast.jpg"],
-    "Matemwe / Kigomani": ["zanzibar-beach-palm-trees-thatched-huts.jpg","beach-children-sand-zanzibar.jpg","woman-child-beach-zanzibar-ocean.jpg"],
-    "Chake Chake (Pemba)": ["zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg","turquoise-water-sandbar-lone-boat.jpg"],
-    "Wambaa Gulf / Makangale (Pemba)": ["woman-child-beach-zanzibar-ocean.jpg","turquoise-water-sandbar-lone-boat.jpg","zanzibar-beach-people-playing-kites.jpg"]
+  // Hotel/attraction card photo pools — expanded to utilize all available authentic photos
+  const zonePatterns = {
+    "Stone Town": /stone-town|door|church|clock|alley|colonial|fort|palace|market|port/i,
+    "Nungwi": /nungwi|beach-wedding|dhow-boat|children-playing-sand|beach-bicycle/i,
+    "Kendwa": /kendwa|turquoise-water|sandbar|aerial-beach|wedding-arch/i,
+    "Kiwengwa": /kiwengwa|aerial-resort|beach-front-hotel|palm-trees/i,
+    "Pongwe / Michamvi": /pongwe|michamvi|rock-house|house-on-rock|patio/i,
+    "Paje": /paje|kitesurf|palm-trees-thatched|white-sand|women-walking/i,
+    "Jambiani": /jambiani|tidal-flats|sea-items|women-walking|rock-overhang/i,
+    "Bwejuu / Dongwe": /bwejuu|dongwe|tidal-flats|beach-children|coastal/i,
+    "Michamvi / Pingwe": /michamvi|pingwe|rock-house|house-on-rock/i,
+    "Kizimkazi / Dimbani": /kizimkazi|dimbani|dolphin|boat-dolphins/i,
+    "Fumba / Mbweni": /fumba|mbweni|aerial-beach|coastal-town|waterfront/i,
+    "Matemwe / Kigomani": /matemwe|kigomani|boys-snorkeling|shallow-water/i,
+    "Chake Chake (Pemba)": /pemba|chake|kite|sandbar|turquoise/i,
+    "Wambaa Gulf / Makangale (Pemba)": /wambaa|makangale|boat|sea|sand/i
   };
+
+  const zoneFiles = {};
+  for (const [zKey, pattern] of Object.entries(zonePatterns)) {
+    const matched = allPublicImages.filter(f => pattern.test(f));
+    zoneFiles[zKey] = matched.length > 0 ? matched : [zoneImage[zKey] || "default-tour-hero.jpg"];
+  }
+
   const zoneDefault = new Map(Object.entries(zoneImage).map(([k, v]) => [k, v]));
   eleventyConfig.addFilter("zoneImg", (zone, seed) => {
     const z = String(zone || "").toLowerCase().trim();
@@ -239,25 +253,23 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
     return hashPick(seed || z, ["zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg","turquoise-water-sandbar-lone-boat.jpg","aerial-beach-boat-turquoise-water.jpg","women-walking-beach-zanzibar-palm-trees.jpg","thatched-hut-beach-zanzibar-coast.jpg"]);
   });
 
-  // Dedicated hotel-only photo pool: real accommodation imagery (rooms, resorts,
-  // beachfront hotels). NEVER contains dhow/marine/tour/excursion photos.
-  const hotelPhotoPool = [
-    "nungwi-beach-aerial-resort-turquoise-water.jpg",
-    "beach-front-hotel-palm-trees-people.jpg",
-    "hotel-room-red-plaid-bed.jpg",
-    "hotel-room-with-red-accent-bed.jpg",
-    "hotel-room-with-two-beds-red-blankets.jpg",
-    "zanzibar-hotel-room-orange-bed.jpg",
-    "zanzibar-hotel-room-two-beds-red-linens.jpg",
-    "zanzibar-hotel-room-three-beds.jpg",
-    "zanzibar-hotel-room-bed-mosquito-net.jpg",
-    "zanzibar-hotel-room-two-beds-mosquito-net.jpg",
-    "zanzibar-hotel-room-bed-plaid-curtains.jpg",
-    "zanzibar-hotel-room-three-beds-plaid.jpg",
-    "zanzibar-hotel-room-two-beds.jpg",
-    "zanzibar-hotel-room-two-single-beds.jpg",
-    "zanzibar-hotel-room-two-beds-red-blankets.jpg"
-  ];
+  // Dedicated hotel-only photo pool: authentic accommodation imagery (rooms, resorts,
+  // beachfront hotels, pool terraces). Explicitly excludes village, classroom, livestock photos.
+  const hotelPhotoPool = allPublicImages.filter(f => {
+    if (/village|children|classroom|school|sheep|cows|herding|dirt-path|fishing-net|safari|lion|jeep/i.test(f)) return false;
+    return /\b(hotel|room|resort|patio|pool|bed|beach-front|thatched-hut-beach)\b/i.test(f) ||
+           f.includes("zanzibar-hotel-room-") ||
+           f.includes("hotel-room-") ||
+           f.includes("beach-front-hotel") ||
+           f.includes("aerial-resort") ||
+           f === "turquoise-ocean-pier-zanzibar-beach.jpg" ||
+           f === "beach-wedding-arch-nungwi-zanzibar.jpg" ||
+           f === "ocean-view-with-coastal-buildings.jpg" ||
+           f === "zanzibar-beach-palm-trees-thatched-huts.jpg";
+  });
+  if (hotelPhotoPool.length === 0) {
+    hotelPhotoPool.push("beach-front-hotel-palm-trees-people.jpg");
+  }
   eleventyConfig.addFilter("hotelImg", (name) => hashPick(name || "hotel", hotelPhotoPool));
 
   eleventyConfig.addGlobalData("__intentMap", intentMap);

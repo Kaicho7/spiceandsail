@@ -2,20 +2,91 @@
   {
     "id": "PKG-01",
     "slug": "zanzibar-essentials-3-day-pass",
-    "title": "Zanzibar Essentials 3-day pass",
-    "description": "Anchor bundle; validate supplier costs before publishing.",
-    "duration": "3 days",
+    "title": "Zanzibar Essentials 3-Day Pass",
+    "description": "Our signature island starter: private airport transfers, authentic Stone Town heritage walking tour, organic spice farm harvest lunch, and the legendary Safari Blue Menai Bay dhow sailing with seafood BBQ.",
+    "duration": "3 Days / 2 Nights",
     "price": {
       "min": 185.0,
       "max": 260.0,
       "basis": "per person",
-      "display": "$185\u2013$260"
+      "display": "$185–$260"
     },
-    "price_display": "$185\u2013$260",
+    "price_display": "$185–$260",
     "includes": [
-      "Return transfer, Safari Blue, Stone Town + Spice"
+      "Roundtrip airport transfers in private A/C minivan",
+      "Full-day Safari Blue Menai Bay dhow cruise & sandbank buffet",
+      "Stone Town historical guided tour + organic spice plantation lunch",
+      "All marine reserve conservation fees & government taxes"
     ],
-    "source_quality": "Existing strategy model",
-    "source_files": "Zanzibar_Master_Venture_Plan.md"
+    "source_quality": "Direct local licensed operator",
+    "source_files": "Spice and Sail Operations"
+  },
+  {
+    "id": "PKG-02",
+    "slug": "zanzibar-hidden-gems-sacred-caves",
+    "title": "Zanzibar Hidden Gems & Sacred Caves (4 Days)",
+    "description": "Unearth Zanzibar's best-kept secrets beyond the tourist trail: crystal-clear swimming in Maalum Secret Cenote, sacred drumming at Kuza Cave, crossing the submerged 'Moses Road' to untouched Uzi Island, and swimming with rescued sea turtles at Salaam Cave.",
+    "duration": "4 Days / 3 Nights",
+    "price": {
+      "min": 320.0,
+      "max": 420.0,
+      "basis": "per person",
+      "display": "$320–$420"
+    },
+    "price_display": "$320–$420",
+    "includes": [
+      "Private vehicle and dedicated Swahili guide throughout",
+      "Maalum Cave private timed swim slot & Kuza Cave cultural workshop",
+      "Uzi Island 4x4 low-tide mangrove causeway expedition & Swahili lunch",
+      "Salaam Cave Kizimkazi turtle sanctuary admission & marine fees",
+      "Roundtrip airport or ferry port private transfers"
+    ],
+    "source_quality": "Curated direct partner access",
+    "source_files": "Spice and Sail Operations"
+  },
+  {
+    "id": "PKG-03",
+    "slug": "adrenaline-and-ocean-safari",
+    "title": "Adrenaline & Ocean Safari (3 Days)",
+    "description": "High-octane island thrills: swim bareback with purebred horses in the turquoise shallows of Nungwi or Kiwengwa, power 2-seater quad buggies through coral rock trails and fishing villages, and snorkel the pristine coral gardens of Mnemba Atoll.",
+    "duration": "3 Days / 2 Nights",
+    "price": {
+      "min": 285.0,
+      "max": 375.0,
+      "basis": "per person",
+      "display": "$285–$375"
+    },
+    "price_display": "$285–$375",
+    "includes": [
+      "Swimming with horses beach session with certified equestrian guides",
+      "3-hour guided off-road Quad/ATV adventure with helmets & fuel",
+      "Private boat excursion to Mnemba Atoll marine reserve with dolphin spotting",
+      "Private door-to-door hotel & airport transport"
+    ],
+    "source_quality": "Curated direct partner access",
+    "source_files": "Spice and Sail Operations"
+  },
+  {
+    "id": "PKG-04",
+    "slug": "bush-to-beach-vip-luxury",
+    "title": "Bush to Beach VIP: Mikumi Fly-In & Private Yacht (5 Days)",
+    "description": "The ultimate Tanzania dual-world escape: fly directly from Zanzibar into Mikumi National Park for thrilling big game 4x4 safaris (elephants, lions, giraffes), followed by luxury coastal living with a private sunset catamaran yacht charter and Mnemba reef snorkeling.",
+    "duration": "5 Days / 4 Nights",
+    "price": {
+      "min": 890.0,
+      "max": 1250.0,
+      "basis": "per person",
+      "display": "$890–$1,250"
+    },
+    "price_display": "$890–$1,250",
+    "includes": [
+      "Same-day or overnight fly-in return flights Zanzibar ⇄ Mikumi airstrip",
+      "4x4 open-sided pop-up safari game drive with certified naturalist",
+      "All TANAPA national park entry fees & conservation levies ($35.40/day included)",
+      "Private 40ft Catamaran yacht day charter with seafood lunch & sunset wine",
+      "VIP private airport & inter-hotel executive transfers"
+    ],
+    "source_quality": "Direct air charter & licensed operator",
+    "source_files": "Spice and Sail Operations"
   }
 ]
