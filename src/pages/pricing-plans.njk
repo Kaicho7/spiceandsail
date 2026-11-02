@@ -1,0 +1,281 @@
+---
+title: Dynamic Pricing Plans
+---
+
+<div class="pricing-container">
+  <h1>💰 Dynamic Pricing Plans</h1>
+  <p>Smart pricing that adapts to your travel dates and preferences</p>
+
+  <script>
+    // Load dynamic pricing data from the pricing API
+    async function loadDynamicPricing() {
+      try {
+        // Fetch pricing data from the pricing API
+        const response = await fetch('/.netlify/functions/pricing');
+        if (!response.ok) {
+          throw new Error('Failed to fetch pricing data');
+        }
+        const pricingData = await response.json();
+
+        // Process and display dynamic pricing data
+        renderDynamicPricing(pricingData);
+      } catch (error) {
+        console.error('Error loading dynamic pricing:', error);
+        // Fallback to default pricing
+        renderStaticPricing();
+      }
+    }
+
+    function renderDynamicPricing(data) {
+      const grid = document.querySelector('.pricing-grid');
+      if (!grid) return;
+
+      // Clear existing pricing cards
+      grid.innerHTML = '';
+
+      // Render dynamic pricing cards based on API data
+      data.pricingPlans.forEach(plan => {
+        const card = document.createElement('div');
+        card.className = `pricing-card ${plan.featured ? 'featured' : ''}`;
+        card.innerHTML = `
+          <h3>${plan.name}</h3>
+          <p class="price-range">From $${plan.basePrice} per person</p>
+          <ul class="features">
+            ${plan.features.map(feature => `<li>✅ ${feature}</li>`).join('')}
+          </ul>
+          ${plan.discountBadge ? `<div class="discount-badge">${plan.discountBadge}</div>` : ''}
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function renderStaticPricing() {
+      // Original static pricing implementation
+      // This is kept as fallback when API is unavailable
+    }
+
+    // Load dynamic pricing when the page loads
+    document.addEventListener('DOMContentLoaded', loadDynamicPricing);
+  </script>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>🏝️ Island Escape</h3>
+      <p class="price-range">From $2,199 per person</p>
+      <ul class="features">
+        <li>✅ 4-Day Luxury Stay</li>
+        <li>✅ Stone Town Walking Tour</li>
+        <li>✅ Spice Farm Experience</li>
+        <li>✅ Private Beach Access</li>
+        <li>✅ Breakfast Included</li>
+      </ul>
+      <div class="discount-badge">Best Value</div>
+    </div>
+
+    <div class="pricing-card featured">
+      <h3>🌊 Ocean Adventure</h3>
+      <p class="price-range">From $3,899 per person</p>
+      <ul class="features">
+        <li>✅ 7-Day Full Experience</li>
+        <li>✅ Dolphin Watching</li>
+        <li>✅ Snorkeling Session</li>
+        <li>✅ Sunset Boat Cruise</li>
+        <li>✅ All Meals Included</li>
+      </ul>
+      <div class="discount-badge">Most Popular</div>
+    </div>
+
+    <div class="pricing-card">
+      <h3>🌴 Cultural Journey</h3>
+      <p class="price-range">From $1,899 per person</p>
+      <ul class="features">
+        <li>✅ 3-Day Cultural Immersion</li>
+        <li>✅ Local Market Tour</li>
+        <li>✅ Traditional Music Show</li>
+        <li>✅ Hotel Pick-up & Drop-off</li>
+        <li>✅ Welcome Drinks</li>
+      </ul>
+      <div class="discount-badge">Great Start</div>
+    </div>
+  </div>
+
+  <div class="pricing-info">
+    <h2>💎 Why Our Pricing is Smart</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="info-icon">📅</span>
+        <h3>Seasonal Pricing</h3>
+        <p>Book during peak season for premium experiences, or save with off-season rates</p>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">🤝</span>
+        <h3>Group Discounts</h3>
+        <p>Save up to 15% when booking for groups of 4 or more</p>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">💳</span>
+        <h3>Flexible Payment</h3>
+        <p>Split your payment into easy installments with our partner banks</p>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">🎁</span>
+        <h3>Special Offers</h3>
+        <p>Use promo codes at checkout for extra savings on your booking</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .pricing-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .pricing-container h1 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+
+    .pricing-container > p {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      border: 1px solid #e2e8f0;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid #3b82f6;
+      transform: scale(1.02);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.04) translateY(-4px);
+    }
+
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      color: #1e3a8a;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-range {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #059669;
+      margin-bottom: 1.5rem;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+
+    .features li {
+      padding: 0.5rem 0;
+      color: #475569;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .features li:last-child {
+      border-bottom: none;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f59e0b;
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+    }
+
+    .pricing-card.featured .discount-badge {
+      background: #3b82f6;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+    }
+
+    .pricing-info h2 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 3rem;
+      font-size: 2rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .info-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: #f8fafc;
+      border-radius: 12px;
+    }
+
+    .info-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .info-item h3 {
+      color: #1e3a8a;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .info-item p {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-container h1 {
+        font-size: 1.8rem;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+    }
+  </style>
+</div>

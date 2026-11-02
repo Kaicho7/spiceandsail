@@ -1,0 +1,16 @@
+{
+  "dynamic": {
+    "enabled": true,
+    "maxAdjustment": 30,
+    "seasonality": {
+      "high": 1.2,
+      "low": 0.85
+    },
+    "lastMinuteWindowDays": 3,
+    "lastMinuteDiscount": 10,
+    "bookingLeadTimeDiscount": 0.5,
+    "maxBookingLeadDays": 30,
+    "demandMultiplierMax": 1.1
+  },
+  "changes": []
+}
