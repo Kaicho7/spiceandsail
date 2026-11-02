@@ -1,16 +1,5 @@
 /*
- * Security headers for Dhow Coast Travels
- * CSP restricts sources, X-Frame-Options prevents clickjacking,
- * Referrer-Policy controls referrer information
- */
-[
-  {
-    "source": "/(.*)?",
-    "headers": {
-      "X-Frame-Options": "DENY",
-      "X-Content-Type-Options": "nosniff",
-      "Referrer-Policy": "origin-when-cross-origin",
-      "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src 'none';"
-    }
-  }
-]
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src 'none';

@@ -8,7 +8,7 @@
 
 {% set ogImage = page.inputPath | rawImage %}
 
-{% set SITE_URL = site.url | default("https://dhowcoasttravel.netlify.app") | replace("http://", "https://") %}
+{% set SITE_URL = site.url | replace("http://", "https://") %}
 
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">

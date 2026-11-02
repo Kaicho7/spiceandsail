@@ -3,8 +3,8 @@
 site_audit.py - read-only audit of a live website. Standard library only.
 
 Usage:
-    python3 site_audit.py https://dhowcoasttravel.netlify.app/
-    python3 site_audit.py https://dhowcoasttravel.netlify.app/ --external
+    python3 site_audit.py https://spiceandsail.com/
+    python3 site_audit.py https://spiceandsail.com/ --external
     python3 site_audit.py URL --out reports --max-pages 300
 
 What it does:

@@ -644,9 +644,9 @@ def main():
 
     # Also generate _data/site.json for global site metadata
     site_data = {
-        "name": "Dhow Coast Travels",
+        "name": "Spice and Sail Zanzibar",
         "description": "Licensed Zanzibar tour operator offering tours, airport transfers, and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
-        "url": "https://dhowcoasttravels.com",
+        "url": "https://spiceandsail.com",
         "logo": "/images/logo.png",
     }
     site_dir = OUTPUT_DIR  # .eleventy.js uses src/data as data dir
