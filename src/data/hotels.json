@@ -152,7 +152,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "emerson-spice",
-      "photo": "hotels/emerson-spice.jpg",
+      "photo": "hotels/emerson-spice.webp",
       "description": "Luxury Boutique in Stone Town, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -178,7 +178,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "emerson-on-hurumzi",
-      "photo": "hotels/emerson-on-hurumzi.jpg",
+      "photo": "hotels/emerson-on-hurumzi.webp",
       "description": "Luxury Boutique in Stone Town, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -334,7 +334,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "jafferji-house-spa",
-      "photo": "hotels/jafferji-house-spa.jpg",
+      "photo": "hotels/jafferji-house-spa.jpeg",
       "description": "Luxury Boutique in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -412,7 +412,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kiwengwa-beach-resort",
-      "photo": "hotels/kiwengwa-beach-resort.jpg",
+      "photo": "hotels/kiwengwa-beach-resort.png",
       "description": "Luxury Resort in Kiwengwa, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -516,7 +516,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "matemwe-retreat",
-      "photo": "hotels/matemwe-retreat.jpg",
+      "photo": "hotels/matemwe-retreat.webp",
       "description": "Luxury Boutique in Matemwe, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -620,7 +620,7 @@
       "contact_form_url": "https://www.mantiscollection.com/contact-us/mantis_hotel_form_traveller_enquiry",
       "scrape_status": "form_only",
       "slug": "nungwi-dreams-by-mantis",
-      "photo": "hotels/nungwi-dreams-by-mantis.jpg",
+      "photo": "hotels/nungwi-dreams-by-mantis.png",
       "description": "Luxury Boutique in Nungwi, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -906,7 +906,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "the-manta-resort",
-      "photo": "hotels/the-manta-resort.jpg",
+      "photo": "hotels/the-manta-resort.webp",
       "description": "Luxury Resort in Makangale, Pemba. 5-Star rating.",
       "price_range": ""
     },
@@ -932,7 +932,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "the-mora-zanzibar",
-      "photo": "hotels/the-mora-zanzibar.jpg",
+      "photo": "hotels/the-mora-zanzibar.png",
       "description": "Luxury Resort in Muyuni, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -1088,7 +1088,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "tulia-zanzibar-unique-beach-resort",
-      "photo": "hotels/tulia-zanzibar-unique-beach-resort.jpg",
+      "photo": "hotels/tulia-zanzibar-unique-beach-resort.png",
       "description": "Luxury Resort in Pongwe, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -1270,7 +1270,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "africa-house-hotel",
-      "photo": "hotels/africa-house-hotel.jpg",
+      "photo": "hotels/africa-house-hotel.webp",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1296,7 +1296,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "aluna-nungwi",
-      "photo": "hotels/aluna-nungwi.jpg",
+      "photo": "hotels/aluna-nungwi.png",
       "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -1322,7 +1322,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "aluna-paje",
-      "photo": "hotels/aluna-paje.jpg",
+      "photo": "hotels/aluna-paje.png",
       "description": "Boutique in Paje, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -1556,7 +1556,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "babalao-bungalows",
-      "photo": "hotels/babalao-bungalows.jpg",
+      "photo": "hotels/babalao-bungalows.png",
       "description": "Boutique in , Unguja.  star rating.",
       "price_range": ""
     },
@@ -1634,7 +1634,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "blue-oyster-hotel",
-      "photo": "hotels/blue-oyster-hotel.jpg",
+      "photo": "hotels/blue-oyster-hotel.png",
       "description": "Boutique in Jambiani, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -1816,7 +1816,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "dhow-inn",
-      "photo": "hotels/dhow-inn.jpg",
+      "photo": "hotels/dhow-inn.png",
       "description": "Boutique in Paje, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1842,7 +1842,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "dhow-palace-hotel",
-      "photo": "hotels/dhow-palace-hotel.jpg",
+      "photo": "hotels/dhow-palace-hotel.png",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1868,7 +1868,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "diamonds-mapenzi-beach",
-      "photo": "hotels/diamonds-mapenzi-beach.jpg",
+      "photo": "hotels/diamonds-mapenzi-beach.jpeg",
       "description": "Resort in Pwani Mchangani, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2050,7 +2050,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "fumba-beach-lodge",
-      "photo": "hotels/fumba-beach-lodge.jpg",
+      "photo": "hotels/fumba-beach-lodge.webp",
       "description": "Lodge in Fumba, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2102,7 +2102,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "fun-beach-resort",
-      "photo": "hotels/fun-beach-resort.jpg",
+      "photo": "hotels/fun-beach-resort.webp",
       "description": "Resort in Jambiani, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -2440,7 +2440,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "karafuu-beach-resort-spa",
-      "photo": "hotels/karafuu-beach-resort-spa.jpg",
+      "photo": "hotels/karafuu-beach-resort-spa.webp",
       "description": "Resort in Pingwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2544,7 +2544,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kendwa-rocks-beach-hotel",
-      "photo": "hotels/kendwa-rocks-beach-hotel.jpg",
+      "photo": "hotels/kendwa-rocks-beach-hotel.webp",
       "description": "Resort in Kendwa, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -2596,7 +2596,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kholle-house",
-      "photo": "hotels/kholle-house.jpg",
+      "photo": "hotels/kholle-house.png",
       "description": "Boutique in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2830,7 +2830,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "matemwe-lodge",
-      "photo": "hotels/matemwe-lodge.jpg",
+      "photo": "hotels/matemwe-lodge.webp",
       "description": "Boutique Lodge in Matemwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3142,7 +3142,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "paje-by-night",
-      "photo": "hotels/paje-by-night.jpg",
+      "photo": "hotels/paje-by-night.png",
       "description": "Boutique in Paje, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -3168,7 +3168,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "palumbokendwa",
-      "photo": "hotels/palumbokendwa.jpg",
+      "photo": "hotels/palumbokendwa.png",
       "description": "Resort in Kendwa, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3272,7 +3272,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "pemba-paradise",
-      "photo": "hotels/pemba-paradise.jpg",
+      "photo": "hotels/pemba-paradise.png",
       "description": "Boutique in Makangale, Pemba. 3-Star rating.",
       "price_range": ""
     },
@@ -3402,7 +3402,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "sea-view-lodge",
-      "photo": "hotels/sea-view-lodge.jpg",
+      "photo": "hotels/sea-view-lodge.webp",
       "description": "Boutique in Jambiani, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3428,7 +3428,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "seasons-lodge-zanzibar",
-      "photo": "hotels/seasons-lodge-zanzibar.jpg",
+      "photo": "hotels/seasons-lodge-zanzibar.webp",
       "description": "Boutique in Pongwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3532,7 +3532,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "shooting-star-lodge",
-      "photo": "hotels/shooting-star-lodge.jpg",
+      "photo": "hotels/shooting-star-lodge.png",
       "description": "Boutique in Kiwengwa, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3688,7 +3688,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "tembo-house-hotel",
-      "photo": "hotels/tembo-house-hotel.jpg",
+      "photo": "hotels/tembo-house-hotel.webp",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3714,7 +3714,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "tembo-palace-hotel",
-      "photo": "hotels/tembo-palace-hotel.jpg",
+      "photo": "hotels/tembo-palace-hotel.webp",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3740,7 +3740,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "the-island-pongwe-lodge",
-      "photo": "hotels/the-island-pongwe-lodge.jpg",
+      "photo": "hotels/the-island-pongwe-lodge.png",
       "description": "Boutique in Pongwe, Unguja. 3-Star rating.",
       "price_range": ""
     },

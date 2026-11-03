@@ -5,6 +5,8 @@ For each hotel in src/data/hotels.json that has a `photo` target path, fetch the
 hotel's official website, extract a best-candidate image (og:image, twitter:image,
 or first <img> in header/hero), download it into public/images/hotels/<slug>.jpg,
 and save a report of successes/failures.
+
+Concurrent (thread pool) so 205 hotels complete in minutes, not hours.
 """
 import json
 import os
@@ -13,16 +15,36 @@ import sys
 import time
 import hashlib
 import urllib.parse
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 import requests
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 HOTELS = os.path.join(ROOT, "src", "data", "hotels.json")
 OUTDIR = os.path.join(ROOT, "public", "images", "hotels")
+REPORT = os.path.join(ROOT, "reports", "download-report.json")
+WORKERS = int(os.environ.get("PHOTO_WORKERS", "6"))
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
-HEADERS = {"User-Agent": UA, "Accept": "text/html,application/xhtml+xml",
-           "Accept-Language": "en-US,en;q=0.9"}
+HEADERS = {"User-Agent": UA,
+           "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+           "Accept-Language": "en-US,en;q=0.9",
+           "Accept-Encoding": "gzip, deflate, br",
+           "Upgrade-Insecure-Requests": "1",
+           "Sec-Fetch-Dest": "document",
+           "Sec-Fetch-Mode": "navigate",
+           "Sec-Fetch-Site": "none",
+           "Sec-Fetch-User": "?1",
+           "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+           "Sec-Ch-Ua-Mobile": "?0",
+           "Sec-Ch-Ua-Platform": '"Windows"',
+           "Referer": "https://www.google.com/"}
+# Some hotel sites serve self-signed / misconfigured TLS; those are still fetchable,
+# so tolerate cert errors rather than dropping the hotel entirely.
+REQUESTS_OPTS = {"verify": False}
 
 IMG_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.I)
 OG_RE = re.compile(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)', re.I)
@@ -30,6 +52,13 @@ TW_RE = re.compile(r'name=["\']twitter:image["\'][^>]*content=["\']([^"\']+)', r
 HREF_RE = re.compile(r'<link[^>]+rel=["\'](?:apple-touch-icon|icon)["\'][^>]*href=["\']([^"\']+)', re.I)
 
 VALID_EXT = (".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif")
+
+# keywords that indicate a promo/banner/logo rather than a real property photo
+BAD_KW = ("cyber", "-monday", "sale", "booknow", "book-now", "promo", "banner",
+          "newsletter", "subscribe", "campaign", "offer", "deal", "voucher",
+          "logo", "favicon", "sprite", "sponsor", "advert", "1080x", "banner-",
+          "header-bg", "bg-", "background", "cta-", "call-to-action",
+          "hero-bg", "quote", "testimonial", "map-", "icon-", "icon_")
 
 
 def norm_url(base, src):
@@ -41,12 +70,11 @@ def norm_url(base, src):
     return urllib.parse.urljoin(base, src)
 
 
-def get_page(url, timeout=15):
+def get_page(url, timeout=12):
     try:
-        r = requests.get(url, headers=HEADERS, timeout=timeout, stream=True)
+        r = requests.get(url, headers=HEADERS, timeout=timeout, stream=True, **REQUESTS_OPTS)
         if r.status_code != 200:
             return None
-        # read up to 3MB of html
         body = r.raw.read(3_000_000, decode_content=True)
         if isinstance(body, bytes):
             body = body.decode("utf-8", "ignore")
@@ -63,7 +91,6 @@ def candidates(html, base):
         found.append(norm_url(base, m.group(1)))
     for m in HREF_RE.finditer(html):
         found.append(norm_url(base, m.group(1)))
-    # hero-ish imgs: first few <img> that don't look like icons/logos
     for i, m in enumerate(IMG_RE.finditer(html)):
         if i >= 30:
             break
@@ -74,13 +101,15 @@ def candidates(html, base):
         path = url.path.lower()
         if any(x in path for x in ("logo", "icon", "favicon", ".svg", "sprite", "avatar")):
             continue
+        if any(kw in path for kw in BAD_KW):
+            continue
         found.append(u)
     return found
 
 
 def download(url, timeout=20):
     try:
-        r = requests.get(url, headers={"User-Agent": UA}, timeout=timeout, stream=True)
+        r = requests.get(url, headers={"User-Agent": UA}, timeout=timeout, stream=True, **REQUESTS_OPTS)
         if r.status_code != 200:
             return None, None
         ctype = r.headers.get("Content-Type", "")
@@ -99,69 +128,100 @@ def download(url, timeout=20):
             return None, None
         ext = os.path.splitext(urllib.parse.urlparse(url).path)[1].lower()
         if ext not in VALID_EXT:
-            # sniff ext from content-type
             ctype = ctype.split(";")[0].strip().lower()
-            ext = {".image/jpeg": ".jpg", "image/png": ".png",
+            ext = {"image/jpeg": ".jpg", "image/png": ".png",
                    "image/webp": ".webp", "image/gif": ".gif"}.get(ctype, ".jpg")
         return data, (ext or ".jpg")
     except Exception:
         return None, None
 
 
+def process_hotel(h):
+    """Download a single hotel's photo. Returns (hotel, status_dict)."""
+    slug = h.get("slug", "")
+    photo = (h.get("photo") or "").strip()
+    target = os.path.join(OUTDIR, os.path.basename(photo)) if photo else os.path.join(OUTDIR, slug + ".jpg")
+
+    if os.path.exists(target) and os.path.getsize(target) > 2000:
+        return h, {"status": "skipped", "slug": slug, "name": h.get("name"),
+                   "photo": os.path.basename(target)}
+
+    url = h.get("website") or ""
+    if not url or url == "N/A":
+        return h, {"status": "failed", "slug": slug, "name": h.get("name"), "reason": "no website"}
+
+    html = get_page(url)
+    if html is None:
+        return h, {"status": "failed", "slug": slug, "name": h.get("name"), "reason": "page fetch failed"}
+
+    chosen = None
+    for cand in candidates(html, url):
+        data, ext = download(cand)
+        if not data:
+            continue
+        parsed = urllib.parse.urlparse(cand)
+        name = os.path.basename(parsed.path).lower()
+        if any(bad in name for bad in BAD_KW):
+            continue
+        if ext not in (".jpg", ".jpeg", ".png", ".webp"):
+            continue
+        if chosen is None or len(data) > len(chosen[0]):
+            chosen = (data, ext, cand)
+
+    if chosen is None:
+        return h, {"status": "failed", "slug": slug, "name": h.get("name"), "reason": "no usable image found"}
+
+    data, ext, cand = chosen
+    path = target if target.endswith(ext) else os.path.splitext(target)[0] + ext
+    with open(path, "wb") as f:
+        f.write(data)
+    h["photo"] = os.path.relpath(path, os.path.join(ROOT, "public", "images"))
+    return h, {"status": "ok", "slug": slug, "name": h.get("name"),
+               "photo": os.path.basename(path), "src": cand, "bytes": len(data)}
+
+
 def main(limit=None, only_zones=None, skip_existing=True):
-    hotels = json.load(open(HOTELS))["hotels"]
-    report = {"ok": [], "failed": [], "skipped": []}
-    done = 0
+    data = json.load(open(HOTELS))
+    hotels = data["hotels"] if isinstance(data, dict) and "hotels" in data else data
+
+    todo = []
     for h in hotels:
         slug = h.get("slug", "")
         photo = (h.get("photo") or "").strip()
         target = os.path.join(OUTDIR, os.path.basename(photo)) if photo else os.path.join(OUTDIR, slug + ".jpg")
         if skip_existing and os.path.exists(target) and os.path.getsize(target) > 2000:
-            report["skipped"].append({"name": h.get("name"), "slug": slug, "photo": os.path.basename(target)})
             continue
         if only_zones and h.get("zone") not in only_zones:
-            report["skipped"].append({"name": h.get("name"), "slug": slug, "photo": os.path.basename(target), "reason": "zone not in scope"})
             continue
-        url = h.get("website") or ""
-        if not url or url == "N/A":
-            report["failed"].append({"name": h.get("name"), "slug": slug, "reason": "no website"})
-            continue
-        html = get_page(url)
-        if html is None:
-            report["failed"].append({"name": h.get("name"), "slug": slug, "reason": "page fetch failed"})
-            done += 1
-            if limit and done >= limit:
-                break
-            continue
-        chosen = None
-        for cand in candidates(html, url):
-            data, ext = download(cand)
-            if data:
-                # pick the largest/heaviest of candidates
-                if chosen is None or len(data) > len(chosen[0]):
-                    chosen = (data, ext, cand)
-        if chosen is None:
-            report["failed"].append({"name": h.get("name"), "slug": slug, "reason": "no usable image found"})
-        else:
-            data, ext, cand = chosen
-            path = target if target.endswith(ext) else os.path.splitext(target)[0] + ext
-            with open(path, "wb") as f:
-                f.write(data)
-            report["ok"].append({"name": h.get("name"), "slug": slug,
-                                 "photo": os.path.basename(path), "src": cand, "bytes": len(data)})
-            h["photo"] = os.path.relpath(path, os.path.join(ROOT, "public", "images"))
-        done += 1
-        if limit and done >= limit:
+        todo.append(h)
+        if limit and len(todo) >= limit:
             break
-        time.sleep(0.4)  # be polite to hotel servers
 
-    out = os.path.join(ROOT, "reports", "download-report.json")
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    with open(out, "w") as f:
+    report = {"ok": [], "failed": [], "skipped": []}
+    processed = 0
+
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        futs = {ex.submit(process_hotel, h): h for h in todo}
+        for fut in as_completed(futs):
+            h, status = fut.result()
+            processed += 1
+            report[status["status"]].append(status)
+            if processed % 25 == 0:
+                print(f"  progress {processed}/{len(todo)}  "
+                      f"ok={len(report['ok'])} failed={len(report['failed'])} "
+                      f"skipped={len(report['skipped'])}", flush=True)
+
+    # persist hotel photo fields back to disk
+    with open(HOTELS, "w") as f:
+        json.dump({"hotels": hotels}, f, indent=2)
+
+    os.makedirs(os.path.dirname(REPORT), exist_ok=True)
+    with open(REPORT, "w") as f:
         json.dump(report, f, indent=2)
+
     print(f"ok={len(report['ok'])} failed={len(report['failed'])} "
           f"skipped={len(report['skipped'])}")
-    print("report:", out)
+    print("report:", REPORT)
     return report
 
 

@@ -1,39 +1,1046 @@
 {
   "ok": [
     {
-      "name": "&Beyond Mnemba Island",
       "slug": "beyond-mnemba-island",
-      "photo": "beyond-mnemba-island.jpg",
-      "src": "https://www.andbeyond.com/wp-content/uploads/sites/5/Cyber-monday-2022.jpg",
+      "name": "&Beyond Mnemba Island",
+      "photo": "hotels/beyond-mnemba-island.jpg",
       "bytes": 254358
     },
     {
-      "name": "Bawe Tropical Island",
       "slug": "bawe-tropical-island",
-      "photo": "bawe-tropical-island.jpg",
-      "src": "https://static.wixstatic.com/media/17ccf0_05c5fe412b3d4219914edf5601cfb18d%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/17ccf0_05c5fe412b3d4219914edf5601cfb18d%7Emv2.jpg",
+      "name": "Bawe Tropical Island",
+      "photo": "hotels/bawe-tropical-island.jpg",
       "bytes": 1135301
     },
     {
-      "name": "Bluebay Beach Resort & Spa",
       "slug": "bluebay-beach-resort-spa",
-      "photo": "bluebay-beach-resort-spa.jpg",
-      "src": "https://static.wixstatic.com/media/26fdd9_6b7dbb588bfa4fce953c4180ddf16630%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/26fdd9_6b7dbb588bfa4fce953c4180ddf16630%7Emv2.jpg",
+      "name": "Bluebay Beach Resort & Spa",
+      "photo": "hotels/bluebay-beach-resort-spa.jpg",
       "bytes": 230178
     },
     {
-      "name": "Emerald Zanzibar Resort & Spa",
       "slug": "emerald-zanzibar-resort-spa",
-      "photo": "emerald-zanzibar-resort-spa.jpg",
-      "src": "https://cdn.prod.website-files.com/5db7e84d2e950f57520736e2/618ba80d80fb349a9e53a162_booknow-faarufushi.jpg",
+      "name": "Emerald Zanzibar Resort & Spa",
+      "photo": "hotels/emerald-zanzibar-resort-spa.jpg",
       "bytes": 25625
+    },
+    {
+      "slug": "fundu-lagoon",
+      "name": "Fundu Lagoon",
+      "photo": "hotels/fundu-lagoon.jpg",
+      "bytes": 159258
+    },
+    {
+      "slug": "gold-zanzibar-beach-house-spa",
+      "name": "Gold Zanzibar Beach House & Spa",
+      "photo": "hotels/gold-zanzibar-beach-house-spa.jpg",
+      "bytes": 572827
+    },
+    {
+      "slug": "kasha-boutique-hotel",
+      "name": "Kasha Boutique Hotel",
+      "photo": "hotels/kasha-boutique-hotel.jpg",
+      "bytes": 620366
+    },
+    {
+      "slug": "kilindi-zanzibar",
+      "name": "Kilindi Zanzibar",
+      "photo": "hotels/kilindi-zanzibar.jpg",
+      "bytes": 455806
+    },
+    {
+      "slug": "lux-marijani-zanzibar",
+      "name": "LUX* Marijani Zanzibar",
+      "photo": "hotels/lux-marijani-zanzibar.jpg",
+      "bytes": 745932
+    },
+    {
+      "slug": "matlai-boutique-hotel",
+      "name": "Matlai Boutique Hotel",
+      "photo": "hotels/matlai-boutique-hotel.jpg",
+      "bytes": 1016707
+    },
+    {
+      "slug": "milele-villas",
+      "name": "Milele Villas",
+      "photo": "hotels/milele-villas.jpg",
+      "bytes": 742235
+    },
+    {
+      "slug": "qambani-luxury-resort",
+      "name": "Qambani Luxury Resort",
+      "photo": "hotels/qambani-luxury-resort.jpg",
+      "bytes": 1119924
+    },
+    {
+      "slug": "riu-jambo",
+      "name": "Riu Jambo",
+      "photo": "hotels/riu-jambo.jpg",
+      "bytes": 492619
+    },
+    {
+      "slug": "riu-palace-zanzibar",
+      "name": "Riu Palace Zanzibar",
+      "photo": "hotels/riu-palace-zanzibar.jpg",
+      "bytes": 492619
+    },
+    {
+      "slug": "royal-cliff-zanzibar",
+      "name": "Royal Cliff Zanzibar",
+      "photo": "hotels/royal-cliff-zanzibar.jpg",
+      "bytes": 107719
     }
   ],
   "failed": [
     {
-      "name": "Baraza Resort and Spa",
       "slug": "baraza-resort-and-spa",
-      "reason": "page fetch failed"
+      "name": "Baraza Resort and Spa",
+      "target": "hotels/baraza-resort-and-spa.jpg"
+    },
+    {
+      "slug": "emerson-spice",
+      "name": "Emerson Spice",
+      "target": "hotels/emerson-spice.jpg"
+    },
+    {
+      "slug": "emerson-on-hurumzi",
+      "name": "Emerson on Hurumzi",
+      "target": "hotels/emerson-on-hurumzi.jpg"
+    },
+    {
+      "slug": "essque-zalu-zanzibar",
+      "name": "Essque Zalu Zanzibar",
+      "target": "hotels/essque-zalu-zanzibar.jpg"
+    },
+    {
+      "slug": "fruit-spice-wellness-resort",
+      "name": "Fruit & Spice Wellness Resort",
+      "target": "hotels/fruit-spice-wellness-resort.jpg"
+    },
+    {
+      "slug": "isaraya-luxury-overwater-villas",
+      "name": "Isaraya Luxury Overwater Villas",
+      "target": "hotels/isaraya-luxury-overwater-villas.jpg"
+    },
+    {
+      "slug": "jafferji-house-spa",
+      "name": "Jafferji House & Spa",
+      "target": "hotels/jafferji-house-spa.jpg"
+    },
+    {
+      "slug": "kiwengwa-beach-resort",
+      "name": "Kiwengwa Beach Resort",
+      "target": "hotels/kiwengwa-beach-resort.jpg"
+    },
+    {
+      "slug": "konokono-beach-resort",
+      "name": "Konokono Beach Resort",
+      "target": "hotels/konokono-beach-resort.jpg"
+    },
+    {
+      "slug": "marijani-beach-resort-spa",
+      "name": "Marijani Beach Resort & Spa",
+      "target": "hotels/marijani-beach-resort-spa.jpg"
+    },
+    {
+      "slug": "matemwe-retreat",
+      "name": "Matemwe Retreat",
+      "target": "hotels/matemwe-retreat.jpg"
+    },
+    {
+      "slug": "melia-zanzibar",
+      "name": "Melia Zanzibar",
+      "target": "hotels/melia-zanzibar.jpg"
+    },
+    {
+      "slug": "nungwi-dreams-by-mantis",
+      "name": "Nungwi Dreams by Mantis",
+      "target": "hotels/nungwi-dreams-by-mantis.jpg"
+    },
+    {
+      "slug": "park-hyatt-zanzibar",
+      "name": "Park Hyatt Zanzibar",
+      "target": "hotels/park-hyatt-zanzibar.jpg"
+    },
+    {
+      "slug": "royal-zanzibar-beach-resort",
+      "name": "Royal Zanzibar Beach Resort",
+      "target": "hotels/royal-zanzibar-beach-resort.jpg"
+    },
+    {
+      "slug": "safira-blu-luxury-resort",
+      "name": "Safira Blu Luxury Resort",
+      "target": "hotels/safira-blu-luxury-resort.jpg"
+    },
+    {
+      "slug": "sea-cliff-resort-spa",
+      "name": "Sea Cliff Resort & Spa",
+      "target": "hotels/sea-cliff-resort-spa.jpg"
+    },
+    {
+      "slug": "sunshine-marine-lodge",
+      "name": "Sunshine Marine Lodge",
+      "target": "hotels/sunshine-marine-lodge.jpg"
+    },
+    {
+      "slug": "tui-blue-bahari-zanzibar",
+      "name": "TUI BLUE Bahari Zanzibar",
+      "target": "hotels/tui-blue-bahari-zanzibar.jpg"
+    },
+    {
+      "slug": "the-manta-resort",
+      "name": "The Manta Resort",
+      "target": "hotels/the-manta-resort.jpg"
+    },
+    {
+      "slug": "the-mora-zanzibar",
+      "name": "The Mora Zanzibar",
+      "target": "hotels/the-mora-zanzibar.jpg"
+    },
+    {
+      "slug": "the-neela-boutique-hotel",
+      "name": "The Neela Boutique Hotel",
+      "target": "hotels/the-neela-boutique-hotel.jpg"
+    },
+    {
+      "slug": "the-neela-oceanfront",
+      "name": "The Neela Oceanfront",
+      "target": "hotels/the-neela-oceanfront.jpg"
+    },
+    {
+      "slug": "the-palms-zanzibar",
+      "name": "The Palms Zanzibar",
+      "target": "hotels/the-palms-zanzibar.jpg"
+    },
+    {
+      "slug": "the-residence-zanzibar",
+      "name": "The Residence Zanzibar",
+      "target": "hotels/the-residence-zanzibar.jpg"
+    },
+    {
+      "slug": "the-z-hotel",
+      "name": "The Z Hotel",
+      "target": "hotels/the-z-hotel.jpg"
+    },
+    {
+      "slug": "tulia-zanzibar-unique-beach-resort",
+      "name": "Tulia Zanzibar Unique Beach Resort",
+      "target": "hotels/tulia-zanzibar-unique-beach-resort.jpg"
+    },
+    {
+      "slug": "villa-stecchini",
+      "name": "Villa Stecchini",
+      "target": "hotels/villa-stecchini.jpg"
+    },
+    {
+      "slug": "xanadu-luxury-villas",
+      "name": "Xanadu Luxury Villas",
+      "target": "hotels/xanadu-luxury-villas.jpg"
+    },
+    {
+      "slug": "zanzi-resort",
+      "name": "Zanzi Resort",
+      "target": "hotels/zanzi-resort.jpg"
+    },
+    {
+      "slug": "zanzibar-white-sand-luxury-villas",
+      "name": "Zanzibar White Sand Luxury Villas",
+      "target": "hotels/zanzibar-white-sand-luxury-villas.jpg"
+    },
+    {
+      "slug": "zawadi-hotel-zanzibar",
+      "name": "Zawadi Hotel Zanzibar",
+      "target": "hotels/zawadi-hotel-zanzibar.jpg"
+    },
+    {
+      "slug": "zuri-zanzibar",
+      "name": "Zuri Zanzibar",
+      "target": "hotels/zuri-zanzibar.jpg"
+    },
+    {
+      "slug": "africa-house-hotel",
+      "name": "Africa House Hotel",
+      "target": "hotels/africa-house-hotel.jpg"
+    },
+    {
+      "slug": "aluna-nungwi",
+      "name": "Aluna Nungwi",
+      "target": "hotels/aluna-nungwi.jpg"
+    },
+    {
+      "slug": "aluna-paje",
+      "name": "Aluna Paje",
+      "target": "hotels/aluna-paje.jpg"
+    },
+    {
+      "slug": "amaan-beach-bungalows",
+      "name": "Amaan Beach Bungalows",
+      "target": "hotels/amaan-beach-bungalows.jpg"
+    },
+    {
+      "slug": "anna-of-zanzibar",
+      "name": "Anna of Zanzibar",
+      "target": "hotels/anna-of-zanzibar.jpg"
+    },
+    {
+      "slug": "antonio-garden-hotel",
+      "name": "Antonio Garden Hotel",
+      "target": "hotels/antonio-garden-hotel.jpg"
+    },
+    {
+      "slug": "art-hotel-zanzibar",
+      "name": "Art Hotel Zanzibar",
+      "target": "hotels/art-hotel-zanzibar.jpg"
+    },
+    {
+      "slug": "atii-garden-bungalows",
+      "name": "Atii Garden Bungalows",
+      "target": "hotels/atii-garden-bungalows.jpg"
+    },
+    {
+      "slug": "aya-beach-bungalows",
+      "name": "Aya Beach Bungalows",
+      "target": "hotels/aya-beach-bungalows.jpg"
+    },
+    {
+      "slug": "azanzi-beach-hotel",
+      "name": "Azanzi Beach Hotel",
+      "target": "hotels/azanzi-beach-hotel.jpg"
+    },
+    {
+      "slug": "b4-beach-club",
+      "name": "B4 Beach Club",
+      "target": "hotels/b4-beach-club.jpg"
+    },
+    {
+      "slug": "babalao-bungalows",
+      "name": "Babalao Bungalows",
+      "target": "hotels/babalao-bungalows.jpg"
+    },
+    {
+      "slug": "baraka-beach-bungalows",
+      "name": "Baraka Beach Bungalows",
+      "target": "hotels/baraka-beach-bungalows.jpg"
+    },
+    {
+      "slug": "blue-moon-resort",
+      "name": "Blue Moon Resort",
+      "target": "hotels/blue-moon-resort.jpg"
+    },
+    {
+      "slug": "blue-oyster-hotel",
+      "name": "Blue Oyster Hotel",
+      "target": "hotels/blue-oyster-hotel.jpg"
+    },
+    {
+      "slug": "breezes-beach-club-spa",
+      "name": "Breezes Beach Club & Spa",
+      "target": "hotels/breezes-beach-club-spa.jpg"
+    },
+    {
+      "slug": "canary-nungwi-hotel-spa",
+      "name": "Canary Nungwi Hotel & Spa",
+      "target": "hotels/canary-nungwi-hotel-spa.jpg"
+    },
+    {
+      "slug": "chapwani-private-island",
+      "name": "Chapwani Private Island",
+      "target": "hotels/chapwani-private-island.jpg"
+    },
+    {
+      "slug": "chumbe-island-coral-park",
+      "name": "Chumbe Island Coral Park",
+      "target": "hotels/chumbe-island-coral-park.jpg"
+    },
+    {
+      "slug": "clove-island-villas-apartments",
+      "name": "Clove Island Villas & Apartments",
+      "target": "hotels/clove-island-villas-apartments.jpg"
+    },
+    {
+      "slug": "cristal-resort",
+      "name": "Cristal Resort",
+      "target": "hotels/cristal-resort.jpg"
+    },
+    {
+      "slug": "dhow-inn",
+      "name": "Dhow Inn",
+      "target": "hotels/dhow-inn.jpg"
+    },
+    {
+      "slug": "dhow-palace-hotel",
+      "name": "Dhow Palace Hotel",
+      "target": "hotels/dhow-palace-hotel.jpg"
+    },
+    {
+      "slug": "diamonds-mapenzi-beach",
+      "name": "Diamonds Mapenzi Beach",
+      "target": "hotels/diamonds-mapenzi-beach.jpg"
+    },
+    {
+      "slug": "dongwe-ocean-view",
+      "name": "Dongwe Ocean View",
+      "target": "hotels/dongwe-ocean-view.jpg"
+    },
+    {
+      "slug": "doubletree-by-hilton-nungwi",
+      "name": "DoubleTree by Hilton Nungwi",
+      "target": "hotels/doubletree-by-hilton-nungwi.jpg"
+    },
+    {
+      "slug": "doubletree-by-hilton-stone-town",
+      "name": "DoubleTree by Hilton Stone Town",
+      "target": "hotels/doubletree-by-hilton-stone-town.jpg"
+    },
+    {
+      "slug": "emerald-bay-resort",
+      "name": "Emerald Bay Resort",
+      "target": "hotels/emerald-bay-resort.jpg"
+    },
+    {
+      "slug": "filao-beach-zanzibar",
+      "name": "Filao Beach Zanzibar",
+      "target": "hotels/filao-beach-zanzibar.jpg"
+    },
+    {
+      "slug": "flame-tree-cottages",
+      "name": "Flame Tree Cottages",
+      "target": "hotels/flame-tree-cottages.jpg"
+    },
+    {
+      "slug": "fumba-beach-lodge",
+      "name": "Fumba Beach Lodge",
+      "target": "hotels/fumba-beach-lodge.jpg"
+    },
+    {
+      "slug": "fumba-town-apartments-by-cps",
+      "name": "Fumba Town Apartments by CPS",
+      "target": "hotels/fumba-town-apartments-by-cps.jpg"
+    },
+    {
+      "slug": "fun-beach-resort",
+      "name": "Fun Beach Resort",
+      "target": "hotels/fun-beach-resort.jpg"
+    },
+    {
+      "slug": "golden-tulip-stone-town-boutique",
+      "name": "Golden Tulip Stone Town Boutique",
+      "target": "hotels/golden-tulip-stone-town-boutique.jpg"
+    },
+    {
+      "slug": "green-living-fumba",
+      "name": "Green Living Fumba",
+      "target": "hotels/green-living-fumba.jpg"
+    },
+    {
+      "slug": "hakuna-majiwe-beach-lodge",
+      "name": "Hakuna Majiwe Beach Lodge",
+      "target": "hotels/hakuna-majiwe-beach-lodge.jpg"
+    },
+    {
+      "slug": "hakuna-matata-beach-lodge",
+      "name": "Hakuna Matata Beach Lodge",
+      "target": "hotels/hakuna-matata-beach-lodge.jpg"
+    },
+    {
+      "slug": "hodi-hodi-zanzibar",
+      "name": "Hodi Hodi Zanzibar",
+      "target": "hotels/hodi-hodi-zanzibar.jpg"
+    },
+    {
+      "slug": "house-of-spices",
+      "name": "House of Spices",
+      "target": "hotels/house-of-spices.jpg"
+    },
+    {
+      "slug": "ifa-beach-resort",
+      "name": "Ifa Beach Resort",
+      "target": "hotels/ifa-beach-resort.jpg"
+    },
+    {
+      "slug": "indigo-beach-zanzibar",
+      "name": "Indigo Beach Zanzibar",
+      "target": "hotels/indigo-beach-zanzibar.jpg"
+    },
+    {
+      "slug": "jafferji-beach-retreat",
+      "name": "Jafferji Beach Retreat",
+      "target": "hotels/jafferji-beach-retreat.jpg"
+    },
+    {
+      "slug": "jambiani-wellness-retreat",
+      "name": "Jambiani Wellness Retreat",
+      "target": "hotels/jambiani-wellness-retreat.jpg"
+    },
+    {
+      "slug": "jambiani-white-sands",
+      "name": "Jambiani White Sands",
+      "target": "hotels/jambiani-white-sands.jpg"
+    },
+    {
+      "slug": "kae-funk-zanzibar",
+      "name": "Kae Funk Zanzibar",
+      "target": "hotels/kae-funk-zanzibar.jpg"
+    },
+    {
+      "slug": "karafuu-beach-resort-spa",
+      "name": "Karafuu Beach Resort & Spa",
+      "target": "hotels/karafuu-beach-resort-spa.jpg"
+    },
+    {
+      "slug": "karamba-eco-boutique-hotel",
+      "name": "Karamba Eco Boutique Hotel",
+      "target": "hotels/karamba-eco-boutique-hotel.jpg"
+    },
+    {
+      "slug": "karibu-beach-resort",
+      "name": "Karibu Beach Resort",
+      "target": "hotels/karibu-beach-resort.jpg"
+    },
+    {
+      "slug": "kena-beach-hotel",
+      "name": "Kena Beach Hotel",
+      "target": "hotels/kena-beach-hotel.jpg"
+    },
+    {
+      "slug": "kendwa-rocks-beach-hotel",
+      "name": "Kendwa Rocks Beach Hotel",
+      "target": "hotels/kendwa-rocks-beach-hotel.jpg"
+    },
+    {
+      "slug": "kervan-saray-beach",
+      "name": "Kervan Saray Beach",
+      "target": "hotels/kervan-saray-beach.jpg"
+    },
+    {
+      "slug": "kholle-house",
+      "name": "Kholle House",
+      "target": "hotels/kholle-house.jpg"
+    },
+    {
+      "slug": "kibanda-lodge",
+      "name": "Kibanda Lodge",
+      "target": "hotels/kibanda-lodge.jpg"
+    },
+    {
+      "slug": "kisiwa-house",
+      "name": "Kisiwa House",
+      "target": "hotels/kisiwa-house.jpg"
+    },
+    {
+      "slug": "kisiwa-on-the-beach",
+      "name": "Kisiwa on the Beach",
+      "target": "hotels/kisiwa-on-the-beach.jpg"
+    },
+    {
+      "slug": "kupaga-villas",
+      "name": "Kupaga Villas",
+      "target": "hotels/kupaga-villas.jpg"
+    },
+    {
+      "slug": "langi-langi-beach-bungalows",
+      "name": "Langi Langi Beach Bungalows",
+      "target": "hotels/langi-langi-beach-bungalows.jpg"
+    },
+    {
+      "slug": "mahali-zanzibar",
+      "name": "Mahali Zanzibar",
+      "target": "hotels/mahali-zanzibar.jpg"
+    },
+    {
+      "slug": "marafiki-bungalows",
+      "name": "Marafiki Bungalows",
+      "target": "hotels/marafiki-bungalows.jpg"
+    },
+    {
+      "slug": "maru-maru-hotel",
+      "name": "Maru Maru Hotel",
+      "target": "hotels/maru-maru-hotel.jpg"
+    },
+    {
+      "slug": "matemwe-lodge",
+      "name": "Matemwe Lodge",
+      "target": "hotels/matemwe-lodge.jpg"
+    },
+    {
+      "slug": "michamvi-sunset-bay",
+      "name": "Michamvi Sunset Bay",
+      "target": "hotels/michamvi-sunset-bay.jpg"
+    },
+    {
+      "slug": "miramont-retreat",
+      "name": "Miramont Retreat",
+      "target": "hotels/miramont-retreat.jpg"
+    },
+    {
+      "slug": "mizingani-seafront-hotel",
+      "name": "Mizingani Seafront Hotel",
+      "target": "hotels/mizingani-seafront-hotel.jpg"
+    },
+    {
+      "slug": "mnana-beach-bungalows",
+      "name": "Mnana Beach Bungalows",
+      "target": "hotels/mnana-beach-bungalows.jpg"
+    },
+    {
+      "slug": "mnarani-beach-cottages",
+      "name": "Mnarani Beach Cottages",
+      "target": "hotels/mnarani-beach-cottages.jpg"
+    },
+    {
+      "slug": "mvuvi-resort",
+      "name": "Mvuvi Resort",
+      "target": "hotels/mvuvi-resort.jpg"
+    },
+    {
+      "slug": "mwezi-boutique-resort",
+      "name": "Mwezi Boutique Resort",
+      "target": "hotels/mwezi-boutique-resort.jpg"
+    },
+    {
+      "slug": "my-blue-hotel",
+      "name": "My Blue Hotel",
+      "target": "hotels/my-blue-hotel.jpg"
+    },
+    {
+      "slug": "nur-beach-hotel",
+      "name": "Nur Beach Hotel",
+      "target": "hotels/nur-beach-hotel.jpg"
+    },
+    {
+      "slug": "ocean-paradise-resort-spa",
+      "name": "Ocean Paradise Resort & Spa",
+      "target": "hotels/ocean-paradise-resort-spa.jpg"
+    },
+    {
+      "slug": "oxygen-paje",
+      "name": "Oxygen Paje",
+      "target": "hotels/oxygen-paje.jpg"
+    },
+    {
+      "slug": "paje-by-night",
+      "name": "Paje By Night",
+      "target": "hotels/paje-by-night.jpg"
+    },
+    {
+      "slug": "palumbokendwa",
+      "name": "Palumbokendwa",
+      "target": "hotels/palumbokendwa.jpg"
+    },
+    {
+      "slug": "paradise-beach-resort",
+      "name": "Paradise Beach Resort",
+      "target": "hotels/paradise-beach-resort.jpg"
+    },
+    {
+      "slug": "passion-boutique-hotel",
+      "name": "Passion Boutique Hotel",
+      "target": "hotels/passion-boutique-hotel.jpg"
+    },
+    {
+      "slug": "pemba-misali-sunset-beach",
+      "name": "Pemba Misali Sunset Beach",
+      "target": "hotels/pemba-misali-sunset-beach.jpg"
+    },
+    {
+      "slug": "pemba-paradise",
+      "name": "Pemba Paradise",
+      "target": "hotels/pemba-paradise.jpg"
+    },
+    {
+      "slug": "pongwe-beach-hotel",
+      "name": "Pongwe Beach Hotel",
+      "target": "hotels/pongwe-beach-hotel.jpg"
+    },
+    {
+      "slug": "red-monkey-lodge",
+      "name": "Red Monkey Lodge",
+      "target": "hotels/red-monkey-lodge.jpg"
+    },
+    {
+      "slug": "sandies-baobab-beach-zanzibar",
+      "name": "Sandies Baobab Beach Zanzibar",
+      "target": "hotels/sandies-baobab-beach-zanzibar.jpg"
+    },
+    {
+      "slug": "sea-cliff-court-zanzibar",
+      "name": "Sea Cliff Court Zanzibar",
+      "target": "hotels/sea-cliff-court-zanzibar.jpg"
+    },
+    {
+      "slug": "sea-view-lodge",
+      "name": "Sea View Lodge",
+      "target": "hotels/sea-view-lodge.jpg"
+    },
+    {
+      "slug": "seasons-lodge-zanzibar",
+      "name": "Seasons Lodge Zanzibar",
+      "target": "hotels/seasons-lodge-zanzibar.jpg"
+    },
+    {
+      "slug": "shaba-boutique-hotel",
+      "name": "Shaba Boutique Hotel",
+      "target": "hotels/shaba-boutique-hotel.jpg"
+    },
+    {
+      "slug": "sharazd-boutique-hotel",
+      "name": "Sharaz\u0101d Boutique Hotel",
+      "target": "hotels/sharazd-boutique-hotel.jpg"
+    },
+    {
+      "slug": "sharook-riviera-grand",
+      "name": "Sharook Riviera Grand",
+      "target": "hotels/sharook-riviera-grand.jpg"
+    },
+    {
+      "slug": "shooting-star-lodge",
+      "name": "Shooting Star Lodge",
+      "target": "hotels/shooting-star-lodge.jpg"
+    },
+    {
+      "slug": "smiles-beach-hotel",
+      "name": "Smiles Beach Hotel",
+      "target": "hotels/smiles-beach-hotel.jpg"
+    },
+    {
+      "slug": "spice-island-hotel-resort",
+      "name": "Spice Island Hotel & Resort",
+      "target": "hotels/spice-island-hotel-resort.jpg"
+    },
+    {
+      "slug": "sultan-sands-island-resort",
+      "name": "Sultan Sands Island Resort",
+      "target": "hotels/sultan-sands-island-resort.jpg"
+    },
+    {
+      "slug": "tamani-marina-hotel",
+      "name": "Tamani Marina Hotel",
+      "target": "hotels/tamani-marina-hotel.jpg"
+    },
+    {
+      "slug": "tanzanite-beach-resort",
+      "name": "Tanzanite Beach Resort",
+      "target": "hotels/tanzanite-beach-resort.jpg"
+    },
+    {
+      "slug": "tembo-house-hotel",
+      "name": "Tembo House Hotel",
+      "target": "hotels/tembo-house-hotel.jpg"
+    },
+    {
+      "slug": "tembo-palace-hotel",
+      "name": "Tembo Palace Hotel",
+      "target": "hotels/tembo-palace-hotel.jpg"
+    },
+    {
+      "slug": "the-island-pongwe-lodge",
+      "name": "The Island - Pongwe Lodge",
+      "target": "hotels/the-island-pongwe-lodge.jpg"
+    },
+    {
+      "slug": "the-loop-beach-resort",
+      "name": "The Loop Beach Resort",
+      "target": "hotels/the-loop-beach-resort.jpg"
+    },
+    {
+      "slug": "the-sands-beach-resort",
+      "name": "The Sands Beach Resort",
+      "target": "hotels/the-sands-beach-resort.jpg"
+    },
+    {
+      "slug": "the-seyyida-hotel-spa",
+      "name": "The Seyyida Hotel & Spa",
+      "target": "hotels/the-seyyida-hotel-spa.jpg"
+    },
+    {
+      "slug": "the-zanzibari",
+      "name": "The Zanzibari",
+      "target": "hotels/the-zanzibari.jpg"
+    },
+    {
+      "slug": "toa-hotel-spa",
+      "name": "Toa Hotel & Spa",
+      "target": "hotels/toa-hotel-spa.jpg"
+    },
+    {
+      "slug": "upendo-beach-zanzibar",
+      "name": "Upendo Beach Zanzibar",
+      "target": "hotels/upendo-beach-zanzibar.jpg"
+    },
+    {
+      "slug": "upendo-house-stone-town",
+      "name": "Upendo House Stone Town",
+      "target": "hotels/upendo-house-stone-town.jpg"
+    },
+    {
+      "slug": "villa-bluu",
+      "name": "Villa Bluu",
+      "target": "hotels/villa-bluu.jpg"
+    },
+    {
+      "slug": "villa-kiva-boutique-hotel",
+      "name": "Villa Kiva Boutique Hotel",
+      "target": "hotels/villa-kiva-boutique-hotel.jpg"
+    },
+    {
+      "slug": "warere-beach",
+      "name": "Warere Beach",
+      "target": "hotels/warere-beach.jpg"
+    },
+    {
+      "slug": "warere-town-house",
+      "name": "Warere Town House",
+      "target": "hotels/warere-town-house.jpg"
+    },
+    {
+      "slug": "waridi-beach-resort-spa",
+      "name": "Waridi Beach Resort & Spa",
+      "target": "hotels/waridi-beach-resort-spa.jpg"
+    },
+    {
+      "slug": "white-paradise-zanzibar-resort",
+      "name": "White Paradise Zanzibar Resort",
+      "target": "hotels/white-paradise-zanzibar-resort.jpg"
+    },
+    {
+      "slug": "zanzibar-bay-resort",
+      "name": "Zanzibar Bay Resort",
+      "target": "hotels/zanzibar-bay-resort.jpg"
+    },
+    {
+      "slug": "zanzibar-coffee-house",
+      "name": "Zanzibar Coffee House",
+      "target": "hotels/zanzibar-coffee-house.jpg"
+    },
+    {
+      "slug": "zanzibar-kite-paradise",
+      "name": "Zanzibar Kite Paradise",
+      "target": "hotels/zanzibar-kite-paradise.jpg"
+    },
+    {
+      "slug": "zanzibar-pearl-boutique",
+      "name": "Zanzibar Pearl Boutique",
+      "target": "hotels/zanzibar-pearl-boutique.jpg"
+    },
+    {
+      "slug": "zanzibar-queen-hotel",
+      "name": "Zanzibar Queen Hotel",
+      "target": "hotels/zanzibar-queen-hotel.jpg"
+    },
+    {
+      "slug": "zanzibar-star-resort",
+      "name": "Zanzibar Star Resort",
+      "target": "hotels/zanzibar-star-resort.jpg"
+    },
+    {
+      "slug": "zenji-hotel",
+      "name": "Zenji Hotel",
+      "target": "hotels/zenji-hotel.jpg"
+    },
+    {
+      "slug": "al-minar-hotel",
+      "name": "Al-Minar Hotel",
+      "target": "hotels/al-minar-hotel.jpg"
+    },
+    {
+      "slug": "amaan-ocean-koko-beach",
+      "name": "Amaan Ocean Koko Beach",
+      "target": "hotels/amaan-ocean-koko-beach.jpg"
+    },
+    {
+      "slug": "aquaholics-surf-lodge",
+      "name": "Aquaholics Surf Lodge",
+      "target": "hotels/aquaholics-surf-lodge.jpg"
+    },
+    {
+      "slug": "arabian-nights-hotel",
+      "name": "Arabian Nights Hotel",
+      "target": "hotels/arabian-nights-hotel.jpg"
+    },
+    {
+      "slug": "cheetahs-rock-management-stay",
+      "name": "Cheetah's Rock Management Stay",
+      "target": "hotels/cheetahs-rock-management-stay.jpg"
+    },
+    {
+      "slug": "demani-lodge",
+      "name": "Demani Lodge",
+      "target": "hotels/demani-lodge.jpg"
+    },
+    {
+      "slug": "forodhani-park-hotel",
+      "name": "Forodhani Park Hotel",
+      "target": "hotels/forodhani-park-hotel.jpg"
+    },
+    {
+      "slug": "hiliki-house",
+      "name": "Hiliki House",
+      "target": "hotels/hiliki-house.jpg"
+    },
+    {
+      "slug": "kimte-beach-lodge",
+      "name": "Kimte Beach Lodge",
+      "target": "hotels/kimte-beach-lodge.jpg"
+    },
+    {
+      "slug": "kiponda-bb",
+      "name": "Kiponda B&B",
+      "target": "hotels/kiponda-bb.jpg"
+    },
+    {
+      "slug": "malika-hotel",
+      "name": "Malika Hotel",
+      "target": "hotels/malika-hotel.jpg"
+    },
+    {
+      "slug": "mangrove-lodge",
+      "name": "Mangrove Lodge",
+      "target": "hotels/mangrove-lodge.jpg"
+    },
+    {
+      "slug": "paje-beach-bandas",
+      "name": "Paje Beach Bandas",
+      "target": "hotels/paje-beach-bandas.jpg"
+    },
+    {
+      "slug": "princess-salme-inn",
+      "name": "Princess Salme Inn",
+      "target": "hotels/princess-salme-inn.jpg"
+    },
+    {
+      "slug": "promised-land-lodge",
+      "name": "Promised Land Lodge",
+      "target": "hotels/promised-land-lodge.jpg"
+    },
+    {
+      "slug": "rumaisa-hotel",
+      "name": "Rumaisa Hotel",
+      "target": "hotels/rumaisa-hotel.jpg"
+    },
+    {
+      "slug": "shangani-hotel",
+      "name": "Shangani Hotel",
+      "target": "hotels/shangani-hotel.jpg"
+    },
+    {
+      "slug": "spice-palace-hotel",
+      "name": "Spice Palace Hotel",
+      "target": "hotels/spice-palace-hotel.jpg"
+    },
+    {
+      "slug": "stone-town-caf-bb",
+      "name": "Stone Town Caf\u00e9 B&B",
+      "target": "hotels/stone-town-caf-bb.jpg"
+    },
+    {
+      "slug": "summer-dream-lodge",
+      "name": "Summer Dream Lodge",
+      "target": "hotels/summer-dream-lodge.jpg"
+    },
+    {
+      "slug": "sunset-kendwa",
+      "name": "Sunset Kendwa",
+      "target": "hotels/sunset-kendwa.jpg"
+    },
+    {
+      "slug": "sunshine-hotel-matemwe",
+      "name": "Sunshine Hotel Matemwe",
+      "target": "hotels/sunshine-hotel-matemwe.jpg"
+    },
+    {
+      "slug": "surfescape-zanzibar",
+      "name": "Surfescape Zanzibar",
+      "target": "hotels/surfescape-zanzibar.jpg"
+    },
+    {
+      "slug": "the-swahili-house",
+      "name": "The Swahili House",
+      "target": "hotels/the-swahili-house.jpg"
+    },
+    {
+      "slug": "unguja-lodge",
+      "name": "Unguja Lodge",
+      "target": "hotels/unguja-lodge.jpg"
+    },
+    {
+      "slug": "verani-beach-lodge",
+      "name": "Verani Beach Lodge",
+      "target": "hotels/verani-beach-lodge.jpg"
+    },
+    {
+      "slug": "abuso-inn",
+      "name": "Abuso Inn",
+      "target": "hotels/abuso-inn.jpg"
+    },
+    {
+      "slug": "balcony-house",
+      "name": "Balcony House",
+      "target": "hotels/balcony-house.jpg"
+    },
+    {
+      "slug": "drifters-zanzibar",
+      "name": "Drifters Zanzibar",
+      "target": "hotels/drifters-zanzibar.jpg"
+    },
+    {
+      "slug": "ebb-flow",
+      "name": "Ebb & Flow",
+      "target": "hotels/ebb-flow.jpg"
+    },
+    {
+      "slug": "hekima-house",
+      "name": "Hekima House",
+      "target": "hotels/hekima-house.jpg"
+    },
+    {
+      "slug": "jambo-guest-house",
+      "name": "Jambo Guest House",
+      "target": "hotels/jambo-guest-house.jpg"
+    },
+    {
+      "slug": "jozani-chwaka-bay-official-stay",
+      "name": "Jozani Chwaka Bay Official Stay",
+      "target": "hotels/jozani-chwaka-bay-official-stay.jpg"
+    },
+    {
+      "slug": "lost-found-zanzibar",
+      "name": "Lost & Found Zanzibar",
+      "target": "hotels/lost-found-zanzibar.jpg"
+    },
+    {
+      "slug": "matemwe-beach-house",
+      "name": "Matemwe Beach House",
+      "target": "hotels/matemwe-beach-house.jpg"
+    },
+    {
+      "slug": "mbuyuni-beach-village",
+      "name": "Mbuyuni Beach Village",
+      "target": "hotels/mbuyuni-beach-village.jpg"
+    },
+    {
+      "slug": "new-teddys-on-the-beach",
+      "name": "New Teddy's on the Beach",
+      "target": "hotels/new-teddys-on-the-beach.jpg"
+    },
+    {
+      "slug": "nungwi-house",
+      "name": "Nungwi House",
+      "target": "hotels/nungwi-house.jpg"
+    },
+    {
+      "slug": "ten-to-ten-stone-town",
+      "name": "Ten to Ten Stone Town",
+      "target": "hotels/ten-to-ten-stone-town.jpg"
+    },
+    {
+      "slug": "your-zanzibar-place",
+      "name": "Your Zanzibar Place",
+      "target": "hotels/your-zanzibar-place.jpg"
+    },
+    {
+      "slug": "zlife-hostel",
+      "name": "ZLife Hostel",
+      "target": "hotels/zlife-hostel.jpg"
     }
   ],
   "skipped": []

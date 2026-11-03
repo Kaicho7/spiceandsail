@@ -303,6 +303,18 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
   }
   eleventyConfig.addFilter("hotelImg", (name) => hashPick(name || "hotel", hotelPhotoPool));
 
+  // Prefer a real per-hotel photo (downloaded from the hotel's own site) when the
+  // file exists; otherwise fall back to the hash-picked hotel pool photo.
+  eleventyConfig.addFilter("hotelPhoto", (hotel) => {
+    const photo = hotel && hotel.photo;
+    if (photo && typeof photo === "string") {
+      const clean = photo.replace(/^\/images\//, "");
+      const exists = fs.existsSync(path.join(__dirname, "public", "images", clean));
+      if (exists) return clean;
+    }
+    return hashPick((hotel && hotel.name) || "hotel", hotelPhotoPool);
+  });
+
   eleventyConfig.addGlobalData("__intentMap", intentMap);
 
   eleventyConfig.addGlobalData("__metadataIndex", metadataIndex);
