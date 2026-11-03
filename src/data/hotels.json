@@ -152,7 +152,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "emerson-spice",
-      "photo": "hotels/emerson-spice.webp",
+      "photo": "/images/hotels/emerson-spice.jpg",
       "description": "Luxury Boutique in Stone Town, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -337,7 +337,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "jafferji-house-spa",
-      "photo": "hotels/jafferji-house-spa.jpeg",
+      "photo": "/images/hotels/jafferji-house-spa.jpg",
       "description": "Luxury Boutique in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -415,7 +415,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kiwengwa-beach-resort",
-      "photo": "hotels/kiwengwa-beach-resort.png",
+      "photo": "/images/hotels/kiwengwa-beach-resort.jpg",
       "description": "Luxury Resort in Kiwengwa, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -623,7 +623,7 @@
       "contact_form_url": "https://www.mantiscollection.com/contact-us/mantis_hotel_form_traveller_enquiry",
       "scrape_status": "form_only",
       "slug": "nungwi-dreams-by-mantis",
-      "photo": "hotels/nungwi-dreams-by-mantis.png",
+      "photo": "/images/hotels/nungwi-dreams-by-mantis.jpg",
       "description": "Luxury Boutique in Nungwi, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -805,7 +805,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "safira-blu-luxury-resort",
-      "photo": "hotels/safira-blu-luxury-resort.jpg",
+      "photo": "/images/hotels/safira-blu-luxury-resort.jpg",
       "description": "Luxury Resort in Nungwi, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -857,7 +857,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "sunshine-marine-lodge",
-      "photo": "hotels/sunshine-marine-lodge.jpg",
+      "photo": "/images/hotels/sunshine-marine-lodge.jpg",
       "description": "Luxury Lodge in Matemwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -909,7 +909,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "the-manta-resort",
-      "photo": "hotels/the-manta-resort.webp",
+      "photo": "/images/hotels/the-manta-resort.jpg",
       "description": "Luxury Resort in Makangale, Pemba. 5-Star rating.",
       "price_range": ""
     },
@@ -935,7 +935,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "the-mora-zanzibar",
-      "photo": "hotels/the-mora-zanzibar.png",
+      "photo": "/images/hotels/the-mora-zanzibar.jpg",
       "description": "Luxury Resort in Muyuni, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -1065,7 +1065,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "the-z-hotel",
-      "photo": "hotels/the-z-hotel.jpg",
+      "photo": "/images/hotels/the-z-hotel.jpg",
       "description": "Luxury Boutique in Nungwi, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1091,7 +1091,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "tulia-zanzibar-unique-beach-resort",
-      "photo": "hotels/tulia-zanzibar-unique-beach-resort.png",
+      "photo": "/images/hotels/tulia-zanzibar-unique-beach-resort.jpg",
       "description": "Luxury Resort in Pongwe, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -1143,7 +1143,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "xanadu-luxury-villas",
-      "photo": "hotels/xanadu-luxury-villas.jpg",
+      "photo": "/images/hotels/xanadu-luxury-villas.jpg",
       "description": "Luxury Boutique in Bwejuu, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -1221,7 +1221,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "zawadi-hotel-zanzibar",
-      "photo": "hotels/zawadi-hotel-zanzibar.jpg",
+      "photo": "/images/hotels/zawadi-hotel-zanzibar.jpg",
       "description": "Luxury Boutique in Michamvi, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -1325,7 +1325,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "aluna-paje",
-      "photo": "hotels/aluna-paje.png",
+      "photo": "/images/hotels/aluna-paje.jpg",
       "description": "Boutique in Paje, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -2131,7 +2131,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "golden-tulip-stone-town-boutique",
-      "photo": "hotels/golden-tulip-stone-town-boutique.jpg",
+      "photo": "/images/hotels/golden-tulip-stone-town-boutique.jpg",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2157,7 +2157,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "green-living-fumba",
-      "photo": "hotels/green-living-fumba.jpg",
+      "photo": "/images/hotels/green-living-fumba.jpg",
       "description": "Boutique in Fumba, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2209,7 +2209,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "hakuna-matata-beach-lodge",
-      "photo": "hotels/hakuna-matata-beach-lodge.jpg",
+      "photo": "/images/hotels/hakuna-matata-beach-lodge.jpg",
       "description": "Lodge in Bububu, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2287,7 +2287,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "ifa-beach-resort",
-      "photo": "hotels/ifa-beach-resort.jpg",
+      "photo": "/images/hotels/ifa-beach-resort.jpg",
       "description": "Resort in Jambiani, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -2417,7 +2417,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kae-funk-zanzibar",
-      "photo": "hotels/kae-funk-zanzibar.jpg",
+      "photo": "/images/hotels/kae-funk-zanzibar.jpg",
       "description": "Boutique in Michamvi, Unguja.  star rating.",
       "price_range": ""
     },
@@ -2469,7 +2469,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "karamba-eco-boutique-hotel",
-      "photo": "hotels/karamba-eco-boutique-hotel.jpg",
+      "photo": "/images/hotels/karamba-eco-boutique-hotel.jpg",
       "description": "Boutique in Kizimkazi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -2651,7 +2651,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kisiwa-house",
-      "photo": "hotels/kisiwa-house.jpg",
+      "photo": "/images/hotels/kisiwa-house.jpg",
       "description": "Boutique in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2677,7 +2677,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kisiwa-on-the-beach",
-      "photo": "hotels/kisiwa-on-the-beach.jpg",
+      "photo": "/images/hotels/kisiwa-on-the-beach.jpg",
       "description": "Boutique in Paje, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2781,7 +2781,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "marafiki-bungalows",
-      "photo": "hotels/marafiki-bungalows.jpg",
+      "photo": "/images/hotels/marafiki-bungalows.jpg",
       "description": "Boutique in Matemwe, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -2859,7 +2859,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "michamvi-sunset-bay",
-      "photo": "hotels/michamvi-sunset-bay.jpg",
+      "photo": "/images/hotels/michamvi-sunset-bay.jpg",
       "description": "Boutique in Michamvi, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2911,7 +2911,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "mizingani-seafront-hotel",
-      "photo": "hotels/mizingani-seafront-hotel.jpg",
+      "photo": "/images/hotels/mizingani-seafront-hotel.jpg",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2937,7 +2937,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "mnana-beach-bungalows",
-      "photo": "hotels/mnana-beach-bungalows.jpg",
+      "photo": "/images/hotels/mnana-beach-bungalows.jpg",
       "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -3067,7 +3067,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "nur-beach-hotel",
-      "photo": "hotels/nur-beach-hotel.jpg",
+      "photo": "/images/hotels/nur-beach-hotel.jpg",
       "description": "Boutique in Jambiani, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -3249,7 +3249,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "pemba-misali-sunset-beach",
-      "photo": "hotels/pemba-misali-sunset-beach.jpg",
+      "photo": "/images/hotels/pemba-misali-sunset-beach.jpg",
       "description": "Resort in Wesha, Pemba. 4-Star rating.",
       "price_range": ""
     },
@@ -3353,7 +3353,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "sandies-baobab-beach-zanzibar",
-      "photo": "hotels/sandies-baobab-beach-zanzibar.jpg",
+      "photo": "/images/hotels/sandies-baobab-beach-zanzibar.jpg",
       "description": "Resort in Nungwi, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3457,13 +3457,13 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "shaba-boutique-hotel",
-      "photo": "hotels/shaba-boutique-hotel.jpg",
+      "photo": "/images/hotels/shaba-boutique-hotel.jpg",
       "description": "Boutique in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
     {
       "id": "ZNZ-0221",
-      "name": "Sharaz\u0101d Boutique Hotel",
+      "name": "Sharazād Boutique Hotel",
       "category": "Boutique",
       "star_rating": "4-Star",
       "star_tier": "tier2",
@@ -3483,7 +3483,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "sharazd-boutique-hotel",
-      "photo": "hotels/sharazd-boutique-hotel.jpg",
+      "photo": "/images/hotels/sharazd-boutique-hotel.jpg",
       "description": "Boutique in Jambiani, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -4737,7 +4737,7 @@
     },
     {
       "id": "ZNZ-0335",
-      "name": "Stone Town Caf\u00e9 B&B",
+      "name": "Stone Town Café B&B",
       "category": "B&B",
       "star_rating": "3-Star",
       "star_tier": "tier3",
