@@ -1585,7 +1585,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "baraka-beach-bungalows",
-      "photo": "hotels/baraka-beach-bungalows.jpg",
+      "photo": "/images/hotels/baraka-beach-bungalows.jpg",
       "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -3509,7 +3509,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "sharook-riviera-grand",
-      "photo": "hotels/sharook-riviera-grand.jpg",
+      "photo": "/images/hotels/sharook-riviera-grand.jpg",
       "description": "Boutique in Wete, Pemba.  star rating.",
       "price_range": ""
     },
@@ -3639,7 +3639,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "tamani-marina-hotel",
-      "photo": "hotels/tamani-marina-hotel.jpg",
+      "photo": "/images/hotels/tamani-marina-hotel.jpg",
       "description": "Boutique in Matemwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3665,7 +3665,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "tanzanite-beach-resort",
-      "photo": "hotels/tanzanite-beach-resort.jpg",
+      "photo": "/images/hotels/tanzanite-beach-resort.jpg",
       "description": "Resort in Nungwi, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3821,7 +3821,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "the-seyyida-hotel-spa",
-      "photo": "hotels/the-seyyida-hotel-spa.jpg",
+      "photo": "/images/hotels/the-seyyida-hotel-spa.jpg",
       "description": "Boutique in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -4003,7 +4003,7 @@
       "contact_form_url": null,
       "scrape_status": "no_contacts:direct",
       "slug": "warere-beach",
-      "photo": "hotels/warere-beach.jpg",
+      "photo": "/images/hotels/warere-beach.jpg",
       "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4081,7 +4081,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "white-paradise-zanzibar-resort",
-      "photo": "hotels/white-paradise-zanzibar-resort.jpg",
+      "photo": "/images/hotels/white-paradise-zanzibar-resort.jpg",
       "description": "Resort in Pongwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -4133,7 +4133,7 @@
       "contact_form_url": null,
       "scrape_status": "no_contacts:direct",
       "slug": "zanzibar-coffee-house",
-      "photo": "hotels/zanzibar-coffee-house.jpg",
+      "photo": "/images/hotels/zanzibar-coffee-house.jpg",
       "description": "Boutique in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
