@@ -4159,7 +4159,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "zanzibar-kite-paradise",
-      "photo": "hotels/zanzibar-kite-paradise.jpg",
+      "photo": "/images/hotels/zanzibar-kite-paradise.jpg",
       "description": "Resort in Paje, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4315,7 +4315,7 @@
       "contact_form_url": "http://www.oceangrouphotel.com/",
       "scrape_status": "form_only",
       "slug": "amaan-ocean-koko-beach",
-      "photo": "hotels/amaan-ocean-koko-beach.jpg",
+      "photo": "/images/hotels/amaan-ocean-koko-beach.jpg",
       "description": "Hotel in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4367,7 +4367,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "arabian-nights-hotel",
-      "photo": "hotels/arabian-nights-hotel.jpg",
+      "photo": "/images/hotels/arabian-nights-hotel.jpg",
       "description": "Hotel in Paje, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4627,7 +4627,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "princess-salme-inn",
-      "photo": "hotels/princess-salme-inn.jpg",
+      "photo": "/images/hotels/princess-salme-inn.jpg",
       "description": "B&B in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4653,7 +4653,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "promised-land-lodge",
-      "photo": "hotels/promised-land-lodge.jpg",
+      "photo": "/images/hotels/promised-land-lodge.jpg",
       "description": "Lodge in Kizimkazi, Unguja.  star rating.",
       "price_range": ""
     },
@@ -4783,7 +4783,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "summer-dream-lodge",
-      "photo": "hotels/summer-dream-lodge.jpg",
+      "photo": "/images/hotels/summer-dream-lodge.jpg",
       "description": "Lodge in Paje, Unguja.  star rating.",
       "price_range": ""
     },
@@ -4835,7 +4835,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "sunshine-hotel-matemwe",
-      "photo": "hotels/sunshine-hotel-matemwe.jpg",
+      "photo": "/images/hotels/sunshine-hotel-matemwe.jpg",
       "description": "Hotel in Matemwe, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4887,7 +4887,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "the-swahili-house",
-      "photo": "hotels/the-swahili-house.jpg",
+      "photo": "/images/hotels/the-swahili-house.jpg",
       "description": "Hotel in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4965,7 +4965,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "abuso-inn",
-      "photo": "hotels/abuso-inn.jpg",
+      "photo": "/images/hotels/abuso-inn.jpg",
       "description": "Guesthouse in Stone Town, Unguja.  star rating.",
       "price_range": ""
     },
@@ -5069,7 +5069,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "hekima-house",
-      "photo": "hotels/hekima-house.jpg",
+      "photo": "/images/hotels/hekima-house.jpg",
       "description": "Guesthouse in Paje, Unguja.  star rating.",
       "price_range": ""
     },
@@ -5095,7 +5095,7 @@
       "contact_form_url": null,
       "scrape_status": "no_contacts:direct",
       "slug": "jambo-guest-house",
-      "photo": "hotels/jambo-guest-house.jpg",
+      "photo": "/images/hotels/jambo-guest-house.jpg",
       "description": "Guesthouse in Stone Town, Unguja.  star rating.",
       "price_range": ""
     },
@@ -5199,7 +5199,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "mbuyuni-beach-village",
-      "photo": "hotels/mbuyuni-beach-village.jpg",
+      "photo": "/images/hotels/mbuyuni-beach-village.jpg",
       "description": "Guesthouse in Jamb, Unguja.  star rating.",
       "price_range": ""
     },
@@ -5225,7 +5225,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "new-teddys-on-the-beach",
-      "photo": "hotels/new-teddys-on-the-beach.jpg",
+      "photo": "/images/hotels/new-teddys-on-the-beach.jpg",
       "description": "Guesthouse in Jambiani, Unguja.  star rating.",
       "price_range": ""
     },
@@ -5277,7 +5277,7 @@
       "contact_form_url": null,
       "scrape_status": "enriched:vault",
       "slug": "ten-to-ten-stone-town",
-      "photo": "hotels/ten-to-ten-stone-town.jpg",
+      "photo": "/images/hotels/ten-to-ten-stone-town.jpg",
       "description": "Hostel in Stone Town, Unguja.  star rating.",
       "price_range": ""
     },
