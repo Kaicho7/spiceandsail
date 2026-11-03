@@ -7,3 +7,4 @@ dist/
 .vision/
 public/images/*.bak
 public/images/*.bak
+__pycache__/

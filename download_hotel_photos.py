@@ -70,17 +70,32 @@ def norm_url(base, src):
     return urllib.parse.urljoin(base, src)
 
 
-def get_page(url, timeout=12):
+def get_page(url, timeout=8):
+    err = None
     try:
         r = requests.get(url, headers=HEADERS, timeout=timeout, stream=True, **REQUESTS_OPTS)
-        if r.status_code != 200:
-            return None
+        code = r.status_code
+        if code != 200:
+            return None, f"http_{code}"
         body = r.raw.read(3_000_000, decode_content=True)
         if isinstance(body, bytes):
             body = body.decode("utf-8", "ignore")
-        return body
+        return body, "ok"
+    except requests.exceptions.SSLError as e:
+        err = "ssl_error"
+    except requests.exceptions.ConnectTimeout:
+        err = "connect_timeout"
+    except requests.exceptions.ReadTimeout:
+        err = "read_timeout"
+    except requests.exceptions.ConnectionError as e:
+        estr = str(e).lower()
+        if "name or service not known" in estr or "getaddrinfo" in estr:
+            err = "dns_failed"
+        else:
+            err = "conn_error"
     except Exception:
-        return None
+        err = "unknown"
+    return None, err
 
 
 def candidates(html, base):
@@ -150,9 +165,9 @@ def process_hotel(h):
     if not url or url == "N/A":
         return h, {"status": "failed", "slug": slug, "name": h.get("name"), "reason": "no website"}
 
-    html = get_page(url)
+    html, code = get_page(url)
     if html is None:
-        return h, {"status": "failed", "slug": slug, "name": h.get("name"), "reason": "page fetch failed"}
+        return h, {"status": "failed", "slug": slug, "name": h.get("name"), "reason": code}
 
     chosen = None
     for cand in candidates(html, url):
@@ -206,10 +221,12 @@ def main(limit=None, only_zones=None, skip_existing=True):
             h, status = fut.result()
             processed += 1
             report[status["status"]].append(status)
-            if processed % 25 == 0:
+            if processed % 10 == 0 or processed == len(todo):
                 print(f"  progress {processed}/{len(todo)}  "
                       f"ok={len(report['ok'])} failed={len(report['failed'])} "
                       f"skipped={len(report['skipped'])}", flush=True)
+                with open(REPORT, "w") as f:
+                    json.dump(report, f, indent=2)
 
     # persist hotel photo fields back to disk
     with open(HOTELS, "w") as f:

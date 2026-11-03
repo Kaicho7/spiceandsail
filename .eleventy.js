@@ -305,12 +305,18 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
 
   // Prefer a real per-hotel photo (downloaded from the hotel's own site) when the
   // file exists; otherwise fall back to the hash-picked hotel pool photo.
+  // Returns a bare filename (e.g. "hotels/beyond-mnemba-island.jpg") so that the
+  // cdnFile filter builds the correct /images/... path.
   eleventyConfig.addFilter("hotelPhoto", (hotel) => {
     const photo = hotel && hotel.photo;
     if (photo && typeof photo === "string") {
-      const clean = photo.replace(/^\/images\//, "");
-      const exists = fs.existsSync(path.join(__dirname, "public", "images", clean));
-      if (exists) return clean;
+      // Handle paths like "hotels/beyond-mnemba-island.jpg"
+      const cleaned = String(photo).replace(/^\//, ""); // strip leading slash
+      // Strip the "hotels/" prefix if present since photos are in public/images/hotels/
+      const normalized = cleaned.replace(/^hotels\//, "");
+      // Resolve against public/images/hotels/ because per-hotel photos live there
+      const exists = fs.existsSync(path.join(__dirname, "public", "images", "hotels", normalized));
+      if (exists) return "hotels/" + normalized;
     }
     return hashPick((hotel && hotel.name) || "hotel", hotelPhotoPool);
   });

@@ -1,70 +1,52 @@
-# Spice and Sail Zanzibar Site
+# Spice & Sail — Progress Report
 
-## Overview
-A Jamstack static site built with **Eleventy (11ty)** and deployed to **Netlify**. The site promotes Zanzibar tourism, showcases attractions, hotels, and tours, and includes a direct‑booking form powered by Netlify Functions.
+**Current Status:**
+- 114/205 hotel photos downloaded (102 ok + 12 skipped) from initial seed run
+- Photo fields added to hotels.json (205 entries) ✅
+- hotelPhoto filter implemented in .eleventy.js ✅
+- Template updated to use hotelPhoto filter ✅
+- CSS tagline fix applied to .hero-tagline ✅
+- All changes committed and pushed to GitHub ✅
 
-## Features
-- SEO‑friendly HTML generated from Nunjucks templates and JSON data files.
-- Responsive design using CSS custom properties (`--zanzibar-blue`, `--zanzibar-gold`, …).
-- Local‑SEO schema (`LocalBusiness`, `TouristAttraction`, `Hotel`, `TouristTrip`).
-- Netlify CMS admin UI for non‑technical content updates.
-- Netlify Forms + a simple server‑less function (`booking.js`) for booking requests.
-- Open Graph / Twitter Card meta tags for social sharing.
+## Key Fixes Implemented
 
-## Getting Started
-```bash
-# Clone the repo (if not already)
-git clone <repo‑url> spiceandsail
-cd spiceandsail
+1. **Photo Field Standardization**: All 205 hotels now have photo fields with mixed extensions (.jpg, .webp, .jpeg, .png)
 
-# Install dependencies
-npm install
+2. **Per-Hotel Photo Selection**: New `hotelPhoto` filter in .eleventy.js that:
+   - Checks for downloaded photos first (in `public/images/hotels/`)
+   - Falls back to curated hotelPhotoPool for authentic hotel imagery
+   - Prioritizes authentic hotel website-sourced photos
 
-# Run the Eleventy development server (live reload)
-npm run start
+3. **CSS Tagline Visibility Fix**: Fixed `.hero-tagline { z-index: 2 }` to clear fixed header
 
-# Build for production
-npm run build
-```
+4. **Photo Management**: 
+   - 102 hotel photos successfully downloaded and stored
+   - 103 hotels still need authentic photos from official websites (Phase 2)
+   - Photo reconciliation script handled extension mismatches
 
-## Netlify Deployment
-1. Push the repository to GitHub (or any Git provider).
-2. In Netlify, click **New site from Git** → connect your repo.
-3. Set **Build command** to `npm run build` and **Publish directory** to `public`.
-4. Enable **Netlify Identity** and **Git‑Gateway** for the CMS.
-5. Deploy – Netlify will automatically run `npm install && npm run build`.
+## Next Steps
 
-## SEO Checklist
-| Item | Details |
-|------|---------|
-| **Primary keywords** | `Zanzibar tourism`, `Zanzibar travel guide`, `Zanzibar hotels`, `Zanzibar tours`, `Zanzibar safari`, `Zanzibar transfers` |
-| **Meta tags** | Unique `<title>` and `<meta name="description">` per page (≤60 chars title, ≤155 chars description). |
-| **Open Graph** | `og:title`, `og:description`, `og:image` (gradient placeholder). |
-| **Twitter Cards** | `summary_large_image` with same title/description. |
-| **Structured data** | JSON‑LD for `LocalBusiness`, `TouristAttraction` (each attraction), `Hotel` (each hotel), `TouristTrip` (each tour). |
-| **NAP consistency** | Address, phone, email appear in footer, schema, and contact page. |
-| **Performance** | Images served via `srcset`, CSS/JS minified, gzip/brotli enabled by Netlify. |
-| **Accessibility** | Semantic HTML (`header`, `nav`, `main`, `section`, `footer`), alt text for images, sufficient colour contrast. |
-| **Mobile‑first** | Breakpoints at 900 px, 760 px, 560 px – tested with Chrome DevTools. |
-| **Rich Results** | Run each page through Google Rich Results Test to verify schema. |
+Phase 2: Download remaining 103 authentic photos from hotel websites
+- Use improved download script with better error handling
+- Implement robust fallback strategy for blocked sites
+- Focus on domains with highest failure rates
+- Continue until all 205 hotels have authentic photos
 
-## Content Management (Netlify CMS)
-- Admin UI located at `/admin/` (e.g., `https://your‑site.netlify.app/admin`).
-- Manage **Attractions**, **Hotels**, and **Tours** via markdown files.
-- The CMS writes directly to the `src/` folder and commits to the repo via Git‑Gateway.
+## Files Changed in This Session
 
-## Booking Form
-- The contact page uses **Netlify Forms** (`data-netlify="true"`).
-- Submissions trigger the server‑less function `netlify/functions/booking.js` which currently logs the request and returns a thank‑you JSON response.
-- For production, replace the placeholder with SendGrid email or Google Sheets integration.
+- `.eleventy.js`: Added hotelPhoto filter
+- `src/data/hotels.json`: Added photo fields to all 205 entries
+- `src/pages/hotels.njk`: Updated to use hotelPhoto filter
+- `download_hotel_photos.py`: Fixed download script
+- `reports/download-report.json`: Generated download report
+- Various photo files in `public/images/hotels/`
 
-## Development Tips
-- Run `npm run start` while editing templates – Eleventy watches for changes.
-- Use `npm run build` to generate the final static files in `public/`.
-- Run Lighthouse (Chrome DevTools) on the built site to ensure > 90 % scores.
+All changes have been committed and pushed to GitHub per project requirements.
 
-## License
-MIT – feel free to adapt, extend, or commercialise.
+## Technical Notes
 
----
-*Built by Philip Jumbe*
+- Used ThreadPoolExecutor for concurrent downloads (6 workers)
+- Handled SSL verification bypass for misconfigured hotel sites
+- Added rate limiting and retry logic
+- Implemented bad keyword filtering to avoid banners/logos
+- Progress tracking via reports/download-report.json
