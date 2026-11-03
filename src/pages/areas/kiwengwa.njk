@@ -24,9 +24,9 @@ permalink: "/areas/kiwengwa/index.html"
         <h2>Kiwengwa Quick Stats</h2>
       </div>
       <div class="stats-grid" style="max-width: 600px; margin: 0 auto;">
-        <div class="stat-item reveal"><span class="stat-number">5</span><span class="stat-label">Partner Hotels</span></div>
-        <div class="stat-item reveal"><span class="stat-number">1</span><span class="stat-label">Attractions</span></div>
-        <div class="stat-item reveal"><span class="stat-number">2</span><span class="stat-label">Recommended Tours</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ hotels.hotels | filterByZone(title) | length }}</span><span class="stat-label">Partner Hotels</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ attractions.attractions | filterByZone(title) | length }}</span><span class="stat-label">Attractions</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ tours | filterByZone(title) | length }}</span><span class="stat-label">Recommended Tours</span></div>
       </div>
     </div>
   </section>
@@ -39,8 +39,7 @@ permalink: "/areas/kiwengwa/index.html"
         <p class="section-subtitle">Boutique hotels and resorts in Kiwengwa. Click through for direct booking or contact us for referral rates.</p>
       </div>
       <div class="cards-grid hotel-grid">
-{% for hotel in hotels %}
-  {% if hotel.name in ["Bluebay Beach Resort & Spa", "Kiwengwa Beach Resort", "Melia Zanzibar", "Villa Stecchini", "Mvuvi Resort", "Shooting Star Lodge", "Sultan Sands Island Resort"] %}
+{% for hotel in hotels.hotels | filterByZone(title) %}
   <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
     <div class="card-content">
       <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
@@ -56,7 +55,6 @@ permalink: "/areas/kiwengwa/index.html"
       </div>
     </div>
   </article>
-  {% endif %}
 {% endfor %}
       </div>
     </div>
@@ -70,8 +68,7 @@ permalink: "/areas/kiwengwa/index.html"
         <p class="section-subtitle">Local attractions, dive centers, and activity providers in Kiwengwa.</p>
       </div>
       <div class="cards-grid attraction-grid">
-{% for attraction in attractions %}
-  {% if attraction.name in ["Kiwengwa Beach", "Blue Bay Diving Center"] %}
+{% for attraction in attractions.attractions | filterByZone(title) %}
   <article class="card attraction-card reveal" data-type="{{ attraction.category }}">
     <div class="card-image" style="position:relative;">
       <img src="{{ (attraction.name | attractionImg(attraction.category)) | cdnFile }}" alt="{{ attraction.name }}" loading="lazy">
@@ -82,11 +79,10 @@ permalink: "/areas/kiwengwa/index.html"
       {% if attraction.website %}
         <a href="{{ attraction.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website</a>
       {% else %}
-        <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20please%20send%20prices%20and%20a%20bookable%20slot%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book via WhatsApp</a>
+        <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20please%20send%20prices%20and%20a%20bookable%20slot%20for%20{{ attraction.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book via WhatsApp</a>
       {% endif %}
     </div>
   </article>
-  {% endif %}
 {% endfor %}
       </div>
     </div>
@@ -100,8 +96,7 @@ permalink: "/areas/kiwengwa/index.html"
         <p class="section-subtitle">The best day tours and experiences starting from Kiwengwa.</p>
       </div>
       <div class="cards-grid tour-grid">
-{% for tour in tours %}
-  {% if tour.seo_slug in ["mnemba-snorkeling", "safari-blue"] %}
+{% for tour in tours | filterByZone(title) %}
   <article class="card tour-card reveal" data-category="{{ tour.category }}">
     <div class="card-image" style="position:relative;">
       <img src="{{ (__slugMap[tour.seo_slug] or __slugMap[tour.slug] or 'excursions.png') | cdnFile }}" alt="{{ tour.title }}" loading="lazy">
@@ -116,7 +111,6 @@ permalink: "/areas/kiwengwa/index.html"
       </div>
     </div>
   </article>
-  {% endif %}
 {% endfor %}
       </div>
     </div>

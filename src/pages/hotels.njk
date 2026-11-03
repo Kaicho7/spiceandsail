@@ -87,7 +87,7 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 3rem 1rem; background: #FBF9F5;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div id="hotels-container" class="cards-grid hotel-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem;">
-        {% for hotel in hotels %}
+        {% for hotel in hotels.hotels %}
           <article class="card hotel-card reveal" 
                    data-tier="{{ hotel.tier | lower }}" 
                    data-zone="{{ hotel.zone | lower }}" 

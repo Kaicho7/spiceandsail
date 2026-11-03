@@ -375,17 +375,34 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
 
   // Add filter to get hero image with Netlify Image CDN wrapper (fixes IMG_BIG).
   // NB the Netlify CDN needs the path WITH the /images/ prefix, else it 404s.
+  // For local development, use direct image paths instead of Netlify CDN
   eleventyConfig.addNunjucksFilter("cdnImage", function(inputPath) {
     const result = getFeaturedImage(inputPath);
     const file = result.featuredImage || "default-tour-hero.jpg";
-    return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&q=85`;
+
+    // Check if we're running on Netlify or localhost
+    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
+    if (isNetlify) {
+      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&q=85`;
+    }
+
+    // For local development, use direct image path
+    return `/images/${file}`;
   });
 
   // Wrap an arbitrary image filename in the Netlify Image CDN URL (for card images
   // selected by hotelImg/zoneImg/trImg/etc, which return bare filenames).
   eleventyConfig.addNunjucksFilter("cdnFile", function(file) {
     const f = String(file || "default-tour-hero.jpg");
-    return `/.netlify/images?url=${encodeURIComponent("/images/" + f)}&fm=webp&q=85`;
+
+    // Check if we're running on Netlify or localhost
+    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
+    if (isNetlify) {
+      return `/.netlify/images?url=${encodeURIComponent("/images/" + f)}&fm=webp&q=85`;
+    }
+
+    // For local development, use direct image path
+    return `/images/${f}`;
   });
 
   // Canonical alt text filter ensuring exact identical alt text for every image site-wide
@@ -433,6 +450,25 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
       return haystack.includes(needle);
     }
     return false;
+  });
+
+  // Filter a collection (hotels/attractions/tours) by zone name.
+  // Hotels & attractions store their zone in `zone`; tours store a free-text
+  // `location` (e.g. "Stone Town / Kidichi / Changuu"). Zone strings and page
+  // titles use inconsistent separators ("Bwejuu / Dongwe" vs "Bwejuu & Dongwe",
+  // "Chake Chake (Pemba)" vs "Chake Chake, Pemba"), so we normalize punctuation
+  // away and match on shared tokens: every significant word in the requested
+  // zone must appear in the item's zone/location. This keeps a tour that lists
+  // several areas appearing on each of those pages.
+  eleventyConfig.addNunjucksFilter("filterByZone", function(items, zone) {
+    if (!Array.isArray(items)) return [];
+    const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    const zTokens = norm(zone).split(/\s+/).filter(Boolean);
+    if (zTokens.length === 0) return [];
+    return items.filter(item => {
+      const valTokens = norm(item.zone || item.location || "").split(/\s+/).filter(Boolean);
+      return zTokens.every(t => valTokens.includes(t));
+    });
   });
 
   return {
