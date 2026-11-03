@@ -1,0 +1,40 @@
+{
+  "ok": [
+    {
+      "name": "&Beyond Mnemba Island",
+      "slug": "beyond-mnemba-island",
+      "photo": "beyond-mnemba-island.jpg",
+      "src": "https://www.andbeyond.com/wp-content/uploads/sites/5/Cyber-monday-2022.jpg",
+      "bytes": 254358
+    },
+    {
+      "name": "Bawe Tropical Island",
+      "slug": "bawe-tropical-island",
+      "photo": "bawe-tropical-island.jpg",
+      "src": "https://static.wixstatic.com/media/17ccf0_05c5fe412b3d4219914edf5601cfb18d%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/17ccf0_05c5fe412b3d4219914edf5601cfb18d%7Emv2.jpg",
+      "bytes": 1135301
+    },
+    {
+      "name": "Bluebay Beach Resort & Spa",
+      "slug": "bluebay-beach-resort-spa",
+      "photo": "bluebay-beach-resort-spa.jpg",
+      "src": "https://static.wixstatic.com/media/26fdd9_6b7dbb588bfa4fce953c4180ddf16630%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/26fdd9_6b7dbb588bfa4fce953c4180ddf16630%7Emv2.jpg",
+      "bytes": 230178
+    },
+    {
+      "name": "Emerald Zanzibar Resort & Spa",
+      "slug": "emerald-zanzibar-resort-spa",
+      "photo": "emerald-zanzibar-resort-spa.jpg",
+      "src": "https://cdn.prod.website-files.com/5db7e84d2e950f57520736e2/618ba80d80fb349a9e53a162_booknow-faarufushi.jpg",
+      "bytes": 25625
+    }
+  ],
+  "failed": [
+    {
+      "name": "Baraza Resort and Spa",
+      "slug": "baraza-resort-and-spa",
+      "reason": "page fetch failed"
+    }
+  ],
+  "skipped": []
+}
