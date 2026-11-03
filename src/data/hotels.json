@@ -2963,7 +2963,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "mnarani-beach-cottages",
-      "photo": "hotels/mnarani-beach-cottages.jpg",
+      "photo": "/images/hotels/mnarani-beach-cottages.jpg",
       "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -3119,7 +3119,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "oxygen-paje",
-      "photo": "hotels/oxygen-paje.jpg",
+      "photo": "/images/hotels/oxygen-paje.jpg",
       "description": "Boutique/Dining in Paje, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -3197,7 +3197,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "paradise-beach-resort",
-      "photo": "hotels/paradise-beach-resort.jpg",
+      "photo": "/images/hotels/paradise-beach-resort.jpg",
       "description": "Resort in Marumbi, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -4029,7 +4029,7 @@
       "contact_form_url": null,
       "scrape_status": "no_contacts:direct",
       "slug": "warere-town-house",
-      "photo": "hotels/warere-town-house.jpg",
+      "photo": "/images/hotels/warere-town-house.jpg",
       "description": "Boutique in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
