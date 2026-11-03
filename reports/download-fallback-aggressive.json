@@ -1,49 +1,7 @@
 [
   {
-    "status": "ok",
-    "slug": "mnarani-beach-cottages",
-    "photo": "mnarani-beach-cottages.jpg",
-    "src": "https://mnarani-beach-cottages.zanzibarhotelstoday.com/data/Pictures/700x500w/13238/1323825/1323825955/picture-nungwi-mnarani-beach-cottages-80.JPEG",
-    "bytes": 68512,
-    "attempts": 1,
-    "strategy": "serper_aggressive"
-  },
-  {
-    "status": "ok",
-    "slug": "oxygen-paje",
-    "photo": "oxygen-paje.jpg",
-    "src": "https://thecorneaimpression.com/wp-content/uploads/2026/07/ENVI-Paje-Zanzibar-Garden-Villa-Plunge-Pool.jpg.jpeg",
-    "bytes": 811949,
-    "attempts": 2,
-    "strategy": "serper_aggressive"
-  },
-  {
-    "status": "ok",
-    "slug": "paradise-beach-resort",
-    "photo": "paradise-beach-resort.jpg",
-    "src": "https://www.hotelzanzibar.com/wp-content/uploads/gallery-zanzibar-bay-resort_49651362961_o.jpg",
-    "bytes": 239936,
-    "attempts": 2,
-    "strategy": "serper_aggressive"
-  },
-  {
     "status": "failed",
-    "slug": "red-monkey-lodge",
-    "reason": "no_candidates",
-    "strategy": "serper_aggressive"
-  },
-  {
-    "status": "ok",
-    "slug": "warere-town-house",
-    "photo": "warere-town-house.jpg",
-    "src": "https://z.cdrst.com/foto/hotel-sf/b543d38/granderesp/foto-hotel-b54328e.jpg",
-    "bytes": 43180,
-    "attempts": 5,
-    "strategy": "serper_aggressive"
-  },
-  {
-    "status": "failed",
-    "slug": "zanzibar-bay-resort",
+    "slug": "zlife-hostel",
     "reason": "no_candidates",
     "strategy": "serper_aggressive"
   }
