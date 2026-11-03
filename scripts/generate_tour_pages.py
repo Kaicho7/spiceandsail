@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 RESEARCH_DIR = Path("/home/efatha/zanzibar-website-research/extracted/zanzibar-pack/03_DATA")
-OUTPUT_DIR = Path("/home/efatha/dhow-coast-travels/src/pages/tours")
+OUTPUT_DIR = Path("/home/efatha/spiceandsail/src/pages/tours")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 SEO_SLUG_MAP = {

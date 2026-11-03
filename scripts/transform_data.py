@@ -2,7 +2,7 @@
 """
 Transform Zanzibar research CSV data into JSON for Eleventy static site.
 Reads from /home/efatha/zanzibar-website-research/extracted/zanzibar-pack/03_DATA/
-Writes to /home/efatha/dhow-coast-travels/src/data/
+Writes to /home/efatha/spiceandsail/src/data/
 """
 
 import csv
@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Dict, List, Any
 
 RESEARCH_DIR = Path("/home/efatha/zanzibar-website-research/extracted/zanzibar-pack/03_DATA")
-OUTPUT_DIR = Path("/home/efatha/dhow-coast-travels/src/data")
+OUTPUT_DIR = Path("/home/efatha/spiceandsail/src/data")
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

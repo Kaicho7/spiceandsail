@@ -1,15 +1,15 @@
-functionsDirectory = "/home/efatha/dhow-coast-travels/netlify/functions"
+functionsDirectory = "/home/efatha/spiceandsail/netlify/functions"
 functionsDirectoryOrigin = "config"
 redirectsOrigin = "config"
 plugins = []
 headers = []
 
 [build]
-publish = "/home/efatha/dhow-coast-travels/dist"
+publish = "/home/efatha/spiceandsail/dist"
 publishOrigin = "config"
 commandOrigin = "config"
 command = "npm install && npm run build"
-functions = "/home/efatha/dhow-coast-travels/netlify/functions"
+functions = "/home/efatha/spiceandsail/netlify/functions"
 
 [build.environment]
 

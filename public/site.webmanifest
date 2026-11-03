@@ -1,0 +1,17 @@
+{
+  "name": "Spice and Sail Zanzibar",
+  "short_name": "Spice & Sail",
+  "description": "Zanzibar tours, transfers and packages — Stone Town walks, spice tours, Safari Blue, dolphin trips, and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF9F5",
+  "theme_color": "#003853",
+  "icons": [
+    {
+      "src": "/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Smart Itinerary Builder - Live Demonstration
 
-This document demonstrates the Smart Itinerary Builder functionality using real data from the dhow-coast-travels project.
+This document demonstrates the Smart Itinerary Builder functionality using real data from the spiceandsail project.
 
 ## Overview
 
@@ -423,7 +423,7 @@ const newData = getItineraryForIntent('family-travel', 7, 500);
 
 ### Licensing
 ```
-Copyright (c) 2026 dhow-coast-travels
+Copyright (c) 2026 spiceandsail
 License: MIT (see LICENSE.md)
 ```
 

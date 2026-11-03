@@ -140,7 +140,7 @@ module.exports = function(eleventyConfig) {
   const attractionImage = {
     "Baraka Aquarium (Main)": "sea-turtles-swimming-zanzibar-water.jpg",
     "Baraka Natural Aquarium": "sea-turtles-swimming-zanzibar-water.jpg",
-    "Cheetah's Rock": "janzibar-jozani-forest-monkey-peeking-leaves.jpg",
+    "Cheetah's Rock": "cheetahs-rock-header.jpg",
     "Forodhani Market (Official)": "zanzibar-night-food-stall-skewers-bread.jpg",
     "Fukuchani Ruins": "stone-town-walking-tour-people-photograph.jpg",
     "House of Wonders": "stone-town-colonial-building-clock-tower.jpg",

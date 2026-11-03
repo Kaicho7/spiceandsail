@@ -1,4 +1,4 @@
-# Zanzibar Tourism Site
+# Spice and Sail Zanzibar Site
 
 ## Overview
 A Jamstack static site built with **Eleventy (11ty)** and deployed to **Netlify**. The site promotes Zanzibar tourism, showcases attractions, hotels, and tours, and includes a direct‑booking form powered by Netlify Functions.
@@ -14,8 +14,8 @@ A Jamstack static site built with **Eleventy (11ty)** and deployed to **Netlify*
 ## Getting Started
 ```bash
 # Clone the repo (if not already)
-git clone <repo‑url> zanzibar-tourism
-cd zanzibar-tourism
+git clone <repo‑url> spiceandsail
+cd spiceandsail
 
 # Install dependencies
 npm install

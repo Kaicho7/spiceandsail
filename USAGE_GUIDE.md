@@ -443,10 +443,10 @@ For issues or questions:
 
 ## Legal and Licensing
 
-This Smart Itinerary Builder is part of the dhow-coast-travels project. All data is sourced from local Zanzibar travel databases and protected by geographic accuracy requirements.
+This Smart Itinerary Builder is part of the spiceandsail project. All data is sourced from local Zanzibar travel databases and protected by geographic accuracy requirements.
 
 ```
-Copyright (c) 2026 dhow-coast-travels
+Copyright (c) 2026 spiceandsail
 License: MIT (see project root LICENSE.md)
 ```
 

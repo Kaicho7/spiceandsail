@@ -26,7 +26,7 @@ No coder (including this AI assistant) shall commit, amend, push, force-push, or
 
 ### How to request a push:
 The user must state:
-1. Which remote (e.g., `origin`, `dhow-coast-travels2`, etc.)
+1. Which remote (e.g., `origin`, `spiceandsail2`, etc.)
 2. Which branch (e.g., `master`, `main`)
 3. Explicit words of permission (e.g., "push now", "commit and push")
 

@@ -1,0 +1,3920 @@
+{
+  "metadata": {
+    "generated": "2026-11-03T13:05:07.769805",
+    "total_hotels": 205,
+    "by_category": {
+      "simple": 133,
+      "complex": 67,
+      "unique": 4,
+      "chain": 1,
+      "island": 0
+    },
+    "priorities": {
+      "medium": [
+        "Kasha Boutique Hotel",
+        "Matlai Boutique Hotel",
+        "Royal Cliff Zanzibar",
+        "Sunshine Marine Lodge",
+        "The Neela Boutique Hotel",
+        "Zawadi Hotel Zanzibar",
+        "Baraza Resort and Spa",
+        "Bawe Tropical Island",
+        "Bluebay Beach Resort & Spa",
+        "Emerald Zanzibar Resort & Spa",
+        "Emerson Spice",
+        "Emerson on Hurumzi",
+        "Fruit & Spice Wellness Resort",
+        "Fundu Lagoon",
+        "Gold Zanzibar Beach House & Spa",
+        "Isaraya Luxury Overwater Villas",
+        "Jafferji House & Spa",
+        "Kilindi Zanzibar",
+        "Kiwengwa Beach Resort",
+        "Konokono Beach Resort",
+        "LUX* Marijani Zanzibar",
+        "Marijani Beach Resort & Spa",
+        "Matemwe Retreat",
+        "Melia Zanzibar",
+        "Park Hyatt Zanzibar",
+        "Qambani Luxury Resort",
+        "Sea Cliff Resort & Spa",
+        "TUI BLUE Bahari Zanzibar",
+        "The Manta Resort",
+        "The Mora Zanzibar",
+        "The Neela Oceanfront",
+        "The Palms Zanzibar",
+        "The Residence Zanzibar",
+        "Tulia Zanzibar Unique Beach Resort",
+        "Villa Stecchini",
+        "Xanadu Luxury Villas",
+        "Zanzi Resort",
+        "Zuri Zanzibar"
+      ],
+      "high": [
+        "The Z Hotel",
+        "Aluna Nungwi",
+        "Aluna Paje",
+        "Baraka Beach Bungalows",
+        "Canary Nungwi Hotel & Spa",
+        "Cristal Resort",
+        "Dhow Inn",
+        "Flame Tree Cottages",
+        "Hakuna Majiwe Beach Lodge",
+        "Kibanda Lodge",
+        "Kisiwa on the Beach",
+        "Langi Langi Beach Bungalows",
+        "Mahali Zanzibar",
+        "Mnana Beach Bungalows",
+        "Mnarani Beach Cottages",
+        "My Blue Hotel",
+        "Oxygen Paje",
+        "Paje By Night",
+        "Smiles Beach Hotel",
+        "The Zanzibari",
+        "Warere Beach",
+        "Amaan Ocean Koko Beach",
+        "Aquaholics Surf Lodge",
+        "Arabian Nights Hotel",
+        "Demani Lodge",
+        "Paje Beach Bandas",
+        "Summer Dream Lodge",
+        "Drifters Zanzibar",
+        "Ebb & Flow",
+        "Hekima House",
+        "Nungwi House",
+        "Your Zanzibar Place",
+        "&Beyond Mnemba Island",
+        "Essque Zalu Zanzibar",
+        "Milele Villas",
+        "Nungwi Dreams by Mantis",
+        "Riu Jambo",
+        "Riu Palace Zanzibar",
+        "Royal Zanzibar Beach Resort",
+        "Safira Blu Luxury Resort",
+        "Zanzibar White Sand Luxury Villas",
+        "Amaan Beach Bungalows",
+        "DoubleTree by Hilton Nungwi",
+        "Sandies Baobab Beach Zanzibar",
+        "Tanzanite Beach Resort",
+        "Zanzibar Kite Paradise",
+        "Zanzibar Star Resort",
+        "B4 Beach Club"
+      ],
+      "low": [
+        "Africa House Hotel",
+        "Anna of Zanzibar",
+        "Antonio Garden Hotel",
+        "Art Hotel Zanzibar",
+        "Atii Garden Bungalows",
+        "Aya Beach Bungalows",
+        "Azanzi Beach Hotel",
+        "Babalao Bungalows",
+        "Blue Oyster Hotel",
+        "Chumbe Island Coral Park",
+        "Dhow Palace Hotel",
+        "Dongwe Ocean View",
+        "DoubleTree by Hilton Stone Town",
+        "Fumba Beach Lodge",
+        "Fumba Town Apartments by CPS",
+        "Golden Tulip Stone Town Boutique",
+        "Green Living Fumba",
+        "Hakuna Matata Beach Lodge",
+        "Hodi Hodi Zanzibar",
+        "House of Spices",
+        "Indigo Beach Zanzibar",
+        "Jafferji Beach Retreat",
+        "Jambiani Wellness Retreat",
+        "Jambiani White Sands",
+        "Kae Funk Zanzibar",
+        "Karamba Eco Boutique Hotel",
+        "Kena Beach Hotel",
+        "Kendwa Rocks Beach Hotel",
+        "Kholle House",
+        "Kisiwa House",
+        "Marafiki Bungalows",
+        "Maru Maru Hotel",
+        "Matemwe Lodge",
+        "Michamvi Sunset Bay",
+        "Miramont Retreat",
+        "Mizingani Seafront Hotel",
+        "Mvuvi Resort",
+        "Mwezi Boutique Resort",
+        "Nur Beach Hotel",
+        "Passion Boutique Hotel",
+        "Pemba Paradise",
+        "Pongwe Beach Hotel",
+        "Red Monkey Lodge",
+        "Sea Cliff Court Zanzibar",
+        "Sea View Lodge",
+        "Seasons Lodge Zanzibar",
+        "Shaba Boutique Hotel",
+        "Sharaz\u0101d Boutique Hotel",
+        "Sharook Riviera Grand",
+        "Shooting Star Lodge",
+        "Spice Island Hotel & Resort",
+        "Tamani Marina Hotel",
+        "Tembo House Hotel",
+        "Tembo Palace Hotel",
+        "The Island - Pongwe Lodge",
+        "The Seyyida Hotel & Spa",
+        "Toa Hotel & Spa",
+        "Upendo Beach Zanzibar",
+        "Upendo House Stone Town",
+        "Villa Kiva Boutique Hotel",
+        "Warere Town House",
+        "Zanzibar Coffee House",
+        "Zanzibar Pearl Boutique",
+        "Zanzibar Queen Hotel",
+        "Zenji Hotel",
+        "Al-Minar Hotel",
+        "Cheetah's Rock Management Stay",
+        "Forodhani Park Hotel",
+        "Hiliki House",
+        "Kimte Beach Lodge",
+        "Kiponda B&B",
+        "Malika Hotel",
+        "Mangrove Lodge",
+        "Princess Salme Inn",
+        "Promised Land Lodge",
+        "Rumaisa Hotel",
+        "Shangani Hotel",
+        "Spice Palace Hotel",
+        "Stone Town Caf\u00e9 B&B",
+        "Sunset Kendwa",
+        "Sunshine Hotel Matemwe",
+        "Surfescape Zanzibar",
+        "The Swahili House",
+        "Unguja Lodge",
+        "Verani Beach Lodge",
+        "Abuso Inn",
+        "Balcony House",
+        "Jambo Guest House",
+        "Jozani Chwaka Bay Official Stay",
+        "Lost & Found Zanzibar",
+        "Matemwe Beach House",
+        "Mbuyuni Beach Village",
+        "New Teddy's on the Beach",
+        "Ten to Ten Stone Town",
+        "ZLife Hostel",
+        "Blue Moon Resort",
+        "Breezes Beach Club & Spa",
+        "Diamonds Mapenzi Beach",
+        "Emerald Bay Resort",
+        "Filao Beach Zanzibar",
+        "Fun Beach Resort",
+        "Ifa Beach Resort",
+        "Karafuu Beach Resort & Spa",
+        "Karibu Beach Resort",
+        "Kervan Saray Beach",
+        "Ocean Paradise Resort & Spa",
+        "Palumbokendwa",
+        "Paradise Beach Resort",
+        "Pemba Misali Sunset Beach",
+        "Sultan Sands Island Resort",
+        "The Loop Beach Resort",
+        "The Sands Beach Resort",
+        "Waridi Beach Resort & Spa",
+        "White Paradise Zanzibar Resort",
+        "Zanzibar Bay Resort",
+        "Chapwani Private Island",
+        "Clove Island Villas & Apartments",
+        "Kupaga Villas",
+        "Villa Bluu"
+      ]
+    },
+    "zones": {
+      "Matemwe / Kigomani": [
+        "Kasha Boutique Hotel",
+        "Sunshine Marine Lodge",
+        "Azanzi Beach Hotel",
+        "Jafferji Beach Retreat",
+        "Kena Beach Hotel",
+        "Marafiki Bungalows",
+        "Matemwe Lodge",
+        "Miramont Retreat",
+        "Sea Cliff Court Zanzibar",
+        "Tamani Marina Hotel",
+        "Villa Kiva Boutique Hotel",
+        "Zanzibar Pearl Boutique",
+        "Zanzibar Queen Hotel",
+        "Cheetah's Rock Management Stay",
+        "Sunshine Hotel Matemwe",
+        "Surfescape Zanzibar",
+        "Jozani Chwaka Bay Official Stay",
+        "Matemwe Beach House",
+        "Emerald Zanzibar Resort & Spa",
+        "LUX* Marijani Zanzibar",
+        "Marijani Beach Resort & Spa",
+        "Matemwe Retreat",
+        "Sea Cliff Resort & Spa",
+        "TUI BLUE Bahari Zanzibar",
+        "The Mora Zanzibar",
+        "Zanzi Resort",
+        "Diamonds Mapenzi Beach",
+        "Ocean Paradise Resort & Spa",
+        "Paradise Beach Resort",
+        "Waridi Beach Resort & Spa",
+        "Zanzibar Bay Resort"
+      ],
+      "Michamvi / Pingwe": [
+        "Matlai Boutique Hotel",
+        "Zawadi Hotel Zanzibar",
+        "Kae Funk Zanzibar",
+        "Michamvi Sunset Bay",
+        "Upendo Beach Zanzibar",
+        "Isaraya Luxury Overwater Villas",
+        "Konokono Beach Resort",
+        "Qambani Luxury Resort",
+        "Filao Beach Zanzibar",
+        "Karafuu Beach Resort & Spa"
+      ],
+      "Stone Town": [
+        "Royal Cliff Zanzibar",
+        "The Neela Boutique Hotel",
+        "Africa House Hotel",
+        "Antonio Garden Hotel",
+        "Atii Garden Bungalows",
+        "Babalao Bungalows",
+        "Chumbe Island Coral Park",
+        "Dhow Palace Hotel",
+        "DoubleTree by Hilton Stone Town",
+        "Golden Tulip Stone Town Boutique",
+        "Hakuna Matata Beach Lodge",
+        "Hodi Hodi Zanzibar",
+        "House of Spices",
+        "Kholle House",
+        "Kisiwa House",
+        "Maru Maru Hotel",
+        "Mizingani Seafront Hotel",
+        "Shaba Boutique Hotel",
+        "Tembo House Hotel",
+        "Tembo Palace Hotel",
+        "The Seyyida Hotel & Spa",
+        "Upendo House Stone Town",
+        "Warere Town House",
+        "Zanzibar Coffee House",
+        "Zenji Hotel",
+        "Al-Minar Hotel",
+        "Forodhani Park Hotel",
+        "Hiliki House",
+        "Kiponda B&B",
+        "Malika Hotel",
+        "Mangrove Lodge",
+        "Princess Salme Inn",
+        "Rumaisa Hotel",
+        "Shangani Hotel",
+        "Spice Palace Hotel",
+        "Stone Town Caf\u00e9 B&B",
+        "The Swahili House",
+        "Abuso Inn",
+        "Balcony House",
+        "Jambo Guest House",
+        "Lost & Found Zanzibar",
+        "Ten to Ten Stone Town",
+        "ZLife Hostel",
+        "&Beyond Mnemba Island",
+        "Bawe Tropical Island",
+        "Emerson Spice",
+        "Emerson on Hurumzi",
+        "Jafferji House & Spa",
+        "Park Hyatt Zanzibar",
+        "Chapwani Private Island"
+      ],
+      "Nungwi": [
+        "The Z Hotel",
+        "Aluna Nungwi",
+        "Baraka Beach Bungalows",
+        "Canary Nungwi Hotel & Spa",
+        "Flame Tree Cottages",
+        "Kibanda Lodge",
+        "Langi Langi Beach Bungalows",
+        "Mnana Beach Bungalows",
+        "Mnarani Beach Cottages",
+        "My Blue Hotel",
+        "Smiles Beach Hotel",
+        "The Zanzibari",
+        "Warere Beach",
+        "Amaan Ocean Koko Beach",
+        "Nungwi House",
+        "Essque Zalu Zanzibar",
+        "Nungwi Dreams by Mantis",
+        "Riu Jambo",
+        "Riu Palace Zanzibar",
+        "Royal Zanzibar Beach Resort",
+        "Safira Blu Luxury Resort",
+        "Amaan Beach Bungalows",
+        "DoubleTree by Hilton Nungwi",
+        "Sandies Baobab Beach Zanzibar",
+        "Tanzanite Beach Resort",
+        "Zanzibar Star Resort"
+      ],
+      "Paje": [
+        "Aluna Paje",
+        "Cristal Resort",
+        "Dhow Inn",
+        "Hakuna Majiwe Beach Lodge",
+        "Kisiwa on the Beach",
+        "Mahali Zanzibar",
+        "Oxygen Paje",
+        "Paje By Night",
+        "Aquaholics Surf Lodge",
+        "Arabian Nights Hotel",
+        "Demani Lodge",
+        "Paje Beach Bandas",
+        "Summer Dream Lodge",
+        "Drifters Zanzibar",
+        "Ebb & Flow",
+        "Hekima House",
+        "Your Zanzibar Place",
+        "Milele Villas",
+        "Zanzibar White Sand Luxury Villas",
+        "Zanzibar Kite Paradise",
+        "B4 Beach Club"
+      ],
+      "Bwejuu / Dongwe": [
+        "Anna of Zanzibar",
+        "Dongwe Ocean View",
+        "Indigo Beach Zanzibar",
+        "Baraza Resort and Spa",
+        "The Palms Zanzibar",
+        "Xanadu Luxury Villas",
+        "Breezes Beach Club & Spa",
+        "The Sands Beach Resort"
+      ],
+      "Jambiani": [
+        "Art Hotel Zanzibar",
+        "Blue Oyster Hotel",
+        "Jambiani Wellness Retreat",
+        "Jambiani White Sands",
+        "Mwezi Boutique Resort",
+        "Nur Beach Hotel",
+        "Passion Boutique Hotel",
+        "Red Monkey Lodge",
+        "Sea View Lodge",
+        "Sharaz\u0101d Boutique Hotel",
+        "Spice Island Hotel & Resort",
+        "Kimte Beach Lodge",
+        "Mbuyuni Beach Village",
+        "New Teddy's on the Beach",
+        "Blue Moon Resort",
+        "Fun Beach Resort",
+        "Ifa Beach Resort",
+        "The Loop Beach Resort",
+        "Kupaga Villas",
+        "Villa Bluu"
+      ],
+      "Kizimkazi / Dimbani": [
+        "Aya Beach Bungalows",
+        "Karamba Eco Boutique Hotel",
+        "Promised Land Lodge",
+        "Unguja Lodge",
+        "Fruit & Spice Wellness Resort",
+        "The Residence Zanzibar",
+        "Karibu Beach Resort"
+      ],
+      "Fumba / Mbweni": [
+        "Fumba Beach Lodge",
+        "Fumba Town Apartments by CPS",
+        "Green Living Fumba",
+        "The Neela Oceanfront"
+      ],
+      "Kendwa": [
+        "Kendwa Rocks Beach Hotel",
+        "Sunset Kendwa",
+        "Gold Zanzibar Beach House & Spa",
+        "Kilindi Zanzibar",
+        "Zuri Zanzibar",
+        "Palumbokendwa"
+      ],
+      "Kiwengwa": [
+        "Mvuvi Resort",
+        "Shooting Star Lodge",
+        "Bluebay Beach Resort & Spa",
+        "Kiwengwa Beach Resort",
+        "Melia Zanzibar",
+        "Villa Stecchini",
+        "Sultan Sands Island Resort",
+        "Clove Island Villas & Apartments"
+      ],
+      "Wambaa Gulf / Makangale (Pemba)": [
+        "Pemba Paradise",
+        "Verani Beach Lodge",
+        "Fundu Lagoon",
+        "The Manta Resort",
+        "Kervan Saray Beach",
+        "Pemba Misali Sunset Beach"
+      ],
+      "Pongwe / Michamvi": [
+        "Pongwe Beach Hotel",
+        "Seasons Lodge Zanzibar",
+        "The Island - Pongwe Lodge",
+        "Toa Hotel & Spa",
+        "Tulia Zanzibar Unique Beach Resort",
+        "White Paradise Zanzibar Resort"
+      ],
+      "Chake Chake (Pemba)": [
+        "Sharook Riviera Grand",
+        "Emerald Bay Resort"
+      ]
+    }
+  },
+  "plan": {
+    "simple": [
+      {
+        "name": "Kasha Boutique Hotel",
+        "id": "ZNZ-0014",
+        "slug": "kasha-boutique-hotel",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Boutique",
+        "website": "https://kasha-zanzibar.com",
+        "website_domain": "kasha-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Matlai Boutique Hotel",
+        "id": "ZNZ-0023",
+        "slug": "matlai-boutique-hotel",
+        "zone": "Michamvi / Pingwe",
+        "category": "Luxury Boutique",
+        "website": "https://www.hotelmatlai.com",
+        "website_domain": "hotelmatlai.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Royal Cliff Zanzibar",
+        "id": "ZNZ-0033",
+        "slug": "royal-cliff-zanzibar",
+        "zone": "Stone Town",
+        "category": "Luxury Hotel",
+        "website": "https://royalcliffzanzibar.com",
+        "website_domain": "royalcliffzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Sunshine Marine Lodge",
+        "id": "ZNZ-0038",
+        "slug": "sunshine-marine-lodge",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Lodge",
+        "website": "https://sunshine-zanzibar.com",
+        "website_domain": "sunshine-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "The Neela Boutique Hotel",
+        "id": "ZNZ-0042",
+        "slug": "the-neela-boutique-hotel",
+        "zone": "Stone Town",
+        "category": "Luxury Boutique",
+        "website": "https://www.neelacollection.com",
+        "website_domain": "neelacollection.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "The Z Hotel",
+        "id": "ZNZ-0046",
+        "slug": "the-z-hotel",
+        "zone": "Nungwi",
+        "category": "Luxury Boutique",
+        "website": "https://www.thezhotel.com",
+        "website_domain": "thezhotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 3
+      },
+      {
+        "name": "Zawadi Hotel Zanzibar",
+        "id": "ZNZ-0054",
+        "slug": "zawadi-hotel-zanzibar",
+        "zone": "Michamvi / Pingwe",
+        "category": "Luxury Boutique",
+        "website": "https://www.zawadihotel.com",
+        "website_domain": "zawadihotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Africa House Hotel",
+        "id": "ZNZ-0056",
+        "slug": "africa-house-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "http://www.africahousehotel.com",
+        "website_domain": "africahousehotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Aluna Nungwi",
+        "id": "ZNZ-0060",
+        "slug": "aluna-nungwi",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://alunazanzibar.com",
+        "website_domain": "alunazanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Aluna Paje",
+        "id": "ZNZ-0061",
+        "slug": "aluna-paje",
+        "zone": "Paje",
+        "category": "Boutique",
+        "website": "https://alunazanzibar.com",
+        "website_domain": "alunazanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Anna of Zanzibar",
+        "id": "ZNZ-0064",
+        "slug": "anna-of-zanzibar",
+        "zone": "Bwejuu / Dongwe",
+        "category": "Boutique",
+        "website": "https://www.annaofzanzibar.com",
+        "website_domain": "annaofzanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Antonio Garden Hotel",
+        "id": "ZNZ-0065",
+        "slug": "antonio-garden-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://antoniogarden.com",
+        "website_domain": "antoniogarden.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Art Hotel Zanzibar",
+        "id": "ZNZ-0066",
+        "slug": "art-hotel-zanzibar",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://arthotelzanzibar.com",
+        "website_domain": "arthotelzanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Atii Garden Bungalows",
+        "id": "ZNZ-0067",
+        "slug": "atii-garden-bungalows",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://atiigarden.com",
+        "website_domain": "atiigarden.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Aya Beach Bungalows",
+        "id": "ZNZ-0068",
+        "slug": "aya-beach-bungalows",
+        "zone": "Kizimkazi / Dimbani",
+        "category": "Boutique",
+        "website": "https://ayabeachbungalows.com",
+        "website_domain": "ayabeachbungalows.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Azanzi Beach Hotel",
+        "id": "ZNZ-0069",
+        "slug": "azanzi-beach-hotel",
+        "zone": "Matemwe / Kigomani",
+        "category": "Resort",
+        "website": "https://azanzibeachhotel.com",
+        "website_domain": "azanzibeachhotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Babalao Bungalows",
+        "id": "ZNZ-0073",
+        "slug": "babalao-bungalows",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://babalaozanzibar.com",
+        "website_domain": "babalaozanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Baraka Beach Bungalows",
+        "id": "ZNZ-0077",
+        "slug": "baraka-beach-bungalows",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "http://barakabeach.com",
+        "website_domain": "barakabeach.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Blue Oyster Hotel",
+        "id": "ZNZ-0084",
+        "slug": "blue-oyster-hotel",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://www.blueoysterhotel.com",
+        "website_domain": "blueoysterhotel.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Canary Nungwi Hotel & Spa",
+        "id": "ZNZ-0087",
+        "slug": "canary-nungwi-hotel-spa",
+        "zone": "Nungwi",
+        "category": "Hotel",
+        "website": "https://canarynungwi.com",
+        "website_domain": "canarynungwi.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 2
+      },
+      {
+        "name": "Chumbe Island Coral Park",
+        "id": "ZNZ-0091",
+        "slug": "chumbe-island-coral-park",
+        "zone": "Stone Town",
+        "category": "Eco-Lodge",
+        "website": "https://chumbeisland.com",
+        "website_domain": "chumbeisland.com",
+        "photo_requirements": [
+          "island exterior aerial view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Cristal Resort",
+        "id": "ZNZ-0097",
+        "slug": "cristal-resort",
+        "zone": "Paje",
+        "category": "Boutique",
+        "website": "https://www.cristalresortzanzibar.com",
+        "website_domain": "cristalresortzanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Dhow Inn",
+        "id": "ZNZ-0098",
+        "slug": "dhow-inn",
+        "zone": "Paje",
+        "category": "Boutique",
+        "website": "https://www.dhowinn.com",
+        "website_domain": "dhowinn.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Dhow Palace Hotel",
+        "id": "ZNZ-0099",
+        "slug": "dhow-palace-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "http://www.dhowpalace-hotel.com",
+        "website_domain": "dhowpalace-hotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Dongwe Ocean View",
+        "id": "ZNZ-0101",
+        "slug": "dongwe-ocean-view",
+        "zone": "Bwejuu / Dongwe",
+        "category": "Boutique",
+        "website": "http://www.dongweoceanview.com",
+        "website_domain": "dongweoceanview.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "DoubleTree by Hilton Stone Town",
+        "id": "ZNZ-0103",
+        "slug": "doubletree-by-hilton-stone-town",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://www.hilton.com",
+        "website_domain": "hilton.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Flame Tree Cottages",
+        "id": "ZNZ-0109",
+        "slug": "flame-tree-cottages",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://www.flametreecottages.com",
+        "website_domain": "flametreecottages.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Fumba Beach Lodge",
+        "id": "ZNZ-0111",
+        "slug": "fumba-beach-lodge",
+        "zone": "Fumba / Mbweni",
+        "category": "Lodge",
+        "website": "https://fumbabeachlodge.com",
+        "website_domain": "fumbabeachlodge.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Fumba Town Apartments by CPS",
+        "id": "ZNZ-0112",
+        "slug": "fumba-town-apartments-by-cps",
+        "zone": "Fumba / Mbweni",
+        "category": "Apartment",
+        "website": "https://fumba.town",
+        "website_domain": "fumba.town",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Golden Tulip Stone Town Boutique",
+        "id": "ZNZ-0115",
+        "slug": "golden-tulip-stone-town-boutique",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://stone-town-boutique.goldentulip.com",
+        "website_domain": "stone-town-boutique.goldentulip.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Green Living Fumba",
+        "id": "ZNZ-0118",
+        "slug": "green-living-fumba",
+        "zone": "Fumba / Mbweni",
+        "category": "Boutique",
+        "website": "https://greenlivingfumba.com",
+        "website_domain": "greenlivingfumba.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Hakuna Majiwe Beach Lodge",
+        "id": "ZNZ-0120",
+        "slug": "hakuna-majiwe-beach-lodge",
+        "zone": "Paje",
+        "category": "Boutique",
+        "website": "https://www.hakunamajiwe.com",
+        "website_domain": "hakunamajiwe.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Hakuna Matata Beach Lodge",
+        "id": "ZNZ-0121",
+        "slug": "hakuna-matata-beach-lodge",
+        "zone": "Stone Town",
+        "category": "Lodge",
+        "website": "https://www.hakunamatata-beachlodge.com",
+        "website_domain": "hakunamatata-beachlodge.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Hodi Hodi Zanzibar",
+        "id": "ZNZ-0122",
+        "slug": "hodi-hodi-zanzibar",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://hodihodi.com",
+        "website_domain": "hodihodi.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "House of Spices",
+        "id": "ZNZ-0123",
+        "slug": "house-of-spices",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "http://houseofspiceszanzibar.com",
+        "website_domain": "houseofspiceszanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Indigo Beach Zanzibar",
+        "id": "ZNZ-0125",
+        "slug": "indigo-beach-zanzibar",
+        "zone": "Bwejuu / Dongwe",
+        "category": "Boutique",
+        "website": "https://www.indigobeachzanzibar.com",
+        "website_domain": "indigobeachzanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Jafferji Beach Retreat",
+        "id": "ZNZ-0127",
+        "slug": "jafferji-beach-retreat",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://www.jafferjibeachretreat.com",
+        "website_domain": "jafferjibeachretreat.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Jambiani Wellness Retreat",
+        "id": "ZNZ-0129",
+        "slug": "jambiani-wellness-retreat",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://passion-zanzibar.com",
+        "website_domain": "passion-zanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Jambiani White Sands",
+        "id": "ZNZ-0130",
+        "slug": "jambiani-white-sands",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "http://jambianiwhitesands.com",
+        "website_domain": "jambianiwhitesands.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kae Funk Zanzibar",
+        "id": "ZNZ-0135",
+        "slug": "kae-funk-zanzibar",
+        "zone": "Michamvi / Pingwe",
+        "category": "Boutique",
+        "website": "https://kaefunk.com",
+        "website_domain": "kaefunk.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Karamba Eco Boutique Hotel",
+        "id": "ZNZ-0137",
+        "slug": "karamba-eco-boutique-hotel",
+        "zone": "Kizimkazi / Dimbani",
+        "category": "Boutique",
+        "website": "https://www.karambazanzibar.com",
+        "website_domain": "karambazanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kena Beach Hotel",
+        "id": "ZNZ-0139",
+        "slug": "kena-beach-hotel",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://kenazanzibar.com",
+        "website_domain": "kenazanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kendwa Rocks Beach Hotel",
+        "id": "ZNZ-0140",
+        "slug": "kendwa-rocks-beach-hotel",
+        "zone": "Kendwa",
+        "category": "Resort",
+        "website": "https://www.kendwarocks.com",
+        "website_domain": "kendwarocks.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Kholle House",
+        "id": "ZNZ-0142",
+        "slug": "kholle-house",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://www.khollehouse.com",
+        "website_domain": "khollehouse.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kibanda Lodge",
+        "id": "ZNZ-0143",
+        "slug": "kibanda-lodge",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://kibandalodge.com",
+        "website_domain": "kibandalodge.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kisiwa House",
+        "id": "ZNZ-0147",
+        "slug": "kisiwa-house",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://www.kisiwahouse.com",
+        "website_domain": "kisiwahouse.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kisiwa on the Beach",
+        "id": "ZNZ-0148",
+        "slug": "kisiwa-on-the-beach",
+        "zone": "Paje",
+        "category": "Boutique",
+        "website": "https://www.kisiwaonthebeach.com",
+        "website_domain": "kisiwaonthebeach.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Langi Langi Beach Bungalows",
+        "id": "ZNZ-0151",
+        "slug": "langi-langi-beach-bungalows",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://www.langilangi.com",
+        "website_domain": "langilangi.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Mahali Zanzibar",
+        "id": "ZNZ-0153",
+        "slug": "mahali-zanzibar",
+        "zone": "Paje",
+        "category": "Boutique",
+        "website": "https://www.mahalizanzibar.com",
+        "website_domain": "mahalizanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Marafiki Bungalows",
+        "id": "ZNZ-0158",
+        "slug": "marafiki-bungalows",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://marafikibungalows.com",
+        "website_domain": "marafikibungalows.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Maru Maru Hotel",
+        "id": "ZNZ-0159",
+        "slug": "maru-maru-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://marumaruzanzibar.com",
+        "website_domain": "marumaruzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Matemwe Lodge",
+        "id": "ZNZ-0163",
+        "slug": "matemwe-lodge",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique Lodge",
+        "website": "https://www.asiliaafrica.com",
+        "website_domain": "asiliaafrica.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Michamvi Sunset Bay",
+        "id": "ZNZ-0168",
+        "slug": "michamvi-sunset-bay",
+        "zone": "Michamvi / Pingwe",
+        "category": "Boutique",
+        "website": "https://www.michamvisunsetbay.com",
+        "website_domain": "michamvisunsetbay.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Miramont Retreat",
+        "id": "ZNZ-0170",
+        "slug": "miramont-retreat",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://www.miramont-zanzibar.com",
+        "website_domain": "miramont-zanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Mizingani Seafront Hotel",
+        "id": "ZNZ-0173",
+        "slug": "mizingani-seafront-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://www.mizinganiseafront.com",
+        "website_domain": "mizinganiseafront.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Mnana Beach Bungalows",
+        "id": "ZNZ-0174",
+        "slug": "mnana-beach-bungalows",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://www.mnanabeach.com",
+        "website_domain": "mnanabeach.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Mnarani Beach Cottages",
+        "id": "ZNZ-0175",
+        "slug": "mnarani-beach-cottages",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://www.mnarani.com",
+        "website_domain": "mnarani.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Mvuvi Resort",
+        "id": "ZNZ-0182",
+        "slug": "mvuvi-resort",
+        "zone": "Kiwengwa",
+        "category": "Boutique",
+        "website": "https://mvuvizanzibar.com",
+        "website_domain": "mvuvizanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Mwezi Boutique Resort",
+        "id": "ZNZ-0183",
+        "slug": "mwezi-boutique-resort",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://www.mwezizanzibar.com",
+        "website_domain": "mwezizanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "My Blue Hotel",
+        "id": "ZNZ-0184",
+        "slug": "my-blue-hotel",
+        "zone": "Nungwi",
+        "category": "Resort",
+        "website": "https://www.mybluehotel.com",
+        "website_domain": "mybluehotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Nur Beach Hotel",
+        "id": "ZNZ-0189",
+        "slug": "nur-beach-hotel",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://nurbereach.com",
+        "website_domain": "nurbereach.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Oxygen Paje",
+        "id": "ZNZ-0191",
+        "slug": "oxygen-paje",
+        "zone": "Paje",
+        "category": "Boutique/Dining",
+        "website": "https://oxygen-zanzibar.com",
+        "website_domain": "oxygen-zanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Paje By Night",
+        "id": "ZNZ-0193",
+        "slug": "paje-by-night",
+        "zone": "Paje",
+        "category": "Boutique",
+        "website": "https://www.pajebynight.net",
+        "website_domain": "pajebynight.net",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Passion Boutique Hotel",
+        "id": "ZNZ-0199",
+        "slug": "passion-boutique-hotel",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://passion-zanzibar.com",
+        "website_domain": "passion-zanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Pemba Paradise",
+        "id": "ZNZ-0201",
+        "slug": "pemba-paradise",
+        "zone": "Wambaa Gulf / Makangale (Pemba)",
+        "category": "Boutique",
+        "website": "https://pembaparadise.com",
+        "website_domain": "pembaparadise.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Pongwe Beach Hotel",
+        "id": "ZNZ-0203",
+        "slug": "pongwe-beach-hotel",
+        "zone": "Pongwe / Michamvi",
+        "category": "Boutique",
+        "website": "https://pongwe.com",
+        "website_domain": "pongwe.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Red Monkey Lodge",
+        "id": "ZNZ-0208",
+        "slug": "red-monkey-lodge",
+        "zone": "Jambiani",
+        "category": "Boutique Lodge",
+        "website": "https://www.redmonkeylodge.com",
+        "website_domain": "redmonkeylodge.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Sea Cliff Court Zanzibar",
+        "id": "ZNZ-0215",
+        "slug": "sea-cliff-court-zanzibar",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://www.seacliffzanzibar.com",
+        "website_domain": "seacliffzanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Sea View Lodge",
+        "id": "ZNZ-0216",
+        "slug": "sea-view-lodge",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://www.seaviewlodgezanzibar.com",
+        "website_domain": "seaviewlodgezanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Seasons Lodge Zanzibar",
+        "id": "ZNZ-0217",
+        "slug": "seasons-lodge-zanzibar",
+        "zone": "Pongwe / Michamvi",
+        "category": "Boutique",
+        "website": "https://seasonszanzibar.com",
+        "website_domain": "seasonszanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Shaba Boutique Hotel",
+        "id": "ZNZ-0219",
+        "slug": "shaba-boutique-hotel",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://shababoutiquehotel.com",
+        "website_domain": "shababoutiquehotel.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Sharaz\u0101d Boutique Hotel",
+        "id": "ZNZ-0221",
+        "slug": "sharazd-boutique-hotel",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://www.sharazadbeachboutiquehotel.com",
+        "website_domain": "sharazadbeachboutiquehotel.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Sharook Riviera Grand",
+        "id": "ZNZ-0222",
+        "slug": "sharook-riviera-grand",
+        "zone": "Chake Chake (Pemba)",
+        "category": "Boutique",
+        "website": "http://sharookgrand.com",
+        "website_domain": "sharookgrand.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Shooting Star Lodge",
+        "id": "ZNZ-0224",
+        "slug": "shooting-star-lodge",
+        "zone": "Kiwengwa",
+        "category": "Boutique",
+        "website": "https://shootingstarlodge.com",
+        "website_domain": "shootingstarlodge.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Smiles Beach Hotel",
+        "id": "ZNZ-0225",
+        "slug": "smiles-beach-hotel",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://smilesbeachhotel.com",
+        "website_domain": "smilesbeachhotel.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Spice Island Hotel & Resort",
+        "id": "ZNZ-0226",
+        "slug": "spice-island-hotel-resort",
+        "zone": "Jambiani",
+        "category": "Resort",
+        "website": "https://www.spice-island-hotel-resort.com",
+        "website_domain": "spice-island-hotel-resort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "island exterior aerial view"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Tamani Marina Hotel",
+        "id": "ZNZ-0232",
+        "slug": "tamani-marina-hotel",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://tamanimarina.com",
+        "website_domain": "tamanimarina.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Tembo House Hotel",
+        "id": "ZNZ-0234",
+        "slug": "tembo-house-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "http://www.tembohotel.com",
+        "website_domain": "tembohotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Tembo Palace Hotel",
+        "id": "ZNZ-0235",
+        "slug": "tembo-palace-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "http://www.tembohotel.com",
+        "website_domain": "tembohotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "The Island - Pongwe Lodge",
+        "id": "ZNZ-0237",
+        "slug": "the-island-pongwe-lodge",
+        "zone": "Pongwe / Michamvi",
+        "category": "Boutique",
+        "website": "https://www.theislandpongwe.com",
+        "website_domain": "theislandpongwe.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature",
+          "island exterior aerial view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "The Seyyida Hotel & Spa",
+        "id": "ZNZ-0242",
+        "slug": "the-seyyida-hotel-spa",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://www.theseyyida.com",
+        "website_domain": "theseyyida.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "The Zanzibari",
+        "id": "ZNZ-0243",
+        "slug": "the-zanzibari",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://thezanzibari.com",
+        "website_domain": "thezanzibari.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Toa Hotel & Spa",
+        "id": "ZNZ-0245",
+        "slug": "toa-hotel-spa",
+        "zone": "Pongwe / Michamvi",
+        "category": "Boutique",
+        "website": "https://toazanzibar.com",
+        "website_domain": "toazanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Upendo Beach Zanzibar",
+        "id": "ZNZ-0248",
+        "slug": "upendo-beach-zanzibar",
+        "zone": "Michamvi / Pingwe",
+        "category": "Boutique",
+        "website": "https://www.upendozanzibar.com",
+        "website_domain": "upendozanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Upendo House Stone Town",
+        "id": "ZNZ-0249",
+        "slug": "upendo-house-stone-town",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://www.upendozanzibar.com",
+        "website_domain": "upendozanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Villa Kiva Boutique Hotel",
+        "id": "ZNZ-0254",
+        "slug": "villa-kiva-boutique-hotel",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://villakiva.com",
+        "website_domain": "villakiva.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature",
+          "villa exterior and pool"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Warere Beach",
+        "id": "ZNZ-0259",
+        "slug": "warere-beach",
+        "zone": "Nungwi",
+        "category": "Boutique",
+        "website": "https://warerebeach.com",
+        "website_domain": "warerebeach.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Warere Town House",
+        "id": "ZNZ-0260",
+        "slug": "warere-town-house",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://warerebeach.com",
+        "website_domain": "warerebeach.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Zanzibar Coffee House",
+        "id": "ZNZ-0267",
+        "slug": "zanzibar-coffee-house",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://www.zanzibarcoffeehouse.com",
+        "website_domain": "zanzibarcoffeehouse.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Zanzibar Pearl Boutique",
+        "id": "ZNZ-0271",
+        "slug": "zanzibar-pearl-boutique",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://zanzibarpearl.com",
+        "website_domain": "zanzibarpearl.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Zanzibar Queen Hotel",
+        "id": "ZNZ-0272",
+        "slug": "zanzibar-queen-hotel",
+        "zone": "Matemwe / Kigomani",
+        "category": "Boutique",
+        "website": "https://zanzibarqueen.com",
+        "website_domain": "zanzibarqueen.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Zenji Hotel",
+        "id": "ZNZ-0275",
+        "slug": "zenji-hotel",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "http://www.zenjihotel.com",
+        "website_domain": "zenjihotel.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Al-Minar Hotel",
+        "id": "ZNZ-0279",
+        "slug": "al-minar-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://alminarhotel.com",
+        "website_domain": "alminarhotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Amaan Ocean Koko Beach",
+        "id": "ZNZ-0280",
+        "slug": "amaan-ocean-koko-beach",
+        "zone": "Nungwi",
+        "category": "Hotel",
+        "website": "http://www.oceangrouphotel.com",
+        "website_domain": "oceangrouphotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 2
+      },
+      {
+        "name": "Aquaholics Surf Lodge",
+        "id": "ZNZ-0281",
+        "slug": "aquaholics-surf-lodge",
+        "zone": "Paje",
+        "category": "Sports Lodge",
+        "website": "https://www.aquaholics-zanzibar.com",
+        "website_domain": "aquaholics-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Arabian Nights Hotel",
+        "id": "ZNZ-0282",
+        "slug": "arabian-nights-hotel",
+        "zone": "Paje",
+        "category": "Hotel",
+        "website": "https://www.arabiannights-zanzibar.com",
+        "website_domain": "arabiannights-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 2
+      },
+      {
+        "name": "Cheetah's Rock Management Stay",
+        "id": "ZNZ-0286",
+        "slug": "cheetahs-rock-management-stay",
+        "zone": "Matemwe / Kigomani",
+        "category": "Lodge",
+        "website": "https://www.cheetahsrock.org",
+        "website_domain": "cheetahsrock.org",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Demani Lodge",
+        "id": "ZNZ-0288",
+        "slug": "demani-lodge",
+        "zone": "Paje",
+        "category": "Lodge",
+        "website": "https://demanilodge.com",
+        "website_domain": "demanilodge.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Forodhani Park Hotel",
+        "id": "ZNZ-0294",
+        "slug": "forodhani-park-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "http://www.forodhaniparkhotel.com",
+        "website_domain": "forodhaniparkhotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Hiliki House",
+        "id": "ZNZ-0297",
+        "slug": "hiliki-house",
+        "zone": "Stone Town",
+        "category": "B&B",
+        "website": "https://www.hilikihouse.com",
+        "website_domain": "hilikihouse.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kimte Beach Lodge",
+        "id": "ZNZ-0302",
+        "slug": "kimte-beach-lodge",
+        "zone": "Jambiani",
+        "category": "Lodge",
+        "website": "https://kimtebeachlodge.com",
+        "website_domain": "kimtebeachlodge.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kiponda B&B",
+        "id": "ZNZ-0303",
+        "slug": "kiponda-bb",
+        "zone": "Stone Town",
+        "category": "B&B",
+        "website": "http://www.kiponda.com",
+        "website_domain": "kiponda.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Malika Hotel",
+        "id": "ZNZ-0307",
+        "slug": "malika-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://malikahotel.com",
+        "website_domain": "malikahotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Mangrove Lodge",
+        "id": "ZNZ-0308",
+        "slug": "mangrove-lodge",
+        "zone": "Stone Town",
+        "category": "Eco-Lodge",
+        "website": "https://www.mangrovelodge.com",
+        "website_domain": "mangrovelodge.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Paje Beach Bandas",
+        "id": "ZNZ-0318",
+        "slug": "paje-beach-bandas",
+        "zone": "Paje",
+        "category": "Lodge",
+        "website": "https://pajebeachbandas.com",
+        "website_domain": "pajebeachbandas.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Princess Salme Inn",
+        "id": "ZNZ-0325",
+        "slug": "princess-salme-inn",
+        "zone": "Stone Town",
+        "category": "B&B",
+        "website": "http://www.princesssalmeinn.com",
+        "website_domain": "princesssalmeinn.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Promised Land Lodge",
+        "id": "ZNZ-0326",
+        "slug": "promised-land-lodge",
+        "zone": "Kizimkazi / Dimbani",
+        "category": "Lodge",
+        "website": "https://www.promisedland-zanzibar.com",
+        "website_domain": "promisedland-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Rumaisa Hotel",
+        "id": "ZNZ-0330",
+        "slug": "rumaisa-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "http://www.rumaisahotel.com",
+        "website_domain": "rumaisahotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Shangani Hotel",
+        "id": "ZNZ-0333",
+        "slug": "shangani-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "http://www.shanganihotel.com",
+        "website_domain": "shanganihotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Spice Palace Hotel",
+        "id": "ZNZ-0334",
+        "slug": "spice-palace-hotel",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://spicepalacehotel.com",
+        "website_domain": "spicepalacehotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Stone Town Caf\u00e9 B&B",
+        "id": "ZNZ-0335",
+        "slug": "stone-town-caf-bb",
+        "zone": "Stone Town",
+        "category": "B&B",
+        "website": "http://www.stonetowncafe.com",
+        "website_domain": "stonetowncafe.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Summer Dream Lodge",
+        "id": "ZNZ-0336",
+        "slug": "summer-dream-lodge",
+        "zone": "Paje",
+        "category": "Lodge",
+        "website": "https://summerdreamzanzibar.com",
+        "website_domain": "summerdreamzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Sunset Kendwa",
+        "id": "ZNZ-0338",
+        "slug": "sunset-kendwa",
+        "zone": "Kendwa",
+        "category": "Beach Hotel",
+        "website": "https://www.sunsetkendwa.com",
+        "website_domain": "sunsetkendwa.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Sunshine Hotel Matemwe",
+        "id": "ZNZ-0339",
+        "slug": "sunshine-hotel-matemwe",
+        "zone": "Matemwe / Kigomani",
+        "category": "Hotel",
+        "website": "https://sunshine-zanzibar.com",
+        "website_domain": "sunshine-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Surfescape Zanzibar",
+        "id": "ZNZ-0340",
+        "slug": "surfescape-zanzibar",
+        "zone": "Matemwe / Kigomani",
+        "category": "Lodge",
+        "website": "https://surfescape.com",
+        "website_domain": "surfescape.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "The Swahili House",
+        "id": "ZNZ-0342",
+        "slug": "the-swahili-house",
+        "zone": "Stone Town",
+        "category": "Hotel",
+        "website": "https://www.theswahilihouse.com",
+        "website_domain": "theswahilihouse.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 2
+      },
+      {
+        "name": "Unguja Lodge",
+        "id": "ZNZ-0345",
+        "slug": "unguja-lodge",
+        "zone": "Kizimkazi / Dimbani",
+        "category": "Lodge",
+        "website": "https://www.ungujalodge.com",
+        "website_domain": "ungujalodge.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Verani Beach Lodge",
+        "id": "ZNZ-0346",
+        "slug": "verani-beach-lodge",
+        "zone": "Wambaa Gulf / Makangale (Pemba)",
+        "category": "Lodge",
+        "website": "http://www.veranibeach.com",
+        "website_domain": "veranibeach.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Abuso Inn",
+        "id": "ZNZ-0350",
+        "slug": "abuso-inn",
+        "zone": "Stone Town",
+        "category": "Guesthouse",
+        "website": "http://abusoinn.com",
+        "website_domain": "abusoinn.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Balcony House",
+        "id": "ZNZ-0355",
+        "slug": "balcony-house",
+        "zone": "Stone Town",
+        "category": "Guesthouse",
+        "website": "https://www.balconyhousezanzibar.com",
+        "website_domain": "balconyhousezanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Drifters Zanzibar",
+        "id": "ZNZ-0356",
+        "slug": "drifters-zanzibar",
+        "zone": "Paje",
+        "category": "Hostel",
+        "website": "http://www.drifterszanzibar.com",
+        "website_domain": "drifterszanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Ebb & Flow",
+        "id": "ZNZ-0357",
+        "slug": "ebb-flow",
+        "zone": "Paje",
+        "category": "Apartment",
+        "website": "http://ebbandflowzanzibar.com",
+        "website_domain": "ebbandflowzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Hekima House",
+        "id": "ZNZ-0359",
+        "slug": "hekima-house",
+        "zone": "Paje",
+        "category": "Guesthouse",
+        "website": "https://hekima-house.com",
+        "website_domain": "hekima-house.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Jambo Guest House",
+        "id": "ZNZ-0360",
+        "slug": "jambo-guest-house",
+        "zone": "Stone Town",
+        "category": "Guesthouse",
+        "website": "http://www.jamboguesthouse.com",
+        "website_domain": "jamboguesthouse.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Jozani Chwaka Bay Official Stay",
+        "id": "ZNZ-0361",
+        "slug": "jozani-chwaka-bay-official-stay",
+        "zone": "Matemwe / Kigomani",
+        "category": "Eco-Stay",
+        "website": "https://www.tanzaniaparks.go.tz",
+        "website_domain": "tanzaniaparks.go.tz",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Lost & Found Zanzibar",
+        "id": "ZNZ-0364",
+        "slug": "lost-found-zanzibar",
+        "zone": "Stone Town",
+        "category": "Hostel",
+        "website": "https://lostandfoundzanzibar.com",
+        "website_domain": "lostandfoundzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Matemwe Beach House",
+        "id": "ZNZ-0366",
+        "slug": "matemwe-beach-house",
+        "zone": "Matemwe / Kigomani",
+        "category": "Villa",
+        "website": "https://www.asiliaafrica.com",
+        "website_domain": "asiliaafrica.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Mbuyuni Beach Village",
+        "id": "ZNZ-0368",
+        "slug": "mbuyuni-beach-village",
+        "zone": "Jambiani",
+        "category": "Guesthouse",
+        "website": "http://www.mbuyuni.com",
+        "website_domain": "mbuyuni.com",
+        "photo_requirements": [
+          "villa exterior and pool"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "New Teddy's on the Beach",
+        "id": "ZNZ-0370",
+        "slug": "new-teddys-on-the-beach",
+        "zone": "Jambiani",
+        "category": "Guesthouse",
+        "website": "https://newteddys.com",
+        "website_domain": "newteddys.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Nungwi House",
+        "id": "ZNZ-0371",
+        "slug": "nungwi-house",
+        "zone": "Nungwi",
+        "category": "Guesthouse",
+        "website": "http://www.nungwihouse.com",
+        "website_domain": "nungwihouse.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "Ten to Ten Stone Town",
+        "id": "ZNZ-0374",
+        "slug": "ten-to-ten-stone-town",
+        "zone": "Stone Town",
+        "category": "Hostel",
+        "website": "https://10to10stonetown.com",
+        "website_domain": "10to10stonetown.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Your Zanzibar Place",
+        "id": "ZNZ-0375",
+        "slug": "your-zanzibar-place",
+        "zone": "Paje",
+        "category": "Guesthouse",
+        "website": "https://yourzanzibarplace.com",
+        "website_domain": "yourzanzibarplace.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      },
+      {
+        "name": "ZLife Hostel",
+        "id": "ZNZ-0376",
+        "slug": "zlife-hostel",
+        "zone": "Stone Town",
+        "category": "Hostel",
+        "website": "https://zlifehostel.com",
+        "website_domain": "zlifehostel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "room view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      }
+    ],
+    "complex": [
+      {
+        "name": "&Beyond Mnemba Island",
+        "id": "ZNZ-0001",
+        "slug": "beyond-mnemba-island",
+        "zone": "Stone Town",
+        "category": "Luxury Boutique",
+        "website": "https://www.andbeyond.com",
+        "website_domain": "andbeyond.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "island exterior aerial view"
+        ],
+        "priority": "high",
+        "estimated_time": 3
+      },
+      {
+        "name": "Baraza Resort and Spa",
+        "id": "ZNZ-0002",
+        "slug": "baraza-resort-and-spa",
+        "zone": "Bwejuu / Dongwe",
+        "category": "Luxury Resort",
+        "website": "https://www.baraza-zanzibar.com",
+        "website_domain": "baraza-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Bawe Tropical Island",
+        "id": "ZNZ-0003",
+        "slug": "bawe-tropical-island",
+        "zone": "Stone Town",
+        "category": "Luxury Resort",
+        "website": "https://www.baweisland.com",
+        "website_domain": "baweisland.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "island exterior aerial view"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Bluebay Beach Resort & Spa",
+        "id": "ZNZ-0004",
+        "slug": "bluebay-beach-resort-spa",
+        "zone": "Kiwengwa",
+        "category": "Luxury Resort",
+        "website": "https://www.bluebayzanzibar.com",
+        "website_domain": "bluebayzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Emerald Zanzibar Resort & Spa",
+        "id": "ZNZ-0005",
+        "slug": "emerald-zanzibar-resort-spa",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Resort",
+        "website": "https://www.emerald-collection.com",
+        "website_domain": "emerald-collection.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Emerson Spice",
+        "id": "ZNZ-0006",
+        "slug": "emerson-spice",
+        "zone": "Stone Town",
+        "category": "Luxury Boutique",
+        "website": "https://www.emersonzanzibar.com",
+        "website_domain": "emersonzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Emerson on Hurumzi",
+        "id": "ZNZ-0007",
+        "slug": "emerson-on-hurumzi",
+        "zone": "Stone Town",
+        "category": "Luxury Boutique",
+        "website": "https://www.emersonzanzibar.com",
+        "website_domain": "emersonzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Essque Zalu Zanzibar",
+        "id": "ZNZ-0008",
+        "slug": "essque-zalu-zanzibar",
+        "zone": "Nungwi",
+        "category": "Luxury Resort",
+        "website": "https://www.essque-zalu.com",
+        "website_domain": "essque-zalu.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Fruit & Spice Wellness Resort",
+        "id": "ZNZ-0009",
+        "slug": "fruit-spice-wellness-resort",
+        "zone": "Kizimkazi / Dimbani",
+        "category": "Luxury Resort",
+        "website": "https://fruitandspiceresort.com",
+        "website_domain": "fruitandspiceresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Fundu Lagoon",
+        "id": "ZNZ-0010",
+        "slug": "fundu-lagoon",
+        "zone": "Wambaa Gulf / Makangale (Pemba)",
+        "category": "Luxury Boutique",
+        "website": "https://www.fundulagoon.com",
+        "website_domain": "fundulagoon.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Gold Zanzibar Beach House & Spa",
+        "id": "ZNZ-0011",
+        "slug": "gold-zanzibar-beach-house-spa",
+        "zone": "Kendwa",
+        "category": "Luxury Resort",
+        "website": "https://www.goldzanzibar.com",
+        "website_domain": "goldzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Isaraya Luxury Overwater Villas",
+        "id": "ZNZ-0012",
+        "slug": "isaraya-luxury-overwater-villas",
+        "zone": "Michamvi / Pingwe",
+        "category": "Luxury Boutique",
+        "website": "https://www.konokonoresort.com",
+        "website_domain": "konokonoresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "villa exterior and pool"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Jafferji House & Spa",
+        "id": "ZNZ-0013",
+        "slug": "jafferji-house-spa",
+        "zone": "Stone Town",
+        "category": "Luxury Boutique",
+        "website": "https://jafferjihouse.net",
+        "website_domain": "jafferjihouse.net",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Kilindi Zanzibar",
+        "id": "ZNZ-0015",
+        "slug": "kilindi-zanzibar",
+        "zone": "Kendwa",
+        "category": "Luxury Boutique",
+        "website": "https://www.elewanacollection.com",
+        "website_domain": "elewanacollection.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Kiwengwa Beach Resort",
+        "id": "ZNZ-0016",
+        "slug": "kiwengwa-beach-resort",
+        "zone": "Kiwengwa",
+        "category": "Luxury Resort",
+        "website": "https://www.kiwengwabeachresort.com",
+        "website_domain": "kiwengwabeachresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Konokono Beach Resort",
+        "id": "ZNZ-0017",
+        "slug": "konokono-beach-resort",
+        "zone": "Michamvi / Pingwe",
+        "category": "Luxury Resort",
+        "website": "https://www.konokonoresort.com",
+        "website_domain": "konokonoresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "LUX* Marijani Zanzibar",
+        "id": "ZNZ-0019",
+        "slug": "lux-marijani-zanzibar",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Resort",
+        "website": "https://www.luxresorts.com",
+        "website_domain": "luxresorts.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Marijani Beach Resort & Spa",
+        "id": "ZNZ-0021",
+        "slug": "marijani-beach-resort-spa",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Resort",
+        "website": "https://marijanizanzibar.com",
+        "website_domain": "marijanizanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Matemwe Retreat",
+        "id": "ZNZ-0022",
+        "slug": "matemwe-retreat",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Boutique",
+        "website": "https://www.asiliaafrica.com",
+        "website_domain": "asiliaafrica.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Melia Zanzibar",
+        "id": "ZNZ-0025",
+        "slug": "melia-zanzibar",
+        "zone": "Kiwengwa",
+        "category": "Luxury Resort",
+        "website": "https://www.melia.com",
+        "website_domain": "melia.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Milele Villas",
+        "id": "ZNZ-0026",
+        "slug": "milele-villas",
+        "zone": "Paje",
+        "category": "Luxury Boutique",
+        "website": "https://www.milelevillas.com",
+        "website_domain": "milelevillas.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "villa exterior and pool"
+        ],
+        "priority": "high",
+        "estimated_time": 3
+      },
+      {
+        "name": "Nungwi Dreams by Mantis",
+        "id": "ZNZ-0028",
+        "slug": "nungwi-dreams-by-mantis",
+        "zone": "Nungwi",
+        "category": "Luxury Boutique",
+        "website": "https://www.mantiscollection.com",
+        "website_domain": "mantiscollection.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 3
+      },
+      {
+        "name": "Park Hyatt Zanzibar",
+        "id": "ZNZ-0029",
+        "slug": "park-hyatt-zanzibar",
+        "zone": "Stone Town",
+        "category": "Luxury",
+        "website": "https://www.hyatt.com",
+        "website_domain": "hyatt.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Qambani Luxury Resort",
+        "id": "ZNZ-0030",
+        "slug": "qambani-luxury-resort",
+        "zone": "Michamvi / Pingwe",
+        "category": "Luxury Boutique",
+        "website": "https://qambani.com",
+        "website_domain": "qambani.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Riu Jambo",
+        "id": "ZNZ-0031",
+        "slug": "riu-jambo",
+        "zone": "Nungwi",
+        "category": "Luxury Resort",
+        "website": "https://www.riu.com",
+        "website_domain": "riu.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Riu Palace Zanzibar",
+        "id": "ZNZ-0032",
+        "slug": "riu-palace-zanzibar",
+        "zone": "Nungwi",
+        "category": "Luxury Resort",
+        "website": "https://www.riu.com",
+        "website_domain": "riu.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Royal Zanzibar Beach Resort",
+        "id": "ZNZ-0034",
+        "slug": "royal-zanzibar-beach-resort",
+        "zone": "Nungwi",
+        "category": "Luxury Resort",
+        "website": "https://www.royalzanzibar.com",
+        "website_domain": "royalzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Safira Blu Luxury Resort",
+        "id": "ZNZ-0035",
+        "slug": "safira-blu-luxury-resort",
+        "zone": "Nungwi",
+        "category": "Luxury Resort",
+        "website": "https://safirablu.com",
+        "website_domain": "safirablu.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Sea Cliff Resort & Spa",
+        "id": "ZNZ-0036",
+        "slug": "sea-cliff-resort-spa",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Resort",
+        "website": "https://www.seacliffzanzibar.com",
+        "website_domain": "seacliffzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "TUI BLUE Bahari Zanzibar",
+        "id": "ZNZ-0039",
+        "slug": "tui-blue-bahari-zanzibar",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Resort",
+        "website": "https://www.tui-blue.com",
+        "website_domain": "tui-blue.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "The Manta Resort",
+        "id": "ZNZ-0040",
+        "slug": "the-manta-resort",
+        "zone": "Wambaa Gulf / Makangale (Pemba)",
+        "category": "Luxury Resort",
+        "website": "https://www.themantaresort.com",
+        "website_domain": "themantaresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "The Mora Zanzibar",
+        "id": "ZNZ-0041",
+        "slug": "the-mora-zanzibar",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Resort",
+        "website": "https://www.themora.com",
+        "website_domain": "themora.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "The Neela Oceanfront",
+        "id": "ZNZ-0043",
+        "slug": "the-neela-oceanfront",
+        "zone": "Fumba / Mbweni",
+        "category": "Luxury Resort",
+        "website": "https://www.neelacollection.com",
+        "website_domain": "neelacollection.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "The Palms Zanzibar",
+        "id": "ZNZ-0044",
+        "slug": "the-palms-zanzibar",
+        "zone": "Bwejuu / Dongwe",
+        "category": "Luxury Boutique",
+        "website": "https://www.palms-zanzibar.com",
+        "website_domain": "palms-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "The Residence Zanzibar",
+        "id": "ZNZ-0045",
+        "slug": "the-residence-zanzibar",
+        "zone": "Kizimkazi / Dimbani",
+        "category": "Luxury Resort",
+        "website": "https://www.cenizaro.com/theresidence/zanzibar",
+        "website_domain": "cenizaro.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Tulia Zanzibar Unique Beach Resort",
+        "id": "ZNZ-0047",
+        "slug": "tulia-zanzibar-unique-beach-resort",
+        "zone": "Pongwe / Michamvi",
+        "category": "Luxury Resort",
+        "website": "https://tuliazanzibar.com",
+        "website_domain": "tuliazanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Villa Stecchini",
+        "id": "ZNZ-0048",
+        "slug": "villa-stecchini",
+        "zone": "Kiwengwa",
+        "category": "Luxury Villa",
+        "website": "https://villastecchini.com",
+        "website_domain": "villastecchini.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "villa exterior and pool"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Xanadu Luxury Villas",
+        "id": "ZNZ-0050",
+        "slug": "xanadu-luxury-villas",
+        "zone": "Bwejuu / Dongwe",
+        "category": "Luxury Boutique",
+        "website": "https://xanadu-villas.com",
+        "website_domain": "xanadu-villas.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "villa exterior and pool"
+        ],
+        "priority": "medium",
+        "estimated_time": 3
+      },
+      {
+        "name": "Zanzi Resort",
+        "id": "ZNZ-0051",
+        "slug": "zanzi-resort",
+        "zone": "Matemwe / Kigomani",
+        "category": "Luxury Resort",
+        "website": "https://www.zanziresort.com",
+        "website_domain": "zanziresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Zanzibar White Sand Luxury Villas",
+        "id": "ZNZ-0053",
+        "slug": "zanzibar-white-sand-luxury-villas",
+        "zone": "Paje",
+        "category": "Luxury Resort",
+        "website": "https://www.whitesandvillas.com",
+        "website_domain": "whitesandvillas.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "villa exterior and pool"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Zuri Zanzibar",
+        "id": "ZNZ-0055",
+        "slug": "zuri-zanzibar",
+        "zone": "Kendwa",
+        "category": "Luxury Resort",
+        "website": "https://www.zurizanzibar.com",
+        "website_domain": "zurizanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "medium",
+        "estimated_time": 5
+      },
+      {
+        "name": "Amaan Beach Bungalows",
+        "id": "ZNZ-0062",
+        "slug": "amaan-beach-bungalows",
+        "zone": "Nungwi",
+        "category": "Resort",
+        "website": "http://www.oceangrouphotel.com",
+        "website_domain": "oceangrouphotel.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Blue Moon Resort",
+        "id": "ZNZ-0083",
+        "slug": "blue-moon-resort",
+        "zone": "Jambiani",
+        "category": "Resort",
+        "website": "https://www.bluemoon-resort.com",
+        "website_domain": "bluemoon-resort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Breezes Beach Club & Spa",
+        "id": "ZNZ-0086",
+        "slug": "breezes-beach-club-spa",
+        "zone": "Bwejuu / Dongwe",
+        "category": "Resort",
+        "website": "https://www.breezes-zanzibar.com",
+        "website_domain": "breezes-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Diamonds Mapenzi Beach",
+        "id": "ZNZ-0100",
+        "slug": "diamonds-mapenzi-beach",
+        "zone": "Matemwe / Kigomani",
+        "category": "Resort",
+        "website": "https://mapenzibeach.diamondsresorts.com",
+        "website_domain": "mapenzibeach.diamondsresorts.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "DoubleTree by Hilton Nungwi",
+        "id": "ZNZ-0102",
+        "slug": "doubletree-by-hilton-nungwi",
+        "zone": "Nungwi",
+        "category": "Resort",
+        "website": "https://www.hilton.com",
+        "website_domain": "hilton.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Emerald Bay Resort",
+        "id": "ZNZ-0106",
+        "slug": "emerald-bay-resort",
+        "zone": "Chake Chake (Pemba)",
+        "category": "Resort",
+        "website": "https://emeraldbayzanzibar.com",
+        "website_domain": "emeraldbayzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Filao Beach Zanzibar",
+        "id": "ZNZ-0108",
+        "slug": "filao-beach-zanzibar",
+        "zone": "Michamvi / Pingwe",
+        "category": "Resort",
+        "website": "https://filaobeachzanzibar.com",
+        "website_domain": "filaobeachzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Fun Beach Resort",
+        "id": "ZNZ-0113",
+        "slug": "fun-beach-resort",
+        "zone": "Jambiani",
+        "category": "Resort",
+        "website": "https://fun-zanzibar.com",
+        "website_domain": "fun-zanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Ifa Beach Resort",
+        "id": "ZNZ-0124",
+        "slug": "ifa-beach-resort",
+        "zone": "Jambiani",
+        "category": "Resort",
+        "website": "http://ifabeachresort.com",
+        "website_domain": "ifabeachresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Karafuu Beach Resort & Spa",
+        "id": "ZNZ-0136",
+        "slug": "karafuu-beach-resort-spa",
+        "zone": "Michamvi / Pingwe",
+        "category": "Resort",
+        "website": "https://www.karafuuzanzibar.com",
+        "website_domain": "karafuuzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Karibu Beach Resort",
+        "id": "ZNZ-0138",
+        "slug": "karibu-beach-resort",
+        "zone": "Kizimkazi / Dimbani",
+        "category": "Resort",
+        "website": "https://karibubeachresort.com",
+        "website_domain": "karibubeachresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Kervan Saray Beach",
+        "id": "ZNZ-0141",
+        "slug": "kervan-saray-beach",
+        "zone": "Wambaa Gulf / Makangale (Pemba)",
+        "category": "Dive Resort",
+        "website": "https://www.swahilidivers.com",
+        "website_domain": "swahilidivers.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Ocean Paradise Resort & Spa",
+        "id": "ZNZ-0190",
+        "slug": "ocean-paradise-resort-spa",
+        "zone": "Matemwe / Kigomani",
+        "category": "Resort",
+        "website": "https://oceanparadisezanzibar.com",
+        "website_domain": "oceanparadisezanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Palumbokendwa",
+        "id": "ZNZ-0196",
+        "slug": "palumbokendwa",
+        "zone": "Kendwa",
+        "category": "Resort",
+        "website": "https://www.palumbokendwa.com",
+        "website_domain": "palumbokendwa.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Paradise Beach Resort",
+        "id": "ZNZ-0198",
+        "slug": "paradise-beach-resort",
+        "zone": "Matemwe / Kigomani",
+        "category": "Resort",
+        "website": "https://www.paradise-zatanzibar.com",
+        "website_domain": "paradise-zatanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Pemba Misali Sunset Beach",
+        "id": "ZNZ-0200",
+        "slug": "pemba-misali-sunset-beach",
+        "zone": "Wambaa Gulf / Makangale (Pemba)",
+        "category": "Resort",
+        "website": "https://pembamisalisunsetbeach.com",
+        "website_domain": "pembamisalisunsetbeach.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Sandies Baobab Beach Zanzibar",
+        "id": "ZNZ-0214",
+        "slug": "sandies-baobab-beach-zanzibar",
+        "zone": "Nungwi",
+        "category": "Resort",
+        "website": "https://baobabbeach.sandies-resorts.com",
+        "website_domain": "baobabbeach.sandies-resorts.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Sultan Sands Island Resort",
+        "id": "ZNZ-0228",
+        "slug": "sultan-sands-island-resort",
+        "zone": "Kiwengwa",
+        "category": "Resort",
+        "website": "https://www.sultansandszanzibar.com",
+        "website_domain": "sultansandszanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access",
+          "island exterior aerial view"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Tanzanite Beach Resort",
+        "id": "ZNZ-0233",
+        "slug": "tanzanite-beach-resort",
+        "zone": "Nungwi",
+        "category": "Resort",
+        "website": "https://tanzaniteresort.com",
+        "website_domain": "tanzaniteresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "The Loop Beach Resort",
+        "id": "ZNZ-0238",
+        "slug": "the-loop-beach-resort",
+        "zone": "Jambiani",
+        "category": "Resort",
+        "website": "https://theloopzanzibar.com",
+        "website_domain": "theloopzanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "The Sands Beach Resort",
+        "id": "ZNZ-0241",
+        "slug": "the-sands-beach-resort",
+        "zone": "Bwejuu / Dongwe",
+        "category": "Resort",
+        "website": "https://thesandszanzibar.com",
+        "website_domain": "thesandszanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Waridi Beach Resort & Spa",
+        "id": "ZNZ-0261",
+        "slug": "waridi-beach-resort-spa",
+        "zone": "Matemwe / Kigomani",
+        "category": "Resort",
+        "website": "https://www.waridibeachresort.com",
+        "website_domain": "waridibeachresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "White Paradise Zanzibar Resort",
+        "id": "ZNZ-0262",
+        "slug": "white-paradise-zanzibar-resort",
+        "zone": "Pongwe / Michamvi",
+        "category": "Resort",
+        "website": "https://www.white-paradise.com",
+        "website_domain": "white-paradise.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Zanzibar Bay Resort",
+        "id": "ZNZ-0266",
+        "slug": "zanzibar-bay-resort",
+        "zone": "Matemwe / Kigomani",
+        "category": "Resort",
+        "website": "https://www.paradise-zatanzibar.com",
+        "website_domain": "paradise-zatanzibar.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "low",
+        "estimated_time": 5
+      },
+      {
+        "name": "Zanzibar Kite Paradise",
+        "id": "ZNZ-0269",
+        "slug": "zanzibar-kite-paradise",
+        "zone": "Paje",
+        "category": "Resort",
+        "website": "https://www.zanzibarkiteparadise.com",
+        "website_domain": "zanzibarkiteparadise.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      },
+      {
+        "name": "Zanzibar Star Resort",
+        "id": "ZNZ-0273",
+        "slug": "zanzibar-star-resort",
+        "zone": "Nungwi",
+        "category": "Resort",
+        "website": "https://www.zanzibarstarresort.com",
+        "website_domain": "zanzibarstarresort.com",
+        "photo_requirements": [
+          "exterior facade",
+          "lobby/interior",
+          "pool area",
+          "room view",
+          "beach access"
+        ],
+        "priority": "high",
+        "estimated_time": 5
+      }
+    ],
+    "unique": [
+      {
+        "name": "Chapwani Private Island",
+        "id": "ZNZ-0089",
+        "slug": "chapwani-private-island",
+        "zone": "Stone Town",
+        "category": "Boutique",
+        "website": "https://www.chapwani.com",
+        "website_domain": "chapwani.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature",
+          "island exterior aerial view"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Clove Island Villas & Apartments",
+        "id": "ZNZ-0093",
+        "slug": "clove-island-villas-apartments",
+        "zone": "Kiwengwa",
+        "category": "Boutique",
+        "website": "https://cloveisland.com",
+        "website_domain": "cloveisland.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature",
+          "island exterior aerial view",
+          "villa exterior and pool"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Kupaga Villas",
+        "id": "ZNZ-0149",
+        "slug": "kupaga-villas",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://kupagavillas.com",
+        "website_domain": "kupagavillas.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature",
+          "villa exterior and pool"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      },
+      {
+        "name": "Villa Bluu",
+        "id": "ZNZ-0252",
+        "slug": "villa-bluu",
+        "zone": "Jambiani",
+        "category": "Boutique",
+        "website": "https://villabluu.com",
+        "website_domain": "villabluu.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature",
+          "villa exterior and pool"
+        ],
+        "priority": "low",
+        "estimated_time": 1
+      }
+    ],
+    "chain": [
+      {
+        "name": "B4 Beach Club",
+        "id": "ZNZ-0071",
+        "slug": "b4-beach-club",
+        "zone": "Paje",
+        "category": "Boutique",
+        "website": "https://b4zanzibar.com",
+        "website_domain": "b4zanzibar.com",
+        "photo_requirements": [
+          "facade",
+          "interior detail",
+          "signature feature"
+        ],
+        "priority": "high",
+        "estimated_time": 1
+      }
+    ],
+    "island": []
+  }
+}

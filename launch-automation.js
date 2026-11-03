@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Project root
-const ROOT = '/home/efatha/dhow-coast-travels';
+const ROOT = '/home/efatha/spiceandsail';
 
 // Verify build is current
 console.log('=== Dhow Coast Travels - 24hr Launch Automation ===\n');

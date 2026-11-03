@@ -7,8 +7,8 @@ Creates area data file and individual area pages with new CSS design.
 import json
 from pathlib import Path
 
-OUTPUT_DIR = Path("/home/efatha/dhow-coast-travels/src/data")
-PAGES_DIR = Path("/home/efatha/dhow-coast-travels/src/pages/areas")
+OUTPUT_DIR = Path("/home/efatha/spiceandsail/src/data")
+PAGES_DIR = Path("/home/efatha/spiceandsail/src/pages/areas")
 PAGES_DIR.mkdir(parents=True, exist_ok=True)
 
 ZONES = [
