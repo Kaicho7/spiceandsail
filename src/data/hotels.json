@@ -48,7 +48,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "baraza-resort-and-spa",
-      "photo": "hotels/baraza-resort-and-spa.jpg",
+      "photo": "/images/hotels/baraza-resort-and-spa.jpg",
       "description": "Luxury Resort in Bwejuu, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -230,7 +230,7 @@
       "contact_form_url": null,
       "scrape_status": "no_contacts:direct",
       "slug": "fruit-spice-wellness-resort",
-      "photo": "hotels/fruit-spice-wellness-resort.jpg",
+      "photo": "/images/hotels/fruit-spice-wellness-resort.jpg",
       "description": "Luxury Resort in Kizimkazi, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -308,7 +308,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "isaraya-luxury-overwater-villas",
-      "photo": "hotels/isaraya-luxury-overwater-villas.jpg",
+      "photo": "/images/hotels/isaraya-luxury-overwater-villas.jpg",
       "description": "Exceptional 5-star luxury overwater villas on crystal lagoons at Milima Island, Zanzibar. Ultra-luxe beachfront accommodations with private beaches, infinity pools, and stunning ocean views.",
       "price_range": "$$$",
       "featured": false,
@@ -493,7 +493,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "marijani-beach-resort-spa",
-      "photo": "hotels/marijani-beach-resort-spa.jpg",
+      "photo": "/images/hotels/marijani-beach-resort-spa.jpg",
       "description": "Luxury Resort in Pwani Mchangani, Unguja. 5-Star rating.",
       "price_range": ""
     },
