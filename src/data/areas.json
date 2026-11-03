@@ -5,7 +5,7 @@
       "name": "Stone Town",
       "island": "Unguja",
       "description": "UNESCO World Heritage site — the historic heart of Zanzibar with winding alleys, carved doors, bustling markets, and centuries of Swahili, Arab, Indian, and European heritage.",
-      "hotel_count": 51,
+      "hotel_count": 50,
       "attraction_count": 13,
       "hotels": [
         {
@@ -959,31 +959,6 @@
           "price_range": ""
         },
         {
-          "id": "ZNZ-0324",
-          "name": "Pemba Lodge",
-          "category": "Eco-Lodge",
-          "star_rating": "",
-          "star_tier": "tier3",
-          "tier": "mid",
-          "island": "Pemba",
-          "zone": "Stone Town",
-          "website": "https://www.pembalodge.com",
-          "website_domain": "pembalodge.com",
-          "host_type": "own_site",
-          "pms_detected": "",
-          "email": null,
-          "phone": null,
-          "whatsapp": null,
-          "facebook": null,
-          "instagram": null,
-          "linkedin": null,
-          "contact_form_url": null,
-          "scrape_status": "scraped:direct",
-          "slug": "pemba-lodge",
-          "description": "Eco-Lodge in Kiweni Island, Pemba.  star rating.",
-          "price_range": ""
-        },
-        {
           "id": "ZNZ-0325",
           "name": "Princess Salme Inn",
           "category": "B&B",
@@ -1305,7 +1280,7 @@
       "name": "Nungwi",
       "island": "Unguja",
       "description": "Northern tip of Zanzibar — famous for white-sand beaches, turquoise water, traditional dhow building, and vibrant nightlife. Turtles, diving, and sunset cruises.",
-      "hotel_count": 27,
+      "hotel_count": 26,
       "attraction_count": 9,
       "hotels": [
         {
@@ -1931,31 +1906,6 @@
           "scrape_status": "form_only",
           "slug": "amaan-ocean-koko-beach",
           "description": "Hotel in Nungwi, Unguja. 3-Star rating.",
-          "price_range": ""
-        },
-        {
-          "id": "ZNZ-0365",
-          "name": "Makofi Guest House",
-          "category": "Guesthouse",
-          "star_rating": "",
-          "star_tier": "tier4",
-          "tier": "standard",
-          "island": "Unguja",
-          "zone": "Nungwi",
-          "website": "https://www.makofiguesthouse.com",
-          "website_domain": "makofiguesthouse.com",
-          "host_type": "own_site",
-          "pms_detected": "",
-          "email": null,
-          "phone": null,
-          "whatsapp": null,
-          "facebook": null,
-          "instagram": null,
-          "linkedin": null,
-          "contact_form_url": null,
-          "scrape_status": "scraped:direct",
-          "slug": "makofi-guest-house",
-          "description": "Guesthouse in Nungwi, Unguja.  star rating.",
           "price_range": ""
         },
         {
@@ -5458,8 +5408,8 @@
     }
   ],
   "stats": {
-    "unguja_hotels": 198,
-    "pemba_hotels": 9,
+    "unguja_hotels": 197,
+    "pemba_hotels": 8,
     "unguja_zones": 12,
     "pemba_zones": 2
   }
