@@ -63,7 +63,11 @@ def serper_images(query, n=10):
     data = r.json()
     imgs = data.get("images") or []
     urls = [i.get("imageUrl") for i in imgs if i.get("imageUrl")]
-    return urls, None
+    # Prefer hostnames known to serve hotel photos
+    hotel_hosts = ["tripadvisor.com", "bstatic.com", "booking.com", "expedia.com", "priceline.com"]
+    good = [u for u in urls if any(h in u.lower() for h in hotel_hosts)]
+    fallback = [u for u in urls if u not in good]
+    return good + fallback, None
 
 
 def process_hotel(h):
@@ -73,7 +77,7 @@ def process_hotel(h):
 
     queries = [
         f"{name} Zanzibar",
-        f"{name} hotel photo Hanzibar",
+        f"{name} hotel photo Zanzibar",
         f"{name} beach resort photo",
     ]
 
@@ -97,16 +101,16 @@ def process_hotel(h):
         return h, {"status": "failed", "slug": slug, "name": name, "reason": "no_candidates", "strategy": "serper"}
 
     best_url = candidates[0][1]
-    data = E.download_with_retry(best_url)
-    if data is None:
+    data, ext = E.download_with_retry(best_url)
+    if not data:
         return h, {"status": "failed", "slug": slug, "name": name, "reason": "download_failed", "src": best_url, "strategy": "serper"}
 
     ok, reason = E.analyze_image_quality(data, best_url)
     if not ok:
         # try next candidates
         for score, u, q in candidates[1:]:
-            data = E.download_with_retry(u)
-            if data is None:
+            data, ext = E.download_with_retry(u)
+            if not data:
                 continue
             ok, reason = E.analyze_image_quality(data, u)
             if ok:

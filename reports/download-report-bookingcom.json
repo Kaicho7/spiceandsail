@@ -1,0 +1,9 @@
+[
+  {
+    "status": "failed",
+    "slug": "baraza-resort-and-spa",
+    "name": "Baraza Resort and Spa",
+    "reason": "booking_id_not_found",
+    "strategy": "booking.com"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "status": "failed",
+    "slug": "baraza-resort-and-spa",
+    "name": "Baraza Resort and Spa",
+    "reason": "download_failed",
+    "src": "https://www.baraza-zanzibar.com/assets/images/content/Baraza-Resort-&-Spa-Zanzibar-Hotel-Review_1653034021.jpg",
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "fruit-spice-wellness-resort",
+    "name": "Fruit & Spice Wellness Resort",
+    "photo": "fruit-spice-wellness-resort.jpg",
+    "src": "https://fruitandspiceresort.travel/wp-content/uploads/2022/03/fruit-and-spice-resort-zanzibar-accomodations-executive-junior-suite-03-1024x683.jpg",
+    "bytes": 59039,
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "marijani-beach-resort-spa",
+    "name": "Marijani Beach Resort & Spa",
+    "photo": "marijani-beach-resort-spa.jpg",
+    "src": "https://static21.com-hotel.com/uploads/hotel/98378/photo/lux-marijani-zanzibar_16938308683.jpeg",
+    "bytes": 298589,
+    "strategy": "serper"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "ok": [],
+  "failed": [
+    {
+      "status": "failed",
+      "slug": "isaraya-luxury-overwater-villas",
+      "name": "Isaraya Luxury Overwater Villas",
+      "reason": "no_usable_social_image",
+      "strategy": "social"
+    },
+    {
+      "status": "failed",
+      "slug": "marijani-beach-resort-spa",
+      "name": "Marijani Beach Resort & Spa",
+      "reason": "no_usable_social_image",
+      "strategy": "social"
+    }
+  ],
+  "skipped": []
+}
