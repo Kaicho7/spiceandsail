@@ -1,29 +1,174 @@
 [
   {
-    "status": "ok",
-    "slug": "golden-tulip-stone-town-boutique",
-    "name": "Golden Tulip Stone Town Boutique",
-    "photo": "golden-tulip-stone-town-boutique.jpg",
-    "src": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/679242742.jpg?k=6cc389273f0ee23aee8ea7e059a48d37ea758f06b08e2a4760e7d099db82e6a4&o=",
-    "bytes": 91568,
+    "status": "failed",
+    "slug": "the-palms-zanzibar",
+    "name": "The Palms Zanzibar",
+    "reason": "download_failed",
+    "src": "https://www.palms-zanzibar.com/assets/images/swimming-pool-n.jpg",
     "strategy": "serper"
   },
   {
     "status": "ok",
-    "slug": "green-living-fumba",
-    "name": "Green Living Fumba",
-    "photo": "green-living-fumba.jpg",
-    "src": "https://wp.fifu.app/frontrowsociety.com/aHR0cHM6Ly9mcm9udHJvd3NvY2lldHkubmV0L3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDI1LzA5L0Z1bWJhLVRvd24tMTAtSmFocmUtRmVpZXItQy1DUFMtQWZyaWNhLUx0ZC05LmpwZw/31cf3a7b3198/a-decade-of-impact-fumba-town-celebrates-10-years-of-sustainable-living-in-zanzibar.webp?p=109228",
-    "bytes": 281612,
+    "slug": "villa-stecchini",
+    "name": "Villa Stecchini",
+    "photo": "villa-stecchini.jpg",
+    "src": "https://www.lalista.com/wp-content/uploads/2026/10/Villa_stecchini_veneto_wedding_venue_IMG_5008.jpg",
+    "bytes": 930457,
+    "strategy": "serper"
+  },
+  {
+    "status": "failed",
+    "slug": "zuri-zanzibar",
+    "name": "Zuri Zanzibar",
+    "reason": "download_failed",
+    "src": "http://media.cntraveler.com/photos/5c8bf1d2ff5475304621760c/master/pass/Zuri-Zanzibar-Hotel_2019_Zuri_Drone_View.jpg",
     "strategy": "serper"
   },
   {
     "status": "ok",
-    "slug": "hakuna-matata-beach-lodge",
-    "name": "Hakuna Matata Beach Lodge",
-    "photo": "hakuna-matata-beach-lodge.jpg",
-    "src": "https://static.wixstatic.com/media/8a2491_5d15fcacb67c4a5095f7a5f66db2fd06~mv2.png/v1/fill/w_417,h_621,al_c,q_85,enc_avif,quality_auto/8a2491_5d15fcacb67c4a5095f7a5f66db2fd06~mv2.png",
-    "bytes": 97940,
+    "slug": "amaan-beach-bungalows",
+    "name": "Amaan Beach Bungalows",
+    "photo": "amaan-beach-bungalows.jpg",
+    "src": "https://static21.com-hotel.com/uploads/hotel/32704/photo/lg_amaan-beach-bungalows_172230823911.jpg",
+    "bytes": 27664,
+    "strategy": "serper"
+  },
+  {
+    "status": "failed",
+    "slug": "anna-of-zanzibar",
+    "name": "Anna of Zanzibar",
+    "reason": "download_failed",
+    "src": "https://anna-of-zanzibar.zanzibarhotelstoday.com/data/Pictures/700x500w/4390/439014/439014783/picture-dongwe-anna-of-zanzibar-1.JPEG",
+    "strategy": "serper"
+  },
+  {
+    "status": "failed",
+    "slug": "antonio-garden-hotel",
+    "name": "Antonio Garden Hotel",
+    "reason": "download_failed",
+    "src": "https://antonio-garden.zanzibarhotelstoday.com/data/Pictures/700x500w/18240/1824033/1824033060/picture-zanzibar-antonio-garden-hotel-8.JPEG",
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "atii-garden-bungalows",
+    "name": "Atii Garden Bungalows",
+    "photo": "atii-garden-bungalows.jpg",
+    "src": "https://pix10.agoda.net/hotelImages/1159162/0/b15ff6a7e1b6fd60a7ca741efe2e097e.jpeg?ce=0&s=414x232",
+    "bytes": 21122,
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "aya-beach-bungalows",
+    "name": "Aya Beach Bungalows",
+    "photo": "aya-beach-bungalows.jpg",
+    "src": "https://media-cdn.tripadvisor.com/media/photo-s/24/6d/d7/1e/aya-beach-resort.jpg",
+    "bytes": 62521,
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "azanzi-beach-hotel",
+    "name": "Azanzi Beach Hotel",
+    "photo": "azanzi-beach-hotel.jpg",
+    "src": "https://www.shadowsofafrica.com/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/a/z/azanzi_beach_hotel.jpg",
+    "bytes": 94937,
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "b4-beach-club",
+    "name": "B4 Beach Club",
+    "photo": "b4-beach-club.jpg",
+    "src": "https://www.zanzibar.com/media-assets/B4-Beach-Club-Paje-992-1.jpg",
+    "bytes": 255106,
+    "strategy": "serper"
+  },
+  {
+    "status": "failed",
+    "slug": "baraka-beach-bungalows",
+    "name": "Baraka Beach Bungalows",
+    "reason": "download_failed",
+    "src": "https://baraka-beach-bungalows.zanzibarhotelstoday.com/data/Pictures/700x500w/16209/1620996/1620996921/picture-nungwi-baraka-beach-bungalows-1.JPEG",
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "breezes-beach-club-spa",
+    "name": "Breezes Beach Club & Spa",
+    "photo": "breezes-beach-club-spa.jpg",
+    "src": "https://www.andbeyond.com/wp-content/uploads/sites/5/Swimming-Pool-at-Breezes-Beach-Club.jpg",
+    "bytes": 528925,
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "canary-nungwi-hotel-spa",
+    "name": "Canary Nungwi Hotel & Spa",
+    "photo": "canary-nungwi-hotel-spa.jpg",
+    "src": "https://static21.com-hotel.com/uploads/hotel/100668/photo/canary-two-spa_17129263706.jpg",
+    "bytes": 146257,
+    "strategy": "serper"
+  },
+  {
+    "status": "failed",
+    "slug": "chapwani-private-island",
+    "name": "Chapwani Private Island",
+    "reason": "download_failed",
+    "src": "https://chapwani-private-island.zanzibarhotelstoday.com/data/Pictures/700x500w/6493/649325/649325034/picture-grave-island-chapwani-private-island-1.JPEG",
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "dongwe-ocean-view",
+    "name": "Dongwe Ocean View",
+    "photo": "dongwe-ocean-view.jpg",
+    "src": "https://cdn.atrsafari.com/cdn/05explore/locations-and-lodges/africa/tanzania/zanzibar/bwejuu/dongwe-ocean-view/0/stills/00page/01-1920.jpg",
+    "bytes": 463194,
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "doubletree-by-hilton-nungwi",
+    "name": "DoubleTree by Hilton Nungwi",
+    "photo": "doubletree-by-hilton-nungwi.jpg",
+    "src": "https://assets.waybird.com/cdn-cgi/image/width=420,height=840,fit=crop,gravity=0.5x1,quality=50,format=auto/https://assets.waybird.com/lodges/kodak_images/000/001/994/original/doubletree-zanzibar-tanzania-timbuktu-travel.jpg",
+    "bytes": 25231,
+    "strategy": "serper"
+  },
+  {
+    "status": "failed",
+    "slug": "doubletree-by-hilton-stone-town",
+    "name": "DoubleTree by Hilton Stone Town",
+    "reason": "download_failed",
+    "src": "https://www.zanzibar-hotels-tz.com/data/Photos/OriginalPhoto/12779/1277963/1277963857/zanzibar-turaco-spice-tree-a-tribute-portfolio-hotel-photo-41.JPEG",
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "emerald-bay-resort",
+    "name": "Emerald Bay Resort",
+    "photo": "emerald-bay-resort.jpg",
+    "src": "https://tanzania-experts.com/wp-content/uploads/emerald_bay_resort3-495x400.jpg.webp",
+    "bytes": 5122,
+    "strategy": "serper"
+  },
+  {
+    "status": "failed",
+    "slug": "filao-beach-zanzibar",
+    "name": "Filao Beach Zanzibar",
+    "reason": "download_failed",
+    "src": "https://sansi-hotels.com/images/uploads/143/1646283486Jetty-Bar-1.jpg?06839322",
+    "strategy": "serper"
+  },
+  {
+    "status": "ok",
+    "slug": "flame-tree-cottages",
+    "name": "Flame Tree Cottages",
+    "photo": "flame-tree-cottages.jpg",
+    "src": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/ef/10/f7/swimming-pool-1.jpg?w=900&h=-1&s=1",
+    "bytes": 142770,
     "strategy": "serper"
   },
   {
@@ -35,56 +180,11 @@
     "strategy": "serper"
   },
   {
-    "status": "ok",
-    "slug": "ifa-beach-resort",
-    "name": "Ifa Beach Resort",
-    "photo": "ifa-beach-resort.jpg",
-    "src": "https://media-cdn.tripadvisor.com/media/photo-s/18/7d/65/73/pool-and-beach.jpg",
-    "bytes": 49491,
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "kae-funk-zanzibar",
-    "name": "Kae Funk Zanzibar",
-    "photo": "kae-funk-zanzibar.jpg",
-    "src": "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cwidth=400%2Cheight=265%2Cdpr=2/tour_img/df36f3f8d8609c5115cbacd53c72f28e11a90c68d0f0f17461eaa9baae9c6073.jpg",
-    "bytes": 55286,
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "karamba-eco-boutique-hotel",
-    "name": "Karamba Eco Boutique Hotel",
-    "photo": "karamba-eco-boutique-hotel.jpg",
-    "src": "https://www.stayoverhere.com/images/staylocal_business/s_c/1005x765/karamba-eco-boutique-hotel-20250125092146514600.webp",
-    "bytes": 233220,
-    "strategy": "serper"
-  },
-  {
     "status": "failed",
     "slug": "kervan-saray-beach",
     "name": "Kervan Saray Beach",
     "reason": "download_failed",
     "src": "https://www.travellero.com/upload/CONF75/20250322/kusadasi-localita-balneare-sul-mar-egeo-in-turchia-480x375-tSa-375X480.jpg",
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "kisiwa-house",
-    "name": "Kisiwa House",
-    "photo": "kisiwa-house.jpg",
-    "src": "https://zanzibar-retreats.com/wp-content/uploads/2016/09/gallery-kisiwa-house-zanzibar-lounge.jpg",
-    "bytes": 119659,
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "kisiwa-on-the-beach",
-    "name": "Kisiwa on the Beach",
-    "photo": "kisiwa-on-the-beach.jpg",
-    "src": "https://zanzibar-retreats.com/wp-content/uploads/2016/09/gallery-kisiwa-on-the-beach-aerial-photo-2.jpg",
-    "bytes": 101964,
     "strategy": "serper"
   },
   {
@@ -96,24 +196,6 @@
     "strategy": "serper"
   },
   {
-    "status": "ok",
-    "slug": "marafiki-bungalows",
-    "name": "Marafiki Bungalows",
-    "photo": "marafiki-bungalows.jpg",
-    "src": "https://www.marafikizanzibar.com/uploads/rozne/dji-0113-2-edit.jpg",
-    "bytes": 567224,
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "michamvi-sunset-bay",
-    "name": "Michamvi Sunset Bay",
-    "photo": "michamvi-sunset-bay.jpg",
-    "src": "https://michamvi.com/wp-content/uploads/2024/06/Lush-Oasis-in-Zanzibar.webp",
-    "bytes": 463948,
-    "strategy": "serper"
-  },
-  {
     "status": "failed",
     "slug": "miramont-retreat",
     "name": "Miramont Retreat",
@@ -122,98 +204,11 @@
     "strategy": "serper"
   },
   {
-    "status": "ok",
-    "slug": "mizingani-seafront-hotel",
-    "name": "Mizingani Seafront Hotel",
-    "photo": "mizingani-seafront-hotel.jpg",
-    "src": "https://static21.com-hotel.com/uploads/hotel/32832/photo/mizingani-seafront-hotel_15317043604.jpg",
-    "bytes": 157809,
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "mnana-beach-bungalows",
-    "name": "Mnana Beach Bungalows",
-    "photo": "mnana-beach-bungalows.jpg",
-    "src": "https://mnanabeachbungalows.com/wp-content/uploads/2021/11/Deluxe-Double-rooms-with-AC-balcony-and-seaview-mnanabeachbungalows-zanzibar-03.jpg",
-    "bytes": 61564,
-    "strategy": "serper"
-  },
-  {
     "status": "failed",
     "slug": "mnarani-beach-cottages",
     "name": "Mnarani Beach Cottages",
     "reason": "download_failed",
     "src": "https://mnarani-beach-cottages.zanzibarhotelstoday.com/data/Pictures/700x500w/13238/1323825/1323825955/picture-nungwi-mnarani-beach-cottages-80.JPEG",
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "nur-beach-hotel",
-    "name": "Nur Beach Hotel",
-    "photo": "nur-beach-hotel.jpg",
-    "src": "https://nur-zanzibar.com/wp-content/uploads/2025/11/nur-beach-hotel-zanzibar-pool-bungalow-6.webp",
-    "bytes": 706598,
-    "strategy": "serper"
-  },
-  {
-    "status": "failed",
-    "slug": "oxygen-paje",
-    "name": "Oxygen Paje",
-    "reason": "download_failed",
-    "src": "https://www.zanzibarhotels.org/data/Photos/1920x1080/16589/1658922/1658922217.JPEG",
-    "strategy": "serper"
-  },
-  {
-    "status": "failed",
-    "slug": "paradise-beach-resort",
-    "name": "Paradise Beach Resort",
-    "reason": "download_failed",
-    "src": "https://www.hotelzanzibar.com/wp-content/uploads/surroundings-zanzibar-bay-resort_49651362776_o_50245295051_o-scaled.jpg",
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "pemba-misali-sunset-beach",
-    "name": "Pemba Misali Sunset Beach",
-    "photo": "pemba-misali-sunset-beach.jpg",
-    "src": "https://static21.com-hotel.com/uploads/hotel/100712/photo/pemba-misali-sunset-beach_17252799082.jpeg",
-    "bytes": 259291,
-    "strategy": "serper"
-  },
-  {
-    "status": "failed",
-    "slug": "red-monkey-lodge",
-    "name": "Red Monkey Lodge",
-    "reason": "download_failed",
-    "src": "https://red-monkey-beach-lodge.zanzibarhotelstoday.com/data/Pictures/700x500w/11652/1165278/1165278138/picture-jambiani-zanzibar-red-monkey-beach-lodge-1.JPEG",
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "sandies-baobab-beach-zanzibar",
-    "name": "Sandies Baobab Beach Zanzibar",
-    "photo": "sandies-baobab-beach-zanzibar.jpg",
-    "src": "https://media.joinup.travel/storage/hotel/35255/photos/Sandies-Baobab-Beach-26.jpg",
-    "bytes": 331270,
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "shaba-boutique-hotel",
-    "name": "Shaba Boutique Hotel",
-    "photo": "shaba-boutique-hotel.jpg",
-    "src": "https://www.hotelzanzibar.com/wp-content/uploads/Shaba-Boutique-Hotel-in-Stone-Town.jpg",
-    "bytes": 220739,
-    "strategy": "serper"
-  },
-  {
-    "status": "ok",
-    "slug": "sharazd-boutique-hotel",
-    "name": "Sharaz\u0101d Boutique Hotel",
-    "photo": "sharazd-boutique-hotel.jpg",
-    "src": "https://www.thehotelguru.com/_images/68/43/6843e48044481fd43071aecdb1ecc908/original.jpg",
-    "bytes": 100312,
     "strategy": "serper"
   }
 ]

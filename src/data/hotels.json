@@ -1117,7 +1117,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "villa-stecchini",
-      "photo": "hotels/villa-stecchini.jpg",
+      "photo": "/images/hotels/villa-stecchini.jpg",
       "description": "Luxury Villa in Kiwengwa, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1351,7 +1351,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "amaan-beach-bungalows",
-      "photo": "hotels/amaan-beach-bungalows.jpg",
+      "photo": "/images/hotels/amaan-beach-bungalows.jpg",
       "description": "Resort in Nungwi, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1455,7 +1455,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "atii-garden-bungalows",
-      "photo": "hotels/atii-garden-bungalows.jpg",
+      "photo": "/images/hotels/atii-garden-bungalows.jpg",
       "description": "Boutique in , Unguja.  star rating.",
       "price_range": ""
     },
@@ -1481,7 +1481,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "aya-beach-bungalows",
-      "photo": "hotels/aya-beach-bungalows.jpg",
+      "photo": "/images/hotels/aya-beach-bungalows.jpg",
       "description": "Boutique in Kizimkazi, Unguja.  star rating.",
       "price_range": ""
     },
@@ -1507,7 +1507,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "azanzi-beach-hotel",
-      "photo": "hotels/azanzi-beach-hotel.jpg",
+      "photo": "/images/hotels/azanzi-beach-hotel.jpg",
       "description": "Resort in Matemwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1533,7 +1533,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "b4-beach-club",
-      "photo": "hotels/b4-beach-club.jpg",
+      "photo": "/images/hotels/b4-beach-club.jpg",
       "description": "Boutique in Paje, Unguja.  star rating.",
       "price_range": ""
     },
@@ -1663,7 +1663,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "breezes-beach-club-spa",
-      "photo": "hotels/breezes-beach-club-spa.jpg",
+      "photo": "/images/hotels/breezes-beach-club-spa.jpg",
       "description": "Resort in Bwejuu, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1689,7 +1689,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "canary-nungwi-hotel-spa",
-      "photo": "hotels/canary-nungwi-hotel-spa.jpg",
+      "photo": "/images/hotels/canary-nungwi-hotel-spa.jpg",
       "description": "Hotel in Nungwi, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1897,7 +1897,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "dongwe-ocean-view",
-      "photo": "hotels/dongwe-ocean-view.jpg",
+      "photo": "/images/hotels/dongwe-ocean-view.jpg",
       "description": "Boutique in Dongwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1923,7 +1923,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "doubletree-by-hilton-nungwi",
-      "photo": "hotels/doubletree-by-hilton-nungwi.jpg",
+      "photo": "/images/hotels/doubletree-by-hilton-nungwi.jpg",
       "description": "Resort in Nungwi, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1975,7 +1975,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "emerald-bay-resort",
-      "photo": "hotels/emerald-bay-resort.jpg",
+      "photo": "/images/hotels/emerald-bay-resort.jpg",
       "description": "Resort in Chake Chake, Pemba. 4-Star rating.",
       "price_range": ""
     },
@@ -2027,7 +2027,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "flame-tree-cottages",
-      "photo": "hotels/flame-tree-cottages.jpg",
+      "photo": "/images/hotels/flame-tree-cottages.jpg",
       "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
