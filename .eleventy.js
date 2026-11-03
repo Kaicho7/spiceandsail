@@ -177,7 +177,41 @@ module.exports = function(eleventyConfig) {
     "Spice Farm Tour": "hand-holding-nutmeg-fruits-zanzibar.jpg",
     "Nungwi Beach": "children-wading-beach-dhow-boats.jpg",
     "Mnarani Marine Turtle Pond": "sea-turtles-with-child-zanzibar.jpg",
-    "Kuza Cave": "people-swimming-turquoise-water-steps.jpg"
+    "Kuza Cave": "people-swimming-turquoise-water-steps.jpg",
+    // Dive centers — explicit diving/underwater/ocean photos
+    "Afro Divers (Stone Town)": "scuba-diver-fish-coral-reef-underwater.jpg",
+    "Blue Bay Diving Center": "underwater-coral-reef-fish-zanzibar.jpg",
+    "Buccaneer Diving (Jambiani)": "coral-reef-fish-snorkeling-zanzibar.jpg",
+    "Dive 360 Pemba Ltd": "underwater-beach-dhow-zanzibar.jpg",
+    "Dive 710": "divers-on-boat-zanzibar-ocean.jpg",
+    "Dive Point (Pongwe)": "coral-reef-snorkeling-zanzibar.jpg",
+    "Dive Time Zanzibar": "snorkeler-underwater-with-fish.jpg",
+    "East Africa Diving": "tropical-fish-swimming-clear-water.jpg",
+    "East Coast Reef Divers": "coral-reef-underwater-fish-zanzibar.jpg",
+    "Extreme Blue": "underwater-fish-coral-reef-zanzibar.jpg",
+    "Fun Divers Zanzibar (Pemba)": "snorkeling-turquoise-water-boat-people.jpg",
+    "Fundu Lagoon / 710 Dive": "boys-snorkeling-shallow-water-zanzibar.jpg",
+    "Jambiani Scuba Center": "snorkeler-fish-ocean-blue-water.jpg",
+    "Kizimkazi Dive & Dolphin": "dolphins-swimming-near-boat-tour.jpg",
+    "Mnemba Atoll Divers": "snorkeling-zanzibar-shallow-water-coral.jpg",
+    "Nakupenda Dive Center": "snorkeling-with-fish-underwater.jpg",
+    "One Ocean (Kendwa)": "coral-reef-fish-school-underwater.jpg",
+    "One Ocean Dive Centre": "sea-turtle-snorkeling-coral-reef.jpg",
+    "Paje Dive Center": "snorkeling-with-dolphin-zanzibar-ocean.jpg",
+    "Pemba Dive Center": "coral-reef-snorkeling-zanzibar-1.jpg",
+    "Pemba Island Divers": "underwater-coral-reef-fish-swimming.jpg",
+    "Rising Sun Dive Centre": "snorkeling-underwater-selfie-zanzibar.jpg",
+    "Scuba Do Zanzibar": "coral-reef-snorkeling-zanzibar-2.jpg",
+    "Scubafish Zanzibar": "underwater-coral-reef-fish-zanzibar-1.jpg",
+    "Spanish Dancer (Kendwa)": "child-snorkeling-clear-shallow-water.jpg",
+    "Swahili Divers": "boy-snorkeling-shallow-water-zanzibar.jpg",
+    "Zanzibar Scuba": "coral-reef-snorkeling-zanzibar-3.jpg",
+    // Sports / water-sports centers — explicit kite/ocean action photos
+    "Airborne Kite Centre": "kitesurfing-turquoise-ocean-zanzibar.jpg",
+    "Aquaholics Kite & Surf": "boys-jumping-ocean-water-zanzibar.jpg",
+    "Fumba Water Sports": "women-horse-riding-ocean-water-zanzibar.jpg",
+    "Kite Centre Zanzibar": "zanzibar-beach-people-playing-kites.jpg",
+    "Zanzibar Pro Kiting": "dolphins-leaping-ocean-zanzibar.jpg"
   };
   // Read and index all available images from public/images
   let allPublicImages = [];
@@ -189,8 +223,10 @@ module.exports = function(eleventyConfig) {
 
   const attrCategoryArrays = {
     "Dive Center": allPublicImages.filter(f => /snorkel|dive|coral|turtle|dolphin|underwater|fish|reef|sea-turtle/i.test(f)),
-    "Water Sports": allPublicImages.filter(f => /kitesurf|atv|horse|boat|dhow|sail|surf|ocean-water/i.test(f)),
+    "Water Sports": allPublicImages.filter(f => /kitesurf|atv|horse|boat|dhow|sail|surf|ocean-water|kite|jump|wave|paddle|swim/i.test(f)),
+    "Sports Center": allPublicImages.filter(f => /kitesurf|kite|atv|horse|jump|wave|surf|paddle|ocean-water|swim|boys-jumping/i.test(f)),
     "Restaurant": allPublicImages.filter(f => /food|stall|patio|dining|restaurant|rock-house|skewers|market-stall|vegetable/i.test(f)),
+    "Food & Dining": allPublicImages.filter(f => /food|stall|patio|dining|restaurant|rock-house|skewers|market-stall|vegetable/i.test(f)),
     "Attraction": allPublicImages.filter(f => /door|fort|church|tower|alley|palace|monkey|jozani|cave|acrobat|monument|ruins|market|stone-town/i.test(f))
   };
   function hashPick(str, arr) { let h=0; const st=String(str||""); for (let i=0;i<st.length;i++) h=(h*31+st.charCodeAt(i))>>>0; return arr[h%arr.length]; }
