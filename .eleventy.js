@@ -44,18 +44,18 @@ module.exports = function(eleventyConfig) {
 
   // Map area zone name → existing image filename (for /areas/ cards and zone pages)
   const zoneImage = {
-    "Stone Town": "stone-town-ornate-carved-door-arch.jpg",
-    "Nungwi": "nungwi-beach-aerial-resort-turquoise-water.jpg",
-    "Kendwa": "nungwi-beach-aerial-resort-turquoise-water.jpg",
-    "Paje": "zanzibar-beach-palm-trees-thatched-huts.jpg",
-    "Jambiani": "women-walking-beach-zanzibar-palm-trees.jpg",
+    "Stone Town": "pineapples-growing-in-tropical-plantation.jpg",
+    "Nungwi": "pineapples-growing-in-tropical-plantation.jpg",
+    "Kendwa": "pineapples-growing-in-tropical-plantation.jpg",
+    "Paje": "pineapples-growing-in-tropical-plantation.jpg",
+    "Jambiani": "pineapples-growing-in-tropical-plantation.jpg",
     "Kiwengwa": "beach-front-hotel-palm-trees-people.jpg",
-    "Pongwe / Michamvi": "zanzibar-rock-house-with-tourists.jpg",
+    "Pongwe / Michamvi": "pineapples-growing-in-tropical-plantation.jpg",
     "Bwejuu / Dongwe": "beach-front-hotel-palm-trees-people.jpg",
-    "Michamvi / Pingwe": "zanzibar-rock-house-with-tourists.jpg",
+    "Michamvi / Pingwe": "pineapples-growing-in-tropical-plantation.jpg",
     "Kizimkazi / Dimbani": "dolphins-swimming-near-boat-tour.jpg",
-    "Fumba / Mbweni": "aerial-beach-dhow-people-turquoise-water.jpg",
-    "Matemwe / Kigomani": "sea-turtle-snorkeling-coral-reef.jpg",
+    "Fumba / Mbweni": "dhow-sail-nungwi-beach-zanzibar.jpg",
+    "Matemwe / Kigomani": "coral-reef-snorkeling-zanzibar.jpg",
     "Chake Chake (Pemba)": "zanzibar-beach-people-playing-kites.jpg",
     "Wambaa Gulf / Makangale (Pemba)": "dhow-sail-nungwi-beach-zanzibar.jpg"
   };
@@ -402,6 +402,16 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
         featuredImage = mapSlug;
         featuredAlt = "";
       }
+    }
+
+    // Area pages: use the zone's canonical pool image so og:image matches the
+    // visible hero, instead of falling back to default-tour-hero.jpg.
+    if (tourPath.startsWith("pages/areas/")) {
+      const areaSlug = tourPath.replace("pages/areas/", "").replace(/\.(njk|md)$/, "");
+      const zoneKey = (Object.entries(zoneAliases).find(([frag]) => areaSlug.startsWith(frag)) || [])[1] || "Stone Town";
+      const pool = zoneFiles[zoneKey] || [zoneImage[zoneKey] || "default-tour-hero.jpg"];
+      featuredImage = pool[0];
+      featuredAlt = metadataIndex[featuredImage]?.alt_text || "";
     }
 
     if (!featuredImage && tourPath) {
