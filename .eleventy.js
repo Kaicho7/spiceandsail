@@ -207,11 +207,11 @@ module.exports = function(eleventyConfig) {
     "Swahili Divers": "boy-snorkeling-shallow-water-zanzibar.jpg",
     "Zanzibar Scuba": "coral-reef-snorkeling-zanzibar-3.jpg",
     // Sports / water-sports centers — explicit kite/ocean action photos
-    "Airborne Kite Centre": "kitesurfing-turquoise-ocean-zanzibar.jpg",
-    "Aquaholics Kite & Surf": "boys-jumping-ocean-water-zanzibar.jpg",
+    "Airborne Kite Centre": "airborne-kitesurfing-hero.jpg",
+    "Aquaholics Kite & Surf": "aquaholics-kitesurfing-hero.jpg",
     "Fumba Water Sports": "women-horse-riding-ocean-water-zanzibar.jpg",
-    "Kite Centre Zanzibar": "zanzibar-beach-people-playing-kites.jpg",
-    "Zanzibar Pro Kiting": "dolphins-leaping-ocean-zanzibar.jpg"
+    "Kite Centre Zanzibar": "kite-centre-zanzibar-aerial-kitesurfing.jpg",
+    "Zanzibar Pro Kiting": "zanzibar-pro-kiting-kitesurfing.jpg"
   };
   // Read and index all available images from public/images
   let allPublicImages = [];
