@@ -44,20 +44,20 @@ module.exports = function(eleventyConfig) {
 
   // Map area zone name → existing image filename (for /areas/ cards and zone pages)
   const zoneImage = {
-    "Stone Town": "pineapples-growing-in-tropical-plantation.jpg",
-    "Nungwi": "pineapples-growing-in-tropical-plantation.jpg",
-    "Kendwa": "pineapples-growing-in-tropical-plantation.jpg",
-    "Paje": "pineapples-growing-in-tropical-plantation.jpg",
-    "Jambiani": "pineapples-growing-in-tropical-plantation.jpg",
-    "Kiwengwa": "beach-front-hotel-palm-trees-people.jpg",
-    "Pongwe / Michamvi": "pineapples-growing-in-tropical-plantation.jpg",
-    "Bwejuu / Dongwe": "beach-front-hotel-palm-trees-people.jpg",
-    "Michamvi / Pingwe": "pineapples-growing-in-tropical-plantation.jpg",
-    "Kizimkazi / Dimbani": "dolphins-swimming-near-boat-tour.jpg",
-    "Fumba / Mbweni": "dhow-sail-nungwi-beach-zanzibar.jpg",
-    "Matemwe / Kigomani": "coral-reef-snorkeling-zanzibar.jpg",
+    "Stone Town": "stone-town-alleyway-old-buildings.jpg",
+    "Nungwi": "nungwi-beach-dhow-boat-turquoise-water.jpg",
+    "Kendwa": "nungwi-beach-dhow-boat-turquoise-water.jpg",
+    "Paje": "kitesurfing-turquoise-ocean-zanzibar.jpg",
+    "Jambiani": "children-walking-tidal-flats-zanzibar.jpg",
+    "Kiwengwa": "ocean-view-with-coastal-buildings.jpg",
+    "Pongwe / Michamvi": "ocean-view-with-coastal-buildings.jpg",
+    "Bwejuu / Dongwe": "zanzibar-house-on-rock-ocean-people.jpg",
+    "Michamvi / Pingwe": "zanzibar-house-on-rock-ocean-people.jpg",
+    "Kizimkazi / Dimbani": "zanzibar-rock-house-with-tourists.jpg",
+    "Fumba / Mbweni": "zanzibar-rock-house-with-tourists.jpg",
+    "Matemwe / Kigomani": "aerial-beach-dhow-people-turquoise-water.jpg",
     "Chake Chake (Pemba)": "zanzibar-beach-people-playing-kites.jpg",
-    "Wambaa Gulf / Makangale (Pemba)": "dhow-sail-nungwi-beach-zanzibar.jpg"
+    "Wambaa Gulf / Makangale (Pemba)": "zanzibar-rock-house-with-tourists.jpg"
   };
 
   // Load single canonical image catalog (vision-audited)

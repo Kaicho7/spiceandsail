@@ -1,0 +1,432 @@
+# Site Image Audit Report
+Generated: 2026-11-04T06:35:34.810615
+
+## Summary
+- Pages crawled: 70
+- Images found: 423
+- Verdicts: {"CORRECT": 188, "UNMAPPED": 97, "UNCERTAIN": 134, "UNRESOLVED": 4}
+
+## Findings
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/pineapples-growing-in-tropical-plantation.jpg** → CORRECT: Found in catalog as: pineapples-growing-in-tropical-plantation.jpg
+- **/images/vegetable-stall-at-outdoor-market.jpg** → CORRECT: Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/aerial-beach-dhow-people-turquoise-water.jpg** → CORRECT: Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/children-wading-beach-dhow-boats.jpg** → CORRECT: Found in catalog as: children-wading-beach-dhow-boats.jpg
+- **/images/zanzibar-rock-house-with-tourists.jpg** → CORRECT: Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+- **/images/stone-town-ornate-carved-door-calligraphy.jpg** → UNMAPPED: Found in catalog as: stone-town-ornate-carved-door-calligraphy.jpg In catalog but no entity mapped
+- **/images/children-wading-beach-dhow-boats.jpg** → CORRECT: Found in catalog as: children-wading-beach-dhow-boats.jpg
+- **/images/aerial-beach-boat-turquoise-water.jpg** → UNMAPPED: Found in catalog as: aerial-beach-boat-turquoise-water.jpg In catalog but no entity mapped
+- **/images/kitesurfing-turquoise-ocean-zanzibar.jpg** → UNMAPPED: Found in catalog as: kitesurfing-turquoise-ocean-zanzibar.jpg In catalog but no entity mapped
+- **/images/women-walking-beach-zanzibar-palm-trees.jpg** → CORRECT: Found in catalog as: women-walking-beach-zanzibar-palm-trees.jpg
+- **/images/stone-town-alley-walking-tour-people.jpg** → UNMAPPED: Found in catalog as: stone-town-alley-walking-tour-people.jpg In catalog but no entity mapped
+- **/images/dhow-boats-beach-zanzibar-sand.jpg** → UNMAPPED: Found in catalog as: dhow-boats-beach-zanzibar-sand.jpg In catalog but no entity mapped
+- **/images/stone-town-ornate-carved-door-calligraphy.jpg** → UNMAPPED: Found in catalog as: stone-town-ornate-carved-door-calligraphy.jpg In catalog but no entity mapped
+- **/images/dhow-boat-turquoise-water-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-boat-turquoise-water-zanzibar.jpg
+- **/images/safari-vehicle-lion-afar.jpg** → UNMAPPED: Found in catalog as: safari-vehicle-lion-afar.jpg In catalog but no entity mapped
+- **/images/zanzibar-beach-sunset-walk-group.jpg** → UNMAPPED: Found in catalog as: zanzibar-beach-sunset-walk-group.jpg In catalog but no entity mapped
+- **/images/kitesurfing-turquoise-ocean-zanzibar.jpg** → UNMAPPED: Found in catalog as: kitesurfing-turquoise-ocean-zanzibar.jpg In catalog but no entity mapped
+- **/images/stone-town-alley-walking-tour-people.jpg** → UNMAPPED: Found in catalog as: stone-town-alley-walking-tour-people.jpg In catalog but no entity mapped
+- **/images/zanzibar-rock-house-with-tourists.jpg** → CORRECT: Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+- **/images/dolphins-leaping-ocean-zanzibar.jpg** → UNMAPPED: Found in catalog as: dolphins-leaping-ocean-zanzibar.jpg In catalog but no entity mapped
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/nungwi-beach-aerial-resort-turquoise-water.jpg** → CORRECT: Found in catalog as: nungwi-beach-aerial-resort-turquoise-water.jpg
+- **/images/nungwi-beach-aerial-resort-turquoise-water.jpg** → CORRECT: Found in catalog as: nungwi-beach-aerial-resort-turquoise-water.jpg
+- **/images/zanzibar-beach-palm-trees-thatched-huts.jpg** → CORRECT: Found in catalog as: zanzibar-beach-palm-trees-thatched-huts.jpg
+- **/images/women-walking-beach-zanzibar-palm-trees.jpg** → CORRECT: Found in catalog as: women-walking-beach-zanzibar-palm-trees.jpg
+- **/images/beach-front-hotel-palm-trees-people.jpg** → CORRECT: Found in catalog as: beach-front-hotel-palm-trees-people.jpg
+- **/images/zanzibar-rock-house-with-tourists.jpg** → CORRECT: Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+- **/images/beach-front-hotel-palm-trees-people.jpg** → CORRECT: Found in catalog as: beach-front-hotel-palm-trees-people.jpg
+- **/images/zanzibar-rock-house-with-tourists.jpg** → CORRECT: Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/aerial-beach-dhow-people-turquoise-water.jpg** → CORRECT: Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+- **/images/sea-turtle-snorkeling-coral-reef.jpg** → CORRECT: Found in catalog as: sea-turtle-snorkeling-coral-reef.jpg
+- **/images/zanzibar-beach-people-playing-kites.jpg** → CORRECT: Found in catalog as: zanzibar-beach-people-playing-kites.jpg
+- **/images/dhow-sail-nungwi-beach-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+- **/images/ocean-view-with-coastal-buildings.jpg** → UNMAPPED: Found in catalog as: ocean-view-with-coastal-buildings.jpg In catalog but no entity mapped
+- **/images/aerial-coastal-town-beach-turquoise-water.jpg** → UNMAPPED: Found in catalog as: aerial-coastal-town-beach-turquoise-water.jpg In catalog but no entity mapped
+- **/images/stone-town-ornate-carved-door-calligraphy.jpg** → UNMAPPED: Found in catalog as: stone-town-ornate-carved-door-calligraphy.jpg In catalog but no entity mapped
+- **/images/dhow-boat-turquoise-water-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-boat-turquoise-water-zanzibar.jpg
+- **/images/zanzibar-rock-house-with-tourists.jpg** → CORRECT: Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+- **/images/giraffe-head-profile-trees-background.jpg** → UNMAPPED: Found in catalog as: giraffe-head-profile-trees-background.jpg In catalog but no entity mapped
+- **/images/island-pier-boat-turquoise-water.jpg** → UNMAPPED: Found in catalog as: island-pier-boat-turquoise-water.jpg In catalog but no entity mapped
+- **/images/children-wading-beach-dhow-boats.jpg** → CORRECT: Found in catalog as: children-wading-beach-dhow-boats.jpg
+- **/images/safari-vehicle-lion-afar.jpg** → UNMAPPED: Found in catalog as: safari-vehicle-lion-afar.jpg In catalog but no entity mapped
+- **/images/giraffe-head-profile-trees-background.jpg** → UNMAPPED: Found in catalog as: giraffe-head-profile-trees-background.jpg In catalog but no entity mapped
+- **/images/elephant-walking-grass-zanzibar.jpg** → UNMAPPED: Found in catalog as: elephant-walking-grass-zanzibar.jpg In catalog but no entity mapped
+- **/images/white-nissan-elgrand-van-parked-gravel.jpg** → UNMAPPED: Found in catalog as: white-nissan-elgrand-van-parked-gravel.jpg In catalog but no entity mapped
+- **/images/white-nissan-elgrand-van-parked-gravel.jpg** → UNMAPPED: Found in catalog as: white-nissan-elgrand-van-parked-gravel.jpg In catalog but no entity mapped
+- **/images/white-nissan-elgrand-van-parked-gravel.jpg** → UNMAPPED: Found in catalog as: white-nissan-elgrand-van-parked-gravel.jpg In catalog but no entity mapped
+- **/images/underwater-fish-coral-reef-zanzibar.jpg** → CORRECT: Found in catalog as: underwater-fish-coral-reef-zanzibar.jpg
+- **/images/red-colobus-monkey-baby-jozani-forest.jpg** → CORRECT: Found in catalog as: red-colobus-monkey-baby-jozani-forest.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/people-swimming-turquoise-water-steps.jpg** → CORRECT: Found in catalog as: people-swimming-turquoise-water-steps.jpg
+- **/images/elephant-savanna-landscape-tanzania.jpg** → CORRECT: Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/turquoise-water-sandbar-lone-boat.jpg** → CORRECT: Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+- **/images/boats-pier-under-cloudy-sky-water.jpg** → CORRECT: Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+- **/images/aerial-beach-dhow-people-turquoise-water.jpg** → CORRECT: Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+- **/images/elephant-savanna-landscape-tanzania.jpg** → CORRECT: Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+- **/images/pineapples-growing-in-tropical-plantation.jpg** → CORRECT: Found in catalog as: pineapples-growing-in-tropical-plantation.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/dhow-sail-nungwi-beach-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+- **/images/vegetable-stall-at-outdoor-market.jpg** → CORRECT: Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+- **/images/aerial-beach-dhow-people-turquoise-water.jpg** → CORRECT: Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/pineapples-growing-in-tropical-plantation.jpg** → CORRECT: Found in catalog as: pineapples-growing-in-tropical-plantation.jpg
+- **/images/vegetable-stall-at-outdoor-market.jpg** → CORRECT: Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/aerial-beach-dhow-people-turquoise-water.jpg** → CORRECT: Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/boats-pier-under-cloudy-sky-water.jpg** → CORRECT: Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+- **/images/turquoise-water-sandbar-lone-boat.jpg** → CORRECT: Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+- **/images/underwater-fish-coral-reef-zanzibar.jpg** → CORRECT: Found in catalog as: underwater-fish-coral-reef-zanzibar.jpg
+- **/images/dhow-sail-nungwi-beach-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/red-colobus-monkey-baby-jozani-forest.jpg** → CORRECT: Found in catalog as: red-colobus-monkey-baby-jozani-forest.jpg
+- **/images/people-swimming-turquoise-water-steps.jpg** → CORRECT: Found in catalog as: people-swimming-turquoise-water-steps.jpg
+- **/images/elephant-savanna-landscape-tanzania.jpg** → CORRECT: Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+- **/images/elephant-savanna-landscape-tanzania.jpg** → CORRECT: Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+- **/images/aerial-beach-dhow-people-turquoise-water.jpg** → CORRECT: Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+- **/images/sea-turtles-swimming-zanzibar-water.jpg** → CORRECT: Found in catalog as: sea-turtles-swimming-zanzibar-water.jpg
+- **/images/cheetahs-rock-header.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-night-food-stall-skewers-bread.jpg** → CORRECT: Found in catalog as: zanzibar-night-food-stall-skewers-bread.jpg
+- **/images/stone-town-walking-tour-people-photograph.jpg** → CORRECT: Found in catalog as: stone-town-walking-tour-people-photograph.jpg
+- **/images/stone-town-colonial-building-clock-tower.jpg** → CORRECT: Found in catalog as: stone-town-colonial-building-clock-tower.jpg
+- **/images/woman-smiling-next-to-monkey-jozani-forest.jpg** → CORRECT: Found in catalog as: woman-smiling-next-to-monkey-jozani-forest.jpg
+- **/images/people-swimming-turquoise-water-steps.jpg** → CORRECT: Found in catalog as: people-swimming-turquoise-water-steps.jpg
+- **/images/stone-statue-chained-person-zanzibar.jpg** → CORRECT: Found in catalog as: stone-statue-chained-person-zanzibar.jpg
+- **/images/dhow-boat-turquoise-water-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-boat-turquoise-water-zanzibar.jpg
+- **/images/sea-turtles-with-child-zanzibar.jpg** → CORRECT: Found in catalog as: sea-turtles-with-child-zanzibar.jpg
+- **/images/hand-holding-nutmeg-fruits-zanzibar.jpg** → CORRECT: Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+- **/images/turquoise-water-sandbar-lone-boat.jpg** → CORRECT: Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+- **/images/stone-town-walking-tour-people-photograph.jpg** → CORRECT: Found in catalog as: stone-town-walking-tour-people-photograph.jpg
+- **/images/waterfront-buildings-zanzibar-coast.jpg** → CORRECT: Found in catalog as: waterfront-buildings-zanzibar-coast.jpg
+- **/images/hand-holding-nutmeg-fruits-zanzibar.jpg** → CORRECT: Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+- **/images/boats-pier-under-cloudy-sky-water.jpg** → CORRECT: Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+- **/images/people-collecting-sea-items-zanzibar-beach.jpg** → CORRECT: Found in catalog as: people-collecting-sea-items-zanzibar-beach.jpg
+- **/images/hand-holding-nutmeg-fruits-zanzibar.jpg** → CORRECT: Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+- **/images/vegetable-stall-at-outdoor-market.jpg** → CORRECT: Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+- **/images/jozani-forest-walking-path-green-arches.jpg** → CORRECT: Found in catalog as: jozani-forest-walking-path-green-arches.jpg
+- **/images/women-horse-riding-ocean-water-zanzibar.jpg** → CORRECT: Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+- **/images/stone-town-colonial-building-clock-tower.jpg** → CORRECT: Found in catalog as: stone-town-colonial-building-clock-tower.jpg
+- **/images/scuba-diver-fish-coral-reef-underwater.jpg** → CORRECT: Found in catalog as: scuba-diver-fish-coral-reef-underwater.jpg
+- **/images/underwater-coral-reef-fish-zanzibar.jpg** → CORRECT: Found in catalog as: underwater-coral-reef-fish-zanzibar.jpg
+- **/images/coral-reef-fish-snorkeling-zanzibar.jpg** → CORRECT: Found in catalog as: coral-reef-fish-snorkeling-zanzibar.jpg
+- **/images/underwater-beach-dhow-zanzibar.jpg** → CORRECT: Found in catalog as: underwater-beach-dhow-zanzibar.jpg
+- **/images/divers-on-boat-zanzibar-ocean.jpg** → CORRECT: Found in catalog as: divers-on-boat-zanzibar-ocean.jpg
+- **/images/coral-reef-snorkeling-zanzibar.jpg** → CORRECT: Found in catalog as: coral-reef-snorkeling-zanzibar.jpg
+- **/images/snorkeler-underwater-with-fish.jpg** → CORRECT: Found in catalog as: snorkeler-underwater-with-fish.jpg
+- **/images/tropical-fish-swimming-clear-water.jpg** → CORRECT: Found in catalog as: tropical-fish-swimming-clear-water.jpg
+- **/images/coral-reef-underwater-fish-zanzibar.jpg** → CORRECT: Found in catalog as: coral-reef-underwater-fish-zanzibar.jpg
+- **/images/underwater-fish-coral-reef-zanzibar.jpg** → CORRECT: Found in catalog as: underwater-fish-coral-reef-zanzibar.jpg
+- **/images/snorkeling-turquoise-water-boat-people.jpg** → CORRECT: Found in catalog as: snorkeling-turquoise-water-boat-people.jpg
+- **/images/boys-snorkeling-shallow-water-zanzibar.jpg** → CORRECT: Found in catalog as: boys-snorkeling-shallow-water-zanzibar.jpg
+- **/images/snorkeler-fish-ocean-blue-water.jpg** → CORRECT: Found in catalog as: snorkeler-fish-ocean-blue-water.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/snorkeling-zanzibar-shallow-water-coral.jpg** → CORRECT: Found in catalog as: snorkeling-zanzibar-shallow-water-coral.jpg
+- **/images/snorkeling-with-fish-underwater.jpg** → CORRECT: Found in catalog as: snorkeling-with-fish-underwater.jpg
+- **/images/coral-reef-fish-school-underwater.jpg** → CORRECT: Found in catalog as: coral-reef-fish-school-underwater.jpg
+- **/images/sea-turtle-snorkeling-coral-reef.jpg** → CORRECT: Found in catalog as: sea-turtle-snorkeling-coral-reef.jpg
+- **/images/snorkeling-with-dolphin-zanzibar-ocean.jpg** → CORRECT: Found in catalog as: snorkeling-with-dolphin-zanzibar-ocean.jpg
+- **/images/coral-reef-snorkeling-zanzibar-1.jpg** → CORRECT: Found in catalog as: coral-reef-snorkeling-zanzibar-1.jpg
+- **/images/underwater-coral-reef-fish-swimming.jpg** → CORRECT: Found in catalog as: underwater-coral-reef-fish-swimming.jpg
+- **/images/snorkeling-underwater-selfie-zanzibar.jpg** → CORRECT: Found in catalog as: snorkeling-underwater-selfie-zanzibar.jpg
+- **/images/coral-reef-snorkeling-zanzibar-2.jpg** → CORRECT: Found in catalog as: coral-reef-snorkeling-zanzibar-2.jpg
+- **/images/underwater-coral-reef-fish-zanzibar-1.jpg** → CORRECT: Found in catalog as: underwater-coral-reef-fish-zanzibar-1.jpg
+- **/images/child-snorkeling-clear-shallow-water.jpg** → CORRECT: Found in catalog as: child-snorkeling-clear-shallow-water.jpg
+- **/images/boy-snorkeling-shallow-water-zanzibar.jpg** → CORRECT: Found in catalog as: boy-snorkeling-shallow-water-zanzibar.jpg
+- **/images/coral-reef-snorkeling-zanzibar-3.jpg** → CORRECT: Found in catalog as: coral-reef-snorkeling-zanzibar-3.jpg
+- **/images/airborne-kitesurfing-hero.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/aquaholics-kitesurfing-hero.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/women-horse-riding-ocean-water-zanzibar.jpg** → CORRECT: Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+- **/images/kite-centre-zanzibar-aerial-kitesurfing.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-pro-kiting-kitesurfing.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-rock-house-with-tourists.jpg** → CORRECT: Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+- **/images/silver-private-hire-minivan-parked-outside.jpg** → UNMAPPED: Found in catalog as: silver-private-hire-minivan-parked-outside.jpg In catalog but no entity mapped
+- **/images/snorkeling-underwater-selfie-zanzibar.jpg** → CORRECT: Found in catalog as: snorkeling-underwater-selfie-zanzibar.jpg
+- **/images/dhow-boat-turquoise-water-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-boat-turquoise-water-zanzibar.jpg
+- **/images/hand-holding-nutmeg-fruits-zanzibar.jpg** → CORRECT: Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+- **/images/hand-holding-nutmeg-fruits-zanzibar.jpg** → CORRECT: Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+- **/images/women-horse-riding-ocean-water-zanzibar.jpg** → CORRECT: Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+- **/images/people-swimming-turquoise-water-steps.jpg** → CORRECT: Found in catalog as: people-swimming-turquoise-water-steps.jpg
+- **/images/coral-reef-fish-snorkeling-zanzibar.jpg** → CORRECT: Found in catalog as: coral-reef-fish-snorkeling-zanzibar.jpg
+- **/images/divers-on-boat-zanzibar-ocean.jpg** → CORRECT: Found in catalog as: divers-on-boat-zanzibar-ocean.jpg
+- **/images/coral-reef-underwater-fish-zanzibar.jpg** → CORRECT: Found in catalog as: coral-reef-underwater-fish-zanzibar.jpg
+- **/images/snorkeler-fish-ocean-blue-water.jpg** → CORRECT: Found in catalog as: snorkeler-fish-ocean-blue-water.jpg
+- **/images/vegetable-stall-at-outdoor-market.jpg** → CORRECT: Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+- **/images/people-swimming-turquoise-water-steps.jpg** → CORRECT: Found in catalog as: people-swimming-turquoise-water-steps.jpg
+- **/images/coral-reef-fish-school-underwater.jpg** → CORRECT: Found in catalog as: coral-reef-fish-school-underwater.jpg
+- **/images/child-snorkeling-clear-shallow-water.jpg** → CORRECT: Found in catalog as: child-snorkeling-clear-shallow-water.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/dhow-sail-nungwi-beach-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+- **/images/underwater-coral-reef-fish-zanzibar.jpg** → CORRECT: Found in catalog as: underwater-coral-reef-fish-zanzibar.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/snorkeling-zanzibar-shallow-water-coral.jpg** → CORRECT: Found in catalog as: snorkeling-zanzibar-shallow-water-coral.jpg
+- **/images/underwater-coral-reef-fish-zanzibar-1.jpg** → CORRECT: Found in catalog as: underwater-coral-reef-fish-zanzibar-1.jpg
+- **/images/zanzibar-rock-house-with-tourists.jpg** → CORRECT: Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+- **/images/sea-turtles-swimming-zanzibar-water.jpg** → CORRECT: Found in catalog as: sea-turtles-swimming-zanzibar-water.jpg
+- **/images/sea-turtles-with-child-zanzibar.jpg** → CORRECT: Found in catalog as: sea-turtles-with-child-zanzibar.jpg
+- **/images/women-horse-riding-ocean-water-zanzibar.jpg** → CORRECT: Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+- **/images/snorkeler-underwater-with-fish.jpg** → CORRECT: Found in catalog as: snorkeler-underwater-with-fish.jpg
+- **/images/tropical-fish-swimming-clear-water.jpg** → CORRECT: Found in catalog as: tropical-fish-swimming-clear-water.jpg
+- **/images/underwater-fish-coral-reef-zanzibar.jpg** → CORRECT: Found in catalog as: underwater-fish-coral-reef-zanzibar.jpg
+- **/images/coral-reef-snorkeling-zanzibar-2.jpg** → CORRECT: Found in catalog as: coral-reef-snorkeling-zanzibar-2.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/dhow-sail-nungwi-beach-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+- **/images/cheetahs-rock-header.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/people-collecting-sea-items-zanzibar-beach.jpg** → CORRECT: Found in catalog as: people-collecting-sea-items-zanzibar-beach.jpg
+- **/images/snorkeling-with-dolphin-zanzibar-ocean.jpg** → CORRECT: Found in catalog as: snorkeling-with-dolphin-zanzibar-ocean.jpg
+- **/images/airborne-kitesurfing-hero.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/aquaholics-kitesurfing-hero.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/kite-centre-zanzibar-aerial-kitesurfing.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-pro-kiting-kitesurfing.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/people-swimming-turquoise-water-steps.jpg** → CORRECT: Found in catalog as: people-swimming-turquoise-water-steps.jpg
+- **/images/coral-reef-snorkeling-zanzibar.jpg** → CORRECT: Found in catalog as: coral-reef-snorkeling-zanzibar.jpg
+- **/images/underwater-beach-dhow-zanzibar.jpg** → CORRECT: Found in catalog as: underwater-beach-dhow-zanzibar.jpg
+- **/images/snorkeling-turquoise-water-boat-people.jpg** → CORRECT: Found in catalog as: snorkeling-turquoise-water-boat-people.jpg
+- **/images/boys-snorkeling-shallow-water-zanzibar.jpg** → CORRECT: Found in catalog as: boys-snorkeling-shallow-water-zanzibar.jpg
+- **/images/coral-reef-snorkeling-zanzibar-1.jpg** → CORRECT: Found in catalog as: coral-reef-snorkeling-zanzibar-1.jpg
+- **/images/boy-snorkeling-shallow-water-zanzibar.jpg** → CORRECT: Found in catalog as: boy-snorkeling-shallow-water-zanzibar.jpg
+- **/images/women-horse-riding-ocean-water-zanzibar.jpg** → CORRECT: Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+- **/images/aerial-beach-dhow-people-turquoise-water.jpg** → CORRECT: Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+- **/images/dolphins-swimming-near-boat-tour.jpg** → CORRECT: Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+- **/images/people-swimming-turquoise-water-steps.jpg** → CORRECT: Found in catalog as: people-swimming-turquoise-water-steps.jpg
+- **/images/dhow-boat-mangroves-turquoise-water.jpg** → UNMAPPED: Found in catalog as: dhow-boat-mangroves-turquoise-water.jpg In catalog but no entity mapped
+- **/images/elephant-savanna-landscape-tanzania.jpg** → CORRECT: Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+- **/images/red-colobus-monkey-baby-jozani-forest.jpg** → CORRECT: Found in catalog as: red-colobus-monkey-baby-jozani-forest.jpg
+- **/images/sea-turtle-snorkeling-coral-reef.jpg** → CORRECT: Found in catalog as: sea-turtle-snorkeling-coral-reef.jpg
+- **/images/dhow-sail-nungwi-beach-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/pineapples-growing-in-tropical-plantation.jpg** → CORRECT: Found in catalog as: pineapples-growing-in-tropical-plantation.jpg
+- **/images/coral-reef-fish-snorkeling-zanzibar.jpg** → CORRECT: Found in catalog as: coral-reef-fish-snorkeling-zanzibar.jpg
+- **** → UNRESOLVED: No entity mapping and not in catalog
+- **** → UNRESOLVED: No entity mapping and not in catalog
+- **** → UNRESOLVED: No entity mapping and not in catalog
+- **** → UNRESOLVED: No entity mapping and not in catalog
+- **/images/underwater-coral-reef-fish-swimming.jpg** → CORRECT: Found in catalog as: underwater-coral-reef-fish-swimming.jpg
+- **/images/zanzibar-night-food-stall-skewers-bread.jpg** → CORRECT: Found in catalog as: zanzibar-night-food-stall-skewers-bread.jpg
+- **/images/stone-town-colonial-building-clock-tower.jpg** → CORRECT: Found in catalog as: stone-town-colonial-building-clock-tower.jpg
+- **/images/hand-holding-nutmeg-fruits-zanzibar.jpg** → CORRECT: Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+- **/images/turquoise-water-sandbar-lone-boat.jpg** → CORRECT: Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+- **/images/stone-town-walking-tour-people-photograph.jpg** → CORRECT: Found in catalog as: stone-town-walking-tour-people-photograph.jpg
+- **/images/waterfront-buildings-zanzibar-coast.jpg** → CORRECT: Found in catalog as: waterfront-buildings-zanzibar-coast.jpg
+- **/images/boats-pier-under-cloudy-sky-water.jpg** → CORRECT: Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+- **/images/vegetable-stall-at-outdoor-market.jpg** → CORRECT: Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+- **/images/stone-town-colonial-building-clock-tower.jpg** → CORRECT: Found in catalog as: stone-town-colonial-building-clock-tower.jpg
+- **/images/scuba-diver-fish-coral-reef-underwater.jpg** → CORRECT: Found in catalog as: scuba-diver-fish-coral-reef-underwater.jpg
+- **/images/snorkeling-with-fish-underwater.jpg** → CORRECT: Found in catalog as: snorkeling-with-fish-underwater.jpg
+- **/images/sea-turtle-snorkeling-coral-reef.jpg** → CORRECT: Found in catalog as: sea-turtle-snorkeling-coral-reef.jpg
+- **/images/coral-reef-snorkeling-zanzibar-3.jpg** → CORRECT: Found in catalog as: coral-reef-snorkeling-zanzibar-3.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/boats-pier-under-cloudy-sky-water.jpg** → CORRECT: Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+- **/images/turquoise-water-sandbar-lone-boat.jpg** → CORRECT: Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+- **/images/dhow-sail-nungwi-beach-zanzibar.jpg** → CORRECT: Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+- **/images/hotels/beyond-mnemba-island.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-three-beds-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg In catalog but no entity mapped
+- **/images/hotels/bawe-tropical-island.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/bluebay-beach-resort-spa.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/emerald-zanzibar-resort-spa.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/emerson-on-hurumzi.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/essque-zalu-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-room-with-red-accent-bed.jpg** → UNMAPPED: Found in catalog as: hotel-room-with-red-accent-bed.jpg In catalog but no entity mapped
+- **/images/hotels/fundu-lagoon.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/gold-zanzibar-beach-house-spa.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-room-red-plaid-bed.jpg** → UNMAPPED: Found in catalog as: hotel-room-red-plaid-bed.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-bed-plaid-curtains.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-plaid-curtains.jpg In catalog but no entity mapped
+- **/images/hotels/kasha-boutique-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/kilindi-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-restaurant-patio-with-palm-trees.jpg** → UNMAPPED: Found in catalog as: zanzibar-restaurant-patio-with-palm-trees.jpg In catalog but no entity mapped
+- **/images/hotels/konokono-beach-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/lux-marijani-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg In catalog but no entity mapped
+- **/images/hotels/matemwe-retreat.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/matlai-boutique-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/melia-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/milele-villas.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg In catalog but no entity mapped
+- **/images/hotels/park-hyatt-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/qambani-luxury-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/riu-jambo.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/riu-palace-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/royal-cliff-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/royal-zanzibar-beach-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-three-beds-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg In catalog but no entity mapped
+- **/images/hotels/sea-cliff-resort-spa.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-roofs-sea-ships-zanzibar.jpg** → UNMAPPED: Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg In catalog but no entity mapped
+- **/images/hotels/tui-blue-bahari-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/turquoise-ocean-pier-zanzibar-beach.jpg** → UNMAPPED: Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg In catalog but no entity mapped
+- **/images/hotel-room-with-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: hotel-room-with-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/the-neela-boutique-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/the-neela-oceanfront.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/the-palms-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/the-residence-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/ocean-view-with-coastal-buildings.jpg** → UNMAPPED: Found in catalog as: ocean-view-with-coastal-buildings.jpg In catalog but no entity mapped
+- **/images/zanzibar-restaurant-patio-with-palm-trees.jpg** → UNMAPPED: Found in catalog as: zanzibar-restaurant-patio-with-palm-trees.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-orange-bed.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-orange-bed.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-two-beds.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds.jpg In catalog but no entity mapped
+- **/images/hotels/zanzi-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/zanzibar-white-sand-luxury-villas.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-room-red-plaid-bed.jpg** → UNMAPPED: Found in catalog as: hotel-room-red-plaid-bed.jpg In catalog but no entity mapped
+- **/images/hotels/zuri-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/africa-house-hotel.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/aluna-nungwi.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-three-beds-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg In catalog but no entity mapped
+- **/images/turquoise-ocean-pier-zanzibar-beach.jpg** → UNMAPPED: Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg In catalog but no entity mapped
+- **/images/hotels/anna-of-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/antonio-garden-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/art-hotel-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-orange-bed.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-orange-bed.jpg In catalog but no entity mapped
+- **/images/thatched-hut-beach-zanzibar-coast.jpg** → UNMAPPED: Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-bed-mosquito-net.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-mosquito-net.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-three-beds.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-three-beds.jpg In catalog but no entity mapped
+- **/images/hotels/babalao-bungalows.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-room-red-plaid-bed.jpg** → UNMAPPED: Found in catalog as: hotel-room-red-plaid-bed.jpg In catalog but no entity mapped
+- **/images/hotels/blue-moon-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/blue-oyster-hotel.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds.jpg In catalog but no entity mapped
+- **/images/thatched-hut-beach-zanzibar-coast.jpg** → UNMAPPED: Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg In catalog but no entity mapped
+- **/images/hotels/chapwani-private-island.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/chumbe-island-coral-park.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/clove-island-villas-apartments.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/cristal-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/dhow-inn.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/dhow-palace-hotel.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/diamonds-mapenzi-beach.jpeg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-two-beds-mosquito-net.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-mosquito-net.jpg In catalog but no entity mapped
+- **/images/hotels/doubletree-by-hilton-stone-town.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/filao-beach-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-room-with-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: hotel-room-with-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/fumba-beach-lodge.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/fumba-town-apartments-by-cps.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/fun-beach-resort.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds-mosquito-net.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-mosquito-net.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/hakuna-majiwe-beach-lodge.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-roofs-sea-ships-zanzibar.jpg** → UNMAPPED: Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg In catalog but no entity mapped
+- **/images/hotels/hodi-hodi-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/house-of-spices.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-roofs-sea-ships-zanzibar.jpg** → UNMAPPED: Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg In catalog but no entity mapped
+- **/images/hotels/indigo-beach-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/jafferji-beach-retreat.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/jambiani-wellness-retreat.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/jambiani-white-sands.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/thatched-hut-beach-zanzibar-coast.jpg** → UNMAPPED: Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg In catalog but no entity mapped
+- **/images/hotels/karafuu-beach-resort-spa.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/beach-front-hotel-palm-trees-people.jpg** → CORRECT: Found in catalog as: beach-front-hotel-palm-trees-people.jpg
+- **/images/hotels/karibu-beach-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/kena-beach-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/kendwa-rocks-beach-hotel.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/kervan-saray-beach.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/kholle-house.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/kibanda-lodge.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-orange-bed.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-orange-bed.jpg In catalog but no entity mapped
+- **/images/hotel-room-with-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: hotel-room-with-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/kupaga-villas.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/langi-langi-beach-bungalows.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/mahali-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-three-beds-plaid.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-three-beds-plaid.jpg In catalog but no entity mapped
+- **/images/hotels/maru-maru-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/matemwe-lodge.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/thatched-hut-beach-zanzibar-coast.jpg** → UNMAPPED: Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg In catalog but no entity mapped
+- **/images/hotels/miramont-retreat.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-orange-bed.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-orange-bed.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-two-beds-mosquito-net.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-mosquito-net.jpg In catalog but no entity mapped
+- **/images/hotel-room-red-plaid-bed.jpg** → UNMAPPED: Found in catalog as: hotel-room-red-plaid-bed.jpg In catalog but no entity mapped
+- **/images/hotels/mvuvi-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/mwezi-boutique-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/my-blue-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds-mosquito-net.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-mosquito-net.jpg In catalog but no entity mapped
+- **/images/hotels/ocean-paradise-resort-spa.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-bed-mosquito-net.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-mosquito-net.jpg In catalog but no entity mapped
+- **/images/hotels/paje-by-night.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/palumbokendwa.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-three-beds-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg In catalog but no entity mapped
+- **/images/hotels/passion-boutique-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/turquoise-ocean-pier-zanzibar-beach.jpg** → UNMAPPED: Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg In catalog but no entity mapped
+- **/images/hotels/pemba-paradise.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/pongwe-beach-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-beach-palm-trees-thatched-huts.jpg** → CORRECT: Found in catalog as: zanzibar-beach-palm-trees-thatched-huts.jpg
+- **/images/hotels/sea-cliff-court-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/sea-view-lodge.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/seasons-lodge-zanzibar.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-orange-bed.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-orange-bed.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg In catalog but no entity mapped
+- **/images/hotels/shooting-star-lodge.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/smiles-beach-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/spice-island-hotel-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/sultan-sands-island-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-orange-bed.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-orange-bed.jpg In catalog but no entity mapped
+- **/images/hotel-roofs-sea-ships-zanzibar.jpg** → UNMAPPED: Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg In catalog but no entity mapped
+- **/images/hotels/tembo-house-hotel.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/tembo-palace-hotel.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/the-island-pongwe-lodge.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/the-loop-beach-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/the-sands-beach-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/the-zanzibari.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/toa-hotel-spa.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/upendo-beach-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/upendo-house-stone-town.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/villa-bluu.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/villa-kiva-boutique-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-room-red-plaid-bed.jpg** → UNMAPPED: Found in catalog as: hotel-room-red-plaid-bed.jpg In catalog but no entity mapped
+- **/images/hotel-roofs-sea-ships-zanzibar.jpg** → UNMAPPED: Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg In catalog but no entity mapped
+- **/images/hotels/waridi-beach-resort-spa.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-roofs-sea-ships-zanzibar.jpg** → UNMAPPED: Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-three-beds-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg In catalog but no entity mapped
+- **/images/hotel-room-with-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: hotel-room-with-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/zanzibar-pearl-boutique.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/zanzibar-queen-hotel.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/zanzibar-star-resort.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/al-minar-hotel.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg In catalog but no entity mapped
+- **/images/hotels/aquaholics-surf-lodge.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-two-beds-red-blankets.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg In catalog but no entity mapped
+- **/images/hotels/cheetahs-rock-management-stay.png** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/demani-lodge.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/forodhani-park-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/kimte-beach-lodge.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/malika-hotel.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/mangrove-lodge.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/paje-beach-bandas.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/thatched-hut-beach-zanzibar-coast.jpg** → UNMAPPED: Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg In catalog but no entity mapped
+- **/images/turquoise-ocean-pier-zanzibar-beach.jpg** → UNMAPPED: Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg In catalog but no entity mapped
+- **/images/hotels/rumaisa-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/spice-palace-hotel.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/stone-town-caf-bb.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/beach-wedding-arch-nungwi-zanzibar.jpg** → UNMAPPED: Found in catalog as: beach-wedding-arch-nungwi-zanzibar.jpg In catalog but no entity mapped
+- **/images/hotels/sunset-kendwa.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-three-beds.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-three-beds.jpg In catalog but no entity mapped
+- **/images/hotels/surfescape-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-hotel-room-bed-mosquito-net.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-mosquito-net.jpg In catalog but no entity mapped
+- **/images/hotels/unguja-lodge.jpeg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/verani-beach-lodge.jpeg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/turquoise-ocean-pier-zanzibar-beach.jpg** → UNMAPPED: Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg In catalog but no entity mapped
+- **/images/hotels/drifters-zanzibar.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/ebb-flow.jpeg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/zanzibar-restaurant-patio-with-palm-trees.jpg** → UNMAPPED: Found in catalog as: zanzibar-restaurant-patio-with-palm-trees.jpg In catalog but no entity mapped
+- **/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg** → UNMAPPED: Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg In catalog but no entity mapped
+- **/images/hotels/jozani-chwaka-bay-official-stay.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotels/matemwe-beach-house.webp** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/nungwi-beach-aerial-resort-turquoise-water.jpg** → CORRECT: Found in catalog as: nungwi-beach-aerial-resort-turquoise-water.jpg
+- **/images/zanzibar-restaurant-patio-with-palm-trees.jpg** → UNMAPPED: Found in catalog as: zanzibar-restaurant-patio-with-palm-trees.jpg In catalog but no entity mapped
+- **/images/hotels/nungwi-house.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/hotel-roofs-sea-ships-zanzibar.jpg** → UNMAPPED: Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg In catalog but no entity mapped
+- **/images/hotels/your-zanzibar-place.jpg** → UNCERTAIN: Mapped to entity but not confirmed in catalog
+- **/images/nungwi-beach-aerial-resort-turquoise-water.jpg** → CORRECT: Found in catalog as: nungwi-beach-aerial-resort-turquoise-water.jpg
+- **/images/women-walking-beach-zanzibar-palm-trees.jpg** → CORRECT: Found in catalog as: women-walking-beach-zanzibar-palm-trees.jpg
+- **/images/stone-town-ornate-carved-door-arch.jpg** → CORRECT: Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+- **/images/zanzibar-rock-house-with-tourists.jpg** → CORRECT: Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+- **/images/elephant-savanna-landscape-tanzania.jpg** → CORRECT: Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+- **/images/lion-resting-tall-grass-safari.jpg** → UNMAPPED: Found in catalog as: lion-resting-tall-grass-safari.jpg In catalog but no entity mapped
+- **/images/giraffe-zebras-savanna-afrika.jpg** → UNMAPPED: Found in catalog as: giraffe-zebras-savanna-afrika.jpg In catalog but no entity mapped
+- **/images/safari-jeep-in-tall-grass.jpg** → UNMAPPED: Found in catalog as: safari-jeep-in-tall-grass.jpg In catalog but no entity mapped
+- **/images/elephants-walking-savanna-grass.jpg** → UNMAPPED: Found in catalog as: elephants-walking-savanna-grass.jpg In catalog but no entity mapped

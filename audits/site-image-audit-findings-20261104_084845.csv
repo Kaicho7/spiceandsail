@@ -1,0 +1,424 @@
+URL,Status,Width,Height,Role,Verdict,Reasoning
+/images/stone-town-ornate-carved-door-arch.jpg,,390.65625,244.15625,gallery,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/pineapples-growing-in-tropical-plantation.jpg,,390.671875,244.1561279296875,gallery,CORRECT,Found in catalog as: pineapples-growing-in-tropical-plantation.jpg
+/images/vegetable-stall-at-outdoor-market.jpg,,390.65625,244.1563720703125,gallery,CORRECT,Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,390.65625,244.15625,gallery,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/aerial-beach-dhow-people-turquoise-water.jpg,,390.671875,244.15625,gallery,CORRECT,Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,390.65625,244.15625,gallery,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/children-wading-beach-dhow-boats.jpg,,392.65625,200,gallery,CORRECT,Found in catalog as: children-wading-beach-dhow-boats.jpg
+/images/zanzibar-rock-house-with-tourists.jpg,,392.671875,200,gallery,CORRECT,Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+/images/stone-town-ornate-carved-door-calligraphy.jpg,,392.65625,200,gallery,UNCERTAIN,Found in catalog as: stone-town-ornate-carved-door-calligraphy.jpg; In catalog but no entity mapped
+/images/children-wading-beach-dhow-boats.jpg,,376.65625,211.859375,gallery,CORRECT,Found in catalog as: children-wading-beach-dhow-boats.jpg
+/images/aerial-beach-boat-turquoise-water.jpg,,376.671875,211.875,gallery,UNCERTAIN,Found in catalog as: aerial-beach-boat-turquoise-water.jpg; In catalog but no entity mapped
+/images/kitesurfing-turquoise-ocean-zanzibar.jpg,,376.65625,211.859375,gallery,UNCERTAIN,Found in catalog as: kitesurfing-turquoise-ocean-zanzibar.jpg; In catalog but no entity mapped
+/images/women-walking-beach-zanzibar-palm-trees.jpg,,376.65625,211.859375,gallery,CORRECT,Found in catalog as: women-walking-beach-zanzibar-palm-trees.jpg
+/images/stone-town-alley-walking-tour-people.jpg,,376.671875,211.875,gallery,UNCERTAIN,Found in catalog as: stone-town-alley-walking-tour-people.jpg; In catalog but no entity mapped
+/images/dhow-boats-beach-zanzibar-sand.jpg,,376.65625,211.859375,gallery,UNCERTAIN,Found in catalog as: dhow-boats-beach-zanzibar-sand.jpg; In catalog but no entity mapped
+/images/stone-town-ornate-carved-door-calligraphy.jpg,,392.65625,245.40625,gallery,UNCERTAIN,Found in catalog as: stone-town-ornate-carved-door-calligraphy.jpg; In catalog but no entity mapped
+/images/dhow-boat-turquoise-water-zanzibar.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: dhow-boat-turquoise-water-zanzibar.jpg
+/images/safari-vehicle-lion-afar.jpg,,392.65625,245.40625,gallery,UNCERTAIN,Found in catalog as: safari-vehicle-lion-afar.jpg; In catalog but no entity mapped
+/images/zanzibar-beach-sunset-walk-group.jpg,,376.65625,211.859375,gallery,UNCERTAIN,Found in catalog as: zanzibar-beach-sunset-walk-group.jpg; In catalog but no entity mapped
+/images/kitesurfing-turquoise-ocean-zanzibar.jpg,,376.671875,211.875,gallery,UNCERTAIN,Found in catalog as: kitesurfing-turquoise-ocean-zanzibar.jpg; In catalog but no entity mapped
+/images/stone-town-alley-walking-tour-people.jpg,,376.65625,211.859375,gallery,UNCERTAIN,Found in catalog as: stone-town-alley-walking-tour-people.jpg; In catalog but no entity mapped
+/images/zanzibar-rock-house-with-tourists.jpg,,376.65625,211.859375,gallery,CORRECT,Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+/images/dolphins-leaping-ocean-zanzibar.jpg,,376.671875,211.875,gallery,UNCERTAIN,Found in catalog as: dolphins-leaping-ocean-zanzibar.jpg; In catalog but no entity mapped
+/images/stone-town-ornate-carved-door-arch.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/nungwi-beach-aerial-resort-turquoise-water.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: nungwi-beach-aerial-resort-turquoise-water.jpg
+/images/nungwi-beach-aerial-resort-turquoise-water.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: nungwi-beach-aerial-resort-turquoise-water.jpg
+/images/zanzibar-beach-palm-trees-thatched-huts.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: zanzibar-beach-palm-trees-thatched-huts.jpg
+/images/women-walking-beach-zanzibar-palm-trees.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: women-walking-beach-zanzibar-palm-trees.jpg
+/images/beach-front-hotel-palm-trees-people.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: beach-front-hotel-palm-trees-people.jpg
+/images/zanzibar-rock-house-with-tourists.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+/images/beach-front-hotel-palm-trees-people.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: beach-front-hotel-palm-trees-people.jpg
+/images/zanzibar-rock-house-with-tourists.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/aerial-beach-dhow-people-turquoise-water.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+/images/sea-turtle-snorkeling-coral-reef.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: sea-turtle-snorkeling-coral-reef.jpg
+/images/zanzibar-beach-people-playing-kites.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: zanzibar-beach-people-playing-kites.jpg
+/images/dhow-sail-nungwi-beach-zanzibar.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+/images/ocean-view-with-coastal-buildings.jpg,,578,325.125,gallery,UNCERTAIN,Found in catalog as: ocean-view-with-coastal-buildings.jpg; In catalog but no entity mapped
+/images/aerial-coastal-town-beach-turquoise-water.jpg,,578,325.125,gallery,UNCERTAIN,Found in catalog as: aerial-coastal-town-beach-turquoise-water.jpg; In catalog but no entity mapped
+/images/stone-town-ornate-carved-door-calligraphy.jpg,,392.65625,245.40625,gallery,UNCERTAIN,Found in catalog as: stone-town-ornate-carved-door-calligraphy.jpg; In catalog but no entity mapped
+/images/dhow-boat-turquoise-water-zanzibar.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: dhow-boat-turquoise-water-zanzibar.jpg
+/images/zanzibar-rock-house-with-tourists.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+/images/giraffe-head-profile-trees-background.jpg,,392.65625,245.40625,gallery,UNCERTAIN,Found in catalog as: giraffe-head-profile-trees-background.jpg; In catalog but no entity mapped
+/images/island-pier-boat-turquoise-water.jpg,,392.671875,245.40625,gallery,UNCERTAIN,Found in catalog as: island-pier-boat-turquoise-water.jpg; In catalog but no entity mapped
+/images/children-wading-beach-dhow-boats.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: children-wading-beach-dhow-boats.jpg
+/images/safari-vehicle-lion-afar.jpg,,390.65625,244.15625,gallery,UNCERTAIN,Found in catalog as: safari-vehicle-lion-afar.jpg; In catalog but no entity mapped
+/images/giraffe-head-profile-trees-background.jpg,,390.671875,244.15625,gallery,UNCERTAIN,Found in catalog as: giraffe-head-profile-trees-background.jpg; In catalog but no entity mapped
+/images/elephant-walking-grass-zanzibar.jpg,,390.65625,244.15625,gallery,UNCERTAIN,Found in catalog as: elephant-walking-grass-zanzibar.jpg; In catalog but no entity mapped
+/images/white-nissan-elgrand-van-parked-gravel.jpg,,382,210,gallery,UNCERTAIN,Found in catalog as: white-nissan-elgrand-van-parked-gravel.jpg; In catalog but no entity mapped
+/images/white-nissan-elgrand-van-parked-gravel.jpg,,382,210,gallery,UNCERTAIN,Found in catalog as: white-nissan-elgrand-van-parked-gravel.jpg; In catalog but no entity mapped
+/images/white-nissan-elgrand-van-parked-gravel.jpg,,382,210,gallery,UNCERTAIN,Found in catalog as: white-nissan-elgrand-van-parked-gravel.jpg; In catalog but no entity mapped
+/images/underwater-fish-coral-reef-zanzibar.jpg,,1280,400,hero,CORRECT,Found in catalog as: underwater-fish-coral-reef-zanzibar.jpg
+/images/red-colobus-monkey-baby-jozani-forest.jpg,,1280,400,hero,CORRECT,Found in catalog as: red-colobus-monkey-baby-jozani-forest.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,1280,400,hero,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/people-swimming-turquoise-water-steps.jpg,,1280,400,hero,CORRECT,Found in catalog as: people-swimming-turquoise-water-steps.jpg
+/images/elephant-savanna-landscape-tanzania.jpg,,1280,400,hero,CORRECT,Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,1280,400,hero,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/turquoise-water-sandbar-lone-boat.jpg,,1280,400,hero,CORRECT,Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+/images/boats-pier-under-cloudy-sky-water.jpg,,1280,400,hero,CORRECT,Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+/images/aerial-beach-dhow-people-turquoise-water.jpg,,1280,400,hero,CORRECT,Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+/images/elephant-savanna-landscape-tanzania.jpg,,1280,400,hero,CORRECT,Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+/images/pineapples-growing-in-tropical-plantation.jpg,,1280,400,hero,CORRECT,Found in catalog as: pineapples-growing-in-tropical-plantation.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,1280,400,hero,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,1280,400,hero,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/dhow-sail-nungwi-beach-zanzibar.jpg,,1280,400,hero,CORRECT,Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+/images/vegetable-stall-at-outdoor-market.jpg,,1280,400,hero,CORRECT,Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+/images/aerial-beach-dhow-people-turquoise-water.jpg,,1280,400,hero,CORRECT,Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,802,501.25,card,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/pineapples-growing-in-tropical-plantation.jpg,,378,236.25,card,CORRECT,Found in catalog as: pineapples-growing-in-tropical-plantation.jpg
+/images/vegetable-stall-at-outdoor-market.jpg,,802,501.25,card,CORRECT,Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,378,236.25,card,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/aerial-beach-dhow-people-turquoise-water.jpg,,802,501.25,card,CORRECT,Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,378,236.25,card,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/boats-pier-under-cloudy-sky-water.jpg,,802,501.25,card,CORRECT,Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+/images/turquoise-water-sandbar-lone-boat.jpg,,378,236.25,card,CORRECT,Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+/images/underwater-fish-coral-reef-zanzibar.jpg,,802,501.25,card,CORRECT,Found in catalog as: underwater-fish-coral-reef-zanzibar.jpg
+/images/dhow-sail-nungwi-beach-zanzibar.jpg,,378,236.25,card,CORRECT,Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,802,501.25,card,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/red-colobus-monkey-baby-jozani-forest.jpg,,378,236.25,card,CORRECT,Found in catalog as: red-colobus-monkey-baby-jozani-forest.jpg
+/images/people-swimming-turquoise-water-steps.jpg,,802,501.25,card,CORRECT,Found in catalog as: people-swimming-turquoise-water-steps.jpg
+/images/elephant-savanna-landscape-tanzania.jpg,,378,236.25,card,CORRECT,Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+/images/elephant-savanna-landscape-tanzania.jpg,,802,501.25,card,CORRECT,Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+/images/aerial-beach-dhow-people-turquoise-water.jpg,,378,236.25,card,CORRECT,Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+/images/sea-turtles-swimming-zanzibar-water.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: sea-turtles-swimming-zanzibar-water.jpg
+/images/cheetahs-rock-header.jpg,,392.671875,245.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-night-food-stall-skewers-bread.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: zanzibar-night-food-stall-skewers-bread.jpg
+/images/stone-town-walking-tour-people-photograph.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: stone-town-walking-tour-people-photograph.jpg
+/images/stone-town-colonial-building-clock-tower.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: stone-town-colonial-building-clock-tower.jpg
+/images/woman-smiling-next-to-monkey-jozani-forest.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: woman-smiling-next-to-monkey-jozani-forest.jpg
+/images/people-swimming-turquoise-water-steps.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: people-swimming-turquoise-water-steps.jpg
+/images/stone-statue-chained-person-zanzibar.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: stone-statue-chained-person-zanzibar.jpg
+/images/dhow-boat-turquoise-water-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: dhow-boat-turquoise-water-zanzibar.jpg
+/images/sea-turtles-with-child-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: sea-turtles-with-child-zanzibar.jpg
+/images/hand-holding-nutmeg-fruits-zanzibar.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+/images/turquoise-water-sandbar-lone-boat.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+/images/stone-town-walking-tour-people-photograph.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: stone-town-walking-tour-people-photograph.jpg
+/images/waterfront-buildings-zanzibar-coast.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: waterfront-buildings-zanzibar-coast.jpg
+/images/hand-holding-nutmeg-fruits-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+/images/boats-pier-under-cloudy-sky-water.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+/images/people-collecting-sea-items-zanzibar-beach.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: people-collecting-sea-items-zanzibar-beach.jpg
+/images/hand-holding-nutmeg-fruits-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+/images/vegetable-stall-at-outdoor-market.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+/images/jozani-forest-walking-path-green-arches.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: jozani-forest-walking-path-green-arches.jpg
+/images/women-horse-riding-ocean-water-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+/images/stone-town-colonial-building-clock-tower.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: stone-town-colonial-building-clock-tower.jpg
+/images/scuba-diver-fish-coral-reef-underwater.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: scuba-diver-fish-coral-reef-underwater.jpg
+/images/underwater-coral-reef-fish-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: underwater-coral-reef-fish-zanzibar.jpg
+/images/coral-reef-fish-snorkeling-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: coral-reef-fish-snorkeling-zanzibar.jpg
+/images/underwater-beach-dhow-zanzibar.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: underwater-beach-dhow-zanzibar.jpg
+/images/divers-on-boat-zanzibar-ocean.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: divers-on-boat-zanzibar-ocean.jpg
+/images/coral-reef-snorkeling-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: coral-reef-snorkeling-zanzibar.jpg
+/images/snorkeler-underwater-with-fish.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: snorkeler-underwater-with-fish.jpg
+/images/tropical-fish-swimming-clear-water.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: tropical-fish-swimming-clear-water.jpg
+/images/coral-reef-underwater-fish-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: coral-reef-underwater-fish-zanzibar.jpg
+/images/underwater-fish-coral-reef-zanzibar.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: underwater-fish-coral-reef-zanzibar.jpg
+/images/snorkeling-turquoise-water-boat-people.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: snorkeling-turquoise-water-boat-people.jpg
+/images/boys-snorkeling-shallow-water-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: boys-snorkeling-shallow-water-zanzibar.jpg
+/images/snorkeler-fish-ocean-blue-water.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: snorkeler-fish-ocean-blue-water.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/snorkeling-zanzibar-shallow-water-coral.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: snorkeling-zanzibar-shallow-water-coral.jpg
+/images/snorkeling-with-fish-underwater.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: snorkeling-with-fish-underwater.jpg
+/images/coral-reef-fish-school-underwater.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: coral-reef-fish-school-underwater.jpg
+/images/sea-turtle-snorkeling-coral-reef.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: sea-turtle-snorkeling-coral-reef.jpg
+/images/snorkeling-with-dolphin-zanzibar-ocean.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: snorkeling-with-dolphin-zanzibar-ocean.jpg
+/images/coral-reef-snorkeling-zanzibar-1.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: coral-reef-snorkeling-zanzibar-1.jpg
+/images/underwater-coral-reef-fish-swimming.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: underwater-coral-reef-fish-swimming.jpg
+/images/snorkeling-underwater-selfie-zanzibar.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: snorkeling-underwater-selfie-zanzibar.jpg
+/images/coral-reef-snorkeling-zanzibar-2.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: coral-reef-snorkeling-zanzibar-2.jpg
+/images/underwater-coral-reef-fish-zanzibar-1.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: underwater-coral-reef-fish-zanzibar-1.jpg
+/images/child-snorkeling-clear-shallow-water.jpg,,392.671875,245.40625,gallery,CORRECT,Found in catalog as: child-snorkeling-clear-shallow-water.jpg
+/images/boy-snorkeling-shallow-water-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: boy-snorkeling-shallow-water-zanzibar.jpg
+/images/coral-reef-snorkeling-zanzibar-3.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: coral-reef-snorkeling-zanzibar-3.jpg
+/images/airborne-kitesurfing-hero.jpg,,392.671875,245.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/aquaholics-kitesurfing-hero.jpg,,392.65625,245.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/women-horse-riding-ocean-water-zanzibar.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+/images/kite-centre-zanzibar-aerial-kitesurfing.jpg,,392.671875,245.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-pro-kiting-kitesurfing.jpg,,392.65625,245.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-rock-house-with-tourists.jpg,,392.65625,245.40625,gallery,CORRECT,Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+/images/silver-private-hire-minivan-parked-outside.jpg,,514,289.125,gallery,UNCERTAIN,Found in catalog as: silver-private-hire-minivan-parked-outside.jpg; In catalog but no entity mapped
+/images/snorkeling-underwater-selfie-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: snorkeling-underwater-selfie-zanzibar.jpg
+/images/dhow-boat-turquoise-water-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: dhow-boat-turquoise-water-zanzibar.jpg
+/images/hand-holding-nutmeg-fruits-zanzibar.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+/images/hand-holding-nutmeg-fruits-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+/images/women-horse-riding-ocean-water-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+/images/people-swimming-turquoise-water-steps.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: people-swimming-turquoise-water-steps.jpg
+/images/coral-reef-fish-snorkeling-zanzibar.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: coral-reef-fish-snorkeling-zanzibar.jpg
+/images/divers-on-boat-zanzibar-ocean.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: divers-on-boat-zanzibar-ocean.jpg
+/images/coral-reef-underwater-fish-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: coral-reef-underwater-fish-zanzibar.jpg
+/images/snorkeler-fish-ocean-blue-water.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: snorkeler-fish-ocean-blue-water.jpg
+/images/vegetable-stall-at-outdoor-market.jpg,,754,471.25,hero,CORRECT,Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+/images/people-swimming-turquoise-water-steps.jpg,,378,236.25,hero,CORRECT,Found in catalog as: people-swimming-turquoise-water-steps.jpg
+/images/coral-reef-fish-school-underwater.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: coral-reef-fish-school-underwater.jpg
+/images/child-snorkeling-clear-shallow-water.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: child-snorkeling-clear-shallow-water.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,754,471.25,hero,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/dhow-sail-nungwi-beach-zanzibar.jpg,,378,236.25,hero,CORRECT,Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+/images/underwater-coral-reef-fish-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: underwater-coral-reef-fish-zanzibar.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/snorkeling-zanzibar-shallow-water-coral.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: snorkeling-zanzibar-shallow-water-coral.jpg
+/images/underwater-coral-reef-fish-zanzibar-1.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: underwater-coral-reef-fish-zanzibar-1.jpg
+/images/zanzibar-rock-house-with-tourists.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+/images/sea-turtles-swimming-zanzibar-water.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: sea-turtles-swimming-zanzibar-water.jpg
+/images/sea-turtles-with-child-zanzibar.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: sea-turtles-with-child-zanzibar.jpg
+/images/women-horse-riding-ocean-water-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+/images/snorkeler-underwater-with-fish.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: snorkeler-underwater-with-fish.jpg
+/images/tropical-fish-swimming-clear-water.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: tropical-fish-swimming-clear-water.jpg
+/images/underwater-fish-coral-reef-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: underwater-fish-coral-reef-zanzibar.jpg
+/images/coral-reef-snorkeling-zanzibar-2.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: coral-reef-snorkeling-zanzibar-2.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,754,471.25,hero,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/dhow-sail-nungwi-beach-zanzibar.jpg,,378,236.25,hero,CORRECT,Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+/images/cheetahs-rock-header.jpg,,392.65625,245.40625,hero,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/people-collecting-sea-items-zanzibar-beach.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: people-collecting-sea-items-zanzibar-beach.jpg
+/images/snorkeling-with-dolphin-zanzibar-ocean.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: snorkeling-with-dolphin-zanzibar-ocean.jpg
+/images/airborne-kitesurfing-hero.jpg,,392.65625,245.40625,hero,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/aquaholics-kitesurfing-hero.jpg,,392.671875,245.40625,hero,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/kite-centre-zanzibar-aerial-kitesurfing.jpg,,392.65625,245.40625,hero,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-pro-kiting-kitesurfing.jpg,,392.65625,245.40625,hero,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/people-swimming-turquoise-water-steps.jpg,,754,471.25,hero,CORRECT,Found in catalog as: people-swimming-turquoise-water-steps.jpg
+/images/coral-reef-snorkeling-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: coral-reef-snorkeling-zanzibar.jpg
+/images/underwater-beach-dhow-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: underwater-beach-dhow-zanzibar.jpg
+/images/snorkeling-turquoise-water-boat-people.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: snorkeling-turquoise-water-boat-people.jpg
+/images/boys-snorkeling-shallow-water-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: boys-snorkeling-shallow-water-zanzibar.jpg
+/images/coral-reef-snorkeling-zanzibar-1.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: coral-reef-snorkeling-zanzibar-1.jpg
+/images/boy-snorkeling-shallow-water-zanzibar.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: boy-snorkeling-shallow-water-zanzibar.jpg
+/images/women-horse-riding-ocean-water-zanzibar.jpg,,360.65625,220,gallery,CORRECT,Found in catalog as: women-horse-riding-ocean-water-zanzibar.jpg
+/images/aerial-beach-dhow-people-turquoise-water.jpg,,360.671875,220,gallery,CORRECT,Found in catalog as: aerial-beach-dhow-people-turquoise-water.jpg
+/images/dolphins-swimming-near-boat-tour.jpg,,360.65625,220,gallery,CORRECT,Found in catalog as: dolphins-swimming-near-boat-tour.jpg
+/images/people-swimming-turquoise-water-steps.jpg,,360.65625,220,gallery,CORRECT,Found in catalog as: people-swimming-turquoise-water-steps.jpg
+/images/dhow-boat-mangroves-turquoise-water.jpg,,360.671875,220,gallery,UNCERTAIN,Found in catalog as: dhow-boat-mangroves-turquoise-water.jpg; In catalog but no entity mapped
+/images/elephant-savanna-landscape-tanzania.jpg,,360.65625,220,gallery,CORRECT,Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+/images/red-colobus-monkey-baby-jozani-forest.jpg,,360.65625,220,gallery,CORRECT,Found in catalog as: red-colobus-monkey-baby-jozani-forest.jpg
+/images/sea-turtle-snorkeling-coral-reef.jpg,,360.671875,220,gallery,CORRECT,Found in catalog as: sea-turtle-snorkeling-coral-reef.jpg
+/images/dhow-sail-nungwi-beach-zanzibar.jpg,,360.65625,220,gallery,CORRECT,Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,360.65625,220,gallery,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/pineapples-growing-in-tropical-plantation.jpg,,360.671875,220,gallery,CORRECT,Found in catalog as: pineapples-growing-in-tropical-plantation.jpg
+/images/coral-reef-fish-snorkeling-zanzibar.jpg,,360.65625,220,gallery,CORRECT,Found in catalog as: coral-reef-fish-snorkeling-zanzibar.jpg
+,,402,200,gallery,UNRESOLVED,No entity mapping and not in catalog
+,,32,32,gallery,UNRESOLVED,No entity mapping and not in catalog
+,,126.453125,150,gallery,UNRESOLVED,No entity mapping and not in catalog
+,,54.40625,60,gallery,UNRESOLVED,No entity mapping and not in catalog
+/images/underwater-coral-reef-fish-swimming.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: underwater-coral-reef-fish-swimming.jpg
+/images/zanzibar-night-food-stall-skewers-bread.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: zanzibar-night-food-stall-skewers-bread.jpg
+/images/stone-town-colonial-building-clock-tower.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: stone-town-colonial-building-clock-tower.jpg
+/images/hand-holding-nutmeg-fruits-zanzibar.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: hand-holding-nutmeg-fruits-zanzibar.jpg
+/images/turquoise-water-sandbar-lone-boat.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+/images/stone-town-walking-tour-people-photograph.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: stone-town-walking-tour-people-photograph.jpg
+/images/waterfront-buildings-zanzibar-coast.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: waterfront-buildings-zanzibar-coast.jpg
+/images/boats-pier-under-cloudy-sky-water.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+/images/vegetable-stall-at-outdoor-market.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: vegetable-stall-at-outdoor-market.jpg
+/images/stone-town-colonial-building-clock-tower.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: stone-town-colonial-building-clock-tower.jpg
+/images/scuba-diver-fish-coral-reef-underwater.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: scuba-diver-fish-coral-reef-underwater.jpg
+/images/snorkeling-with-fish-underwater.jpg,,392.671875,245.40625,hero,CORRECT,Found in catalog as: snorkeling-with-fish-underwater.jpg
+/images/sea-turtle-snorkeling-coral-reef.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: sea-turtle-snorkeling-coral-reef.jpg
+/images/coral-reef-snorkeling-zanzibar-3.jpg,,392.65625,245.40625,hero,CORRECT,Found in catalog as: coral-reef-snorkeling-zanzibar-3.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,754,471.25,hero,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,378,236.25,hero,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/boats-pier-under-cloudy-sky-water.jpg,,754,471.25,hero,CORRECT,Found in catalog as: boats-pier-under-cloudy-sky-water.jpg
+/images/turquoise-water-sandbar-lone-boat.jpg,,378,236.25,hero,CORRECT,Found in catalog as: turquoise-water-sandbar-lone-boat.jpg
+/images/dhow-sail-nungwi-beach-zanzibar.jpg,,754,471.25,hero,CORRECT,Found in catalog as: dhow-sail-nungwi-beach-zanzibar.jpg
+/images/hotels/beyond-mnemba-island.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-three-beds-1.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg; In catalog but no entity mapped
+/images/hotels/bawe-tropical-island.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/bluebay-beach-resort-spa.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/emerald-zanzibar-resort-spa.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds-red-blankets.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/emerson-on-hurumzi.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/essque-zalu-zanzibar.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-room-with-red-accent-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-with-red-accent-bed.jpg; In catalog but no entity mapped
+/images/hotels/fundu-lagoon.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/gold-zanzibar-beach-house-spa.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-room-red-plaid-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-red-plaid-bed.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-bed-plaid-curtains.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-plaid-curtains.jpg; In catalog but no entity mapped
+/images/hotels/kasha-boutique-hotel.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/kilindi-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-restaurant-patio-with-palm-trees.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-restaurant-patio-with-palm-trees.jpg; In catalog but no entity mapped
+/images/hotels/konokono-beach-resort.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/lux-marijani-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg; In catalog but no entity mapped
+/images/hotels/matemwe-retreat.webp,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/matlai-boutique-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/melia-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/milele-villas.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg; In catalog but no entity mapped
+/images/hotels/park-hyatt-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/qambani-luxury-resort.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/riu-jambo.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/riu-palace-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/royal-cliff-zanzibar.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/royal-zanzibar-beach-resort.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-three-beds-1.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg; In catalog but no entity mapped
+/images/hotels/sea-cliff-resort-spa.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-roofs-sea-ships-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg; In catalog but no entity mapped
+/images/hotels/tui-blue-bahari-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/turquoise-ocean-pier-zanzibar-beach.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg; In catalog but no entity mapped
+/images/hotel-room-with-two-beds-red-blankets.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-with-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/the-neela-boutique-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/the-neela-oceanfront.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/the-palms-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/the-residence-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/ocean-view-with-coastal-buildings.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: ocean-view-with-coastal-buildings.jpg; In catalog but no entity mapped
+/images/zanzibar-restaurant-patio-with-palm-trees.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-restaurant-patio-with-palm-trees.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-orange-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-orange-bed.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-two-beds.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds.jpg; In catalog but no entity mapped
+/images/hotels/zanzi-resort.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/zanzibar-white-sand-luxury-villas.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-room-red-plaid-bed.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-red-plaid-bed.jpg; In catalog but no entity mapped
+/images/hotels/zuri-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/africa-house-hotel.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/aluna-nungwi.png,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-three-beds-1.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg; In catalog but no entity mapped
+/images/turquoise-ocean-pier-zanzibar-beach.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg; In catalog but no entity mapped
+/images/hotels/anna-of-zanzibar.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/antonio-garden-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/art-hotel-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-orange-bed.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-orange-bed.jpg; In catalog but no entity mapped
+/images/thatched-hut-beach-zanzibar-coast.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-bed-mosquito-net.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-mosquito-net.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-three-beds.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-three-beds.jpg; In catalog but no entity mapped
+/images/hotels/babalao-bungalows.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-room-red-plaid-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-red-plaid-bed.jpg; In catalog but no entity mapped
+/images/hotels/blue-moon-resort.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/blue-oyster-hotel.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds.jpg; In catalog but no entity mapped
+/images/thatched-hut-beach-zanzibar-coast.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg; In catalog but no entity mapped
+/images/hotels/chapwani-private-island.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/chumbe-island-coral-park.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/clove-island-villas-apartments.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/cristal-resort.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/dhow-inn.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/dhow-palace-hotel.png,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/diamonds-mapenzi-beach.jpeg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-two-beds-mosquito-net.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-mosquito-net.jpg; In catalog but no entity mapped
+/images/hotels/doubletree-by-hilton-stone-town.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds-red-blankets.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/filao-beach-zanzibar.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-room-with-two-beds-red-blankets.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-with-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/fumba-beach-lodge.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/fumba-town-apartments-by-cps.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/fun-beach-resort.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds-mosquito-net.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-mosquito-net.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-two-beds-red-blankets.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/hakuna-majiwe-beach-lodge.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-roofs-sea-ships-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg; In catalog but no entity mapped
+/images/hotels/hodi-hodi-zanzibar.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/house-of-spices.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-roofs-sea-ships-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg; In catalog but no entity mapped
+/images/hotels/indigo-beach-zanzibar.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/jafferji-beach-retreat.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/jambiani-wellness-retreat.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/jambiani-white-sands.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/thatched-hut-beach-zanzibar-coast.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg; In catalog but no entity mapped
+/images/hotels/karafuu-beach-resort-spa.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/beach-front-hotel-palm-trees-people.jpg,,376.671875,235.40625,gallery,CORRECT,Found in catalog as: beach-front-hotel-palm-trees-people.jpg
+/images/hotels/karibu-beach-resort.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/kena-beach-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/kendwa-rocks-beach-hotel.webp,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/kervan-saray-beach.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/kholle-house.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/kibanda-lodge.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-orange-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-orange-bed.jpg; In catalog but no entity mapped
+/images/hotel-room-with-two-beds-red-blankets.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-with-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/kupaga-villas.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/langi-langi-beach-bungalows.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/mahali-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-three-beds-plaid.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-three-beds-plaid.jpg; In catalog but no entity mapped
+/images/hotels/maru-maru-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/matemwe-lodge.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/thatched-hut-beach-zanzibar-coast.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg; In catalog but no entity mapped
+/images/hotels/miramont-retreat.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-orange-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-orange-bed.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-two-beds-mosquito-net.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-mosquito-net.jpg; In catalog but no entity mapped
+/images/hotel-room-red-plaid-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-red-plaid-bed.jpg; In catalog but no entity mapped
+/images/hotels/mvuvi-resort.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/mwezi-boutique-resort.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/my-blue-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds-mosquito-net.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-mosquito-net.jpg; In catalog but no entity mapped
+/images/hotels/ocean-paradise-resort-spa.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-bed-mosquito-net.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-mosquito-net.jpg; In catalog but no entity mapped
+/images/hotels/paje-by-night.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/palumbokendwa.png,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-three-beds-1.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg; In catalog but no entity mapped
+/images/hotels/passion-boutique-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/turquoise-ocean-pier-zanzibar-beach.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg; In catalog but no entity mapped
+/images/hotels/pemba-paradise.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/pongwe-beach-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-beach-palm-trees-thatched-huts.jpg,,376.671875,235.40625,gallery,CORRECT,Found in catalog as: zanzibar-beach-palm-trees-thatched-huts.jpg
+/images/hotels/sea-cliff-court-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/sea-view-lodge.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/seasons-lodge-zanzibar.webp,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-orange-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-orange-bed.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg; In catalog but no entity mapped
+/images/hotels/shooting-star-lodge.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/smiles-beach-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/spice-island-hotel-resort.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/sultan-sands-island-resort.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-orange-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-orange-bed.jpg; In catalog but no entity mapped
+/images/hotel-roofs-sea-ships-zanzibar.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg; In catalog but no entity mapped
+/images/hotels/tembo-house-hotel.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/tembo-palace-hotel.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/the-island-pongwe-lodge.png,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/the-loop-beach-resort.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/the-sands-beach-resort.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds-red-blankets.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/the-zanzibari.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/toa-hotel-spa.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/upendo-beach-zanzibar.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/upendo-house-stone-town.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/villa-bluu.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/villa-kiva-boutique-hotel.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-room-red-plaid-bed.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-red-plaid-bed.jpg; In catalog but no entity mapped
+/images/hotel-roofs-sea-ships-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg; In catalog but no entity mapped
+/images/hotels/waridi-beach-resort-spa.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-roofs-sea-ships-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-three-beds-1.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-three-beds-1.jpg; In catalog but no entity mapped
+/images/hotel-room-with-two-beds-red-blankets.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-room-with-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/zanzibar-pearl-boutique.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/zanzibar-queen-hotel.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/zanzibar-star-resort.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/al-minar-hotel.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg; In catalog but no entity mapped
+/images/hotels/aquaholics-surf-lodge.png,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-two-beds-red-blankets.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-two-beds-red-blankets.jpg; In catalog but no entity mapped
+/images/hotels/cheetahs-rock-management-stay.png,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/demani-lodge.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/forodhani-park-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/kimte-beach-lodge.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/malika-hotel.webp,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/mangrove-lodge.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/paje-beach-bandas.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/thatched-hut-beach-zanzibar-coast.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: thatched-hut-beach-zanzibar-coast.jpg; In catalog but no entity mapped
+/images/turquoise-ocean-pier-zanzibar-beach.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg; In catalog but no entity mapped
+/images/hotels/rumaisa-hotel.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/spice-palace-hotel.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/stone-town-caf-bb.webp,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/beach-wedding-arch-nungwi-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: beach-wedding-arch-nungwi-zanzibar.jpg; In catalog but no entity mapped
+/images/hotels/sunset-kendwa.webp,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-three-beds.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-three-beds.jpg; In catalog but no entity mapped
+/images/hotels/surfescape-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-hotel-room-bed-mosquito-net.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-mosquito-net.jpg; In catalog but no entity mapped
+/images/hotels/unguja-lodge.jpeg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/verani-beach-lodge.jpeg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/turquoise-ocean-pier-zanzibar-beach.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: turquoise-ocean-pier-zanzibar-beach.jpg; In catalog but no entity mapped
+/images/hotels/drifters-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/ebb-flow.jpeg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/zanzibar-restaurant-patio-with-palm-trees.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-restaurant-patio-with-palm-trees.jpg; In catalog but no entity mapped
+/images/zanzibar-hotel-room-bed-mosquito-net-1.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-hotel-room-bed-mosquito-net-1.jpg; In catalog but no entity mapped
+/images/hotels/jozani-chwaka-bay-official-stay.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotels/matemwe-beach-house.webp,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/nungwi-beach-aerial-resort-turquoise-water.jpg,,376.65625,235.40625,gallery,CORRECT,Found in catalog as: nungwi-beach-aerial-resort-turquoise-water.jpg
+/images/zanzibar-restaurant-patio-with-palm-trees.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: zanzibar-restaurant-patio-with-palm-trees.jpg; In catalog but no entity mapped
+/images/hotels/nungwi-house.jpg,,376.671875,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/hotel-roofs-sea-ships-zanzibar.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Found in catalog as: hotel-roofs-sea-ships-zanzibar.jpg; In catalog but no entity mapped
+/images/hotels/your-zanzibar-place.jpg,,376.65625,235.40625,gallery,UNCERTAIN,Mapped to entity but not confirmed in catalog
+/images/nungwi-beach-aerial-resort-turquoise-water.jpg,,320,180,gallery,CORRECT,Found in catalog as: nungwi-beach-aerial-resort-turquoise-water.jpg
+/images/women-walking-beach-zanzibar-palm-trees.jpg,,320,180,gallery,CORRECT,Found in catalog as: women-walking-beach-zanzibar-palm-trees.jpg
+/images/stone-town-ornate-carved-door-arch.jpg,,320,180,gallery,CORRECT,Found in catalog as: stone-town-ornate-carved-door-arch.jpg
+/images/zanzibar-rock-house-with-tourists.jpg,,320,180,gallery,CORRECT,Found in catalog as: zanzibar-rock-house-with-tourists.jpg
+/images/elephant-savanna-landscape-tanzania.jpg,,514,342.53125,gallery,CORRECT,Found in catalog as: elephant-savanna-landscape-tanzania.jpg
+/images/lion-resting-tall-grass-safari.jpg,,342.65625,220,gallery,UNCERTAIN,Found in catalog as: lion-resting-tall-grass-safari.jpg; In catalog but no entity mapped
+/images/giraffe-zebras-savanna-afrika.jpg,,342.671875,220,gallery,UNCERTAIN,Found in catalog as: giraffe-zebras-savanna-afrika.jpg; In catalog but no entity mapped
+/images/safari-jeep-in-tall-grass.jpg,,342.65625,220,gallery,UNCERTAIN,Found in catalog as: safari-jeep-in-tall-grass.jpg; In catalog but no entity mapped
+/images/elephants-walking-savanna-grass.jpg,,342.65625,220,gallery,UNCERTAIN,Found in catalog as: elephants-walking-savanna-grass.jpg; In catalog but no entity mapped

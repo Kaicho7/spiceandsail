@@ -8,3 +8,6 @@ dist/
 public/images/*.bak
 public/images/*.bak
 __pycache__/
+.venv-audit/
+
+.netlify/
