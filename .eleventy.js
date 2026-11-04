@@ -155,8 +155,6 @@ module.exports = function(eleventyConfig) {
     "Palace Museum (Official)": "stone-town-colonial-building-clock-tower.jpg",
     "Old Fort (Cultural Desk)": "stone-town-cannons-sea-boat-tour.jpg",
     "Old Fort (Ngome Kongwe)": "stone-town-cannons-sea-boat-tour.jpg",
-    "Palace Museum": "stone-town-colonial-building-clock-tower.jpg",
-    "Palace Museum (Official)": "stone-town-colonial-building-clock-tower.jpg",
     "Princess Salme Spice Garden": "hand-holding-nutmeg-fruits-zanzibar.jpg",
     "Prison Island": "boats-pier-under-cloudy-sky-water.jpg",
     "Prison Island (Tour Desk)": "boats-pier-under-cloudy-sky-water.jpg",
