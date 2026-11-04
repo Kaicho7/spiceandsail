@@ -1542,7 +1542,8 @@
     "quality_score": 4,
     "width": 1280,
     "height": 960,
-    "bytes": 303867
+    "bytes": 303867,
+    "primary_use": ["tours/turtle-conservation", "pages/wildlife-conservation", "blog/turtle-sanctuary"]
   },
   "coral-reef-snorkeling-zanzibar-3.jpg": {
     "file": "coral-reef-snorkeling-zanzibar-3.jpg",
