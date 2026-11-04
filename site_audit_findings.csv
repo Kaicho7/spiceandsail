@@ -1,102 +1,138 @@
 severity,code,page,detail
-ERROR,HTTP_ERROR,https://dhowcoasttravel.netlify.app/blog/stone-town-walking-tour-guide.html,status 0 Remote end closed connection without response
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/mariola-grobelska-4DhGPppqcDE-unsplash.jpg has 8 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/nutmeg-spice-farm-zanzibar.jpg has 4 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-market-scene-local-produce.jpg has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/excursions.png has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-traditional-wooden-boat-turquoise-water.jpg has 24 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-green-sea-turtle.jpg has 6 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/nungwi-beach-children-swimming-traditional-dhow-boats.jpg has 6 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-kendwa-beach-aerial-dhow-kayak.jpg has 13 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/paje-beach-zanzibar-kitesurfing-indian-ocean.jpg has 13 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-jambiani-beach-village-life-women.jpg has 10 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-island-resort-pier-boats.jpg has 17 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/packing-beach.jpg has 5 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/lukasz-lu8BMgAs64Q-unsplash.jpg has 4 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/areas/bwejuu/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-tropical-fish-coral.jpg has 4 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/areas/jambiani/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-blue-tang-fish.jpg has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/areas/jambiani/,https://dhowcoasttravel.netlify.app/images/jozani-forest-red-colobus-monkeys.jpg has 3 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/areas/kiwengwa/,https://dhowcoasttravel.netlify.app/images/zanzibar-snorkeling-coral-reef-shallow-water.jpg has 4 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/areas/matemwe/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-coral-reef-fish-2.jpg has 3 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/areas/nungwi/,https://dhowcoasttravel.netlify.app/images/migration-turtle.jpg has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/attractions/,https://dhowcoasttravel.netlify.app/images/stone-town-market-old-fort.jpg has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/attractions/,https://dhowcoasttravel.netlify.app/images/nakupenda-sandbank-tour-zanzibar.jpg has 3 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/attractions/,https://dhowcoasttravel.netlify.app/images/prison-island-wooden-pier-boats-zanzibar.jpg has 4 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/attractions/,https://dhowcoasttravel.netlify.app/images/snorkeling-underwater-boat-ladder.jpg has 3 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/attractions/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-coral-reef-fish-4.jpg has 3 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-local-children-beach.jpg has 5 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-local-snorkeling-mnemba-atoll-matemwe.jpg has 10 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-st-josephs-cathedral.jpg has 7 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-forodhani-gardens-cannons-harbor.jpg has 9 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-fishermen-traditional-ngalawa-boat-nungwi.jpg has 6 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/kizimkazi-zanzibar-dolphins-jumping-indian-ocean.jpg has 9 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/the-rock-restaurant-michamvi-pingwe-zanzibar.jpg has 11 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-courtyard-restaurant-emerson-spice.jpg has 8 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-beach-wedding-setup-nungwi-kendwa.jpg has 3 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-coral-reef-fish-6.jpg has 13 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/the-rock-restaurant-michamvi-pingwe-zanzibar-2.jpg has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-beach-bicycle-coconuts-nungwi.jpg has 6 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-nungwi-sunset-dhow-cruise-ocean.jpg has 7 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-diving-boat-trip.jpg has 4 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-port-and-beach.jpg has 9 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/michamvi-rock-restaurant-beach.jpg has 7 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/traditional-zanzibar-ngalawa-fishing-boat-paje.jpg has 9 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/nungwi-beach.jpg has 9 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-jambiani-beach-low-tide-local-children.jpg has 9 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/seaweed-farming-zanzibar-coast.jpg has 12 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-zanzibar-aerial-coastline-view.jpg has 8 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/chake-chake-town.jpg has 5 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/anglican-cathedral-stone-town.jpg has 4 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/michamvi-rock-restaurant-interaction.jpg has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-former-slave-market.jpg has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-paje-beach-women-walking-palm-trees.jpg has 5 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/kizimkazi-dolphin-snorkeling.jpg has 2 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-house-of-wonders.jpg has 4 different alts
-WARN,ALT_VARIES_SAME_IMG,https://dhowcoasttravel.netlify.app/packages/,https://dhowcoasttravel.netlify.app/images/masai-giraffe-close-up-tanzania-safari.jpg has 4 different alts
-WARN,DESC_LENGTH,https://dhowcoasttravel.netlify.app/blog/zanzibar-marine-fees-explained.html,169 chars
-WARN,FILE_GENERIC,https://dhowcoasttravel.netlify.app/,/images/excursions.png
-WARN,FILE_GENERIC,https://dhowcoasttravel.netlify.app/,/images/packing-beach.jpg
-WARN,FILE_STOCK,https://dhowcoasttravel.netlify.app/,/images/mariola-grobelska-4DhGPppqcDE-unsplash.jpg
-WARN,FILE_STOCK,https://dhowcoasttravel.netlify.app/,/images/lukasz-lu8BMgAs64Q-unsplash.jpg
-WARN,IMG_BIG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/mariola-grobelska-4DhGPppqcDE-unsplash.jpg is 720 KB
-WARN,IMG_BIG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/packing-beach.jpg is 466 KB
-WARN,IMG_BIG,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/lukasz-lu8BMgAs64Q-unsplash.jpg is 2352 KB
-WARN,IMG_BIG,https://dhowcoasttravel.netlify.app/attractions/,https://dhowcoasttravel.netlify.app/images/stone-town-darajani-market-fresh-produce-vegetables.jpg is 439 KB
-WARN,IMG_BIG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-courtyard-restaurant-emerson-spice.jpg is 704 KB
-WARN,IMG_BIG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-beach-wedding-setup-nungwi-kendwa.jpg is 431 KB
-WARN,IMG_BIG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/nungwi-beach.jpg is 523 KB
-WARN,IMG_BIG,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-jambiani-beach-low-tide-local-children.jpg is 655 KB
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/mariola-grobelska-4DhGPppqcDE-unsplash.jpg used 12 times across 6 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/nutmeg-spice-farm-zanzibar.jpg used 6 times across 5 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-traditional-wooden-boat-turquoise-water.jpg used 36 times across 14 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-green-sea-turtle.jpg used 15 times across 12 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/nungwi-beach-children-swimming-traditional-dhow-boats.jpg used 8 times across 5 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-kendwa-beach-aerial-dhow-kayak.jpg used 14 times across 5 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/paje-beach-zanzibar-kitesurfing-indian-ocean.jpg used 14 times across 5 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-jambiani-beach-village-life-women.jpg used 10 times across 3 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/,https://dhowcoasttravel.netlify.app/images/zanzibar-island-resort-pier-boats.jpg used 21 times across 6 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/areas/bwejuu/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-tropical-fish-coral.jpg used 10 times across 8 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-local-children-beach.jpg used 8 times across 2 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-local-snorkeling-mnemba-atoll-matemwe.jpg used 13 times across 4 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-st-josephs-cathedral.jpg used 8 times across 2 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-forodhani-gardens-cannons-harbor.jpg used 11 times across 3 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-fishermen-traditional-ngalawa-boat-nungwi.jpg used 9 times across 3 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/kizimkazi-zanzibar-dolphins-jumping-indian-ocean.jpg used 15 times across 7 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/the-rock-restaurant-michamvi-pingwe-zanzibar.jpg used 14 times across 7 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-courtyard-restaurant-emerson-spice.jpg used 9 times across 3 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-beach-wedding-setup-nungwi-kendwa.jpg used 6 times across 3 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/mnemba-atoll-snorkeling-coral-reef-fish-6.jpg used 16 times across 5 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-beach-bicycle-coconuts-nungwi.jpg used 8 times across 2 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-nungwi-sunset-dhow-cruise-ocean.jpg used 13 times across 7 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-port-and-beach.jpg used 11 times across 3 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/michamvi-rock-restaurant-beach.jpg used 7 times across 2 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/traditional-zanzibar-ngalawa-fishing-boat-paje.jpg used 11 times across 3 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/nungwi-beach.jpg used 9 times across 1 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/zanzibar-jambiani-beach-low-tide-local-children.jpg used 12 times across 6 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/seaweed-farming-zanzibar-coast.jpg used 18 times across 7 page(s)
-WARN,IMG_REUSE,https://dhowcoasttravel.netlify.app/hotels/,https://dhowcoasttravel.netlify.app/images/stone-town-zanzibar-aerial-coastline-view.jpg used 11 times across 4 page(s)
-WARN,TEXT_GLITCH,https://dhowcoasttravel.netlify.app/areas/,repeated label (e.g. CUL CUL CUL) (x12): … European heritage. CUL CUL CUL 7 hotels · 2 attrac…
-WARN,TEXT_GLITCH,https://dhowcoasttravel.netlify.app/honeymoon-packages/,"underscore word (template leak?) (x1): …t doorways, and the atmospheric_forest create a magical ev…"
-WARN,TEXT_GLITCH,https://dhowcoasttravel.netlify.app/hotels/,"'star' printed twice / 'Ungraded star' (x213): …te Island, Unguja • 5-Star star Luxury Boutique Con…"
-WARN,TEXT_GLITCH,https://dhowcoasttravel.netlify.app/hotels/,"location text starts with a comma (x3): …ii Garden Bungalows , Unguja • Ungraded sta…"
-WARN,TEXT_GLITCH,https://dhowcoasttravel.netlify.app/tribes-culture/,"location text starts with a comma (x1): …r 120 ethnic groups , each with distinct la…"
+WARN,CANONICAL_DIFFERS,http://localhost:8080/,canonical is https://spiceandsail.com/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/about/,canonical is https://spiceandsail.com/about/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/,canonical is https://spiceandsail.com/areas/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/bwejuu/,canonical is https://spiceandsail.com/areas/bwejuu/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/chake-chake/,canonical is https://spiceandsail.com/areas/chake-chake/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/fumba/,canonical is https://spiceandsail.com/areas/fumba/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/jambiani/,canonical is https://spiceandsail.com/areas/jambiani/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/kendwa/,canonical is https://spiceandsail.com/areas/kendwa/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/kiwengwa/,canonical is https://spiceandsail.com/areas/kiwengwa/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/kizimkazi/,canonical is https://spiceandsail.com/areas/kizimkazi/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/matemwe/,canonical is https://spiceandsail.com/areas/matemwe/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/michamvi/,canonical is https://spiceandsail.com/areas/michamvi/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/nungwi/,canonical is https://spiceandsail.com/areas/nungwi/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/paje/,canonical is https://spiceandsail.com/areas/paje/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/pongwe/,canonical is https://spiceandsail.com/areas/pongwe/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/stone-town/,canonical is https://spiceandsail.com/areas/stone-town/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/areas/wambaa-gulf/,canonical is https://spiceandsail.com/areas/wambaa-gulf/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/attractions/,canonical is https://spiceandsail.com/attractions/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/contact/,canonical is https://spiceandsail.com/contact/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/experiences/,canonical is https://spiceandsail.com/experiences/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/family-travel/,canonical is https://spiceandsail.com/family-travel/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/honeymoon-packages/,canonical is https://spiceandsail.com/honeymoon-packages/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/hotels/,canonical is https://spiceandsail.com/hotels/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/packages/,canonical is https://spiceandsail.com/packages/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/packages/zanzibar-essentials-3day/,canonical is https://spiceandsail.com/packages/zanzibar-essentials-3day/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/safaris/,canonical is https://spiceandsail.com/safaris/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/safaris/mikumi-day-trip/,canonical is https://spiceandsail.com/safaris/mikumi-day-trip/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/self-drive/,canonical is https://spiceandsail.com/self-drive/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/spice-farm-cultural/,canonical is https://spiceandsail.com/spice-farm-cultural/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/,canonical is https://spiceandsail.com/tours/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/chumbe-island/,canonical is https://spiceandsail.com/tours/chumbe-island/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/jozani-forest/,canonical is https://spiceandsail.com/tours/jozani-forest/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/kizimkazi-dolphin-tour/,canonical is https://spiceandsail.com/tours/kizimkazi-dolphin-tour/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/kuza-cave-seaweed/,canonical is https://spiceandsail.com/tours/kuza-cave-seaweed/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/mikumi-nyerere-day-safari/,canonical is https://spiceandsail.com/tours/mikumi-nyerere-day-safari/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/mnemba-snorkeling/,canonical is https://spiceandsail.com/tours/mnemba-snorkeling/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/nakupenda-sandbank/,canonical is https://spiceandsail.com/tours/nakupenda-sandbank/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/prison-island-nakupenda/,canonical is https://spiceandsail.com/tours/prison-island-nakupenda/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/safari-blue/,canonical is https://spiceandsail.com/tours/safari-blue/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/serengeti-3day-flyin/,canonical is https://spiceandsail.com/tours/serengeti-3day-flyin/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/spice-farm/,canonical is https://spiceandsail.com/tours/spice-farm/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/stone-town-spice-prison-combo/,canonical is https://spiceandsail.com/tours/stone-town-spice-prison-combo/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/stone-town-walking-tour/,canonical is https://spiceandsail.com/tours/stone-town-walking-tour/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/sunset-dhow-cruise/,canonical is https://spiceandsail.com/tours/sunset-dhow-cruise/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/village-community-tour/,canonical is https://spiceandsail.com/tours/village-community-tour/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/tours/zanzibar-essentials-3day/,canonical is https://spiceandsail.com/tours/zanzibar-essentials-3day/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/transfers/,canonical is https://spiceandsail.com/transfers/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/transfers/airport-to-nungwi/,canonical is https://spiceandsail.com/transfers/airport-to-nungwi/
+WARN,CANONICAL_DIFFERS,http://localhost:8080/travel-guide/,canonical is https://spiceandsail.com/travel-guide/
+WARN,DESC_LENGTH,http://localhost:8080/experiences/,206 chars
+WARN,DESC_LENGTH,http://localhost:8080/hotels/,200 chars
+WARN,DESC_LENGTH,http://localhost:8080/safaris/mikumi-day-trip/,186 chars
+WARN,DESC_LENGTH,http://localhost:8080/transfers/,212 chars
+WARN,DESC_LENGTH,http://localhost:8080/transfers/airport-to-nungwi/,179 chars
+WARN,IMG_BIG,http://localhost:8080/,http://localhost:8080/images/stone-town-ornate-carved-door-arch.jpg is 405 KB
+WARN,IMG_BIG,http://localhost:8080/,http://localhost:8080/images/safari-vehicle-lion-afar.jpg is 705 KB
+WARN,IMG_BIG,http://localhost:8080/areas/,http://localhost:8080/images/aerial-coastal-town-beach-turquoise-water.jpg is 652 KB
+WARN,IMG_BIG,http://localhost:8080/attractions/,http://localhost:8080/images/cheetahs-rock-header.jpg is 672 KB
+WARN,IMG_BIG,http://localhost:8080/attractions/,http://localhost:8080/images/stone-town-walking-tour-people-photograph.jpg is 494 KB
+WARN,IMG_BIG,http://localhost:8080/attractions/,http://localhost:8080/images/stone-statue-chained-person-zanzibar.jpg is 390 KB
+WARN,IMG_BIG,http://localhost:8080/attractions/,http://localhost:8080/images/jozani-forest-walking-path-green-arches.jpg is 588 KB
+WARN,IMG_BIG,http://localhost:8080/attractions/,http://localhost:8080/images/coral-reef-snorkeling-zanzibar.jpg is 642 KB
+WARN,IMG_BIG,http://localhost:8080/attractions/,http://localhost:8080/images/coral-reef-fish-school-underwater.jpg is 533 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/bawe-tropical-island.jpg is 1108 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/zanzibar-hotel-room-two-beds-red-blankets.jpg is 405 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/gold-zanzibar-beach-house-spa.jpg is 559 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/kasha-boutique-hotel.jpg is 605 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/kilindi-zanzibar.jpg is 445 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/zanzibar-restaurant-patio-with-palm-trees.jpg is 600 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/lux-marijani-zanzibar.jpg is 728 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/matlai-boutique-hotel.jpg is 992 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/melia-zanzibar.jpg is 866 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/milele-villas.jpg is 724 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/park-hyatt-zanzibar.jpg is 672 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/qambani-luxury-resort.jpg is 1093 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/riu-jambo.jpg is 481 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/riu-palace-zanzibar.jpg is 481 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotel-roofs-sea-ships-zanzibar.jpg is 759 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/the-neela-boutique-hotel.jpg is 944 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/the-neela-oceanfront.jpg is 944 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/the-residence-zanzibar.jpg is 699 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/zanzibar-hotel-room-two-beds.jpg is 413 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/zanzi-resort.jpg is 1359 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/art-hotel-zanzibar.jpg is 899 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/thatched-hut-beach-zanzibar-coast.jpg is 617 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/babalao-bungalows.png is 2113 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/blue-moon-resort.jpg is 566 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/diamonds-mapenzi-beach.jpeg is 4697 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/fumba-town-apartments-by-cps.jpg is 422 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/house-of-spices.jpg is 697 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/indigo-beach-zanzibar.jpg is 688 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/jafferji-beach-retreat.jpg is 467 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/jambiani-white-sands.jpg is 1282 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/karibu-beach-resort.jpg is 4902 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/kena-beach-hotel.jpg is 1006 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/mahali-zanzibar.jpg is 759 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/paje-by-night.png is 619 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/pemba-paradise.png is 2156 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/zanzibar-beach-palm-trees-thatched-huts.jpg is 430 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/shooting-star-lodge.png is 2883 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/smiles-beach-hotel.jpg is 1002 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/the-island-pongwe-lodge.png is 417 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/the-zanzibari.webp is 692 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/toa-hotel-spa.png is 1415 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/villa-bluu.png is 502 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/villa-kiva-boutique-hotel.jpg is 1011 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/waridi-beach-resort-spa.jpg is 1374 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/zanzibar-queen-hotel.png is 1002 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/aquaholics-surf-lodge.png is 2931 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/cheetahs-rock-management-stay.png is 1310 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/malika-hotel.webp is 604 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/mangrove-lodge.jpg is 528 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/paje-beach-bandas.jpg is 1254 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/spice-palace-hotel.jpg is 961 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/stone-town-caf-bb.webp is 407 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/sunset-kendwa.webp is 1312 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/verani-beach-lodge.jpeg is 483 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/nungwi-beach-aerial-resort-turquoise-water.jpg is 507 KB
+WARN,IMG_BIG,http://localhost:8080/hotels/,http://localhost:8080/images/hotels/nungwi-house.jpg is 1177 KB
+WARN,IMG_BIG,http://localhost:8080/tours/,http://localhost:8080/images/people-swimming-turquoise-water-steps.jpg is 447 KB
+WARN,IMG_REUSE,http://localhost:8080/,http://localhost:8080/images/stone-town-ornate-carved-door-arch.jpg used 11 times across 8 page(s)
+WARN,IMG_REUSE,http://localhost:8080/,http://localhost:8080/images/vegetable-stall-at-outdoor-market.jpg used 6 times across 6 page(s)
+WARN,IMG_REUSE,http://localhost:8080/,http://localhost:8080/images/aerial-beach-dhow-people-turquoise-water.jpg used 7 times across 6 page(s)
+WARN,IMG_REUSE,http://localhost:8080/,http://localhost:8080/images/dolphins-swimming-near-boat-tour.jpg used 11 times across 10 page(s)
+WARN,IMG_REUSE,http://localhost:8080/,http://localhost:8080/images/zanzibar-rock-house-with-tourists.jpg used 8 times across 6 page(s)
+WARN,IMG_REUSE,http://localhost:8080/attractions/,http://localhost:8080/images/hand-holding-nutmeg-fruits-zanzibar.jpg used 6 times across 3 page(s)
+WARN,IMG_REUSE,http://localhost:8080/hotels/,http://localhost:8080/images/hotel-roofs-sea-ships-zanzibar.jpg used 7 times across 1 page(s)
+WARN,IMG_REUSE,http://localhost:8080/hotels/,http://localhost:8080/images/zanzibar-hotel-room-orange-bed.jpg used 6 times across 1 page(s)
+WARN,IMG_REUSE,http://localhost:8080/tours/,http://localhost:8080/images/dhow-sail-nungwi-beach-zanzibar.jpg used 7 times across 7 page(s)
+WARN,IMG_REUSE,http://localhost:8080/tours/,http://localhost:8080/images/people-swimming-turquoise-water-steps.jpg used 7 times across 6 page(s)
+WARN,IMG_REUSE,http://localhost:8080/tours/,http://localhost:8080/images/elephant-savanna-landscape-tanzania.jpg used 6 times across 5 page(s)
+WARN,PAGE_HEAVY,http://localhost:8080/hotels/,HTML is 878 KB
+WARN,TITLE_LENGTH,http://localhost:8080/experiences/,89 chars: Rare Zanzibar Experiences & Bucket-List Charters | Spice & Sail | Spice and Sail Zanzibar
+WARN,TITLE_LENGTH,http://localhost:8080/hotels/,97 chars: Where to Stay in Zanzibar — 205 Curated Hotels & Resorts | Spice & Sail | Spice and Sail Zanzibar
+WARN,TITLE_LENGTH,http://localhost:8080/safaris/mikumi-day-trip/,96 chars: Mikumi Day Safari from Zanzibar | Fly-In Wildlife Day Trip ($440–$650) | Spice and Sail Zanzibar
+WARN,TITLE_LENGTH,http://localhost:8080/transfers/,78 chars: Zanzibar Airport Transfers | VIP Flat-Rate Concierge | Spice and Sail Zanzibar
+WARN,TITLE_LENGTH,http://localhost:8080/transfers/airport-to-nungwi/,90 chars: Zanzibar Airport to Nungwi Transfer | $55 Private Minivan & Taxi | Spice and Sail Zanzibar
