@@ -11,3 +11,4 @@ __pycache__/
 .venv-audit/
 
 .netlify/
+audit-output.txt
