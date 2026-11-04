@@ -110,15 +110,15 @@ eleventyNavigation:
 
 <script type="module">
   document.addEventListener('DOMContentLoaded', () => {
-  const state = {
-    activities: [],
-    filters: {
-      categories: new Set(),
-      priceRange: [0, 100],
-      location: '',
-      sort: 'rating'
-    }
-  };
+    const state = {
+      activities: [],
+      filters: {
+        categories: new Set(),
+        priceRange: [0, 100],
+        location: '',
+        sort: 'rating'
+      }
+    };
 
     const elements = {
       grid: document.getElementById('activitiesGrid'),
