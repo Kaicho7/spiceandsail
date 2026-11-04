@@ -359,35 +359,39 @@ permalink: /custom-itinerary/
           // Return appropriate image based on item type and id
           const images = {
             tours: [
-              '/images/tours/stone-town.jpg',
-              '/images/tours/spice-farm.jpg',
-              '/images/tours/breakfast-boat.jpg',
-              '/images/tours/dolphin-safari.jpg'
+              '/images/stone-town-alley-walking-tour-people.jpg',
+              '/images/pineapples-growing-in-tropical-plantation.jpg',
+              '/images/dhow-sail-nungwi-beach-zanzibar.jpg',
+              '/images/boat-dolphins-zanzibar-ocean.jpg'
             ],
             hotels: [
-              '/images/hotels/blue-beach.jpg',
-              '/images/hotels/saffire-beach.jpg',
-              '/images/hotels/tamu-piali.jpg'
+              '/images/beach-front-hotel-palm-trees-people.jpg',
+              '/images/beach-front-hotel-palm-trees-people.jpg',
+              '/images/beach-front-hotel-palm-trees-people.jpg'
             ],
             experiences: [
-              '/images/experiences/spice-farm.jpg',
-              '/images/experiences/dolphin-watching.jpg',
-              '/images/experiences/snorkeling.jpg'
+              '/images/pineapples-growing-in-tropical-plantation.jpg',
+              '/images/dolphins-swimming-near-boat-tour.jpg',
+              '/images/coral-reef-snorkeling-zanzibar.jpg'
             ],
             attractions: [
-              '/images/attractions/stone-town.jpg',
-              '/images/attractions/dolphins-park.jpg',
-              '/images/attractions/kibwenji-forest.jpg'
+              '/images/stone-town-woman-walks-past-blue-window.jpg',
+              '/images/boat-dolphins-zanzibar-ocean.jpg',
+              '/images/jozani-forest-monkey-on-branch.jpg'
             ],
             transfers: [
-              '/images/transfers/airport-transfer.jpg',
-              '/images/transfers/boat-transfer.jpg'
+              '/images/white-minivan-zanzibar-transfer-vehicle.jpg',
+              '/images/island-pier-boat-turquoise-water.jpg'
             ]
           };
 
           const category = item.type;
           const imageArray = images[category] || images.attractions;
-          return imageArray[Math.abs(item.id || 0) % imageArray.length];
+          const selected = imageArray[Math.abs(item.id || 0) % imageArray.length];
+          // Remove any leading slash or /images/ prefix for consistency
+          const cleaned = selected.replace(/^\//, '').replace(/^images\//, '');
+          return '/images/' + cleaned;
+        },
         },
 
         useFallbackImage(event) {

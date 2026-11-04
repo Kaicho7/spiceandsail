@@ -128,7 +128,7 @@ title: Book Your Experience
       <div class="activities-grid" :class="{ 'list-view': viewMode === 'list' }">
         <div v-for="activity in filteredActivities" :key="activity.id" class="activity-card" :class="{ featured: activity.metadata?.isFeatured }">
           <div class="activity-image">
-            <img :src="activity.images?.[0] || '/assets/images/placeholder-activity.jpg'" :alt="activity.title" />
+            <img :src="activity.images?.[0] || '/images/beach-front-hotel-palm-trees-people.jpg'" :alt="activity.title" />
             <div class="activity-badge" v-if="activity.metadata?.isFeatured">
               <span>⭐ Featured</span>
             </div>
@@ -172,7 +172,7 @@ title: Book Your Experience
 
             <div class="activity-host">
               <div class="host-avatar">
-                <img :src="((activity.hostedBy || {}).avatar) || '/assets/images/host-default.jpg'" :alt="((activity.hostedBy || {}).name) || ''" />
+                <img :src="((activity.hostedBy || {}).avatar) || '/images/person-walking-beach-zanzibar-pier.jpg'" :alt="((activity.hostedBy || {}).name) || ''" />
               </div>
               <div class="host-info">
                 <span class="host-name">{{ ((activity.hostedBy || {}).name) }}</span>
@@ -284,7 +284,7 @@ title: Book Your Experience
             <div class="detail-host">
               <h3>Hosted By</h3>
               <div class="host-info">
-                <img :src="selectedActivity.hostedBy?.avatar || '/assets/images/host-default.jpg'" :alt="selectedActivity.hostedBy?.name" />
+                <img :src="selectedActivity.hostedBy?.avatar || '/images/person-walking-beach-zanzibar-pier.jpg'" :alt="selectedActivity.hostedBy?.name" />
                 <div>
                   <p class="host-name">{{ selectedActivity.hostedBy?.name }}</p>
                   <p class="host-bio">{{ selectedActivity.hostedBy?.bio }}</p>

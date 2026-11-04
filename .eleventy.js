@@ -346,13 +346,16 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
   eleventyConfig.addFilter("hotelPhoto", (hotel) => {
     const photo = hotel && hotel.photo;
     if (photo && typeof photo === "string") {
-      // Handle paths like "hotels/beyond-mnemba-island.jpg"
+      // Handle paths like "hotels/beyond-mnemba-island.jpg", "/images/hotels/baraza-resort-and-spa.jpg", etc.
       const cleaned = String(photo).replace(/^\//, ""); // strip leading slash
-      // Strip the "hotels/" prefix if present since photos are in public/images/hotels/
-      const normalized = cleaned.replace(/^hotels\//, "");
+      // Strip any "hotels/" or "images/hotels/" prefix since photos live in public/images/hotels/
+      const normalized = cleaned.replace(/^hotels\//, "").replace(/^images\/hotels\//, "");
       // Resolve against public/images/hotels/ because per-hotel photos live there
       const exists = fs.existsSync(path.join(__dirname, "public", "images", "hotels", normalized));
-      if (exists) return "hotels/" + normalized;
+      if (exists) {
+        // Return with hotels/ prefix for consistency across all mapped hotel photos
+        return "hotels/" + normalized;
+      }
     }
     return hashPick((hotel && hotel.name) || "hotel", hotelPhotoPool);
   });

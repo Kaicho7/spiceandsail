@@ -182,7 +182,7 @@ eleventyNavigation:
 
       elements.grid.innerHTML = activities.map(activity => `
         <div class="activity-card" data-id="${activity.id}" onclick="openActivityDetail('${activity.id}')">
-          <div class="activity-card-image" style="background-image: url('${activity.images[0] || '/assets/images/placeholder-activity.jpg'}')">
+          <div class="activity-card-image" style="background-image: url('${activity.images[0] || '/images/beach-front-hotel-palm-trees-people.jpg'}')">
             <span class="activity-category">${activity.categoryMetadata.icon} ${activity.categoryMetadata.label}</span>
             <span class="activity-price">$${activity.pricing.basePrice}</span>
           </div>
@@ -255,7 +255,7 @@ eleventyNavigation:
 
       elements.modalBody.innerHTML = `
         <div class="modal-header">
-          <div class="modal-image" style="background-image: url('${activity.images[0] || '/assets/images/placeholder-activity.jpg'}')"></div>
+          <div class="modal-image" style="background-image: url('${activity.images[0] || '/images/beach-front-hotel-palm-trees-people.jpg'}')"></div>
           <div class="modal-title-section">
             <h2>${activity.title}</h2>
             <div class="modal-meta">
