@@ -5405,12 +5405,52 @@
       ],
       "tours": [],
       "transfer_id": null
+    },
+    {
+      "slug": "makunduchi",
+      "name": "Makunduchi",
+      "island": "Unguja",
+      "description": "Southeast coast village near the historic Makunduchi ruins and the annual Ngoma festival, with quiet beaches and the partner property The One Resort Zanzibar.",
+      "hotel_count": 1,
+      "attraction_count": 0,
+      "hotels": [
+        {
+          "id": "ZNZ-0376",
+          "name": "The One Resort Zanzibar",
+          "category": "Resort",
+          "star_rating": "",
+          "star_tier": "",
+          "tier": "standard",
+          "island": "Unguja",
+          "zone": "Makunduchi",
+          "website": "https://www.theonezanzibar.com/",
+          "website_domain": "theonezanzibar.com",
+          "host_type": "own_site",
+          "pms_detected": "",
+          "email": null,
+          "phone": null,
+          "whatsapp": null,
+          "facebook": null,
+          "instagram": null,
+          "linkedin": null,
+          "contact_form_url": null,
+          "scrape_status": "scraped:direct",
+          "slug": "the-one-resort-zanzibar",
+          "photo": "hotels/the-one-resort-zanzibar.jpg",
+          "photo_source_url": "https://static.wixstatic.com/media/a68ab9_36acfa5b35904209b6babe2c1d6ba6fbf000.jpg",
+          "description": "Resort in Makunduchi, Unguja.",
+          "price_range": ""
+        }
+      ],
+      "attractions": [],
+      "tours": [],
+      "transfer_id": null
     }
   ],
   "stats": {
-    "unguja_hotels": 197,
+    "unguja_hotels": 198,
     "pemba_hotels": 8,
-    "unguja_zones": 12,
+    "unguja_zones": 13,
     "pemba_zones": 2
   }
 }

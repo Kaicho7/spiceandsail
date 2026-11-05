@@ -133,6 +133,17 @@ ZONES = [
         "transfer_id": "TRF-03",
     },
     {
+        "slug": "makunduchi",
+        "name": "Makunduchi",
+        "island": "Unguja",
+        "description": "Southeast coast village near the historic Makunduchi ruins and the annual Ngoma festival, with quiet beaches and the partner property The One Resort Zanzibar.",
+        "hotels": ["The One Resort Zanzibar"],
+        "attractions": [],
+        "tours": [],
+        "transfer_id": None,
+    },
+
+    {
         "slug": "chake-chake",
         "name": "Chake Chake (Pemba)",
         "island": "Pemba",
