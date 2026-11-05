@@ -41,6 +41,7 @@ exports.handler = async function (event) {
         currency: 'USD',
         whatsappNumber: CONFIG.whatsappNumber || '255672450934',
         privacyNoticeVersion: CONFIG.privacyNoticeVersion || '1.0',
+        replyWindow: CONFIG.replyWindow || 'within business hours',
         services: services,
       }),
     };

@@ -20,7 +20,8 @@
     formTouched: false,
     lastReference: null,     // only ever set from a server response
     chatOpen: false,
-    chatLoaded: false
+    chatLoaded: false,
+    replyWindow: null        // business-hours wording from the server catalogue
   };
 
   // Backwards-compatible aliases for old keys used by pages/buttons; each
@@ -53,12 +54,46 @@
 
   function getStatusEl() { return el('sns-submit-status'); }
 
-  function showStatus(kind, html) {
+  /* All status/chat content is built with createElement/textContent — never
+     innerHTML — so server text, user text and error details can never mount. */
+  function safeLink(href, label) {
+    var a = document.createElement('a');
+    a.setAttribute('href', href);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+    a.textContent = label;
+    return a;
+  }
+
+  /* Render plain text + optional [label](/path|https://url) links.
+     Everything else (tags, attributes) is inserted as literal text. */
+  function appendRichText(target, text) {
+    var cleaned = String(text)
+      .replace(/\*\*/g, '')
+      .replace(/(^|\s)_(?=\S)([^_]{1,200}?\S)_(?=\s|$|[.,!?])/g, '$1$2');
+    var re = /\[([^\]\n]{1,120})\]\(((?:\/|https:\/\/)[^)\s]{1,200})\)/g;
+    var last = 0, m = re.exec(cleaned);
+    while (m) {
+      if (m.index > last) target.appendChild(document.createTextNode(cleaned.slice(last, m.index)));
+      target.appendChild(safeLink(m[2], m[1]));
+      last = m.index + m[0].length;
+      m = re.exec(cleaned);
+    }
+    if (last < cleaned.length) target.appendChild(document.createTextNode(cleaned.slice(last)));
+  }
+
+  function showStatus(kind, text, waMsg) {
     var s = getStatusEl();
-    if (!s) return;
+    if (!s) return null;
     s.hidden = false;
     s.className = 'sns-submit-status ' + (kind || '');
-    s.innerHTML = html;
+    s.textContent = '';
+    if (text) s.appendChild(document.createTextNode(text));
+    if (waMsg) {
+      s.appendChild(document.createTextNode(' '));
+      s.appendChild(safeLink(waLink(waMsg), 'message us on WhatsApp instead'));
+    }
+    return s;
   }
 
   function hideStatus() {
@@ -84,6 +119,7 @@
       .then(function (res) {
         if (res.ok && res.json && Array.isArray(res.json.services)) {
           state.services = res.json.services;
+          state.replyWindow = (res.json.replyWindow || '').slice(0, 160) || null;
           renderServiceGrid();
         }
         return state.services;
@@ -288,9 +324,9 @@
   }
   function $submit() {
     var pre = clientPreflight();
-    if (pre) { showStatus('error', pre + ' ' + waFallbackHtml('I would like to plan a Zanzibar trip.')); return; }
+    if (pre) { showStatus('error', pre, 'I would like to plan a Zanzibar trip.'); return; }
     if (!state.selectedSlug) {
-      showStatus('error', 'Please go back and pick a service first. ' + waFallbackHtml('I would like to plan a Zanzibar trip.'));
+      showStatus('error', 'Please go back and pick a service first.', 'I would like to plan a Zanzibar trip.');
       return;
     }
     var payload = buildLeadPayload();
@@ -301,30 +337,42 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     }, 15000).then(function (res) {
-      var ref = res.ok && res.json && typeof res.json.reference === 'string' && /^SP-\d{4}-/.test(res.json.reference)
+      var ref = res.ok && res.json && typeof res.json.reference === 'string' && /^SP-\d{4}-\d+$/.test(res.json.reference)
         ? res.json.reference : null;
       if (ref) {
         state.lastReference = ref;
         var reply = res.json.reply_link || null;
-        showStatus('success',
-          'Request received. Your reference is <strong><code>' + ref + '</code></strong>. ' +
-          'Our team confirms every detail with you directly, usually within business hours (Mon–Sat, 08:00–18:00 EAT).' +
-          (reply
-            ? ' You can also <a href="' + reply + '" target="_blank" rel="noopener">reach us with this reference</a>.'
-            : ' ' + waFallbackHtml('My reference is ' + ref + ', about my ' + serviceName() + '.')));
+        var s = showStatus('success');
+        if (s) {
+          s.appendChild(document.createTextNode('Request received. Your reference is '));
+          var strong = document.createElement('strong');
+          var code = document.createElement('code');
+          code.textContent = ref;
+          strong.appendChild(code);
+          s.appendChild(strong);
+          s.appendChild(document.createTextNode('. Our team confirms every detail with you directly, usually ' +
+            (state.replyWindow || 'within business hours') + '.'));
+          if (reply && /^https:\/\//.test(reply)) {
+            s.appendChild(document.createTextNode(' '));
+            s.appendChild(safeLink(reply, 'reach us with this reference'));
+          } else {
+            s.appendChild(document.createTextNode(' '));
+            s.appendChild(safeLink(
+              waLink('My reference is ' + ref + ', about my ' + serviceName() + '.'),
+              'message us on WhatsApp instead'));
+          }
+        }
       } else if (res.ok) {
         throw new Error('2xx without reference');
       } else {
         var detail = (res.json && res.json.error) ? res.json.error :
           (!window.navigator.onLine ? 'You appear to be offline' : 'Sending failed');
-        showStatus('error',
-          'We could not save your request (' + detail + '). ' + waFallbackHtml('I would like to plan a Zanzibar trip.'));
+        showStatus('error', 'We could not save your request (' + detail + ').', 'I would like to plan a Zanzibar trip.');
       }
     }).catch(function () {
-      showStatus('error',
-        'We could not save your request' + (window.navigator.onLine ? '' : ' (you appear to be offline)') +
-        '. ' + (state.lastReference
-          ? 'If you saw a reference earlier, mention it.' : '') + waFallbackHtml('I would like to plan a Zanzibar trip.'));
+      var msg = 'We could not save your request' + (window.navigator.onLine ? '' : ' (you appear to be offline)') +
+        (state.lastReference ? '. If you saw a reference earlier, mention it.' : '.');
+      showStatus('error', msg, 'I would like to plan a Zanzibar trip.');
     });
   }
 
@@ -336,10 +384,6 @@
     return 'trip';
   }
 
-  function waFallbackHtml(msg) {
-    return 'You can <a href="' + waLink(msg) + '" target="_blank" rel="noopener">message us on WhatsApp instead</a>.';
-  }
-
   /* ---------- chat ---------- */
 
   function addBubble(text, who) {
@@ -347,9 +391,17 @@
     if (!list) return;
     var b = document.createElement('div');
     b.className = 'sns-chat-bubble ' + who;
-    b.innerHTML = text; // server replies are ours; markdown-ish
+    appendRichText(b, text); // text nodes + createElement links only, never innerHTML
     list.appendChild(b);
     list.scrollTop = list.scrollHeight;
+  }
+
+  /* Exposed for tests: what DOM nodes a chat reply renders into (no innerHTML). */
+  function bubbleNodes(text, who) {
+    var b = document.createElement('div');
+    b.className = 'sns-chat-bubble ' + (who || 'bot');
+    appendRichText(b, text);
+    return b;
   }
 
   function renderQuickReplies(quickReplies) {
@@ -383,19 +435,19 @@
         addBubble(res.json.message, 'bot');
         renderQuickReplies(res.json.quickReplies);
         if (res.json.quote && res.json.quote.totalDisplay) {
-          addBubble('Planning range from our verified catalogue: <strong>' + res.json.quote.totalDisplay + ' USD</strong>. Our team confirms any final price.', 'bot');
+          addBubble('Planning range from our verified catalogue: ' + res.json.quote.totalDisplay + ' USD. Our team confirms any final price.', 'bot');
         }
         if (res.json.requestContact) {
           state.chatOpen = false;
           goToStep(3);
         }
       } else {
-        addBubble('The concierge chat is unavailable right now. ' + waFallbackHtml('Hi!'), 'bot');
+        addBubble('The concierge chat is unavailable right now. [message us on WhatsApp](' + WHATSAPP_URL + ')', 'bot');
       }
       return;
     }).catch(function () {
       clearThinking();
-      addBubble('The concierge chat is unavailable right now. ' + waFallbackHtml('Hi!'), 'bot');
+      addBubble('The concierge chat is unavailable right now. [message us on WhatsApp](' + WHATSAPP_URL + ')', 'bot');
     });
   }
 
@@ -506,6 +558,7 @@
     close: closeConcierge,
     goToStep: goToStep,
     openChat: openChat,
-    submitHandler: submitHandler
+    submitHandler: submitHandler,
+    _bubbleNodes: bubbleNodes
   };
 })();

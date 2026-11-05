@@ -50,3 +50,5 @@
   autoLaunch = false
 ```
 Function-level flow was verified without netlify dev (see live-e2e.txt).
+
+12. **Business hours are single-source in concierge-catalogue.json**: `config.replyWindow` ("within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT)") and `config.businessHours` (days/hours used by `isWithinBusinessHours`). The widget success line shows `replyWindow` from GET /quote; the chat endpoint already uses it. Owner to ratify these hours and confirm the staffed WhatsApp window matches; any change is one config edit, no code deploy.

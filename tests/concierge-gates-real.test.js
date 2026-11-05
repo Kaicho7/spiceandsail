@@ -60,3 +60,22 @@ test('gate 12: chat gives a useful reply with no LLM key', async () => {
   const msg = b.message || (b.reply && b.reply.message) || '';
   assert.ok(typeof msg === 'string' && msg.length > 20, 'expected a useful message: ' + r.body.slice(0, 300));
 });
+
+test('gate 14a: GET /quote lists catalogue slugs, pricing basis, reply window', async () => {
+  const { handler } = require('../netlify/functions/quote');
+  const r = await handler({ httpMethod: 'GET', headers: {}, path: '/quote' });
+  assert.strictEqual(r.statusCode, 200, 'quote GET should be 200, got ' + r.statusCode + ' ' + r.body);
+  const j = JSON.parse(r.body);
+  assert.ok(Array.isArray(j.services) && j.services.length > 0, 'services array expected: ' + r.body.slice(0, 200));
+  for (const s of j.services) {
+    assert.ok(typeof s.slug === 'string' && s.slug.length > 0, 'each service needs a slug: ' + JSON.stringify(s));
+    assert.ok(typeof s.name === 'string' && s.name.length > 0, 'each service needs a name: ' + JSON.stringify(s));
+    assert.ok(s.onRequest === true || s.onRequest === false, 'onRequest must be a boolean: ' + JSON.stringify(s));
+    if (!s.onRequest) {
+      assert.ok(/^\$[\d,]+–\$[\d,]+/.test(String(s.priceDisplay || '')), 'priced services show a range: ' + JSON.stringify(s));
+    }
+  }
+  assert.ok(typeof j.replyWindow === 'string' && j.replyWindow.length > 0, 'replyWindow (hours wording) must come from config: ' + r.body.slice(0, 200));
+  assert.ok(j.services.some((s) => s.slug === 'airport-transfer-znz-to-nungwikendwa'), 'nungwi transfer slug present');
+});
+
