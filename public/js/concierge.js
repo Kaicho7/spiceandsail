@@ -22,6 +22,7 @@
     date: null,
     location: null,
     lastReference: null,     // only ever set from a server response
+    formLoadedAt: Date.now(),  // page-load time, used for bot fill-time check
     chatLoaded: false,
     teaserShown: false,
     replyWindow: null        // business-hours wording from the server catalogue
@@ -91,6 +92,22 @@
   }
 
   function getStatusEl() { return el('sns-submit-status'); }
+
+  /* Status shown inside the (visible) lead form — used when submitting from
+     the chat modal's fallback form. Built with createElement/textContent. */
+  function showStatus(kind, text, waMsg) {
+    var s = getStatusEl();
+    if (!s) return null;
+    s.hidden = false;
+    s.className = 'sns-submit-status ' + (kind || '');
+    s.textContent = '';
+    if (text) s.appendChild(document.createTextNode(text));
+    if (waMsg) {
+      s.appendChild(document.createTextNode(' '));
+      s.appendChild(safeLink(waLink(waMsg), 'message us on WhatsApp instead'));
+    }
+    return s;
+  }
 
   /* All status/chat content is built with createElement/textContent — never
      innerHTML — so server text, user text and error details can never mount. */
@@ -231,6 +248,20 @@
   function clearQuick() {
     var wrap = el('sns-chat-quick');
     if (wrap) wrap.textContent = '';
+  }
+
+  /* Send a user message: render bubble, clear input, show thinking, then route
+     through the guided flow after a short delay. Used by quick replies, the
+     send button and the Enter key. */
+  function sendChat(text) {
+    if (!text) return;
+    addBubble(text, 'user');
+    var q = el('sns-chat-input');
+    if (q) { q.value = ''; hintThinking(); }
+    setTimeout(function () {
+      clearThinking();
+      routeFromUser(text);
+    }, 600);
   }
 
   function setInput(placeholder) {
@@ -509,9 +540,9 @@
 
   function submitLeadFromChat() {
     var pre = clientPreflight();
-    if (pre) { showChatStatus('error', pre, 'I would like to plan a Zanzibar trip.'); return; }
+    if (pre) { showStatus('error', pre, 'I would like to plan a Zanzibar trip.'); return; }
     var payload = buildChatLeadPayload();
-    showChatStatus('', 'Sending your request…');
+    showStatus('', 'Sending your request…');
     fetchJSON('/.netlify/functions/lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -522,7 +553,7 @@
       if (ref) {
         state.lastReference = ref;
         var reply = res.json.reply_link || null;
-        var s = showChatStatus('success');
+        var s = showStatus('success');
         if (s) {
           s.appendChild(document.createTextNode('Request received. Your reference is '));
           var strong = document.createElement('strong');
@@ -549,12 +580,12 @@
       } else {
         var detail = (res.json && res.json.error) ? res.json.error :
           (!window.navigator.onLine ? 'You appear to be offline' : 'Sending failed');
-        showChatStatus('error', 'We could not save your request (' + detail + ').', 'I would like to plan a Zanzibar trip.');
+        showStatus('error', 'We could not save your request (' + detail + ').', 'I would like to plan a Zanzibar trip.');
       }
     }).catch(function () {
       var msg = 'We could not save your request' + (window.navigator.onLine ? '' : ' (you appear to be offline)') +
         (state.lastReference ? '. If you saw a reference earlier, mention it.' : '.');
-      showChatStatus('error', msg, 'I would like to plan a Zanzibar trip.');
+      showStatus('error', msg, 'I would like to plan a Zanzibar trip.');
     });
   }
 
@@ -675,15 +706,7 @@
     if (backdrop) backdrop.addEventListener('click', closeConcierge);
     if (form) form.addEventListener('submit', function (e) { e.preventDefault(); submitLeadFromChat(); });
     if (chatSendBtn) chatSendBtn.addEventListener('click', function () {
-      var t = (chatInput ? chatInput.value : '').trim();
-      if (!t) return;
-      addBubble(t, 'user');
-      chatInput.value = '';
-      hintThinking();
-      setTimeout(function () {
-        clearThinking();
-        routeFromUser(t);
-      }, 600);
+      sendChat((chatInput ? chatInput.value : '').trim());
     });
     if (chatInput) chatInput.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { e.preventDefault(); chatSendBtn.click(); }
