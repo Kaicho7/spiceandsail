@@ -4,3 +4,6 @@ Decision logged: Git workspace was on branch images-identity (with unverified ph
 npm install succeeded (678 packages audited).
 Baseline Eleventy build succeeded: 73 HTML/text pages written, 583 assets copied to dist.
 Test runner setup: Node built-in node:test test runner configured via npm test.
+
+[2026-11-05T08:42:00Z] Step 2: Secrets and hygiene (A5, A6) complete.
+Removed tracked references to BUILD_TOKEN, Run, "In a separate terminal window...", and verified .netlify/ is not tracked. Added patterns to .gitignore. Documented rotation and history purge requirement in OWNER_ACTIONS.md. Tests added in tests/hygiene.test.js.
