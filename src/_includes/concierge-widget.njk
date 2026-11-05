@@ -1,98 +1,58 @@
-<!-- Concierge Widget - Spice & Sail Zanzibar -->
+<!-- Concierge Widget - Spice & Sail Zanzibar (chat-first) -->
 <div id="sns-concierge-root">
-  <!-- Trigger Button -->
-  <button id="sns-concierge-trigger" class="sns-concierge-btn" aria-label="Open Zanzibar Trip Concierge" onclick="window.snsConcierge.open()">
-    <span class="sns-concierge-icon" aria-hidden="true">🛎️</span>
-    <span class="sns-concierge-label">Plan My Trip</span>
+  <!-- Floating launcher: always visible, pulses for the first few seconds -->
+  <button id="sns-concierge-trigger" class="sns-concierge-btn"
+          aria-label="Open Zanzibar Trip Concierge" onclick="window.snsConcierge.open()">
+    <span id="sns-pulse-dot" class="sns-concierge-pulse-dot" aria-hidden="true"></span>
+    <span class="sns-concierge-avatar" aria-hidden="true">🤖</span>
+    <span class="sns-concierge-label" id="sns-launcher-label">Plan your trip</span>
   </button>
 
-  <!-- Concierge Modal Window -->
+  <!-- Dismissible teaser bubble (once per session, ~8s or on scroll) -->
+  <div id="sns-concierge-teaser" class="sns-concierge-teaser" hidden>
+    <span id="sns-teaser-text" class="sns-teaser-text"></span>
+    <button id="sns-teaser-open" class="sns-teaser-open">Plan your trip</button>
+    <button id="sns-teaser-dismiss" class="sns-teaser-dismiss" aria-label="Dismiss">✕</button>
+  </div>
+
+  <!-- Concierge modal window -->
   <div id="sns-concierge-modal" class="sns-concierge-modal" role="dialog" aria-modal="true" aria-labelledby="concierge-title" hidden aria-live="polite">
     <div class="sns-concierge-backdrop" id="sns-concierge-backdrop" onclick="window.snsConcierge.close()"></div>
     <div class="sns-concierge-panel" role="document">
-      <!-- Modal Header -->
+      <!-- Modal header -->
       <div class="sns-concierge-header">
         <div class="sns-concierge-title-wrap">
-          <h3 id="concierge-title" class="sns-concierge-title">Plan Your Zanzibar Trip</h3>
+          <span class="sns-concierge-badge">Zanzibar Concierge</span>
+          <h3 id="concierge-title" class="sns-concierge-title">Plan Your Trip</h3>
+          <p class="sns-concierge-subtitle" id="sns-concierge-subtitle"></p>
         </div>
         <button id="sns-concierge-close" class="sns-concierge-close-btn" aria-label="Close concierge" onclick="window.snsConcierge.close()" role="button">×</button>
       </div>
 
-      <!-- Chat panel: the first bot message (sent by the server) contains the privacy notice link -->
-      <div id="sns-concierge-chat" class="sns-chat-panel" hidden>
-        <div id="sns-chat-messages" class="sns-chat-messages" aria-live="polite"></div>
-        <div id="sns-chat-typing" class="sns-chat-typing" hidden>Concierge is typing…</div>
-        <div id="sns-chat-quick" class="sns-chat-quick"></div>
-        <div class="sns-chat-input-row">
-          <input type="text" id="sns-chat-input" class="sns-chat-input" placeholder="Ask about tours, transfers, prices…" aria-label="Message the concierge">
-          <button type="button" id="sns-chat-send" class="sns-chat-send-btn">Send</button>
-          <button type="button" id="sns-chat-close" class="sns-chat-back-btn">Back to form</button>
-        </div>
-      </div>
-
-      <!-- Form -->
-      <form id="sns-concierge-form" class="sns-concierge-form" novalidate>
-        <!-- Honeypot field for bot detection -->
-        <input type="text" class="sns-honeypot" name="honeypot" aria-hidden="true" autocomplete="off" tabindex="-1" />
-
-        <!-- Step 1: Service Selection -->
-        <div class="sns-form-step active" id="sns-step-1">
-          <label class="sns-field-label">What would you like to experience or book?</label>
-          <div class="sns-service-grid">
-            <!-- Services are populated by JavaScript from the GET /quote catalogue response -->
-          </div>
-          <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(2)">Next: Dates &amp; Travelers →</button>
-          <button type="button" id="sns-chat-open" class="sns-chat-open-btn">💬 Ask the concierge instead</button>
-        </div>
-
-        <!-- Step 2: Travelers & Date -->
-        <div class="sns-form-step" id="sns-step-2">
-          <div class="sns-field-group">
-            <label class="sns-field-label" for="sns-travelers">Number of Travelers</label>
-            <select id="sns-travelers" class="sns-input-select" name="travelers">
-              <option value="1">1 Traveler (Solo)</option>
-              <option value="2" selected>2 Travelers (Couple / Pair)</option>
-              <option value="3">3 Travelers</option>
-              <option value="4">4 Travelers (Small Family/Group)</option>
-              <option value="5">5 Travelers</option>
-              <option value="6">6 Travelers (Private Group Minivan)</option>
-              <option value="9">9+ Travelers (Large Party)</option>
-            </select>
-          </div>
-
-          <div class="sns-field-group">
-            <label class="sns-field-label" for="sns-date">Preferred Travel Date</label>
-            <input type="date" id="sns-date" class="sns-input-date" name="travel_date">
-          </div>
-
-          <div class="sns-field-group">
-            <label class="sns-field-label" for="sns-location">Pickup Location / Hotel in Zanzibar</label>
-            <input type="text" id="sns-location" class="sns-input-text" placeholder="e.g. ZNZ Airport, Riu Palace Nungwi, Paje, Stone Town...">
-          </div>
-
-          <div class="sns-step-actions">
-            <button type="button" class="sns-btn-back" onclick="window.snsConcierge.goToStep(1)">← Back</button>
-            <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(3)">Next: Planning Range →</button>
+      <div class="sns-concierge-body">
+        <!-- Chat panel (opens first) -->
+        <div id="sns-concierge-chat" class="sns-chat-panel">
+          <div id="sns-chat-messages" class="sns-chat-messages" aria-live="polite"></div>
+          <div id="sns-chat-status" class="sns-chat-status" hidden></div>
+          <div id="sns-chat-typing" class="sns-chat-typing" hidden>Concierge is typing…</div>
+          <div id="sns-chat-quick" class="sns-chat-quick"></div>
+          <div class="sns-chat-input-row">
+            <input type="text" id="sns-chat-input" class="sns-chat-input" placeholder="Ask about tours, transfers, prices…" aria-label="Message the concierge">
+            <button type="button" id="sns-chat-send" class="sns-chat-send-btn">Send</button>
+            <button type="button" id="sns-chat-back-to-form" class="sns-chat-back-btn">Use form</button>
           </div>
         </div>
 
-        <!-- Step 3: Planning range (server /quote) & Submit -->
-        <div class="sns-form-step" id="sns-step-3">
-          <!-- Server-computed planning range -->
-          <div class="sns-quote-box">
-            <div class="sns-quote-header">
-              <span class="sns-quote-title">Planning range (our team confirms final price)</span>
-              <span id="sns-quote-amount" class="sns-quote-amount"></span>
-            </div>
-            <p id="sns-quote-summary" class="sns-quote-summary">Select a service above to see the planning range.</p>
-          </div>
+        <!-- Lead form kept as a fallback inside the chat modal -->
+        <form id="sns-concierge-form" class="sns-concierge-form sns-led-form" hidden novalidate>
+          <input type="text" class="sns-honeypot" name="honeypot" aria-hidden="true" autocomplete="off" tabindex="-1" />
+          <input type="hidden" name="privacy_notice_version" value="v1.0">
 
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-guest-name">Your Name</label>
             <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required>
           </div>
 
-          <!-- SEPARATE WhatsApp and email fields, at least one required -->
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-guest-whatsapp">WhatsApp Number (international format)</label>
             <input type="text" id="sns-guest-whatsapp" class="sns-input-text" placeholder="+255672450934" pattern="^\+[1-9]\d{6,14}$" maxlength="15" aria-describedby="whatsapp-help">
@@ -106,7 +66,6 @@
           </div>
 
           <!-- TWO consent checkboxes: contact me (required), marketing (unticked by default) -->
-          <input type="hidden" name="privacy_notice_version" value="v1.0">
           <div class="sns-field-group">
             <input type="checkbox" id="consent_contact" name="consent_contact" required>
             <label for="consent_contact">Contact me about this request</label>
@@ -130,11 +89,11 @@
           <div class="sns-submit-status" id="sns-submit-status" hidden></div>
 
           <div class="sns-step-actions">
-            <button type="button" class="sns-btn-back" onclick="window.snsConcierge.goToStep(2)">← Change Details</button>
+            <button type="button" id="sns-chat-back-from-form" class="sns-btn-back">Back to chat</button>
             <button type="submit" class="sns-btn-submit" form="sns-concierge-form">Send Request</button>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>

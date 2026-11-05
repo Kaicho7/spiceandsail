@@ -12,35 +12,35 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 999;
-  display: flex;
+  z-index: 1000;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #005f8a 0%, #003d5c 100%);
-  color: #ffffff;
-  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--dct-gold, #D4AF37) 0%, #b89325 100%);
+  color: #0C1A24;
+  padding: 14px 22px;
   border-radius: 50px;
-  border: 2px solid #e8a817;
+  border: 2px solid #fff;
   box-shadow: 0 8px 24px rgba(0, 61, 92, 0.35);
   cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .sns-concierge-btn:hover {
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-3px) scale(1.03);
   box-shadow: 0 12px 30px rgba(0, 61, 92, 0.45);
-  background: linear-gradient(135deg, #006da0 0%, #004d74 100%);
 }
 
-.sns-concierge-pulse {
+.sns-concierge-pulse-dot {
   width: 10px;
   height: 10px;
   background-color: #25d366;
   border-radius: 50%;
   box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
   animation: snsPulse 2s infinite;
+  flex-shrink: 0;
 }
 
 @keyframes snsPulse {
@@ -643,4 +643,190 @@
   padding: 8px 14px;
   font-size: 0.85rem;
   cursor: pointer;
+}
+
+/* -------- Teaser bubble -------- */
+.sns-concierge-teaser {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1.5px solid #e8a817;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(0, 61, 92, 0.25);
+  padding: 8px 14px;
+  cursor: pointer;
+  animation: snsSlideUp 0.3s ease-out;
+}
+.sns-teaser-text {
+  font-size: 0.86rem;
+  color: #0f172a;
+  font-weight: 500;
+}
+.sns-teaser-open {
+  background: #005f8a;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sns-teaser-open:hover { background: #004d74; }
+.sns-teaser-dismiss {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+/* -------- Service suggestion cards (chat) -------- */
+.sns-card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0 10px 0;
+}
+.sns-service-card-suggestion {
+  display: flex;
+  gap: 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.sns-service-card-suggestion:hover {
+  border-color: #005f8a;
+  box-shadow: 0 4px 12px rgba(0, 95, 138, 0.12);
+}
+.sns-service-card-img {
+  width: 88px;
+  height: 66px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #eef2f7;
+  flex-shrink: 0;
+}
+.sns-service-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.sns-service-card-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.sns-service-card-range {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #005f8a;
+}
+.sns-service-card-basis {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+.sns-service-card-add {
+  margin-top: 6px;
+  background: #005f8a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  align-self: flex-start;
+  cursor: pointer;
+}
+.sns-service-card-add:hover { background: #004d74; }
+
+/* -------- Send to the team -------- */
+.sns-send-to-team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #f0f7fb;
+  border: 1.5px dashed #38bdf8;
+  border-radius: 12px;
+  margin: 4px 0 10px 0;
+}
+.sns-send-to-team-btn {
+  background: #005f8a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sns-send-to-team-btn:hover { background: #004d74; }
+
+/* -------- Chat status (success/error) -------- */
+.sns-chat-status {
+  margin: 4px 0 10px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  max-width: 90%;
+}
+.sns-chat-status.success {
+  background: #dcfce7;
+  color: #14532d;
+  border: 1px solid #86efac;
+}
+.sns-chat-status.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .sns-concierge-btn {
+    bottom: 68px;
+    right: 14px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+  .sns-concierge-teaser {
+    bottom: 78px;
+    right: 14px;
+    padding: 7px 12px;
+  }
+  .sns-concierge-panel {
+    max-height: 94vh;
+    border-radius: 14px;
+  }
+  .sns-concierge-form {
+    padding: 16px;
+  }
+  .sns-service-card-img {
+    width: 72px;
+    height: 54px;
+  }
+}
+
+/* Privacy note in the concierge form */
+.sns-privacy-note {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0 0 10px 0;
+}
+.sns-privacy-note a {
+  color: #003853;
+  text-decoration: underline;
 }
