@@ -35,3 +35,11 @@ XSS: `concierge-xss.test.js` — PASS (no innerHTML; `<img onerror>` renders as 
 
 ## Items pending owner review
 - Item 4: `[dev]` block added to netlify.toml (done). `npx netlify dev` itself could not run unattended (hung during extension install, no listener, twice) — verified the equivalent flow instead via a local dev server serving `dist/` with the real `/.netlify/functions/*` handlers (`ALLOWED_ORIGINS=http://localhost:8889`): real browser (desktop + phone-width 375×812) submitted a lead, got an `SP-` reference; offline resubmit showed an error, never success. Screenshots in reports/concierge/screenshots/: `01–05` desktop (page loaded, modal open, step-3 range, success reference, offline error) and `06–07` phone (page loaded, step-3 range, success reference, offline error). `preview-url.txt` records the local dev URL. Netlify-dev CLI behaviour / production deploy remains NOT VERIFIED here.
+- On-request services (basis `on_request` in concierge-catalogue.json — 6 slugs, correcting the earlier "7"):
+  1. horse-swimming — Swimming with Horses
+  2. quad-buggy-safari — Off-Road Quad / Buggy Safari
+  3. maalum-kuza-caves — Maalum & Kuza Secret Cave Swim
+  4. uzi-island-moses-road — Uzi Island 'Moses Road' Tidal Expedition
+  5. cheetahs-rock — Cheetah's Rock Animal Welfare Tour
+  6. private-catamaran-charter — Private Luxury Catamaran Charter
+  Mnemba snorkeling (`mnemba-snorkeling`, $70–$150 per person) and the Stone Town airport transfer (`airport-transfer-znz-to-stone-town`, $35–$40 per vehicle) are **not** on-request — they carry priced ranges. Owner ruling on on-request wording required (NEEDS-OWNER).

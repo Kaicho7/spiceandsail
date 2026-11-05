@@ -42,12 +42,31 @@ test('gate 2: UI/response reference equals stored reference equals staff alert r
   const { handler: adminHandler } = require('../netlify/functions/admin-leads');
 
   const body = { ...leadBody('gate-2-1'), name: 'Gate Two Guest' };
-  const createdResp = await leadHandler(ev('/lead', body, '10.0.0.21'));
-  assert.ok(createdResp.statusCode >= 200 && createdResp.statusCode < 300,
-    'lead accepted: ' + createdResp.statusCode + ' ' + createdResp.body);
-  const created = JSON.parse(createdResp.body || '{}');
-  const ref = created.reference;
-  assert.ok(/^SP-\d{4}-\d+$/.test(ref), 'response reference: ' + ref);
+  let ref = null;
+
+  /* Capture the payload sendAlerts actually posts to the alert channel. */
+  let capturedAlert = null;
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async function (url, opts) {
+    capturedAlert = { url: String(url), body: opts && opts.body };
+    return { ok: true, status: 200 };
+  };
+  try {
+    process.env.WHATSAPP_OPS_WEBHOOK_URL = 'http://127.0.0.1:9/discard';
+    const createdResp = await leadHandler(ev('/lead', body, '10.0.0.21'));
+    assert.ok(createdResp.statusCode >= 200 && createdResp.statusCode < 300,
+      'lead accepted: ' + createdResp.statusCode + ' ' + createdResp.body);
+    const created = JSON.parse(createdResp.body || '{}');
+    ref = created.reference;
+    assert.ok(/^SP-\d{4}-\d+$/.test(ref), 'response reference: ' + ref);
+    assert.ok(capturedAlert, 'sendAlerts must have attempted an alert fetch');
+    const alertBody = capturedAlert.body || '';
+    assert.ok(alertBody.includes(ref),
+      'alert payload must contain the same reference: ' + alertBody.slice(0, 300));
+  } finally {
+    globalThis.fetch = realFetch;
+    delete process.env.WHATSAPP_OPS_WEBHOOK_URL;
+  }
 
   const listResp = await adminHandler({
     httpMethod: 'GET',

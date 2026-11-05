@@ -97,12 +97,26 @@ test('chat bubble: a quote: scheme link is rendered as text, never a link', () =
   assert.ok(textOf(b).includes('[x](quote:evil)'), 'quote: payload stays visible as text');
 });
 
-test('chat bubble: a mailto: link is built with createElement', () => {
+test('chat bubble: a percent-encoded mailto: link is built with createElement', () => {
   const c = loadWidget();
-  const b = c._bubbleNodes('mail us [here](mailto:a@b.c)', 'bot');
+  const b = c._bubbleNodes('mail us [here](mailto:user%40example.com)', 'bot');
   const a = b.children.find((n) => n.tag === 'A');
-  assert.ok(a, 'mailto anchor must be created');
-  assert.strictEqual(a.attrs.href, 'mailto:a@b.c');
+  assert.ok(a, 'percent-encoded mailto anchor must be created');
+  assert.strictEqual(a.attrs.href, 'mailto:user%40example.com');
+});
+
+test('chat bubble: a raw mailto: address (unescaped @) stays as text, never a link', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('mail [me](mailto:a@b.c) please', 'user');
+  assert.strictEqual(tagsOf(b).filter((t) => t === 'A').length, 0, 'raw mailto address must not become a link');
+  assert.ok(textOf(b).includes('[me](mailto:a@b.c)'), 'raw mailto preserved as text');
+});
+
+test('chat bubble: a mailto: address with spaces stays as text', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('mail [me](mailto:a b@c.d) please', 'user');
+  assert.strictEqual(tagsOf(b).filter((t) => t === 'A').length, 0, 'spaced mailto address must not become a link');
+  assert.ok(textOf(b).includes('[me](mailto:a b@c.d)'), 'spaced mailto preserved as text');
 });
 
 test('reply_link is scheme-guarded (https only) before becoming a link in the success status', () => {

@@ -75,7 +75,18 @@
     var last = 0, m = re.exec(cleaned);
     while (m) {
       if (m.index > last) target.appendChild(document.createTextNode(cleaned.slice(last, m.index)));
-      target.appendChild(safeLink(m[2], m[1]));
+      if (m[2].startsWith('mailto:')) {
+        var addr = m[2].slice(7);
+        /* A mailto: address becomes a link only when percent-encoded
+           (no raw '@', spaces, or other unreserved characters). */
+        if (addr.includes('%') && !addr.includes('@') && addr.indexOf(' ') === -1) {
+          target.appendChild(safeLink(m[2], m[1]));
+        } else {
+          target.appendChild(document.createTextNode(m[0]));
+        }
+      } else {
+        target.appendChild(safeLink(m[2], m[1]));
+      }
       last = m.index + m[0].length;
       m = re.exec(cleaned);
     }
