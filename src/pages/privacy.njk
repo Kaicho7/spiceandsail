@@ -1,0 +1,83 @@
+---
+title: Privacy Policy
+description: What we collect, why, who sees it, retention, and how to request deletion
+---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
+<main class="content" style="max-width: 860px; margin: 0 auto; padding: 2rem 1rem;">
+  <div class="reveal" style="margin-bottom: 2rem;">
+    <h1 style="font-size: 2.2rem; color: var(--dct-charcoal); margin-bottom: 1rem;">Privacy Notice v1.0</h1>
+    <p style="color: var(--dct-text-muted); font-size: 1.1rem;">Spice & Sail Zanzibar — Data Collection and Retention Policy</p>
+  </div>
+
+  <div style="margin-bottom: 2rem;">
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">What Personal Data We Collect</h2>
+    <p style="color: var(--dct-text-muted); line-height: 1.8;">When you interact with our concierge widget, website forms, or WhatsApp chat, we may collect the following categories of data:</p>
+
+    <dl style="margin: 2rem 0; max-width: 700px;">
+      <dt>Contact Information</dt>
+      <dd>Name, WhatsApp number (E.164 format), and/or email address — provided voluntarily when submitting an enquiry, quote request, or lead form.</dd>
+
+      <dt>Trip Details</dt>
+      <dt>Services Interested In</dt>
+      <dt>Travel Dates</dt>
+      <dt>Party Size (adults/children)</dt>
+      <dt>Pickup Location / Hotel</dt>
+      <dt>Special Requests / Notes</dt>
+      <dd>Provided voluntarily when using the concierge widget or quote calculator.</dd>
+
+      <dt>Consent Status</dt>
+      <dd>Whether you have ticked "Contact me about this request" and/or "Send me marketing information".</dd>
+
+      <dt>Technical Data</dt>
+      <dd>IP address, browser type, device type, approximate geographical location (country-level only), pages visited on our site, referral source, and timestamp of visit — collected automatically via standard web server logs and Eleventy/Netlify analytics.</dd>
+    </dl>
+  </div>
+
+  <div style="margin-bottom: 2rem;">
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Why We Collect This Data</h2>
+    <ul style="color: var(--dct-text-muted); line-height: 1.8; margin: 0;">
+      <li>To respond to your enquiries and provide personalised quotes for Zanzibar tours, transfers, and experiences.</li>
+      <li>To save a persistent reference (SP-YYYY-NNNNNN) for your lead so you can track its status through the staff endpoint.</li>
+      <li>To send operational alerts to our team via configured webhook channels (WhatsApp, email, Discord, Slack) — best-effort only.</li>
+      <li>To improve our website and concierge service based on anonymised usage patterns.</li>
+      <li>To comply with statutory requirements (ZIC insurance registration, ZRB levy collection, and Zanzibar immigration norms).</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom: 2rem;">
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Who We Share Data With</h2>
+    <ul style="color: var(--dct-text-muted); line-height: 1.8; margin: 0;">
+      <li>Netlify Blobs (production) — encrypted at-rest, used as the persistent store for leads and references. Access limited to server-side functions.</li>
+      <li>Configured webhook endpoints — only if you have explicitly set WHATSAPP_OPS_WEBHOOK_URL, OPS_WEBHOOK_URL, DISCORD_WEBHOOK_URL, or SLACK_WEBHOOK_URL in the environment. No data is sent to webhooks that are not configured.</li>
+      <li>Law enforcement or regulatory authorities — only where required by applicable law or court order.</li>
+      <li>With your consent (if you tick "Send me marketing information") — only to send you promotional emails about Zanzibar travel offers, if an email address is provided.</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom: 2rem;">
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1min;">Data Retention</h2>
+    <p style="color: var(--dct-text-muted); line-height: 1.8;">We retain lead data for a maximum of 3 years from the date of creation, unless you request deletion earlier. Consent preferences and technical logs are retained for 12 months. Anonymous usage analytics are retained per Netlify's default privacy policy.</p>
+  </div>
+
+  <div style="margin-bottom: 2rem;">
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Your Rights</h2>
+    <p style="color: var(--dct-text-muted); line-height: 1.8;">You have the right to:</p>
+    <ul style="color: var(--dct-text-muted); line-height: 1.8; margin: 0 0 1rem 1.5rem;">
+      <li>Request access to the personal data we hold about you.</li>
+      <li>Request correction of inaccurate personal data.</li>
+      <li>Request deletion of your personal data — email <strong>reservations@spiceandsail.com</strong> with your reference (SP-YYYY-NNNNNN) and we will erase it within 30 days.</li>
+      <li>Withdraw consent at any time — untick "Contact me about this request" or "Send me marketing information" in the concierge widget.</li>
+      <li>Object to processing of your personal data for marketing purposes.</li>
+    </ul>
+  </div>
+
+  <div style="border-top: 1px solid var(--dct-divider); padding-top: 2rem;">
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Contact</h2>
+    <p style="color: var(--dct-text-muted); line-height: 1.8;">If you have questions about this privacy notice, exercise any of your rights, or wish to request data deletion, please email <a href="mailto:reservations@spiceandsail.com" style="color: var(--dct-ocean);"><strong>reservations@spiceandsail.com</strong></a>.</p>
+    <p style="color: var(--dct-text-muted); margin-top: 1rem; font-size: 0.9rem;">This notice was last updated on 2026-11-05.</p>
+  </div>
+</main>
+
+{% include "footer.njk" %}

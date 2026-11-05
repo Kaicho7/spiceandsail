@@ -37,3 +37,7 @@
 
 [functions]
   directory = "netlify/functions"
+
+[dev]
+  port = 8888
+  command = "npm run build"

@@ -12,3 +12,13 @@ __pycache__/
 
 .netlify/
 audit-output.txt
+_bad_photos/
+_candidates/
+.env.*
+reports/image-identity/cache/
+BUILD_TOKEN
+Run
+In a separate terminal window*
+*.zip
+.netlify-rebuild
+.netlify-trigger

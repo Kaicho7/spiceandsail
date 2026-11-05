@@ -1,0 +1,8 @@
+POST /lead -> 201
+  body: {"reference":"SP-2026-000001","reply_link":"https://wa.me/255718000111?text=Hi!%20My%20reference%20is%20SP-2026-000001.%20I%20would%20like%20to%20follow%20up%20on%20my%20enquiry.","status":"request_received"}
+  reference: SP-2026-000001
+GET admin-leads -> 200
+  staff sees reference: SP-2026-000001 | name: Test Traveller
+DELETE admin-leads -> 200
+gitUrl: https://github.com/Kaicho7/spiceandsail.git
+E2E_OK
