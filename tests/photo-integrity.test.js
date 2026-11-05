@@ -68,7 +68,7 @@ test('photo: processed item has its photo file on disk', () => {
 });
 
 test('photo: processed item records source url when source type is set', () => {
-  const missing = SLOTS.filter((s) => !s.sourceUrl);
+  const missing = SLOTS.filter((s) => s.photo !== 'photo needed' && !s.sourceUrl);
   assert.strictEqual(
     missing.length, 0,
     'photo_source_url missing for processed item:\n' +
