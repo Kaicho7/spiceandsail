@@ -1,0 +1,6 @@
+[2026-11-05T08:17:40Z] Step 1: Baseline established.
+Branch: concierge-p0 (checked out from origin/master @ 50227a8).
+Decision logged: Git workspace was on branch images-identity (with unverified photo run WIP 328667d). Checked out branch concierge-p0 from origin/master to ensure clean isolation and adherence to job instructions.
+npm install succeeded (678 packages audited).
+Baseline Eleventy build succeeded: 73 HTML/text pages written, 583 assets copied to dist.
+Test runner setup: Node built-in node:test test runner configured via npm test.

@@ -4,6 +4,7 @@
   "description": "Static tourism website for Zanzibar with SEO and direct booking",
   "scripts": {
     "build": "rm -rf dist && eleventy && node scripts/normalize_img_alt.js && node scripts/check-images.js",
+    "test": "node --test tests/**/*.test.js",
     "start": "eleventy --serve"
   },
   "devDependencies": {
