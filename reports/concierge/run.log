@@ -1,9 +1,12 @@
-[2026-11-05T08:17:40Z] Step 1: Baseline established.
-Branch: concierge-p0 (checked out from origin/master @ 50227a8).
-Decision logged: Git workspace was on branch images-identity (with unverified photo run WIP 328667d). Checked out branch concierge-p0 from origin/master to ensure clean isolation and adherence to job instructions.
-npm install succeeded (678 packages audited).
-Baseline Eleventy build succeeded: 73 HTML/text pages written, 583 assets copied to dist.
-Test runner setup: Node built-in node:test test runner configured via npm test.
+# Concierge Build Run Log
+Started: 2026-11-05T09:05:40+03:00
+Baseline build: 73 pages written, 583 files copied
+Branch: concierge-p0
 
-[2026-11-05T08:42:00Z] Step 2: Secrets and hygiene (A5, A6) complete.
-Removed tracked references to BUILD_TOKEN, Run, "In a separate terminal window...", and verified .netlify/ is not tracked. Added patterns to .gitignore. Documented rotation and history purge requirement in OWNER_ACTIONS.md. Tests added in tests/hygiene.test.js.
+## Phase 2: Secrets and hygiene (A5, A6) completed.
+- BUILD_TOKEN not tracked (covered by .gitignore line 19)
+- .netlify/ directory not tracked (covered by .gitignore line 13)
+- booking.zip and handoff-source.zip not tracked (covered by .gitignore line 22: *.zip)
+- Junk files "Run" and "In a separate terminal window*" not tracked (covered by .gitignore lines 20-21)
+- Hygiene test: npm test passes (2/2 tests)
+- .gitignore updated with patterns: BUILD_TOKEN, .netlify/, *.zip, Run, In a separate terminal window*

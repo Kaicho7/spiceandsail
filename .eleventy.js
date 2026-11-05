@@ -12,13 +12,9 @@ module.exports = function(eleventyConfig) {
   const slugify = require("slugify");
   let toursData = {};
   try {
-    toursData = JSON.parse(fs.readFileSync(path.join("./", "_data", "tours.json"), "utf8"));
+    toursData = JSON.parse(fs.readFileSync(path.join("./src", "data", "tours.json"), "utf8"));
   } catch(e) {
-    try {
-      toursData = JSON.parse(fs.readFileSync(path.join("./src", "data", "tours.json"), "utf8"));
-    } catch(e2) {
-      toursData = {};
-    }
+    toursData = {};
   }
   
   // Map tour slug → existing image filename (1-to-1 mandatory verified assets)
