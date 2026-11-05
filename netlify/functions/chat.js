@@ -54,6 +54,13 @@ function buildDeterministicReply(intent, text, profile) {
   const afterHours = !isWithinBusinessHours();
   const replyWindow = CONFIG.replyWindow || 'within a few hours during business hours';
 
+  function unitLabel(svc) {
+    const p = svc.pricing || {};
+    if (p.basis === 'per_vehicle') return 'per vehicle';
+    if (p.basis === 'per_person') return 'per person';
+    return 'per person';
+  }
+
   const hoursNote = afterHours
     ? '\n\nOur team is offline right now — messages are answered the next business morning (Mon–Sat, 08:00–18:00 EAT).'
     : '';
@@ -65,7 +72,7 @@ function buildDeterministicReply(intent, text, profile) {
       if (svc && svc.pricing && svc.pricing.min != null) {
         const quote = getQuote({ serviceSlug: slugs[0], adults: profile.adults || 2 });
         return {
-          message: '**' + svc.name + '**\n\nPlanning range: ' + svc.pricing.display + ' per person.\nThis is a planning range — our team confirms the final price, ' + replyWindow + '.' + hoursNote,
+          message: '**' + svc.name + '**\n\nPlanning range: ' + svc.pricing.display + ' ' + unitLabel(svc) + '.\nThis is a planning range — our team confirms the final price, ' + replyWindow + '.' + hoursNote,
           quickReplies: ['Request to hold this', 'See other options', 'Ask a question'],
           requestContact: false,
           quote: quote,
@@ -106,7 +113,7 @@ function buildDeterministicReply(intent, text, profile) {
 
   if (intent === 'transfer') {
     const transfers = catalogue.services.filter(function (s) { return s.type === 'transfer'; });
-    const list = transfers.map(function (t) { return '• **' + t.name + '** — ' + t.pricing.display; }).join('\n');
+    const list = transfers.map(function (t) { return '• **' + t.name + '** — ' + t.pricing.display + ' ' + unitLabel(t); }).join('\n');
     return {
       message: '**Airport Transfers**\n\n' + list + '\n\nAll transfers include meet & greet, flight tracking, and private vehicle (up to 4 guests). Our team confirms your booking.' + hoursNote,
       quickReplies: ['Request a transfer', 'How long to Nungwi?', 'Larger group?'],

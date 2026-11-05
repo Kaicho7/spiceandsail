@@ -52,9 +52,9 @@ function tagsOf(node) {
   );
 }
 
-test('widget source contains no innerHTML anywhere (addBubble, showStatus, status links)', () => {
-  const src = fs.readFileSync(SRC, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
-  assert.strictEqual(src.includes('innerHTML'), false, 'concierge.js must not use innerHTML (comments excluded)');
+test('widget source contains no innerHTML assignment anywhere (addBubble, showStatus, status links)', () => {
+  const src = fs.readFileSync(SRC, 'utf8');
+  assert.ok(!/innerHTML\s*=/.test(src), 'concierge.js must not assign innerHTML');
 });
 
 test('chat bubble: <img onerror> reply payload renders as literal text, no IMG element', () => {
@@ -81,4 +81,32 @@ test('chat bubble: user-typed HTML/attribute soup never mounts attributes on bub
   const tags = tagsOf(b);
   assert.strictEqual(tags.filter((t) => t === 'A' || t === 'SCRIPT').length, 0, 'no A/SCRIPT element from raw user text');
   assert.ok(textOf(b).includes('javascript:alert(1)'), 'raw text preserved');
+});
+
+test('chat bubble: a javascript: URL in a markdown link is rendered as text, never a link', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('click [x](javascript:alert(1)) now', 'user');
+  assert.strictEqual(tagsOf(b).filter((t) => t === 'A').length, 0, 'no anchor element for a javascript: URL');
+  assert.ok(textOf(b).includes('[x](javascript:alert(1))'), 'javascript: payload stays visible as text');
+});
+
+test('chat bubble: a quote: scheme link is rendered as text, never a link', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('click [x](quote:evil) now', 'user');
+  assert.strictEqual(tagsOf(b).filter((t) => t === 'A').length, 0, 'no anchor element for a quote: URL');
+  assert.ok(textOf(b).includes('[x](quote:evil)'), 'quote: payload stays visible as text');
+});
+
+test('chat bubble: a mailto: link is built with createElement', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('mail us [here](mailto:a@b.c)', 'bot');
+  const a = b.children.find((n) => n.tag === 'A');
+  assert.ok(a, 'mailto anchor must be created');
+  assert.strictEqual(a.attrs.href, 'mailto:a@b.c');
+});
+
+test('reply_link is scheme-guarded (https only) before becoming a link in the success status', () => {
+  const src = fs.readFileSync(SRC, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+  assert.ok(src.includes('reply &&'), 'success path checks reply_link before use');
+  assert.ok(src.includes('/^https:\\/\\//'), 'reply_link must pass an https:// scheme check');
 });

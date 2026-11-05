@@ -1,5 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
+const fs = require('node:fs');
 const { execSync } = require('node:child_process');
 const { InMemoryStore, getGlobalStore, setGlobalStore } = require('../src/lib/concierge/store');
 const { validateLead } = require('../src/lib/concierge/validate');
@@ -8,14 +9,6 @@ const { guardrail } = require('../src/lib/concierge/guardrail');
 // Set up in-memory store for tests
 setGlobalStore(new InMemoryStore());
 const store = getGlobalStore();
-
-test('gate 2: UI reference equals stored reference equals staff alert reference', () => {
-  // Test reference generation and storage consistency
-  const { formatRef } = require('../src/lib/concierge/reference');
-  const ref = formatRef(1);
-  assert.strictEqual(ref.startsWith('SP-'), true, 'Reference must start with SP-');
-  assert.strictEqual(ref.split('-').length >= 3, true, 'Reference must have year-sequence format');
-});
 
 test('gate 3: client-supplied total or deposit is ignored', () => {
   // The quote function should not accept client-supplied totals
@@ -109,11 +102,27 @@ test('gate 9: consent fields and notice version stored', () => {
   assert.strictEqual(widgetContent.includes('v1.0'), true, 'privacy_notice_version must be v1.0');
 });
 
-test('gate 10: exactly one launcher in rendered HTML', () => {
-  // The widget should have exactly one trigger button
-  const widgetContent = require('fs').readFileSync('src/_includes/concierge-widget.njk', 'utf8');
-  const triggerCount = (widgetContent.match(/id="sns-concierge-trigger"/g) || []).length;
-  assert.strictEqual(triggerCount, 1, 'There must be exactly one concierge trigger button');
+test('gate 10: exactly one concierge trigger per rendered page that includes the widget', () => {
+  const { execSync } = require('node:child_process');
+  const path = require('path');
+  execSync('npm run build', { stdio: 'pipe', timeout: 240000 });
+  const dist = path.join(__dirname, '..', 'dist');
+  const pages = [];
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(p); }
+      else if (e.name.endsWith('.html')) { pages.push(p); }
+    }
+  })(dist);
+  let widgetPages = 0;
+  for (const p of pages) {
+    const html = fs.readFileSync(p, 'utf8');
+    const count = (html.match(/id="sns-concierge-trigger"/g) || []).length;
+    assert.ok(count <= 1, 'page renders at most one concierge trigger: ' + p);
+    if (count > 0) { widgetPages++; }
+  }
+  assert.ok(widgetPages >= 1, 'at least one rendered page includes the concierge widget');
 });
 
 test('gate 13: guardrail rejects an invented price', () => {

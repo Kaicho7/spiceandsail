@@ -71,7 +71,7 @@
     var cleaned = String(text)
       .replace(/\*\*/g, '')
       .replace(/(^|\s)_(?=\S)([^_]{1,200}?\S)_(?=\s|$|[.,!?])/g, '$1$2');
-    var re = /\[([^\]\n]{1,120})\]\(((?:\/|https:\/\/)[^)\s]{1,200})\)/g;
+    var re = /\[([^\]\n]{1,120})\]\(((?:\/|https:\/\/|mailto:)[^)\s]{1,200})\)/g;
     var last = 0, m = re.exec(cleaned);
     while (m) {
       if (m.index > last) target.appendChild(document.createTextNode(cleaned.slice(last, m.index)));

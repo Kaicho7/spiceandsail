@@ -35,6 +35,36 @@ test('gate 1b: forced store failure never returns success', async () => {
   setGlobalStore(new InMemoryStore());
 });
 
+test('gate 2: UI/response reference equals stored reference equals staff alert reference', async () => {
+  process.env.STAFF_PASSCODE = 'gate-2-ref-check';
+  setGlobalStore(new InMemoryStore());
+  const { handler: leadHandler } = require('../netlify/functions/lead');
+  const { handler: adminHandler } = require('../netlify/functions/admin-leads');
+
+  const body = { ...leadBody('gate-2-1'), name: 'Gate Two Guest' };
+  const createdResp = await leadHandler(ev('/lead', body, '10.0.0.21'));
+  assert.ok(createdResp.statusCode >= 200 && createdResp.statusCode < 300,
+    'lead accepted: ' + createdResp.statusCode + ' ' + createdResp.body);
+  const created = JSON.parse(createdResp.body || '{}');
+  const ref = created.reference;
+  assert.ok(/^SP-\d{4}-\d+$/.test(ref), 'response reference: ' + ref);
+
+  const listResp = await adminHandler({
+    httpMethod: 'GET',
+    headers: { authorization: 'Bearer gate-2-ref-check' },
+    path: '/admin-leads'
+  });
+  assert.strictEqual(listResp.statusCode, 200, 'staff list reachable: ' + listResp.statusCode + ' ' + listResp.body);
+  const stored = JSON.parse(listResp.body || '{}').leads || [];
+  const found = stored.find((l) => l.reference === ref);
+  assert.ok(found, 'stored lead carries the response reference: ' + ref);
+  assert.strictEqual(found.reference, ref, 'stored reference equals response reference');
+  assert.ok((found.whatsapp_brief || '').includes('Lead ' + ref),
+    'staff alert (WhatsApp brief) references the lead: ' + ref);
+  delete process.env.STAFF_PASSCODE;
+  setGlobalStore(new InMemoryStore());
+});
+
 test('gate 11: floors, using real catalogue slugs', () => {
   const { quotePlan } = require('../src/lib/concierge/pricing');
   const cases = [['mnemba-snorkeling', 70], ['airport-transfer-znz-to-stone-town', 35]];
