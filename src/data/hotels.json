@@ -25,9 +25,9 @@
             "photo": "hotels/beyond-mnemba-island.jpg",
             "description": "Luxury Boutique in Private Island, Unguja. 5-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "&Beyond Mnemba Island, Zanzibar - hotel property",
+            "photo_source_url": "https://www.andbeyond.com/wp-content/uploads/sites/5/Cyber-monday-2022.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -115,9 +115,9 @@
             "photo": "hotels/bluebay-beach-resort-spa.jpg",
             "description": "Luxury Resort in Kiwengwa, Unguja. 5-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Bluebay Beach Resort & Spa, Zanzibar - hotel property",
+            "photo_source_url": "https://static.wixstatic.com/media/26fdd9_6b7dbb588bfa4fce953c4180ddf16630%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/26fdd9_6b7dbb588bfa4fce953c4180ddf16630%7Emv2.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -236,7 +236,7 @@
             "description": "Luxury Resort in Nungwi, Unguja. 5-Star rating.",
             "price_range": "",
             "photo_alt": "Essque Zalu Zanzibar, Zanzibar - hotel property",
-            "photo_source_url": "https://www.essquehotels.com",
+            "photo_source_url": "https://www.essquehotels.com/media/essque-zalu-zanzibar-banner21.webp",
             "photo_source_type": "official_site",
             "photo_credit": ""
         },
@@ -385,12 +385,12 @@
             "contact_form_url": null,
             "scrape_status": "scraped:direct",
             "slug": "jafferji-house-spa",
-            "photo": "hotels/jafferji-house-spa.jpg",
+            "photo": "photo needed",
             "description": "Luxury Boutique in Stone Town, Unguja. 4-Star rating.",
             "price_range": "",
             "photo_alt": "",
             "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_source_type": "none",
             "photo_credit": ""
         },
         {
@@ -539,7 +539,7 @@
             "description": "Luxury Resort in Pwani Mchangani, Unguja. 5-Star rating.",
             "price_range": "",
             "photo_alt": "LUX* Marijani Zanzibar, Zanzibar - hotel property",
-            "photo_source_url": "https://www.luxresorts.com",
+            "photo_source_url": "https://www.luxresorts.com/media/hzslta0q/5-star-2026.png",
             "photo_source_type": "official_site",
             "photo_credit": ""
         },
@@ -595,12 +595,12 @@
             "contact_form_url": null,
             "scrape_status": "scraped:direct",
             "slug": "matemwe-retreat",
-            "photo": "hotels/matemwe-retreat.webp",
+            "photo": "hotels/matemwe-retreat.jpg",
             "description": "Luxury Boutique in Matemwe, Unguja. 5-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Matemwe Retreat, Zanzibar - hotel property",
+            "photo_source_url": "https://cdn.livechatinc.com/direct-link/livechat-chat-with-us.png",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -659,7 +659,7 @@
             "description": "Luxury Resort in Kiwengwa, Unguja. 5-Star rating.",
             "price_range": "",
             "photo_alt": "Melia Zanzibar, Zanzibar - hotel property",
-            "photo_source_url": "https://www.melia.com",
+            "photo_source_url": "https://dam.melia.com/melia/file/7JFQ46gh2MnLahmn77NR.JPG?im=RegionOfInterestCrop=(1500,2000),regionOfInterest=(2567.5,3849)",
             "photo_source_type": "official_site",
             "photo_credit": ""
         },
@@ -718,9 +718,9 @@
             "photo": "hotels/nungwi-dreams-by-mantis.jpg",
             "description": "Luxury Boutique in Nungwi, Unguja. 5-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Nungwi Dreams by Mantis, Zanzibar - hotel property",
+            "photo_source_url": "https://s3.amazonaws.com/static-webstudio-accorhotels-usa-1.wp-ha.fastbooking.com/wp-content/uploads/sites/12/2024/06/20062505/Hawar-Resort-by-Mantis-One-Bedroom-Overwater-Villa-6-min-800x600.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -748,9 +748,9 @@
             "photo": "hotels/park-hyatt-zanzibar.jpg",
             "description": "Luxury in Stone Town, Unguja. 5-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Park Hyatt Zanzibar, Zanzibar - hotel property",
+            "photo_source_url": "https://www.hyatt.com",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -1108,9 +1108,9 @@
             "photo": "hotels/the-neela-boutique-hotel.jpg",
             "description": "Luxury Boutique in Stone Town, Unguja. 5-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "The Neela Boutique Hotel, Zanzibar - hotel property",
+            "photo_source_url": "https://neelacollection.com/wp-content/uploads/2023/09/neela-stone-town-boutique-hotel-press-room-1024x683.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -1228,9 +1228,9 @@
             "photo": "hotels/the-z-hotel.jpg",
             "description": "Luxury Boutique in Nungwi, Unguja. 4-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "The Z Hotel, Zanzibar - hotel property",
+            "photo_source_url": "https://assets.website-files.com/55b78a87c546b3a07fb2c763/58ad994dfa81a5c54c778893_The%20Z%20hotel%20Zanzibar%20beach%20at%20Nungwi-1.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -1858,9 +1858,9 @@
             "photo": "hotels/blue-moon-resort.jpg",
             "description": "Resort in Jambiani, Unguja. 4-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Blue Moon Resort, Zanzibar - hotel property",
+            "photo_source_url": "https://www.bluemoon-resort.com/images/guide.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -3025,12 +3025,12 @@
             "contact_form_url": null,
             "scrape_status": "failed",
             "slug": "kibanda-lodge",
-            "photo": "hotels/kibanda-lodge.jpg",
+            "photo": "photo needed",
             "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
             "price_range": "",
             "photo_alt": "",
             "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_source_type": "none",
             "photo_credit": ""
         },
         {
@@ -3655,12 +3655,12 @@
             "contact_form_url": null,
             "scrape_status": "failed",
             "slug": "palumbokendwa",
-            "photo": "hotels/palumbokendwa.png",
+            "photo": "hotels/palumbokendwa.jpg",
             "description": "Resort in Kendwa, Unguja. 4-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Palumbokendwa, Zanzibar - hotel property",
+            "photo_source_url": "https://www.palumbokendwa.com/images/banner1.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -4045,12 +4045,12 @@
             "contact_form_url": null,
             "scrape_status": "scraped:direct",
             "slug": "shooting-star-lodge",
-            "photo": "hotels/shooting-star-lodge.png",
+            "photo": "hotels/shooting-star-lodge.jpg",
             "description": "Boutique in Kiwengwa, Unguja. 4-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Shooting Star Lodge, Zanzibar - hotel property",
+            "photo_source_url": "https://assets.simplotel.com/simplotel/image/upload/x_0,y_0,w_3999,h_2250,r_0,c_crop/q_80,w_900,dpr_1,f_auto,fl_progressive,c_limit/shooting-star-lodge/Top_View_of_Shooting_star_Boutique_Hotel_surrounded_by_trees_on_one_side_and_ocean_on_other_side.JPG",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -4138,9 +4138,9 @@
             "photo": "hotels/sultan-sands-island-resort.jpg",
             "description": "Resort in Kiwengwa, Unguja. 4-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Sultan Sands Island Resort, Zanzibar - hotel property",
+            "photo_source_url": "https://static.wixstatic.com/media/26fdd9_6b7dbb588bfa4fce953c4180ddf16630%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/26fdd9_6b7dbb588bfa4fce953c4180ddf16630%7Emv2.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -4168,9 +4168,9 @@
             "photo": "hotels/tamani-marina-hotel.jpg",
             "description": "Boutique in Matemwe, Unguja. 4-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Tamani Marina Hotel, Zanzibar - hotel property",
+            "photo_source_url": "https://s0.wp.com/_si/?t=eyJpbWciOiJodHRwczpcL1wvaTAud3AuY29tXC9raXRjaGVuLWx1eHVyeS5jb21cL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjRcLzAyXC9zaXRlLWxvZ28ucG5nP2ZpdD0xMDI0JTJDMTAyNCZzc2w9MSIsInR4dCI6IktpdGNoZW4gTHV4dXJ5IiwidGVtcGxhdGUiOiJlZGdlIiwiZm9udCI6IiIsImJsb2dfaWQiOjIyODc2MzQzN30.TslBPDoY6AFo9LTiOAEK0JjZCJaOu1jAPGPpVaUdONIMQ",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -4285,12 +4285,12 @@
             "contact_form_url": null,
             "scrape_status": "scraped:direct",
             "slug": "the-island-pongwe-lodge",
-            "photo": "hotels/the-island-pongwe-lodge.png",
+            "photo": "hotels/the-island-pongwe-lodge.jpg",
             "description": "Boutique in Pongwe, Unguja. 3-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "The Island - Pongwe Lodge, Zanzibar - hotel property",
+            "photo_source_url": "https://static.wixstatic.com/media/14dbea_908f4167802d45cc8f09fc5314dfde10%7Emv2.jpeg/v1/fit/w_2500,h_1330,al_c/14dbea_908f4167802d45cc8f09fc5314dfde10%7Emv2.jpeg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -4525,12 +4525,12 @@
             "contact_form_url": null,
             "scrape_status": "failed",
             "slug": "villa-bluu",
-            "photo": "hotels/villa-bluu.jpg",
+            "photo": "photo needed",
             "description": "Boutique in Jambiani, Unguja. 4-Star rating.",
             "price_range": "",
-            "photo_alt": "Villa Bluu, Zanzibar - hotel property",
-            "photo_source_url": "https://villabluu.com/wp-content/uploads/2021/09/DJI_0157.2.jpg",
-            "photo_source_type": "official_site",
+            "photo_alt": "",
+            "photo_source_url": "",
+            "photo_source_type": "none",
             "photo_credit": ""
         },
         {
@@ -4768,9 +4768,9 @@
             "photo": "hotels/zanzibar-pearl-boutique.jpg",
             "description": "Boutique in Matemwe, Unguja. 4-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Zanzibar Pearl Boutique, Zanzibar - hotel property",
+            "photo_source_url": "https://zanzibarpearl.com/swfiles/files/900x600-pearl-hd9.jpg?nc=1568708072",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -5428,9 +5428,9 @@
             "photo": "hotels/surfescape-zanzibar.jpg",
             "description": "Lodge in Pwani Mchangani, Unguja. 3-Star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Surfescape Zanzibar, Zanzibar - hotel property",
+            "photo_source_url": "https://framerusercontent.com/images/kKl41US8Jmo7m1Z77pYeptm04c.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
@@ -5455,12 +5455,12 @@
             "contact_form_url": null,
             "scrape_status": "scraped:direct",
             "slug": "the-swahili-house",
-            "photo": "hotels/the-swahili-house.jpg",
+            "photo": "photo needed",
             "description": "Hotel in Stone Town, Unguja. 3-Star rating.",
             "price_range": "",
             "photo_alt": "",
             "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_source_type": "none",
             "photo_credit": ""
         },
         {
@@ -5665,12 +5665,12 @@
             "contact_form_url": null,
             "scrape_status": "no_contacts:direct",
             "slug": "jambo-guest-house",
-            "photo": "hotels/jambo-guest-house.jpg",
+            "photo": "photo needed",
             "description": "Guesthouse in Stone Town, Unguja.  star rating.",
             "price_range": "",
             "photo_alt": "",
             "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_source_type": "none",
             "photo_credit": ""
         },
         {
@@ -5698,9 +5698,9 @@
             "photo": "hotels/jozani-chwaka-bay-official-stay.jpg",
             "description": "Eco-Stay in Jozani, Unguja.  star rating.",
             "price_range": "",
-            "photo_alt": "",
-            "photo_source_url": "",
-            "photo_source_type": "",
+            "photo_alt": "Jozani Chwaka Bay Official Stay, Zanzibar - hotel property",
+            "photo_source_url": "https://tanzaniaparks.go.tz/uploads/large_ground_water_forest_3039b94c28.jpg",
+            "photo_source_type": "official_site",
             "photo_credit": ""
         },
         {
