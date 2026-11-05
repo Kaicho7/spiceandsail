@@ -1,170 +1,44 @@
-<!-- Floating Trip Concierge & Instant Quote Widget -->
+<!-- Concierge Widget - Spice & Sail Zanzibar -->
 <div id="sns-concierge-root">
   <!-- Trigger Button -->
-  <button id="sns-concierge-trigger" class="sns-concierge-btn" aria-label="Open Zanzibar Trip Concierge">
-    <span class="sns-concierge-pulse" aria-hidden="true"></span>
+  <button id="sns-concierge-trigger" class="sns-concierge-btn" aria-label="Open Zanzibar Trip Concierge" onclick="window.snsConcierge.open()">
     <span class="sns-concierge-icon" aria-hidden="true">🛎️</span>
-    <span class="sns-concierge-label">Instant Quote & Concierge</span>
+    <span class="sns-concierge-label">Plan My Trip</span>
   </button>
 
   <!-- Concierge Modal Window -->
-  <div id="sns-concierge-modal" class="sns-concierge-modal" role="dialog" aria-modal="true" aria-labelledby="concierge-title" hidden>
-    <div class="sns-concierge-backdrop" id="sns-concierge-backdrop"></div>
-    <div class="sns-concierge-panel">
+  <div id="sns-concierge-modal" class="sns-concierge-modal" role="dialog" aria-modal="true" aria-labelledby="concierge-title" hidden aria-live="polite">
+    <div class="sns-concierge-backdrop" id="sns-concierge-backdrop" onclick="window.snsConcierge.close()"></div>
+    <div class="sns-concierge-panel" role="document">
       <!-- Modal Header -->
       <div class="sns-concierge-header">
         <div class="sns-concierge-title-wrap">
-          <span class="sns-concierge-badge">Registered Zanzibar Tour Operator</span>
-          <h3 id="concierge-title" class="sns-concierge-title">Zanzibar Trip Concierge & Route Builder</h3>
-          <p class="sns-concierge-subtitle">Direct operator rates • 25–35% lower than Viator/Kayak • 24/7 Instant checkout</p>
+          <h3 id="concierge-title" class="sns-concierge-title">Plan Your Zanzibar Trip</h3>
         </div>
-        <button id="sns-concierge-close" class="sns-concierge-close-btn" aria-label="Close concierge">✕</button>
+        <button id="sns-concierge-close" class="sns-concierge-close-btn" aria-label="Close concierge" onclick="window.snsConcierge.close()" role="button">×</button>
       </div>
 
-      <!-- Step Navigation / Progress -->
-      <div class="sns-concierge-progress">
-        <div class="sns-step-indicator active" data-step="1"><span>1</span> Service</div>
-        <div class="sns-step-indicator" data-step="2"><span>2</span> Details</div>
-        <div class="sns-step-indicator" data-step="3"><span>3</span> Quote & Book</div>
-      </div>
+      <!-- Form -->
+      <form id="sns-concierge-form" class="sns-concierge-form" onsubmit="return window.snsConcierge.submitHandler(event);">
+        <!-- Honeypot field for bot detection -->
+        <input type="text" class="sns-honeypot" name="honeypot" aria-hidden="true" autocomplete="off" />
 
-      <!-- Form Body -->
-      <form id="sns-concierge-form" class="sns-concierge-form" onsubmit="return false;">
-        <!-- STEP 1: Service Selection -->
+        <!-- Step 1: Service Selection -->
         <div class="sns-form-step active" id="sns-step-1">
           <label class="sns-field-label">What would you like to experience or book?</label>
           <div class="sns-service-grid">
-            <!-- Transfers (Guaranteed Direct Flat Rates) -->
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="transfer-stone-town" data-base-price="25" data-pricing-type="vehicle">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Airport ⇄ Stone Town Hotel Transfer</span>
-                <span class="sns-service-desc">Private A/C Minivan • Flight tracking • Meet & Greet</span>
-                <span class="sns-service-price">$25 Fixed / vehicle</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="transfer-paje" data-base-price="45" data-pricing-type="vehicle">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Airport ⇄ Paje / Jambiani / Matemwe</span>
-                <span class="sns-service-desc">Private A/C Minivan • East Coast door-to-door</span>
-                <span class="sns-service-price">$45 Fixed / vehicle</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card selected">
-              <input type="radio" name="service" value="transfer-nungwi" data-base-price="55" data-pricing-type="vehicle" checked>
-              <div class="sns-service-content">
-                <span class="sns-service-title">Airport ⇄ Nungwi / Kendwa Transfer</span>
-                <span class="sns-service-desc">Private A/C Minivan • North Coast beach resorts</span>
-                <span class="sns-service-price">$55 Fixed / vehicle</span>
-              </div>
-            </label>
-
-            <!-- Classic Tours -->
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="safari-blue" data-base-price="75" data-pricing-type="person">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Safari Blue / Menai Bay Dhow</span>
-                <span class="sns-service-desc">Sandbank snorkel • Seafood feast • Marine fees incl.</span>
-                <span class="sns-service-price">From $75 / person</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="mnemba-snorkel" data-base-price="65" data-pricing-type="person">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Mnemba Atoll Snorkeling & Dolphins</span>
-                <span class="sns-service-desc">Coral reef • Sandbank chill • Conservation fee incl.</span>
-                <span class="sns-service-price">From $65 / person</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="stone-town-spice" data-base-price="45" data-pricing-type="person">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Stone Town & Spice Farm Combo</span>
-                <span class="sns-service-desc">Certified historical guide • Spice tasting & lunch</span>
-                <span class="sns-service-price">From $45 / person</span>
-              </div>
-            </label>
-
-            <!-- Rare High-Commission Experiences -->
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="horse-swimming" data-base-price="65" data-pricing-type="person">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Swimming with Horses in Ocean</span>
-                <span class="sns-service-desc">Purebred horses • Low tide shallows • Nungwi/Kiwengwa</span>
-                <span class="sns-service-price">From $65 / rider</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="quad-safari" data-base-price="120" data-pricing-type="vehicle">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Off-Road Quad / Buggy Safari</span>
-                <span class="sns-service-desc">2-seater 4x4 buggy • Baobabs & rural Swahili villages</span>
-                <span class="sns-service-price">From $120 / quad</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="cenote-caves" data-base-price="35" data-pricing-type="person">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Maalum / Kuza Secret Cave Swim</span>
-                <span class="sns-service-desc">Crystal freshwater cenote • Timed slot • Eco grotto</span>
-                <span class="sns-service-price">From $35 / person</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="uzi-island" data-base-price="95" data-pricing-type="person">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Uzi Island 'Moses Road' Expedition</span>
-                <span class="sns-service-desc">Submerged mangrove causeway • Untouched culture & lunch</span>
-                <span class="sns-service-price">From $95 / person</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="cheetahs-rock" data-base-price="180" data-pricing-type="person">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Cheetah's Rock VIP Animal Welfare</span>
-                <span class="sns-service-desc">World-class rescue sanctuary • White lions & cheetahs</span>
-                <span class="sns-service-price">From $180 / person</span>
-              </div>
-            </label>
-
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="luxury-catamaran" data-base-price="650" data-pricing-type="vehicle">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Private Luxury Catamaran Charter</span>
-                <span class="sns-service-desc">40ft Catamaran (up to 8 pax) • Seafood chef & sunset</span>
-                <span class="sns-service-price">From $650 / boat</span>
-              </div>
-            </label>
-
-            <!-- Mainland Safaris -->
-            <label class="sns-service-card">
-              <input type="radio" name="service" value="mikumi-safari" data-base-price="440" data-pricing-type="person">
-              <div class="sns-service-content">
-                <span class="sns-service-title">Mikumi National Park Fly-In Safari</span>
-                <span class="sns-service-desc">Same-day return flights • 4x4 Game Drive • TANAPA fees</span>
-                <span class="sns-service-price">From $440 / person</span>
-              </div>
-            </label>
+            <!-- Services will be populated by JavaScript from site.data.concierge-catalogue -->
           </div>
           <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(2)">Next: Dates & Travelers →</button>
         </div>
 
-        <!-- STEP 2: Travelers & Date -->
+        <!-- Step 2: Travelers & Date -->
         <div class="sns-form-step" id="sns-step-2">
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-travelers">Number of Travelers</label>
             <select id="sns-travelers" class="sns-input-select" name="travelers">
               <option value="1">1 Traveler (Solo)</option>
-              <option value="2" selected>2 Travelers (Couple / Pair)</option>
+              <option value="2">2 Travelers (Couple / Pair)</option>
               <option value="3">3 Travelers</option>
               <option value="4">4 Travelers (Small Family/Group)</option>
               <option value="5">5 Travelers</option>
@@ -189,81 +63,60 @@
           </div>
         </div>
 
-        <!-- STEP 3: Live Quote & Direct Checkout -->
+        <!-- Step 3: Live Quote & Submit -->
         <div class="sns-form-step" id="sns-step-3">
           <!-- Dynamic Estimate Box -->
           <div class="sns-quote-box">
             <div class="sns-quote-header">
-              <span class="sns-quote-title">Estimated Direct Operator Quote</span>
-              <span id="sns-quote-amount" class="sns-quote-amount">$110 USD</span>
+              <span class="sns-quote-title">Planning Range (our team confirms final price)</span>
+              <span id="sns-quote-amount" class="sns-quote-amount"></span>
             </div>
-            <p id="sns-quote-summary" class="sns-quote-summary">2 Travelers • Private Minivan • All Taxes & Fees Included</p>
-
-            <!-- Metasearch Rate Defense Badge -->
-            <div id="sns-metasearch-badge" class="sns-metasearch-callout">
-              <span class="sns-ota-badge">Metasearch Comparison</span>
-              <div class="sns-ota-comparison">
-                <span>Estimated OTA Rate (Viator/Kayak): <s id="sns-ota-price">$150 USD</s></span>
-                <strong class="sns-savings-pill">You save <span id="sns-savings-amount">$40</span> (27%) booking direct</strong>
-              </div>
-            </div>
-
-            <!-- Mandatory Official Zanzibar Levies & Fee Breakdown -->
-            <div class="sns-fee-transparency">
-              <div class="sns-fee-item">
-                <span class="sns-fee-icon">✓</span>
-                <span class="sns-fee-text"><strong>All Marine & Conservation Fees Included</strong> (No cash surprises at marine/national park gates)</span>
-              </div>
-              <div class="sns-fee-item">
-                <span class="sns-fee-icon">🛡️</span>
-                <span class="sns-fee-text"><strong>Mandatory Inbound Insurance (ZIC):</strong> $44/pax by ZG Govt (<a href="https://visitzanzibar.go.tz" target="_blank" rel="noopener">visitzanzibar.go.tz</a>)</span>
-              </div>
-              <div class="sns-fee-item">
-                <span class="sns-fee-icon">🏨</span>
-                <span class="sns-fee-text"><strong>ZRB Hotel Tax:</strong> $4–$5/pax/night collected directly by your hotel</span>
-              </div>
-            </div>
+            <p id="sns-quote-summary" class="sns-quote-summary">Select a service above to see the planning range.</p>
           </div>
 
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-guest-name">Your Name</label>
-            <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required>
+            <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required name="name">
+          </div>
+
+          <!-- SEPARATE WhatsApp and email fields, at least one required -->
+          <div class="sns-field-group">
+            <label class="sns-field-label" for="sns-guest-whatsapp">WhatsApp Number (E.164)</label>
+            <input type="text" id="sns-guest-whatsapp" class="sns-input-text" placeholder="+255672450934" name="whatsapp" pattern="^\+[1-9]\d{6,14}$" maxlength="15" aria-describedby="whatsapp-help">
+            <small id="whatsapp-help">e.g. +255672450934</small>
           </div>
 
           <div class="sns-field-group">
-            <label class="sns-field-label" for="sns-guest-phone">WhatsApp Number or Email</label>
-            <input type="text" id="sns-guest-phone" class="sns-input-text" placeholder="+1 / +44 / +255 ... or email@example.com" required>
+            <label class="sns-field-label" for="sns-guest-email">Email Address</label>
+            <input type="email" id="sns-guest-email" class="sns-input-text" placeholder="example@email.com" name="email" aria-describedby="email-help">
+            <small id="email-help">we'll never share your email without permission</small>
+          </div>
+
+          <!-- TWO consent checkboxes: contact me (required), marketing (optional) -->
+          <div class="sns-field-group">
+            <input type="checkbox" id="sns-consent-contact" name="consent_contact" required>
+            <label for="sns-consent-contact">Contact me about this request</label>
           </div>
 
           <div class="sns-field-group">
-            <label class="sns-field-label" for="sns-guest-notes">Special Requests or Flight Number (Optional)</label>
-            <input type="text" id="sns-guest-notes" class="sns-input-text" placeholder="e.g. Flight QR 1499 landing at 14:30, child seat needed...">
+            <input type="checkbox" id="sns-consent-marketing" name="consent_marketing">
+            <label for="sns-consent-marketing">Send me marketing information</label>
           </div>
 
-          <!-- 24/7 Multi-Channel Conversion & Cash-Flow Actions -->
-          <div class="sns-dispatch-buttons">
-            <!-- 1. Instant WhatsApp Lock -->
-            <button type="button" id="sns-btn-whatsapp" class="sns-btn-whatsapp" onclick="window.snsConcierge.sendViaWhatsApp()">
-              <span class="sns-btn-icon">💬</span>
-              <span>Confirm & Lock Quote on WhatsApp</span>
-            </button>
+          <input type="hidden" name="privacy_notice_version" value="v1.0">
 
-            <!-- 2. 24/7 Instant Deposit Checkout (20% or Flat Transfer) -->
-            <button type="button" id="sns-btn-deposit" class="sns-btn-deposit" onclick="window.snsConcierge.payDepositCheckout()">
-              <span class="sns-btn-icon">⚡</span>
-              <span id="sns-deposit-text">Lock Instantly with 20% Deposit ($22)</span>
-            </button>
-
-            <!-- 3. Direct Callback / Web Lead -->
-            <button type="button" id="sns-btn-direct" class="sns-btn-direct" onclick="window.snsConcierge.submitDirectRequest()">
-              <span>Request Dispatch Callback (Email / Web)</span>
-            </button>
+          <div class="sns-field-group">
+            <label class="sns-field-label" for="sns-guest-notes">Special Requests or Notes (Optional)</label>
+            <textarea id="sns-guest-notes" class="sns-input-textarea" name="notes" rows="3" placeholder="e.g. Flight QR 1499 landing at 14:30, child seat needed..."></textarea>
           </div>
 
-          <div id="sns-submit-status" class="sns-submit-status" hidden></div>
+          <!-- Hidden reference field - set by JavaScript after lead save -->
+          <input type="hidden" id="sns-lead-reference" name="reference" value="">
+          <input type="hidden" id="sns-server-reply" name="serverReply" value="">
 
           <div class="sns-step-actions">
             <button type="button" class="sns-btn-back" onclick="window.snsConcierge.goToStep(2)">← Change Details</button>
+            <button type="submit" class="sns-btn-submit" form="sns-concierge-form">Send Request</button>
           </div>
         </div>
       </form>

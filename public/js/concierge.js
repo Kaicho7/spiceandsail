@@ -1,6 +1,6 @@
 /**
  * Spice and Sail Zanzibar — Floating Trip Concierge & Instant Quote Widget Logic
- * Upgraded with Multi-Service Pricing Matrix, Metasearch Rate Defense & 24/7 Deposit Checkout
+ * Upgraded with Multi-Service Pricing Matrix, Metasearch Rate Defense & Deposit Checkout
  */
 
 (function () {
@@ -279,7 +279,7 @@ Please check availability and send confirmation details!`;
     if (statusEl) {
       statusEl.removeAttribute('hidden');
       statusEl.className = 'sns-submit-status';
-      statusEl.textContent = `Generating priority 24/7 deposit reservation for Ref ${data.leadId}...`;
+      statusEl.textContent = `Generating priority  deposit reservation for Ref ${data.leadId}...`;
     }
 
     // Dispatch to serverless function
@@ -344,7 +344,7 @@ Please check availability and send confirmation details!`;
         statusEl.className = 'sns-submit-status success';
         statusEl.innerHTML = `
           <strong>✓ Request Recorded!</strong> Reference: <code>${data.leadId}</code>.<br>
-          Please <a href="https://wa.me/255672450934?text=Jambo%2C%20my%20lead%20is%20${encodeURIComponent(data.leadId)}" target="_blank" rel="noopener">click here to confirm instantly via WhatsApp</a>.
+          Please <a href="https://wa.me/255672450934?text=Jambo%2C%20my%20lead%20is%20${encodeURIComponent(data.leadId)}" target="_blank" rel="noopener">click here to confirm via WhatsApp</a>.
         `;
       }
     }
