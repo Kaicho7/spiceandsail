@@ -1,5 +1,5 @@
 ---
-title: "Mikumi Day Safari from Zanzibar | Fly-In Wildlife Day Trip ($440–$650)"
+title: "Mikumi Day Safari from Zanzibar | Fly-In Wildlife Day Trip"
 description: "Experience a wild African safari in one day from Zanzibar. Direct return flights to Mikumi National Park, 4x4 game drive, TANAPA park fees, and lunch included. Fixed transparent pricing."
 permalink: "/safaris/mikumi-day-trip/index.html"
 ---
@@ -16,7 +16,7 @@ permalink: "/safaris/mikumi-day-trip/index.html"
       
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="https://wa.me/255672450934?text=Jambo%21%20I%20am%20interested%20in%20the%20Mikumi%20Day%20Trip%20Safari%20from%20Zanzibar." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.05rem; padding: 12px 26px;">💬 Check Safari Dates on WhatsApp</a>
-        <button onclick="window.snsConcierge && window.snsConcierge.open()" class="btn btn-secondary" style="border: 2px solid #e8a817; color: #fff; background: rgba(0,0,0,0.3); font-size: 1rem; padding: 12px 22px;">🛎️ Instant Trip Concierge</button>
+        <button onclick="window.snsConcierge && window.snsConcierge.open()" class="btn btn-secondary" style="border: 2px solid #e8a817; color: #fff; background: rgba(0,0,0,0.3); font-size: 1rem; padding: 12px 22px;">🛎️ Trip Concierge</button>
       </div>
     </div>
   </header>
@@ -25,8 +25,8 @@ permalink: "/safaris/mikumi-day-trip/index.html"
   <section style="background: #003d5c; color: #fff; padding: 1.25rem 0; border-bottom: 2px solid #e8a817;">
     <div class="container" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem; text-align: center; max-width: 1100px; margin: 0 auto;">
       <div>
-        <div style="font-size: 1.4rem; font-weight: 800; color: #e8a817;">$440–$650 USD</div>
-        <div style="font-size: 0.82rem; color: #cbd5e1; text-transform: uppercase;">All-Inclusive Per Person</div>
+        <div style="font-size: 1.4rem; font-weight: 800; color: #e8a817;">{% catPrice "mikumi-nyerere-day-safari" %}</div>
+        <div style="font-size: 0.82rem; color: #cbd5e1; text-transform: uppercase;">All-Inclusive Day Safari</div>
       </div>
       <div>
         <div style="font-size: 1.4rem; font-weight: 800; color: #e8a817;">Direct Flight (45 Mins)</div>
@@ -163,7 +163,7 @@ permalink: "/safaris/mikumi-day-trip/index.html"
     <div class="container" style="max-width: 950px; margin: 0 auto; padding: 0 1rem;">
       <div style="text-align: center; margin-bottom: 2rem;">
         <span class="section-tag" style="color: var(--dct-ocean); font-weight: 700; text-transform: uppercase; font-size: 0.85rem;">Zero Hidden Costs</span>
-        <h2 style="font-family: var(--font-display); font-size: 2rem; color: var(--dct-charcoal);">What Is Included in Your $440–$650 Rate</h2>
+        <h2 style="font-family: var(--font-display); font-size: 2rem; color: var(--dct-charcoal);">What Is Included in Your Planning-Range Rate</h2>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
@@ -229,7 +229,7 @@ permalink: "/safaris/mikumi-day-trip/index.html"
   <section style="background: linear-gradient(135deg, #005f8a 0%, #003d5c 100%); color: #fff; padding: 3.5rem 1rem; text-align: center;">
     <div class="container" style="max-width: 800px; margin: 0 auto;">
       <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 0.8rem; color: #fff;">Ready for Your African Safari Adventure?</h2>
-      <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 2rem;">Inquire on WhatsApp with your preferred travel dates and party size to lock in aircraft seats at the best available rate.</p>
+      <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 2rem;">Inquire on WhatsApp with your preferred travel dates and party size. Aircraft seats are confirmed by the team, subject to availability.</p>
       <a href="https://wa.me/255672450934?text=Jambo%21%20I%20would%20like%20to%20inquire%20about%20Mikumi%20Day%20Safari%20seats%20for%20my%20dates%3A" target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.1rem; padding: 14px 28px;">💬 Inquire on WhatsApp (+255 672 450 934)</a>
     </div>
   </section>
@@ -250,8 +250,8 @@ permalink: "/safaris/mikumi-day-trip/index.html"
       },
       "offers": {
         "@type": "AggregateOffer",
-        "lowPrice": "440.00",
-        "highPrice": "650.00",
+        "lowPrice": {{ 'mikumi-nyerere-day-safari' | catMin }},
+        "highPrice": {{ 'mikumi-nyerere-day-safari' | catMax }},
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
         "url": "https://spiceandsail.com/safaris/mikumi-day-trip/"

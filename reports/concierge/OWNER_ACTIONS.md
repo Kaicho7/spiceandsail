@@ -12,15 +12,15 @@
    - Which alert webhooks exist: `WHATSAPP_OPS_WEBHOOK_URL`, `OPS_WEBHOOK_URL`, `DISCORD_WEBHOOK_URL`, `SLACK_WEBHOOK_URL` - owner to confirm which are configured in production
    - If any alert webhook is unconfigured, leads are still saved and retrievable through the staff endpoint
 
-3. **Price rulings for services with no catalogue record** (6 services show "price on request"):
-   - Stone Town + Spice Farm combo: "Our team will confirm the price"
+3. **Price rulings for services with no catalogue record** (7 services show "price on request"):
    - Swimming with horses: "Our team will confirm the price"
    - Quad/buggy: "Our team will confirm the price"
    - Uzi Island: "Our team will confirm the price"
    - Cheetah's Rock VIP: "Our team will confirm the price"
    - Private luxury catamaran: "Our team will confirm the price"
+   - Stone Town + Spice Farm combo: "Our team will confirm the price"
 
-4. **Tour operator licence number**: Owner to provide or remove the "Registered Zanzibar Tour Operator" claim (see claims sweep phase)
+4. **Tour operator licence number**: Owner to provide or remove the "Registered Zanzibar Tour Operator" claim (see claims sweep phase below)
 
 5. **Verify $44 insurance and hotel-tax figures**: 
    - Hotel tax: $4-$5 per night - verify current amounts on the official portal

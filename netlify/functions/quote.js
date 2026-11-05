@@ -6,6 +6,7 @@
 
 const { corsHeaders, isAllowedOrigin } = require('../../src/lib/concierge/security');
 const { getQuote, quotePlan } = require('../../src/lib/concierge/pricing');
+const { catalogue, CATALOGUE_VERSION, CONFIG } = require('../../src/lib/concierge/catalogue');
 
 exports.handler = async function (event) {
   const origin = event.headers && event.headers.origin;
@@ -13,6 +14,36 @@ exports.handler = async function (event) {
 
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: headers, body: '' };
+  }
+
+  // GET: the service list straight from the catalogue, so the browser never
+  // hard-codes slugs or prices.
+  if (event.httpMethod === 'GET') {
+    const services = (catalogue.services || []).map(function (s) {
+      const p = s.pricing || {};
+      return {
+        slug: s.slug,
+        name: s.name,
+        type: s.type,
+        category: s.category,
+        location: s.location,
+        duration: s.duration || '',
+        description: s.description || '',
+        priceDisplay: (p.basis === 'on_request' || p.min == null || p.max == null) ? null : p.display,
+        onRequest: p.basis === 'on_request' || p.min == null || p.max == null,
+      };
+    });
+    return {
+      statusCode: 200,
+      headers: headers,
+      body: JSON.stringify({
+        version: CATALOGUE_VERSION,
+        currency: 'USD',
+        whatsappNumber: CONFIG.whatsappNumber || '255672450934',
+        privacyNoticeVersion: CONFIG.privacyNoticeVersion || '1.0',
+        services: services,
+      }),
+    };
   }
 
   if (event.httpMethod !== 'POST') {

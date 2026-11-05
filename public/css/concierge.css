@@ -381,74 +381,6 @@
   gap: 4px;
 }
 
-/* Metasearch Rate Defense Callout */
-.sns-metasearch-callout {
-  margin-top: 10px;
-  background: #ffffff;
-  border: 1px dashed #0284c7;
-  border-radius: 8px;
-  padding: 8px 12px;
-}
-
-.sns-ota-badge {
-  display: inline-block;
-  background: #e0f2fe;
-  color: #0369a1;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-bottom: 4px;
-}
-
-.sns-ota-comparison {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  font-size: 0.8rem;
-  color: #475569;
-}
-
-.sns-ota-comparison s {
-  color: #94a3b8;
-}
-
-.sns-savings-pill {
-  color: #0d6b5c;
-  font-weight: 700;
-}
-
-/* Mandatory Levies & Fee Transparency */
-.sns-fee-transparency {
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid #e2e8f0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.sns-fee-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  font-size: 0.75rem;
-  color: #475569;
-  line-height: 1.35;
-}
-
-.sns-fee-item a {
-  color: #0369a1;
-  text-decoration: underline;
-}
-
-.sns-fee-icon {
-  font-size: 0.85rem;
-  flex-shrink: 0;
-}
-
 /* Buttons */
 .sns-step-actions {
   display: flex;
@@ -597,4 +529,118 @@
   .sns-service-grid {
     max-height: 280px;
   }
+}
+
+/* Privacy note in the concierge form */
+.sns-privacy-note {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0 0 10px 0;
+}
+.sns-privacy-note a {
+  color: #003853;
+  text-decoration: underline;
+}
+
+/* Chat panel */
+.sns-chat-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  max-height: 70vh;
+}
+.sns-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+.sns-chat-bubble {
+  max-width: 88%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.sns-chat-bubble.user {
+  align-self: flex-end;
+  background: #003853;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.sns-chat-bubble.bot {
+  align-self: flex-start;
+  background: #f4f8fa;
+  color: #1b262c;
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
+}
+.sns-chat-bubble.bot a {
+  color: #003853;
+  text-decoration: underline;
+}
+.sns-chat-typing {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+.sns-chat-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.sns-chat-quick-btn {
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  color: #003853;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.sns-chat-quick-btn:hover { border-color: #003853; }
+.sns-chat-input-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.sns-chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+.sns-chat-send-btn {
+  background: #003853;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.sns-chat-back-btn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #003853;
+  border-radius: 8px;
+  padding: 10px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.sns-chat-open-btn {
+  display: block;
+  margin: 12px auto 0;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #003853;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
 }

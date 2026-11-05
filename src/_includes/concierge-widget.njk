@@ -18,18 +18,31 @@
         <button id="sns-concierge-close" class="sns-concierge-close-btn" aria-label="Close concierge" onclick="window.snsConcierge.close()" role="button">×</button>
       </div>
 
+      <!-- Chat panel: the first bot message (sent by the server) contains the privacy notice link -->
+      <div id="sns-concierge-chat" class="sns-chat-panel" hidden>
+        <div id="sns-chat-messages" class="sns-chat-messages" aria-live="polite"></div>
+        <div id="sns-chat-typing" class="sns-chat-typing" hidden>Concierge is typing…</div>
+        <div id="sns-chat-quick" class="sns-chat-quick"></div>
+        <div class="sns-chat-input-row">
+          <input type="text" id="sns-chat-input" class="sns-chat-input" placeholder="Ask about tours, transfers, prices…" aria-label="Message the concierge">
+          <button type="button" id="sns-chat-send" class="sns-chat-send-btn">Send</button>
+          <button type="button" id="sns-chat-close" class="sns-chat-back-btn">Back to form</button>
+        </div>
+      </div>
+
       <!-- Form -->
-      <form id="sns-concierge-form" class="sns-concierge-form" onsubmit="return window.snsConcierge.submitHandler(event);">
+      <form id="sns-concierge-form" class="sns-concierge-form" novalidate>
         <!-- Honeypot field for bot detection -->
-        <input type="text" class="sns-honeypot" name="honeypot" aria-hidden="true" autocomplete="off" />
+        <input type="text" class="sns-honeypot" name="honeypot" aria-hidden="true" autocomplete="off" tabindex="-1" />
 
         <!-- Step 1: Service Selection -->
         <div class="sns-form-step active" id="sns-step-1">
           <label class="sns-field-label">What would you like to experience or book?</label>
           <div class="sns-service-grid">
-            <!-- Services will be populated by JavaScript from site.data.concierge-catalogue -->
+            <!-- Services are populated by JavaScript from the GET /quote catalogue response -->
           </div>
-          <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(2)">Next: Dates & Travelers →</button>
+          <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(2)">Next: Dates &amp; Travelers →</button>
+          <button type="button" id="sns-chat-open" class="sns-chat-open-btn">💬 Ask the concierge instead</button>
         </div>
 
         <!-- Step 2: Travelers & Date -->
@@ -38,37 +51,37 @@
             <label class="sns-field-label" for="sns-travelers">Number of Travelers</label>
             <select id="sns-travelers" class="sns-input-select" name="travelers">
               <option value="1">1 Traveler (Solo)</option>
-              <option value="2">2 Travelers (Couple / Pair)</option>
+              <option value="2" selected>2 Travelers (Couple / Pair)</option>
               <option value="3">3 Travelers</option>
               <option value="4">4 Travelers (Small Family/Group)</option>
               <option value="5">5 Travelers</option>
-              <option value="6">6–8 Travelers (Private Group Minivan)</option>
-              <option value="9">9+ Travelers (Large Party / Coaster)</option>
+              <option value="6">6 Travelers (Private Group Minivan)</option>
+              <option value="9">9+ Travelers (Large Party)</option>
             </select>
           </div>
 
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-date">Preferred Travel Date</label>
-            <input type="date" id="sns-date" class="sns-input-date" name="travelDate">
+            <input type="date" id="sns-date" class="sns-input-date" name="travel_date">
           </div>
 
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-location">Pickup Location / Hotel in Zanzibar</label>
-            <input type="text" id="sns-location" class="sns-input-text" placeholder="e.g. ZNZ Airport, Riu Palace Nungwi, Paje, Stone Town..." name="pickupLocation">
+            <input type="text" id="sns-location" class="sns-input-text" placeholder="e.g. ZNZ Airport, Riu Palace Nungwi, Paje, Stone Town...">
           </div>
 
           <div class="sns-step-actions">
             <button type="button" class="sns-btn-back" onclick="window.snsConcierge.goToStep(1)">← Back</button>
-            <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(3)">Next: Calculate Quote →</button>
+            <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(3)">Next: Planning Range →</button>
           </div>
         </div>
 
-        <!-- Step 3: Live Quote & Submit -->
+        <!-- Step 3: Planning range (server /quote) & Submit -->
         <div class="sns-form-step" id="sns-step-3">
-          <!-- Dynamic Estimate Box -->
+          <!-- Server-computed planning range -->
           <div class="sns-quote-box">
             <div class="sns-quote-header">
-              <span class="sns-quote-title">Planning Range (our team confirms final price)</span>
+              <span class="sns-quote-title">Planning range (our team confirms final price)</span>
               <span id="sns-quote-amount" class="sns-quote-amount"></span>
             </div>
             <p id="sns-quote-summary" class="sns-quote-summary">Select a service above to see the planning range.</p>
@@ -76,43 +89,45 @@
 
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-guest-name">Your Name</label>
-            <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required name="name">
+            <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required>
           </div>
 
           <!-- SEPARATE WhatsApp and email fields, at least one required -->
           <div class="sns-field-group">
-            <label class="sns-field-label" for="sns-guest-whatsapp">WhatsApp Number (E.164)</label>
-            <input type="text" id="sns-guest-whatsapp" class="sns-input-text" placeholder="+255672450934" name="whatsapp" pattern="^\+[1-9]\d{6,14}$" maxlength="15" aria-describedby="whatsapp-help">
+            <label class="sns-field-label" for="sns-guest-whatsapp">WhatsApp Number (international format)</label>
+            <input type="text" id="sns-guest-whatsapp" class="sns-input-text" placeholder="+255672450934" pattern="^\+[1-9]\d{6,14}$" maxlength="15" aria-describedby="whatsapp-help">
             <small id="whatsapp-help">e.g. +255672450934</small>
           </div>
 
           <div class="sns-field-group">
-            <label class="sns-field-label" for="sns-guest-email">Email Address</label>
-            <input type="email" id="sns-guest-email" class="sns-input-text" placeholder="example@email.com" name="email" aria-describedby="email-help">
+            <label class="sns-field-label" for="sns-guest-email">Email Address <small style="font-weight:400;">(if no WhatsApp)</small></label>
+            <input type="email" id="sns-guest-email" class="sns-input-text" placeholder="example@email.com" aria-describedby="email-help">
             <small id="email-help">we'll never share your email without permission</small>
           </div>
 
-          <!-- TWO consent checkboxes: contact me (required), marketing (optional) -->
-          <div class="sns-field-group">
-            <input type="checkbox" id="sns-consent-contact" name="consent_contact" required>
-            <label for="sns-consent-contact">Contact me about this request</label>
-          </div>
-
-          <div class="sns-field-group">
-            <input type="checkbox" id="sns-consent-marketing" name="consent_marketing">
-            <label for="sns-consent-marketing">Send me marketing information</label>
-          </div>
-
+          <!-- TWO consent checkboxes: contact me (required), marketing (unticked by default) -->
           <input type="hidden" name="privacy_notice_version" value="v1.0">
+          <div class="sns-field-group">
+            <input type="checkbox" id="consent_contact" name="consent_contact" required>
+            <label for="consent_contact">Contact me about this request</label>
+          </div>
+
+          <div class="sns-field-group">
+            <input type="checkbox" id="consent_marketing" name="consent_marketing">
+            <label for="consent_marketing">Send me marketing information</label>
+          </div>
+
+          <p class="sns-privacy-note" id="sns-privacy-note">
+            We store what you share here to answer and handle your request only.
+            <a href="/privacy/" target="_blank" rel="noopener">Read the privacy notice</a>.
+          </p>
 
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-guest-notes">Special Requests or Notes (Optional)</label>
-            <textarea id="sns-guest-notes" class="sns-input-textarea" name="notes" rows="3" placeholder="e.g. Flight QR 1499 landing at 14:30, child seat needed..."></textarea>
+            <textarea id="sns-guest-notes" class="sns-input-textarea" rows="3" placeholder="e.g. Flight QR 1499 landing at 14:30, child seat needed..."></textarea>
           </div>
 
-          <!-- Hidden reference field - set by JavaScript after lead save -->
-          <input type="hidden" id="sns-lead-reference" name="reference" value="">
-          <input type="hidden" id="sns-server-reply" name="serverReply" value="">
+          <div class="sns-submit-status" id="sns-submit-status" hidden></div>
 
           <div class="sns-step-actions">
             <button type="button" class="sns-btn-back" onclick="window.snsConcierge.goToStep(2)">← Change Details</button>

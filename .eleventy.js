@@ -10,6 +10,46 @@ module.exports = function(eleventyConfig) {
   const fs = require("fs");
   const path = require("path");
   const slugify = require("slugify");
+
+  // Concierge catalogue is the single source of truth for concierge pricing.
+  // These filters render ranges from the catalogue; a missing or unverified
+  // price renders as a team-confirms message, never an invented number.
+  let conciergeCatalogue = { services: [] };
+  try {
+    conciergeCatalogue = JSON.parse(fs.readFileSync(path.join("./src", "data", "concierge-catalogue.json"), "utf8"));
+  } catch (e) { conciergeCatalogue = { services: [] }; }
+
+  function catService(slug) {
+    return (conciergeCatalogue.services || []).find(s => s.slug === slug) || null;
+  }
+  eleventyConfig.addFilter("catPrice", (slug) => {
+    const svc = catService(slug);
+    if (!svc) return "Our team will confirm the price.";
+    const p = svc.pricing || {};
+    if (p.basis === "on_request" || p.min == null || p.max == null) return "Our team will confirm the price.";
+    return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle") + " (planning range — our team confirms the final price)";
+  });
+  eleventyConfig.addShortcode("catPrice", (slug) => {
+    const svc = catService(slug);
+    if (!svc) return "Price on request — our team will confirm";
+    const p = svc.pricing || {};
+    if (p.basis === "on_request" || p.min == null || p.max == null) return "Price on request — our team will confirm";
+    return p.display;
+  });
+  eleventyConfig.addFilter("catServices", (value, type) =>
+    (conciergeCatalogue.services || []).filter(s => !type || s.type === type)
+  );
+  eleventyConfig.addFilter("catMin", (slug) => {
+    const svc = catService(slug);
+    if (!svc || !svc.pricing || svc.pricing.min == null) return null;
+    return svc.pricing.min;
+  });
+  eleventyConfig.addFilter("catMax", (slug) => {
+    const svc = catService(slug);
+    if (!svc || !svc.pricing || svc.pricing.max == null) return null;
+    return svc.pricing.max;
+  });
+  eleventyConfig.addGlobalData("conciergeCat", () => conciergeCatalogue);
   let toursData = {};
   try {
     toursData = JSON.parse(fs.readFileSync(path.join("./src", "data", "tours.json"), "utf8"));
