@@ -59,39 +59,39 @@ module.exports = function(eleventyConfig) {
   
   // Map tour slug → existing image filename (1-to-1 mandatory verified assets)
   const slugMap = {
-    "stone-town-walking-tour": "stone-town-ornate-carved-door-arch.jpg",
+    "stone-town-walking-tour": "stone-town-alley-walking-tour-people.jpg",
     "stone-town-spice-prison-combo": "giant-tortoises-rocky-terrain.jpg",
     "spice-farm": "hand-holding-nutmeg-fruits-zanzibar.jpg",
     "village-community-tour": "child-walking-dirt-path-village.jpg",
     "safari-blue": "aerial-beach-dhow-people-turquoise-water.jpg",
     "mnemba-snorkeling": "sea-turtle-snorkeling-coral-reef.jpg",
-    "prison-island-nakupenda": "boats-pier-under-cloudy-sky-water.jpg",
+    "prison-island-nakupenda": "boat-deck-view-turquoise-water-island.jpg",
     "nakupenda-sandbank": "turquoise-water-sandbar-lone-boat.jpg",
     "chumbe-island": "underwater-fish-coral-reef-zanzibar.jpg",
-    "sunset-dhow-cruise": "dhow-sail-nungwi-beach-zanzibar.jpg",
+    "sunset-dhow-cruise": "dhow-sail-at-sunset-ocean.jpg",
     "kizimkazi-dolphin-tour": "dolphins-swimming-near-boat-tour.jpg",
     "jozani-forest": "red-colobus-monkey-baby-jozani-forest.jpg",
     "kuza-cave-seaweed": "people-swimming-turquoise-water-steps.jpg",
     "mikumi-nyerere-day-safari": "elephant-savanna-landscape-tanzania.jpg",
-    "serengeti-3day-flyin": "elephant-savanna-landscape-tanzania.jpg",
-    "zanzibar-essentials-3day": "aerial-beach-dhow-people-turquoise-water.jpg",
-    "zanzibar-essentials-3-day-pass": "aerial-beach-dhow-people-turquoise-water.jpg"
+    "serengeti-3day-flyin": "lions-resting-dry-savanna.jpg",
+    "zanzibar-essentials-3day": "zanzibar-beach-palm-trees-thatched-huts.jpg",
+    "zanzibar-essentials-3-day-pass": "tourists-waving-dhow-boat-sea.jpg"
   };
 
   // Map area zone name → existing image filename (for /areas/ cards and zone pages)
   const zoneImage = {
     "Stone Town": "stone-town-alleyway-old-buildings.jpg",
     "Nungwi": "dhow-sail-nungwi-beach-zanzibar.jpg",
-    "Kendwa": "dhow-sail-boat-tidal-flat-zanzibar.jpg",
+    "Kendwa": "dhows-beach-sunset-zanzibar.jpg",
     "Paje": "kite-centre-zanzibar-aerial-kitesurfing.jpg",
-    "Jambiani": "dhow-sail-boat-tidal-flat-zanzibar.jpg",
-    "Kiwengwa": "aerial-coastal-town-beach-turquoise-water.jpg",
+    "Jambiani": "women-collecting-seaweed-beach-zanzibar.jpg",
+    "Kiwengwa": "beach-front-hotel-palm-trees-people.jpg",
     "Pongwe / Michamvi": "zanzibar-house-on-rock-beach-scene.jpg",
-    "Bwejuu / Dongwe": "beach-children-sand-zanzibar.jpg",
+    "Bwejuu / Dongwe": "zanzibar-beach-palm-trees-thatched-huts.jpg",
     "Michamvi / Pingwe": "zanzibar-beach-women-walking-white-sand.jpg",
     "Kizimkazi / Dimbani": "dolphins-leaping-ocean-zanzibar.jpg",
     "Fumba / Mbweni": "dhow-boat-mangroves-turquoise-water.jpg",
-    "Matemwe / Kigomani": "boy-snorkeling-shallow-water-zanzibar.jpg",
+    "Matemwe / Kigomani": "snorkeling-zanzibar-shallow-water-coral.jpg",
     "Chake Chake (Pemba)": "aerial-coastal-town-beach-turquoise-water.jpg",
     "Wambaa Gulf / Makangale (Pemba)": "boardwalk-sea-boats-cloudy-sky.jpg"
   };
@@ -187,24 +187,24 @@ module.exports = function(eleventyConfig) {
     "Mrembo Spa & Traditional Services": "hand-holding-nutmeg-fruits-zanzibar.jpg",
     "Nakupenda Sandbank": "turquoise-water-sandbar-lone-boat.jpg",
     "Nakupenda Sandbank (Tour)": "turquoise-water-sandbar-lone-boat.jpg",
-    "Palace Museum": "stone-town-colonial-building-clock-tower.jpg",
-    "Palace Museum (Official)": "stone-town-colonial-building-clock-tower.jpg",
+    "Palace Museum": "waterfront-buildings-zanzibar-coast.jpg",
+    "Palace Museum (Official)": "waterfront-buildings-zanzibar-coast.jpg",
     "Old Fort (Cultural Desk)": "stone-town-cannons-sea-boat-tour.jpg",
     "Old Fort (Ngome Kongwe)": "stone-town-cannons-sea-boat-tour.jpg",
     "Princess Salme Spice Garden": "hand-holding-nutmeg-fruits-zanzibar.jpg",
-    "Prison Island": "boats-pier-under-cloudy-sky-water.jpg",
-    "Prison Island (Tour Desk)": "boats-pier-under-cloudy-sky-water.jpg",
+    "Prison Island": "giant-tortoises-rocky-terrain.jpg",
+    "Prison Island (Tour Desk)": "giant-tortoises-rocky-terrain.jpg",
     "Seaweed Center Paje": "people-collecting-sea-items-zanzibar-beach.jpg",
     "Spice Farm Tour (Kidichi)": "hand-holding-nutmeg-fruits-zanzibar.jpg",
     "Stone Town Food Market": "vegetable-stall-at-outdoor-market.jpg",
     "Zanzibar Butterfly (Park)": "jozani-forest-walking-path-green-arches.jpg",
     "Zanzibar Horse Riding (Nungwi)": "women-horse-riding-ocean-water-zanzibar.jpg",
-    "ZIFF Festival Center": "stone-town-colonial-building-clock-tower.jpg",
+    "ZIFF Festival Center": "historical-photos-wall-zanzibar-exhibit.jpg",
     "The Rock Restaurant": "zanzibar-rock-house-with-tourists.jpg",
     "Old Fort": "stone-town-cannons-sea-boat-tour.jpg",
     "Forodhani Market": "zanzibar-night-food-stall-skewers-bread.jpg",
     "Spice Farm Tour": "hand-holding-nutmeg-fruits-zanzibar.jpg",
-    "Nungwi Beach": "children-wading-beach-dhow-boats.jpg",
+    "Nungwi Beach": "nungwi-beach-aerial-resort-turquoise-water.jpg",
     "Mnarani Marine Turtle Pond": "sea-turtles-with-child-zanzibar.jpg",
     "Kuza Cave": "people-swimming-turquoise-water-steps.jpg",
     // Dive centers — explicit diving/underwater/ocean photos
@@ -238,7 +238,7 @@ module.exports = function(eleventyConfig) {
     // Sports / water-sports centers — explicit kite/ocean action photos
     "Airborne Kite Centre": "airborne-kitesurfing-hero.jpg",
     "Aquaholics Kite & Surf": "aquaholics-kitesurfing-hero.jpg",
-    "Fumba Water Sports": "women-horse-riding-ocean-water-zanzibar.jpg",
+    "Fumba Water Sports": "kitesurfing-turquoise-ocean-zanzibar.jpg",
     "Kite Centre Zanzibar": "kite-centre-zanzibar-aerial-kitesurfing.jpg",
     "Zanzibar Pro Kiting": "zanzibar-pro-kiting-kitesurfing.jpg"
   };
@@ -260,7 +260,7 @@ module.exports = function(eleventyConfig) {
   };
   function hashPick(str, arr) { let h=0; const st=String(str||""); for (let i=0;i<st.length;i++) h=(h*31+st.charCodeAt(i))>>>0; return arr[h%arr.length]; }
 eleventyConfig.addFilter("attractionImg", (name, category) =>
-attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCategoryArrays["Attraction"]));
+attractionImage[name] || "image-not-available.svg");
 
   // Add filter to get descriptive attraction type label (fixes CUL CUL CUL)
   eleventyConfig.addFilter("attractionTypeLabel", (type) => {
@@ -344,9 +344,9 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
   eleventyConfig.addFilter("zoneImg", (zone, seed) => {
     const z = String(zone || "").toLowerCase().trim();
     for (const [frag, key] of Object.entries(zoneAliases)) if (z.startsWith(frag)) {
-      return hashPick(seed || zone, zoneFiles[key] || [zoneImage[key]]);
+      return "image-not-available.svg";
     }
-    return hashPick(seed || z, ["zanzibar-beach-people-playing-kites.jpg","woman-child-beach-zanzibar-ocean.jpg","turquoise-water-sandbar-lone-boat.jpg","aerial-beach-boat-turquoise-water.jpg","women-walking-beach-zanzibar-palm-trees.jpg","thatched-hut-beach-zanzibar-coast.jpg"]);
+    return "image-not-available.svg";
   });
 
   // Dedicated hotel-only photo pool: authentic accommodation imagery (rooms, resorts,
@@ -366,7 +366,7 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
   if (hotelPhotoPool.length === 0) {
     hotelPhotoPool.push("beach-front-hotel-palm-trees-people.jpg");
   }
-  eleventyConfig.addFilter("hotelImg", (name) => hashPick(name || "hotel", hotelPhotoPool));
+  eleventyConfig.addFilter("hotelImg", () => "image-not-available.svg");
 
   // Prefer a real per-hotel photo (downloaded from the hotel's own site) when the
   // file exists; otherwise fall back to the hash-picked hotel pool photo.
@@ -386,7 +386,7 @@ attractionImage[name] || hashPick(name, attrCategoryArrays[category] || attrCate
         return "hotels/" + normalized;
       }
     }
-    return hashPick((hotel && hotel.name) || "hotel", hotelPhotoPool);
+    return "image-not-available.svg";
   });
 
   eleventyConfig.addGlobalData("__intentMap", intentMap);

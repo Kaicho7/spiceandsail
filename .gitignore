@@ -22,3 +22,7 @@ In a separate terminal window*
 *.zip
 .netlify-rebuild
 .netlify-trigger
+
+# backups
+.eleventy.js.backup*
+
