@@ -439,16 +439,32 @@
     return fetchJSON('/.netlify/functions/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: text, session_id: sessionId() })
+      body: JSON.stringify({
+        message: text,
+        session_id: sessionId(),
+        profile: window._conciergeProfile || {},
+        history: window._conciergeHistory || []
+      })
     }, 15000).then(function (res) {
       clearThinking();
       if (res.ok && res.json && res.json.message) {
+        // Update profile and history from response
+        window._conciergeProfile = res.json.profile || window._conciergeProfile || {};
+        window._conciergeHistory = [].concat(window._conciergeHistory || [])
+          .concat([
+            { role: 'user', content: text },
+            { role: 'assistant', content: res.json.message }
+          ]).slice(-10);
+
         addBubble(res.json.message, 'bot');
         renderQuickReplies(res.json.quickReplies);
         if (res.json.quote && res.json.quote.totalDisplay) {
           addBubble('Planning range from our verified catalogue: ' + res.json.quote.totalDisplay + ' USD. Our team confirms any final price.', 'bot');
         }
-        if (res.json.requestContact) {
+        // WhatsApp handoff: open wa.me link in a new tab
+        if (res.json.whatsapp_url) {
+          addBubble('[Send booking request on WhatsApp](' + res.json.whatsapp_url + ')', 'bot');
+        } else if (res.json.requestContact) {
           state.chatOpen = false;
           goToStep(3);
         }
