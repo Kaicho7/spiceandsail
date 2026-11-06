@@ -22,10 +22,15 @@ function walk(dir, cb) {
 }
 
 function resolveSrc(src) {
-  let s = src.replace(/^\/?/, "");
+  // Decode HTML entities first (raw HTML has &amp; not &)
+  let s = src.replace(/&amp;/g, "&").replace(/^\/+/, "");
+  // Unwrap Netlify Image CDN: /.netlify/images?url=<encoded-path>&...
   const cdn = s.match(/^\.netlify\/images\?url=([^&]+)/);
-  if (cdn) s = decodeURIComponent(cdn[1]);
+  if (cdn) s = decodeURIComponent(cdn[1]).replace(/^\/+/, "");   // ← THE FIX: strip leading / after decode
+  // Strip "images/" so we can resolve against dist/images/
   if (s.startsWith("images/")) s = s.slice("images/".length);
+  // Strip any leftover query/fragment
+  s = s.replace(/[?#].*$/, "");
   return s;
 }
 
