@@ -296,6 +296,7 @@ permalink: "/hotels/index.html"
 
         if (matchesZone && matchesTier && matchesSearch) {
           card.style.display = 'flex';
+          card.classList.add('visible');
           visibleCount++;
         } else {
           card.style.display = 'none';
