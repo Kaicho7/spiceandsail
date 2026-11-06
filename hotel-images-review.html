@@ -1,0 +1,1222 @@
+<!doctype html><meta charset="utf-8"><title>Hotel image review</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5}
+  header{position:sticky;top:0;background:#111;color:#fff;padding:12px 20px;z-index:10}
+  header b{font-size:18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;padding:16px}
+  .card{background:#fff;border-radius:8px;overflow:hidden;border:2px solid #e5e5e5;display:flex;flex-direction:column}
+  .card.bad{border-color:#dc2626}
+  .card img{width:100%;height:180px;object-fit:cover;background:#ddd}
+  .card .ph{height:180px;background:#eee;display:flex;align-items:center;justify-content:center;color:#999}
+  .card .num{padding:8px 10px;font-weight:600;font-size:13px;background:#111;color:#fff}
+  .card .file{padding:6px 10px;font-size:11px;color:#666;word-break:break-all}
+  .card .flags{padding:6px 10px 10px;font-size:11px;color:#dc2626;background:#fef2f2}
+</style>
+<header><b>Hotel image review</b> &nbsp;—&nbsp; 201 hotels · 10 flagged (red border). Scroll and eyeball each name vs photo.</header>
+<div class="grid">
+  <div class="card ">
+    <div class="num">#1 · &amp;Beyond Mnemba Island</div>
+    <img src="/images/hotels/beyond-mnemba-island.jpg" loading="lazy" alt="&amp;Beyond Mnemba Island">
+    <div class="file">beyond-mnemba-island.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#2 · Baraza Resort and Spa</div>
+    <img src="/images/hotels/baraza-resort-and-spa.jpg" loading="lazy" alt="Baraza Resort and Spa">
+    <div class="file">baraza-resort-and-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#3 · Bawe Tropical Island</div>
+    <img src="/images/hotels/bawe-tropical-island.jpg" loading="lazy" alt="Bawe Tropical Island">
+    <div class="file">bawe-tropical-island.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#4 · Bluebay Beach Resort &amp; Spa</div>
+    <img src="/images/hotels/bluebay-beach-resort-spa.jpg" loading="lazy" alt="Bluebay Beach Resort &amp; Spa">
+    <div class="file">bluebay-beach-resort-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#5 · Emerald Zanzibar Resort &amp; Spa</div>
+    <img src="/images/hotels/emerald-zanzibar-resort-spa.jpg" loading="lazy" alt="Emerald Zanzibar Resort &amp; Spa">
+    <div class="file">emerald-zanzibar-resort-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#6 · Emerson Spice</div>
+    <img src="/images/hotels/emerson-spice.jpg" loading="lazy" alt="Emerson Spice">
+    <div class="file">emerson-spice.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#7 · Emerson on Hurumzi</div>
+    <img src="/images/hotels/emerson-on-hurumzi.webp" loading="lazy" alt="Emerson on Hurumzi">
+    <div class="file">emerson-on-hurumzi.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#8 · Essque Zalu Zanzibar</div>
+    <img src="/images/hotels/essque-zalu-zanzibar.jpg" loading="lazy" alt="Essque Zalu Zanzibar">
+    <div class="file">essque-zalu-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#9 · Fruit &amp; Spice Wellness Resort</div>
+    <img src="/images/hotels/fruit-spice-wellness-resort.jpg" loading="lazy" alt="Fruit &amp; Spice Wellness Resort">
+    <div class="file">fruit-spice-wellness-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#10 · Fundu Lagoon</div>
+    <img src="/images/hotels/fundu-lagoon.jpg" loading="lazy" alt="Fundu Lagoon">
+    <div class="file">fundu-lagoon.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#11 · Gold Zanzibar Beach House &amp; Spa</div>
+    <img src="/images/hotels/gold-zanzibar-beach-house-spa.jpg" loading="lazy" alt="Gold Zanzibar Beach House &amp; Spa">
+    <div class="file">gold-zanzibar-beach-house-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#12 · Isaraya Luxury Overwater Villas</div>
+    <img src="/images/hotels/isaraya-luxury-overwater-villas.jpg" loading="lazy" alt="Isaraya Luxury Overwater Villas">
+    <div class="file">isaraya-luxury-overwater-villas.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#13 · Jafferji House &amp; Spa</div>
+    <img src="/images/hotels/jafferji-house-spa.jpg" loading="lazy" alt="Jafferji House &amp; Spa">
+    <div class="file">jafferji-house-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#14 · Kasha Boutique Hotel</div>
+    <img src="/images/hotels/kasha-boutique-hotel.jpg" loading="lazy" alt="Kasha Boutique Hotel">
+    <div class="file">kasha-boutique-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#15 · Kilindi Zanzibar</div>
+    <img src="/images/hotels/kilindi-zanzibar.jpg" loading="lazy" alt="Kilindi Zanzibar">
+    <div class="file">kilindi-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#16 · Kiwengwa Beach Resort</div>
+    <img src="/images/hotels/kiwengwa-beach-resort.jpg" loading="lazy" alt="Kiwengwa Beach Resort">
+    <div class="file">kiwengwa-beach-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#17 · Konokono Beach Resort</div>
+    <img src="/images/hotels/konokono-beach-resort.jpg" loading="lazy" alt="Konokono Beach Resort">
+    <div class="file">konokono-beach-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#18 · LUX* Marijani Zanzibar</div>
+    <img src="/images/hotels/lux-marijani-zanzibar.jpg" loading="lazy" alt="LUX* Marijani Zanzibar">
+    <div class="file">lux-marijani-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#19 · Marijani Beach Resort &amp; Spa</div>
+    <img src="/images/hotels/marijani-beach-resort-spa.jpg" loading="lazy" alt="Marijani Beach Resort &amp; Spa">
+    <div class="file">marijani-beach-resort-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#20 · Matemwe Retreat</div>
+    <img src="/images/hotels/matemwe-retreat.webp" loading="lazy" alt="Matemwe Retreat">
+    <div class="file">matemwe-retreat.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#21 · Matlai Boutique Hotel</div>
+    <img src="/images/hotels/matlai-boutique-hotel.jpg" loading="lazy" alt="Matlai Boutique Hotel">
+    <div class="file">matlai-boutique-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#22 · Melia Zanzibar</div>
+    <img src="/images/hotels/melia-zanzibar.jpg" loading="lazy" alt="Melia Zanzibar">
+    <div class="file">melia-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#23 · Milele Villas</div>
+    <img src="/images/hotels/milele-villas.jpg" loading="lazy" alt="Milele Villas">
+    <div class="file">milele-villas.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#24 · Nungwi Dreams by Mantis</div>
+    <img src="/images/hotels/nungwi-dreams-by-mantis.jpg" loading="lazy" alt="Nungwi Dreams by Mantis">
+    <div class="file">nungwi-dreams-by-mantis.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#25 · Park Hyatt Zanzibar</div>
+    <img src="/images/hotels/park-hyatt-zanzibar.jpg" loading="lazy" alt="Park Hyatt Zanzibar">
+    <div class="file">park-hyatt-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#26 · Qambani Luxury Resort</div>
+    <img src="/images/hotels/qambani-luxury-resort.jpg" loading="lazy" alt="Qambani Luxury Resort">
+    <div class="file">qambani-luxury-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#27 · Riu Jambo</div>
+    <img src="/images/hotels/riu-jambo.jpg" loading="lazy" alt="Riu Jambo">
+    <div class="file">riu-jambo.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#28 · Riu Palace Zanzibar</div>
+    <img src="/images/hotels/riu-palace-zanzibar.jpg" loading="lazy" alt="Riu Palace Zanzibar">
+    <div class="file">riu-palace-zanzibar.jpg</div>
+    <div class="flags">NAME MISMATCH — filename doesn't resemble hotel name</div>
+  </div>
+  <div class="card ">
+    <div class="num">#29 · Royal Cliff Zanzibar</div>
+    <img src="/images/hotels/royal-cliff-zanzibar.jpg" loading="lazy" alt="Royal Cliff Zanzibar">
+    <div class="file">royal-cliff-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#30 · Royal Zanzibar Beach Resort</div>
+    <img src="/images/hotels/royal-zanzibar-beach-resort.jpg" loading="lazy" alt="Royal Zanzibar Beach Resort">
+    <div class="file">royal-zanzibar-beach-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#31 · Safira Blu Luxury Resort</div>
+    <img src="/images/hotels/safira-blu-luxury-resort.jpg" loading="lazy" alt="Safira Blu Luxury Resort">
+    <div class="file">safira-blu-luxury-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#32 · Sea Cliff Resort &amp; Spa</div>
+    <img src="/images/hotels/sea-cliff-resort-spa.jpg" loading="lazy" alt="Sea Cliff Resort &amp; Spa">
+    <div class="file">sea-cliff-resort-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#33 · Sunshine Marine Lodge</div>
+    <img src="/images/hotels/sunshine-marine-lodge.jpg" loading="lazy" alt="Sunshine Marine Lodge">
+    <div class="file">sunshine-marine-lodge.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#34 · TUI BLUE Bahari Zanzibar</div>
+    <img src="/images/hotels/tui-blue-bahari-zanzibar.jpg" loading="lazy" alt="TUI BLUE Bahari Zanzibar">
+    <div class="file">tui-blue-bahari-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#35 · The Manta Resort</div>
+    <img src="/images/hotels/the-manta-resort.jpg" loading="lazy" alt="The Manta Resort">
+    <div class="file">the-manta-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#36 · The Mora Zanzibar</div>
+    <img src="/images/hotels/the-mora-zanzibar.jpg" loading="lazy" alt="The Mora Zanzibar">
+    <div class="file">the-mora-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#37 · The Neela Boutique Hotel</div>
+    <img src="/images/hotels/the-neela-boutique-hotel.jpg" loading="lazy" alt="The Neela Boutique Hotel">
+    <div class="file">the-neela-boutique-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#38 · The Neela Oceanfront</div>
+    <img src="/images/hotels/the-neela-oceanfront.jpg" loading="lazy" alt="The Neela Oceanfront">
+    <div class="file">the-neela-oceanfront.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#39 · The Palms Zanzibar</div>
+    <img src="/images/hotels/the-palms-zanzibar.jpg" loading="lazy" alt="The Palms Zanzibar">
+    <div class="file">the-palms-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#40 · The Residence Zanzibar</div>
+    <img src="/images/hotels/the-residence-zanzibar.jpg" loading="lazy" alt="The Residence Zanzibar">
+    <div class="file">the-residence-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#41 · The Z Hotel</div>
+    <img src="/images/hotels/the-z-hotel.jpg" loading="lazy" alt="The Z Hotel">
+    <div class="file">the-z-hotel.jpg</div>
+    <div class="flags">NAME MISMATCH — filename doesn't resemble hotel name</div>
+  </div>
+  <div class="card ">
+    <div class="num">#42 · Tulia Zanzibar Unique Beach Resort</div>
+    <img src="/images/hotels/tulia-zanzibar-unique-beach-resort.jpg" loading="lazy" alt="Tulia Zanzibar Unique Beach Resort">
+    <div class="file">tulia-zanzibar-unique-beach-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#43 · Villa Stecchini</div>
+    <img src="/images/hotels/villa-stecchini.jpg" loading="lazy" alt="Villa Stecchini">
+    <div class="file">villa-stecchini.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#44 · Xanadu Luxury Villas</div>
+    <img src="/images/hotels/xanadu-luxury-villas.jpg" loading="lazy" alt="Xanadu Luxury Villas">
+    <div class="file">xanadu-luxury-villas.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#45 · Zanzi Resort</div>
+    <img src="/images/hotels/zanzi-resort.jpg" loading="lazy" alt="Zanzi Resort">
+    <div class="file">zanzi-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#46 · Zanzibar White Sand Luxury Villas</div>
+    <img src="/images/hotels/zanzibar-white-sand-luxury-villas.jpg" loading="lazy" alt="Zanzibar White Sand Luxury Villas">
+    <div class="file">zanzibar-white-sand-luxury-villas.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#47 · Zawadi Hotel Zanzibar</div>
+    <img src="/images/hotels/zawadi-hotel-zanzibar.jpg" loading="lazy" alt="Zawadi Hotel Zanzibar">
+    <div class="file">zawadi-hotel-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#48 · Zuri Zanzibar</div>
+    <img src="/images/hotels/zuri-zanzibar.jpg" loading="lazy" alt="Zuri Zanzibar">
+    <div class="file">zuri-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#49 · Africa House Hotel</div>
+    <img src="/images/hotels/africa-house-hotel.webp" loading="lazy" alt="Africa House Hotel">
+    <div class="file">africa-house-hotel.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#50 · Aluna Nungwi</div>
+    <img src="/images/hotels/aluna-nungwi.png" loading="lazy" alt="Aluna Nungwi">
+    <div class="file">aluna-nungwi.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#51 · Aluna Paje</div>
+    <img src="/images/hotels/aluna-paje.jpg" loading="lazy" alt="Aluna Paje">
+    <div class="file">aluna-paje.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#52 · Amaan Beach Bungalows</div>
+    <img src="/images/hotels/amaan-beach-bungalows.jpg" loading="lazy" alt="Amaan Beach Bungalows">
+    <div class="file">amaan-beach-bungalows.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#53 · Anna of Zanzibar</div>
+    <img src="/images/hotels/anna-of-zanzibar.jpg" loading="lazy" alt="Anna of Zanzibar">
+    <div class="file">anna-of-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#54 · Antonio Garden Hotel</div>
+    <img src="/images/hotels/antonio-garden-hotel.jpg" loading="lazy" alt="Antonio Garden Hotel">
+    <div class="file">antonio-garden-hotel.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#55 · Art Hotel Zanzibar</div>
+    <img src="/images/hotels/art-hotel-zanzibar.jpg" loading="lazy" alt="Art Hotel Zanzibar">
+    <div class="file">art-hotel-zanzibar.jpg</div>
+    <div class="flags">NAME MISMATCH — filename doesn't resemble hotel name</div>
+  </div>
+  <div class="card ">
+    <div class="num">#56 · Atii Garden Bungalows</div>
+    <img src="/images/hotels/atii-garden-bungalows.jpg" loading="lazy" alt="Atii Garden Bungalows">
+    <div class="file">atii-garden-bungalows.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#57 · Aya Beach Bungalows</div>
+    <img src="/images/hotels/aya-beach-bungalows.jpg" loading="lazy" alt="Aya Beach Bungalows">
+    <div class="file">aya-beach-bungalows.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#58 · Azanzi Beach Hotel</div>
+    <img src="/images/hotels/azanzi-beach-hotel.jpg" loading="lazy" alt="Azanzi Beach Hotel">
+    <div class="file">azanzi-beach-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#59 · B4 Beach Club</div>
+    <img src="/images/hotels/b4-beach-club.jpg" loading="lazy" alt="B4 Beach Club">
+    <div class="file">b4-beach-club.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#60 · Babalao Bungalows</div>
+    <img src="/images/hotels/babalao-bungalows.png" loading="lazy" alt="Babalao Bungalows">
+    <div class="file">babalao-bungalows.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#61 · Baraka Beach Bungalows</div>
+    <img src="/images/hotels/baraka-beach-bungalows.jpg" loading="lazy" alt="Baraka Beach Bungalows">
+    <div class="file">baraka-beach-bungalows.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#62 · Blue Moon Resort</div>
+    <img src="/images/hotels/blue-moon-resort.jpg" loading="lazy" alt="Blue Moon Resort">
+    <div class="file">blue-moon-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#63 · Blue Oyster Hotel</div>
+    <img src="/images/hotels/blue-oyster-hotel.png" loading="lazy" alt="Blue Oyster Hotel">
+    <div class="file">blue-oyster-hotel.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#64 · Breezes Beach Club &amp; Spa</div>
+    <img src="/images/hotels/breezes-beach-club-spa.jpg" loading="lazy" alt="Breezes Beach Club &amp; Spa">
+    <div class="file">breezes-beach-club-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#65 · Canary Nungwi Hotel &amp; Spa</div>
+    <img src="/images/hotels/canary-nungwi-hotel-spa.jpg" loading="lazy" alt="Canary Nungwi Hotel &amp; Spa">
+    <div class="file">canary-nungwi-hotel-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#66 · Chapwani Private Island</div>
+    <img src="/images/hotels/chapwani-private-island.jpg" loading="lazy" alt="Chapwani Private Island">
+    <div class="file">chapwani-private-island.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#67 · Chumbe Island Coral Park</div>
+    <img src="/images/hotels/chumbe-island-coral-park.jpg" loading="lazy" alt="Chumbe Island Coral Park">
+    <div class="file">chumbe-island-coral-park.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#68 · Clove Island Villas &amp; Apartments</div>
+    <img src="/images/hotels/clove-island-villas-apartments.jpg" loading="lazy" alt="Clove Island Villas &amp; Apartments">
+    <div class="file">clove-island-villas-apartments.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#69 · Cristal Resort</div>
+    <img src="/images/hotels/cristal-resort.jpg" loading="lazy" alt="Cristal Resort">
+    <div class="file">cristal-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#70 · Dhow Inn</div>
+    <img src="/images/hotels/dhow-inn.png" loading="lazy" alt="Dhow Inn">
+    <div class="file">dhow-inn.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#71 · Dhow Palace Hotel</div>
+    <img src="/images/hotels/dhow-palace-hotel.png" loading="lazy" alt="Dhow Palace Hotel">
+    <div class="file">dhow-palace-hotel.png</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#72 · Diamonds Mapenzi Beach</div>
+    <img src="/images/hotels/diamonds-mapenzi-beach.jpeg" loading="lazy" alt="Diamonds Mapenzi Beach">
+    <div class="file">diamonds-mapenzi-beach.jpeg</div>
+    <div class="flags">HUGE (5MB) — raw file?</div>
+  </div>
+  <div class="card ">
+    <div class="num">#73 · Dongwe Ocean View</div>
+    <img src="/images/hotels/dongwe-ocean-view.jpg" loading="lazy" alt="Dongwe Ocean View">
+    <div class="file">dongwe-ocean-view.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#74 · DoubleTree by Hilton Nungwi</div>
+    <img src="/images/hotels/doubletree-by-hilton-nungwi.jpg" loading="lazy" alt="DoubleTree by Hilton Nungwi">
+    <div class="file">doubletree-by-hilton-nungwi.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#75 · DoubleTree by Hilton Stone Town</div>
+    <img src="/images/hotels/doubletree-by-hilton-stone-town.jpg" loading="lazy" alt="DoubleTree by Hilton Stone Town">
+    <div class="file">doubletree-by-hilton-stone-town.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#76 · Emerald Bay Resort</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card ">
+    <div class="num">#77 · Filao Beach Zanzibar</div>
+    <img src="/images/hotels/filao-beach-zanzibar.jpg" loading="lazy" alt="Filao Beach Zanzibar">
+    <div class="file">filao-beach-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#78 · Flame Tree Cottages</div>
+    <img src="/images/hotels/flame-tree-cottages.jpg" loading="lazy" alt="Flame Tree Cottages">
+    <div class="file">flame-tree-cottages.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#79 · Fumba Beach Lodge</div>
+    <img src="/images/hotels/fumba-beach-lodge.webp" loading="lazy" alt="Fumba Beach Lodge">
+    <div class="file">fumba-beach-lodge.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#80 · Fumba Town Apartments by CPS</div>
+    <img src="/images/hotels/fumba-town-apartments-by-cps.jpg" loading="lazy" alt="Fumba Town Apartments by CPS">
+    <div class="file">fumba-town-apartments-by-cps.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#81 · Fun Beach Resort</div>
+    <img src="/images/hotels/fun-beach-resort.webp" loading="lazy" alt="Fun Beach Resort">
+    <div class="file">fun-beach-resort.webp</div>
+    <div class="flags">NAME MISMATCH — filename doesn't resemble hotel name</div>
+  </div>
+  <div class="card ">
+    <div class="num">#82 · Golden Tulip Stone Town Boutique</div>
+    <img src="/images/hotels/golden-tulip-stone-town-boutique.jpg" loading="lazy" alt="Golden Tulip Stone Town Boutique">
+    <div class="file">golden-tulip-stone-town-boutique.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#83 · Green Living Fumba</div>
+    <img src="/images/hotels/green-living-fumba.jpg" loading="lazy" alt="Green Living Fumba">
+    <div class="file">green-living-fumba.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#84 · Hakuna Majiwe Beach Lodge</div>
+    <img src="/images/hotels/hakuna-majiwe-beach-lodge.jpg" loading="lazy" alt="Hakuna Majiwe Beach Lodge">
+    <div class="file">hakuna-majiwe-beach-lodge.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#85 · Hakuna Matata Beach Lodge</div>
+    <img src="/images/hotels/hakuna-matata-beach-lodge.jpg" loading="lazy" alt="Hakuna Matata Beach Lodge">
+    <div class="file">hakuna-matata-beach-lodge.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#86 · Hodi Hodi Zanzibar</div>
+    <img src="/images/hotels/hodi-hodi-zanzibar.jpg" loading="lazy" alt="Hodi Hodi Zanzibar">
+    <div class="file">hodi-hodi-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#87 · House of Spices</div>
+    <img src="/images/hotels/house-of-spices.jpg" loading="lazy" alt="House of Spices">
+    <div class="file">house-of-spices.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#88 · Ifa Beach Resort</div>
+    <img src="/images/hotels/ifa-beach-resort.jpg" loading="lazy" alt="Ifa Beach Resort">
+    <div class="file">ifa-beach-resort.jpg</div>
+    <div class="flags">NAME MISMATCH — filename doesn't resemble hotel name</div>
+  </div>
+  <div class="card ">
+    <div class="num">#89 · Indigo Beach Zanzibar</div>
+    <img src="/images/hotels/indigo-beach-zanzibar.jpg" loading="lazy" alt="Indigo Beach Zanzibar">
+    <div class="file">indigo-beach-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#90 · Jafferji Beach Retreat</div>
+    <img src="/images/hotels/jafferji-beach-retreat.jpg" loading="lazy" alt="Jafferji Beach Retreat">
+    <div class="file">jafferji-beach-retreat.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#91 · Jambiani Wellness Retreat</div>
+    <img src="/images/hotels/jambiani-wellness-retreat.jpg" loading="lazy" alt="Jambiani Wellness Retreat">
+    <div class="file">jambiani-wellness-retreat.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#92 · Jambiani White Sands</div>
+    <img src="/images/hotels/jambiani-white-sands.jpg" loading="lazy" alt="Jambiani White Sands">
+    <div class="file">jambiani-white-sands.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#93 · Kae Funk Zanzibar</div>
+    <img src="/images/hotels/kae-funk-zanzibar.jpg" loading="lazy" alt="Kae Funk Zanzibar">
+    <div class="file">kae-funk-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#94 · Karafuu Beach Resort &amp; Spa</div>
+    <img src="/images/hotels/karafuu-beach-resort-spa.webp" loading="lazy" alt="Karafuu Beach Resort &amp; Spa">
+    <div class="file">karafuu-beach-resort-spa.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#95 · Karamba Eco Boutique Hotel</div>
+    <img src="/images/hotels/karamba-eco-boutique-hotel.jpg" loading="lazy" alt="Karamba Eco Boutique Hotel">
+    <div class="file">karamba-eco-boutique-hotel.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#96 · Karibu Beach Resort</div>
+    <img src="/images/hotels/karibu-beach-resort.jpg" loading="lazy" alt="Karibu Beach Resort">
+    <div class="file">karibu-beach-resort.jpg</div>
+    <div class="flags">HUGE (5MB) — raw file?</div>
+  </div>
+  <div class="card ">
+    <div class="num">#97 · Kena Beach Hotel</div>
+    <img src="/images/hotels/kena-beach-hotel.jpg" loading="lazy" alt="Kena Beach Hotel">
+    <div class="file">kena-beach-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#98 · Kendwa Rocks Beach Hotel</div>
+    <img src="/images/hotels/kendwa-rocks-beach-hotel.webp" loading="lazy" alt="Kendwa Rocks Beach Hotel">
+    <div class="file">kendwa-rocks-beach-hotel.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#99 · Kervan Saray Beach</div>
+    <img src="/images/hotels/kervan-saray-beach.jpg" loading="lazy" alt="Kervan Saray Beach">
+    <div class="file">kervan-saray-beach.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#100 · Kholle House</div>
+    <img src="/images/hotels/kholle-house.png" loading="lazy" alt="Kholle House">
+    <div class="file">kholle-house.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#101 · Kibanda Lodge</div>
+    <img src="/images/hotels/kibanda-lodge.jpg" loading="lazy" alt="Kibanda Lodge">
+    <div class="file">kibanda-lodge.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#102 · Kisiwa House</div>
+    <img src="/images/hotels/kisiwa-house.jpg" loading="lazy" alt="Kisiwa House">
+    <div class="file">kisiwa-house.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#103 · Kisiwa on the Beach</div>
+    <img src="/images/hotels/kisiwa-on-the-beach.jpg" loading="lazy" alt="Kisiwa on the Beach">
+    <div class="file">kisiwa-on-the-beach.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#104 · Kupaga Villas</div>
+    <img src="/images/hotels/kupaga-villas.jpg" loading="lazy" alt="Kupaga Villas">
+    <div class="file">kupaga-villas.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#105 · Langi Langi Beach Bungalows</div>
+    <img src="/images/hotels/langi-langi-beach-bungalows.jpg" loading="lazy" alt="Langi Langi Beach Bungalows">
+    <div class="file">langi-langi-beach-bungalows.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#106 · Mahali Zanzibar</div>
+    <img src="/images/hotels/mahali-zanzibar.jpg" loading="lazy" alt="Mahali Zanzibar">
+    <div class="file">mahali-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#107 · Marafiki Bungalows</div>
+    <img src="/images/hotels/marafiki-bungalows.jpg" loading="lazy" alt="Marafiki Bungalows">
+    <div class="file">marafiki-bungalows.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#108 · Maru Maru Hotel</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card bad">
+    <div class="num">#109 · Matemwe Lodge</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card ">
+    <div class="num">#110 · Michamvi Sunset Bay</div>
+    <img src="/images/hotels/michamvi-sunset-bay.jpg" loading="lazy" alt="Michamvi Sunset Bay">
+    <div class="file">michamvi-sunset-bay.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#111 · Miramont Retreat</div>
+    <img src="/images/hotels/miramont-retreat.jpg" loading="lazy" alt="Miramont Retreat">
+    <div class="file">miramont-retreat.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#112 · Mizingani Seafront Hotel</div>
+    <img src="/images/hotels/mizingani-seafront-hotel.jpg" loading="lazy" alt="Mizingani Seafront Hotel">
+    <div class="file">mizingani-seafront-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#113 · Mnana Beach Bungalows</div>
+    <img src="/images/hotels/mnana-beach-bungalows.jpg" loading="lazy" alt="Mnana Beach Bungalows">
+    <div class="file">mnana-beach-bungalows.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#114 · Mnarani Beach Cottages</div>
+    <img src="/images/hotels/mnarani-beach-cottages.jpg" loading="lazy" alt="Mnarani Beach Cottages">
+    <div class="file">mnarani-beach-cottages.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#115 · Mvuvi Resort</div>
+    <img src="/images/hotels/mvuvi-resort.jpg" loading="lazy" alt="Mvuvi Resort">
+    <div class="file">mvuvi-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#116 · Mwezi Boutique Resort</div>
+    <img src="/images/hotels/mwezi-boutique-resort.jpg" loading="lazy" alt="Mwezi Boutique Resort">
+    <div class="file">mwezi-boutique-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#117 · My Blue Hotel</div>
+    <img src="/images/hotels/my-blue-hotel.jpg" loading="lazy" alt="My Blue Hotel">
+    <div class="file">my-blue-hotel.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#118 · Nur Beach Hotel</div>
+    <img src="/images/hotels/nur-beach-hotel.jpg" loading="lazy" alt="Nur Beach Hotel">
+    <div class="file">nur-beach-hotel.jpg</div>
+    <div class="flags">NAME MISMATCH — filename doesn't resemble hotel name</div>
+  </div>
+  <div class="card ">
+    <div class="num">#119 · Ocean Paradise Resort &amp; Spa</div>
+    <img src="/images/hotels/ocean-paradise-resort-spa.jpg" loading="lazy" alt="Ocean Paradise Resort &amp; Spa">
+    <div class="file">ocean-paradise-resort-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#120 · Oxygen Paje</div>
+    <img src="/images/hotels/oxygen-paje.jpg" loading="lazy" alt="Oxygen Paje">
+    <div class="file">oxygen-paje.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#121 · Paje By Night</div>
+    <img src="/images/hotels/paje-by-night.png" loading="lazy" alt="Paje By Night">
+    <div class="file">paje-by-night.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#122 · Palumbokendwa</div>
+    <img src="/images/hotels/palumbokendwa.png" loading="lazy" alt="Palumbokendwa">
+    <div class="file">palumbokendwa.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#123 · Paradise Beach Resort</div>
+    <img src="/images/hotels/paradise-beach-resort.jpg" loading="lazy" alt="Paradise Beach Resort">
+    <div class="file">paradise-beach-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#124 · Passion Boutique Hotel</div>
+    <img src="/images/hotels/passion-boutique-hotel.jpg" loading="lazy" alt="Passion Boutique Hotel">
+    <div class="file">passion-boutique-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#125 · Pemba Misali Sunset Beach</div>
+    <img src="/images/hotels/pemba-misali-sunset-beach.jpg" loading="lazy" alt="Pemba Misali Sunset Beach">
+    <div class="file">pemba-misali-sunset-beach.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#126 · Pemba Paradise</div>
+    <img src="/images/hotels/pemba-paradise.png" loading="lazy" alt="Pemba Paradise">
+    <div class="file">pemba-paradise.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#127 · Pongwe Beach Hotel</div>
+    <img src="/images/hotels/pongwe-beach-hotel.jpg" loading="lazy" alt="Pongwe Beach Hotel">
+    <div class="file">pongwe-beach-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#128 · Sandies Baobab Beach Zanzibar</div>
+    <img src="/images/hotels/sandies-baobab-beach-zanzibar.jpg" loading="lazy" alt="Sandies Baobab Beach Zanzibar">
+    <div class="file">sandies-baobab-beach-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#129 · Sea Cliff Court Zanzibar</div>
+    <img src="/images/hotels/sea-cliff-court-zanzibar.jpg" loading="lazy" alt="Sea Cliff Court Zanzibar">
+    <div class="file">sea-cliff-court-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#130 · Sea View Lodge</div>
+    <img src="/images/hotels/sea-view-lodge.webp" loading="lazy" alt="Sea View Lodge">
+    <div class="file">sea-view-lodge.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#131 · Seasons Lodge Zanzibar</div>
+    <img src="/images/hotels/seasons-lodge-zanzibar.webp" loading="lazy" alt="Seasons Lodge Zanzibar">
+    <div class="file">seasons-lodge-zanzibar.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#132 · Shaba Boutique Hotel</div>
+    <img src="/images/hotels/shaba-boutique-hotel.jpg" loading="lazy" alt="Shaba Boutique Hotel">
+    <div class="file">shaba-boutique-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#133 · Sharazād Boutique Hotel</div>
+    <img src="/images/hotels/sharazd-boutique-hotel.jpg" loading="lazy" alt="Sharazād Boutique Hotel">
+    <div class="file">sharazd-boutique-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#134 · Sharook Riviera Grand</div>
+    <img src="/images/hotels/sharook-riviera-grand.jpg" loading="lazy" alt="Sharook Riviera Grand">
+    <div class="file">sharook-riviera-grand.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#135 · Shooting Star Lodge</div>
+    <img src="/images/hotels/shooting-star-lodge.png" loading="lazy" alt="Shooting Star Lodge">
+    <div class="file">shooting-star-lodge.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#136 · Smiles Beach Hotel</div>
+    <img src="/images/hotels/smiles-beach-hotel.jpg" loading="lazy" alt="Smiles Beach Hotel">
+    <div class="file">smiles-beach-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#137 · Spice Island Hotel &amp; Resort</div>
+    <img src="/images/hotels/spice-island-hotel-resort.jpg" loading="lazy" alt="Spice Island Hotel &amp; Resort">
+    <div class="file">spice-island-hotel-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#138 · Sultan Sands Island Resort</div>
+    <img src="/images/hotels/sultan-sands-island-resort.jpg" loading="lazy" alt="Sultan Sands Island Resort">
+    <div class="file">sultan-sands-island-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#139 · Tamani Marina Hotel</div>
+    <img src="/images/hotels/tamani-marina-hotel.jpg" loading="lazy" alt="Tamani Marina Hotel">
+    <div class="file">tamani-marina-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#140 · Tanzanite Beach Resort</div>
+    <img src="/images/hotels/tanzanite-beach-resort.jpg" loading="lazy" alt="Tanzanite Beach Resort">
+    <div class="file">tanzanite-beach-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#141 · Tembo House Hotel</div>
+    <img src="/images/hotels/tembo-house-hotel.webp" loading="lazy" alt="Tembo House Hotel">
+    <div class="file">tembo-house-hotel.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#142 · Tembo Palace Hotel</div>
+    <img src="/images/hotels/tembo-palace-hotel.webp" loading="lazy" alt="Tembo Palace Hotel">
+    <div class="file">tembo-palace-hotel.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#143 · The Island - Pongwe Lodge</div>
+    <img src="/images/hotels/the-island-pongwe-lodge.png" loading="lazy" alt="The Island - Pongwe Lodge">
+    <div class="file">the-island-pongwe-lodge.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#144 · The Loop Beach Resort</div>
+    <img src="/images/hotels/the-loop-beach-resort.jpg" loading="lazy" alt="The Loop Beach Resort">
+    <div class="file">the-loop-beach-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#145 · The Sands Beach Resort</div>
+    <img src="/images/hotels/the-sands-beach-resort.jpg" loading="lazy" alt="The Sands Beach Resort">
+    <div class="file">the-sands-beach-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#146 · The Seyyida Hotel &amp; Spa</div>
+    <img src="/images/hotels/the-seyyida-hotel-spa.jpg" loading="lazy" alt="The Seyyida Hotel &amp; Spa">
+    <div class="file">the-seyyida-hotel-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#147 · The Zanzibari</div>
+    <img src="/images/hotels/the-zanzibari.webp" loading="lazy" alt="The Zanzibari">
+    <div class="file">the-zanzibari.webp</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#148 · Toa Hotel &amp; Spa</div>
+    <img src="/images/hotels/toa-hotel-spa.png" loading="lazy" alt="Toa Hotel &amp; Spa">
+    <div class="file">toa-hotel-spa.png</div>
+    <div class="flags">NAME MISMATCH — filename doesn't resemble hotel name</div>
+  </div>
+  <div class="card ">
+    <div class="num">#149 · Upendo Beach Zanzibar</div>
+    <img src="/images/hotels/upendo-beach-zanzibar.jpg" loading="lazy" alt="Upendo Beach Zanzibar">
+    <div class="file">upendo-beach-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#150 · Upendo House Stone Town</div>
+    <img src="/images/hotels/upendo-house-stone-town.jpg" loading="lazy" alt="Upendo House Stone Town">
+    <div class="file">upendo-house-stone-town.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#151 · Villa Bluu</div>
+    <img src="/images/hotels/villa-bluu.png" loading="lazy" alt="Villa Bluu">
+    <div class="file">villa-bluu.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#152 · Villa Kiva Boutique Hotel</div>
+    <img src="/images/hotels/villa-kiva-boutique-hotel.jpg" loading="lazy" alt="Villa Kiva Boutique Hotel">
+    <div class="file">villa-kiva-boutique-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#153 · Warere Beach</div>
+    <img src="/images/hotels/warere-beach.jpg" loading="lazy" alt="Warere Beach">
+    <div class="file">warere-beach.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#154 · Warere Town House</div>
+    <img src="/images/hotels/warere-town-house.jpg" loading="lazy" alt="Warere Town House">
+    <div class="file">warere-town-house.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#155 · Waridi Beach Resort &amp; Spa</div>
+    <img src="/images/hotels/waridi-beach-resort-spa.jpg" loading="lazy" alt="Waridi Beach Resort &amp; Spa">
+    <div class="file">waridi-beach-resort-spa.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#156 · White Paradise Zanzibar Resort</div>
+    <img src="/images/hotels/white-paradise-zanzibar-resort.jpg" loading="lazy" alt="White Paradise Zanzibar Resort">
+    <div class="file">white-paradise-zanzibar-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#157 · Zanzibar Coffee House</div>
+    <img src="/images/hotels/zanzibar-coffee-house.jpg" loading="lazy" alt="Zanzibar Coffee House">
+    <div class="file">zanzibar-coffee-house.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#158 · Zanzibar Kite Paradise</div>
+    <img src="/images/hotels/zanzibar-kite-paradise.jpg" loading="lazy" alt="Zanzibar Kite Paradise">
+    <div class="file">zanzibar-kite-paradise.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#159 · Zanzibar Pearl Boutique</div>
+    <img src="/images/hotels/zanzibar-pearl-boutique.jpg" loading="lazy" alt="Zanzibar Pearl Boutique">
+    <div class="file">zanzibar-pearl-boutique.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#160 · Zanzibar Queen Hotel</div>
+    <img src="/images/hotels/zanzibar-queen-hotel.png" loading="lazy" alt="Zanzibar Queen Hotel">
+    <div class="file">zanzibar-queen-hotel.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#161 · Zanzibar Star Resort</div>
+    <img src="/images/hotels/zanzibar-star-resort.jpg" loading="lazy" alt="Zanzibar Star Resort">
+    <div class="file">zanzibar-star-resort.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#162 · Al-Minar Hotel</div>
+    <img src="/images/hotels/al-minar-hotel.png" loading="lazy" alt="Al-Minar Hotel">
+    <div class="file">al-minar-hotel.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#163 · Amaan Ocean Koko Beach</div>
+    <img src="/images/hotels/amaan-ocean-koko-beach.jpg" loading="lazy" alt="Amaan Ocean Koko Beach">
+    <div class="file">amaan-ocean-koko-beach.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#164 · Aquaholics Surf Lodge</div>
+    <img src="/images/hotels/aquaholics-surf-lodge.png" loading="lazy" alt="Aquaholics Surf Lodge">
+    <div class="file">aquaholics-surf-lodge.png</div>
+    <div class="flags">HUGE (3MB) — raw file?</div>
+  </div>
+  <div class="card ">
+    <div class="num">#165 · Arabian Nights Hotel</div>
+    <img src="/images/hotels/arabian-nights-hotel.jpg" loading="lazy" alt="Arabian Nights Hotel">
+    <div class="file">arabian-nights-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#166 · Cheetah's Rock Management Stay</div>
+    <img src="/images/hotels/cheetahs-rock-management-stay.png" loading="lazy" alt="Cheetah's Rock Management Stay">
+    <div class="file">cheetahs-rock-management-stay.png</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#167 · Demani Lodge</div>
+    <img src="/images/hotels/demani-lodge.jpg" loading="lazy" alt="Demani Lodge">
+    <div class="file">demani-lodge.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#168 · Forodhani Park Hotel</div>
+    <img src="/images/hotels/forodhani-park-hotel.jpg" loading="lazy" alt="Forodhani Park Hotel">
+    <div class="file">forodhani-park-hotel.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#169 · Kimte Beach Lodge</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card ">
+    <div class="num">#170 · Malika Hotel</div>
+    <img src="/images/hotels/malika-hotel.webp" loading="lazy" alt="Malika Hotel">
+    <div class="file">malika-hotel.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#171 · Mangrove Lodge</div>
+    <img src="/images/hotels/mangrove-lodge.jpg" loading="lazy" alt="Mangrove Lodge">
+    <div class="file">mangrove-lodge.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#172 · Paje Beach Bandas</div>
+    <img src="/images/hotels/paje-beach-bandas.jpg" loading="lazy" alt="Paje Beach Bandas">
+    <div class="file">paje-beach-bandas.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#173 · Princess Salme Inn</div>
+    <img src="/images/hotels/princess-salme-inn.jpg" loading="lazy" alt="Princess Salme Inn">
+    <div class="file">princess-salme-inn.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#174 · Promised Land Lodge</div>
+    <img src="/images/hotels/promised-land-lodge.jpg" loading="lazy" alt="Promised Land Lodge">
+    <div class="file">promised-land-lodge.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#175 · Rumaisa Hotel</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card ">
+    <div class="num">#176 · Spice Palace Hotel</div>
+    <img src="/images/hotels/spice-palace-hotel.jpg" loading="lazy" alt="Spice Palace Hotel">
+    <div class="file">spice-palace-hotel.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#177 · Stone Town Café B&amp;B</div>
+    <img src="/images/hotels/stone-town-caf-bb.webp" loading="lazy" alt="Stone Town Café B&amp;B">
+    <div class="file">stone-town-caf-bb.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#178 · Summer Dream Lodge</div>
+    <img src="/images/hotels/summer-dream-lodge.jpg" loading="lazy" alt="Summer Dream Lodge">
+    <div class="file">summer-dream-lodge.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#179 · Sunset Kendwa</div>
+    <img src="/images/hotels/sunset-kendwa.webp" loading="lazy" alt="Sunset Kendwa">
+    <div class="file">sunset-kendwa.webp</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#180 · Sunshine Hotel Matemwe</div>
+    <img src="/images/hotels/sunshine-hotel-matemwe.jpg" loading="lazy" alt="Sunshine Hotel Matemwe">
+    <div class="file">sunshine-hotel-matemwe.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#181 · Surfescape Zanzibar</div>
+    <img src="/images/hotels/surfescape-zanzibar.jpg" loading="lazy" alt="Surfescape Zanzibar">
+    <div class="file">surfescape-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#182 · The Swahili House</div>
+    <img src="/images/hotels/the-swahili-house.jpg" loading="lazy" alt="The Swahili House">
+    <div class="file">the-swahili-house.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#183 · Unguja Lodge</div>
+    <img src="/images/hotels/unguja-lodge.jpeg" loading="lazy" alt="Unguja Lodge">
+    <div class="file">unguja-lodge.jpeg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#184 · Verani Beach Lodge</div>
+    <img src="/images/hotels/verani-beach-lodge.jpeg" loading="lazy" alt="Verani Beach Lodge">
+    <div class="file">verani-beach-lodge.jpeg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#185 · Abuso Inn</div>
+    <img src="/images/hotels/abuso-inn.jpg" loading="lazy" alt="Abuso Inn">
+    <div class="file">abuso-inn.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#186 · Drifters Zanzibar</div>
+    <img src="/images/hotels/drifters-zanzibar.jpg" loading="lazy" alt="Drifters Zanzibar">
+    <div class="file">drifters-zanzibar.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#187 · Ebb &amp; Flow</div>
+    <img src="/images/hotels/ebb-flow.jpeg" loading="lazy" alt="Ebb &amp; Flow">
+    <div class="file">ebb-flow.jpeg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#188 · Hekima House</div>
+    <img src="/images/hotels/hekima-house.jpg" loading="lazy" alt="Hekima House">
+    <div class="file">hekima-house.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#189 · Jambo Guest House</div>
+    <img src="/images/hotels/jambo-guest-house.jpg" loading="lazy" alt="Jambo Guest House">
+    <div class="file">jambo-guest-house.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#190 · Jozani Chwaka Bay Official Stay</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card bad">
+    <div class="num">#191 · Matemwe Beach House</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card ">
+    <div class="num">#192 · Mbuyuni Beach Village</div>
+    <img src="/images/hotels/mbuyuni-beach-village.jpg" loading="lazy" alt="Mbuyuni Beach Village">
+    <div class="file">mbuyuni-beach-village.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#193 · New Teddy's on the Beach</div>
+    <img src="/images/hotels/new-teddys-on-the-beach.jpg" loading="lazy" alt="New Teddy's on the Beach">
+    <div class="file">new-teddys-on-the-beach.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#194 · Nungwi House</div>
+    <img src="/images/hotels/nungwi-house.jpg" loading="lazy" alt="Nungwi House">
+    <div class="file">nungwi-house.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#195 · Ten to Ten Stone Town</div>
+    <img src="/images/hotels/ten-to-ten-stone-town.jpg" loading="lazy" alt="Ten to Ten Stone Town">
+    <div class="file">ten-to-ten-stone-town.jpg</div>
+    
+  </div>
+  <div class="card ">
+    <div class="num">#196 · Your Zanzibar Place</div>
+    <img src="/images/hotels/your-zanzibar-place.jpg" loading="lazy" alt="Your Zanzibar Place">
+    <div class="file">your-zanzibar-place.jpg</div>
+    
+  </div>
+  <div class="card bad">
+    <div class="num">#197 · The One Resort Zanzibar</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card bad">
+    <div class="num">#198 · Stonetown View Hotel</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card bad">
+    <div class="num">#199 · Le Paradis Boutique Hotel Zanzibar</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card bad">
+    <div class="num">#200 · Mkeka Spice Lodge</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div>
+  <div class="card bad">
+    <div class="num">#201 · The Island Stonetown</div>
+    <div class="ph">no photo</div>
+    <div class="file">—</div>
+    <div class="flags">NO PHOTO FIELD</div>
+  </div></div>
