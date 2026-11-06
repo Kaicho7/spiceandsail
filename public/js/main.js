@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  // Contact form -> WhatsApp (works on any static host)
+  // Contact form -> save lead server-side -> open WhatsApp
   var inquiryForm = document.querySelector('form.contact-form');
   if (inquiryForm) {
     inquiryForm.addEventListener('submit', function(e) {
@@ -90,24 +90,64 @@ document.addEventListener('DOMContentLoaded', function () {
       var f = inquiryForm;
       function field(name) {
         var el = f.elements[name];
-        if (!el) return '-';
+        if (!el) return '';
         if (el.tagName === 'SELECT') {
-          return el.options[el.selectedIndex] ? el.options[el.selectedIndex].text : '-';
+          return el.options[el.selectedIndex] ? el.options[el.selectedIndex].text : '';
         }
-        return (el.value || '').trim() || '-';
+        return (el.value || '').trim();
       }
-      var msg = [
-        'Hello Spice and Sail!',
-        'Name: ' + field('name'),
-        'Email: ' + field('email'),
-        'WhatsApp: ' + field('phone'),
-        'Travel dates: ' + field('travel_dates'),
-        'Interests: ' + field('interests'),
-        'Group size: ' + field('group_size'),
-        'Message: ' + field('message')
-      ].join('\n');
-      window.open('https://wa.me/255672450934?text=' + encodeURIComponent(msg), '_blank', 'noopener');
-      window.location.href = '/thank-you/';
+
+      var submitBtn = f.querySelector('button[type="submit"]');
+      var originalText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+      var payload = {
+        name: field('name'),
+        whatsapp: field('phone'),
+        email: field('email') || undefined,
+        travellers: field('group_size') ? Number(field('group_size')) || undefined : undefined,
+        services: field('interests') ? [field('interests')] : undefined,
+        notes: [field('travel_dates') ? 'Dates: ' + field('travel_dates') : '', field('message')].filter(Boolean).join('\n') || undefined,
+        consent_contact: true,
+        session_id: 'contact-form-' + Date.now()
+      };
+
+      fetch('/.netlify/functions/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(r) { return r.json().then(function(j) { return { ok: r.ok, data: j }; }); })
+      .then(function(res) {
+        if (!res.ok) {
+          var detail = (res.data && res.data.details) ? res.data.details.join(', ') : 'Submission failed';
+          throw new Error(detail);
+        }
+        var msg = [
+          'Hello Spice and Sail!',
+          'Reference: ' + (res.data.reference || ''),
+          'Name: ' + field('name'),
+          'Email: ' + field('email'),
+          'WhatsApp: ' + field('phone'),
+          'Travel dates: ' + field('travel_dates'),
+          'Interests: ' + field('interests'),
+          'Group size: ' + field('group_size'),
+          'Message: ' + field('message')
+        ].join('\n');
+        window.open('https://wa.me/255672450934?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+        window.location.href = '/thank-you/?ref=' + encodeURIComponent(res.data.reference || '');
+      })
+      .catch(function(err) {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+        var box = f.querySelector('.form-error');
+        if (!box) {
+          box = document.createElement('div');
+          box.className = 'form-error';
+          box.style.cssText = 'background:#fee;color:#c00;padding:1rem;border-radius:6px;margin-top:1rem;font-size:0.9rem;';
+          f.appendChild(box);
+        }
+        box.textContent = 'Could not send your enquiry: ' + err.message + '. Please contact us directly on WhatsApp.';
+      });
     });
   }
 

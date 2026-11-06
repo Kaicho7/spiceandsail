@@ -34,3 +34,7 @@ _archive/
 .deploy-trigger
 .netlify-rebuild
 .netlify-trigger
+*.bak
+*.bak-*
+*.bak
+*.bak-*
