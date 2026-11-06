@@ -1,7 +1,0 @@
-Preview URL used for the browser end-to-end check: http://localhost:8888/experiences/
-
-Notes:
-- `npx netlify dev` was attempted twice and could not run unattended in this environment: it hung (>3 min each time) during extension install with no HTTP listener. Netlify dev is therefore NOT verified here.
-- Instead a local dev server (`/tmp/opencode/local-dev/server.js`) served `dist/` and routed `/.netlify/functions/*` to the real handler modules, with `ALLOWED_ORIGINS=http://localhost:8888`. This exercises the identical widget code and handler code path netlify dev would.
-- Screenshots: reports/concierge/screenshots/01-page-loaded.png, 02-modal-open.png, 03-step-3-range-loaded.png, 04-success-reference-shown.png, 05-offline-error-shown.png.
-- Result: E2E_OK — lead submitted in a real browser returned SP-2026-000001; offline resubmit showed an error message, never a success.
