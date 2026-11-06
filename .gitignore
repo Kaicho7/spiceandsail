@@ -26,3 +26,7 @@ In a separate terminal window*
 # backups
 .eleventy.js.backup*
 
+
+# local backups and generated review files
+*.backup-*
+hotel-images-review.html
