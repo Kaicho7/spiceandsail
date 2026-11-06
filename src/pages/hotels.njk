@@ -13,7 +13,7 @@ permalink: "/hotels/index.html"
       <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Curated Partner Directory</span>
       <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 1rem; color: #ffffff;">Where to Stay in Zanzibar — Verified Hotels & Resorts</h1>
       <p style="font-size: 1.15rem; line-height: 1.6; color: #e0e8ec; margin-bottom: 2rem;">
-        Browse {{ stats.total_hotels }} inspected beachfront resorts, boutique villas, and historic Stone Town retreats. Door-to-door VIP airport transfers, lobby excursion departures, and direct partner rates.
+        Browse {{ hotels.hotels | length }} inspected beachfront resorts, boutique villas, and historic Stone Town retreats. Door-to-door VIP airport transfers, lobby excursion departures, and direct partner rates.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="/transfers/" class="btn btn-primary btn-lg" style="background: var(--dct-gold, #D4AF37); border-color: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700;">
@@ -54,7 +54,7 @@ permalink: "/hotels/index.html"
           <span style="position: absolute; left: 0.85rem; top: 0.8rem; font-size: 1rem; opacity: 0.5;">🏨</span>
         </div>
         <div id="hotel-count-indicator" style="font-size: 0.88rem; font-weight: 600; color: #003853; background: #e8f1f5; padding: 0.5rem 1rem; border-radius: 50px;">
-          Showing {{ stats.total_hotels }} of {{ stats.total_hotels }} properties
+          Showing {{ hotels.hotels | length }} of {{ hotels.hotels | length }} properties
         </div>
       </div>
 
@@ -332,6 +332,9 @@ permalink: "/hotels/index.html"
         filterHotels();
       });
     }
+
+    // Sync count to actual rendered cards on load
+    filterHotels();
   });
   </script>
 </main>
