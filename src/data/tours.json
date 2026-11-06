@@ -14,7 +14,6 @@
       "basis": "per person; private guide at high end; floor priced from partner rate (Madebe partner rate: $35pp for 2pax)",
       "display": "$45–$80"
     },
-    "price_display": "$45–$80",
     "includes": [
       "Licensed guide",
       "entry fees vary"
@@ -59,7 +58,6 @@
       "basis": "per person; floor priced from partner rate (Madebe partner rate: $27pp for 2pax)",
       "display": "$35–$80"
     },
-    "price_display": "$35–$80",
     "includes": [
       "Farm walk, spice/fruit tasting, guide",
       "lunch varies"
@@ -103,7 +101,6 @@
       "basis": "per person; floor priced from partner rate (Animation team partner rate: $41 total small group)",
       "display": "$30–$50"
     },
-    "price_display": "$30–$50",
     "includes": [
       "Village walk, seaweed/craft visit, local lunch",
       "donation varies"
@@ -147,7 +144,6 @@
       "basis": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (3-in-1))",
       "display": "$75–$165"
     },
-    "price_display": "$50–$165",
     "includes": [
       "Guide, transport, entry fees vary by package"
     ],
@@ -191,7 +187,6 @@
       "basis": "per person; private versions higher; floor priced from partner rate (Madebe partner rate: $45pp for 2pax)",
       "display": "$60–$160"
     },
-    "price_display": "$45–$160",
     "includes": [
       "Dhow, snorkeling, sandbank, seafood lunch, drinks, guide"
     ],
@@ -236,7 +231,6 @@
       "basis": "per person; private boat higher; floor priced from partner rate (Madebe partner rate: $53pp for 2pax)",
       "display": "$70–$150"
     },
-    "price_display": "$50–$150",
     "includes": [
       "Boat, snorkel gear, fruit/water, guide",
       "marine fee varies"
@@ -282,7 +276,6 @@
       "basis": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (Prison Island + Nakupenda))",
       "display": "$75–$145"
     },
-    "price_display": "$42–$145",
     "includes": [
       "Boat, guide, entry",
       "lunch varies"
@@ -327,7 +320,6 @@
       "basis": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (Nakupenda leg))",
       "display": "$75–$145"
     },
-    "price_display": "$45–$145",
     "includes": [
       "Boat, snorkeling, seafood lunch varies"
     ],
@@ -370,7 +362,6 @@
       "basis": "per person; floor priced from partner rate (Masoud Amran partner rate: $90pp)",
       "display": "$115–$135"
     },
-    "price_display": "$115–$135",
     "includes": [
       "Boat, marine-biology guide, snorkeling, lunch, day room"
     ],
@@ -415,7 +406,6 @@
       "basis": "per person; private charter higher; floor priced from partner rate (Amran local boat rate: $10pp for 2pax)",
       "display": "$30–$85"
     },
-    "price_display": "$30–$85",
     "includes": [
       "Dhow, drinks/fruit varies"
     ],
@@ -459,7 +449,6 @@
       "basis": "per person; floor priced from partner rate (Madebe partner rate: $28pp for 2pax)",
       "display": "$35–$110"
     },
-    "price_display": "$35–$110",
     "includes": [
       "Boat, snorkeling, guide",
       "transfer varies"
@@ -504,7 +493,6 @@
       "basis": "per person; floor priced from partner rate (Madebe partner rate: $45pp for 2pax (Jozani + Butterfly Centre))",
       "display": "$45–$98"
     },
-    "price_display": "$45–$98",
     "includes": [
       "Guide, park entry varies"
     ],
@@ -548,7 +536,6 @@
       "basis": "per person",
       "display": "$25–$130"
     },
-    "price_display": "$25–$130",
     "includes": [
       "Cave swim, village/seaweed visit, lunch varies"
     ],
@@ -592,7 +579,6 @@
       "basis": "per person",
       "display": "$400–$800"
     },
-    "price_display": "$400–$800",
     "includes": [
       "Flights, game drive, park fees, lunch"
     ],
@@ -636,7 +622,6 @@
       "basis": "per person",
       "display": "$900–$2500"
     },
-    "price_display": "$900–$2500",
     "includes": [
       "Flights, park fees, 4x4, guide, full board"
     ],
@@ -680,7 +665,6 @@
       "basis": "per person",
       "display": "$185–$260"
     },
-    "price_display": "$185–$260",
     "includes": [
       "Return transfer, Safari Blue, Stone Town + Spice"
     ],
