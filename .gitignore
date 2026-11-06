@@ -30,3 +30,7 @@ In a separate terminal window*
 # local backups and generated review files
 *.backup-*
 hotel-images-review.html
+_archive/
+.deploy-trigger
+.netlify-rebuild
+.netlify-trigger
