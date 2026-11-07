@@ -1,287 +1,97 @@
 ---
-title: "Zanzibar Tour Pricing & Package Rates | Spice & Sail"
-description: "Transparent all-inclusive rates for Zanzibar spice tours, Safari Blue, Mnemba snorkeling, and private airport transfers with marine park fees included."
+title: "Transparent Zanzibar Tour & Transfer Pricing | Spice & Sail"
+description: "Transparent, verified rates for Zanzibar spice tours, Safari Blue, Mnemba snorkeling, and private airport transfers. Marine park fees and taxes included."
 canonical: https://spiceandsail.com/pricing-plans/
 permalink: /pricing-plans/index.html
+eleventyExcludeFromCollections: true
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
+<div class="pricing-container" style="max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <span style="display: inline-block; background: #e0f2fe; color: #0369a1; padding: 0.35rem 1rem; border-radius: 9999px; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.75rem;">
+      Transparent Local Rates · Zero Hidden Surcharges
+    </span>
+    <h1 style="color: #0f172a; font-size: 2.5rem; margin-bottom: 0.75rem;">Transparent Zanzibar Pricing</h1>
+    <p style="color: #475569; font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+      No surprise cash demands at boat ramps, no markups, and no credit card surcharges. All official government conservation fees and licensed guides are included upfront.
+    </p>
+  </div>
 
-<div class="pricing-container">
-  <h1>💰 Dynamic Pricing Plans</h1>
-  <p>Smart pricing that adapts to your travel dates and preferences</p>
-
-  <script>
-    // Load dynamic pricing data from the pricing API
-    async function loadDynamicPricing() {
-      try {
-        // Fetch pricing data from the pricing API
-        const response = await fetch('/.netlify/functions/pricing');
-        if (!response.ok) {
-          throw new Error('Failed to fetch pricing data');
-        }
-        const pricingData = await response.json();
-
-        // Process and display dynamic pricing data
-        renderDynamicPricing(pricingData);
-      } catch (error) {
-        console.error('Error loading dynamic pricing:', error);
-        // Fallback to default pricing
-        renderStaticPricing();
-      }
-    }
-
-    function renderDynamicPricing(data) {
-      const grid = document.querySelector('.pricing-grid');
-      if (!grid) return;
-
-      // Clear existing pricing cards
-      grid.innerHTML = '';
-
-      // Render dynamic pricing cards based on API data
-      data.pricingPlans.forEach(plan => {
-        const card = document.createElement('div');
-        card.className = `pricing-card ${plan.featured ? 'featured' : ''}`;
-        card.innerHTML = `
-          <h3>${plan.name}</h3>
-          <p class="price-range">From $${plan.basePrice} per person</p>
-          <ul class="features">
-            ${plan.features.map(feature => `<li>✅ ${feature}</li>`).join('')}
-          </ul>
-          ${plan.discountBadge ? `<div class="discount-badge">${plan.discountBadge}</div>` : ''}
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function renderStaticPricing() {
-      // Original static pricing implementation
-      // This is kept as fallback when API is unavailable
-    }
-
-    // Load dynamic pricing when the page loads
-    document.addEventListener('DOMContentLoaded', loadDynamicPricing);
-  </script>
-
-  <div class="pricing-grid">
-    <div class="pricing-card">
-      <h3>🏝️ Island Escape</h3>
-      <p class="price-range">From $2,199 per person</p>
-      <ul class="features">
-        <li>✅ 4-Day Luxury Stay</li>
-        <li>✅ Stone Town Walking Tour</li>
-        <li>✅ Spice Farm Experience</li>
-        <li>✅ Private Beach Access</li>
-        <li>✅ Breakfast Included</li>
+  <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem;">
+    <!-- Tier 1: Day Tours -->
+    <div class="pricing-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+      <h3 style="color: #0f172a; font-size: 1.35rem; margin-bottom: 0.5rem;">🧭 Guided Day Tours</h3>
+      <p style="font-size: 1.75rem; font-weight: 700; color: #0284c7; margin-bottom: 1rem;">From $35 <span style="font-size: 0.95rem; font-weight: 400; color: #64748b;">/ person</span></p>
+      <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; color: #334155; line-height: 2;">
+        <li>✅ Stone Town Walking Tour ($35)</li>
+        <li>✅ Spice Farm Guided Tour ($35)</li>
+        <li>✅ Jozani Forest Red Colobus ($45)</li>
+        <li>✅ Safari Blue Full-Day Dhow ($75)</li>
+        <li>✅ Mnemba Atoll Snorkeling ($45)</li>
+        <li>✅ Marine fees &amp; bottled water included</li>
       </ul>
-      <div class="discount-badge">Best Value</div>
+      <a href="/tours/" class="btn btn-secondary" style="display: block; text-align: center; text-decoration: none; padding: 0.75rem; border: 1px solid #0284c7; color: #0284c7; border-radius: 8px; font-weight: 600;">Browse All Day Tours</a>
     </div>
 
-    <div class="pricing-card featured">
-      <h3>🌊 Ocean Adventure</h3>
-      <p class="price-range">From $3,899 per person</p>
-      <ul class="features">
-        <li>✅ 7-Day Full Experience</li>
-        <li>✅ Dolphin Watching</li>
-        <li>✅ Snorkeling Session</li>
-        <li>✅ Sunset Boat Cruise</li>
-        <li>✅ All Meals Included</li>
+    <!-- Tier 2: Airport & Hotel Transfers -->
+    <div class="pricing-card" style="background: #ffffff; border: 2px solid #0284c7; border-radius: 12px; padding: 2rem; box-shadow: 0 6px 20px rgba(2,132,199,0.12); position: relative;">
+      <div style="position: absolute; top: -12px; right: 20px; background: #0284c7; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">
+        Fixed Vehicle Rates
+      </div>
+      <h3 style="color: #0f172a; font-size: 1.35rem; margin-bottom: 0.5rem;">🚐 Airport &amp; Inter-Hotel Transfers</h3>
+      <p style="font-size: 1.75rem; font-weight: 700; color: #0284c7; margin-bottom: 1rem;">$35 – $60 <span style="font-size: 0.95rem; font-weight: 400; color: #64748b;">/ private vehicle</span></p>
+      <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; color: #334155; line-height: 2;">
+        <li>✅ Airport ⇄ Stone Town ($35 – $40)</li>
+        <li>✅ Airport ⇄ Paje / Jambiani ($45 – $55)</li>
+        <li>✅ Airport ⇄ Nungwi / Kendwa ($50 – $60)</li>
+        <li>✅ Flight tracking &amp; name sign meet &amp; greet</li>
+        <li>✅ Private AC minivan (up to 6 passengers)</li>
+        <li>✅ No night arrival or luggage surcharges</li>
       </ul>
-      <div class="discount-badge">Most Popular</div>
+      <a href="/transfers/" class="btn btn-primary" style="display: block; text-align: center; text-decoration: none; padding: 0.75rem; background: #0284c7; color: white; border-radius: 8px; font-weight: 600;">Check Transfer Rates</a>
     </div>
 
-    <div class="pricing-card">
-      <h3>🌴 Cultural Journey</h3>
-      <p class="price-range">From $1,899 per person</p>
-      <ul class="features">
-        <li>✅ 3-Day Cultural Immersion</li>
-        <li>✅ Local Market Tour</li>
-        <li>✅ Traditional Music Show</li>
-        <li>✅ Hotel Pick-up & Drop-off</li>
-        <li>✅ Welcome Drinks</li>
+    <!-- Tier 3: Packages & Safaris -->
+    <div class="pricing-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+      <h3 style="color: #0f172a; font-size: 1.35rem; margin-bottom: 0.5rem;">📦 Packages &amp; Fly-In Safaris</h3>
+      <p style="font-size: 1.75rem; font-weight: 700; color: #0284c7; margin-bottom: 1rem;">From $395 <span style="font-size: 0.95rem; font-weight: 400; color: #64748b;">/ person</span></p>
+      <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; color: #334155; line-height: 2;">
+        <li>✅ Mikumi Fly-In Day Safari ($395)</li>
+        <li>✅ Zanzibar Essentials 3-Day Pass</li>
+        <li>✅ 5–7 Day Island &amp; Safari Combinations</li>
+        <li>✅ Flight transfers, 4x4 cruiser, park fees</li>
+        <li>✅ Dedicated Swahili safari guide</li>
+        <li>✅ Custom tailored itineraries on request</li>
       </ul>
-      <div class="discount-badge">Great Start</div>
+      <a href="/packages/" class="btn btn-secondary" style="display: block; text-align: center; text-decoration: none; padding: 0.75rem; border: 1px solid #0284c7; color: #0284c7; border-radius: 8px; font-weight: 600;">View Multi-Day Packages</a>
     </div>
   </div>
 
-  <div class="pricing-info">
-    <h2>💎 Why Our Pricing is Smart</h2>
-    <div class="info-grid">
-      <div class="info-item">
-        <span class="info-icon">📅</span>
-        <h3>Seasonal Pricing</h3>
-        <p>Book during peak season for premium experiences, or save with off-season rates</p>
+  <div class="pricing-policy" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+    <h2 style="color: #0f172a; font-size: 1.5rem; margin-bottom: 1rem;">Booking &amp; Payment Principles</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+      <div>
+        <h4 style="color: #0f172a; margin-bottom: 0.35rem;">🤝 Zero Upfront Deposit</h4>
+        <p style="color: #64748b; font-size: 0.95rem; margin: 0; line-height: 1.5;">For standard day tours and airport transfers, you pay on arrival upon meeting your guide or driver in cash (USD or TZS).</p>
       </div>
-      <div class="info-item">
-        <span class="info-icon">🤝</span>
-        <h3>Group Discounts</h3>
-        <p>Save up to 15% when booking for groups of 4 or more</p>
+      <div>
+        <h4 style="color: #0f172a; margin-bottom: 0.35rem;">💳 Secure Payment Options</h4>
+        <p style="color: #64748b; font-size: 0.95rem; margin: 0; line-height: 1.5;">Card payments are accepted via secure online link or mobile terminal with zero hidden foreign exchange markups.</p>
       </div>
-      <div class="info-item">
-        <span class="info-icon">💳</span>
-        <h3>Flexible Payment</h3>
-        <p>Split your payment into easy installments with our partner banks</p>
-      </div>
-      <div class="info-item">
-        <span class="info-icon">🎁</span>
-        <h3>Special Offers</h3>
-        <p>Use promo codes at checkout for extra savings on your booking</p>
+      <div>
+        <h4 style="color: #0f172a; margin-bottom: 0.35rem;">🔄 Free Cancellation</h4>
+        <p style="color: #64748b; font-size: 0.95rem; margin: 0; line-height: 1.5;">100% free cancellation up to 24 hours prior to departure, or full weather reschedule if sea conditions make crossings unsafe.</p>
       </div>
     </div>
   </div>
 
-  <style>
-    .pricing-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    .pricing-container h1 {
-      text-align: center;
-      color: #1e3a8a;
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
-    }
-
-    .pricing-container > p {
-      text-align: center;
-      color: #64748b;
-      margin-bottom: 3rem;
-      font-size: 1.1rem;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .pricing-card {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      border: 1px solid #e2e8f0;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .pricing-card.featured {
-      border: 2px solid #3b82f6;
-      transform: scale(1.02);
-    }
-
-    .pricing-card.featured:hover {
-      transform: scale(1.04) translateY(-4px);
-    }
-
-    .pricing-card h3 {
-      font-size: 1.5rem;
-      color: #1e3a8a;
-      margin-bottom: 0.5rem;
-    }
-
-    .price-range {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #059669;
-      margin-bottom: 1.5rem;
-    }
-
-    .features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem 0;
-    }
-
-    .features li {
-      padding: 0.5rem 0;
-      color: #475569;
-      border-bottom: 1px solid #f1f5f9;
-    }
-
-    .features li:last-child {
-      border-bottom: none;
-    }
-
-    .discount-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #f59e0b;
-      color: white;
-      padding: 0.25rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      white-space: nowrap;
-      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
-    }
-
-    .pricing-card.featured .discount-badge {
-      background: #3b82f6;
-      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
-    }
-
-    .pricing-info h2 {
-      text-align: center;
-      color: #1e3a8a;
-      margin-bottom: 3rem;
-      font-size: 2rem;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .info-item {
-      text-align: center;
-      padding: 1.5rem;
-      background: #f8fafc;
-      border-radius: 12px;
-    }
-
-    .info-icon {
-      font-size: 2.5rem;
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .info-item h3 {
-      color: #1e3a8a;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .info-item p {
-      color: #64748b;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      .pricing-container h1 {
-        font-size: 1.8rem;
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-card.featured {
-        transform: none;
-      }
-    }
-  </style>
+  <div style="text-align: center;">
+    <a href="https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I%20have%20a%20pricing%20question%20for%20my%20Zanzibar%20trip." target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="background: #16a34a; border-color: #16a34a; color: white; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">
+      💬 Chat on WhatsApp for a Custom Quote (+255 672 450 934)
+    </a>
+  </div>
 </div>
+
+{% include "footer.njk" %}

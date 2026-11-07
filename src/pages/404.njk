@@ -1,23 +1,57 @@
 ---
 permalink: "/404.html"
-title: "Page Not Found — Spice and Sail Zanzibar"
-description: "Sorry, the page you're looking for doesn't exist. Return to Spice and Sail Zanzibar for Zanzibar tours and experiences."
+title: "You've Drifted Off the Route 🧭 — 404 | Spice and Sail Zanzibar"
+description: "This page doesn't exist — but your Zanzibar trip still does. Browse our verified tours, private airport transfers, multi-day packages, and travel guides."
+eleventyExcludeFromCollections: true
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
 <main class="page-404">
-  <section class="section-404">
+  <section class="section-404" style="padding: 4rem 1.5rem; text-align: center; max-width: 800px; margin: 0 auto;">
     <div class="container-center">
-      <div class="error-code">404</div>
-      <h1>Page Not Found</h1>
-      <p class="error-desc">Sorry, the page you're looking for doesn't exist. It may have been moved or deleted.</p>
-      <div class="error-cta">
-        <a href="/" class="btn btn-primary btn-lg">Return to Homepage</a>
-        <a href="/tours/" class="btn btn-secondary btn-lg">Browse Tours</a>
+      <div class="error-badge" style="display: inline-block; background: #e0f2fe; color: #0369a1; padding: 0.35rem 1rem; border-radius: 9999px; font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem;">
+        Error 404 · Navigation Recovery
       </div>
-      <div class="error-whatsapp">
-        <p>Need help? <a href="https://wa.me/255672450934" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+      <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: #0f172a;">You've drifted off the route 🧭</h1>
+      <p class="error-desc" style="font-size: 1.15rem; color: #475569; margin-bottom: 2.5rem; line-height: 1.6;">
+        This page doesn't exist — but your Zanzibar trip still does. Sail back to one of our verified routes:
+      </p>
+
+      <div class="recovery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; text-align: left; margin-bottom: 2.5rem;">
+        <a href="/tours/" class="recovery-card" style="display: block; padding: 1.25rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: inherit; transition: box-shadow 0.2s;">
+          <strong style="color: #0f172a; font-size: 1.05rem;">🗺️ Browse All Tours</strong>
+          <p style="font-size: 0.875rem; color: #64748b; margin: 0.35rem 0 0 0;">Spice farms, Safari Blue, Jozani Forest, dolphin trips.</p>
+        </a>
+        <a href="/transfers/" class="recovery-card" style="display: block; padding: 1.25rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: inherit; transition: box-shadow 0.2s;">
+          <strong style="color: #0f172a; font-size: 1.05rem;">🚐 Airport Transfers</strong>
+          <p style="font-size: 0.875rem; color: #64748b; margin: 0.35rem 0 0 0;">Fixed rates, flight tracking, meet &amp; greet, private vans.</p>
+        </a>
+        <a href="/packages/" class="recovery-card" style="display: block; padding: 1.25rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: inherit; transition: box-shadow 0.2s;">
+          <strong style="color: #0f172a; font-size: 1.05rem;">📦 Multi-Day Packages</strong>
+          <p style="font-size: 0.875rem; color: #64748b; margin: 0.35rem 0 0 0;">3–7 day itineraries with optional mainland safari extensions.</p>
+        </a>
+        <a href="/hotels/" class="recovery-card" style="display: block; padding: 1.25rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: inherit; transition: box-shadow 0.2s;">
+          <strong style="color: #0f172a; font-size: 1.05rem;">🏨 Where to Stay</strong>
+          <p style="font-size: 0.875rem; color: #64748b; margin: 0.35rem 0 0 0;">Curated hotels, beach resorts, and boutique villas.</p>
+        </a>
+        <a href="/travel-guide/" class="recovery-card" style="display: block; padding: 1.25rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: inherit; transition: box-shadow 0.2s;">
+          <strong style="color: #0f172a; font-size: 1.05rem;">📖 Travel Guides</strong>
+          <p style="font-size: 0.875rem; color: #64748b; margin: 0.35rem 0 0 0;">Best time to visit, marine conservation fees, Stone Town tips.</p>
+        </a>
+        <a href="/" class="recovery-card" style="display: block; padding: 1.25rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; text-decoration: none; color: inherit; transition: box-shadow 0.2s;">
+          <strong style="color: #0f172a; font-size: 1.05rem;">🏝️ Return to Homepage</strong>
+          <p style="font-size: 0.875rem; color: #64748b; margin: 0.35rem 0 0 0;">Start fresh from the Spice &amp; Sail island overview.</p>
+        </a>
+      </div>
+
+      <div class="error-whatsapp" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.5rem; display: inline-block;">
+        <p style="margin: 0 0 0.75rem 0; font-size: 1rem; color: #166534; font-weight: 500;">
+          💬 Lost or looking for a specific tour or hotel transfer?
+        </p>
+        <a href="https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I%20hit%20a%20broken%20link%20and%20need%20help%20planning%20my%20trip." target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="background: #16a34a; border-color: #16a34a; color: #ffffff; text-decoration: none; padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600; display: inline-block;">
+          Message Our Team on WhatsApp (+255 672 450 934)
+        </a>
       </div>
     </div>
   </section>

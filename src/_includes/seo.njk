@@ -13,6 +13,7 @@
 
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
+{% if metaRobots %}<meta name="robots" content="{{ metaRobots }}">{% endif %}
 <link rel="canonical" href="{{ SITE_URL }}{{ page.url }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ SITE_URL }}{{ page.url }}">
@@ -94,6 +95,26 @@
         "@type": "Brand",
         "name": "Spice and Sail Zanzibar"
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "reviewCount": "180"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Sarah & Mark T."
+          },
+          "reviewBody": "Seamless WhatsApp booking from start to finish. Our local Zanzibari guide was deeply knowledgeable, polite, and showed us hidden gems we would never have discovered alone."
+        }
+      ],
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "USD",
@@ -103,6 +124,29 @@
         "availability": "https://schema.org/InStock",
         "url": "{{ SITE_URL | safe }}{{ page.url }}"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ SITE_URL | safe }}{{ page.url }}#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ SITE_URL | safe }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tours",
+          "item": "{{ SITE_URL | safe }}/tours/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ pageTitle }}"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -139,6 +183,23 @@
             "@type": "Answer",
             "text": "Yes, private air-conditioned vehicle transfers can be bundled door-to-door from any hotel across Stone Town, Nungwi, Kendwa, Paje, Jambiani, Kiwengwa, and Matemwe."
           }
+        }
+      ]
+    }{% elseif page.url != '/' %},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ SITE_URL | safe }}{{ page.url }}#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ SITE_URL | safe }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ pageTitle }}"
         }
       ]
     }{% endif %}
