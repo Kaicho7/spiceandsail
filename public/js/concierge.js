@@ -352,6 +352,13 @@
         ? res.json.reference : null;
       if (ref) {
         state.lastReference = ref;
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'concierge_lead_submitted', {
+            event_category: 'Lead',
+            event_label: serviceName(),
+            booking_reference: ref
+          });
+        }
         var reply = res.json.reply_link || null;
         var s = showStatus('success');
         if (s) {

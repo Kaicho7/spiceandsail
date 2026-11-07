@@ -200,4 +200,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     lazyImages.forEach(function(img) { imageObserver.observe(img); });
   }
+
+  // GA4 / Analytics Custom Event Tracking Helper
+  function trackEvent(eventName, eventParams) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, eventParams);
+    } else if (window.dataLayer && Array.isArray(window.dataLayer)) {
+      window.dataLayer.push(Object.assign({ event: eventName }, eventParams));
+    }
+  }
+
+  // Track all WhatsApp Outbound Click CTAs site-wide
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
+      var ctaContext = link.getAttribute('title') || link.innerText.trim() || 'WhatsApp CTA';
+      trackEvent('whatsapp_conversion_click', {
+        event_category: 'Engagement',
+        event_label: ctaContext,
+        page_location: window.location.pathname,
+        link_url: href
+      });
+    }
+  }, { passive: true });
 });
