@@ -26,6 +26,13 @@ permalink: "/transfers/index.html"
     </div>
   </header>
 
+  <!-- Mandatory ZIC Inbound Insurance Header Notice -->
+  <aside style="background: #e6f4ea; border-bottom: 1px solid #b7e1cd; padding: 0.75rem 1rem; text-align: center; font-size: 0.9rem; color: #137333;">
+    <div class="container" style="max-width: 1100px; margin: 0 auto;">
+      🛡️ <strong>Official Zanzibar Entry Notice:</strong> All international visitors require official Zanzibar Inbound Travel Insurance (ZIC, $44/adult). <a href="https://inbound.visitzanzibar.go.tz" target="_blank" rel="noopener" style="color: #0d652d; font-weight: 700; text-decoration: underline;">Apply via official government portal →</a>
+    </div>
+  </aside>
+
   <!-- Metasearch Rate Defense & Fee Notice -->
   <section style="background: #f4f8fa; border-bottom: 1px solid #d9e5ec; padding: 1.5rem 1rem;">
     <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem;">
@@ -70,13 +77,13 @@ permalink: "/transfers/index.html"
           <div>
             <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🏁 Destination Hotel / Zone</label>
             <select id="calc-dest" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
-              <option value="stone-town" data-slug="airport-transfer-znz-to-stone-town" data-zone="Stone Town">Stone Town Hotels — {% catPrice "airport-transfer-znz-to-stone-town" %}/vehicle</option>
-              <option value="paje-jambiani" data-slug="airport-transfer-znz-to-pajejambiani" data-zone="Paje / Jambiani">Paje &amp; Jambiani Hotels — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/vehicle</option>
-              <option value="matemwe" data-slug="airport-transfer-znz-to-pajejambiani" data-zone="Matemwe">Matemwe Beach Resorts — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/vehicle</option>
-              <option value="kiwengwa-pongwe" data-slug="airport-transfer-znz-to-pajejambiani" data-zone="Kiwengwa / Pongwe">Kiwengwa &amp; Pongwe — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/vehicle</option>
-              <option value="nungwi-kendwa" data-slug="airport-transfer-znz-to-nungwikendwa" data-zone="Nungwi / Kendwa" selected>Nungwi &amp; Kendwa Resorts — {% catPrice "airport-transfer-znz-to-nungwikendwa" %}/vehicle</option>
-              <option value="michamvi" data-slug="" data-zone="Michamvi / The Rock">Michamvi &amp; The Rock Restaurant — rate on request</option>
-              <option value="kizimkazi" data-slug="" data-zone="Kizimkazi">Kizimkazi Dolphin Coast — rate on request</option>
+              <option value="stone-town" data-slug="airport-transfer-znz-to-stone-town" data-fare="{% catPrice "airport-transfer-znz-to-stone-town" %}" data-zone="Stone Town">Stone Town Hotels — {% catPrice "airport-transfer-znz-to-stone-town" %}/vehicle</option>
+              <option value="paje-jambiani" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Paje / Jambiani">Paje &amp; Jambiani Hotels — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/vehicle</option>
+              <option value="matemwe" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Matemwe">Matemwe Beach Resorts — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/vehicle</option>
+              <option value="kiwengwa-pongwe" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Kiwengwa / Pongwe">Kiwengwa &amp; Pongwe — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/vehicle</option>
+              <option value="nungwi-kendwa" data-slug="airport-transfer-znz-to-nungwikendwa" data-fare="{% catPrice "airport-transfer-znz-to-nungwikendwa" %}" data-zone="Nungwi / Kendwa" selected>Nungwi &amp; Kendwa Resorts — {% catPrice "airport-transfer-znz-to-nungwikendwa" %}/vehicle</option>
+              <option value="michamvi" data-slug="" data-fare="on request" data-zone="Michamvi / The Rock">Michamvi &amp; The Rock Restaurant — rate on request</option>
+              <option value="kizimkazi" data-slug="" data-fare="on request" data-zone="Kizimkazi">Kizimkazi Dolphin Coast — rate on request</option>
             </select>
           </div>
         </div>
@@ -116,10 +123,10 @@ permalink: "/transfers/index.html"
           <div>
             <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold, #D4AF37); font-weight: 700; display: block; margin-bottom: 0.25rem;">Catalogue Planning Range</span>
             <div style="display: flex; align-items: baseline; gap: 0.75rem;">
-              <span id="calc-fare-display" style="font-size: 2.5rem; font-weight: 800; color: #ffffff; line-height: 1;">—</span>
+              <span id="calc-fare-display" style="font-size: 2.5rem; font-weight: 800; color: #ffffff; line-height: 1;">{% catPrice "airport-transfer-znz-to-nungwikendwa" %}</span>
               <span style="color: #94a3b8; font-size: 0.95rem;">USD (per private vehicle, up to 4 guests)</span>
             </div>
-            <p id="calc-route-summary" style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: #cbd5e1;">Select a route to load the verified planning range.</p>
+            <p id="calc-route-summary" style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: #cbd5e1;">ZNZ Airport → Nungwi / Kendwa • 2 passenger(s) • {% catPrice "airport-transfer-znz-to-nungwikendwa" %} planning range — our team confirms the final rate.</p>
             <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #34d399;">
               ✓ Planning range only — our team confirms the final rate, dates and pickup window.
             </div>
@@ -273,16 +280,15 @@ permalink: "/transfers/index.html"
         'Please confirm driver availability and the rate.';
       if (waBtn) waBtn.href = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMessage);
 
-      // Route summary without prices
-      routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s)';
+      // Immediate local catalogue price (instant response, zero loading flicker)
+      const baseFare = selectedOption.getAttribute('data-fare') || 'on request';
+      fareDisplayEl.textContent = baseFare;
+      routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + baseFare + ' planning range — our team confirms the final rate.';
 
       if (!slug) {
-        fareDisplayEl.textContent = 'on request';
-        routeSummaryEl.textContent += ' — our team confirms the rate for this route.';
         return;
       }
 
-      fareDisplayEl.textContent = 'loading…';
       fetch('/.netlify/functions/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -292,14 +298,11 @@ permalink: "/transfers/index.html"
           fareDisplayEl.textContent = q.totalDisplay;
           routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + (q.totalDisplay) + ' planning range — our team confirms the final rate.';
         } else if (q && q.reasons && q.reasons.length) {
-          fareDisplayEl.textContent = 'on request';
+          fareDisplayEl.textContent = baseFare;
           routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + q.reasons.join(' ');
-        } else {
-          fareDisplayEl.textContent = 'on request';
         }
       }).catch(function () {
-        fareDisplayEl.textContent = 'unavailable';
-        routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • The planning range is unavailable right now. Message us on WhatsApp and the team confirms the rate.';
+        // Retain verified catalogue baseFare seamlessly
       });
     }
 

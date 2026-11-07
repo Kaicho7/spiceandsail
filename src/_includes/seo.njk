@@ -49,16 +49,18 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "TourOperator",
+      "@type": ["TourOperator", "TravelAgency", "LocalBusiness"],
       "@id": "{{ SITE_URL | safe }}/#organization",
       "name": "Spice and Sail Zanzibar",
       "url": "{{ SITE_URL | safe }}",
       "logo": "{{ SITE_URL | safe }}/images/logo.png",
-      "description": "Zanzibar tour operator based in Stone Town — tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
+      "image": "{{ SITE_URL | safe }}/images/dhow-sail-at-sunset-ocean.jpg",
+      "description": "Zanzibar tour operator and transfer specialist based in Mbuzini & Stone Town — authentic tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Stone Town",
+        "streetAddress": "Near Mbuzini Hospital, Mbuzini, Magharibi District",
         "addressLocality": "Zanzibar",
+        "postalCode": "71208",
         "addressCountry": "TZ"
       },
       "telephone": "+255 672 450 934",
@@ -67,6 +69,14 @@
         "latitude": "-6.1659",
         "longitude": "39.2026"
       },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
       "sameAs": [
         "https://wa.me/255672450934"
       ],
@@ -93,6 +103,44 @@
         "availability": "https://schema.org/InStock",
         "url": "{{ SITE_URL | safe }}{{ page.url }}"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ SITE_URL | safe }}{{ page.url }}#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I book and when do I pay for this tour?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Booking is fast and flexible via WhatsApp (+255 672 450 934). Send us your preferred dates, hotel location, and group size. Zero upfront deposit required for standard day tours — pay upon meeting your guide in cash (USD or TZS) or via secure card payment link."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are government marine conservation and park fees included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! All official Zanzibar government conservation fees and permits are fully included upfront in our planning rates with zero surprise cash demands at the boat or park gates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the cancellation and bad weather policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide 100% free cancellation or rescheduling up to 24 hours prior to tour departure, as well as complimentary rescheduling or a full refund if marine weather makes boat crossings unsafe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is hotel pickup and drop-off available across Zanzibar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, private air-conditioned vehicle transfers can be bundled door-to-door from any hotel across Stone Town, Nungwi, Kendwa, Paje, Jambiani, Kiwengwa, and Matemwe."
+          }
+        }
+      ]
     }{% endif %}
   ]
 }

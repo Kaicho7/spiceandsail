@@ -62,6 +62,8 @@ tour_slug: "stone-town-spice-prison-combo"
       <li>Guide, transport, entry fees vary by package</li>
         </ul>
       </section>
+      {% include "tour-reviews.njk" %}
+      {% include "tour-faq.njk" %}
     </div>
 
     <aside class="tour-sidebar">
@@ -73,13 +75,16 @@ tour_slug: "stone-town-spice-prison-combo"
           <li><span class="label">Category:</span><span class="value">{{ 'CUL' | attractionTypeLabel }}</span></li>
         </ul>
         <div class="booking-card">
+          <div class="price">{% catPrice tour_slug %} <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ person</span></div>
           <h3>Ready to Book?</h3>
-          <p style="opacity: 0.8; margin-bottom: 1.5rem;">Send us your preferred date and group size on WhatsApp. We'll confirm with a fixed price including all fees.</p>
-          <a href="https://wa.me/255672450934" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: +255 672 450 934</a>
+          <p style="opacity: 0.8; margin-bottom: 1.25rem;">Send us your preferred date and group size on WhatsApp. We'll confirm with a fixed price including all fees.</p>
+          <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20{{ title | urlencode }}" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: +255 672 450 934</a>
+          <p class="note">✓ Verified planning range • Marine conservation fees included • Zero booking deposit</p>
         </div>
       </div>
     </aside>
   </div>
+  {% include "tour-mobile-sticky.njk" %}
 </main>
 
 {% include "footer.njk" %}

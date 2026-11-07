@@ -736,6 +736,207 @@ p { margin-bottom: 1rem; }
 .tour-hero-price .price-from { font-size: 0.85rem; font-weight: 500; opacity: 0.8; font-family: var(--font-sans); }
 .tour-hero-price .price-basis { font-size: 0.85rem; font-weight: 400; opacity: 0.8; font-family: var(--font-sans); }
 
+/* Prominent Executive Tour Pricing Badge */
+.tour-price-box {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 1.25rem 0 1.5rem 0;
+  padding: 0.85rem 1.6rem;
+  background: rgba(12, 26, 36, 0.88);
+  border: 1.5px solid var(--dct-gold, #D4AF37);
+  border-radius: var(--border-radius-lg, 12px);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.tour-price-box .price-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dct-gold, #D4AF37);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.tour-price-box .price-amount {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+.tour-price-box .price-note {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* Tour FAQ Accordion */
+.tour-faq {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.tour-faq-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+.tour-faq-item[open] {
+  background: #ffffff;
+  border-color: var(--dct-gold, #D4AF37);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.tour-faq-summary {
+  padding: 1.1rem 1.4rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #003853;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tour-faq-summary::-webkit-details-marker { display: none; }
+.tour-faq-summary::after {
+  content: '＋';
+  font-size: 1.2rem;
+  color: var(--dct-gold, #D4AF37);
+  font-weight: 800;
+  transition: transform 0.2s ease;
+}
+.tour-faq-item[open] .tour-faq-summary::after {
+  content: '−';
+}
+.tour-faq-answer {
+  padding: 0 1.4rem 1.25rem 1.4rem;
+  color: #4e5d66;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+/* Tour Reviews / Social Proof */
+.reviews-section {
+  background: #faf8f5;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e8e2d8;
+  margin-top: 2rem;
+}
+.review-badge-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.review-score {
+  background: #003853;
+  color: var(--dct-gold, #D4AF37);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+}
+.review-count {
+  font-size: 0.9rem;
+  color: #5c727f;
+  font-weight: 600;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.review-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.review-stars {
+  color: #e8a817;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.review-text {
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #334155;
+  margin-bottom: 0.75rem;
+}
+.review-author {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
+  display: block;
+}
+
+/* Tour Mobile Sticky Booking Bar */
+.tour-mobile-sticky-cta {
+  display: none;
+}
+@media (max-width: 768px) {
+  .tour-mobile-sticky-cta {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0C1A24;
+    border-top: 2px solid var(--dct-gold, #D4AF37);
+    padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    z-index: 998;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.35);
+  }
+  .sticky-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .sticky-cta-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .sticky-cta-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sticky-cta-price {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--dct-gold, #D4AF37);
+    line-height: 1.2;
+  }
+  .btn-whatsapp-sticky {
+    background: #25D366;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 50px;
+    white-space: nowrap;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(37,211,102,0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}
+
 .tour-detail { padding: 4rem 0; }
 .tour-grid {
   display: grid;
