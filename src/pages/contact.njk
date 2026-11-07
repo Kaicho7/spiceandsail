@@ -76,8 +76,8 @@ permalink: "/contact/index.html"
           </div>
           <div class="form-row">
             <div class="form-group">
-<label for="phone">WhatsApp / Phone Number</label>
-<input type="tel" id="phone" name="phone" placeholder="+255 672 XXX XXX" pattern="\+255\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{3}" title="Format: +255 672 XXX XXX (Zanzibar number)">
+              <label for="phone">WhatsApp / Mobile Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. +44 7700 900077, +1 555 123 4567, +255..." required>
             </div>
             <div class="form-group">
               <label for="travel-dates">Travel Dates</label>
@@ -109,6 +109,12 @@ permalink: "/contact/index.html"
           <div class="form-group">
             <label for="message">Details, Special Requests, Questions</label>
             <textarea id="message" name="message" rows="5" placeholder="Any special occasions, dietary needs, accessibility requirements, specific hotels or activities..."></textarea>
+          </div>
+          <div class="form-group consent-group" style="margin: 1.25rem 0;">
+            <label class="checkbox-label" style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: #4e5d66; cursor: pointer;">
+              <input type="checkbox" name="consent_contact" id="consent_contact" required style="margin-top: 0.2rem;">
+              <span>I agree to be contacted via WhatsApp/email regarding my travel inquiry in accordance with the <a href="/privacy/" target="_blank" style="color: var(--dct-ocean); text-decoration: underline;">Privacy Notice</a>. *</span>
+            </label>
           </div>
           <button type="submit" class="btn btn-primary btn-lg btn-full">Send Inquiry</button>
           <p class="form-note" style="text-align: center;">We'll reply via WhatsApp or email within 2 hours during business hours.</p>

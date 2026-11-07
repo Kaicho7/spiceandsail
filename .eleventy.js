@@ -259,8 +259,12 @@ module.exports = function(eleventyConfig) {
     "Attraction": allPublicImages.filter(f => /door|fort|church|tower|alley|palace|monkey|jozani|cave|acrobat|monument|ruins|market|stone-town/i.test(f))
   };
   function hashPick(str, arr) { let h=0; const st=String(str||""); for (let i=0;i<st.length;i++) h=(h*31+st.charCodeAt(i))>>>0; return arr[h%arr.length]; }
-eleventyConfig.addFilter("attractionImg", (name, category) =>
-attractionImage[name] || "image-not-available.svg");
+  eleventyConfig.addFilter("attractionImg", (name, category) => {
+    if (attractionImage[name]) return attractionImage[name];
+    const catPool = attrCategoryArrays[category] || attrCategoryArrays["Attraction"];
+    if (catPool && catPool.length > 0) return hashPick(name, catPool);
+    return "default-tour-hero.jpg";
+  });
 
   // Add filter to get descriptive attraction type label (fixes CUL CUL CUL)
   eleventyConfig.addFilter("attractionTypeLabel", (type) => {
@@ -343,10 +347,12 @@ attractionImage[name] || "image-not-available.svg");
   const zoneDefault = new Map(Object.entries(zoneImage).map(([k, v]) => [k, v]));
   eleventyConfig.addFilter("zoneImg", (zone, seed) => {
     const z = String(zone || "").toLowerCase().trim();
-    for (const [frag, key] of Object.entries(zoneAliases)) if (z.startsWith(frag)) {
-      return "image-not-available.svg";
+    for (const [frag, key] of Object.entries(zoneAliases)) {
+      if (z.startsWith(frag) || z.includes(frag)) {
+        return zoneImage[key] || "default-tour-hero.jpg";
+      }
     }
-    return "image-not-available.svg";
+    return zoneImage[zone] || "default-tour-hero.jpg";
   });
 
   // Dedicated hotel-only photo pool: authentic accommodation imagery (rooms, resorts,

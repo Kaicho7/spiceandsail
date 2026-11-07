@@ -261,29 +261,74 @@ permalink: "/transfers/index.html"
       dateEl.value = tmrw.toISOString().split('T')[0];
     }
 
+    // Dynamic rate matrix for Zanzibar private vehicle transfers (up to 4 guests)
+    function calculateFare(origin, destKey) {
+      const isAirportOrFerry = origin.includes('Airport') || origin.includes('Ferry');
+      const isStoneTownHotel = origin.includes('Stone Town Hotel');
+      const isNungwi = origin.includes('Nungwi') || origin.includes('Kendwa');
+      const isPaje = origin.includes('Paje') || origin.includes('Jambiani');
+      const isMatemwe = origin.includes('Matemwe') || origin.includes('Kiwengwa');
+
+      if (isAirportOrFerry || isStoneTownHotel) {
+        if (destKey === 'stone-town') return isStoneTownHotel ? '$20–$25' : '$35–$40';
+        if (destKey === 'paje-jambiani') return '$45–$55';
+        if (destKey === 'matemwe') return '$45–$55';
+        if (destKey === 'kiwengwa-pongwe') return '$45–$55';
+        if (destKey === 'nungwi-kendwa') return '$50–$60';
+        if (destKey === 'michamvi') return '$45–$55';
+        if (destKey === 'kizimkazi') return '$45–$55';
+      } else if (isNungwi) {
+        if (destKey === 'nungwi-kendwa') return '$20–$25';
+        if (destKey === 'stone-town') return '$50–$60';
+        if (destKey === 'matemwe') return '$40–$50';
+        if (destKey === 'kiwengwa-pongwe') return '$45–$55';
+        if (destKey === 'paje-jambiani') return '$60–$75';
+        if (destKey === 'michamvi') return '$65–$80';
+        if (destKey === 'kizimkazi') return '$70–$85';
+      } else if (isPaje) {
+        if (destKey === 'paje-jambiani') return '$20–$25';
+        if (destKey === 'stone-town') return '$45–$55';
+        if (destKey === 'michamvi') return '$25–$35';
+        if (destKey === 'kizimkazi') return '$35–$45';
+        if (destKey === 'nungwi-kendwa') return '$60–$75';
+        if (destKey === 'matemwe') return '$45–$55';
+        if (destKey === 'kiwengwa-pongwe') return '$45–$55';
+      } else if (isMatemwe) {
+        if (destKey === 'matemwe' || destKey === 'kiwengwa-pongwe') return '$20–$25';
+        if (destKey === 'nungwi-kendwa') return '$40–$50';
+        if (destKey === 'stone-town') return '$45–$55';
+        if (destKey === 'paje-jambiani') return '$45–$55';
+        if (destKey === 'michamvi') return '$50–$60';
+        if (destKey === 'kizimkazi') return '$55–$65';
+      }
+      return '$45–$55';
+    }
+
     function updateCalculator() {
       if (!destEl || !paxEl) return;
       const selectedOption = destEl.options[destEl.selectedIndex];
       const slug = selectedOption.getAttribute('data-slug') || '';
       const destZone = selectedOption.getAttribute('data-zone') || 'Destination';
+      const destKey = destEl.value;
       const paxCount = paxEl.value;
 
       const pickup = pickupEl ? pickupEl.value : 'ZNZ Airport';
       const dateVal = dateEl && dateEl.value ? dateEl.value : 'Upcoming date';
       const flightVal = flightEl && flightEl.value.trim() ? ' (' + flightEl.value.trim() + ')' : '';
 
+      // Accurate route-dependent planning fare
+      const baseFare = calculateFare(pickup, destKey);
+      fareDisplayEl.textContent = baseFare;
+      routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + baseFare + ' planning range — our team confirms the final rate.';
+
       const waMessage = 'Jambo Spice & Sail! I would like to reserve a Private Transfer:\n' +
         '• Pickup: ' + pickup + flightVal + '\n' +
         '• Destination: ' + destZone + '\n' +
         '• Date: ' + dateVal + '\n' +
         '• Passengers: ' + paxCount + ' pax\n' +
+        '• Planning Fare: ' + baseFare + '\n' +
         'Please confirm driver availability and the rate.';
       if (waBtn) waBtn.href = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMessage);
-
-      // Immediate local catalogue price (instant response, zero loading flicker)
-      const baseFare = selectedOption.getAttribute('data-fare') || 'on request';
-      fareDisplayEl.textContent = baseFare;
-      routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + baseFare + ' planning range — our team confirms the final rate.';
 
       if (!slug) {
         return;

@@ -225,7 +225,7 @@ function profileCompleteness(profile) {
 /** Build WhatsApp handoff URL from profile and matched services */
 function buildWhatsAppUrl(profile, serviceSlugs) {
   const tourNames = [];
-  const slugsToUse = Array.isArray(serviceSlugs) ? serviceSlugs.slice(-1) : [];
+  const slugsToUse = Array.isArray(serviceSlugs) ? [...new Set(serviceSlugs)].slice(0, 5) : [];
   for (const slug of slugsToUse) {
     const svc = getService(slug);
     if (svc) tourNames.push(svc.name);
@@ -485,10 +485,11 @@ exports.handler = async function (event) {
   const extracted = extractEntities(userMessage, profile);
   const mergedProfile = mergeProfile(profile, extracted);
 
-  // Track matched services across conversation (latest service takes priority)
+  // Track matched services across conversation (accumulate unique services)
   const matchedSlugs = matchServices(userMessage);
-  if (matchedSlugs.length > 0) {
-    mergedProfile.serviceSlugs = matchedSlugs;
+  const existingSlugs = Array.isArray(profile.serviceSlugs) ? profile.serviceSlugs : [];
+  if (matchedSlugs.length > 0 || existingSlugs.length > 0) {
+    mergedProfile.serviceSlugs = [...new Set([...existingSlugs, ...matchedSlugs])].slice(0, 5);
   }
 
   // Count conversation turns from history
@@ -533,10 +534,9 @@ exports.handler = async function (event) {
     }
   }
 
-  // Terminal response: booking intent OR explicit "book" / "how do i book" OR 3+ turns with profile populated
-  const isBookingIntent = intent === 'book' || /\bhow do i book\b/i.test(userMessage);
-  const profilePopulated = profileCompleteness(mergedProfile) >= 2;
-  const isTerminal = isBookingIntent || (turnCount >= 3 && profilePopulated);
+  // Terminal response: explicit booking intent OR booking action (never force handoff prematurely on turn count)
+  const isBookingIntent = intent === 'book' || /\b(book|reserve|confirm|hold|whatsapp)\b/i.test(userMessage);
+  const isTerminal = isBookingIntent;
 
   const responseBody = {
     message: finalReply.message,

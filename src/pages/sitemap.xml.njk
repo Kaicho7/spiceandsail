@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>{{ site.url }}/</loc><priority>1.0</priority></url>
 {%- for page in collections.all %}
-{%- if page.url and page.url.indexOf("/404") == -1 and page.url != "/sitemap.xml" and page.url != "/" %}
+{%- if page.url and page.url.indexOf("/404") == -1 and page.url.indexOf("/thank-you") == -1 and page.url.indexOf("/bookings") == -1 and page.url != "/sitemap.xml" and page.url != "/" %}
 <url><loc>{{ site.url }}{{ page.url }}</loc><changefreq>weekly</changefreq><priority>{% if page.url == "/about/" or page.url == "/contact/" %}0.8{% else %}0.6{% endif %}</priority></url>
 {%- endif %}
 {%- endfor %}

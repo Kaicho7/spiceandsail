@@ -10,10 +10,10 @@ permalink: "/hotels/index.html"
   <!-- Page Header -->
   <header class="page-header" style="background: linear-gradient(135deg, rgba(12,26,36,0.95), rgba(0,56,83,0.92)), url('{{ 'beach-front-hotel-palm-trees-people.jpg' | cdnFile }}') center/cover; padding: 4.5rem 1.5rem; color: #fff; text-align: center;">
     <div class="container" style="max-width: 900px; margin: 0 auto;">
-      <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Curated Partner Directory</span>
-      <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 1rem; color: #ffffff;">Where to Stay in Zanzibar — Verified Hotels & Resorts</h1>
+      <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Curated Accommodation &amp; Logistics Directory</span>
+      <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 1rem; color: #ffffff;">Where to Stay in Zanzibar — Curated Hotels &amp; Resorts</h1>
       <p style="font-size: 1.15rem; line-height: 1.6; color: #e0e8ec; margin-bottom: 2rem;">
-        Browse {{ hotels.hotels | length }} inspected beachfront resorts, boutique villas, and historic Stone Town retreats. Door-to-door VIP airport transfers, lobby excursion departures, and direct partner rates.
+        Explore Zanzibar's premier beachfront resorts, boutique villas, and historic Stone Town retreats across Unguja and Pemba. Verified planning rates, door-to-door airport transfers, and excursion lobby pickups.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="/transfers/" class="btn btn-primary btn-lg" style="background: var(--dct-gold, #D4AF37); border-color: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700;">
@@ -134,14 +134,18 @@ permalink: "/hotels/index.html"
 
               <div class="card-actions" style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-                  {% if hotel.zone == "Nungwi" or hotel.zone == "Kendwa" %}
+                  {% if hotel.island == "Pemba" %}
+                    <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20please%20quote%20Pemba%20airport%20or%20ferry%20transfer%20logistics%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #005F8A; border-color: #005F8A; color: #fff; font-weight: 600;" title="Pemba Airport & Ferry Transfer Logistics">✈️ Pemba Transfer</a>
+                  {% elseif hotel.name.includes("Mnemba") or hotel.name.includes("Bawe") or hotel.name.includes("Chumbe") or hotel.name.includes("Chapwani") %}
+                    <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20please%20quote%20boat%20transfer%20and%20airport%20connection%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #005F8A; border-color: #005F8A; color: #fff; font-weight: 600;" title="Boat & Airport Transfer Connection">🛥️ Boat Transfer</a>
+                  {% elseif hotel.zone == "Nungwi" or hotel.zone == "Kendwa" %}
                     <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-nungwikendwa" %})</a>
                   {% elseif hotel.zone == "Stone Town" %}
                     <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-stone-town" %})</a>
                   {% else %}
                     <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-pajejambiani" %})</a>
                   {% endif %}
-                  <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20please%20quote%20VIP%20partner%20rates%20and%20tour%20packages%20for%20{{ hotel.name | urlencode }}%20in%20{{ hotel.zone | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #25D366; border-color: #25D366; color: #fff; font-weight: 600;" title="Inquire Partner Rates for {{ hotel.name }}">💬 VIP Rates</a>
+                  <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20please%20quote%20stay%20and%20tour%20packages%20for%20{{ hotel.name | urlencode }}%20in%20{{ hotel.zone | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #25D366; border-color: #25D366; color: #fff; font-weight: 600;" title="Inquire Stay Rates for {{ hotel.name }}">💬 Check Rates</a>
                 </div>
 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.35rem; padding-top: 0.5rem; border-top: 1px solid rgba(0,0,0,0.06); font-size: 0.78rem;">

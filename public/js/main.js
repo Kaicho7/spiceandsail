@@ -106,14 +106,29 @@ document.addEventListener('DOMContentLoaded', function () {
       var originalText = submitBtn ? submitBtn.textContent : '';
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
 
+      var groupSizeRaw = field('group_size');
+      var travellersCount = 2; // sensible fallback
+      if (groupSizeRaw) {
+        var parsed = parseInt(groupSizeRaw, 10);
+        if (!isNaN(parsed) && parsed > 0) {
+          travellersCount = parsed;
+        }
+      }
+
+      var consentChecked = f.elements['consent_contact'] ? f.elements['consent_contact'].checked : true;
+
       var payload = {
         name: field('name'),
         whatsapp: field('phone'),
         email: field('email') || undefined,
-        travellers: field('group_size') ? Number(field('group_size')) || undefined : undefined,
+        travellers: travellersCount,
         services: field('interests') ? [field('interests')] : undefined,
-        notes: [field('travel_dates') ? 'Dates: ' + field('travel_dates') : '', field('message')].filter(Boolean).join('\n') || undefined,
-        consent_contact: true,
+        notes: [
+          field('travel_dates') ? 'Dates: ' + field('travel_dates') : '',
+          groupSizeRaw ? 'Group: ' + groupSizeRaw : '',
+          field('message')
+        ].filter(Boolean).join('\n') || undefined,
+        consent_contact: consentChecked,
         session_id: 'contact-form-' + Date.now()
       };
 
@@ -128,6 +143,14 @@ document.addEventListener('DOMContentLoaded', function () {
           var detail = (res.data && res.data.details) ? res.data.details.join(', ') : 'Submission failed';
           throw new Error(detail);
         }
+
+        // Emit GA4 custom lead conversion event
+        trackEvent('contact_form_lead_submitted', {
+          event_category: 'Lead',
+          event_label: field('interests') || 'general_inquiry',
+          reference: res.data.reference || ''
+        });
+
         var msg = [
           'Hello Spice and Sail!',
           'Reference: ' + (res.data.reference || ''),
