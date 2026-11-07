@@ -30,6 +30,31 @@
   to = "/safaris/mikumi-day-trip/"
   status = 301
 
+# Canonicalize duplicate package & safari tour URLs
+[[redirects]]
+  from = "/tours/zanzibar-essentials-3day/*"
+  to = "/packages/zanzibar-essentials-3day/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tours/zanzibar-essentials-3day"
+  to = "/packages/zanzibar-essentials-3day/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tours/mikumi-nyerere-day-safari/*"
+  to = "/safaris/mikumi-day-trip/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tours/mikumi-nyerere-day-safari"
+  to = "/safaris/mikumi-day-trip/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/404.html"
