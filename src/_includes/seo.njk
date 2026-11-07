@@ -7,7 +7,7 @@
 {% set pageTitle = computedTitle if hasBrand else (computedTitle + " | Spice and Sail") %}
 {% set pageDesc = description | default("Book " + computedTitle + " with Spice and Sail in Zanzibar. Clear pricing, verified local guides, and fast WhatsApp booking.") %}
 
-{% set ogImage = page.inputPath | rawImage %}
+{% set ogImage = og_image or (page.inputPath | rawImage) %}
 
 {% set SITE_URL = site.url | replace("http://", "https://") %}
 
@@ -47,28 +47,53 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TourOperator",
-  "name": "Spice and Sail Zanzibar",
-  "url": "{{ SITE_URL | safe }}",
-  "logo": "{{ SITE_URL | safe }}/images/logo.png",
-  "description": "Zanzibar tour operator based in Stone Town — tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Stone Town",
-    "addressLocality": "Zanzibar",
-    "addressCountry": "TZ"
-  },
-  "telephone": "+255 672 450 934",
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "-6.1659",
-    "longitude": "39.2026"
-  },
-  "sameAs": [
-    "https://wa.me/255672450934"
-  ],
-  "priceRange": "$$",
-  "currenciesAccepted": "USD, TZS",
-  "paymentAccepted": "Cash, Mobile Money, Bank Transfer, Card (via link)"
+  "@graph": [
+    {
+      "@type": "TourOperator",
+      "@id": "{{ SITE_URL | safe }}/#organization",
+      "name": "Spice and Sail Zanzibar",
+      "url": "{{ SITE_URL | safe }}",
+      "logo": "{{ SITE_URL | safe }}/images/logo.png",
+      "description": "Zanzibar tour operator based in Stone Town — tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Stone Town",
+        "addressLocality": "Zanzibar",
+        "addressCountry": "TZ"
+      },
+      "telephone": "+255 672 450 934",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-6.1659",
+        "longitude": "39.2026"
+      },
+      "sameAs": [
+        "https://wa.me/255672450934"
+      ],
+      "priceRange": "$$",
+      "currenciesAccepted": "USD, TZS",
+      "paymentAccepted": "Cash, Mobile Money, Bank Transfer, Card (via link)"
+    }{% if tour_slug %},
+    {
+      "@type": "Product",
+      "@id": "{{ SITE_URL | safe }}{{ page.url }}#product",
+      "name": "{{ pageTitle }}",
+      "description": "{{ pageDesc }}",
+      "image": "{{ SITE_URL | safe }}{{ ogImage }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "Spice and Sail Zanzibar"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": {{ tour_slug | catMin }},
+        "highPrice": {{ tour_slug | catMax }},
+        "offerCount": "1",
+        "availability": "https://schema.org/InStock",
+        "url": "{{ SITE_URL | safe }}{{ page.url }}"
+      }
+    }{% endif %}
+  ]
 }
 </script>

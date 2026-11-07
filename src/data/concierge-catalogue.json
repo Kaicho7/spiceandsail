@@ -1,1336 +1,1336 @@
 {
- "version": "2026-11-04.1",
- "sourceRepo": "github.com/Kaicho7/spiceandsail @ 550a5b3 (read-only)",
- "currency": "USD",
- "config": {
-  "whatsappNumber": "255672450934",
-  "depositPercent": 20,
-  "largeGroupThreshold": 8,
-  "replyWindow": "within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT)",
-  "businessHours": {
-   "days": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
-   ],
-   "start": 8,
-   "end": 18,
-   "tz": "Africa/Dar_es_Salaam"
+  "version": "2026-11-04.1",
+  "sourceRepo": "github.com/Kaicho7/spiceandsail @ 550a5b3 (read-only)",
+  "currency": "USD",
+  "config": {
+    "whatsappNumber": "255672450934",
+    "depositPercent": 20,
+    "largeGroupThreshold": 8,
+    "replyWindow": "within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT)",
+    "businessHours": {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "start": 8,
+      "end": 18,
+      "tz": "Africa/Dar_es_Salaam"
+    },
+    "privacyNoticeVersion": "1.0",
+    "childPricing": "on_request",
+    "pickupSupplement": "on_request"
   },
-  "privacyNoticeVersion": "1.0",
-  "childPricing": "on_request",
-  "pickupSupplement": "on_request"
- },
- "zones": [
-  {
-   "slug": "stone-town",
-   "name": "Stone Town",
-   "island": "Unguja",
-   "area": "west",
-   "hotelCount": 50,
-   "description": "UNESCO World Heritage site — the historic heart of Zanzibar with winding alleys, carved doors, bustling markets, and centuries of Swahili, Arab, Indian, and European heritage."
-  },
-  {
-   "slug": "nungwi",
-   "name": "Nungwi",
-   "island": "Unguja",
-   "area": "north",
-   "hotelCount": 26,
-   "description": "Northern tip of Zanzibar — famous for white-sand beaches, turquoise water, traditional dhow building, and vibrant nightlife. Turtles, diving, and sunset cruises."
-  },
-  {
-   "slug": "kendwa",
-   "name": "Kendwa",
-   "island": "Unguja",
-   "area": "north",
-   "hotelCount": 6,
-   "description": "Northwest coast — wide beaches with no tide restrictions, famous for full-moon parties, diving, and easy swimming all day."
-  },
-  {
-   "slug": "paje",
-   "name": "Paje",
-   "island": "Unguja",
-   "area": "southeast",
-   "hotelCount": 21,
-   "description": "Southeast coast — world-class kite-surfing, shallow turquoise lagoon, laid-back vibe, and easy access to Jozani Forest and Kuza Cave."
-  },
-  {
-   "slug": "jambiani",
-   "name": "Jambiani",
-   "island": "Unguja",
-   "area": "southeast",
-   "hotelCount": 20,
-   "description": "Southeast fishing village — authentic Swahili culture, seaweed farming, tide pools, and access to Kuza Cave and Chumbe Island."
-  },
-  {
-   "slug": "kiwengwa",
-   "name": "Kiwengwa",
-   "island": "Unguja",
-   "area": "northeast",
-   "hotelCount": 8,
-   "description": "Northeast coast — long white-sand beach, all-inclusive resorts, calm waters protected by reef, and easy access to Mnemba Atoll."
-  },
-  {
-   "slug": "pongwe",
-   "name": "Pongwe / Michamvi",
-   "island": "Unguja",
-   "area": "east",
-   "hotelCount": 6,
-   "description": "East-central coast — quiet beaches, mangrove channels, The Rock Restaurant nearby, and Isaraya overwater villas."
-  },
-  {
-   "slug": "bwejuu",
-   "name": "Bwejuu / Dongwe",
-   "island": "Unguja",
-   "area": "southeast",
-   "hotelCount": 8,
-   "description": "Southeast coast — tranquil beaches, luxury boutique resorts, seaweed farming, and access to Chumbe Island marine park."
-  },
-  {
-   "slug": "michamvi",
-   "name": "Michamvi / Pingwe",
-   "island": "Unguja",
-   "area": "southeast",
-   "hotelCount": 10,
-   "description": "East coast — The Rock Restaurant on a coral outcrop, calm lagoon waters, and boutique luxury resorts."
-  },
-  {
-   "slug": "kizimkazi",
-   "name": "Kizimkazi / Dimbani",
-   "island": "Unguja",
-   "area": "south",
-   "hotelCount": 7,
-   "description": "South coast — dolphin watching capital, ancient mosque (12th century), and access to Menai Bay Conservation Area."
-  },
-  {
-   "slug": "fumba",
-   "name": "Fumba / Mbweni",
-   "island": "Unguja",
-   "area": "southwest",
-   "hotelCount": 4,
-   "description": "Southwest peninsula — departure point for Safari Blue, marine conservation area access, and quiet residential beaches."
-  },
-  {
-   "slug": "matemwe",
-   "name": "Matemwe / Kigomani",
-   "island": "Unguja",
-   "area": "northeast",
-   "hotelCount": 31,
-   "description": "Northeast coast — pristine beaches, Mnemba Atoll access, turtle nesting sites, and quiet boutique properties."
-  },
-  {
-   "slug": "chake-chake",
-   "name": "Chake Chake (Pemba)",
-   "island": "Pemba",
-   "area": "pemba",
-   "hotelCount": 2,
-   "description": "Main town of Pemba Island — authentic Swahili culture, clove plantations, and access to Pemba's pristine dive sites."
-  },
-  {
-   "slug": "wambaa-gulf",
-   "name": "Wambaa Gulf / Makangale (Pemba)",
-   "island": "Pemba",
-   "area": "pemba",
-   "hotelCount": 6,
-   "description": "Pemba's luxury lodge area — Fundu Lagoon, world-class diving, and untouched coral reefs."
-  }
- ],
- "services": [
-  {
-   "id": "CUL-01",
-   "slug": "stone-town-walking-tour",
-   "name": "Stone Town walking tour",
-   "type": "tour",
-   "category": "CUL",
-   "location": "Stone Town",
-   "zones": [
-    "stone-town"
-   ],
-   "duration": "2–4 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 45.0,
-    "max": 80.0,
-    "display": "$45–$80",
-    "basisNote": "per person; private guide at high end; floor priced from partner rate (Madebe partner rate: $35pp for 2pax)",
-    "sourceQuality": "Competitor price + 2026 market range",
-    "sourceFiles": "Madebe rate card ($35pp for 2pax); 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Licensed guide",
-    "entry fees vary"
-   ],
-   "importantNotes": [
-    "Entry fees to museums are not included — budget $5–10 extra",
-    "Wear comfortable walking shoes; Stone Town has uneven surfaces",
-    "Bring a hat and water; midday sun is intense",
-    "Licensed guides charge per group, not per person — perfect for families"
-   ],
-   "whatToExpect": [
-    "2–4 hour guided walk led by a Zanzibar-licensed guide",
-    "Visit Forodhani Gardens night market (if evening)",
-    "Explore the Old Fort, House of Wonders, and Sultan's Palace Museum",
-    "Browse the Darajani and Forodhani markets",
-    "Stroll the seafront promenade and the Old City gates"
-   ],
-   "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House ",
-   "meetingPoint": "Forodhani Gardens, Stone Town waterfront",
-   "interests": [
-    "culture",
-    "history",
-    "town"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "CUL-02",
-   "slug": "spice-farm",
-   "name": "Spice farm tour",
-   "type": "tour",
-   "category": "CUL",
-   "location": "Kidichi / Kizimbani / island interior",
-   "zones": [
-    "stone-town"
-   ],
-   "duration": "3–4 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 35.0,
-    "max": 80.0,
-    "display": "$35–$80",
-    "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $27pp for 2pax)",
-    "sourceQuality": "Competitor price + 2026 market range",
-    "sourceFiles": "ZTrans (15 USD); zanzibar things to do.docx (30 USD); 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Farm walk, spice/fruit tasting, guide",
-    "lunch varies"
-   ],
-   "importantNotes": [
-    "Tipping pressure: some guides take visitors to craft shops — we only work with transparent operators",
-    "Bring cash for optional lunch ($5–10)",
-    "Wear long sleeves if you have sensitive skin (spice contact)"
-   ],
-   "whatToExpect": [
-    "3–4 hour farm tour with a local expert guide",
-    "Hands-on tasting of 8+ tropical spices and fruits",
-    "History of Zanzibar's clove trade and colonial plantations",
-    "Traditional hand-grinding demonstration",
-    "Optional lunch featuring local ingredients"
-   ],
-   "description": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade — how Zanzibar became the \"Spice Island\" — while you taste fresh nutmeg, cloves, c",
-   "meetingPoint": "Kidichi, Kizimbani, or island interior (pickup from Stone Town available)",
-   "interests": [
-    "culture",
-    "food",
-    "spice",
-    "family"
-   ],
-   "timeOfDay": [
-    "morning",
-    "afternoon"
-   ]
-  },
-  {
-   "id": "CUL-03",
-   "slug": "village-community-tour",
-   "name": "Village / community tour",
-   "type": "tour",
-   "category": "CUL",
-   "location": "Kizimbani, Jambiani or south-east villages",
-   "zones": [
-    "jambiani",
-    "stone-town"
-   ],
-   "duration": "2–4 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 30.0,
-    "max": 50.0,
-    "display": "$30–$50",
-    "basisNote": "per person; floor priced from partner rate (Animation team partner rate: $41 total small group)",
-    "sourceQuality": "Historical price list + 2026 market range",
-    "sourceFiles": "zanzibar things to do.docx (50 USD); 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Village walk, seaweed/craft visit, local lunch",
-    "donation varies"
-   ],
-   "importantNotes": [
-    "This is a community experience — respectful dress (shoulders and knees covered) is required",
-    "Donation goes directly to the village development fund",
-    "Not a staged performance — real community interaction"
-   ],
-   "whatToExpect": [
-    "2–4 hour guided village visit",
-    "Seaweed farm demonstration and hands-on participation",
-    "Traditional craft workshop (basket weaving, pottery)",
-    "Home-cooked local lunch in a family setting",
-    "Community donation included in price"
-   ],
-   "description": "Go beyond the tourist trail to a local village in Kizimbani, Jambiani, or the southeast coast. Meet families, learn about seaweed farming, traditional crafts, and daily life in rural Zanzibar.",
-   "meetingPoint": "Kizimbani, Jambiani, or southeast villages (pickup included from south/east coast hotels)",
-   "interests": [
-    "culture",
-    "community",
-    "family"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "CUL-04",
-   "slug": "stone-town-spice-prison-combo",
-   "name": "Stone Town + Spice Farm + Prison Island combo",
-   "type": "tour",
-   "category": "CUL",
-   "location": "Stone Town / Kidichi / Changuu",
-   "zones": [
-    "stone-town"
-   ],
-   "duration": "5–8 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 75.0,
-    "max": 165.0,
-    "display": "$75–$165",
-    "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (3-in-1))",
-    "sourceQuality": "Existing strategy + 2026 market range",
-    "sourceFiles": "Zanzibar_Master_Venture_Plan.md; GetYourGuide 2026 listing",
-    "verified": true
-   },
-   "includes": [
-    "Guide, transport, entry fees vary by package"
-   ],
-   "importantNotes": [
-    "This is a high-intent bundle — book early, especially June–October and December–January",
-    "Lunch at spice farm is typically a set Zanzibar menu",
-    "Bring swimwear for the Prison Island snorkeling portion"
-   ],
-   "whatToExpect": [
-    "Morning: Stone Town walking tour with licensed guide (2 hours)",
-    "Midday: Spice farm tour with tasting and lunch (2 hours)",
-    "Afternoon: Boat to Prison Island — visit tortoise sanctuary and snorkel at Nakupenda (2–3 hours)",
-    "All transport included in air-conditioned vehicle",
-    "Entry fees to all sites included"
-   ],
-   "description": "Maximize your day with the most popular Zanzibar combination tour. Start with a Stone Town walking tour, then head to a spice farm for lunch, and finish with a boat trip to Prison Island for giant tor",
-   "meetingPoint": "Stone Town hotel pickup or Forodhani Gardens",
-   "interests": [
-    "culture",
-    "history",
-    "spice"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "MAR-01",
-   "slug": "safari-blue",
-   "name": "Safari Blue / Menai Bay dhow day",
-   "type": "tour",
-   "category": "MAR",
-   "location": "Fumba → Menai Bay → Kwale Island",
-   "zones": [
-    "fumba"
-   ],
-   "duration": "7–9 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 60.0,
-    "max": 160.0,
-    "display": "$60–$160",
-    "basisNote": "per person; private versions higher; floor priced from partner rate (Madebe partner rate: $45pp for 2pax)",
-    "sourceQuality": "Competitor price + official operator + 2026 market range",
-    "sourceFiles": "ZTrans (70 USD); existing docs (85–90 USD); 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Dhow, snorkeling, sandbank, seafood lunch, drinks, guide"
-   ],
-   "importantNotes": [
-    "Marine conservation fee: $10 for non-EAC adults (included in our price)",
-    "Bring a towel, hat, sunscreen (reef-safe), and swimwear",
-    "Limited daily capacity — booking essential",
-    "Copycat products and overcrowding are key risks — we only recommend the licensed original Safari Blue"
-   ],
-   "whatToExpect": [
-    "Full-day dhow sailing trip (7–9 hours)",
-    "Snorkeling over coral reefs with mask, snorkel, and life jacket provided",
-    "Seafood barbecue lunch (grilled fish, prawns, calamari) on a sandbank",
-    "Fresh fruit, water, and soft drinks throughout",
-    "Menai Bay conservation fee included in package price"
-   ],
-   "description": "Zanzibar's most famous dhow excursion: cruise to the Menai Bay Conservation Area, snorkel over vibrant coral reefs, feast on a seafood barbecue on a private sandbank, and visit Kwale Island. Operated ",
-   "meetingPoint": "Fumba Peninsula — pickup from Stone Town hotels available",
-   "interests": [
-    "ocean",
-    "snorkeling",
-    "beach",
-    "sailing",
-    "seafood",
-    "family",
-    "adventure"
-   ],
-   "timeOfDay": [
-    "morning"
-   ]
-  },
-  {
-   "id": "MAR-02",
-   "slug": "mnemba-snorkeling",
-   "name": "Mnemba Atoll snorkeling / dolphin trip",
-   "type": "tour",
-   "category": "MAR",
-   "location": "Matemwe / Nungwi / Kendwa → Mnemba Atoll",
-   "zones": [
-    "matemwe",
-    "nungwi",
-    "kiwengwa"
-   ],
-   "duration": "3–6 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 70.0,
-    "max": 150.0,
-    "display": "$70–$150",
-    "basisNote": "per person; private boat higher; floor priced from partner rate (Madebe partner rate: $53pp for 2pax)",
-    "sourceQuality": "Competitor price + 2026 market range",
-    "sourceFiles": "ZTrans (50 USD); 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Boat, snorkel gear, fruit/water, guide",
-    "marine fee varies"
-   ],
-   "importantNotes": [
-    "Marine conservation fee: $25 for non-EAC adults (included in our price)",
-    "Best condition: June–October and December–March",
-    "Avoid \"guaranteed dolphin\" claims — these are unethical and often illegal",
-    "Weather dependent; trips may be rescheduled in rough seas"
-   ],
-   "whatToExpect": [
-    "3–6 hour boat trip to Mnemba Atoll marine reserve",
-    "Two snorkeling spots over vibrant coral reefs",
-    "Sea turtle sightings common (resident population)",
-    "Fresh fruit, water, and soft drinks on board",
-    "Snorkel gear provided (mask, snorkel, life jacket)"
-   ],
-   "description": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area. Spot green sea turtles, observe colorful fish over healthy coral reefs, and enjoy fruit and water on a traditi",
-   "meetingPoint": "Matemwe, Nungwi, or Kendwa — pickup from nearby hotels included",
-   "interests": [
-    "ocean",
-    "snorkeling",
-    "dolphins",
-    "adventure"
-   ],
-   "timeOfDay": [
-    "morning"
-   ]
-  },
-  {
-   "id": "MAR-03",
-   "slug": "prison-island-nakupenda",
-   "name": "Prison Island + Nakupenda sandbank",
-   "type": "tour",
-   "category": "MAR",
-   "location": "Stone Town → Changuu → Nakupenda",
-   "zones": [
-    "stone-town"
-   ],
-   "duration": "Half day to 6 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 75.0,
-    "max": 145.0,
-    "display": "$75–$145",
-    "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (Prison Island + Nakupenda))",
-    "sourceQuality": "Competitor price + 2026 market range",
-    "sourceFiles": "ZTrans (40 + 15 USD); 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Boat, guide, entry",
-    "lunch varies"
-   ],
-   "importantNotes": [
-    "Peak season (June–October) gets crowded — book early morning for fewer people",
-    "Bring reef-safe sunscreen and a hat",
-    "Lunch at Nakupenda is typically a simple seafood grill — add $10–15 if desired"
-   ],
-   "whatToExpect": [
-    "Boat transfer from Stone Town (20 minutes)",
-    "Prison Island visit — feed and photograph giant tortoises (aged 70–190)",
-    "Nakupenda sandbank — wade in shallow turquoise waters",
-    "Snorkeling at the coral reef (gear provided)",
-    "Island entry fee included"
-   ],
-   "description": "A classic Zanzibar half-day or full-day excursion: take a short boat ride to Changuu (Prison Island) to meet the resident giant Aldabra tortoises, then cruise to Nakupenda sandbank for snorkeling over",
-   "meetingPoint": "Stone Town waterfront — Forodhani Gardens pier",
-   "interests": [
-    "ocean",
-    "beach",
-    "tortoises",
-    "snorkeling",
-    "family"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "MAR-04",
-   "slug": "nakupenda-sandbank",
-   "name": "Nakupenda sandbank only",
-   "type": "tour",
-   "category": "MAR",
-   "location": "Stone Town / Nakupenda",
-   "zones": [
-    "stone-town"
-   ],
-   "duration": "Half day",
-   "pricing": {
-    "basis": "per_person",
-    "min": 75.0,
-    "max": 145.0,
-    "display": "$75–$145",
-    "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (Nakupenda leg))",
-    "sourceQuality": "2026 market range",
-    "sourceFiles": "2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Boat, snorkeling, seafood lunch varies"
-   ],
-   "importantNotes": [
-    "Best at low tide — timing depends on tides, not departure time",
-    "Bring your own towel or rent one on-site ($3)",
-    "Very popular with cruise ship passengers — book early morning for quiet"
-   ],
-   "whatToExpect": [
-    "Boat transfer from Stone Town (30 minutes)",
-    "Time on Nakupenda sandbank — swim, sunbathe, relax",
-    "Snorkeling directly from the beach over healthy coral",
-    "Seafood lunch on the sand (optional upgrade)",
-    "Fresh fruit, water, and soft drinks included"
-   ],
-   "description": "A relaxed half-day trip to Nakupenda sandbank — Zanzibar's most famous white-sand strip that emerges at low tide. Perfect for swimming, sunbathing, and snorkeling right off the beach.",
-   "meetingPoint": "Stone Town waterfront — Forodhani Gardens pier",
-   "interests": [
-    "ocean",
-    "beach",
-    "sandbank",
-    "romance"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "MAR-05",
-   "slug": "chumbe-island",
-   "name": "Chumbe Island coral park day",
-   "type": "tour",
-   "category": "MAR",
-   "location": "Mbweni → Chumbe Island",
-   "zones": [
-    "fumba"
-   ],
-   "duration": "Full day",
-   "pricing": {
-    "basis": "per_person",
-    "min": 115.0,
-    "max": 135.0,
-    "display": "$115–$135",
-    "basisNote": "per person; floor priced from partner rate (Masoud Amran partner rate: $90pp)",
-    "sourceQuality": "Historical price list + 2026 market range",
-    "sourceFiles": "zanzibar things to do.docx; 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Boat, marine-biology guide, snorkeling, lunch, day room"
-   ],
-   "importantNotes": [
-    "Advance booking essential — strictly limited to 14 visitors per day",
-    "All profits support the Chumbe Conservation Fund",
-    "Bring your own snorkel mask if you have one",
-    "No single supplement for solo travelers"
-   ],
-   "whatToExpect": [
-    "Full-day trip from Mbweni (south of Stone Town)",
-    "Small-group snorkeling (max 14 guests per day)",
-    "Marine biologist guide explains coral reef ecology",
-    "Snorkel over pristine, protected coral walls",
-    "Organic lunch and refreshments included"
-   ],
-   "description": "Visit the world's first private marine conservation park. Chumbe Island limits visitors to just 14 per day to protect its fragile coral ecosystem. Snorkel guided by a marine biologist, learn about cor",
-   "meetingPoint": "Mbweni Beach (pickup from central hotels by arrangement)",
-   "interests": [
-    "ocean",
-    "snorkeling",
-    "nature",
-    "ecolodge"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "MAR-06",
-   "slug": "sunset-dhow-cruise",
-   "name": "Sunset dhow cruise",
-   "type": "tour",
-   "category": "MAR",
-   "location": "Nungwi, Kendwa or Stone Town",
-   "zones": [
-    "nungwi",
-    "kendwa",
-    "stone-town"
-   ],
-   "duration": "2–3 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 30.0,
-    "max": 85.0,
-    "display": "$30–$85",
-    "basisNote": "per person; private charter higher; floor priced from partner rate (Amran local boat rate: $10pp for 2pax)",
-    "sourceQuality": "2026 market range",
-    "sourceFiles": "2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Dhow, drinks/fruit varies"
-   ],
-   "importantNotes": [
-    "Weather dependent — trips may be rescheduled if seas are rough",
-    "Bring a light jacket; evenings can get cool on the water",
-    "Perfect as a romantic experience or group activity",
-    "Private charters available at higher end of price range"
-   ],
-   "whatToExpect": [
-    "2–3 hour sunset cruise on a traditional wooden dhow",
-    "Departure from Nungwi, Kendwa, or Stone Town (your choice)",
-    "Soft drinks, fresh fruit, and light snacks on board",
-    "Life jackets provided; safety briefing included",
-    "Photography-friendly — golden hour lighting"
-   ],
-   "description": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and ",
-   "meetingPoint": "Nungwi Beach, Kendwa Beach, or Stone Town waterfront — choose at booking",
-   "interests": [
-    "romance",
-    "sunset",
-    "sailing",
-    "couples",
-    "honeymoon"
-   ],
-   "timeOfDay": [
-    "sunset"
-   ]
-  },
-  {
-   "id": "MAR-07",
-   "slug": "kizimkazi-dolphin-tour",
-   "name": "Kizimkazi dolphin tour",
-   "type": "tour",
-   "category": "MAR",
-   "location": "Kizimkazi",
-   "zones": [
-    "kizimkazi"
-   ],
-   "duration": "3–4 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 35.0,
-    "max": 110.0,
-    "display": "$35–$110",
-    "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $28pp for 2pax)",
-    "sourceQuality": "2026 market range",
-    "sourceFiles": "2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Boat, snorkeling, guide",
-    "transfer varies"
-   ],
-   "importantNotes": [
-    "ETHICAL WARNING: Many operators use illegal methods — feeding, chasing, herding. We only book with certified ethical operators.",
-    "Dolphin sightings are NOT guaranteed — it's wildlife, not a show",
-    "Bring your own snorkel gear if possible",
-    "Best period: June–October and December–March"
-   ],
-   "whatToExpect": [
-    "Early morning departure (dolphins most active at dawn, 6–9 AM)",
-    "3–4 hour boat trip to the dolphin hotspot",
-    "Ethical dolphin watching (no feeding, no chasing, minimal engine noise)",
-    "Snorkeling in the lagoon after dolphin viewing",
-    "Fresh fruit and water included"
-   ],
-   "description": "Kizimkazi on Zanzibar's southeast coast is the only place in East Africa where you can see wild bottlenose dolphins in their natural habitat. We only work with operators certified by the Zanzibar Mari",
-   "meetingPoint": "Kizimkazi fishing village, southeast coast (pickup from nearby hotels included)",
-   "interests": [
-    "ocean",
-    "dolphins",
-    "adventure"
-   ],
-   "timeOfDay": [
-    "morning"
-   ]
-  },
-  {
-   "id": "NAT-01",
-   "slug": "jozani-forest",
-   "name": "Jozani Forest & red colobus walk",
-   "type": "tour",
-   "category": "NAT",
-   "location": "Jozani Chwaka Bay National Park",
-   "zones": [
-    "paje",
-    "jambiani",
-    "stone-town"
-   ],
-   "duration": "2–4 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 45.0,
-    "max": 98.0,
-    "display": "$45–$98",
-    "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $45pp for 2pax (Jozani + Butterfly Centre))",
-    "sourceQuality": "Competitor price + official park + 2026 market range",
-    "sourceFiles": "ZTrans (35 USD); zanzibar things to do.docx (50 USD); OCGS attraction data",
-    "verified": true
-   },
-   "includes": [
-    "Guide, park entry varies"
-   ],
-   "importantNotes": [
-    "Park entry fee: varies by nationality — included in our package price",
-    "Best visited early morning or late afternoon for wildlife activity",
-    "Wear long pants and closed shoes; the forest is humid and buggy",
-    "Combine with a south-coast day including Kuza Cave, The Rock, and lunch at a beach club"
-   ],
-   "whatToExpect": [
-    "2–4 hour guided walk through mangrove and coastal forest",
-    "Red colobus monkey sighting — Zanzibar's endemic primate",
-    "Blue Sykes monkey, lesser bushbaby, and birdwatching opportunities",
-    "Visit the visitor center and turtle sanctuary at the park entrance",
-    "Can combine with Kuza Cave to the south or The Rock Restaurant"
-   ],
-   "description": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabie",
-   "meetingPoint": "Jozani Chwaka Bay National Park entrance (pickup from south coast hotels available)",
-   "interests": [
-    "nature",
-    "wildlife",
-    "monkeys",
-    "forest",
-    "family"
-   ],
-   "timeOfDay": [
-    "morning",
-    "afternoon"
-   ]
-  },
-  {
-   "id": "NAT-02",
-   "slug": "kuza-cave-seaweed",
-   "name": "Kuza Cave + seaweed farm",
-   "type": "tour",
-   "category": "NAT",
-   "location": "Jambiani / Paje",
-   "zones": [
-    "jambiani",
-    "paje"
-   ],
-   "duration": "3–5 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 25.0,
-    "max": 130.0,
-    "display": "$25–$130",
-    "basisNote": "per person",
-    "sourceQuality": "2026 market range",
-    "sourceFiles": "2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Cave swim, village/seaweed visit, lunch varies"
-   ],
-   "importantNotes": [
-    "Tide-dependent — cave access varies with water levels",
-    "Bring a towel and change of clothes",
-    "Flashlights provided for the cave portion",
-    "Community-run; part of the fee supports local cooperatives"
-   ],
-   "whatToExpect": [
-    "3–5 hour experience combining cave exploration and farm visit",
-    "Swim in natural freshwater pools inside the limestone cave system",
-    "Seaweed farm demonstration — learn about cultivation and processing",
-    "Hands-on participation: harvest seaweed or try traditional dyeing",
-    "Traditional lunch with local family"
-   ],
-   "description": "Descend into Kuza Cave — a series of freshwater caverns near Jambiani — then visit a working seaweed farm to learn about Zanzibar's second-largest export crop.",
-   "meetingPoint": "Jambiani or Paje area (pickup from nearby hotels included)",
-   "interests": [
-    "culture",
-    "cave",
-    "community",
-    "swimming"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "SAF-01",
-   "slug": "mikumi-nyerere-day-safari",
-   "name": "Mikumi or Nyerere fly-in day safari",
-   "type": "tour",
-   "category": "SAF",
-   "location": "Zanzibar → mainland Tanzania → Zanzibar",
-   "zones": [],
-   "duration": "8–10 hours",
-   "pricing": {
-    "basis": "per_person",
-    "min": 400.0,
-    "max": 800.0,
-    "display": "$400–$800",
-    "basisNote": "per person",
-    "sourceQuality": "Existing strategy + 2026 market range",
-    "sourceFiles": "Zanzibar_Master_Venture_Plan.md; 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Flights, game drive, park fees, lunch"
-   ],
-   "importantNotes": [
-    "Flight-dependent — weather permitting only",
-    "Must use a licensed mainland operator (we handle this)",
-    "Minimum 2 passengers for charter flights — single supplement applies",
-    "Best months: June–October and December–March (dry seasons)"
-   ],
-   "whatToExpect": [
-    "Morning flight from Zanzibar to Mwanza or Dar es Salaam (chartered, 1.5 hours)",
-    "4-hour game drive in 4x4 with a licensed Tanzanian guide",
-    "Park fees, lunch, and refreshments included",
-    "Evening return flight to Zanzibar",
-    "Spot elephants, lions, hippos, crocodiles, giraffes, and over 400 bird species"
-   ],
-   "description": "Escape to mainland Tanzania for a thrilling day safari. Fly from Zanzibar to either Mikumi National Park (famous for the \"S\" curve of the river) or Nyerere National Park (formerly Selous Game Reserve,",
-   "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) — transfer from your hotel included",
-   "interests": [
-    "safari",
-    "wildlife",
-    "adventure"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "SAF-02",
-   "slug": "serengeti-3day-flyin",
-   "name": "Serengeti 3-day fly-in safari",
-   "type": "tour",
-   "category": "SAF",
-   "location": "Zanzibar → Serengeti → Zanzibar",
-   "zones": [],
-   "duration": "3 days / 2 nights",
-   "pricing": {
-    "basis": "per_person",
-    "min": 900.0,
-    "max": 2500.0,
-    "display": "$900–$2500",
-    "basisNote": "per person",
-    "sourceQuality": "Existing demo package + 2026 market range",
-    "sourceFiles": "zanzibar-tours/packages/core/src/seed.ts; 2026 market guides",
-    "verified": true
-   },
-   "includes": [
-    "Flights, park fees, 4x4, guide, full board"
-   ],
-   "importantNotes": [
-    "Requires a licensed mainland tour operator — we handle all logistics",
-    "Best for Great Migration (July–October: Ndutu; December–March: Mara River crossings)",
-    "Single supplement: add ~25% for solo travelers",
-    "Weather-dependent flights — flexible date policy"
-   ],
-   "whatToExpect": [
-    "Day 1: Flight Zanzibar → Seronera, transfer to luxury tented camp, afternoon game drive",
-    "Day 2: Full-day game drives in the Seronera valley (prime wildlife viewing area)",
-    "Day 3: Morning game drive, flight back to Zanzibar",
-    "All park fees, flights, accommodation, meals, and game drives included",
-    "Professional guide and 4x4 safari vehicle"
-   ],
-   "description": "Experience the legendary Serengeti on a 3-day fly-in safari. Stay at a luxury tented camp inside the park, enjoy full-board dining, and witness the Great Migration (seasonal) or resident wildlife year",
-   "meetingPoint": "Transferred from your Zanzibar hotel to ZNZ airport for flights",
-   "interests": [
-    "safari",
-    "wildlife",
-    "honeymoon",
-    "adventure"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "PKG-01",
-   "slug": "zanzibar-essentials-3day",
-   "name": "Zanzibar Essentials 3-day pass",
-   "type": "package",
-   "category": "PKG",
-   "location": "Zanzibar",
-   "zones": [],
-   "duration": "3 days",
-   "pricing": {
-    "basis": "per_person",
-    "min": 185.0,
-    "max": 260.0,
-    "display": "$185–$260",
-    "basisNote": "per person",
-    "sourceQuality": "Existing strategy model",
-    "sourceFiles": "Zanzibar_Master_Venture_Plan.md",
-    "verified": true
-   },
-   "includes": [
-    "Return transfer, Safari Blue, Stone Town + Spice"
-   ],
-   "importantNotes": [
-    "Hotels not included — we can arrange partner accommodation at wholesale rates",
-    "Marine conservation fees included: Menai Bay $10, Mnemba $25",
-    "Price assumes 2+ travelers — single supplement applies",
-    "Book 3+ days in advance during peak season (July–August, December–January)"
-   ],
-   "whatToExpect": [
-    "Return transfer, Safari Blue, Stone Town + Spice"
-   ],
-   "description": "Our signature introduction to Zanzibar. This 3-day package covers the island's must-see highlights: the spice heritage, the marine wonderland of Menai Bay, and the cultural treasures of Stone Town — a",
-   "meetingPoint": "Abeid Amani Karume International Airport (ZNZ)",
-   "interests": [
-    "culture",
-    "ocean",
-    "sailing",
-    "spice",
-    "family"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "TRF-01",
-   "slug": "airport-transfer-znz-to-stone-town",
-   "name": "Zanzibar Airport Transfer — ZNZ to Stone Town hotel",
-   "type": "transfer",
-   "category": "TRF",
-   "location": "Abeid Amani Karume International Airport → Stone Town",
-   "zones": [],
-   "duration": "10–20 min",
-   "pricing": {
-    "basis": "per_vehicle",
-    "min": 35.0,
-    "max": 40.0,
-    "display": "$35–$40",
-    "basisNote": "per private vehicle up to 4 pax",
-    "vehicleCapacity": 4,
-    "sourceQuality": "Existing website + market scan",
-    "sourceFiles": "zanzibar-easytrip/index.html; ZTrans",
-    "verified": true
-   },
-   "includes": [
-    "Meet & greet, flight tracking, waiting, water, luggage help"
-   ],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Abeid Amani Karume International Airport → Stone Town - 10–20 min private transfer.",
-   "meetingPoint": "",
-   "interests": [
-    "transfer",
-    "airport"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "TRF-02",
-   "slug": "airport-transfer-znz-to-pajejambiani",
-   "name": "Zanzibar Airport Transfer — ZNZ to Paje & Jambiani hotels",
-   "type": "transfer",
-   "category": "TRF",
-   "location": "ZNZ → Paje/Jambiani",
-   "zones": [],
-   "duration": "55–70 min",
-   "pricing": {
-    "basis": "per_vehicle",
-    "min": 45.0,
-    "max": 55.0,
-    "display": "$45–$55",
-    "basisNote": "per private vehicle up to 4 pax",
-    "vehicleCapacity": 4,
-    "sourceQuality": "Existing website + market scan",
-    "sourceFiles": "zanzibar-easytrip/index.html",
-    "verified": true
-   },
-   "includes": [
-    "Meet & greet, flight tracking, waiting, water, luggage help"
-   ],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "ZNZ → Paje/Jambiani - 55–70 min private transfer.",
-   "meetingPoint": "",
-   "interests": [
-    "transfer",
-    "airport"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "TRF-03",
-   "slug": "airport-transfer-znz-to-nungwikendwa",
-   "name": "Zanzibar Airport Transfer — ZNZ to Nungwi & Kendwa hotels",
-   "type": "transfer",
-   "category": "TRF",
-   "location": "ZNZ → Nungwi/Kendwa",
-   "zones": [],
-   "duration": "70–90 min",
-   "pricing": {
-    "basis": "per_vehicle",
-    "min": 50.0,
-    "max": 60.0,
-    "display": "$50–$60",
-    "basisNote": "per private vehicle up to 4 pax",
-    "vehicleCapacity": 4,
-    "sourceQuality": "Existing website + market scan",
-    "sourceFiles": "zanzibar-easytrip/index.html",
-    "verified": true
-   },
-   "includes": [
-    "Meet & greet, flight tracking, waiting, water, luggage help"
-   ],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "ZNZ → Nungwi/Kendwa - 70–90 min private transfer.",
-   "meetingPoint": "",
-   "interests": [
-    "transfer",
-    "airport"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "PKG-01",
-   "slug": "zanzibar-essentials-3-day-pass",
-   "name": "Zanzibar Essentials 3-Day Pass",
-   "type": "package",
-   "category": "PKG",
-   "location": "Zanzibar (island-wide)",
-   "zones": [],
-   "duration": "3 Days / 2 Nights",
-   "pricing": {
-    "basis": "per_person",
-    "min": 185.0,
-    "max": 260.0,
-    "display": "$185–$260",
-    "basisNote": "per person",
-    "sourceQuality": "Direct local licensed operator",
-    "sourceFiles": "Spice and Sail Operations",
-    "verified": true
-   },
-   "includes": [
-    "Roundtrip airport transfers in private A/C minivan",
-    "Full-day Safari Blue Menai Bay dhow cruise & sandbank buffet",
-    "Stone Town historical guided tour + organic spice plantation lunch",
-    "All marine reserve conservation fees & government taxes"
-   ],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Our signature island starter: private airport transfers, authentic Stone Town heritage walking tour, organic spice farm harvest lunch, and the legendary Safari Blue Menai Bay dhow sailing with seafood BBQ.",
-   "meetingPoint": "",
-   "interests": [
-    "package"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "PKG-02",
-   "slug": "zanzibar-hidden-gems-sacred-caves",
-   "name": "Zanzibar Hidden Gems & Sacred Caves (4 Days)",
-   "type": "package",
-   "category": "PKG",
-   "location": "Zanzibar (island-wide)",
-   "zones": [],
-   "duration": "4 Days / 3 Nights",
-   "pricing": {
-    "basis": "per_person",
-    "min": 320.0,
-    "max": 420.0,
-    "display": "$320–$420",
-    "basisNote": "per person",
-    "sourceQuality": "Curated direct partner access",
-    "sourceFiles": "Spice and Sail Operations",
-    "verified": true
-   },
-   "includes": [
-    "Private vehicle and dedicated Swahili guide throughout",
-    "Maalum Cave private timed swim slot & Kuza Cave cultural workshop",
-    "Uzi Island 4x4 low-tide mangrove causeway expedition & Swahili lunch",
-    "Salaam Cave Kizimkazi turtle sanctuary admission & marine fees",
-    "Roundtrip airport or ferry port private transfers"
-   ],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Unearth Zanzibar's best-kept secrets beyond the tourist trail: crystal-clear swimming in Maalum Secret Cenote, sacred drumming at Kuza Cave, crossing the submerged 'Moses Road' to untouched Uzi Island, and swimming with rescued sea turtles at Salaam Cave.",
-   "meetingPoint": "",
-   "interests": [
-    "package"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "PKG-03",
-   "slug": "adrenaline-and-ocean-safari",
-   "name": "Adrenaline & Ocean Safari (3 Days)",
-   "type": "package",
-   "category": "PKG",
-   "location": "Zanzibar (island-wide)",
-   "zones": [],
-   "duration": "3 Days / 2 Nights",
-   "pricing": {
-    "basis": "per_person",
-    "min": 285.0,
-    "max": 375.0,
-    "display": "$285–$375",
-    "basisNote": "per person",
-    "sourceQuality": "Curated direct partner access",
-    "sourceFiles": "Spice and Sail Operations",
-    "verified": true
-   },
-   "includes": [
-    "Swimming with horses beach session with certified equestrian guides",
-    "3-hour guided off-road Quad/ATV adventure with helmets & fuel",
-    "Private boat excursion to Mnemba Atoll marine reserve with dolphin spotting",
-    "Private door-to-door hotel & airport transport"
-   ],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "High-octane island thrills: swim bareback with purebred horses in the turquoise shallows of Nungwi or Kiwengwa, power 2-seater quad buggies through coral rock trails and fishing villages, and snorkel the pristine coral gardens of Mnemba Atoll.",
-   "meetingPoint": "",
-   "interests": [
-    "package"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "PKG-04",
-   "slug": "bush-to-beach-vip-luxury",
-   "name": "Bush to Beach VIP: Mikumi Fly-In & Private Yacht (5 Days)",
-   "type": "package",
-   "category": "PKG",
-   "location": "Zanzibar (island-wide)",
-   "zones": [],
-   "duration": "5 Days / 4 Nights",
-   "pricing": {
-    "basis": "per_person",
-    "min": 890.0,
-    "max": 1250.0,
-    "display": "$890–$1,250",
-    "basisNote": "per person",
-    "sourceQuality": "Direct air charter & licensed operator",
-    "sourceFiles": "Spice and Sail Operations",
-    "verified": true
-   },
-   "includes": [
-    "Same-day or overnight fly-in return flights Zanzibar ⇄ Mikumi airstrip",
-    "4x4 open-sided pop-up safari game drive with certified naturalist",
-    "All TANAPA national park entry fees & conservation levies ($35.40/day included)",
-    "Private 40ft Catamaran yacht day charter with seafood lunch & sunset wine",
-    "VIP private airport & inter-hotel executive transfers"
-   ],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "The ultimate Tanzania dual-world escape: fly directly from Zanzibar into Mikumi National Park for thrilling big game 4x4 safaris (elephants, lions, giraffes), followed by luxury coastal living with a private sunset catamaran yacht charter and Mnemba reef snorkeling.",
-   "meetingPoint": "",
-   "interests": [
-    "package"
-   ],
-   "timeOfDay": []
-  },
-  {
-   "id": "EXP-01",
-   "slug": "horse-swimming",
-   "name": "Swimming with Horses",
-   "type": "experience",
-   "category": "EXP",
-   "location": "Nungwi / Kiwengwa",
-   "zones": [],
-   "duration": "",
-   "pricing": {
-    "basis": "on_request",
-    "min": null,
-    "max": null,
-    "display": "Price on request",
-    "basisNote": "No verified catalogue price yet - team confirms exact rate",
-    "verified": false
-   },
-   "includes": [],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Swimming with Horses - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
-   "meetingPoint": "",
-   "interests": [
-    "romance",
-    "adventure",
-    "horses",
-    "unique"
-   ],
-   "timeOfDay": [
-    "sunset"
-   ]
-  },
-  {
-   "id": "EXP-02",
-   "slug": "quad-buggy-safari",
-   "name": "Off-Road Quad / Buggy Safari",
-   "type": "experience",
-   "category": "EXP",
-   "location": "coral rock trails & fishing villages",
-   "zones": [],
-   "duration": "",
-   "pricing": {
-    "basis": "on_request",
-    "min": null,
-    "max": null,
-    "display": "Price on request",
-    "basisNote": "No verified catalogue price yet - team confirms exact rate",
-    "verified": false
-   },
-   "includes": [],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Off-Road Quad / Buggy Safari - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
-   "meetingPoint": "",
-   "interests": [
-    "adventure",
-    "quad",
-    "family"
-   ],
-   "timeOfDay": [
-    "morning"
-   ]
-  },
-  {
-   "id": "EXP-03",
-   "slug": "maalum-kuza-caves",
-   "name": "Maalum & Kuza Secret Cave Swim",
-   "type": "experience",
-   "category": "EXP",
-   "location": "Kizimbani / Jambiani",
-   "zones": [],
-   "duration": "",
-   "pricing": {
-    "basis": "on_request",
-    "min": null,
-    "max": null,
-    "display": "Price on request",
-    "basisNote": "No verified catalogue price yet - team confirms exact rate",
-    "verified": false
-   },
-   "includes": [],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Maalum & Kuza Secret Cave Swim - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
-   "meetingPoint": "",
-   "interests": [
-    "cave",
-    "swimming",
-    "unique",
-    "culture"
-   ],
-   "timeOfDay": [
-    "morning"
-   ]
-  },
-  {
-   "id": "EXP-04",
-   "slug": "uzi-island-moses-road",
-   "name": "Uzi Island 'Moses Road' Tidal Expedition",
-   "type": "experience",
-   "category": "EXP",
-   "location": "Uzi Island",
-   "zones": [],
-   "duration": "",
-   "pricing": {
-    "basis": "on_request",
-    "min": null,
-    "max": null,
-    "display": "Price on request",
-    "basisNote": "No verified catalogue price yet - team confirms exact rate",
-    "verified": false
-   },
-   "includes": [],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Uzi Island 'Moses Road' Tidal Expedition - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
-   "meetingPoint": "",
-   "interests": [
-    "unique",
-    "nature",
-    "adventure"
-   ],
-   "timeOfDay": [
-    "morning"
-   ]
-  },
-  {
-   "id": "EXP-05",
-   "slug": "cheetahs-rock",
-   "name": "Cheetah's Rock Animal Welfare Tour",
-   "type": "experience",
-   "category": "EXP",
-   "location": "central Zanzibar",
-   "zones": [],
-   "duration": "",
-   "pricing": {
-    "basis": "on_request",
-    "min": null,
-    "max": null,
-    "display": "Price on request",
-    "basisNote": "No verified catalogue price yet - team confirms exact rate",
-    "verified": false
-   },
-   "includes": [],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Cheetah's Rock Animal Welfare Tour - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
-   "meetingPoint": "",
-   "interests": [
-    "wildlife",
-    "unique",
-    "animals"
-   ],
-   "timeOfDay": [
-    "afternoon"
-   ]
-  },
-  {
-   "id": "EXP-06",
-   "slug": "private-catamaran-charter",
-   "name": "Private Luxury Catamaran Charter",
-   "type": "experience",
-   "category": "EXP",
-   "location": "Nungwi / north-west coast",
-   "zones": [],
-   "duration": "",
-   "pricing": {
-    "basis": "on_request",
-    "min": null,
-    "max": null,
-    "display": "Price on request",
-    "basisNote": "No verified catalogue price yet - team confirms exact rate",
-    "verified": false
-   },
-   "includes": [],
-   "importantNotes": [],
-   "whatToExpect": [],
-   "description": "Private Luxury Catamaran Charter - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
-   "meetingPoint": "",
-   "interests": [
-    "romance",
-    "honeymoon",
-    "sailing",
-    "luxury"
-   ],
-   "timeOfDay": [
-    "sunset"
-   ]
-  }
- ]
+  "zones": [
+    {
+      "slug": "stone-town",
+      "name": "Stone Town",
+      "island": "Unguja",
+      "area": "west",
+      "hotelCount": 50,
+      "description": "UNESCO World Heritage site \u2014 the historic heart of Zanzibar with winding alleys, carved doors, bustling markets, and centuries of Swahili, Arab, Indian, and European heritage."
+    },
+    {
+      "slug": "nungwi",
+      "name": "Nungwi",
+      "island": "Unguja",
+      "area": "north",
+      "hotelCount": 26,
+      "description": "Northern tip of Zanzibar \u2014 famous for white-sand beaches, turquoise water, traditional dhow building, and vibrant nightlife. Turtles, diving, and sunset cruises."
+    },
+    {
+      "slug": "kendwa",
+      "name": "Kendwa",
+      "island": "Unguja",
+      "area": "north",
+      "hotelCount": 6,
+      "description": "Northwest coast \u2014 wide beaches with no tide restrictions, famous for full-moon parties, diving, and easy swimming all day."
+    },
+    {
+      "slug": "paje",
+      "name": "Paje",
+      "island": "Unguja",
+      "area": "southeast",
+      "hotelCount": 21,
+      "description": "Southeast coast \u2014 world-class kite-surfing, shallow turquoise lagoon, laid-back vibe, and easy access to Jozani Forest and Kuza Cave."
+    },
+    {
+      "slug": "jambiani",
+      "name": "Jambiani",
+      "island": "Unguja",
+      "area": "southeast",
+      "hotelCount": 20,
+      "description": "Southeast fishing village \u2014 authentic Swahili culture, seaweed farming, tide pools, and access to Kuza Cave and Chumbe Island."
+    },
+    {
+      "slug": "kiwengwa",
+      "name": "Kiwengwa",
+      "island": "Unguja",
+      "area": "northeast",
+      "hotelCount": 8,
+      "description": "Northeast coast \u2014 long white-sand beach, all-inclusive resorts, calm waters protected by reef, and easy access to Mnemba Atoll."
+    },
+    {
+      "slug": "pongwe",
+      "name": "Pongwe / Michamvi",
+      "island": "Unguja",
+      "area": "east",
+      "hotelCount": 6,
+      "description": "East-central coast \u2014 quiet beaches, mangrove channels, The Rock Restaurant nearby, and Isaraya overwater villas."
+    },
+    {
+      "slug": "bwejuu",
+      "name": "Bwejuu / Dongwe",
+      "island": "Unguja",
+      "area": "southeast",
+      "hotelCount": 8,
+      "description": "Southeast coast \u2014 tranquil beaches, luxury boutique resorts, seaweed farming, and access to Chumbe Island marine park."
+    },
+    {
+      "slug": "michamvi",
+      "name": "Michamvi / Pingwe",
+      "island": "Unguja",
+      "area": "southeast",
+      "hotelCount": 10,
+      "description": "East coast \u2014 The Rock Restaurant on a coral outcrop, calm lagoon waters, and boutique luxury resorts."
+    },
+    {
+      "slug": "kizimkazi",
+      "name": "Kizimkazi / Dimbani",
+      "island": "Unguja",
+      "area": "south",
+      "hotelCount": 7,
+      "description": "South coast \u2014 dolphin watching capital, ancient mosque (12th century), and access to Menai Bay Conservation Area."
+    },
+    {
+      "slug": "fumba",
+      "name": "Fumba / Mbweni",
+      "island": "Unguja",
+      "area": "southwest",
+      "hotelCount": 4,
+      "description": "Southwest peninsula \u2014 departure point for Safari Blue, marine conservation area access, and quiet residential beaches."
+    },
+    {
+      "slug": "matemwe",
+      "name": "Matemwe / Kigomani",
+      "island": "Unguja",
+      "area": "northeast",
+      "hotelCount": 31,
+      "description": "Northeast coast \u2014 pristine beaches, Mnemba Atoll access, turtle nesting sites, and quiet boutique properties."
+    },
+    {
+      "slug": "chake-chake",
+      "name": "Chake Chake (Pemba)",
+      "island": "Pemba",
+      "area": "pemba",
+      "hotelCount": 2,
+      "description": "Main town of Pemba Island \u2014 authentic Swahili culture, clove plantations, and access to Pemba's pristine dive sites."
+    },
+    {
+      "slug": "wambaa-gulf",
+      "name": "Wambaa Gulf / Makangale (Pemba)",
+      "island": "Pemba",
+      "area": "pemba",
+      "hotelCount": 6,
+      "description": "Pemba's luxury lodge area \u2014 Fundu Lagoon, world-class diving, and untouched coral reefs."
+    }
+  ],
+  "services": [
+    {
+      "id": "CUL-01",
+      "slug": "stone-town-walking-tour",
+      "name": "Stone Town walking tour",
+      "type": "tour",
+      "category": "CUL",
+      "location": "Stone Town",
+      "zones": [
+        "stone-town"
+      ],
+      "duration": "2\u20134 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 45.0,
+        "max": 80.0,
+        "display": "$45\u2013$80",
+        "basisNote": "per person; private guide at high end; floor priced from partner rate (Madebe partner rate: $35pp for 2pax)",
+        "sourceQuality": "Competitor price + 2026 market range",
+        "sourceFiles": "Madebe rate card ($35pp for 2pax); 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Licensed guide",
+        "entry fees vary"
+      ],
+      "importantNotes": [
+        "Entry fees to museums are not included \u2014 budget $5\u201310 extra",
+        "Wear comfortable walking shoes; Stone Town has uneven surfaces",
+        "Bring a hat and water; midday sun is intense",
+        "Licensed guides charge per group, not per person \u2014 perfect for families"
+      ],
+      "whatToExpect": [
+        "2\u20134 hour guided walk led by a Zanzibar-licensed guide",
+        "Visit Forodhani Gardens night market (if evening)",
+        "Explore the Old Fort, House of Wonders, and Sultan's Palace Museum",
+        "Browse the Darajani and Forodhani markets",
+        "Stroll the seafront promenade and the Old City gates"
+      ],
+      "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history \u2014 from the Sultan's palace to the bustling Darajani market scene, the House ",
+      "meetingPoint": "Forodhani Gardens, Stone Town waterfront",
+      "interests": [
+        "culture",
+        "history",
+        "town"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "CUL-02",
+      "slug": "spice-farm",
+      "name": "Spice farm tour",
+      "type": "tour",
+      "category": "CUL",
+      "location": "Kidichi / Kizimbani / island interior",
+      "zones": [
+        "stone-town"
+      ],
+      "duration": "3\u20134 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 35.0,
+        "max": 80.0,
+        "display": "$35\u2013$80",
+        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $27pp for 2pax)",
+        "sourceQuality": "Competitor price + 2026 market range",
+        "sourceFiles": "ZTrans (15 USD); zanzibar things to do.docx (30 USD); 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Farm walk, spice/fruit tasting, guide",
+        "Optional traditional Swahili farm lunch available on-site (\u20130 cash)"
+      ],
+      "importantNotes": [
+        "Tipping pressure: some guides take visitors to craft shops \u2014 we only work with transparent operators",
+        "Bring cash for optional lunch ($5\u201310)",
+        "Wear long sleeves if you have sensitive skin (spice contact)"
+      ],
+      "whatToExpect": [
+        "3\u20134 hour farm tour with a local expert guide",
+        "Hands-on tasting of 8+ tropical spices and fruits",
+        "History of Zanzibar's clove trade and colonial plantations",
+        "Traditional hand-grinding demonstration",
+        "Optional lunch featuring local ingredients"
+      ],
+      "description": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade \u2014 how Zanzibar became the \"Spice Island\" \u2014 while you taste fresh nutmeg, cloves, c",
+      "meetingPoint": "Kidichi, Kizimbani, or island interior (pickup from Stone Town available)",
+      "interests": [
+        "culture",
+        "food",
+        "spice",
+        "family"
+      ],
+      "timeOfDay": [
+        "morning",
+        "afternoon"
+      ]
+    },
+    {
+      "id": "CUL-03",
+      "slug": "village-community-tour",
+      "name": "Village / community tour",
+      "type": "tour",
+      "category": "CUL",
+      "location": "Kizimbani, Jambiani or south-east villages",
+      "zones": [
+        "jambiani",
+        "stone-town"
+      ],
+      "duration": "2\u20134 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 30.0,
+        "max": 50.0,
+        "display": "$30\u2013$50",
+        "basisNote": "per person; floor priced from partner rate (Animation team partner rate: $41 total small group)",
+        "sourceQuality": "Historical price list + 2026 market range",
+        "sourceFiles": "zanzibar things to do.docx (50 USD); 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Village walk, seaweed/craft visit, local lunch",
+        "donation varies"
+      ],
+      "importantNotes": [
+        "This is a community experience \u2014 respectful dress (shoulders and knees covered) is required",
+        "Donation goes directly to the village development fund",
+        "Not a staged performance \u2014 real community interaction"
+      ],
+      "whatToExpect": [
+        "2\u20134 hour guided village visit",
+        "Seaweed farm demonstration and hands-on participation",
+        "Traditional craft workshop (basket weaving, pottery)",
+        "Home-cooked local lunch in a family setting",
+        "Community donation included in price"
+      ],
+      "description": "Go beyond the tourist trail to a local village in Kizimbani, Jambiani, or the southeast coast. Meet families, learn about seaweed farming, traditional crafts, and daily life in rural Zanzibar.",
+      "meetingPoint": "Kizimbani, Jambiani, or southeast villages (pickup included from south/east coast hotels)",
+      "interests": [
+        "culture",
+        "community",
+        "family"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "CUL-04",
+      "slug": "stone-town-spice-prison-combo",
+      "name": "Stone Town + Spice Farm + Prison Island combo",
+      "type": "tour",
+      "category": "CUL",
+      "location": "Stone Town / Kidichi / Changuu",
+      "zones": [
+        "stone-town"
+      ],
+      "duration": "5\u20138 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 75.0,
+        "max": 165.0,
+        "display": "$75\u2013$165",
+        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (3-in-1))",
+        "sourceQuality": "Existing strategy + 2026 market range",
+        "sourceFiles": "Zanzibar_Master_Venture_Plan.md; GetYourGuide 2026 listing",
+        "verified": true
+      },
+      "includes": [
+        "Guide, transport, entry fees vary by package"
+      ],
+      "importantNotes": [
+        "This is a high-intent bundle \u2014 book early, especially June\u2013October and December\u2013January",
+        "Lunch at spice farm is typically a set Zanzibar menu",
+        "Bring swimwear for the Prison Island snorkeling portion"
+      ],
+      "whatToExpect": [
+        "Morning: Stone Town walking tour with licensed guide (2 hours)",
+        "Midday: Spice farm tour with tasting and lunch (2 hours)",
+        "Afternoon: Boat to Prison Island \u2014 visit tortoise sanctuary and snorkel at Nakupenda (2\u20133 hours)",
+        "All transport included in air-conditioned vehicle",
+        "Entry fees to all sites included"
+      ],
+      "description": "Maximize your day with the most popular Zanzibar combination tour. Start with a Stone Town walking tour, then head to a spice farm for lunch, and finish with a boat trip to Prison Island for giant tor",
+      "meetingPoint": "Stone Town hotel pickup or Forodhani Gardens",
+      "interests": [
+        "culture",
+        "history",
+        "spice"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "MAR-01",
+      "slug": "safari-blue",
+      "name": "Safari Blue / Menai Bay dhow day",
+      "type": "tour",
+      "category": "MAR",
+      "location": "Fumba \u2192 Menai Bay \u2192 Kwale Island",
+      "zones": [
+        "fumba"
+      ],
+      "duration": "7\u20139 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 60.0,
+        "max": 160.0,
+        "display": "$60\u2013$160",
+        "basisNote": "per person; private versions higher; floor priced from partner rate (Madebe partner rate: $45pp for 2pax)",
+        "sourceQuality": "Competitor price + official operator + 2026 market range",
+        "sourceFiles": "ZTrans (70 USD); existing docs (85\u201390 USD); 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Dhow, snorkeling, sandbank, seafood lunch, drinks, guide"
+      ],
+      "importantNotes": [
+        "Marine conservation fee: $10 for non-EAC adults (included in our price)",
+        "Bring a towel, hat, sunscreen (reef-safe), and swimwear",
+        "Limited daily capacity \u2014 booking essential",
+        "Copycat products and overcrowding are key risks \u2014 we only recommend the licensed original Safari Blue"
+      ],
+      "whatToExpect": [
+        "Full-day dhow sailing trip (7\u20139 hours)",
+        "Snorkeling over coral reefs with mask, snorkel, and life jacket provided",
+        "Seafood barbecue lunch (grilled fish, prawns, calamari) on a sandbank",
+        "Fresh fruit, water, and soft drinks throughout",
+        "Menai Bay conservation fee included in package price"
+      ],
+      "description": "Zanzibar's most famous dhow excursion: cruise to the Menai Bay Conservation Area, snorkel over vibrant coral reefs, feast on a seafood barbecue on a private sandbank, and visit Kwale Island. Operated ",
+      "meetingPoint": "Fumba Peninsula \u2014 pickup from Stone Town hotels available",
+      "interests": [
+        "ocean",
+        "snorkeling",
+        "beach",
+        "sailing",
+        "seafood",
+        "family",
+        "adventure"
+      ],
+      "timeOfDay": [
+        "morning"
+      ]
+    },
+    {
+      "id": "MAR-02",
+      "slug": "mnemba-snorkeling",
+      "name": "Mnemba Atoll snorkeling / dolphin trip",
+      "type": "tour",
+      "category": "MAR",
+      "location": "Matemwe / Nungwi / Kendwa \u2192 Mnemba Atoll",
+      "zones": [
+        "matemwe",
+        "nungwi",
+        "kiwengwa"
+      ],
+      "duration": "3\u20136 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 70.0,
+        "max": 150.0,
+        "display": "$70\u2013$150",
+        "basisNote": "per person; private boat higher; floor priced from partner rate (Madebe partner rate: $53pp for 2pax)",
+        "sourceQuality": "Competitor price + 2026 market range",
+        "sourceFiles": "ZTrans (50 USD); 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Boat, snorkel gear, fruit/water, guide",
+        "marine fee varies"
+      ],
+      "importantNotes": [
+        "Marine conservation fee: $25 for non-EAC adults (included in our price)",
+        "Best condition: June\u2013October and December\u2013March",
+        "Avoid \"guaranteed dolphin\" claims \u2014 these are unethical and often illegal",
+        "Weather dependent; trips may be rescheduled in rough seas"
+      ],
+      "whatToExpect": [
+        "3\u20136 hour boat trip to Mnemba Atoll marine reserve",
+        "Two snorkeling spots over vibrant coral reefs",
+        "Sea turtle sightings common (resident population)",
+        "Fresh fruit, water, and soft drinks on board",
+        "Snorkel gear provided (mask, snorkel, life jacket)"
+      ],
+      "description": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area. Spot green sea turtles, observe colorful fish over healthy coral reefs, and enjoy fruit and water on a traditi",
+      "meetingPoint": "Matemwe, Nungwi, or Kendwa \u2014 pickup from nearby hotels included",
+      "interests": [
+        "ocean",
+        "snorkeling",
+        "dolphins",
+        "adventure"
+      ],
+      "timeOfDay": [
+        "morning"
+      ]
+    },
+    {
+      "id": "MAR-03",
+      "slug": "prison-island-nakupenda",
+      "name": "Prison Island + Nakupenda sandbank",
+      "type": "tour",
+      "category": "MAR",
+      "location": "Stone Town \u2192 Changuu \u2192 Nakupenda",
+      "zones": [
+        "stone-town"
+      ],
+      "duration": "Half day to 6 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 75.0,
+        "max": 145.0,
+        "display": "$75\u2013$145",
+        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (Prison Island + Nakupenda))",
+        "sourceQuality": "Competitor price + 2026 market range",
+        "sourceFiles": "ZTrans (40 + 15 USD); 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Boat, guide, entry",
+        "Fresh seafood & seasonal fruit lunch on sandbank included"
+      ],
+      "importantNotes": [
+        "Peak season (June\u2013October) gets crowded \u2014 book early morning for fewer people",
+        "Bring reef-safe sunscreen and a hat",
+        "Lunch at Nakupenda is typically a simple seafood grill \u2014 add $10\u201315 if desired"
+      ],
+      "whatToExpect": [
+        "Boat transfer from Stone Town (20 minutes)",
+        "Prison Island visit \u2014 feed and photograph giant tortoises (aged 70\u2013190)",
+        "Nakupenda sandbank \u2014 wade in shallow turquoise waters",
+        "Snorkeling at the coral reef (gear provided)",
+        "Island entry fee included"
+      ],
+      "description": "A classic Zanzibar half-day or full-day excursion: take a short boat ride to Changuu (Prison Island) to meet the resident giant Aldabra tortoises, then cruise to Nakupenda sandbank for snorkeling over",
+      "meetingPoint": "Stone Town waterfront \u2014 Forodhani Gardens pier",
+      "interests": [
+        "ocean",
+        "beach",
+        "tortoises",
+        "snorkeling",
+        "family"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "MAR-04",
+      "slug": "nakupenda-sandbank",
+      "name": "Nakupenda sandbank only",
+      "type": "tour",
+      "category": "MAR",
+      "location": "Stone Town / Nakupenda",
+      "zones": [
+        "stone-town"
+      ],
+      "duration": "Half day",
+      "pricing": {
+        "basis": "per_person",
+        "min": 75.0,
+        "max": 145.0,
+        "display": "$75\u2013$145",
+        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (Nakupenda leg))",
+        "sourceQuality": "2026 market range",
+        "sourceFiles": "2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Fresh seafood & seasonal fruit lunch on sandbank included"
+      ],
+      "importantNotes": [
+        "Best at low tide \u2014 timing depends on tides, not departure time",
+        "Bring your own towel or rent one on-site ($3)",
+        "Very popular with cruise ship passengers \u2014 book early morning for quiet"
+      ],
+      "whatToExpect": [
+        "Boat transfer from Stone Town (30 minutes)",
+        "Time on Nakupenda sandbank \u2014 swim, sunbathe, relax",
+        "Snorkeling directly from the beach over healthy coral",
+        "Seafood lunch on the sand (optional upgrade)",
+        "Fresh fruit, water, and soft drinks included"
+      ],
+      "description": "A relaxed half-day trip to Nakupenda sandbank \u2014 Zanzibar's most famous white-sand strip that emerges at low tide. Perfect for swimming, sunbathing, and snorkeling right off the beach.",
+      "meetingPoint": "Stone Town waterfront \u2014 Forodhani Gardens pier",
+      "interests": [
+        "ocean",
+        "beach",
+        "sandbank",
+        "romance"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "MAR-05",
+      "slug": "chumbe-island",
+      "name": "Chumbe Island coral park day",
+      "type": "tour",
+      "category": "MAR",
+      "location": "Mbweni \u2192 Chumbe Island",
+      "zones": [
+        "fumba"
+      ],
+      "duration": "Full day",
+      "pricing": {
+        "basis": "per_person",
+        "min": 115.0,
+        "max": 135.0,
+        "display": "$115\u2013$135",
+        "basisNote": "per person; floor priced from partner rate (Masoud Amran partner rate: $90pp)",
+        "sourceQuality": "Historical price list + 2026 market range",
+        "sourceFiles": "zanzibar things to do.docx; 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Boat, marine-biology guide, snorkeling, lunch, day room"
+      ],
+      "importantNotes": [
+        "Advance booking essential \u2014 strictly limited to 14 visitors per day",
+        "All profits support the Chumbe Conservation Fund",
+        "Bring your own snorkel mask if you have one",
+        "No single supplement for solo travelers"
+      ],
+      "whatToExpect": [
+        "Full-day trip from Mbweni (south of Stone Town)",
+        "Small-group snorkeling (max 14 guests per day)",
+        "Marine biologist guide explains coral reef ecology",
+        "Snorkel over pristine, protected coral walls",
+        "Organic lunch and refreshments included"
+      ],
+      "description": "Visit the world's first private marine conservation park. Chumbe Island limits visitors to just 14 per day to protect its fragile coral ecosystem. Snorkel guided by a marine biologist, learn about cor",
+      "meetingPoint": "Mbweni Beach (pickup from central hotels by arrangement)",
+      "interests": [
+        "ocean",
+        "snorkeling",
+        "nature",
+        "ecolodge"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "MAR-06",
+      "slug": "sunset-dhow-cruise",
+      "name": "Sunset dhow cruise",
+      "type": "tour",
+      "category": "MAR",
+      "location": "Nungwi, Kendwa or Stone Town",
+      "zones": [
+        "nungwi",
+        "kendwa",
+        "stone-town"
+      ],
+      "duration": "2\u20133 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 30.0,
+        "max": 85.0,
+        "display": "$30\u2013$85",
+        "basisNote": "per person; private charter higher; floor priced from partner rate (Amran local boat rate: $10pp for 2pax)",
+        "sourceQuality": "2026 market range",
+        "sourceFiles": "2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Dhow, drinks/fruit varies"
+      ],
+      "importantNotes": [
+        "Weather dependent \u2014 trips may be rescheduled if seas are rough",
+        "Bring a light jacket; evenings can get cool on the water",
+        "Perfect as a romantic experience or group activity",
+        "Private charters available at higher end of price range"
+      ],
+      "whatToExpect": [
+        "2\u20133 hour sunset cruise on a traditional wooden dhow",
+        "Departure from Nungwi, Kendwa, or Stone Town (your choice)",
+        "Soft drinks, fresh fruit, and light snacks on board",
+        "Life jackets provided; safety briefing included",
+        "Photography-friendly \u2014 golden hour lighting"
+      ],
+      "description": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and ",
+      "meetingPoint": "Nungwi Beach, Kendwa Beach, or Stone Town waterfront \u2014 choose at booking",
+      "interests": [
+        "romance",
+        "sunset",
+        "sailing",
+        "couples",
+        "honeymoon"
+      ],
+      "timeOfDay": [
+        "sunset"
+      ]
+    },
+    {
+      "id": "MAR-07",
+      "slug": "kizimkazi-dolphin-tour",
+      "name": "Kizimkazi dolphin tour",
+      "type": "tour",
+      "category": "MAR",
+      "location": "Kizimkazi",
+      "zones": [
+        "kizimkazi"
+      ],
+      "duration": "3\u20134 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 35.0,
+        "max": 110.0,
+        "display": "$35\u2013$110",
+        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $28pp for 2pax)",
+        "sourceQuality": "2026 market range",
+        "sourceFiles": "2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Boat, snorkeling, guide",
+        "transfer varies"
+      ],
+      "importantNotes": [
+        "ETHICAL WARNING: Many operators use illegal methods \u2014 feeding, chasing, herding. We only book with certified ethical operators.",
+        "Dolphin sightings are NOT guaranteed \u2014 it's wildlife, not a show",
+        "Bring your own snorkel gear if possible",
+        "Best period: June\u2013October and December\u2013March"
+      ],
+      "whatToExpect": [
+        "Early morning departure (dolphins most active at dawn, 6\u20139 AM)",
+        "3\u20134 hour boat trip to the dolphin hotspot",
+        "Ethical dolphin watching (no feeding, no chasing, minimal engine noise)",
+        "Snorkeling in the lagoon after dolphin viewing",
+        "Fresh fruit and water included"
+      ],
+      "description": "Kizimkazi on Zanzibar's southeast coast is the only place in East Africa where you can see wild bottlenose dolphins in their natural habitat. We only work with operators certified by the Zanzibar Mari",
+      "meetingPoint": "Kizimkazi fishing village, southeast coast (pickup from nearby hotels included)",
+      "interests": [
+        "ocean",
+        "dolphins",
+        "adventure"
+      ],
+      "timeOfDay": [
+        "morning"
+      ]
+    },
+    {
+      "id": "NAT-01",
+      "slug": "jozani-forest",
+      "name": "Jozani Forest & red colobus walk",
+      "type": "tour",
+      "category": "NAT",
+      "location": "Jozani Chwaka Bay National Park",
+      "zones": [
+        "paje",
+        "jambiani",
+        "stone-town"
+      ],
+      "duration": "2\u20134 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 45.0,
+        "max": 98.0,
+        "display": "$45\u2013$98",
+        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $45pp for 2pax (Jozani + Butterfly Centre))",
+        "sourceQuality": "Competitor price + official park + 2026 market range",
+        "sourceFiles": "ZTrans (35 USD); zanzibar things to do.docx (50 USD); OCGS attraction data",
+        "verified": true
+      },
+      "includes": [
+        "Guide, park entry varies"
+      ],
+      "importantNotes": [
+        "Park entry fee: varies by nationality \u2014 included in our package price",
+        "Best visited early morning or late afternoon for wildlife activity",
+        "Wear long pants and closed shoes; the forest is humid and buggy",
+        "Combine with a south-coast day including Kuza Cave, The Rock, and lunch at a beach club"
+      ],
+      "whatToExpect": [
+        "2\u20134 hour guided walk through mangrove and coastal forest",
+        "Red colobus monkey sighting \u2014 Zanzibar's endemic primate",
+        "Blue Sykes monkey, lesser bushbaby, and birdwatching opportunities",
+        "Visit the visitor center and turtle sanctuary at the park entrance",
+        "Can combine with Kuza Cave to the south or The Rock Restaurant"
+      ],
+      "description": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabie",
+      "meetingPoint": "Jozani Chwaka Bay National Park entrance (pickup from south coast hotels available)",
+      "interests": [
+        "nature",
+        "wildlife",
+        "monkeys",
+        "forest",
+        "family"
+      ],
+      "timeOfDay": [
+        "morning",
+        "afternoon"
+      ]
+    },
+    {
+      "id": "NAT-02",
+      "slug": "kuza-cave-seaweed",
+      "name": "Kuza Cave + seaweed farm",
+      "type": "tour",
+      "category": "NAT",
+      "location": "Jambiani / Paje",
+      "zones": [
+        "jambiani",
+        "paje"
+      ],
+      "duration": "3\u20135 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 25.0,
+        "max": 130.0,
+        "display": "$25\u2013$130",
+        "basisNote": "per person",
+        "sourceQuality": "2026 market range",
+        "sourceFiles": "2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Cave swim, village/seaweed visit (optional Swahili lunch available locally)"
+      ],
+      "importantNotes": [
+        "Tide-dependent \u2014 cave access varies with water levels",
+        "Bring a towel and change of clothes",
+        "Flashlights provided for the cave portion",
+        "Community-run; part of the fee supports local cooperatives"
+      ],
+      "whatToExpect": [
+        "3\u20135 hour experience combining cave exploration and farm visit",
+        "Swim in natural freshwater pools inside the limestone cave system",
+        "Seaweed farm demonstration \u2014 learn about cultivation and processing",
+        "Hands-on participation: harvest seaweed or try traditional dyeing",
+        "Traditional lunch with local family"
+      ],
+      "description": "Descend into Kuza Cave \u2014 a series of freshwater caverns near Jambiani \u2014 then visit a working seaweed farm to learn about Zanzibar's second-largest export crop.",
+      "meetingPoint": "Jambiani or Paje area (pickup from nearby hotels included)",
+      "interests": [
+        "culture",
+        "cave",
+        "community",
+        "swimming"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "SAF-01",
+      "slug": "mikumi-nyerere-day-safari",
+      "name": "Mikumi or Nyerere fly-in day safari",
+      "type": "tour",
+      "category": "SAF",
+      "location": "Zanzibar \u2192 mainland Tanzania \u2192 Zanzibar",
+      "zones": [],
+      "duration": "8\u201310 hours",
+      "pricing": {
+        "basis": "per_person",
+        "min": 400.0,
+        "max": 800.0,
+        "display": "$400\u2013$800",
+        "basisNote": "per person",
+        "sourceQuality": "Existing strategy + 2026 market range",
+        "sourceFiles": "Zanzibar_Master_Venture_Plan.md; 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Flights, game drive, park fees, lunch"
+      ],
+      "importantNotes": [
+        "Flight-dependent \u2014 weather permitting only",
+        "Must use a licensed mainland operator (we handle this)",
+        "Minimum 2 passengers for charter flights \u2014 single supplement applies",
+        "Best months: June\u2013October and December\u2013March (dry seasons)"
+      ],
+      "whatToExpect": [
+        "Morning flight from Zanzibar to Mwanza or Dar es Salaam (chartered, 1.5 hours)",
+        "4-hour game drive in 4x4 with a licensed Tanzanian guide",
+        "Park fees, lunch, and refreshments included",
+        "Evening return flight to Zanzibar",
+        "Spot elephants, lions, hippos, crocodiles, giraffes, and over 400 bird species"
+      ],
+      "description": "Escape to mainland Tanzania for a thrilling day safari. Fly from Zanzibar to either Mikumi National Park (famous for the \"S\" curve of the river) or Nyerere National Park (formerly Selous Game Reserve,",
+      "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) \u2014 transfer from your hotel included",
+      "interests": [
+        "safari",
+        "wildlife",
+        "adventure"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "SAF-02",
+      "slug": "serengeti-3day-flyin",
+      "name": "Serengeti 3-day fly-in safari",
+      "type": "tour",
+      "category": "SAF",
+      "location": "Zanzibar \u2192 Serengeti \u2192 Zanzibar",
+      "zones": [],
+      "duration": "3 days / 2 nights",
+      "pricing": {
+        "basis": "per_person",
+        "min": 900.0,
+        "max": 2500.0,
+        "display": "$900\u2013$2500",
+        "basisNote": "per person",
+        "sourceQuality": "Existing demo package + 2026 market range",
+        "sourceFiles": "zanzibar-tours/packages/core/src/seed.ts; 2026 market guides",
+        "verified": true
+      },
+      "includes": [
+        "Flights, park fees, 4x4, guide, full board"
+      ],
+      "importantNotes": [
+        "Requires a licensed mainland tour operator \u2014 we handle all logistics",
+        "Best for Great Migration (July\u2013October: Ndutu; December\u2013March: Mara River crossings)",
+        "Single supplement: add ~25% for solo travelers",
+        "Weather-dependent flights \u2014 flexible date policy"
+      ],
+      "whatToExpect": [
+        "Day 1: Flight Zanzibar \u2192 Seronera, transfer to luxury tented camp, afternoon game drive",
+        "Day 2: Full-day game drives in the Seronera valley (prime wildlife viewing area)",
+        "Day 3: Morning game drive, flight back to Zanzibar",
+        "All park fees, flights, accommodation, meals, and game drives included",
+        "Professional guide and 4x4 safari vehicle"
+      ],
+      "description": "Experience the legendary Serengeti on a 3-day fly-in safari. Stay at a luxury tented camp inside the park, enjoy full-board dining, and witness the Great Migration (seasonal) or resident wildlife year",
+      "meetingPoint": "Transferred from your Zanzibar hotel to ZNZ airport for flights",
+      "interests": [
+        "safari",
+        "wildlife",
+        "honeymoon",
+        "adventure"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "PKG-01",
+      "slug": "zanzibar-essentials-3day",
+      "name": "Zanzibar Essentials 3-day pass",
+      "type": "package",
+      "category": "PKG",
+      "location": "Zanzibar",
+      "zones": [],
+      "duration": "3 days",
+      "pricing": {
+        "basis": "per_person",
+        "min": 185.0,
+        "max": 260.0,
+        "display": "$185\u2013$260",
+        "basisNote": "per person",
+        "sourceQuality": "Existing strategy model",
+        "sourceFiles": "Zanzibar_Master_Venture_Plan.md",
+        "verified": true
+      },
+      "includes": [
+        "Return transfer, Safari Blue, Stone Town + Spice"
+      ],
+      "importantNotes": [
+        "Hotels not included \u2014 we can arrange partner accommodation at wholesale rates",
+        "Marine conservation fees included: Menai Bay $10, Mnemba $25",
+        "Price assumes 2+ travelers \u2014 single supplement applies",
+        "Book 3+ days in advance during peak season (July\u2013August, December\u2013January)"
+      ],
+      "whatToExpect": [
+        "Return transfer, Safari Blue, Stone Town + Spice"
+      ],
+      "description": "Our signature introduction to Zanzibar. This 3-day package covers the island's must-see highlights: the spice heritage, the marine wonderland of Menai Bay, and the cultural treasures of Stone Town \u2014 a",
+      "meetingPoint": "Abeid Amani Karume International Airport (ZNZ)",
+      "interests": [
+        "culture",
+        "ocean",
+        "sailing",
+        "spice",
+        "family"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-01",
+      "slug": "airport-transfer-znz-to-stone-town",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Stone Town hotel",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "Abeid Amani Karume International Airport \u2192 Stone Town",
+      "zones": [],
+      "duration": "10\u201320 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 35.0,
+        "max": 40.0,
+        "display": "$35\u2013$40",
+        "basisNote": "per private vehicle up to 4 pax",
+        "vehicleCapacity": 4,
+        "sourceQuality": "Existing website + market scan",
+        "sourceFiles": "zanzibar-easytrip/index.html; ZTrans",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Abeid Amani Karume International Airport \u2192 Stone Town - 10\u201320 min private transfer.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-02",
+      "slug": "airport-transfer-znz-to-pajejambiani",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Paje & Jambiani hotels",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "ZNZ \u2192 Paje/Jambiani",
+      "zones": [],
+      "duration": "55\u201370 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 45.0,
+        "max": 55.0,
+        "display": "$45\u2013$55",
+        "basisNote": "per private vehicle up to 4 pax",
+        "vehicleCapacity": 4,
+        "sourceQuality": "Existing website + market scan",
+        "sourceFiles": "zanzibar-easytrip/index.html",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "ZNZ \u2192 Paje/Jambiani - 55\u201370 min private transfer.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-03",
+      "slug": "airport-transfer-znz-to-nungwikendwa",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Nungwi & Kendwa hotels",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "ZNZ \u2192 Nungwi/Kendwa",
+      "zones": [],
+      "duration": "70\u201390 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 50.0,
+        "max": 60.0,
+        "display": "$50\u2013$60",
+        "basisNote": "per private vehicle up to 4 pax",
+        "vehicleCapacity": 4,
+        "sourceQuality": "Existing website + market scan",
+        "sourceFiles": "zanzibar-easytrip/index.html",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "ZNZ \u2192 Nungwi/Kendwa - 70\u201390 min private transfer.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "PKG-01",
+      "slug": "zanzibar-essentials-3-day-pass",
+      "name": "Zanzibar Essentials 3-Day Pass",
+      "type": "package",
+      "category": "PKG",
+      "location": "Zanzibar (island-wide)",
+      "zones": [],
+      "duration": "3 Days / 2 Nights",
+      "pricing": {
+        "basis": "per_person",
+        "min": 185.0,
+        "max": 260.0,
+        "display": "$185\u2013$260",
+        "basisNote": "per person",
+        "sourceQuality": "Direct local licensed operator",
+        "sourceFiles": "Spice and Sail Operations",
+        "verified": true
+      },
+      "includes": [
+        "Roundtrip airport transfers in private A/C minivan",
+        "Full-day Safari Blue Menai Bay dhow cruise & sandbank buffet",
+        "Stone Town historical guided tour + organic spice plantation lunch",
+        "All marine reserve conservation fees & government taxes"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Our signature island starter: private airport transfers, authentic Stone Town heritage walking tour, organic spice farm harvest lunch, and the legendary Safari Blue Menai Bay dhow sailing with seafood BBQ.",
+      "meetingPoint": "",
+      "interests": [
+        "package"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "PKG-02",
+      "slug": "zanzibar-hidden-gems-sacred-caves",
+      "name": "Zanzibar Hidden Gems & Sacred Caves (4 Days)",
+      "type": "package",
+      "category": "PKG",
+      "location": "Zanzibar (island-wide)",
+      "zones": [],
+      "duration": "4 Days / 3 Nights",
+      "pricing": {
+        "basis": "per_person",
+        "min": 320.0,
+        "max": 420.0,
+        "display": "$320\u2013$420",
+        "basisNote": "per person",
+        "sourceQuality": "Curated direct partner access",
+        "sourceFiles": "Spice and Sail Operations",
+        "verified": true
+      },
+      "includes": [
+        "Private vehicle and dedicated Swahili guide throughout",
+        "Maalum Cave private timed swim slot & Kuza Cave cultural workshop",
+        "Uzi Island 4x4 low-tide mangrove causeway expedition & Swahili lunch",
+        "Salaam Cave Kizimkazi turtle sanctuary admission & marine fees",
+        "Roundtrip airport or ferry port private transfers"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Unearth Zanzibar's best-kept secrets beyond the tourist trail: crystal-clear swimming in Maalum Secret Cenote, sacred drumming at Kuza Cave, crossing the submerged 'Moses Road' to untouched Uzi Island, and swimming with rescued sea turtles at Salaam Cave.",
+      "meetingPoint": "",
+      "interests": [
+        "package"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "PKG-03",
+      "slug": "adrenaline-and-ocean-safari",
+      "name": "Adrenaline & Ocean Safari (3 Days)",
+      "type": "package",
+      "category": "PKG",
+      "location": "Zanzibar (island-wide)",
+      "zones": [],
+      "duration": "3 Days / 2 Nights",
+      "pricing": {
+        "basis": "per_person",
+        "min": 285.0,
+        "max": 375.0,
+        "display": "$285\u2013$375",
+        "basisNote": "per person",
+        "sourceQuality": "Curated direct partner access",
+        "sourceFiles": "Spice and Sail Operations",
+        "verified": true
+      },
+      "includes": [
+        "Swimming with horses beach session with certified equestrian guides",
+        "3-hour guided off-road Quad/ATV adventure with helmets & fuel",
+        "Private boat excursion to Mnemba Atoll marine reserve with dolphin spotting",
+        "Private door-to-door hotel & airport transport"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "High-octane island thrills: swim bareback with purebred horses in the turquoise shallows of Nungwi or Kiwengwa, power 2-seater quad buggies through coral rock trails and fishing villages, and snorkel the pristine coral gardens of Mnemba Atoll.",
+      "meetingPoint": "",
+      "interests": [
+        "package"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "PKG-04",
+      "slug": "bush-to-beach-vip-luxury",
+      "name": "Bush to Beach VIP: Mikumi Fly-In & Private Yacht (5 Days)",
+      "type": "package",
+      "category": "PKG",
+      "location": "Zanzibar (island-wide)",
+      "zones": [],
+      "duration": "5 Days / 4 Nights",
+      "pricing": {
+        "basis": "per_person",
+        "min": 890.0,
+        "max": 1250.0,
+        "display": "$890\u2013$1,250",
+        "basisNote": "per person",
+        "sourceQuality": "Direct air charter & licensed operator",
+        "sourceFiles": "Spice and Sail Operations",
+        "verified": true
+      },
+      "includes": [
+        "Same-day or overnight fly-in return flights Zanzibar \u21c4 Mikumi airstrip",
+        "4x4 open-sided pop-up safari game drive with certified naturalist",
+        "All TANAPA national park entry fees & conservation levies ($35.40/day included)",
+        "Private 40ft Catamaran yacht day charter with seafood lunch & sunset wine",
+        "VIP private airport & inter-hotel executive transfers"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "The ultimate Tanzania dual-world escape: fly directly from Zanzibar into Mikumi National Park for thrilling big game 4x4 safaris (elephants, lions, giraffes), followed by luxury coastal living with a private sunset catamaran yacht charter and Mnemba reef snorkeling.",
+      "meetingPoint": "",
+      "interests": [
+        "package"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "EXP-01",
+      "slug": "horse-swimming",
+      "name": "Swimming with Horses",
+      "type": "experience",
+      "category": "EXP",
+      "location": "Nungwi / Kiwengwa",
+      "zones": [],
+      "duration": "",
+      "pricing": {
+        "basis": "on_request",
+        "min": null,
+        "max": null,
+        "display": "Price on request",
+        "basisNote": "No verified catalogue price yet - team confirms exact rate",
+        "verified": false
+      },
+      "includes": [],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Swimming with Horses - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
+      "meetingPoint": "",
+      "interests": [
+        "romance",
+        "adventure",
+        "horses",
+        "unique"
+      ],
+      "timeOfDay": [
+        "sunset"
+      ]
+    },
+    {
+      "id": "EXP-02",
+      "slug": "quad-buggy-safari",
+      "name": "Off-Road Quad / Buggy Safari",
+      "type": "experience",
+      "category": "EXP",
+      "location": "coral rock trails & fishing villages",
+      "zones": [],
+      "duration": "",
+      "pricing": {
+        "basis": "on_request",
+        "min": null,
+        "max": null,
+        "display": "Price on request",
+        "basisNote": "No verified catalogue price yet - team confirms exact rate",
+        "verified": false
+      },
+      "includes": [],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Off-Road Quad / Buggy Safari - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
+      "meetingPoint": "",
+      "interests": [
+        "adventure",
+        "quad",
+        "family"
+      ],
+      "timeOfDay": [
+        "morning"
+      ]
+    },
+    {
+      "id": "EXP-03",
+      "slug": "maalum-kuza-caves",
+      "name": "Maalum & Kuza Secret Cave Swim",
+      "type": "experience",
+      "category": "EXP",
+      "location": "Kizimbani / Jambiani",
+      "zones": [],
+      "duration": "",
+      "pricing": {
+        "basis": "on_request",
+        "min": null,
+        "max": null,
+        "display": "Price on request",
+        "basisNote": "No verified catalogue price yet - team confirms exact rate",
+        "verified": false
+      },
+      "includes": [],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Maalum & Kuza Secret Cave Swim - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
+      "meetingPoint": "",
+      "interests": [
+        "cave",
+        "swimming",
+        "unique",
+        "culture"
+      ],
+      "timeOfDay": [
+        "morning"
+      ]
+    },
+    {
+      "id": "EXP-04",
+      "slug": "uzi-island-moses-road",
+      "name": "Uzi Island 'Moses Road' Tidal Expedition",
+      "type": "experience",
+      "category": "EXP",
+      "location": "Uzi Island",
+      "zones": [],
+      "duration": "",
+      "pricing": {
+        "basis": "on_request",
+        "min": null,
+        "max": null,
+        "display": "Price on request",
+        "basisNote": "No verified catalogue price yet - team confirms exact rate",
+        "verified": false
+      },
+      "includes": [],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Uzi Island 'Moses Road' Tidal Expedition - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
+      "meetingPoint": "",
+      "interests": [
+        "unique",
+        "nature",
+        "adventure"
+      ],
+      "timeOfDay": [
+        "morning"
+      ]
+    },
+    {
+      "id": "EXP-05",
+      "slug": "cheetahs-rock",
+      "name": "Cheetah's Rock Animal Welfare Tour",
+      "type": "experience",
+      "category": "EXP",
+      "location": "central Zanzibar",
+      "zones": [],
+      "duration": "",
+      "pricing": {
+        "basis": "on_request",
+        "min": null,
+        "max": null,
+        "display": "Price on request",
+        "basisNote": "No verified catalogue price yet - team confirms exact rate",
+        "verified": false
+      },
+      "includes": [],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Cheetah's Rock Animal Welfare Tour - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
+      "meetingPoint": "",
+      "interests": [
+        "wildlife",
+        "unique",
+        "animals"
+      ],
+      "timeOfDay": [
+        "afternoon"
+      ]
+    },
+    {
+      "id": "EXP-06",
+      "slug": "private-catamaran-charter",
+      "name": "Private Luxury Catamaran Charter",
+      "type": "experience",
+      "category": "EXP",
+      "location": "Nungwi / north-west coast",
+      "zones": [],
+      "duration": "",
+      "pricing": {
+        "basis": "on_request",
+        "min": null,
+        "max": null,
+        "display": "Price on request",
+        "basisNote": "No verified catalogue price yet - team confirms exact rate",
+        "verified": false
+      },
+      "includes": [],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Private Luxury Catamaran Charter - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
+      "meetingPoint": "",
+      "interests": [
+        "romance",
+        "honeymoon",
+        "sailing",
+        "luxury"
+      ],
+      "timeOfDay": [
+        "sunset"
+      ]
+    }
+  ]
 }
