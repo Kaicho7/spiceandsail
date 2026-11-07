@@ -472,7 +472,7 @@
         if (res.json.whatsapp_url) {
           addBubble('[Send booking request on WhatsApp](' + res.json.whatsapp_url + ')', 'bot');
         } else if (res.json.requestContact) {
-          state.chatOpen = false;
+          closeChat();
           goToStep(3);
         }
       } else {
@@ -638,12 +638,36 @@
     initProactiveCallout();
   });
 
+  function openDirectWhatsApp() {
+    var selectedService = state.selectedSlug;
+    var svcName = 'a Zanzibar experience';
+    if (state.services && selectedService) {
+      var found = state.services.find(function (s) { return s.slug === selectedService; });
+      if (found) svcName = found.name;
+    }
+    var travellers = getTravelersCount();
+    var dateVal = getDateValue();
+    var locationVal = (el('sns-location') ? el('sns-location').value : '').trim();
+    var guestName = (el('sns-guest-name') ? el('sns-guest-name').value : '').trim();
+
+    var parts = ['Hi Spice & Sail! I\'d like to book: ' + svcName + '.'];
+    if (dateVal) parts.push('Date: ' + dateVal + '.');
+    if (travellers) parts.push('Travelers: ' + travellers + ' pax.');
+    if (locationVal) parts.push('Pickup Location: ' + locationVal + '.');
+    if (guestName) parts.push('Name: ' + guestName + '.');
+    if (state.lastQuoteDisplay) parts.push('Estimated catalogue range: ' + state.lastQuoteDisplay + ' USD.');
+
+    var url = waLink(parts.join(' '));
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
   /* Export to global scope */
   window.snsConcierge = {
     open: openConcierge,
     close: closeConcierge,
     goToStep: goToStep,
     openChat: openChat,
+    openDirectWhatsApp: openDirectWhatsApp,
     dismissCallout: dismissCallout,
     submitHandler: submitHandler,
     _bubbleNodes: bubbleNodes

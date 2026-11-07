@@ -24,6 +24,8 @@ function ensureStore() {
 /** Deterministic intent detection */
 function detectIntent(text) {
   const lower = (text || '').toLowerCase();
+  if (/\b(how long to|how long does it take|travel time|drive time|distance to|how far)\b/.test(lower)) return 'travel_time';
+  if (/\b(larger group|large group|big group|more than 4|minivan|coaster|luggage)\b/.test(lower)) return 'group_luggage';
   if (/\b(what'?s included|what to bring|inclusions?|what do i bring|bring along)\b/.test(lower)) return 'inclusions';
   if (/\b(how do i pay|payment|pay for|payment method|pay by|mpesa|m-pesa|cash|card)\b/.test(lower)) return 'payments';
   if (/\b(honeymoon|romantic|anniversary|couples?\s+trip)\b/.test(lower)) return 'honeymoon';
@@ -223,7 +225,8 @@ function profileCompleteness(profile) {
 /** Build WhatsApp handoff URL from profile and matched services */
 function buildWhatsAppUrl(profile, serviceSlugs) {
   const tourNames = [];
-  for (const slug of (serviceSlugs || [])) {
+  const slugsToUse = Array.isArray(serviceSlugs) ? serviceSlugs.slice(-1) : [];
+  for (const slug of slugsToUse) {
     const svc = getService(slug);
     if (svc) tourNames.push(svc.name);
   }
@@ -238,7 +241,7 @@ function buildWhatsAppUrl(profile, serviceSlugs) {
 }
 
 /** Build deterministic reply with quick-reply buttons */
-function buildDeterministicReply(intent, text, profile) {
+function buildDeterministicReply(intent, text, profile, turnCount) {
   const afterHours = !isWithinBusinessHours();
   const replyWindow = CONFIG.replyWindow || 'within a few hours during business hours';
 
@@ -360,6 +363,32 @@ function buildDeterministicReply(intent, text, profile) {
     };
   }
 
+  if (intent === 'travel_time') {
+    return {
+      message: '**Typical Zanzibar Transfer Drive Times (from ZNZ Airport / Stone Town):**\n\n' +
+        '• **Stone Town / Ferry Terminal**: 10–15 minutes\n' +
+        '• **Nungwi & Kendwa (North)**: 60–75 minutes (~65 km)\n' +
+        '• **Paje & Jambiani (South East)**: 50–60 minutes (~50 km)\n' +
+        '• **Matemwe & Kiwengwa (North East)**: 50–60 minutes (~45 km)\n' +
+        '• **Kizimkazi (South)**: 55–65 minutes (~55 km)\n\n' +
+        'All transfers are in air-conditioned private vehicles with dedicated drivers and flight delay tracking.' + hoursNote,
+      quickReplies: ['Request a transfer', 'Get a quote', 'Book an experience'],
+      requestContact: false,
+    };
+  }
+
+  if (intent === 'group_luggage') {
+    return {
+      message: '**Vehicles, Luggage & Group Sizes:**\n\n' +
+        '• **Standard Sedan / Small SUV**: Up to 3 passengers with 2 large bags or 4 with hand luggage.\n' +
+        '• **Toyota Alphard / Noah / Minivan**: Up to 6 passengers with standard luggage.\n' +
+        '• **Toyota HiAce / Coaster Minibus**: 7 to 20+ passengers — ideal for weddings, retreats, and safari groups.\n\n' +
+        'Let us know your party size and luggage count, and our team will allocate the perfect vehicle.' + hoursNote,
+      quickReplies: ['Request a transfer', 'Get a quote', 'Book an experience'],
+      requestContact: false,
+    };
+  }
+
   if (intent === 'transfer') {
     const transfers = catalogue.services.filter(function (s) { return s.type === 'transfer'; });
     const list = transfers.map(function (t) { return '• **' + t.name + '** — ' + t.pricing.display + ' ' + unitLabel(t); }).join('\n');
@@ -387,6 +416,14 @@ function buildDeterministicReply(intent, text, profile) {
   }
 
   // General / greeting
+  if (turnCount && turnCount > 1) {
+    return {
+      message: 'I\'m here to help with your Zanzibar plans! Would you like a price quote for a tour, transfer details, or recommendations for your stay?' + hoursNote,
+      quickReplies: ['Plan my Zanzibar trip', 'Get a quote', 'Book an experience', 'Visas & travel info'],
+      requestContact: false,
+    };
+  }
+
   return {
     message: '**Karibu!** I\'m the Spice & Sail Island Concierge — your Zanzibar travel consultant. I recommend from our real tour catalogue, quote from verified prices, and pass requests to our human team who confirm every detail.\n\nOur team replies ' + replyWindow + '.\n\n_We only use what you share here to answer and handle your request. See our [privacy notice](/privacy/) for details._\n\nWhat would you like to do?' + hoursNote,
     quickReplies: ['Plan my Zanzibar trip', 'Get a quote', 'Book an experience', 'Visas & travel info'],
@@ -448,10 +485,10 @@ exports.handler = async function (event) {
   const extracted = extractEntities(userMessage, profile);
   const mergedProfile = mergeProfile(profile, extracted);
 
-  // Track matched services across conversation
+  // Track matched services across conversation (latest service takes priority)
   const matchedSlugs = matchServices(userMessage);
   if (matchedSlugs.length > 0) {
-    mergedProfile.serviceSlugs = [...new Set((mergedProfile.serviceSlugs || []).concat(matchedSlugs))];
+    mergedProfile.serviceSlugs = matchedSlugs;
   }
 
   // Count conversation turns from history
@@ -460,7 +497,7 @@ exports.handler = async function (event) {
   const intent = detectIntent(userMessage);
 
   // 1. Deterministic engine produces the base reply and data
-  const deterministicResult = buildDeterministicReply(intent, userMessage, mergedProfile);
+  const deterministicResult = buildDeterministicReply(intent, userMessage, mergedProfile, turnCount);
   const toolResults = deterministicResult.quote ? [deterministicResult.quote] : [];
 
   // 2. Try LLM enhancement (optional)
