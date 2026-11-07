@@ -22,5 +22,31 @@
     "photos": [],
     "createdAt": "2026-11-02T17:42:50.312Z",
     "verified": true
+  },
+  {
+    "id": "rev-sarah-mark-london",
+    "activityId": "stone-town-walking-tour",
+    "userId": "whatsapp-guest-uk",
+    "userName": "Sarah & Mark T.",
+    "location": "London, UK",
+    "userAvatar": "",
+    "rating": 5,
+    "comment": "Seamless WhatsApp booking from start to finish. Our local Zanzibari guide was deeply knowledgeable, polite, and showed us hidden gems we would never have discovered alone.",
+    "photos": [],
+    "createdAt": "2026-11-04T10:15:00.000Z",
+    "verified": true
+  },
+  {
+    "id": "rev-david-l-frankfurt",
+    "activityId": "airport-transfer-znz",
+    "userId": "whatsapp-guest-de",
+    "userName": "David L.",
+    "location": "Frankfurt, Germany",
+    "userAvatar": "",
+    "rating": 5,
+    "comment": "Total price transparency with zero surprise add-ons or hidden fees. The private driver was punctual, vehicle was spotless with cold AC, and pickup was right on time. Outstanding Zanzibar experience!",
+    "photos": [],
+    "createdAt": "2026-11-05T14:30:00.000Z",
+    "verified": true
   }
 ]

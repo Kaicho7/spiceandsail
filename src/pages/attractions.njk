@@ -25,7 +25,7 @@ permalink: "/attractions/index.html"
       </div>
       <div class="cards-grid attraction-grid">
         {% for attraction in __attractionsDedup %}
-          <article class="card attraction-card reveal" data-type="{{ attraction.category }}">
+          <article class="card attraction-card reveal" data-type="{{ attraction.type }}" data-category="{{ attraction.category }}">
             <div class="card-image" style="position:relative;">
               {% set aImg = attraction.name | attractionImg(attraction.category) %}
               <img src="{{ aImg | cdnFile }}" alt="{{ aImg | canonicalAlt(attraction.name) }}" loading="lazy">

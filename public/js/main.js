@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
   filterButtons.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var filter = btn.getAttribute('data-filter');
+      if (!filter) return; // Ignore buttons controlled by dedicated page scripts (e.g. data-exp-filter, data-filter-type)
       var section = btn.closest('section');
       var scope = section && section.querySelector('.card') ? section
         : document.querySelector('.cards.tour-grid, .cards-grid.hotel-grid, .cards-grid.attraction-grid') || section;

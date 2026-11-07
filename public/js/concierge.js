@@ -664,6 +664,8 @@
     var dateVal = getDateValue();
     var locationVal = (el('sns-location') ? el('sns-location').value : '').trim();
     var guestName = (el('sns-guest-name') ? el('sns-guest-name').value : '').trim();
+    var guestWhatsapp = (el('sns-guest-whatsapp') ? el('sns-guest-whatsapp').value : '').trim();
+    var guestEmail = (el('sns-guest-email') ? el('sns-guest-email').value : '').trim();
 
     var parts = ['Hi Spice & Sail! I\'d like to book: ' + svcName + '.'];
     if (dateVal) parts.push('Date: ' + dateVal + '.');
@@ -671,6 +673,29 @@
     if (locationVal) parts.push('Pickup Location: ' + locationVal + '.');
     if (guestName) parts.push('Name: ' + guestName + '.');
     if (state.lastQuoteDisplay) parts.push('Estimated catalogue range: ' + state.lastQuoteDisplay + ' USD.');
+
+    // If contact details and name are already provided, persist lead record to store in background
+    if (guestName && (guestWhatsapp || guestEmail)) {
+      try {
+        var payload = {
+          name: guestName,
+          whatsapp: guestWhatsapp || undefined,
+          email: guestEmail || undefined,
+          date: dateVal || undefined,
+          travellers: travellers,
+          services: selectedService || 'general-inquiry',
+          notes: (locationVal ? 'Pickup: ' + locationVal + '. ' : '') + 'Initiated via direct WhatsApp button.',
+          consent_contact: true,
+          privacy_notice_version: '2026-04-18',
+          session_id: sessionId()
+        };
+        fetchJSON('/.netlify/functions/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {}
+    }
 
     var url = waLink(parts.join(' '));
     window.open(url, '_blank', 'noopener,noreferrer');

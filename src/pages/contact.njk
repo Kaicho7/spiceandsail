@@ -70,14 +70,14 @@ permalink: "/contact/index.html"
               <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
+              <label for="email">Email Address <small style="font-weight: 400; color: #64748b;">(or WhatsApp below)</small></label>
+              <input type="email" id="email" name="email">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="phone">WhatsApp / Mobile Number *</label>
-              <input type="tel" id="phone" name="phone" placeholder="e.g. +44 7700 900077, +1 555 123 4567, +255..." required>
+              <label for="phone">WhatsApp / Mobile Number <small style="font-weight: 400; color: #64748b;">(or Email above)</small></label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. +44 7700 900077, +1 555 123 4567, +255...">
             </div>
             <div class="form-group">
               <label for="travel-dates">Travel Dates</label>
@@ -191,6 +191,22 @@ permalink: "/contact/index.html"
       </div>
     </div>
   </section>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form[name="booking-inquiry"]');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        var emailVal = (document.getElementById('email') ? document.getElementById('email').value : '').trim();
+        var phoneVal = (document.getElementById('phone') ? document.getElementById('phone').value : '').trim();
+        if (!emailVal && !phoneVal) {
+          e.preventDefault();
+          alert('Please enter either a WhatsApp number or an email address so our team can reply.');
+          if (document.getElementById('phone')) document.getElementById('phone').focus();
+        }
+      });
+    }
+  });
+  </script>
 </main>
 
 {% include "footer.njk" %}
