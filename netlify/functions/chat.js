@@ -30,12 +30,14 @@ function detectIntent(text) {
   if (/\b(how do i pay|payment|pay for|payment method|pay by|mpesa|m-pesa|cash|card)\b/.test(lower)) return 'payments';
   if (/\b(honeymoon|romantic|anniversary|couples?\s+trip)\b/.test(lower)) return 'honeymoon';
   if (/\b(family|kids|children|child|toddler|teenager)\b/.test(lower)) return 'family';
-  if (/\b(price|cost|how much|quote|rate)\b/.test(lower)) return 'quote';
   if (/\b(book|reserve|confirm|hold|how do i book)\b/.test(lower)) return 'book';
+  if (/\b(price|cost|how much|quote|rate)\b/.test(lower)) return 'quote';
   if (/\b(recommend|suggest|what should|best|popular|must.?do)\b/.test(lower)) return 'recommend';
   if (/\b(transfer|airport|pickup|drop.?off)\b/.test(lower)) return 'transfer';
   if (/\b(visa|insurance|health|safety|malaria|yellow.?fever)\b/.test(lower)) return 'info';
   if (/\b(hours|open|close|when|contact)\b/.test(lower)) return 'hours';
+  // If text mentions any specific service from our catalogue, treat it as a quote/service query!
+  if (matchServices(text).length > 0) return 'quote';
   return 'general';
 }
 
@@ -323,16 +325,25 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
       const svc = getService(slugs[0]);
       if (svc && svc.pricing && svc.pricing.min != null) {
         const quote = getQuote({ serviceSlug: slugs[0], adults: profile.adults || 2 });
+        const waMsg = 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.';
+        const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
+        const inc = (svc.includes || []).join(', ') || 'Licensed guide, gear & marine fees';
         return {
-          message: '**' + svc.name + '**\n\nPlanning range: ' + svc.pricing.display + ' ' + unitLabel(svc) + '.\nThis is a planning range — our team confirms the final price, ' + replyWindow + '.' + hoursNote,
-          quickReplies: ['Request to hold this', 'See other options', 'Ask a question'],
+          message: '**' + svc.name + '**\n\n' +
+            '• **Planning Rate:** ' + svc.pricing.display + ' ' + unitLabel(svc) + '\n' +
+            '• **Duration:** ' + svc.duration + '\n' +
+            '• **Includes:** ' + inc + '\n\n' +
+            'Hold your date directly with our local operations team via WhatsApp (zero advance deposit):\n\n' +
+            '[💬 Chat on WhatsApp to Confirm & Reserve](' + waUrl + ')',
+          quickReplies: ['💬 Open WhatsApp', 'What is included?', 'Check another tour', 'Airport transfers'],
           requestContact: false,
           quote: quote,
+          whatsapp_url: waUrl
         };
       }
     }
     return {
-      message: 'I can help with pricing! Which experience are you interested in? Here are our most popular options:' + hoursNote,
+      message: 'I can help with pricing and instant availability! Which experience would you like to explore?' + (afterHours && turnCount === 1 ? hoursNote : ''),
       quickReplies: ['Safari Blue', 'Mnemba snorkeling', 'Stone Town tour', 'Airport transfer', 'Show all tours'],
       requestContact: false,
     };
@@ -356,10 +367,23 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   }
 
   if (intent === 'book') {
+    const slugs = matchServices(text);
+    const targetSvc = slugs.length > 0 ? getService(slugs[0]) : null;
+    const svcName = targetSvc ? targetSvc.name : 'a Zanzibar experience';
+    const waMsg = 'Jambo Spice & Sail! I would like to reserve ' + svcName + (profile.adults ? ' for ' + profile.adults + ' guests' : '') + (profile.dates ? ' on ' + profile.dates : '') + '.';
+    const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
+    
     return {
-      message: 'I\'d love to help you with that! To send your request to our team, I\'ll need a few details. A short form will appear below — fill in your name, contact, and preferred date, and our team will confirm everything, ' + replyWindow + '.' + hoursNote,
-      quickReplies: [],
-      requestContact: true,
+      message: '**Reserve with Zero Advance Deposit**\n\n' +
+        'We make booking effortless with zero prepayment to hold dates:\n' +
+        '1. Chat with our local operations team on WhatsApp.\n' +
+        '2. Confirm your date, hotel pickup, and group size.\n' +
+        '3. Your driver and guide details are confirmed.\n' +
+        '4. Pay on arrival (USD cash or mobile money).\n\n' +
+        '[💬 Open WhatsApp to Reserve (' + svcName + ')](' + waUrl + ')',
+      quickReplies: ['💬 Open WhatsApp', 'View all tours', 'Airport transfers', 'Travel info'],
+      requestContact: false,
+      whatsapp_url: waUrl
     };
   }
 

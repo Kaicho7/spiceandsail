@@ -61,6 +61,9 @@
     a.setAttribute('href', href);
     a.setAttribute('target', '_blank');
     a.setAttribute('rel', 'noopener');
+    if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+      a.className = 'sns-chat-wa-cta';
+    }
     a.textContent = label;
     return a;
   }
@@ -430,8 +433,17 @@
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'sns-chat-quick-btn';
+      if (q.indexOf('WhatsApp') !== -1) {
+        btn.classList.add('sns-quick-wa');
+      }
       btn.textContent = q;
-      btn.addEventListener('click', function () { sendChat(q); });
+      btn.addEventListener('click', function () {
+        if (q.indexOf('WhatsApp') !== -1) {
+          openDirectWhatsApp();
+        } else {
+          sendChat(q);
+        }
+      });
       wrap.appendChild(btn);
     });
   }
@@ -465,12 +477,15 @@
 
         addBubble(res.json.message, 'bot');
         renderQuickReplies(res.json.quickReplies);
-        if (res.json.quote && res.json.quote.totalDisplay) {
-          addBubble('Planning range from our verified catalogue: ' + res.json.quote.totalDisplay + ' USD. Our team confirms any final price.', 'bot');
+        if (res.json.quote && res.json.quote.serviceSlug) {
+          state.selectedSlug = res.json.quote.serviceSlug;
+          if (res.json.quote.totalDisplay) {
+            state.lastQuoteDisplay = res.json.quote.totalDisplay;
+          }
         }
-        // WhatsApp handoff: open wa.me link in a new tab
-        if (res.json.whatsapp_url) {
-          addBubble('[Send booking request on WhatsApp](' + res.json.whatsapp_url + ')', 'bot');
+        // WhatsApp handoff: if message does not already embed the link, show separate CTA bubble
+        if (res.json.whatsapp_url && (!res.json.message || res.json.message.indexOf(res.json.whatsapp_url) === -1)) {
+          addBubble('[💬 Chat with Local Team on WhatsApp](' + res.json.whatsapp_url + ')', 'bot');
         } else if (res.json.requestContact) {
           closeChat();
           goToStep(3);
