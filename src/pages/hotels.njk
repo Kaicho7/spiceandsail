@@ -1,6 +1,6 @@
 ---
 title: "Where to Stay in Zanzibar — Curated Hotels & Resorts | Spice & Sail"
-description: "Discover curated Zanzibar partner hotels across Nungwi, Kendwa, Stone Town, Paje, Jambiani, and Matemwe. Guaranteed flat-rate airport transfers ($25–$55), VIP negotiated rates, and lobby tour pickups."
+description: "Discover curated Zanzibar partner hotels across Nungwi, Kendwa, Stone Town, Paje, Jambiani, and Matemwe. Standard flat-rate airport transfers, VIP negotiated rates, and lobby tour pickups."
 permalink: "/hotels/index.html"
 ---
 {% include "seo.njk" %}
@@ -17,7 +17,7 @@ permalink: "/hotels/index.html"
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="/transfers/" class="btn btn-primary btn-lg" style="background: var(--dct-gold, #D4AF37); border-color: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700;">
-          🚖 Book Airport Transfer ($25–$55 Flat)
+          🚖 Book Airport Transfer (Standard Rates)
         </a>
         <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20I%20am%20planning%20my%20Zanzibar%20trip%20and%20would%20like%20hotel%20and%20tour%20package%20recommendations." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">
           💬 WhatsApp Hotel Concierge (+255 672 450 934)
@@ -38,7 +38,7 @@ permalink: "/hotels/index.html"
       </div>
       <div style="background: #003853; color: #fff; padding: 1rem 1.5rem; border-radius: 10px; text-align: center; min-width: 240px;">
         <span style="font-size: 0.78rem; color: var(--dct-gold, #D4AF37); text-transform: uppercase; letter-spacing: 1px; display: block;">Standardized Transfer Rates</span>
-        <div style="font-size: 1.05rem; font-weight: 700; margin: 0.35rem 0;">Stone Town $25 &bull; East $45 &bull; North $55</div>
+        <div style="font-size: 1.05rem; font-weight: 700; margin: 0.35rem 0;">Stone Town {% catPrice "airport-transfer-znz-to-stone-town" %} &bull; East Coast {% catPrice "airport-transfer-znz-to-pajejambiani" %} &bull; North Coast {% catPrice "airport-transfer-znz-to-nungwikendwa" %}</div>
         <a href="/transfers/" style="color: #fff; text-decoration: underline; font-size: 0.82rem; font-weight: 600;">Open Fare Calculator →</a>
       </div>
     </div>
@@ -129,11 +129,11 @@ permalink: "/hotels/index.html"
               <div class="card-actions" style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
                   {% if hotel.zone == "Nungwi" or hotel.zone == "Kendwa" %}
-                    <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ($55)</a>
+                    <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-nungwikendwa" %})</a>
                   {% elseif hotel.zone == "Stone Town" %}
-                    <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ($25)</a>
+                    <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-stone-town" %})</a>
                   {% else %}
-                    <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20book%20a%20private%20airport%20transfer%20to%20{{ hotel.name | urlencode }}%20in%20{{ hotel.zone | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Book Airport Transfer to {{ hotel.name }}">🚖 Book Transfer</a>
+                    <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-pajejambiani" %})</a>
                   {% endif %}
                   <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20please%20quote%20VIP%20partner%20rates%20and%20tour%20packages%20for%20{{ hotel.name | urlencode }}%20in%20{{ hotel.zone | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #25D366; border-color: #25D366; color: #fff; font-weight: 600;" title="Inquire Partner Rates for {{ hotel.name }}">💬 VIP Rates</a>
                 </div>
@@ -184,8 +184,8 @@ permalink: "/hotels/index.html"
           <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
             Mandatory government rule: All foreign passport holders entering Zanzibar must hold official Zanzibar Inbound Travel Insurance from the Zanzibar Insurance Corporation ($44 per adult / $22 per child). Valid up to 92 days.
           </p>
-          <a href="https://visitzanzibar.go.tz" target="_blank" rel="noopener" style="display: inline-block; margin-top: 0.75rem; color: var(--dct-gold, #D4AF37); font-weight: 600; font-size: 0.85rem; text-decoration: underline;">
-            Apply on Official Portal (visitzanzibar.go.tz) →
+          <a href="https://inbound.visitzanzibar.go.tz" target="_blank" rel="noopener" style="display: inline-block; margin-top: 0.75rem; color: var(--dct-gold, #D4AF37); font-weight: 600; font-size: 0.85rem; text-decoration: underline;">
+            Apply on Official Government Portal (inbound.visitzanzibar.go.tz) →
           </a>
         </div>
 
@@ -193,7 +193,7 @@ permalink: "/hotels/index.html"
           <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🚖</div>
           <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Door-to-Door Flat Airport Transfers</h3>
           <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
-            Skip unregulated touts outside the airport. Spice & Sail offers fixed private transfers with meet & greet: <strong>$25 Stone Town &bull; $45 East Coast (Paje/Matemwe) &bull; $55 North Coast (Nungwi/Kendwa)</strong>.
+            Skip unregulated touts outside the airport. Spice & Sail offers fixed private transfers with meet & greet: <strong>{% catPrice "airport-transfer-znz-to-stone-town" %} Stone Town &bull; {% catPrice "airport-transfer-znz-to-pajejambiani" %} East Coast (Paje/Matemwe) &bull; {% catPrice "airport-transfer-znz-to-nungwikendwa" %} North Coast (Nungwi/Kendwa)</strong>.
           </p>
           <div style="margin-top: 0.75rem; font-size: 0.82rem; color: #34d399;">
             ✓ Real-time flight tracking & 60 min free waiting time.
