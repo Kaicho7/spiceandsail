@@ -3437,7 +3437,7 @@
     },
     {
       "id": "ZNZ-0221",
-      "name": "Sharazād Boutique Hotel",
+      "name": "Sharaz\u0101d Boutique Hotel",
       "category": "Boutique",
       "star_rating": "4-Star",
       "star_tier": "tier2",
@@ -4555,7 +4555,7 @@
     },
     {
       "id": "ZNZ-0335",
-      "name": "Stone Town Café B&B",
+      "name": "Stone Town Caf\u00e9 B&B",
       "category": "B&B",
       "star_rating": "3-Star",
       "star_tier": "tier3",
@@ -5138,8 +5138,8 @@
       "tier": "upper-mid",
       "island": "Unguja",
       "zone": "Jambiani",
-      "website": "https://leparadis.zanzibar.com",
-      "website_domain": "leparadis.zanzibar.com",
+      "website": "https://leparadiszanzibar.com",
+      "website_domain": "leparadiszanzibar.com",
       "host_type": "own_site",
       "pms_detected": "",
       "email": "",
@@ -5153,7 +5153,7 @@
       "slug": "le-paradis-boutique-hotel-zanzibar",
       "photo": "hotels/le-paradis-boutique-hotel-zanzibar.jpg",
       "photo_credit": "",
-      "photo_alt": "",
+      "photo_alt": "Leparadis Zanzibar Boutique Hotel Jambiani swimming pool and palm garden",
       "description": "Boutique Hotel in Jambiani, Unguja. 4-Star rating.",
       "price_range": ""
     },
