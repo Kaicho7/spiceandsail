@@ -35,6 +35,16 @@
   to = "/404.html"
   status = 404
 
+
+# Lock spiceandsail.com as the only canonical host.
+# Any request to the netlify.app subdomain 301s to the custom domain.
+# force = true so this wins over the static files (which would otherwise serve 200).
+[[redirects]]
+  from = "https://spiceandsail.netlify.app/*"
+  to = "https://spiceandsail.com/:splat"
+  status = 301
+  force = true
+
 [functions]
   directory = "netlify/functions"
 

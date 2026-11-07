@@ -1,6 +1,12 @@
 ---
-title: Book Your Experience
+title: Book Your Zanzibar Experience | Spice & Sail
+description: Reserve vetted Zanzibar excursions, private airport transfers, and dhow boat charters with licensed local guides and instant WhatsApp confirmation.
+canonical: https://spiceandsail.com/bookings/
+permalink: /bookings/index.html
 ---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
 
 {% raw %}
 <div class="bookings-container">
@@ -113,7 +119,7 @@ title: Book Your Experience
     <main class="activities-main">
       <div class="bookings-header">
         <div class="results-info">
-          <p>{{ filteredActivities.length }} activities available</p>
+          <p><span v-text="filteredActivities.length"></span> activities available</p>
         </div>
         <div class="view-toggle">
           <button class="btn btn-icon" :class="{ active: viewMode === 'grid' }" @click="viewMode = 'grid'">

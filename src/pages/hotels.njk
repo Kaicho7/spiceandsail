@@ -279,6 +279,16 @@ permalink: "/hotels/index.html"
         if (activeZone !== 'all') {
           if (activeZone === 'pemba') {
             matchesZone = island.includes('pemba') || zone.includes('pemba') || zone.includes('chake') || zone.includes('wambaa');
+          } else if (activeZone === 'matemwe') {
+            matchesZone = zone.includes('matemwe') || zone.includes('kiwengwa') || zone.includes('kigomani');
+          } else if (activeZone === 'paje') {
+            matchesZone = zone.includes('paje') || zone.includes('jambiani');
+          } else if (activeZone === 'nungwi') {
+            matchesZone = zone.includes('nungwi') || zone.includes('kendwa');
+          } else if (activeZone === 'michamvi') {
+            matchesZone = zone.includes('michamvi') || zone.includes('bwejuu') || zone.includes('dongwe') || zone.includes('pingwe') || zone.includes('pongwe');
+          } else if (activeZone === 'kizimkazi') {
+            matchesZone = zone.includes('kizimkazi') || zone.includes('fumba') || zone.includes('dimbani') || zone.includes('mbweni') || zone.includes('makunduchi');
           } else {
             matchesZone = zone.includes(activeZone);
           }
@@ -296,6 +306,8 @@ permalink: "/hotels/index.html"
 
         if (matchesZone && matchesTier && matchesSearch) {
           card.style.display = 'flex';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
           card.classList.add('visible');
           visibleCount++;
         } else {

@@ -8,7 +8,7 @@
       "star_tier": "tier1",
       "tier": "luxury",
       "island": "Unguja",
-      "zone": "Stone Town",
+      "zone": "Matemwe / Kigomani",
       "website": "https://www.andbeyond.com",
       "website_domain": "andbeyond.com",
       "host_type": "chain_site",
@@ -22,7 +22,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "beyond-mnemba-island",
-      "photo": null,
+      "photo": "hotels/beyond-mnemba-island.jpg",
       "description": "Luxury Boutique in Private Island, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -178,7 +178,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "emerson-on-hurumzi",
-      "photo": "hotels/emerson-on-hurumzi.webp",
+      "photo": "hotels/emerson-on-hurumzi.jpg",
       "description": "Luxury Boutique in Stone Town, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -467,7 +467,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "lux-marijani-zanzibar",
-      "photo": null,
+      "photo": "hotels/lux-marijani-zanzibar.jpg",
       "description": "Luxury Resort in Pwani Mchangani, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -493,7 +493,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "marijani-beach-resort-spa",
-      "photo": null,
+      "photo": "hotels/marijani-beach-resort-spa.jpg",
       "description": "Luxury Resort in Pwani Mchangani, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -519,7 +519,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "matemwe-retreat",
-      "photo": "hotels/matemwe-retreat.webp",
+      "photo": "hotels/matemwe-retreat.jpg",
       "description": "Luxury Boutique in Matemwe, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -571,7 +571,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "melia-zanzibar",
-      "photo": null,
+      "photo": "hotels/melia-zanzibar.jpg",
       "description": "Luxury Resort in Kiwengwa, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -649,7 +649,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "park-hyatt-zanzibar",
-      "photo": null,
+      "photo": "hotels/park-hyatt-zanzibar.jpg",
       "description": "Luxury in Stone Town, Unguja. 5-Star rating.",
       "price_range": ""
     },
@@ -1117,7 +1117,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "villa-stecchini",
-      "photo": null,
+      "photo": "hotels/villa-stecchini.jpg",
       "description": "Luxury Villa in Kiwengwa, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1273,7 +1273,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "africa-house-hotel",
-      "photo": null,
+      "photo": "hotels/africa-house-hotel.jpg",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1299,7 +1299,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "aluna-nungwi",
-      "photo": null,
+      "photo": "hotels/aluna-nungwi.jpg",
       "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -1325,7 +1325,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "aluna-paje",
-      "photo": "aluna-paje.jpg",
+      "photo": "hotels/aluna-paje.jpg",
       "description": "Boutique in Paje, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -1559,7 +1559,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "babalao-bungalows",
-      "photo": "hotels/babalao-bungalows.png",
+      "photo": "hotels/babalao-bungalows.jpg",
       "description": "Boutique in , Unguja.  star rating.",
       "price_range": ""
     },
@@ -1611,7 +1611,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "blue-moon-resort",
-      "photo": null,
+      "photo": "hotels/blue-moon-resort.jpg",
       "description": "Resort in Jambiani, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1637,7 +1637,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "blue-oyster-hotel",
-      "photo": null,
+      "photo": "hotels/blue-oyster-hotel.jpg",
       "description": "Boutique in Jambiani, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -1819,7 +1819,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "dhow-inn",
-      "photo": null,
+      "photo": "hotels/dhow-inn.jpg",
       "description": "Boutique in Paje, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1845,7 +1845,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "dhow-palace-hotel",
-      "photo": "hotels/dhow-palace-hotel.png",
+      "photo": "hotels/dhow-palace-hotel.jpg",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1871,7 +1871,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "diamonds-mapenzi-beach",
-      "photo": "hotels/diamonds-mapenzi-beach.jpeg",
+      "photo": "hotels/diamonds-mapenzi-beach.jpg",
       "description": "Resort in Pwani Mchangani, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -1975,7 +1975,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "emerald-bay-resort",
-      "photo": null,
+      "photo": "hotels/emerald-bay-resort.jpg",
       "description": "Resort in Chake Chake, Pemba. 4-Star rating.",
       "price_range": ""
     },
@@ -2105,7 +2105,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "fun-beach-resort",
-      "photo": null,
+      "photo": "hotels/fun-beach-resort.jpg",
       "description": "Resort in Jambiani, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -2261,7 +2261,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "house-of-spices",
-      "photo": null,
+      "photo": "hotels/house-of-spices.jpg",
       "description": "Boutique in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2599,7 +2599,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kholle-house",
-      "photo": null,
+      "photo": "hotels/kholle-house.jpg",
       "description": "Boutique in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2625,7 +2625,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "kibanda-lodge",
-      "photo": null,
+      "photo": "hotels/kibanda-lodge.jpg",
       "description": "Boutique in Nungwi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -2807,7 +2807,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "maru-maru-hotel",
-      "photo": null,
+      "photo": "hotels/maru-maru-hotel.jpg",
       "description": "Hotel in Stone Town, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -2833,7 +2833,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "matemwe-lodge",
-      "photo": null,
+      "photo": "hotels/matemwe-lodge.jpg",
       "description": "Boutique Lodge in Matemwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3145,7 +3145,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "paje-by-night",
-      "photo": null,
+      "photo": "hotels/paje-by-night.jpg",
       "description": "Boutique in Paje, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -3171,7 +3171,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "palumbokendwa",
-      "photo": null,
+      "photo": "hotels/palumbokendwa.jpg",
       "description": "Resort in Kendwa, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3275,7 +3275,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "pemba-paradise",
-      "photo": "hotels/pemba-paradise.png",
+      "photo": "hotels/pemba-paradise.jpg",
       "description": "Boutique in Makangale, Pemba. 3-Star rating.",
       "price_range": ""
     },
@@ -3405,7 +3405,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "seasons-lodge-zanzibar",
-      "photo": null,
+      "photo": "hotels/seasons-lodge-zanzibar.jpg",
       "description": "Boutique in Pongwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3431,13 +3431,13 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "shaba-boutique-hotel",
-      "photo": null,
+      "photo": "hotels/shaba-boutique-hotel.jpg",
       "description": "Boutique in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
     {
       "id": "ZNZ-0221",
-      "name": "Sharazād Boutique Hotel",
+      "name": "Sharaz\u0101d Boutique Hotel",
       "category": "Boutique",
       "star_rating": "4-Star",
       "star_tier": "tier2",
@@ -3509,7 +3509,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "shooting-star-lodge",
-      "photo": "hotels/shooting-star-lodge.png",
+      "photo": "hotels/shooting-star-lodge.jpg",
       "description": "Boutique in Kiwengwa, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3717,7 +3717,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "the-island-pongwe-lodge",
-      "photo": "hotels/the-island-pongwe-lodge.png",
+      "photo": "hotels/the-island-pongwe-lodge.jpg",
       "description": "Boutique in Pongwe, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -3847,7 +3847,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "toa-hotel-spa",
-      "photo": "hotels/toa-hotel-spa.png",
+      "photo": "hotels/toa-hotel-spa.jpg",
       "description": "Boutique in Pongwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -3925,7 +3925,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "villa-bluu",
-      "photo": "hotels/villa-bluu.png",
+      "photo": "hotels/villa-bluu.jpg",
       "description": "Boutique in Jambiani, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -4133,7 +4133,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "zanzibar-pearl-boutique",
-      "photo": null,
+      "photo": "hotels/zanzibar-pearl-boutique.jpg",
       "description": "Boutique in Matemwe, Unguja. 4-Star rating.",
       "price_range": ""
     },
@@ -4211,7 +4211,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "al-minar-hotel",
-      "photo": null,
+      "photo": "hotels/al-minar-hotel.jpg",
       "description": "Hotel in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4263,7 +4263,7 @@
       "contact_form_url": null,
       "scrape_status": "failed",
       "slug": "aquaholics-surf-lodge",
-      "photo": "hotels/aquaholics-surf-lodge.png",
+      "photo": "hotels/aquaholics-surf-lodge.jpg",
       "description": "Sports Lodge in Paje, Unguja.  star rating.",
       "price_range": ""
     },
@@ -4291,32 +4291,6 @@
       "slug": "arabian-nights-hotel",
       "photo": "hotels/arabian-nights-hotel.jpg",
       "description": "Hotel in Paje, Unguja. 3-Star rating.",
-      "price_range": ""
-    },
-    {
-      "id": "ZNZ-0286",
-      "name": "Cheetah's Rock Management Stay",
-      "category": "Lodge",
-      "star_rating": "",
-      "star_tier": "tier3",
-      "tier": "mid",
-      "island": "Unguja",
-      "zone": "Matemwe / Kigomani",
-      "website": "https://www.cheetahsrock.org",
-      "website_domain": "cheetahsrock.org",
-      "host_type": "own_site",
-      "pms_detected": "",
-      "email": "info@cheetahsrock.org",
-      "phone": null,
-      "whatsapp": null,
-      "facebook": null,
-      "instagram": null,
-      "linkedin": null,
-      "contact_form_url": null,
-      "scrape_status": "scraped:direct",
-      "slug": "cheetahs-rock-management-stay",
-      "photo": null,
-      "description": "Lodge in Kama, Unguja.  star rating.",
       "price_range": ""
     },
     {
@@ -4393,7 +4367,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "kimte-beach-lodge",
-      "photo": null,
+      "photo": "hotels/kimte-beach-lodge.jpg",
       "description": "Lodge in Jambiani, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4549,7 +4523,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "rumaisa-hotel",
-      "photo": null,
+      "photo": "hotels/rumaisa-hotel.jpg",
       "description": "Hotel in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4581,7 +4555,7 @@
     },
     {
       "id": "ZNZ-0335",
-      "name": "Stone Town Café B&B",
+      "name": "Stone Town Caf\u00e9 B&B",
       "category": "B&B",
       "star_rating": "3-Star",
       "star_tier": "tier3",
@@ -4601,7 +4575,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "stone-town-caf-bb",
-      "photo": null,
+      "photo": "hotels/stone-town-caf-bb.jpg",
       "description": "B&B in Stone Town, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4705,7 +4679,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "surfescape-zanzibar",
-      "photo": null,
+      "photo": "hotels/surfescape-zanzibar.jpg",
       "description": "Lodge in Pwani Mchangani, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4757,7 +4731,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "unguja-lodge",
-      "photo": "hotels/unguja-lodge.jpeg",
+      "photo": "hotels/unguja-lodge.jpg",
       "description": "Lodge in Kizimkazi, Unguja. 3-Star rating.",
       "price_range": ""
     },
@@ -4783,7 +4757,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "verani-beach-lodge",
-      "photo": "hotels/verani-beach-lodge.jpeg",
+      "photo": "hotels/verani-beach-lodge.jpg",
       "description": "Lodge in Makangale, Pemba. 3-Star rating.",
       "price_range": ""
     },
@@ -4861,7 +4835,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "ebb-flow",
-      "photo": "hotels/ebb-flow.jpeg",
+      "photo": "hotels/ebb-flow.jpg",
       "description": "Apartment in Paje, Unguja.  star rating.",
       "price_range": ""
     },
@@ -4939,7 +4913,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "jozani-chwaka-bay-official-stay",
-      "photo": null,
+      "photo": "hotels/jozani-chwaka-bay-official-stay.jpg",
       "description": "Eco-Stay in Jozani, Unguja.  star rating.",
       "price_range": ""
     },
@@ -4965,7 +4939,7 @@
       "contact_form_url": null,
       "scrape_status": "scraped:direct",
       "slug": "matemwe-beach-house",
-      "photo": null,
+      "photo": "hotels/matemwe-beach-house.webp",
       "description": "Villa in Matemwe, Unguja.  star rating.",
       "price_range": ""
     },
@@ -5121,7 +5095,7 @@
       "contact_form_url": "",
       "scrape_status": "pending",
       "slug": "the-one-resort-zanzibar",
-      "photo": null,
+      "photo": "hotels/the-one-resort-zanzibar.jpg",
       "photo_source_url": "",
       "photo_source_type": "none",
       "photo_credit": "",
@@ -5151,7 +5125,7 @@
       "contact_form_url": "",
       "scrape_status": "pending",
       "slug": "stonetown-view-hotel",
-      "photo": null,
+      "photo": "hotels/stonetown-view-hotel.jpg",
       "photo_source_url": "",
       "photo_source_type": "none",
       "photo_credit": "",
@@ -5181,7 +5155,7 @@
       "contact_form_url": "",
       "scrape_status": "pending",
       "slug": "le-paradis-boutique-hotel-zanzibar",
-      "photo": null,
+      "photo": "hotels/le-paradis-boutique-hotel-zanzibar.jpg",
       "photo_source_url": "",
       "photo_source_type": "none",
       "photo_credit": "",
@@ -5211,7 +5185,7 @@
       "contact_form_url": "",
       "scrape_status": "pending",
       "slug": "mkeka-spice-lodge",
-      "photo": null,
+      "photo": "hotels/mkeka-spice-lodge.jpg",
       "photo_source_url": "",
       "photo_source_type": "none",
       "photo_credit": "",
@@ -5241,7 +5215,7 @@
       "contact_form_url": "",
       "scrape_status": "pending",
       "slug": "the-island-stonetown",
-      "photo": null,
+      "photo": "hotels/the-island-stonetown.jpg",
       "photo_source_url": "",
       "photo_source_type": "none",
       "photo_credit": "",
