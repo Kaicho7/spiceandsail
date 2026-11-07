@@ -3,6 +3,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"public/css": "css"});
   eleventyConfig.addPassthroughCopy({"public/js": "js"});
   eleventyConfig.addPassthroughCopy({"public/images": "images"});
+  eleventyConfig.addPassthroughCopy({"public/favicon.ico": "favicon.ico"});
   // Copy _headers into the publish dir (Netlify applies custom headers from dist)
   eleventyConfig.addPassthroughCopy({"_headers": "_headers"});
   
