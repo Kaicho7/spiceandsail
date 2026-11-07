@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 {% set computedTitle = title or (page.fileSlug | replace("-", " ") | capitalize) %}
-{% set pageTitle = (computedTitle + " | Spice and Sail Zanzibar") if (computedTitle and not computedTitle.includes("Spice and Sail Zanzibar")) else (title | default("Zanzibar Tours & Transfers | Spice and Sail Zanzibar")) %}
+{% set hasBrand = computedTitle and (computedTitle.includes("Spice and Sail") or computedTitle.includes("Spice & Sail")) %}
+{% set pageTitle = computedTitle if hasBrand else (computedTitle + " | Spice and Sail") %}
 {% set pageDesc = description | default("Book " + computedTitle + " with Spice and Sail in Zanzibar. Clear pricing, verified local guides, and fast WhatsApp booking.") %}
 
 {% set ogImage = page.inputPath | rawImage %}
