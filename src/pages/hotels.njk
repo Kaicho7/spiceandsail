@@ -121,9 +121,15 @@ permalink: "/hotels/index.html"
                   </p>
                 {% endif %}
                 
-                <div class="card-perk" style="background: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--dct-gold, #D4AF37); padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
-                  ✨ <strong>Hotel Lobby Pickup:</strong> Available for Mnemba, Safari Blue, and Stone Town tours.
+                {% if hotel.island == "Pemba" %}
+                <div class="card-perk" style="background: rgba(0, 95, 138, 0.08); border-left: 3px solid var(--dct-ocean, #005F8A); padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
+                  ✈️ <strong>Pemba Island Logistics:</strong> Chake Chake Airport (PMA) / Mkoani Port transfers &amp; Misali Island marine reserve excursions.
                 </div>
+                {% else %}
+                <div class="card-perk" style="background: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--dct-gold, #D4AF37); padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
+                  ✨ <strong>Unguja Hotel Lobby Pickup:</strong> Available for Mnemba, Safari Blue, and Stone Town tours.
+                </div>
+                {% endif %}
               </div>
 
               <div class="card-actions" style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
