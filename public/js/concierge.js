@@ -488,17 +488,67 @@
   }
 
   function openChat() {
+    dismissCallout();
+    openConcierge();
     state.chatOpen = true;
     var panel = el('sns-concierge-chat');
     if (panel) panel.hidden = false;
     document.querySelectorAll('.sns-form-step, .sns-led-form').forEach(function (e) { e.style.display = 'none'; });
     if (!state.chatLoaded) {
       state.chatLoaded = true;
+      // Provide immediate fallback quick-replies so user doesn't wait with empty screen
+      renderQuickReplies([
+        'Airport Transfer Rates',
+        'Mnemba Atoll Snorkeling',
+        'Stone Town + Spice Combo',
+        'Safari Blue Day Trip',
+        'Custom Multi-Day Itinerary'
+      ]);
       // The first bot message comes from the chat endpoint and includes the privacy notice link.
       var intro = el('sns-chat-intro');
       if (intro) intro.hidden = false;
       sendChat('Hi, I would like to plan a Zanzibar trip.');
     }
+  }
+
+  function dismissCallout(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var bubble = el('sns-concierge-callout');
+    if (bubble) bubble.hidden = true;
+    try { sessionStorage.setItem('sns_callout_dismissed', '1'); } catch (err) {}
+  }
+
+  function initProactiveCallout() {
+    try {
+      if (sessionStorage.getItem('sns_callout_dismissed')) return;
+    } catch (err) {}
+
+    var bubble = el('sns-concierge-callout');
+    if (!bubble) return;
+
+    var path = window.location.pathname.toLowerCase();
+    var heading = el('sns-callout-heading');
+    var sub = el('sns-callout-sub');
+
+    if (path.indexOf('transfer') !== -1) {
+      if (heading) heading.textContent = 'Need an airport transfer quote?';
+      if (sub) sub.textContent = 'Stone Town from $35, Nungwi $50. Instant booking!';
+    } else if (path.indexOf('hotel') !== -1) {
+      if (heading) heading.textContent = 'Booking a hotel or transfer?';
+      if (sub) sub.textContent = 'Direct island-wide transfers from your arrival gate.';
+    } else if (path.indexOf('safari') !== -1) {
+      if (heading) heading.textContent = 'Mainland safari fly-in questions?';
+      if (sub) sub.textContent = 'Mikumi day trips & Selous packages quoted live.';
+    }
+
+    // Trigger after 6 seconds on desktop/mobile
+    setTimeout(function() {
+      var modal = el('sns-concierge-modal');
+      var isModalOpen = modal && !modal.hasAttribute('hidden');
+      if (!isModalOpen) {
+        bubble.removeAttribute('hidden');
+      }
+    }, 6000);
   }
 
   function closeChat() {
@@ -577,6 +627,8 @@
     var dateEl = el('sns-date');
     if (travellersEl) travellersEl.addEventListener('change', function () { if (state.currentStep === 3) calculateRange(); });
     if (dateEl) dateEl.addEventListener('change', function () { if (state.currentStep === 3) calculateRange(); });
+
+    initProactiveCallout();
   });
 
   /* Export to global scope */
@@ -585,6 +637,7 @@
     close: closeConcierge,
     goToStep: goToStep,
     openChat: openChat,
+    dismissCallout: dismissCallout,
     submitHandler: submitHandler,
     _bubbleNodes: bubbleNodes
   };

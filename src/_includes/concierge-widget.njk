@@ -1,7 +1,20 @@
 <!-- Concierge Widget - Spice & Sail Zanzibar -->
 <div id="sns-concierge-root">
+  <!-- Proactive Welcome Callout Bubble -->
+  <div id="sns-concierge-callout" class="sns-concierge-callout" hidden aria-live="polite">
+    <button type="button" class="sns-callout-close" aria-label="Dismiss message" onclick="window.snsConcierge.dismissCallout(event)">×</button>
+    <div class="sns-callout-body" onclick="window.snsConcierge.openChat()">
+      <div class="sns-callout-avatar">🛎️</div>
+      <div class="sns-callout-text">
+        <strong id="sns-callout-heading">Karibu! Need trip advice or a transfer?</strong>
+        <p id="sns-callout-sub">Chat instantly or get verified catalogue rates.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Trigger Button -->
   <button id="sns-concierge-trigger" class="sns-concierge-btn" aria-label="Open Zanzibar Trip Concierge" onclick="window.snsConcierge.open()">
+    <span class="sns-concierge-pulse" aria-hidden="true"></span>
     <span class="sns-concierge-icon" aria-hidden="true">🛎️</span>
     <span class="sns-concierge-label">Plan My Trip</span>
   </button>

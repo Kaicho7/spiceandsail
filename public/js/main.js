@@ -75,9 +75,14 @@ document.addEventListener('DOMContentLoaded', function () {
     rootMargin: '0px 0px -50px 0px'
   });
 
-  revealElements.forEach(function(el, index) {
+  revealElements.forEach(function(el) {
     el.classList.add('reveal');
-    el.style.transitionDelay = (index * 0.05) + 's';
+    // Stagger only within immediate sibling groups up to max 0.25s
+    var siblingIndex = Array.prototype.indexOf.call(el.parentNode ? el.parentNode.children : [], el);
+    var delay = Math.min(Math.max(siblingIndex, 0) * 0.05, 0.25);
+    if (delay > 0) {
+      el.style.transitionDelay = delay + 's';
+    }
     revealObserver.observe(el);
   });
 
