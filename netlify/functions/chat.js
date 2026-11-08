@@ -35,37 +35,103 @@ function detectIntent(text) {
   if (/\b(show all tours|view all tours|all tours|list tours|see all tours|browse tours)\b/i.test(lower)) return 'all_tours';
   if (/\b(get a quote|price|cost|how much|quote|rate)\b/i.test(lower)) return 'quote';
   if (/\b(recommend|suggest|what should|best|popular|must.?do|plan my (zanzibar )?trip|help me plan|itinerary)\b/i.test(lower)) return 'recommend';
-  if (/\b(transfer|airport|pickup|drop.?off)\b/i.test(lower)) return 'transfer';
+
+  // If text mentions a specific service (or specific transfer route), treat as quote/service query
+  const matched = matchServices(text);
+  if (matched.length === 1) return 'quote';
+  if (matched.length > 1 && !/^\s*(transfers?|airport transfers?)\s*$/i.test(lower.trim())) return 'quote';
+
+  if (/\b(transfer|transfers|airport|pickup|drop.?off)\b/i.test(lower)) return 'transfer';
   if (/\b(visas?|insurance|health|safety|malaria|yellow.?fever|travel info|travel advice|entry requirements|dress code)\b/i.test(lower)) return 'info';
   if (/\b(hours|open|close|when|contact)\b/i.test(lower)) return 'hours';
   if (/\b(languages?|italian|italiano|german|deutsch|french|fran[cç]ais|polish|polski|driver language|guide language|multilingual|speak english|speak italian|speak german|speak french|speak polish)\b/i.test(lower)) return 'language';
-  // If text mentions any specific service from our catalogue, treat it as a quote/service query!
-  if (matchServices(text).length > 0) return 'quote';
+  if (matched.length > 0) return 'quote';
   return 'general';
 }
 
-/** Match service slugs from text */
+/** Match service slugs from text with scoring & route disambiguation */
 function matchServices(text) {
-  const lower = (text || '').toLowerCase();
-  const matches = [];
+  const raw = (text || '').trim();
+  if (!raw) return [];
+  const lower = raw.toLowerCase().replace(/[—–-]/g, ' ');
+
+  const STOP_WORDS = new Set(['zanzibar', 'hotel', 'hotels', 'trip', 'day', 'the', 'and', 'with', 'from', 'per', 'vehicle', 'person', 'tour', 'tours']);
+
+  const isAskingTransfer = /\b(transfer|airport|drive|ride|taxi|cab|pickup|drop.?off)\b/i.test(lower);
+  const isAskingTour = /\b(tour|trip|excursion|walk|safari|cruise|snorkel)\b/i.test(lower);
+
+  const scores = [];
+
   for (const svc of catalogue.services) {
-    const nameLower = svc.name.toLowerCase();
-    // Require at least two-word match or exact slug match
-    const slugWords = svc.slug.replace(/-/g, ' ');
-    if (lower.includes(nameLower) || lower.includes(slugWords)) {
-      matches.push(svc.slug);
-    } else {
-      // Try matching distinctive multi-word fragments (at least 2 words from the name)
-      const nameWords = nameLower.split(/\s+/).filter(function (w) { return w.length > 3; });
-      if (nameWords.length >= 2) {
-        const twoWordMatch = nameWords.some(function (w, i) {
-          return i < nameWords.length - 1 && lower.includes(w + ' ' + nameWords[i + 1]);
-        });
-        if (twoWordMatch) matches.push(svc.slug);
+    let score = 0;
+    const slugClean = svc.slug.replace(/-/g, ' ');
+    const nameClean = svc.name.toLowerCase().replace(/[—–-]/g, ' ');
+
+    if (lower.includes(svc.name.toLowerCase()) || lower.includes(svc.slug)) {
+      score += 700;
+    } else if (lower.includes(nameClean) || lower.includes(slugClean)) {
+      score += 600;
+    }
+
+    // Type affinity bonuses
+    if (svc.type === 'transfer' && isAskingTransfer) score += 50;
+    if (svc.type === 'tour' && isAskingTour) score += 50;
+
+    // Specific destination / route keywords
+    if (svc.slug === 'airport-transfer-znz-to-pajejambiani' && (lower.includes('paje') || lower.includes('jambiani'))) {
+      score += 400;
+    }
+    if (svc.slug === 'airport-transfer-znz-to-nungwikendwa' && (lower.includes('nungwi') || lower.includes('kendwa'))) {
+      score += 400;
+    }
+    if (svc.slug === 'airport-transfer-znz-to-stone-town' && (lower.includes('stone town') || lower.includes('ferry')) && isAskingTransfer) {
+      score += 400;
+    }
+    if (svc.slug === 'safari-blue' && (lower.includes('safari blue') || lower.includes('menai'))) {
+      score += 500;
+    }
+    if (svc.slug === 'mnemba-snorkeling' && (lower.includes('mnemba') || lower.includes('atoll'))) {
+      score += 500;
+    }
+    if (svc.slug === 'stone-town-walking-tour' && (lower.includes('stone town') || lower.includes('walking')) && isAskingTour) {
+      score += 400;
+    }
+    if (svc.slug === 'prison-island-nakupenda' && (lower.includes('prison island') || lower.includes('nakupenda') || lower.includes('tortoise'))) {
+      score += 400;
+    }
+    if (svc.slug === 'spice-farm' && (lower.includes('spice farm') || lower.includes('spices') || lower.includes('vanilla'))) {
+      score += 400;
+    }
+    if (svc.slug === 'jozani-forest' && (lower.includes('jozani') || lower.includes('colobus') || lower.includes('monkeys'))) {
+      score += 400;
+    }
+    if (svc.slug === 'sunset-dhow-cruise' && (lower.includes('sunset') || lower.includes('dhow cruise'))) {
+      score += 400;
+    }
+    if (svc.slug === 'mikumi-day-trip' && (lower.includes('mikumi') || lower.includes('day safari'))) {
+      score += 400;
+    }
+
+    // Multi-word exact fragment (distinctive 2+ words together)
+    const nameWords = nameClean.split(/\s+/).filter(function (w) { return w.length > 3 && !STOP_WORDS.has(w); });
+    if (nameWords.length >= 2) {
+      for (let i = 0; i < nameWords.length - 1; i++) {
+        const pair = nameWords[i] + ' ' + nameWords[i + 1];
+        if (lower.includes(pair)) {
+          score += 250;
+        }
       }
     }
+
+    if (score >= 200) {
+      scores.push({ slug: svc.slug, score: score });
+    }
   }
-  return [...new Set(matches)];
+
+  if (scores.length === 0) return [];
+  scores.sort(function (a, b) { return b.score - a.score; });
+  const maxScore = scores[0].score;
+  return scores.filter(function (s) { return s.score >= maxScore * 0.75; }).map(function (s) { return s.slug; });
 }
 
 /* ---- Zone alias map for pickup extraction ---- */
@@ -364,10 +430,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
       const svc = getService(targetSlug);
       if (svc && svc.pricing && svc.pricing.min != null) {
         const quote = getQuote({ serviceSlug: targetSlug, adults: profile.adults || 2 });
-        const waMsg = 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.';
-        const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
-        const inc = (svc.includes || []).join(', ') || 'Licensed guide, gear & marine fees';
-
+        const isTransfer = svc.type === 'transfer';
         const isSeaTour = ['safari-blue', 'mnemba-snorkeling', 'prison-island-nakupenda', 'nakupenda-sandbank', 'kizimkazi-dolphin-tour', 'sunset-dhow-cruise', 'chumbe-island'].includes(svc.slug);
         const isSafari = svc.category === 'safari' || (svc.slug.includes('safari') && !svc.slug.includes('safari-blue'));
 
@@ -375,7 +438,19 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
           ? '(30% advance deposit locks scheduled domestic flights & TANAPA permits)'
           : isSeaTour
             ? '(20% advance deposit locks boat captain & fresh seafood lunch, backed by our 100% Weather Guarantee)'
-            : '(zero advance deposit — pay on arrival)';
+            : isTransfer
+              ? '(zero advance deposit — pay your driver on arrival)'
+              : '(zero advance deposit — pay on arrival)';
+
+        const waMsg = isTransfer
+          ? 'Jambo Spice & Sail! I would like to book a private transfer: ' + svc.name + (profile.dates ? ' on ' + profile.dates : '') + '.'
+          : 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.';
+        const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
+        const inc = (svc.includes || []).join(', ') || 'Licensed guide, gear & marine fees';
+
+        const quickReplies = isTransfer
+          ? ['💬 Open WhatsApp to Reserve', 'Larger group?', 'How long to Nungwi?', 'Show all tours']
+          : ['What is included?', '💬 Open WhatsApp', 'Check another tour', 'Airport transfers'];
 
         return {
           message: '**' + svc.name + '**\n\n' +
@@ -384,7 +459,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
             '• **Includes:** ' + inc + '\n\n' +
             'Hold your date directly with our local operations team via WhatsApp ' + depositNotice + ':\n\n' +
             '[💬 Chat on WhatsApp to Confirm & Reserve](' + waUrl + ')',
-          quickReplies: ['What is included?', '💬 Open WhatsApp', 'Check another tour', 'Airport transfers'],
+          quickReplies: quickReplies,
           requestContact: false,
           quote: quote,
           whatsapp_url: waUrl
@@ -492,8 +567,8 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     const transfers = catalogue.services.filter(function (s) { return s.type === 'transfer'; });
     const list = transfers.map(function (t) { return '• **' + t.name + '** — ' + t.pricing.display + ' ' + unitLabel(t); }).join('\n');
     return {
-      message: '**Airport Transfers**\n\n' + list + '\n\nAll transfers include meet & greet, flight tracking, and private vehicle (up to 4 guests). Our team confirms your booking.' + hoursNote,
-      quickReplies: ['Request a transfer', 'How long to Nungwi?', 'Larger group?'],
+      message: '**Airport Transfers**\n\n' + list + '\n\nAll transfers include meet & greet, flight tracking, and private vehicle (up to 4 guests). Zero advance deposit — pay on arrival. Our team confirms your booking.' + hoursNote,
+      quickReplies: ['ZNZ to Stone Town ($35–$40)', 'ZNZ to Paje / Jambiani ($45–$55)', 'ZNZ to Nungwi / Kendwa ($50–$60)', 'Larger group?'],
       requestContact: false,
     };
   }

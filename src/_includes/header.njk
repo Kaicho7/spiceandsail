@@ -13,9 +13,10 @@
 <body>
 <div id="google_translate_element" style="display:none;" aria-hidden="true"></div>
 <header class="site-header" id="siteHeader">
+  <!-- Top Utility Bar -->
   <div class="top-bar">
     <div class="top-bar-left">
-      <span class="brand">Spice and Sail</span>
+      <span class="brand notranslate" translate="no">Spice and Sail</span>
       <span class="intent-indicator" id="intentIndicator"></span>
     </div>
     <div class="top-bar-right">
@@ -43,45 +44,132 @@
           </select>
         </div>
       </div>
-      <span class="contact"><a href="tel:+255672450934" title="Call directly">+255 672 450 934</a> &middot; <a href="https://wa.me/255672450934" target="_blank" rel="noopener" title="Chat on WhatsApp">WhatsApp</a></span>
+      <span class="contact">
+        <a href="tel:+255672450934" class="top-tel" title="Call operations directly">+255 672 450 934</a>
+        <a href="https://wa.me/255672450934" target="_blank" rel="noopener" class="top-wa-btn" title="Chat on WhatsApp">💬 WhatsApp</a>
+      </span>
     </div>
   </div>
-  <nav class="main-nav" id="mainNav">
-    <a href="/" class="logo"><span>Spice and Sail</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      ☰
+
+  <!-- Main Navigation Bar -->
+  <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+    <a href="/" class="logo notranslate" translate="no">
+      <span class="notranslate" translate="no">Spice and Sail</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
     </button>
-    <ul class="nav-list">
-      <li><a href="/" data-i18n="nav_home" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-      <li><a href="/tours/" data-i18n="nav_tours" {% if page.url == '/tours/' %}class="active"{% endif %}>Tours</a></li>
-      <li><a href="/experiences/" data-i18n="nav_rare_experiences" {% if page.url == '/experiences/' %}class="active"{% endif %}>Rare Experiences</a></li>
-      <li><a href="/transfers/" data-i18n="nav_transfers" {% if page.url == '/transfers/' %}class="active"{% endif %}>Transfers</a></li>
-      <li><a href="/packages/" data-i18n="nav_packages" {% if page.url == '/packages/' %}class="active"{% endif %}>Packages</a></li>
-      <li><a href="/safaris/" data-i18n="nav_safaris" {% if page.url == '/safaris/' %}class="active"{% endif %}>Mainland Safaris</a></li>
-      <li><a href="/hotels/" data-i18n="nav_hotels" {% if page.url == '/hotels/' %}class="active"{% endif %}>Hotels</a></li>
-      <li><a href="/attractions/" data-i18n="nav_attractions" {% if page.url == '/attractions/' %}class="active"{% endif %}>Attractions</a></li>
-      <li><a href="/areas/" data-i18n="nav_areas" {% if page.url == '/areas/' %}class="active"{% endif %}>Areas</a></li>
-      <li><a href="/travel-guide/" data-i18n="nav_travel_guide" {% if page.url == '/travel-guide/' %}class="active"{% endif %}>Travel Guide</a></li>
-      <li><a href="/about/" data-i18n="nav_about" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
-      <li><a href="/family-travel/" {% if page.url == '/family-travel/' %}class="active"{% endif %}>Family Travel</a></li>
-      <li><a href="/honeymoon-packages/" {% if page.url == '/honeymoon-packages/' %}class="active"{% endif %}>Honeymoon Packages</a></li>
-      <li><a href="/self-drive/" {% if page.url == '/self-drive/' %}class="active"{% endif %}>Self-Drive</a></li>
-      <li><a href="/spice-farm-cultural/" {% if page.url == '/spice-farm-cultural/' %}class="active"{% endif %}>Spice Farm Cultural</a></li>
-      <li><a href="/contact/" data-i18n="nav_contact" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
-    </ul>
+
+    <div class="nav-menu" id="navMenu">
+      <ul class="nav-list">
+        <!-- 1. Tours & Experiences Dropdown -->
+        <li class="nav-item has-dropdown">
+          <a href="/tours/" class="nav-link dropdown-toggle" data-i18n="nav_tours">
+            Tours &amp; Experiences <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/tours/" data-i18n="nav_all_tours">All Tours &amp; Day Trips</a></li>
+            <li><a href="/tours/safari-blue/">Safari Blue Dhow Day</a></li>
+            <li><a href="/tours/mnemba-snorkeling/">Mnemba Atoll Snorkeling</a></li>
+            <li><a href="/tours/stone-town-walking-tour/">Stone Town Walking Tour</a></li>
+            <li><a href="/experiences/" data-i18n="nav_rare_experiences">Rare Hidden Gems</a></li>
+            <li><a href="/spice-farm-cultural/" data-i18n="nav_spice_farm">Spice Farm Tour</a></li>
+            <li><a href="/attractions/" data-i18n="nav_attractions">Island Attractions</a></li>
+          </ul>
+        </li>
+
+        <!-- 2. Airport Transfers Dropdown -->
+        <li class="nav-item has-dropdown">
+          <a href="/transfers/" class="nav-link dropdown-toggle" data-i18n="nav_transfers">
+            Transfers <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/transfers/" data-i18n="nav_airport_transfers">Airport &amp; Inter-Hotel Transfers</a></li>
+            <li><a href="/transfers/airport-to-nungwi/" data-i18n="nav_nungwi_transfer">Airport to Nungwi &amp; Kendwa</a></li>
+            <li><a href="/self-drive/" data-i18n="nav_self_drive">Self-Drive &amp; 4x4 Rental</a></li>
+          </ul>
+        </li>
+
+        <!-- 3. Safaris & Packages Dropdown -->
+        <li class="nav-item has-dropdown">
+          <a href="/safaris/" class="nav-link dropdown-toggle" data-i18n="nav_safaris_packages">
+            Safaris &amp; Packages <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/safaris/" data-i18n="nav_safaris">Mainland Safaris from Zanzibar</a></li>
+            <li><a href="/safaris/mikumi-day-trip/" data-i18n="nav_mikumi">Mikumi 1-Day Fly-in Safari</a></li>
+            <li><a href="/packages/" data-i18n="nav_packages">Multi-Day Island Packages</a></li>
+            <li><a href="/packages/zanzibar-essentials-3day/">Zanzibar Essentials 3-Day</a></li>
+            <li><a href="/honeymoon-packages/" data-i18n="nav_honeymoon">Honeymoon Packages</a></li>
+            <li><a href="/family-travel/" data-i18n="nav_family">Family Travel</a></li>
+          </ul>
+        </li>
+
+        <!-- 4. Hotels & Areas Dropdown -->
+        <li class="nav-item has-dropdown">
+          <a href="/hotels/" class="nav-link dropdown-toggle" data-i18n="nav_hotels_areas">
+            Hotels &amp; Areas <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/hotels/" data-i18n="nav_hotels">Zanzibar Hotels &amp; Resorts</a></li>
+            <li><a href="/areas/" data-i18n="nav_areas">Coastlines &amp; Areas</a></li>
+            <li><a href="/areas/stone-town/">Stone Town</a></li>
+            <li><a href="/areas/nungwi/">Nungwi &amp; Kendwa</a></li>
+            <li><a href="/areas/paje/">Paje &amp; Jambiani</a></li>
+          </ul>
+        </li>
+
+        <!-- 5. Travel Guide Dropdown -->
+        <li class="nav-item has-dropdown">
+          <a href="/travel-guide/" class="nav-link dropdown-toggle" data-i18n="nav_travel_guide">
+            Travel Guide <span class="dropdown-arrow" aria-hidden="true">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/travel-guide/" data-i18n="nav_travel_guide">Complete Travel Guide</a></li>
+            <li><a href="/cancellation/" data-i18n="nav_visas_levies">Cancellation &amp; Weather Policy</a></li>
+            <li><a href="/health-safety/" data-i18n="nav_health_safety">Health &amp; Safety Guide</a></li>
+            <li><a href="/migration-calendar/" data-i18n="nav_migration">Migration Calendar</a></li>
+            <li><a href="/packing-guide/">Packing Guide</a></li>
+          </ul>
+        </li>
+
+        <!-- 6. About & Contact Links -->
+        <li class="nav-item">
+          <a href="/about/" class="nav-link" data-i18n="nav_about">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact/" class="nav-link" data-i18n="nav_contact">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Quick WhatsApp Nav Button -->
+      <div class="nav-cta">
+        <a href="https://wa.me/255672450934" target="_blank" rel="noopener" class="btn btn-nav-wa" title="Instant WhatsApp Booking">
+          <span>💬</span> <span data-i18n="btn_whatsapp_book">Book on WhatsApp</span>
+        </a>
+      </div>
+    </div>
   </nav>
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
   <script>
   document.addEventListener('DOMContentLoaded', function() {
     const intentIndicators = {family: '👨‍👩‍👧‍👦', honeymoon: '💑', selfdrive: '🚗', migration: '🐋', health: '🏥', tribes: '🌿', packing: '🎒', spice: '🌿'};
     const path = window.location.pathname;
-    if (path.includes('family-travel')) document.getElementById('intentIndicator').textContent = intentIndicators.family;
-    else if (path.includes('honeymoon-packages')) document.getElementById('intentIndicator').textContent = intentIndicators.honeymoon;
-    else if (path.includes('self-drive')) document.getElementById('intentIndicator').textContent = intentIndicators.selfdrive;
-    else if (path.includes('migration-calendar')) document.getElementById('intentIndicator').textContent = intentIndicators.migration;
-    else if (path.includes('health-safety')) document.getElementById('intentIndicator').textContent = intentIndicators.health;
-    else if (path.includes('tribes-culture')) document.getElementById('intentIndicator').textContent = intentIndicators.tribes;
-    else if (path.includes('packing-guide')) document.getElementById('intentIndicator').textContent = intentIndicators.packing;
-    else if (path.includes('spice-farm-cultural')) document.getElementById('intentIndicator').textContent = intentIndicators.spice;
+    const ind = document.getElementById('intentIndicator');
+    if (ind) {
+      if (path.includes('family-travel')) ind.textContent = intentIndicators.family;
+      else if (path.includes('honeymoon-packages')) ind.textContent = intentIndicators.honeymoon;
+      else if (path.includes('self-drive')) ind.textContent = intentIndicators.selfdrive;
+      else if (path.includes('migration-calendar')) ind.textContent = intentIndicators.migration;
+      else if (path.includes('health-safety')) ind.textContent = intentIndicators.health;
+      else if (path.includes('tribes-culture')) ind.textContent = intentIndicators.tribes;
+      else if (path.includes('packing-guide')) ind.textContent = intentIndicators.packing;
+      else if (path.includes('spice-farm-cultural')) ind.textContent = intentIndicators.spice;
+    }
   });
   </script>
 </header>

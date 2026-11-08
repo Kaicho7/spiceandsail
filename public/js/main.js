@@ -12,23 +12,72 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
-  // Mobile navigation toggle
+  // Mobile navigation toggle & drawer
   var navToggle = document.getElementById('navToggle');
-  var navList = document.querySelector('.nav-list');
-  if (navToggle && navList) {
-    navToggle.addEventListener('click', function () {
-      navList.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', navList.classList.contains('open'));
+  var navMenu = document.getElementById('navMenu');
+  var navOverlay = document.getElementById('navOverlay');
+
+  function closeNav() {
+    if (navMenu) navMenu.classList.remove('open');
+    if (navOverlay) navOverlay.classList.remove('open');
+    if (navToggle) {
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  function openNav() {
+    if (navMenu) navMenu.classList.add('open');
+    if (navOverlay) navOverlay.classList.add('open');
+    if (navToggle) {
+      navToggle.classList.add('open');
+      navToggle.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (navMenu.classList.contains('open')) {
+        closeNav();
+      } else {
+        openNav();
+      }
     });
   }
 
-  // Close mobile menu when clicking a link
-  var navLinks = document.querySelectorAll('.nav-list a');
-  navLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      navList.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeNav);
+  }
+
+  // Dropdown accordions for mobile/touch
+  var dropdownToggles = document.querySelectorAll('.has-dropdown > .dropdown-toggle');
+  dropdownToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      // On mobile viewports (<= 1024px), toggle accordion
+      if (window.innerWidth <= 1024) {
+        e.preventDefault();
+        var parent = toggle.closest('.has-dropdown');
+        var isOpen = parent.classList.contains('is-open');
+        // Close other open accordions
+        document.querySelectorAll('.has-dropdown.is-open').forEach(function (item) {
+          if (item !== parent) item.classList.remove('is-open');
+        });
+        parent.classList.toggle('is-open', !isOpen);
+      }
     });
+  });
+
+  // Close mobile menu when clicking a destination leaf link
+  var leafLinks = document.querySelectorAll('.dropdown-menu a, .nav-item:not(.has-dropdown) a, .nav-cta a');
+  leafLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      closeNav();
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
   });
 
   // Filter buttons for tours, hotels, attractions

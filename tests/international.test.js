@@ -37,13 +37,18 @@ test('international: translations.json covers all 5 requested languages', () => 
   }
 });
 
-test('international: header template includes language and currency selectors', () => {
+test('international: header template includes language and currency selectors and luxury nav structure', () => {
   const p = path.join(ROOT, 'src', '_includes', 'header.njk');
   const html = fs.readFileSync(p, 'utf8');
   assert.ok(html.includes('id="langSelect"'), 'header must contain #langSelect');
   assert.ok(html.includes('id="currencySelect"'), 'header must contain #currencySelect');
   assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"') && html.includes('value="fr"') && html.includes('value="pl"'));
   assert.ok(html.includes('value="USD"') && html.includes('value="EUR"') && html.includes('value="GBP"') && html.includes('value="PLN"') && html.includes('value="TZS"'));
+  
+  // Luxury nav structure & brand translate protection
+  assert.ok(html.includes('translate="no"') && html.includes('notranslate'), 'Brand name must be protected from translation');
+  assert.ok(html.includes('id="navToggle"') && html.includes('id="navMenu"') && html.includes('id="navOverlay"'), 'Must have mobile drawer and overlay elements');
+  assert.ok(html.includes('has-dropdown') && html.includes('dropdown-menu'), 'Must have consolidated dropdown navigation');
 });
 
 test('international: i18n-currency.js exists and is syntactically valid', () => {

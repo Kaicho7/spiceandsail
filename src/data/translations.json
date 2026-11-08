@@ -15,11 +15,18 @@
       "pl": "Strona główna"
     },
     "nav_tours": {
-      "en": "Tours",
-      "it": "Tour ed Escursioni",
-      "de": "Ausflüge & Touren",
-      "fr": "Excursions & Visites",
-      "pl": "Wycieczki"
+      "en": "Tours & Experiences",
+      "it": "Tour & Esperienze",
+      "de": "Touren & Erlebnisse",
+      "fr": "Excursions & Expériences",
+      "pl": "Wycieczki i Atrakcje"
+    },
+    "nav_all_tours": {
+      "en": "All Tours & Day Trips",
+      "it": "Tutti i Tour & Escursioni",
+      "de": "Alle Touren & Tagesausflüge",
+      "fr": "Toutes les Excursions",
+      "pl": "Wszystkie Wycieczki"
     },
     "nav_rare_experiences": {
       "en": "Rare Experiences",
@@ -28,12 +35,47 @@
       "fr": "Expériences Uniques",
       "pl": "Wyjątkowe Doświadczenia"
     },
+    "nav_spice_farm": {
+      "en": "Organic Spice Farm Tour",
+      "it": "Tour Fattoria delle Spezie",
+      "de": "Gewürzfarm-Tour",
+      "fr": "Visite de Ferme aux Épices",
+      "pl": "Farma Przypraw"
+    },
     "nav_transfers": {
       "en": "Transfers",
       "it": "Transfer Aeroporto",
       "de": "Flughafentransfers",
       "fr": "Transferts Aéroport",
       "pl": "Transfery Lotniskowe"
+    },
+    "nav_airport_transfers": {
+      "en": "Airport & Inter-Hotel Transfers",
+      "it": "Transfer Aeroporto & Hotel",
+      "de": "Flughafen & Hotel Transfers",
+      "fr": "Transferts Aéroport & Hôtels",
+      "pl": "Transfery Lotniskowe i Hotelowe"
+    },
+    "nav_nungwi_transfer": {
+      "en": "Airport to Nungwi & Kendwa",
+      "it": "Aeroporto a Nungwi & Kendwa",
+      "de": "Flughafen nach Nungwi & Kendwa",
+      "fr": "Aéroport vers Nungwi & Kendwa",
+      "pl": "Lotnisko do Nungwi i Kendwa"
+    },
+    "nav_self_drive": {
+      "en": "Self-Drive & 4x4 Rental",
+      "it": "Noleggio Auto & 4x4",
+      "de": "Mietwagen & 4x4",
+      "fr": "Location Voiture & 4x4",
+      "pl": "Wynajem Samochodów i 4x4"
+    },
+    "nav_safaris_packages": {
+      "en": "Safaris & Packages",
+      "it": "Safari & Pacchetti",
+      "de": "Safaris & Reisepakete",
+      "fr": "Safaris & Forfaits",
+      "pl": "Safari i Pakiety"
     },
     "nav_packages": {
       "en": "Packages",
@@ -48,6 +90,34 @@
       "de": "Festland-Safaris",
       "fr": "Safaris en Tanzanie",
       "pl": "Safari w Tanzanii"
+    },
+    "nav_mikumi": {
+      "en": "Mikumi 1-Day Fly-in Safari",
+      "it": "Safari 1 Giorno Mikumi (Volo)",
+      "de": "Mikumi 1-Tag Flugsafari",
+      "fr": "Safari Mikumi 1 Jour en Vol",
+      "pl": "1-Dniowe Safari Mikumi (Lot)"
+    },
+    "nav_honeymoon": {
+      "en": "Honeymoon Packages",
+      "it": "Pacchetti Luna di Miele",
+      "de": "Flitterwochen-Pakete",
+      "fr": "Voyages de Noces",
+      "pl": "Pakiety dla Nowożeńców"
+    },
+    "nav_family": {
+      "en": "Family Travel",
+      "it": "Viaggi in Famiglia",
+      "de": "Familienreisen",
+      "fr": "Voyages en Famille",
+      "pl": "Podróże Rodzinne"
+    },
+    "nav_hotels_areas": {
+      "en": "Hotels & Areas",
+      "it": "Hotel & Località",
+      "de": "Hotels & Regionen",
+      "fr": "Hôtels & Régions",
+      "pl": "Hotele i Regiony"
     },
     "nav_hotels": {
       "en": "Hotels",
@@ -76,6 +146,34 @@
       "de": "Reiseführer",
       "fr": "Guide de Voyage",
       "pl": "Przewodnik"
+    },
+    "nav_visas_levies": {
+      "en": "Cancellation & Weather Policy",
+      "it": "Cancellazione & Meteo",
+      "de": "Stornierungs- & Wetterrichtlinie",
+      "fr": "Politique d'Annulation & Météo",
+      "pl": "Polityka Odwołań i Pogody"
+    },
+    "nav_health_safety": {
+      "en": "Health & Safety Guide",
+      "it": "Guida Salute & Sicurezza",
+      "de": "Gesundheits- & Sicherheitsleitfaden",
+      "fr": "Guide Santé & Sécurité",
+      "pl": "Zdrowie i Bezpieczeństwo"
+    },
+    "nav_migration": {
+      "en": "Migration Calendar",
+      "it": "Calendario Migrazione",
+      "de": "Migrationskalender",
+      "fr": "Calendrier de Migration",
+      "pl": "Kalendarz Migracji"
+    },
+    "btn_whatsapp_book": {
+      "en": "Book on WhatsApp",
+      "it": "Prenota su WhatsApp",
+      "de": "Über WhatsApp buchen",
+      "fr": "Réserver par WhatsApp",
+      "pl": "Zarezerwuj przez WhatsApp"
     },
     "nav_about": {
       "en": "About Us",
