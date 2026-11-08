@@ -187,18 +187,18 @@ module.exports = function(eleventyConfig) {
     "Menai Bay Conservation": "dhow-boat-turquoise-water-zanzibar.jpg",
     "Mnarani Marine Turtle Pond": "sea-turtles-with-child-zanzibar.jpg",
     "Mrembo Spa & Traditional Services": "mrembo-traditional-spa-swahili-flowers.jpg",
-    "Nakupenda Sandbank": "turquoise-water-sandbar-lone-boat.jpg",
-    "Nakupenda Sandbank (Tour)": "turquoise-water-sandbar-lone-boat.jpg",
+    "Nakupenda Sandbank": "nakupenda-sandbank-tour-pristine-beach-zanzibar.jpg",
+    "Nakupenda Sandbank (Tour)": "nakupenda-sandbank-tour-pristine-beach-zanzibar.jpg",
     "Palace Museum": "palace-museum-beit-al-sahel-stone-town.jpg",
     "Palace Museum (Official)": "palace-museum-beit-al-sahel-stone-town.jpg",
     "Old Fort (Cultural Desk)": "stone-town-cannons-sea-boat-tour.jpg",
     "Old Fort (Ngome Kongwe)": "stone-town-cannons-sea-boat-tour.jpg",
-    "Princess Salme Spice Garden": "hand-holding-nutmeg-fruits-zanzibar.jpg",
+    "Princess Salme Spice Garden": "zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg",
     "Prison Island": "giant-tortoises-rocky-terrain.jpg",
     "Prison Island (Tour Desk)": "giant-tortoises-rocky-terrain.jpg",
     "Seaweed Center Paje": "people-collecting-sea-items-zanzibar-beach.jpg",
-    "Spice Farm Tour (Kidichi)": "hand-holding-nutmeg-fruits-zanzibar.jpg",
-    "Stone Town Food Market": "vegetable-stall-at-outdoor-market.jpg",
+    "Spice Farm Tour (Kidichi)": "people-leaf-crowns-tree-outdoor.jpg",
+    "Stone Town Food Market": "zanzibar-stone-town-market-fruit-stall.jpg",
     "Zanzibar Butterfly (Park)": "zanzibar-butterfly-centre-tropical.jpg",
     "Zanzibar Horse Riding (Nungwi)": "women-horse-riding-ocean-water-zanzibar.jpg",
     "ZIFF Festival Center": "historical-photos-wall-zanzibar-exhibit.jpg",
@@ -272,6 +272,17 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("attractionTypeLabel", (type) => {
     const label = attractionTypeLabels[type.toLowerCase()] || attractionTypeLabels[type] || type || "Attraction";
     return label;
+  });
+
+  // Deduplicate tour categories for area cards (fixes Cultural Cultural glitch)
+  eleventyConfig.addNunjucksFilter("zoneCategories", function(tourSlugs, toursList) {
+    if (!Array.isArray(tourSlugs) || !Array.isArray(toursList)) return [];
+    const set = new Set();
+    tourSlugs.forEach(slug => {
+      const tour = toursList.find(t => t.seo_slug === slug || t.slug === slug);
+      if (tour && tour.category) set.add(tour.category);
+    });
+    return Array.from(set);
   });
 
 // Map attraction type to badge class prefix

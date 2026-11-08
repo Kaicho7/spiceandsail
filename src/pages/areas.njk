@@ -89,9 +89,8 @@ permalink: "/areas/index.html"
               <p class="card-meta">{{ zone.island }}</p>
               <p class="card-description">{{ zone.description }}</p>
               <div class="area-tags">
-                {% for tour_slug in zone.tours %}
-                  {% set tour_obj = tours | selectattr("seo_slug", "equalto", tour_slug) | first %}
-                  {% if tour_obj %}<span class="card-badge badge-{{ tour_obj.category | lower }}">{{ tour_obj.category | attractionTypeLabel }}</span>{% endif %}
+                {% for cat in zone.tours | zoneCategories(tours) %}
+                  <span class="card-badge badge-{{ cat | lower }}">{{ cat | attractionTypeLabel }}</span>
                 {% endfor %}
               </div>
               <p class="card-meta" style="margin-top: 0.75rem; font-size: 0.8rem;">{{ zone.hotel_count }}{% if zone.hotel_count == 1 %} hotel{% else %} hotels{% endif %} · {{ zone.attraction_count }}{% if zone.attraction_count == 1 %} attraction{% else %} attractions{% endif %} · {{ zone.tours | length }}{% if zone.tours | length == 1 %} recommended tour{% else %} recommended tours{% endif %}</p>
