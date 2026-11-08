@@ -1012,6 +1012,10 @@ body {
 .badge-safari { background: linear-gradient(135deg, #b8860b, var(--dct-spice)); }
 .badge-package { background: linear-gradient(135deg, var(--dct-coral), #d45a3d); }
 .badge-transfer { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+.badge-luxury { background: linear-gradient(135deg, #003853, #005F8A); }
+.badge-upper-mid, .badge-uppermid { background: linear-gradient(135deg, #1b4965, #62b6cb); }
+.badge-mid { background: linear-gradient(135deg, #007bb5, #3a86ff); }
+.badge-standard, .badge-budget { background: linear-gradient(135deg, #475569, #64748b); }
 .card-favorite {
   position: absolute;
   top: 1rem;

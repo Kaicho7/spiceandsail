@@ -41,8 +41,12 @@ permalink: "/areas/kiwengwa/index.html"
       <div class="cards-grid hotel-grid">
 {% for hotel in hotels.hotels | filterByZone(title) %}
   <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
-    <div class="card-content">
+    <div class="card-image" style="position:relative;">
+      {% set hImg = hotel | hotelPhoto %}
+      <img src="{{ hImg | cdnFile }}" alt="{{ hImg | canonicalAlt(hotel.name) }}" loading="lazy">
       <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
+    </div>
+    <div class="card-content">
       <h3 class="card-title"><a href="{{ hotel.website }}" target="_blank" rel="noopener">{{ hotel.name }}</a></h3>
       <p class="card-meta">{{ hotel.zone }}{% if hotel.zone %}, {% endif %}{{ hotel.island }} • {{ hotel.star_rating or "Ungraded" }}</p>
       {% if hotel.category %}<p class="card-description">{{ hotel.category }}</p>{% endif %}

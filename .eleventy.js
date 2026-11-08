@@ -182,6 +182,7 @@ module.exports = function(eleventyConfig) {
     "House of Wonders": "stone-town-colonial-building-clock-tower.jpg",
     "Jozani Chwaka Bay Nat. Park": "woman-smiling-next-to-monkey-jozani-forest.jpg",
     "Kuza Cave": "people-swimming-turquoise-water-steps.jpg",
+    "Salaam Cave Turtle Aquarium": "salaam-cave-turtle-aquarium-kizimkazi.jpg",
     "Mangapwani Slave Chambers": "mangapwani-slave-chamber-coral-cavern.jpg",
     "Menai Bay Conservation": "dhow-boat-turquoise-water-zanzibar.jpg",
     "Mnarani Marine Turtle Pond": "sea-turtles-with-child-zanzibar.jpg",

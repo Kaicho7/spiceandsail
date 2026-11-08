@@ -769,6 +769,24 @@
       "directory_url": null,
       "description": "Iconic restaurant on a coral rock outcrop off Michamvi Pingwe beach, southeast Zanzibar — reachable by foot at low tide or by boat at high tide.",
       "source_dataset": "zanzibar_source_directory.csv"
+    },
+    {
+      "id": "salaam-cave-turtle-aquarium",
+      "slug": "salaam-cave-turtle-aquarium",
+      "name": "Salaam Cave Turtle Aquarium",
+      "title": "Salaam Cave Turtle Aquarium",
+      "type": "Attraction",
+      "category": "Attraction",
+      "island": "Unguja",
+      "zone": "Kizimkazi / Dimbani",
+      "website": "https://salaamcavetours.com",
+      "directory_url": "https://www.tripadvisor.com/Attraction_Review-g1188863-d23812739",
+      "description": "Natural coral limestone cave and tidal pool in Kizimkazi Dimbani where rescued sea turtles are rehabilitated. Visitors can swim, snorkel, and feed turtles in crystal-clear water.",
+      "photo": "salaam-cave-turtle-aquarium-kizimkazi.jpg",
+      "photo_source_type": "official_operator",
+      "photo_source_url": "https://salaamcavetours.com/storage/caves/cave-1782212260-VdxzMVZMvS.webp",
+      "photo_alt": "Rescued sea turtles swimming in crystal-clear tidal water inside Salaam Cave Turtle Aquarium in Kizimkazi.",
+      "source_dataset": "user_curated"
     }
   ]
 }
