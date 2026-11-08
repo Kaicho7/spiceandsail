@@ -79,7 +79,13 @@
         }
       ],
       "sameAs": [
-        "https://wa.me/255672450934"
+        "https://wa.me/255672450934"{% if site.social and site.social.instagram %},
+        "{{ site.social.instagram }}"{% endif %}{% if site.social and site.social.tiktok %},
+        "{{ site.social.tiktok }}"{% endif %}{% if site.social and site.social.youtube %},
+        "{{ site.social.youtube }}"{% endif %}{% if site.social and site.social.twitter %},
+        "{{ site.social.twitter }}"{% endif %}{% if site.social and site.social.facebook %},
+        "{{ site.social.facebook }}"{% endif %}{% if site.social and site.social.tripadvisor %},
+        "{{ site.social.tripadvisor }}"{% endif %}
       ],
       "priceRange": "$$",
       "currenciesAccepted": "USD, TZS",
