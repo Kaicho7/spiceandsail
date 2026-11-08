@@ -14160,5 +14160,345 @@
       "zanzibar accommodation",
       "4-star zanzibar hotel"
     ]
+  },
+  "cape-buffalo-serengeti-tanzania.jpg": {
+    "file": "cape-buffalo-serengeti-tanzania.jpg",
+    "alt_text": "Majestic Cape buffalo standing in the golden grasses of Serengeti National Park, Tanzania.",
+    "category": "safari",
+    "activity": "safari",
+    "place": null,
+    "subject": "Cape buffalo in Serengeti grassland",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1066,
+    "bytes": 368703,
+    "subcategory": "big-five",
+    "description": "Big Five wildlife photography - African Cape Buffalo in Serengeti National Park, Tanzania",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "african-leopard-acacia-tree-serengeti.jpg": {
+    "file": "african-leopard-acacia-tree-serengeti.jpg",
+    "alt_text": "African leopard resting comfortably along a large acacia tree branch in the Seronera valley, Serengeti.",
+    "category": "safari",
+    "activity": "safari",
+    "place": null,
+    "subject": "African leopard in acacia tree",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1067,
+    "bytes": 463864,
+    "subcategory": "big-five",
+    "description": "Big Five wildlife photography - African Leopard in acacia branch, Seronera Valley, Serengeti",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "black-rhino-ngorongoro-crater.jpg": {
+    "file": "black-rhino-ngorongoro-crater.jpg",
+    "alt_text": "Critically endangered black rhinoceros grazing on the lush floor of Ngorongoro Crater caldera, Tanzania.",
+    "category": "safari",
+    "activity": "safari",
+    "place": null,
+    "subject": "Black rhinoceros in Ngorongoro Crater floor",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1066,
+    "bytes": 200867,
+    "subcategory": "big-five",
+    "description": "Big Five wildlife photography - Black Rhinoceros grazing in Ngorongoro Crater caldera, Tanzania",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "cheetah-serengeti-savanna-tanzania.jpg": {
+    "file": "cheetah-serengeti-savanna-tanzania.jpg",
+    "alt_text": "Close-up portrait of a wild cheetah scanning the open plains of Serengeti National Park.",
+    "category": "safari",
+    "activity": "safari",
+    "place": null,
+    "subject": "Cheetah in Serengeti savanna plains",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1066,
+    "bytes": 207162,
+    "subcategory": "predator",
+    "description": "Wild cheetah predator scanning the grasslands of Serengeti National Park, Tanzania",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "lilac-breasted-roller-tanzania-bird.jpg": {
+    "file": "lilac-breasted-roller-tanzania-bird.jpg",
+    "alt_text": "Vibrantly colored lilac-breasted roller perched on a thorn branch in Serengeti National Park.",
+    "category": "wildlife",
+    "activity": "safari",
+    "place": null,
+    "subject": "Lilac-breasted roller bird in Serengeti",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1066,
+    "bytes": 179684,
+    "subcategory": "birds",
+    "description": "Tanzania birdwatching - Lilac-breasted roller perched in Serengeti National Park",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "pink-flamingos-ngorongoro-lake.jpg": {
+    "file": "pink-flamingos-ngorongoro-lake.jpg",
+    "alt_text": "Flock of pink lesser flamingos wading and feeding in the alkaline waters of Lake Magadi, Ngorongoro Crater.",
+    "category": "wildlife",
+    "activity": "safari",
+    "place": null,
+    "subject": "Pink flamingos in Ngorongoro soda lake",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1200,
+    "bytes": 308616,
+    "subcategory": "birds",
+    "description": "Flamingo flock in Lake Magadi soda lake, Ngorongoro Crater, Tanzania",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "african-fish-eagle-tanzania.jpg": {
+    "file": "african-fish-eagle-tanzania.jpg",
+    "alt_text": "African fish eagle clutching a freshly caught fish perched on a riverside branch.",
+    "category": "wildlife",
+    "activity": "safari",
+    "place": null,
+    "subject": "African fish eagle with catch",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1066,
+    "bytes": 77365,
+    "subcategory": "birds",
+    "description": "African fish eagle raptor perched with catch in Tanzania riverine reserve",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "fischers-lovebird-serengeti-tanzania.jpg": {
+    "file": "fischers-lovebird-serengeti-tanzania.jpg",
+    "alt_text": "Bright green and orange Fischer lovebird perched in foliage in the Serengeti savanna.",
+    "category": "wildlife",
+    "activity": "safari",
+    "place": null,
+    "subject": "Fischers lovebird in Serengeti",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1066,
+    "bytes": 202878,
+    "subcategory": "birds",
+    "description": "Endemic Fischer lovebird in acacia foliage, Serengeti National Park",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "aldabra-giant-tortoise-changuu-island.jpg": {
+    "file": "aldabra-giant-tortoise-changuu-island.jpg",
+    "alt_text": "Majestic century-old Aldabra giant tortoise on Changuu Prison Island sanctuary, Zanzibar.",
+    "category": "tour",
+    "activity": "wildlife",
+    "place": null,
+    "subject": "Aldabra giant tortoise on Changuu Island",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1066,
+    "bytes": 528883,
+    "subcategory": "island-sanctuary",
+    "description": "Giant Aldabra tortoise sanctuary on Prison Island (Changuu), Zanzibar",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "zanzibar-red-colobus-jozani-forest.jpg": {
+    "file": "zanzibar-red-colobus-jozani-forest.jpg",
+    "alt_text": "Endemic Zanzibar red colobus monkey feeding peacefully in the lush mahogany canopy of Jozani Chwaka Bay National Park.",
+    "category": "tour",
+    "activity": "wildlife",
+    "place": null,
+    "subject": "Zanzibar red colobus monkey in Jozani canopy",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1600,
+    "bytes": 351535,
+    "subcategory": "endemic-species",
+    "description": "Endemic Zanzibar red colobus monkey (Piliocolobus kirkii) in Jozani Chwaka Bay National Park",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "mangrove-fiddler-crabs-jozani-boardwalk.jpg": {
+    "file": "mangrove-fiddler-crabs-jozani-boardwalk.jpg",
+    "alt_text": "Fiddler crabs with large colorful claws crawling among mangrove aerial stilt roots in the tidal swamp.",
+    "category": "tour",
+    "activity": "nature",
+    "place": null,
+    "subject": "Mangrove fiddler crabs among stilt roots",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1202,
+    "bytes": 448644,
+    "subcategory": "mangrove-ecosystem",
+    "description": "Mangrove fiddler crabs and tidal mudflats along the elevated boardwalk, Jozani forest",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "african-swallowtail-butterfly-zanzibar.jpg": {
+    "file": "african-swallowtail-butterfly-zanzibar.jpg",
+    "alt_text": "Exquisite African swallowtail butterfly resting on lush tropical foliage near Jozani forest.",
+    "category": "wildlife",
+    "activity": "nature",
+    "place": null,
+    "subject": "African swallowtail butterfly on green leaf",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1066,
+    "bytes": 163017,
+    "subcategory": "butterflies",
+    "description": "Tropical butterfly biodiversity near Zanzibar Butterfly Centre and Jozani Forest",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "zanzibar-clove-buds-tree-harvest.jpg": {
+    "file": "zanzibar-clove-buds-tree-harvest.jpg",
+    "alt_text": "Fresh aromatic clove flower buds clustered on branch before harvesting in a Zanzibar spice plantation.",
+    "category": "tour",
+    "activity": "cultural",
+    "place": null,
+    "subject": "Fresh clove buds cluster on tree branch",
+    "quality_score": 5,
+    "width": 1574,
+    "height": 1049,
+    "bytes": 233769,
+    "subcategory": "spices",
+    "description": "Fresh clove buds on Syzygium aromaticum tree, Zanzibar spice plantation",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "zanzibar-vanilla-vine-green-beans.jpg": {
+    "file": "zanzibar-vanilla-vine-green-beans.jpg",
+    "alt_text": "Cluster of fragrant green vanilla bean pods ripening on the orchid vine at a Zanzibar spice farm.",
+    "category": "tour",
+    "activity": "cultural",
+    "place": null,
+    "subject": "Green vanilla bean pods on vine",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 2390,
+    "bytes": 480423,
+    "subcategory": "spices",
+    "description": "Fresh green vanilla beans ripening on climbing orchid vine, Zanzibar spice tour",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "zanzibar-cinnamon-bark-tree-harvest.jpg": {
+    "file": "zanzibar-cinnamon-bark-tree-harvest.jpg",
+    "alt_text": "Local farmers shaving and hand-rolling fragrant natural cinnamon bark curls from harvested branches.",
+    "category": "tour",
+    "activity": "cultural",
+    "place": null,
+    "subject": "Cinnamon bark shaving and harvesting",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1057,
+    "bytes": 293634,
+    "subcategory": "spices",
+    "description": "Hand-harvesting aromatic cinnamon bark quills at a traditional Zanzibar spice plantation",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "peacock-iridescent-fan-changuu-island.jpg": {
+    "file": "peacock-iridescent-fan-changuu-island.jpg",
+    "alt_text": "Peacock displaying magnificent iridescent emerald and sapphire fan feathers on Prison Island grounds.",
+    "category": "tour",
+    "activity": "wildlife",
+    "place": null,
+    "subject": "Peacock displaying full plumage train",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1128,
+    "bytes": 902594,
+    "subcategory": "island-sanctuary",
+    "description": "Iridescent peacock fan display on grounds of Changuu Prison Island sanctuary",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
+  },
+  "zanzibar-coconut-climber-butterfly-man.jpg": {
+    "file": "zanzibar-coconut-climber-butterfly-man.jpg",
+    "alt_text": "Traditional palm tree climber scaling a tall coconut palm using rope foot bindings during a Zanzibar farm demonstration.",
+    "category": "tour",
+    "activity": "cultural",
+    "place": null,
+    "subject": "Coconut tree climber scaling palm",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 901,
+    "bytes": 314343,
+    "subcategory": "tradition",
+    "description": "Traditional coconut palm climber demonstration singing Jambo Bwana during Zanzibar spice tour",
+    "primary_use": [
+      "safaris",
+      "tours",
+      "wildlife",
+      "gallery"
+    ]
   }
 }
