@@ -60,21 +60,21 @@ module.exports = function(eleventyConfig) {
   
   // Map tour slug → existing image filename (1-to-1 mandatory verified assets)
   const slugMap = {
-    "stone-town-walking-tour": "stone-town-alley-walking-tour-people.jpg",
+    "stone-town-walking-tour": "stone-town-guided-walking-tour-zanzibar.jpg",
     "stone-town-spice-prison-combo": "giant-tortoises-rocky-terrain.jpg",
-    "spice-farm": "hand-holding-nutmeg-fruits-zanzibar.jpg",
+    "spice-farm": "zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg",
     "village-community-tour": "child-walking-dirt-path-village.jpg",
-    "safari-blue": "aerial-beach-dhow-people-turquoise-water.jpg",
-    "mnemba-snorkeling": "sea-turtle-snorkeling-coral-reef.jpg",
-    "prison-island-nakupenda": "boat-deck-view-turquoise-water-island.jpg",
-    "nakupenda-sandbank": "turquoise-water-sandbar-lone-boat.jpg",
+    "safari-blue": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg",
+    "mnemba-snorkeling": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
+    "prison-island-nakupenda": "prison-island-nakupenda-combo-tour-zanzibar.jpg",
+    "nakupenda-sandbank": "nakupenda-sandbank-tour-pristine-beach-zanzibar.jpg",
     "chumbe-island": "underwater-fish-coral-reef-zanzibar.jpg",
-    "sunset-dhow-cruise": "dhow-sail-at-sunset-ocean.jpg",
+    "sunset-dhow-cruise": "sunset-dhow-cruise-zanzibar-stone-town.jpg",
     "kizimkazi-dolphin-tour": "dolphins-swimming-near-boat-tour.jpg",
-    "jozani-forest": "janzibar-jozani-forest-monkey-tree-1.jpg",
+    "jozani-forest": "jozani-forest-red-colobus-monkey-tour-zanzibar.jpg",
     "kuza-cave-seaweed": "people-swimming-turquoise-water-steps.jpg",
-    "mikumi-nyerere-day-safari": "elephant-savanna-landscape-tanzania.jpg",
-    "serengeti-3day-flyin": "lions-resting-dry-savanna.jpg",
+    "mikumi-nyerere-day-safari": "mikumi-day-trip-safari-from-zanzibar.jpg",
+    "serengeti-3day-flyin": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
     "zanzibar-essentials-3day": "zanzibar-beach-palm-trees-thatched-huts.jpg",
     "zanzibar-essentials-3-day-pass": "tourists-waving-dhow-boat-sea.jpg"
   };

@@ -41,7 +41,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "stone-town-feature.jpg"
+    "featured_image": "stone-town-guided-walking-tour-zanzibar.jpg"
   },
   {
     "id": "CUL-02",
@@ -84,7 +84,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "spice-farm-sign.jpg"
+    "featured_image": "zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg"
   },
   {
     "id": "CUL-03",
@@ -127,7 +127,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "chake-chake-town.jpg"
+    "featured_image": "child-walking-dirt-path-village.jpg"
   },
   {
     "id": "CUL-04",
@@ -169,7 +169,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "zanzibar-stone-town-nakupenda-dhow-boats.jpg",
+    "featured_image": "giant-tortoises-rocky-terrain.jpg",
     "featuredImage": "zanzibar-stone-town-nakupenda-dhow-boats.jpg"
   },
   {
@@ -214,7 +214,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "mnemba-atoll-snorkeling-blue-tang-fish.jpg"
+    "featured_image": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg"
   },
   {
     "id": "MAR-02",
@@ -259,7 +259,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "mnemba-snorkeling.jpg"
+    "featured_image": "mnemba-atoll-snorkeling-tour-zanzibar.jpg"
   },
   {
     "id": "MAR-03",
@@ -303,7 +303,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "migration-turtle.jpg"
+    "featured_image": "prison-island-nakupenda-combo-tour-zanzibar.jpg"
   },
   {
     "id": "MAR-04",
@@ -345,7 +345,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "nakupenda-sandbank-zanzibar-boat-trip-stone-town.jpg"
+    "featured_image": "nakupenda-sandbank-tour-pristine-beach-zanzibar.jpg"
   },
   {
     "id": "MAR-05",
@@ -389,7 +389,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "prison-island-wooden-walkway-sandbank-boats.jpg"
+    "featured_image": "underwater-fish-coral-reef-zanzibar.jpg"
   },
   {
     "id": "MAR-06",
@@ -432,7 +432,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "dhow-sail-boat-tidal-flat-zanzibar.jpg"
+    "featured_image": "sunset-dhow-cruise-zanzibar-stone-town.jpg"
   },
   {
     "id": "MAR-07",
@@ -476,7 +476,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "kizimkazi-dolphin-watching-boat-trip.jpg"
+    "featured_image": "dolphins-swimming-near-boat-tour.jpg"
   },
   {
     "id": "NAT-01",
@@ -519,7 +519,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "tribes-culture-dance.jpg"
+    "featured_image": "jozani-forest-red-colobus-monkey-tour-zanzibar.jpg"
   },
   {
     "id": "NAT-02",
@@ -562,7 +562,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "zanzibar-jambiani-beach-village-life-women.jpg"
+    "featured_image": "people-swimming-turquoise-water-steps.jpg"
   },
   {
     "id": "SAF-01",
@@ -605,7 +605,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "mikumi-safari-lions-resting-savannah.jpg"
+    "featured_image": "mikumi-day-trip-safari-from-zanzibar.jpg"
   },
   {
     "id": "SAF-02",
@@ -648,7 +648,7 @@
     ],
     "itinerary": [],
     "has_itinerary": false,
-    "featured_image": "giraffe-in-savannah-mikumi-safari.jpg"
+    "featured_image": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg"
   },
   {
     "id": "PKG-01",
@@ -700,6 +700,6 @@
       }
     ],
     "has_itinerary": true,
-    "featured_image": "packing-beach.jpg"
+    "featured_image": "zanzibar-beach-palm-trees-thatched-huts.jpg"
   }
 ]
