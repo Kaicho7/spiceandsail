@@ -11183,44 +11183,44 @@
   },
   "sea-cliff-court-zanzibar.jpg": {
     "file": "hotels/sea-cliff-court-zanzibar.jpg",
-    "alt_text": "Sea Cliff Court Zanzibar \u2014 4-Star Boutique in Stone Town / Mangapwani, Zanzibar",
-    "category": "hotel",
-    "subcategory": "boutique",
-    "place": "Stone Town / Mangapwani",
-    "subject": "Sea Cliff Court Zanzibar boutique exterior and amenities in Stone Town / Mangapwani",
+    "alt_text": "Sea Cliff Resort & Spa \u2014 9-hole oceanfront championship golf course in Mangapwani, Zanzibar",
+    "category": "activity",
+    "subcategory": "golf",
+    "place": "Mangapwani",
+    "subject": "Golfer on the putting green with yellow flag overlooking the turquoise Indian Ocean at Sea Cliff Resort & Spa",
     "quality_score": 5,
-    "description": "Boutique resort suites in Mangapwani, West Coast Unguja. 4-Star rating.",
+    "description": "Sea Cliff Resort & Spa features Zanzibar's only 9-hole championship golf course, designed by Peter Matkovich, overlooking the Indian Ocean in Mangapwani.",
     "primary_use": [
       "hotels",
-      "areas/stone-town-mangapwani"
+      "areas/stone-town",
+      "sports"
     ],
     "keywords": [
-      "sea cliff court zanzibar",
-      "hotels in stone town / mangapwani",
-      "stone town / mangapwani resorts",
-      "zanzibar accommodation",
-      "4-star zanzibar hotel"
+      "sea cliff resort golf",
+      "zanzibar golf course",
+      "sea cliff resort mangapwani",
+      "golf in zanzibar"
     ]
   },
   "hotels/sea-cliff-court-zanzibar.jpg": {
     "file": "hotels/sea-cliff-court-zanzibar.jpg",
-    "alt_text": "Sea Cliff Court Zanzibar \u2014 4-Star Boutique in Stone Town / Mangapwani, Zanzibar",
-    "category": "hotel",
-    "subcategory": "boutique",
-    "place": "Stone Town / Mangapwani",
-    "subject": "Sea Cliff Court Zanzibar boutique exterior and amenities in Stone Town / Mangapwani",
+    "alt_text": "Sea Cliff Resort & Spa \u2014 9-hole oceanfront championship golf course in Mangapwani, Zanzibar",
+    "category": "activity",
+    "subcategory": "golf",
+    "place": "Mangapwani",
+    "subject": "Golfer on the putting green with yellow flag overlooking the turquoise Indian Ocean at Sea Cliff Resort & Spa",
     "quality_score": 5,
-    "description": "Boutique resort suites in Mangapwani, West Coast Unguja. 4-Star rating.",
+    "description": "Sea Cliff Resort & Spa features Zanzibar's only 9-hole championship golf course, designed by Peter Matkovich, overlooking the Indian Ocean in Mangapwani.",
     "primary_use": [
       "hotels",
-      "areas/stone-town-mangapwani"
+      "areas/stone-town",
+      "sports"
     ],
     "keywords": [
-      "sea cliff court zanzibar",
-      "hotels in stone town / mangapwani",
-      "stone town / mangapwani resorts",
-      "zanzibar accommodation",
-      "4-star zanzibar hotel"
+      "sea cliff resort golf",
+      "zanzibar golf course",
+      "sea cliff resort mangapwani",
+      "golf in zanzibar"
     ]
   },
   "sea-view-lodge.webp": {
