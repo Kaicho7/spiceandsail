@@ -316,7 +316,7 @@ module.exports = function(eleventyConfig) {
     "bungu": "Stone Town", "nungw": "Nungwi", "kendw": "Kendwa", "paje": "Paje", "jamb": "Jambiani",
     "kiwen": "Kiwengwa", "pongw": "Pongwe / Michamvi", "micha": "Michamvi / Pingwe",
     "pingw": "Michamvi / Pingwe", "bwej": "Bwejuu / Dongwe", "dongw": "Bwejuu / Dongwe",
-    "kizim": "Kizimkazi / Dimbani", "fumb": "Fumba / Mbweni", "mbwen": "Fumba / Mbweni",
+    "kizim": "Kizimkazi / Dimbani", "makund": "Kizimkazi / Dimbani", "fumb": "Fumba / Mbweni", "mbwen": "Fumba / Mbweni",
     "matem": "Matemwe / Kigomani", "kigom": "Matemwe / Kigomani", "muyun": "Matemwe / Kigomani",
     "chake": "Chake Chake (Pemba)", "wete": "Chake Chake (Pemba)", "wambaa": "Wambaa Gulf / Makangale (Pemba)",
     "wamba": "Wambaa Gulf / Makangale (Pemba)", "makang": "Wambaa Gulf / Makangale (Pemba)", "wesha": "Wambaa Gulf / Makangale (Pemba)",
@@ -569,9 +569,36 @@ module.exports = function(eleventyConfig) {
     const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
     const zTokens = norm(zone).split(/\s+/).filter(Boolean);
     if (zTokens.length === 0) return [];
+
+    // Explicit zone mapping for sub-villages/settlements belonging to a regional area page
+    const subZoneMap = {
+      "makunduchi": ["kizimkazi", "dimbani"],
+    };
+
     return items.filter(item => {
+      const isTour = Boolean(item.location && !item.zone);
       const valTokens = norm(item.zone || item.location || "").split(/\s+/).filter(Boolean);
-      return zTokens.every(t => valTokens.includes(t));
+
+      // Direct token match (e.g. 'kizimkazi dimbani' in 'kizimkazi / dimbani')
+      if (zTokens.every(t => valTokens.includes(t))) return true;
+
+      // Sub-village regional mapping (e.g. Makunduchi belongs to Kizimkazi & Dimbani / South Coast area)
+      for (const vt of valTokens) {
+        const parents = subZoneMap[vt];
+        if (parents && zTokens.every(t => parents.includes(t))) {
+          return true;
+        }
+      }
+
+      // For tours with multi-stop or free-text locations: match if a distinct primary token of the zone is included
+      if (isTour) {
+        const stopWords = new Set(["and", "or", "unguja", "pemba", "island", "main"]);
+        const keyZoneTokens = zTokens.filter(t => !stopWords.has(t));
+        if (zTokens.includes("pongwe") && !valTokens.includes("pongwe")) return false;
+        return keyZoneTokens.some(t => valTokens.includes(t));
+      }
+
+      return false;
     });
   });
 
