@@ -6,15 +6,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/concierge.css">
+<script src="/js/i18n-currency.js" defer></script>
 <script src="/js/main.js" defer></script>
 <script src="/js/concierge.js" defer></script>
 </head>
 <body>
+<div id="google_translate_element" style="display:none;" aria-hidden="true"></div>
 <header class="site-header" id="siteHeader">
   <div class="top-bar">
-    <span class="brand">Spice and Sail</span>
-    <span class="intent-indicator" id="intentIndicator"></span>
-    <span class="contact"><a href="tel:+255672450934" title="Call directly">+255 672 450 934</a> &middot; <a href="https://wa.me/255672450934" target="_blank" rel="noopener" title="Chat on WhatsApp">WhatsApp</a></span>
+    <div class="top-bar-left">
+      <span class="brand">Spice and Sail</span>
+      <span class="intent-indicator" id="intentIndicator"></span>
+    </div>
+    <div class="top-bar-right">
+      <div class="international-bar" aria-label="Language and Currency Selectors">
+        <!-- Language Switcher -->
+        <div class="control-item">
+          <label for="langSelect" class="sr-only">Language</label>
+          <select id="langSelect" class="intl-select" title="Select Language">
+            <option value="en">🇬🇧 English</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="pl">🇵🇱 Polski</option>
+          </select>
+        </div>
+        <!-- Currency Switcher -->
+        <div class="control-item">
+          <label for="currencySelect" class="sr-only">Currency</label>
+          <select id="currencySelect" class="intl-select" title="Select Currency">
+            <option value="USD">💵 USD ($)</option>
+            <option value="EUR">💶 EUR (€)</option>
+            <option value="GBP">💷 GBP (£)</option>
+            <option value="PLN">🇵🇱 PLN (zł)</option>
+            <option value="TZS">🇹🇿 TZS (TSh)</option>
+          </select>
+        </div>
+      </div>
+      <span class="contact"><a href="tel:+255672450934" title="Call directly">+255 672 450 934</a> &middot; <a href="https://wa.me/255672450934" target="_blank" rel="noopener" title="Chat on WhatsApp">WhatsApp</a></span>
+    </div>
   </div>
   <nav class="main-nav" id="mainNav">
     <a href="/" class="logo"><span>Spice and Sail</span></a>
@@ -22,22 +52,22 @@
       ☰
     </button>
     <ul class="nav-list">
-      <li><a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-      <li><a href="/tours/" {% if page.url == '/tours/' %}class="active"{% endif %}>Tours</a></li>
-      <li><a href="/experiences/" {% if page.url == '/experiences/' %}class="active"{% endif %}>Rare Experiences</a></li>
-      <li><a href="/transfers/" {% if page.url == '/transfers/' %}class="active"{% endif %}>Transfers</a></li>
-      <li><a href="/packages/" {% if page.url == '/packages/' %}class="active"{% endif %}>Packages</a></li>
-      <li><a href="/safaris/" {% if page.url == '/safaris/' %}class="active"{% endif %}>Mainland Safaris</a></li>
-      <li><a href="/hotels/" {% if page.url == '/hotels/' %}class="active"{% endif %}>Hotels</a></li>
-      <li><a href="/attractions/" {% if page.url == '/attractions/' %}class="active"{% endif %}>Attractions</a></li>
-      <li><a href="/areas/" {% if page.url == '/areas/' %}class="active"{% endif %}>Areas</a></li>
-      <li><a href="/travel-guide/" {% if page.url == '/travel-guide/' %}class="active"{% endif %}>Travel Guide</a></li>
-<li><a href="/about/" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
+      <li><a href="/" data-i18n="nav_home" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+      <li><a href="/tours/" data-i18n="nav_tours" {% if page.url == '/tours/' %}class="active"{% endif %}>Tours</a></li>
+      <li><a href="/experiences/" data-i18n="nav_rare_experiences" {% if page.url == '/experiences/' %}class="active"{% endif %}>Rare Experiences</a></li>
+      <li><a href="/transfers/" data-i18n="nav_transfers" {% if page.url == '/transfers/' %}class="active"{% endif %}>Transfers</a></li>
+      <li><a href="/packages/" data-i18n="nav_packages" {% if page.url == '/packages/' %}class="active"{% endif %}>Packages</a></li>
+      <li><a href="/safaris/" data-i18n="nav_safaris" {% if page.url == '/safaris/' %}class="active"{% endif %}>Mainland Safaris</a></li>
+      <li><a href="/hotels/" data-i18n="nav_hotels" {% if page.url == '/hotels/' %}class="active"{% endif %}>Hotels</a></li>
+      <li><a href="/attractions/" data-i18n="nav_attractions" {% if page.url == '/attractions/' %}class="active"{% endif %}>Attractions</a></li>
+      <li><a href="/areas/" data-i18n="nav_areas" {% if page.url == '/areas/' %}class="active"{% endif %}>Areas</a></li>
+      <li><a href="/travel-guide/" data-i18n="nav_travel_guide" {% if page.url == '/travel-guide/' %}class="active"{% endif %}>Travel Guide</a></li>
+      <li><a href="/about/" data-i18n="nav_about" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
       <li><a href="/family-travel/" {% if page.url == '/family-travel/' %}class="active"{% endif %}>Family Travel</a></li>
       <li><a href="/honeymoon-packages/" {% if page.url == '/honeymoon-packages/' %}class="active"{% endif %}>Honeymoon Packages</a></li>
       <li><a href="/self-drive/" {% if page.url == '/self-drive/' %}class="active"{% endif %}>Self-Drive</a></li>
       <li><a href="/spice-farm-cultural/" {% if page.url == '/spice-farm-cultural/' %}class="active"{% endif %}>Spice Farm Cultural</a></li>
-      <li><a href="/contact/" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
+      <li><a href="/contact/" data-i18n="nav_contact" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
     </ul>
   </nav>
   <script>

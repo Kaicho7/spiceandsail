@@ -116,6 +116,23 @@ permalink: "/transfers/index.html"
             <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">✈️ Flight Number (Optional)</label>
             <input type="text" id="calc-flight" placeholder="e.g. ET815, QR1487" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
           </div>
+
+          <!-- Multilingual Driver / Guide Preference -->
+          <div>
+            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🗣️ Driver Language Preference</label>
+            <select id="calc-driver-lang" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
+              <option value="English" selected>English &amp; Swahili (Standard included)</option>
+              <option value="Italian">🇮🇹 Italian speaking driver (Advance request, extra cost)</option>
+              <option value="German">🇩🇪 German speaking driver (Advance request, extra cost)</option>
+              <option value="French">🇫🇷 French speaking driver (Advance request, extra cost)</option>
+              <option value="Polish">🇵🇱 Polish speaking driver (Advance request, extra cost)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Multilingual Notice Callout -->
+        <div style="background: rgba(0, 56, 83, 0.05); border-left: 3px solid #003853; padding: 0.85rem 1.15rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #1e293b; margin-bottom: 1.75rem; line-height: 1.5;">
+          🗣️ <strong>Multilingual Drivers &amp; Guides Available:</strong> Standard drivers and guides are fluent in Swahili and English. Dedicated Italian, German, French, or Polish-speaking Zanzibari drivers and certified guides are available upon advance request for an additional fee.
         </div>
 
         <!-- Server-computed output card (fetches /.netlify/functions/quote) -->
@@ -261,8 +278,8 @@ permalink: "/transfers/index.html"
       dateEl.value = tmrw.toISOString().split('T')[0];
     }
 
-    // Dynamic rate matrix for Zanzibar private vehicle transfers (up to 4 guests)
-    function calculateFare(origin, destKey) {
+    // Dynamic rate matrix for Zanzibar private vehicle transfers (up to 4 guests) [minUSD, maxUSD]
+    function getFareNumbers(origin, destKey) {
       const isAirportOrFerry = origin.includes('Airport') || origin.includes('Ferry');
       const isStoneTownHotel = origin.includes('Stone Town Hotel');
       const isNungwi = origin.includes('Nungwi') || origin.includes('Kendwa');
@@ -270,38 +287,46 @@ permalink: "/transfers/index.html"
       const isMatemwe = origin.includes('Matemwe') || origin.includes('Kiwengwa');
 
       if (isAirportOrFerry || isStoneTownHotel) {
-        if (destKey === 'stone-town') return isStoneTownHotel ? '$20–$25' : '$35–$40';
-        if (destKey === 'paje-jambiani') return '$45–$55';
-        if (destKey === 'matemwe') return '$45–$55';
-        if (destKey === 'kiwengwa-pongwe') return '$45–$55';
-        if (destKey === 'nungwi-kendwa') return '$50–$60';
-        if (destKey === 'michamvi') return '$45–$55';
-        if (destKey === 'kizimkazi') return '$45–$55';
+        if (destKey === 'stone-town') return isStoneTownHotel ? [20, 25] : [35, 40];
+        if (destKey === 'paje-jambiani') return [45, 55];
+        if (destKey === 'matemwe') return [45, 55];
+        if (destKey === 'kiwengwa-pongwe') return [45, 55];
+        if (destKey === 'nungwi-kendwa') return [50, 60];
+        if (destKey === 'michamvi') return [45, 55];
+        if (destKey === 'kizimkazi') return [45, 55];
       } else if (isNungwi) {
-        if (destKey === 'nungwi-kendwa') return '$20–$25';
-        if (destKey === 'stone-town') return '$50–$60';
-        if (destKey === 'matemwe') return '$40–$50';
-        if (destKey === 'kiwengwa-pongwe') return '$45–$55';
-        if (destKey === 'paje-jambiani') return '$60–$75';
-        if (destKey === 'michamvi') return '$65–$80';
-        if (destKey === 'kizimkazi') return '$70–$85';
+        if (destKey === 'nungwi-kendwa') return [20, 25];
+        if (destKey === 'stone-town') return [50, 60];
+        if (destKey === 'matemwe') return [40, 50];
+        if (destKey === 'kiwengwa-pongwe') return [45, 55];
+        if (destKey === 'paje-jambiani') return [60, 75];
+        if (destKey === 'michamvi') return [65, 80];
+        if (destKey === 'kizimkazi') return [70, 85];
       } else if (isPaje) {
-        if (destKey === 'paje-jambiani') return '$20–$25';
-        if (destKey === 'stone-town') return '$45–$55';
-        if (destKey === 'michamvi') return '$25–$35';
-        if (destKey === 'kizimkazi') return '$35–$45';
-        if (destKey === 'nungwi-kendwa') return '$60–$75';
-        if (destKey === 'matemwe') return '$45–$55';
-        if (destKey === 'kiwengwa-pongwe') return '$45–$55';
+        if (destKey === 'paje-jambiani') return [20, 25];
+        if (destKey === 'stone-town') return [45, 55];
+        if (destKey === 'michamvi') return [25, 35];
+        if (destKey === 'kizimkazi') return [35, 45];
+        if (destKey === 'nungwi-kendwa') return [60, 75];
+        if (destKey === 'matemwe') return [45, 55];
+        if (destKey === 'kiwengwa-pongwe') return [45, 55];
       } else if (isMatemwe) {
-        if (destKey === 'matemwe' || destKey === 'kiwengwa-pongwe') return '$20–$25';
-        if (destKey === 'nungwi-kendwa') return '$40–$50';
-        if (destKey === 'stone-town') return '$45–$55';
-        if (destKey === 'paje-jambiani') return '$45–$55';
-        if (destKey === 'michamvi') return '$50–$60';
-        if (destKey === 'kizimkazi') return '$55–$65';
+        if (destKey === 'matemwe' || destKey === 'kiwengwa-pongwe') return [20, 25];
+        if (destKey === 'nungwi-kendwa') return [40, 50];
+        if (destKey === 'stone-town') return [45, 55];
+        if (destKey === 'paje-jambiani') return [45, 55];
+        if (destKey === 'michamvi') return [50, 60];
+        if (destKey === 'kizimkazi') return [55, 65];
       }
-      return '$45–$55';
+      return [45, 55];
+    }
+
+    function calculateFare(origin, destKey) {
+      const nums = getFareNumbers(origin, destKey);
+      if (window.SpiceInternational) {
+        return window.SpiceInternational.formatRangeConverted(nums[0], nums[1], window.SpiceInternational.getCurrency());
+      }
+      return '$' + nums[0] + '–$' + nums[1];
     }
 
     function updateCalculator() {
@@ -321,12 +346,26 @@ permalink: "/transfers/index.html"
       fareDisplayEl.textContent = baseFare;
       routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + baseFare + ' planning range — our team confirms the final rate.';
 
-      const waMessage = 'Jambo Spice & Sail! I would like to reserve a Private Transfer:\n' +
+      var lang = window.SpiceInternational ? window.SpiceInternational.getLanguage() : 'en';
+      var greetings = {
+        en: 'Jambo Spice & Sail! I would like to reserve a Private Transfer:',
+        it: 'Ciao Spice & Sail! Vorrei prenotare un Transfer Privato:',
+        de: 'Hallo Spice & Sail! Ich möchte einen privaten Transfer reservieren:',
+        fr: 'Bonjour Spice & Sail ! Je souhaite réserver un transfert privé :',
+        pl: 'Dzień dobry Spice & Sail! Chciałbym zarezerwować prywatny transfer:'
+      };
+      var greeting = greetings[lang] || greetings.en;
+
+      const driverLangEl = document.getElementById('calc-driver-lang');
+      const driverLang = driverLangEl ? driverLangEl.value : 'English';
+      const langNote = driverLang !== 'English' ? '\n• Multilingual Driver Requested: ' + driverLang + ' (advance request — team confirms extra cost)' : '';
+
+      const waMessage = greeting + '\n' +
         '• Pickup: ' + pickup + flightVal + '\n' +
         '• Destination: ' + destZone + '\n' +
         '• Date: ' + dateVal + '\n' +
         '• Passengers: ' + paxCount + ' pax\n' +
-        '• Planning Fare: ' + baseFare + '\n' +
+        '• Planning Fare: ' + baseFare + langNote + '\n' +
         'Please confirm driver availability and the rate.';
       if (waBtn) waBtn.href = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMessage);
 
@@ -353,11 +392,16 @@ permalink: "/transfers/index.html"
       });
     }
 
+    const driverLangEl = document.getElementById('calc-driver-lang');
     if (pickupEl) pickupEl.addEventListener('change', updateCalculator);
     if (destEl) destEl.addEventListener('change', updateCalculator);
     if (paxEl) paxEl.addEventListener('change', updateCalculator);
     if (dateEl) dateEl.addEventListener('change', updateCalculator);
     if (flightEl) flightEl.addEventListener('input', updateCalculator);
+    if (driverLangEl) driverLangEl.addEventListener('change', updateCalculator);
+
+    window.addEventListener('spice:currency-changed', updateCalculator);
+    window.addEventListener('spice:language-changed', updateCalculator);
 
     updateCalculator();
   });

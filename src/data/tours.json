@@ -533,7 +533,7 @@
     "price": {
       "min": 25.0,
       "max": 130.0,
-      "basis": "per person",
+      "basis": "per person ($25 entry & local guide; $65\u2013$85 with private island transfer)",
       "display": "$25\u2013$130"
     },
     "includes": [
@@ -619,7 +619,7 @@
     "price": {
       "min": 900.0,
       "max": 2500.0,
-      "basis": "per person",
+      "basis": "per person ($900\u2013$1,200 tented camp; $1,800\u2013$2,500 luxury lodge with return flights & game drives)",
       "display": "$900\u2013$2500"
     },
     "includes": [
@@ -642,7 +642,7 @@
     "meeting_point": "Transferred from your Zanzibar hotel to ZNZ airport for flights",
     "important_notes": [
       "Requires a licensed mainland tour operator \u2014 we handle all logistics",
-      "Best for Great Migration (July–October: Mara River crossings; December–March: Ndutu calving season)",
+      "Best for Great Migration (July\u2013October: Mara River crossings; December\u2013March: Ndutu calving season)",
       "Single supplement: add ~25% for solo travelers",
       "Weather-dependent flights \u2014 flexible date policy"
     ],

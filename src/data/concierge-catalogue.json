@@ -4,7 +4,21 @@
   "currency": "USD",
   "config": {
     "whatsappNumber": "255672450934",
-    "depositPercent": 20,
+    "depositPercent": 0,
+    "seaTourDepositPercent": 20,
+    "safariDepositPercent": 30,
+    "depositPolicy": {
+      "transfers": 0,
+      "landTours": 0,
+      "seaTours": 20,
+      "multiDaySafaris": 30,
+      "description": "0% advance deposit for private transfers and land walking tours (pay on arrival). 20% advance deposit for sea excursions, sandbanks, and boat charters to secure private vessel captains, fuel, and fresh morning seafood catering. 30% advance deposit for fly-in safaris to secure non-refundable flight seats and park permits.",
+      "cancellation": {
+        "freeNoticeHoursSea": 24,
+        "freeNoticeHoursLand": 12,
+        "weatherGuarantee": "100% full refund or free priority reschedule in case of adverse marine weather or maritime authority advisories."
+      }
+    },
     "largeGroupThreshold": 8,
     "replyWindow": "within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT)",
     "businessHours": {
@@ -744,7 +758,7 @@
         "min": 25.0,
         "max": 130.0,
         "display": "$25\u2013$130",
-        "basisNote": "per person",
+        "basisNote": "per person ($25 entry & local guide; $65\u2013$85 with private island transfer)",
         "sourceQuality": "2026 market range",
         "sourceFiles": "2026 market guides",
         "verified": true
@@ -833,7 +847,7 @@
         "min": 900.0,
         "max": 2500.0,
         "display": "$900\u2013$2500",
-        "basisNote": "per person",
+        "basisNote": "per person ($900\u2013$1,200 tented camp; $1,800\u2013$2,500 luxury lodge with return flights & game drives)",
         "sourceQuality": "Existing demo package + 2026 market range",
         "sourceFiles": "zanzibar-tours/packages/core/src/seed.ts; 2026 market guides",
         "verified": true
@@ -843,7 +857,7 @@
       ],
       "importantNotes": [
         "Requires a licensed mainland tour operator \u2014 we handle all logistics",
-        "Best for Great Migration (July–October: Mara River crossings; December–March: Ndutu calving season)",
+        "Best for Great Migration (July\u2013October: Mara River crossings; December\u2013March: Ndutu calving season)",
         "Single supplement: add ~25% for solo travelers",
         "Weather-dependent flights \u2014 flexible date policy"
       ],

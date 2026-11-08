@@ -1,0 +1,165 @@
+{
+  "languages": {
+    "en": { "code": "en", "name": "English", "flag": "🇬🇧" },
+    "it": { "code": "it", "name": "Italiano", "flag": "🇮🇹" },
+    "de": { "code": "de", "name": "Deutsch", "flag": "🇩🇪" },
+    "fr": { "code": "fr", "name": "Français", "flag": "🇫🇷" },
+    "pl": { "code": "pl", "name": "Polski", "flag": "🇵🇱" }
+  },
+  "strings": {
+    "nav_home": {
+      "en": "Home",
+      "it": "Home",
+      "de": "Startseite",
+      "fr": "Accueil",
+      "pl": "Strona główna"
+    },
+    "nav_tours": {
+      "en": "Tours",
+      "it": "Tour ed Escursioni",
+      "de": "Ausflüge & Touren",
+      "fr": "Excursions & Visites",
+      "pl": "Wycieczki"
+    },
+    "nav_rare_experiences": {
+      "en": "Rare Experiences",
+      "it": "Esperienze Esclusive",
+      "de": "Exklusive Erlebnisse",
+      "fr": "Expériences Uniques",
+      "pl": "Wyjątkowe Doświadczenia"
+    },
+    "nav_transfers": {
+      "en": "Transfers",
+      "it": "Transfer Aeroporto",
+      "de": "Flughafentransfers",
+      "fr": "Transferts Aéroport",
+      "pl": "Transfery Lotniskowe"
+    },
+    "nav_packages": {
+      "en": "Packages",
+      "it": "Pacchetti Vacanza",
+      "de": "Reisepakete",
+      "fr": "Forfaits Séjour",
+      "pl": "Pakiety Pobytowe"
+    },
+    "nav_safaris": {
+      "en": "Mainland Safaris",
+      "it": "Safari in Tanzania",
+      "de": "Festland-Safaris",
+      "fr": "Safaris en Tanzanie",
+      "pl": "Safari w Tanzanii"
+    },
+    "nav_hotels": {
+      "en": "Hotels",
+      "it": "Hotel & Resort",
+      "de": "Hotels & Resorts",
+      "fr": "Hôtels & Resorts",
+      "pl": "Hotele i Resorty"
+    },
+    "nav_attractions": {
+      "en": "Attractions",
+      "it": "Attrazioni",
+      "de": "Sehenswürdigkeiten",
+      "fr": "Attractions",
+      "pl": "Atrakcje"
+    },
+    "nav_areas": {
+      "en": "Areas",
+      "it": "Località",
+      "de": "Regionen",
+      "fr": "Régions",
+      "pl": "Regiony"
+    },
+    "nav_travel_guide": {
+      "en": "Travel Guide",
+      "it": "Guida di Viaggio",
+      "de": "Reiseführer",
+      "fr": "Guide de Voyage",
+      "pl": "Przewodnik"
+    },
+    "nav_about": {
+      "en": "About Us",
+      "it": "Chi Siamo",
+      "de": "Über Uns",
+      "fr": "À Propos",
+      "pl": "O Nas"
+    },
+    "nav_contact": {
+      "en": "Contact",
+      "it": "Contatti",
+      "de": "Kontakt",
+      "fr": "Contact",
+      "pl": "Kontakt"
+    },
+    "btn_check_rates": {
+      "en": "Check Rates",
+      "it": "Verifica Tariffe",
+      "de": "Preise prüfen",
+      "fr": "Voir les tarifs",
+      "pl": "Sprawdź ceny"
+    },
+    "btn_book_transfer": {
+      "en": "Book Transfer",
+      "it": "Prenota Transfer",
+      "de": "Transfer buchen",
+      "fr": "Réserver transfert",
+      "pl": "Zarezerwuj transfer"
+    },
+    "btn_open_calculator": {
+      "en": "Open Fare Calculator →",
+      "it": "Calcolatore Tariffe →",
+      "de": "Tarifrechner öffnen →",
+      "fr": "Calculateur de tarif →",
+      "pl": "Kalkulator opłat →"
+    },
+    "btn_whatsapp_concierge": {
+      "en": "WhatsApp Concierge",
+      "it": "Concierge WhatsApp",
+      "de": "WhatsApp Concierge",
+      "fr": "Concierge WhatsApp",
+      "pl": "Concierge WhatsApp"
+    },
+    "label_planning_range": {
+      "en": "Planning range — our team confirms final rate",
+      "it": "Fascia indicativa — il nostro team confermerà la tariffa finale",
+      "de": "Planungsbereich — unser Team bestätigt den Endpreis",
+      "fr": "Fourchette indicative — notre équipe confirme le tarif final",
+      "pl": "Szacunkowy przedział — nasz zespół potwierdzi ostateczną cenę"
+    },
+    "label_per_vehicle": {
+      "en": "per vehicle (up to 4 guests)",
+      "it": "per veicolo (fino a 4 persone)",
+      "de": "pro Fahrzeug (bis zu 4 Personen)",
+      "fr": "par véhicule (jusqu'à 4 personnes)",
+      "pl": "za pojazd (do 4 osób)"
+    },
+    "label_per_person": {
+      "en": "per person",
+      "it": "a persona",
+      "de": "pro Person",
+      "fr": "par personne",
+      "pl": "za osobę"
+    },
+    "whatsapp_greeting": {
+      "en": "Hi Spice and Sail, I would like to inquire about",
+      "it": "Ciao Spice and Sail, vorrei richiedere informazioni e un preventivo per",
+      "de": "Hallo Spice and Sail, ich interessiere mich für",
+      "fr": "Bonjour Spice and Sail, je souhaite demander des informations et un devis pour",
+      "pl": "Dzień dobry Spice and Sail, chciałbym zapytać o wycenę i szczegóły dotyczące"
+    },
+    "whatsapp_hotel_text": {
+      "en": "stay and tour packages for",
+      "it": "soggiorno e tour per",
+      "de": "Unterkunft und Ausflugspakete für",
+      "fr": "séjour et forfaits d'excursion pour",
+      "pl": "pobyt oraz pakiety wycieczek dla"
+    },
+    "whatsapp_transfer_text": {
+      "en": "private airport transfer to",
+      "it": "transfer privato dall'aeroporto a",
+      "de": "privaten Flughafentransfer nach",
+      "fr": "transfert privé depuis l'aéroport vers",
+      "pl": "prywatny transfer z lotniska do"
+    }
+  }
+}

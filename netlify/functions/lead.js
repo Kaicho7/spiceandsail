@@ -19,22 +19,31 @@ function ensureStore() {
   }
 }
 
-/** Build reply link server-side: wa.me or mailto */
+/** Build reply link server-side: always targets Spice & Sail business channels */
 function buildReplyLink(ref, whatsapp, email) {
+  const businessNumber = (CONFIG && CONFIG.whatsappNumber) ? CONFIG.whatsappNumber : '255672450934';
+  const businessEmail = (CONFIG && CONFIG.businessEmail) ? CONFIG.businessEmail : 'info@spiceandsail.com';
   if (whatsapp) {
-    const num = normalizeE164(whatsapp).replace('+', '');
-    const msg = encodeURIComponent('Hi! My reference is ' + ref + '. I would like to follow up on my enquiry.');
-    return 'https://wa.me/' + num + '?text=' + msg;
+    const msg = encodeURIComponent('Hi Spice & Sail! My reference is ' + ref + '. I would like to follow up on my enquiry.');
+    return 'https://wa.me/' + businessNumber + '?text=' + msg;
   }
   if (email) {
-    return 'mailto:' + email + '?subject=' + encodeURIComponent('Spice & Sail Enquiry ' + ref);
+    return 'mailto:' + businessEmail + '?subject=' + encodeURIComponent('Spice & Sail Enquiry ' + ref);
   }
   return null;
 }
 
-/** Hash payload for idempotency */
+/** Hash payload for idempotency — includes passengers & notes to avoid stale duplicate collisions */
 function payloadHash(body) {
-  const key = JSON.stringify({ n: body.name, w: body.whatsapp, e: body.email, s: body.services, d: body.date });
+  const key = JSON.stringify({
+    n: body.name,
+    w: body.whatsapp,
+    e: body.email,
+    s: body.services,
+    d: body.date,
+    t: body.travellers,
+    notes: body.notes
+  });
   return crypto.createHash('sha256').update(key).digest('hex').slice(0, 16);
 }
 

@@ -1,0 +1,46 @@
+{
+  "base": "USD",
+  "last_updated": "2026-11-08",
+  "rates": {
+    "USD": {
+      "code": "USD",
+      "symbol": "$",
+      "symbol_position": "before",
+      "rate": 1.0,
+      "name": "US Dollar",
+      "flag": "🇺🇸"
+    },
+    "EUR": {
+      "code": "EUR",
+      "symbol": "€",
+      "symbol_position": "before",
+      "rate": 0.92,
+      "name": "Euro",
+      "flag": "🇪🇺"
+    },
+    "GBP": {
+      "code": "GBP",
+      "symbol": "£",
+      "symbol_position": "before",
+      "rate": 0.79,
+      "name": "British Pound",
+      "flag": "🇬🇧"
+    },
+    "PLN": {
+      "code": "PLN",
+      "symbol": "zł",
+      "symbol_position": "after",
+      "rate": 4.02,
+      "name": "Polski Złoty",
+      "flag": "🇵🇱"
+    },
+    "TZS": {
+      "code": "TZS",
+      "symbol": "TSh",
+      "symbol_position": "after",
+      "rate": 2650.0,
+      "name": "Tanzanian Shilling",
+      "flag": "🇹🇿"
+    }
+  }
+}

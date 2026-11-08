@@ -60,7 +60,7 @@
       "star_tier": "tier1",
       "tier": "luxury",
       "island": "Unguja",
-      "zone": "Stone Town",
+      "zone": "Bawe Island (Offshore)",
       "website": "https://www.baweisland.com",
       "website_domain": "baweisland.com",
       "host_type": "own_site",
@@ -75,7 +75,7 @@
       "scrape_status": "scraped:direct",
       "slug": "bawe-tropical-island",
       "photo": "hotels/bawe-tropical-island.jpg",
-      "description": "Luxury Resort in Bawe Island, Unguja. 5-Star rating.",
+      "description": "Exclusive private island luxury resort 15 minutes by speed boat from Stone Town port.",
       "price_range": ""
     },
     {
@@ -1701,7 +1701,7 @@
       "star_tier": "tier2",
       "tier": "upper-mid",
       "island": "Unguja",
-      "zone": "Stone Town",
+      "zone": "Chapwani Island (Offshore)",
       "website": "https://www.chapwani.com",
       "website_domain": "chapwani.com",
       "host_type": "own_site",
@@ -1716,7 +1716,7 @@
       "scrape_status": "failed",
       "slug": "chapwani-private-island",
       "photo": "hotels/chapwani-private-island.jpg",
-      "description": "Boutique in Chapwani Island, Unguja. 4-Star rating.",
+      "description": "Intimate private islet retreat reached by dedicated 15-minute boat transfer from Stone Town.",
       "price_range": ""
     },
     {
@@ -1727,7 +1727,7 @@
       "star_tier": "tier2",
       "tier": "upper-mid",
       "island": "Unguja",
-      "zone": "Stone Town",
+      "zone": "Chumbe Island Marine Reserve",
       "website": "https://chumbeisland.com",
       "website_domain": "chumbeisland.com",
       "host_type": "own_site",
@@ -1742,7 +1742,7 @@
       "scrape_status": "failed",
       "slug": "chumbe-island-coral-park",
       "photo": "hotels/chumbe-island-coral-park.jpg",
-      "description": "Eco-Lodge in Chumbe Island, Unguja. 4-Star rating.",
+      "description": "Award-winning private eco-sanctuary and marine park reached by boat from Mbweni ruins pier.",
       "price_range": ""
     },
     {

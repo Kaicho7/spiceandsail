@@ -153,6 +153,77 @@ p { margin-bottom: 1rem; }
   margin: 0 auto;
   font-size: 0.8rem;
   color: rgba(255,255,255,0.7);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.international-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.intl-select {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+.intl-select:hover, .intl-select:focus {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: var(--dct-spice, #D4AF37);
+  color: #ffffff;
+}
+.intl-select option {
+  background: #003853;
+  color: #ffffff;
+  font-weight: 500;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Google Translate widget reset for clean seamless integration */
+.goog-te-banner-frame.skiptranslate, 
+.goog-te-gadget-simple, 
+.goog-te-gadget-icon,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+  position: static !important;
+}
+#goog-gt-tt, .goog-te-balloon-frame {
+  display: none !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
 }
 .top-bar .brand { font-weight: 600; color: var(--dct-white); letter-spacing: 0.5px; }
 .top-bar .contact a {
@@ -716,10 +787,47 @@ p { margin-bottom: 1rem; }
 .tour-hero-content { position: static; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; width: 100%; }
 .tour-hero-content > * { position: relative; z-index: 2; }
 .tour-hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-.tour-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 100%); z-index: 1; }
+.tour-hero::after { 
+  content: ''; 
+  position: absolute; 
+  inset: 0; 
+  background: linear-gradient(180deg, rgba(10, 25, 38, 0.45) 0%, rgba(10, 25, 38, 0.8) 100%); 
+  z-index: 1; 
+}
 .tour-hero-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1rem; font-size: 0.95rem; opacity: 0.9; }
 .tour-hero-meta span { display: flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.15); padding: 0.4rem 1rem; border-radius: 50px; backdrop-filter: blur(10px); }
-.tour-hero h1 { max-width: 800px; }
+.tour-hero h1 { 
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0.6rem 0;
+  max-width: 850px;
+}
+.tour-hero .tour-meta,
+.tour-hero p.tour-meta {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
+  margin-bottom: 1.25rem;
+}
+.tour-hero .card-badge {
+  display: inline-block;
+  color: #ffffff !important;
+  background: var(--dct-ocean, #003853);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+}
 .tour-hero-price {
   display: inline-flex;
   align-items: baseline;

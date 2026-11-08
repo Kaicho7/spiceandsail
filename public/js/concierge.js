@@ -478,7 +478,10 @@
         addBubble(res.json.message, 'bot');
         renderQuickReplies(res.json.quickReplies);
         if (res.json.quote && res.json.quote.serviceSlug) {
-          state.selectedSlug = res.json.quote.serviceSlug;
+          state.chatQuotedSlug = res.json.quote.serviceSlug;
+          if (!state.selectedSlug) {
+            state.selectedSlug = res.json.quote.serviceSlug;
+          }
           if (res.json.quote.totalDisplay) {
             state.lastQuoteDisplay = res.json.quote.totalDisplay;
           }
@@ -654,7 +657,7 @@
   });
 
   function openDirectWhatsApp() {
-    var selectedService = state.selectedSlug;
+    var selectedService = state.selectedSlug || state.chatQuotedSlug;
     var svcName = 'a Zanzibar experience';
     if (state.services && selectedService) {
       var found = state.services.find(function (s) { return s.slug === selectedService; });
@@ -666,39 +669,79 @@
     var guestName = (el('sns-guest-name') ? el('sns-guest-name').value : '').trim();
     var guestWhatsapp = (el('sns-guest-whatsapp') ? el('sns-guest-whatsapp').value : '').trim();
     var guestEmail = (el('sns-guest-email') ? el('sns-guest-email').value : '').trim();
+    var consentEl = el('consent_contact');
+    var consentContact = Boolean(consentEl && consentEl.checked);
 
-    var parts = ['Hi Spice & Sail! I\'d like to book: ' + svcName + '.'];
-    if (dateVal) parts.push('Date: ' + dateVal + '.');
-    if (travellers) parts.push('Travelers: ' + travellers + ' pax.');
-    if (locationVal) parts.push('Pickup Location: ' + locationVal + '.');
-    if (guestName) parts.push('Name: ' + guestName + '.');
-    if (state.lastQuoteDisplay) parts.push('Estimated catalogue range: ' + state.lastQuoteDisplay + ' USD.');
+    function dispatchWA(ref) {
+      var parts = [];
+      if (ref) {
+        parts.push('Hi Spice & Sail! Booking Reference: ' + ref + '.');
+        parts.push('I\'d like to book: ' + svcName + '.');
+      } else {
+        parts.push('Hi Spice & Sail! I\'d like to book: ' + svcName + '.');
+      }
+      if (dateVal) parts.push('Date: ' + dateVal + '.');
+      if (travellers) parts.push('Travelers: ' + travellers + ' pax.');
+      if (locationVal) parts.push('Pickup Location: ' + locationVal + '.');
+      if (guestName) parts.push('Name: ' + guestName + '.');
+      if (state.lastQuoteDisplay) parts.push('Estimated catalogue range: ' + state.lastQuoteDisplay + ' USD.');
 
-    // If contact details and name are already provided, persist lead record to store in background
-    if (guestName && (guestWhatsapp || guestEmail)) {
-      try {
-        var payload = {
-          name: guestName,
-          whatsapp: guestWhatsapp || undefined,
-          email: guestEmail || undefined,
-          date: dateVal || undefined,
-          travellers: travellers,
-          services: selectedService || 'general-inquiry',
-          notes: (locationVal ? 'Pickup: ' + locationVal + '. ' : '') + 'Initiated via direct WhatsApp button.',
-          consent_contact: true,
-          privacy_notice_version: '2026-04-18',
-          session_id: sessionId()
-        };
-        fetchJSON('/.netlify/functions/lead', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-      } catch (e) {}
+      var url = waLink(parts.join(' '));
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
 
-    var url = waLink(parts.join(' '));
-    window.open(url, '_blank', 'noopener,noreferrer');
+    // Save-before-handoff: if contact details AND consent are provided, save lead first to get reference
+    if (guestName && (guestWhatsapp || guestEmail) && consentContact) {
+      var btn = el('sns-btn-whatsapp-direct');
+      var origText = btn ? btn.textContent : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Saving reference…';
+      }
+      showStatus('', 'Saving your booking enquiry reference before connecting to WhatsApp…');
+
+      var payload = buildLeadPayload();
+      payload.notes = (payload.notes ? payload.notes + '. ' : '') + 'Initiated via direct WhatsApp button.';
+
+      fetchJSON('/.netlify/functions/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }, 10000).then(function (res) {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = origText;
+        }
+        var ref = res.ok && res.json && typeof res.json.reference === 'string' && /^SP-\d{4}-\d+$/.test(res.json.reference)
+          ? res.json.reference : null;
+        if (ref) {
+          state.lastReference = ref;
+          showStatus('success', 'Enquiry registered! Reference: ' + ref + '. Connecting to WhatsApp…');
+          dispatchWA(ref);
+        } else {
+          showStatus('error', 'Could not save reference, proceeding to WhatsApp directly…');
+          dispatchWA(null);
+        }
+      }).catch(function () {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = origText;
+        }
+        dispatchWA(null);
+      });
+      return;
+    }
+
+    // If on Step 3 but details are incomplete, prompt the user
+    if (state.currentStep === 3) {
+      if (!guestName || (!guestWhatsapp && !guestEmail)) {
+        showStatus('error', 'Tip: Fill in your name & contact details above to generate an official booking reference, or message us directly on WhatsApp.');
+      } else if (!consentContact) {
+        showStatus('error', 'Please check "Contact me about this request" above to save your booking reference, or message us directly on WhatsApp.');
+      }
+    }
+
+    dispatchWA(state.lastReference || null);
   }
 
   /* Export to global scope */

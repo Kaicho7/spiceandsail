@@ -24,18 +24,21 @@ function ensureStore() {
 /** Deterministic intent detection */
 function detectIntent(text) {
   const lower = (text || '').toLowerCase();
-  if (/\b(how long to|how long does it take|travel time|drive time|distance to|how far)\b/.test(lower)) return 'travel_time';
-  if (/\b(larger group|large group|big group|more than 4|minivan|coaster|luggage)\b/.test(lower)) return 'group_luggage';
-  if (/\b(what'?s included|what to bring|inclusions?|what do i bring|bring along)\b/.test(lower)) return 'inclusions';
-  if (/\b(how do i pay|payment|pay for|payment method|pay by|mpesa|m-pesa|cash|card)\b/.test(lower)) return 'payments';
-  if (/\b(honeymoon|romantic|anniversary|couples?\s+trip)\b/.test(lower)) return 'honeymoon';
-  if (/\b(family|kids|children|child|toddler|teenager)\b/.test(lower)) return 'family';
-  if (/\b(book|reserve|confirm|hold|how do i book)\b/.test(lower)) return 'book';
-  if (/\b(price|cost|how much|quote|rate)\b/.test(lower)) return 'quote';
-  if (/\b(recommend|suggest|what should|best|popular|must.?do)\b/.test(lower)) return 'recommend';
-  if (/\b(transfer|airport|pickup|drop.?off)\b/.test(lower)) return 'transfer';
-  if (/\b(visa|insurance|health|safety|malaria|yellow.?fever)\b/.test(lower)) return 'info';
-  if (/\b(hours|open|close|when|contact)\b/.test(lower)) return 'hours';
+  if (/\b(how long to|how long does it take|travel time|drive time|distance to|how far)\b/i.test(lower)) return 'travel_time';
+  if (/\b(larger group|large group|big group|more than 4|minivan|coaster|luggage)\b/i.test(lower)) return 'group_luggage';
+  if (/\b(what('?s| is) included|what to bring|inclusions?|what do i bring|bring along|what is in it)\b/i.test(lower)) return 'inclusions';
+  if (/\b(cancel|cancellation|refund|reschedule|weather policy|bad weather)\b/i.test(lower)) return 'cancellation';
+  if (/\b(how do i pay|payment|pay for|payment method|pay by|mpesa|m-pesa|cash|card|deposit|prepayment|down.?payment)\b/i.test(lower)) return 'payments';
+  if (/\b(honeymoon|romantic|anniversary|couples?\s+trip)\b/i.test(lower)) return 'honeymoon';
+  if (/\b(family|kids|children|child|toddler|teenager)\b/i.test(lower)) return 'family';
+  if (/\b(book|reserve|confirm|hold|how do i book|book an experience|book this)\b/i.test(lower)) return 'book';
+  if (/\b(show all tours|view all tours|all tours|list tours|see all tours|browse tours)\b/i.test(lower)) return 'all_tours';
+  if (/\b(get a quote|price|cost|how much|quote|rate)\b/i.test(lower)) return 'quote';
+  if (/\b(recommend|suggest|what should|best|popular|must.?do|plan my (zanzibar )?trip|help me plan|itinerary)\b/i.test(lower)) return 'recommend';
+  if (/\b(transfer|airport|pickup|drop.?off)\b/i.test(lower)) return 'transfer';
+  if (/\b(visas?|insurance|health|safety|malaria|yellow.?fever|travel info|travel advice|entry requirements|dress code)\b/i.test(lower)) return 'info';
+  if (/\b(hours|open|close|when|contact)\b/i.test(lower)) return 'hours';
+  if (/\b(languages?|italian|italiano|german|deutsch|french|fran[cç]ais|polish|polski|driver language|guide language|multilingual|speak english|speak italian|speak german|speak french|speak polish)\b/i.test(lower)) return 'language';
   // If text mentions any specific service from our catalogue, treat it as a quote/service query!
   if (matchServices(text).length > 0) return 'quote';
   return 'general';
@@ -254,27 +257,36 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     return 'per person';
   }
 
-  const hoursNote = afterHours
-    ? '\n\nOur team is offline right now — messages are answered the next business morning (Mon–Sat, 08:00–18:00 EAT).'
+  const hoursNote = (afterHours && turnCount === 1)
+    ? '\n\n*Note: Our human operations desk is offline right now — messages are answered the next business morning (Mon–Sat, 08:00–18:00 EAT).*'
     : '';
 
   // ---- inclusions intent ----
   if (intent === 'inclusions') {
+    let targetSlug = null;
     const slugs = matchServices(text);
     if (slugs.length > 0) {
-      const svc = getService(slugs[0]);
+      targetSlug = slugs[0];
+    } else if (profile.activeSlug) {
+      targetSlug = profile.activeSlug;
+    } else if (Array.isArray(profile.serviceSlugs) && profile.serviceSlugs.length > 0) {
+      targetSlug = profile.serviceSlugs[0];
+    }
+
+    if (targetSlug) {
+      const svc = getService(targetSlug);
       if (svc) {
-        const inc = (svc.includes || []).join(', ') || 'Our team confirms what is included.';
+        const inc = (svc.includes || []).map(function (i) { return '• ' + i; }).join('\n') || '• Licensed guide, equipment & government permits';
         const notes = (svc.importantNotes || []).map(function (n) { return '• ' + n; }).join('\n');
         return {
-          message: '**' + svc.name + ' — What\'s included:**\n' + inc + (notes ? '\n\n**What to bring / notes:**\n' + notes : '') + hoursNote,
-          quickReplies: ['Get a quote for this', 'See other options', 'Book this'],
+          message: '**' + svc.name + ' — What\'s Included:**\n\n' + inc + (notes ? '\n\n**What to Bring & Important Notes:**\n' + notes : '') + hoursNote,
+          quickReplies: ['💬 Open WhatsApp to Reserve', 'Get a quote', 'Check another tour'],
           requestContact: false,
         };
       }
     }
     return {
-      message: 'Which experience would you like to know about? Tell me the tour name and I\'ll list what\'s included and what to bring.' + hoursNote,
+      message: 'Which experience would you like to know about? Choose a tour below and I\'ll detail what\'s included and what to bring:' + hoursNote,
       quickReplies: ['Safari Blue', 'Mnemba snorkeling', 'Stone Town tour', 'Sunset dhow cruise'],
       requestContact: false,
     };
@@ -283,8 +295,26 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   // ---- payments intent ----
   if (intent === 'payments') {
     return {
-      message: '**Payment methods:**\n\n• **Cash (USD)**: accepted on the day of the tour — bring clean, post-2013 bills\n• **Mobile money (M-Pesa/Tigo Pesa)**: our team sends you the number after booking\n• **Bank transfer**: for advance bookings, our team provides account details\n\nAll prices are quoted in USD. No online payment processing on the website — our team confirms everything via WhatsApp.' + hoursNote,
-      quickReplies: ['Plan my trip', 'Get a quote', 'Book an experience'],
+      message: '**Payment Methods & Deposit Policy:**\n\n' +
+        '• **Airport & Hotel Transfers**: Zero advance deposit — reserve with peace of mind and pay your private driver on arrival (USD cash or card).\n' +
+        '• **Sea Tours & Boat Charters (Safari Blue, Mnemba, Prison Island + Nakupenda, Catamaran)**: 20% advance deposit via secure payment link (Visa/Mastercard via DPO or Pesapal) to lock in your boat captain, fuel, and morning fresh seafood market procurement. The remaining 80% balance is paid on the day of the tour.\n' +
+        '• **Fly-in Safaris (Serengeti, Nyerere)**: 30% advance deposit to secure non-refundable scheduled domestic airline seats and TANAPA national park entry permits.\n' +
+        '• **Captain\'s Weather Guarantee**: If sea conditions or weather prevent sailing, you receive an immediate **100% full refund** or priority rescheduling!' + hoursNote,
+      quickReplies: ['Cancellation policy', 'Plan my trip', 'Book an experience'],
+      requestContact: false,
+    };
+  }
+
+  // ---- cancellation intent ----
+  if (intent === 'cancellation') {
+    return {
+      message: '**Cancellation & Weather Policy:**\n\n' +
+        '• **Transfers & Land Walking Tours**: 100% free cancellation up to 12 hours before pickup.\n' +
+        '• **Sea Tours & Boat Charters (Safari Blue, Mnemba, Prison Island)**: 100% free cancellation up to **24 hours before pickup** with a full refund of your deposit. Within 24 hours, the 20% deposit is retained to cover pre-paid boat captain bookings, fuel, and fresh seafood market procurement.\n' +
+        '• **Captain\'s Weather Guarantee**: In the event of adverse sea conditions, swells, or weather advisories from the Zanzibar Maritime Authority, we offer an immediate **100% full refund** or complimentary rescheduling.\n' +
+        '• **Fly-in Safaris**: Governed by scheduled domestic airline cancellation and TANAPA national park rules.\n\n' +
+        'Our team manages all adjustments swiftly on WhatsApp: +255 672 450 934.' + hoursNote,
+      quickReplies: ['Plan my trip', 'Payment methods', 'Book an experience'],
       requestContact: false,
     };
   }
@@ -320,22 +350,41 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   }
 
   if (intent === 'quote') {
+    let targetSlug = null;
     const slugs = matchServices(text);
     if (slugs.length > 0) {
-      const svc = getService(slugs[0]);
+      targetSlug = slugs[0];
+    } else if (profile.activeSlug && profile.activeSlug !== 'general') {
+      targetSlug = profile.activeSlug;
+    } else if (Array.isArray(profile.serviceSlugs) && profile.serviceSlugs.length > 0) {
+      targetSlug = profile.serviceSlugs[0];
+    }
+
+    if (targetSlug) {
+      const svc = getService(targetSlug);
       if (svc && svc.pricing && svc.pricing.min != null) {
-        const quote = getQuote({ serviceSlug: slugs[0], adults: profile.adults || 2 });
+        const quote = getQuote({ serviceSlug: targetSlug, adults: profile.adults || 2 });
         const waMsg = 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.';
         const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
         const inc = (svc.includes || []).join(', ') || 'Licensed guide, gear & marine fees';
+
+        const isSeaTour = ['safari-blue', 'mnemba-snorkeling', 'prison-island-nakupenda', 'nakupenda-sandbank', 'kizimkazi-dolphin-tour', 'sunset-dhow-cruise', 'chumbe-island'].includes(svc.slug);
+        const isSafari = svc.category === 'safari' || (svc.slug.includes('safari') && !svc.slug.includes('safari-blue'));
+
+        const depositNotice = isSafari
+          ? '(30% advance deposit locks scheduled domestic flights & TANAPA permits)'
+          : isSeaTour
+            ? '(20% advance deposit locks boat captain & fresh seafood lunch, backed by our 100% Weather Guarantee)'
+            : '(zero advance deposit — pay on arrival)';
+
         return {
           message: '**' + svc.name + '**\n\n' +
             '• **Planning Rate:** ' + svc.pricing.display + ' ' + unitLabel(svc) + '\n' +
             '• **Duration:** ' + svc.duration + '\n' +
             '• **Includes:** ' + inc + '\n\n' +
-            'Hold your date directly with our local operations team via WhatsApp (zero advance deposit):\n\n' +
+            'Hold your date directly with our local operations team via WhatsApp ' + depositNotice + ':\n\n' +
             '[💬 Chat on WhatsApp to Confirm & Reserve](' + waUrl + ')',
-          quickReplies: ['💬 Open WhatsApp', 'What is included?', 'Check another tour', 'Airport transfers'],
+          quickReplies: ['What is included?', '💬 Open WhatsApp', 'Check another tour', 'Airport transfers'],
           requestContact: false,
           quote: quote,
           whatsapp_url: waUrl
@@ -343,8 +392,26 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
       }
     }
     return {
-      message: 'I can help with pricing and instant availability! Which experience would you like to explore?' + (afterHours && turnCount === 1 ? hoursNote : ''),
-      quickReplies: ['Safari Blue', 'Mnemba snorkeling', 'Stone Town tour', 'Airport transfer', 'Show all tours'],
+      message: 'I can help with pricing and instant availability! Which experience would you like to explore?' + hoursNote,
+      quickReplies: ['Safari Blue', 'Mnemba snorkeling', 'Stone Town tour', 'Airport transfers', 'Show all tours'],
+      requestContact: false,
+    };
+  }
+
+  if (intent === 'all_tours') {
+    const list = [
+      '• **Safari Blue / Menai Bay dhow day** — $60–$160 pp (7–9 hrs, seafood BBQ & sandbank)',
+      '• **Mnemba Atoll Snorkeling & Dolphins** — $70–$150 pp (3–6 hrs, marine reserve reefs)',
+      '• **Stone Town Historical Walking Tour** — $45–$80 pp (2–4 hrs, UNESCO heritage)',
+      '• **Prison Island & Nakupenda Sandbank** — $55–$120 pp (4–6 hrs, giant tortoises)',
+      '• **Organic Spice Farm Cultural Tour** — $30–$50 pp (2–3 hrs, tasting & village lunch)',
+      '• **Jozani Forest & Red Colobus Monkeys** — $40–$70 pp (2–4 hrs, mangrove boardwalk)',
+      '• **Sunset Dhow Sailing Cruise** — $45–$85 pp (2–3 hrs, Stone Town / Kendwa coast)',
+      '• **Private Airport & Inter-Hotel Transfers** — $35–$60 per vehicle (door-to-door)'
+    ].join('\n');
+    return {
+      message: '**Spice & Sail Zanzibar Experiences Catalogue:**\n\n' + list + '\n\nWhich experience would you like to explore or get an exact quote for?' + hoursNote,
+      quickReplies: ['Safari Blue', 'Mnemba snorkeling', 'Stone Town tour', 'Airport transfers'],
       requestContact: false,
     };
   }
@@ -367,19 +434,27 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   }
 
   if (intent === 'book') {
+    let targetSvc = null;
     const slugs = matchServices(text);
-    const targetSvc = slugs.length > 0 ? getService(slugs[0]) : null;
+    if (slugs.length > 0) {
+      targetSvc = getService(slugs[0]);
+    } else if (profile.activeSlug && profile.activeSlug !== 'general') {
+      targetSvc = getService(profile.activeSlug);
+    } else if (Array.isArray(profile.serviceSlugs) && profile.serviceSlugs.length > 0) {
+      targetSvc = getService(profile.serviceSlugs[0]);
+    }
+
     const svcName = targetSvc ? targetSvc.name : 'a Zanzibar experience';
     const waMsg = 'Jambo Spice & Sail! I would like to reserve ' + svcName + (profile.adults ? ' for ' + profile.adults + ' guests' : '') + (profile.dates ? ' on ' + profile.dates : '') + '.';
     const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
     
     return {
-      message: '**Reserve with Zero Advance Deposit**\n\n' +
-        'We make booking effortless with zero prepayment to hold dates:\n' +
-        '1. Chat with our local operations team on WhatsApp.\n' +
-        '2. Confirm your date, hotel pickup, and group size.\n' +
-        '3. Your driver and guide details are confirmed.\n' +
-        '4. Pay on arrival (USD cash or mobile money).\n\n' +
+      message: '**Reserve Your Zanzibar Experience**\n\n' +
+        'Our transparent booking process:\n' +
+        '1. **Airport & Hotel Transfers**: Zero advance deposit — reserve with peace of mind and pay your driver on arrival.\n' +
+        '2. **Sea Tours & Boat Charters (Safari Blue, Mnemba, Nakupenda, Catamaran)**: 20% confirmation deposit via secure payment link (Visa/Mastercard) to secure your boat captain, fuel, and morning fresh seafood procurement. Balance paid on tour day.\n' +
+        '3. **Fly-in Safaris**: 30% advance deposit to lock domestic flights and TANAPA national park permits.\n' +
+        '4. **Captain\'s Weather Guarantee**: 100% full refund or priority reschedule if weather/sea conditions prevent sailing.\n\n' +
         '[💬 Open WhatsApp to Reserve (' + svcName + ')](' + waUrl + ')',
       quickReplies: ['💬 Open WhatsApp', 'View all tours', 'Airport transfers', 'Travel info'],
       requestContact: false,
@@ -425,8 +500,13 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
 
   if (intent === 'info') {
     return {
-      message: 'Here\'s what I can tell you:\n\n• **Visa**: Ordinary single-entry tourist visa is $50 USD on arrival (US passport holders require $100 multiple-entry; referral nationalities require advance online clearance via visa.immigration.go.tz)\n• **Mandatory Insurance**: Foreign visitors entering Zanzibar require official Zanzibar Inbound Insurance ($44 adult / $22 child via visitzanzibar.go.tz). For itineraries entering mainland Tanzania first (e.g. DAR/JRO), follow the mainland first point of entry statutory provider\n• **Hotel tax**: Tiered ZRA municipal levy collected directly at hotel check-in/out: $2 (1-star), $4 (2–3 star), $5 (4–5 star), and $10/night for private island suites\n• **Health**: Consult your doctor regarding malaria prophylaxis. Yellow fever certificate required if arriving from an endemic transmission area.\n\n_For official statutory requirements, always verify details with official government portals._' + hoursNote,
-      quickReplies: ['Plan my trip', 'Get a quote', 'Ask something else'],
+      message: '**Zanzibar Entry & Travel Information:**\n\n' +
+        '• **Tourist Visa**: Standard tourist visa is $50 USD on arrival (US passport holders require $100 multiple-entry; referral nationalities require advance online clearance via visa.immigration.go.tz).\n' +
+        '• **Mandatory Zanzibar Travel Insurance**: Mandatory for foreign visitors entering Zanzibar ($44 adult / $22 child via visitzanzibar.go.tz).\n' +
+        '• **Currency & Cash**: US Dollars (clean, crisp notes printed post-2013 per Tanzanian banking rules) and Tanzanian Shillings (TZS) are standard. Cards are widely accepted for tours.\n' +
+        '• **Health & Vaccines**: Yellow fever certificate is only required if arriving from or transiting through an endemic transmission country (>12h). Malaria prophylaxis is recommended.\n' +
+        '• **Cultural Dress Code**: Modest clothing (covering shoulders and knees) is respectful when walking through Stone Town, local fishing villages, and spice farms.' + hoursNote,
+      quickReplies: ['Airport transfers', 'Get a quote', 'Show all tours'],
       requestContact: false,
     };
   }
@@ -435,6 +515,14 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     return {
       message: 'Our team is available **Monday to Saturday, 08:00–18:00** (East Africa Time). ' + (afterHours ? 'We\'re currently offline — messages will be answered the next business morning.' : 'We\'re online right now and reply ' + replyWindow + '.') + '\n\nYou can also reach us on WhatsApp: +255 672 450 934',
       quickReplies: ['Plan my trip', 'Get a quote'],
+      requestContact: false,
+    };
+  }
+
+  if (intent === 'language') {
+    return {
+      message: 'All standard Spice & Sail tours and private transfers are guided in fluent English and Swahili.\n\nWe also offer certified multilingual Zanzibari drivers and tour guides fluent in **Italian, German, French, and Polish** upon advance request for an additional fee.\n\nPlease let our team know your language preference when requesting your quote so we can reserve your dedicated guide in advance.' + hoursNote,
+      quickReplies: ['Book on WhatsApp', 'Request a transfer', 'Recommend tours'],
       requestContact: false,
     };
   }
@@ -509,11 +597,27 @@ exports.handler = async function (event) {
   const extracted = extractEntities(userMessage, profile);
   const mergedProfile = mergeProfile(profile, extracted);
 
-  // Track matched services across conversation (accumulate unique services)
+  // Track matched services across conversation:
+  // - discussed_services: records all unique services touched in conversation
+  // - activeSlug / serviceSlugs: focused target service for the current turn (prevents stale accumulation)
   const matchedSlugs = matchServices(userMessage);
-  const existingSlugs = Array.isArray(profile.serviceSlugs) ? profile.serviceSlugs : [];
-  if (matchedSlugs.length > 0 || existingSlugs.length > 0) {
-    mergedProfile.serviceSlugs = [...new Set([...existingSlugs, ...matchedSlugs])].slice(0, 5);
+  const existingDiscussed = Array.isArray(profile.discussed_services)
+    ? profile.discussed_services
+    : (Array.isArray(profile.serviceSlugs) ? profile.serviceSlugs : []);
+  if (matchedSlugs.length > 0 || existingDiscussed.length > 0) {
+    mergedProfile.discussed_services = [...new Set([...existingDiscussed, ...matchedSlugs])].slice(0, 10);
+  }
+  if (matchedSlugs.length > 0) {
+    mergedProfile.activeSlug = matchedSlugs[0];
+    mergedProfile.serviceSlugs = matchedSlugs;
+  } else if (profile.activeSlug) {
+    mergedProfile.activeSlug = profile.activeSlug;
+    mergedProfile.serviceSlugs = [profile.activeSlug];
+  } else if (existingDiscussed.length > 0) {
+    mergedProfile.activeSlug = existingDiscussed[existingDiscussed.length - 1];
+    mergedProfile.serviceSlugs = [mergedProfile.activeSlug];
+  } else {
+    mergedProfile.serviceSlugs = [];
   }
 
   // Count conversation turns from history
@@ -571,7 +675,10 @@ exports.handler = async function (event) {
   };
 
   if (isTerminal) {
-    responseBody.whatsapp_url = buildWhatsAppUrl(mergedProfile, mergedProfile.serviceSlugs || matchedSlugs);
+    const targetSlugs = matchedSlugs.length > 0
+      ? matchedSlugs
+      : (mergedProfile.activeSlug ? [mergedProfile.activeSlug] : (mergedProfile.serviceSlugs || []));
+    responseBody.whatsapp_url = buildWhatsAppUrl(mergedProfile, targetSlugs);
     // Append a WhatsApp prompt to the message if not already mentioning WhatsApp handoff
     if (!finalReply.message.includes('WhatsApp')) {
       responseBody.message += '\n\nReady to book? Click the WhatsApp button below to send your request directly to our team!';
