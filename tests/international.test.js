@@ -70,3 +70,13 @@ test('international: multilingual driver/guide policy is documented in transfers
   const chatCode = fs.readFileSync(path.join(ROOT, 'netlify', 'functions', 'chat.js'), 'utf8');
   assert.ok(chatCode.includes("intent === 'language'"), 'chat.js must handle language intent');
 });
+
+test('international: transfers page and airport-to-nungwi do not have hardcoded USD next to dynamic prices', () => {
+  const transfersHtml = fs.readFileSync(path.join(ROOT, 'src', 'pages', 'transfers.njk'), 'utf8');
+  assert.ok(!transfersHtml.includes('>USD (per private vehicle'), 'transfers.njk must not hardcode >USD next to calculator price');
+  assert.ok(transfersHtml.includes('id="calc-curr-code"'), 'transfers.njk must contain dynamic currency code element');
+
+  const nungwiHtml = fs.readFileSync(path.join(ROOT, 'src', 'pages', 'transfers', 'airport-to-nungwi.njk'), 'utf8');
+  assert.ok(!nungwiHtml.includes('catPrice "airport-transfer-znz-to-nungwikendwa" %} USD'), 'airport-to-nungwi.njk must not append literal USD to catPrice');
+});
+

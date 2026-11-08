@@ -92,62 +92,64 @@
   }
 
   function scanAndTagUsdPrices() {
-    // Scan common price container elements once to attach base USD values
+    // Scan common price container elements to attach base USD values for all prices
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
     var node;
-    var priceRangeRe = /\$([0-9]{1,4})\s*[–-]\s*\$([0-9]{1,4})/;
-    var singlePriceRe = /\$([0-9]{1,4})(?!\s*[–-])/;
+    // Matches: $50–$60, $50-$60, $50–60, $44, $5.00, $50–$60 USD, etc.
+    var priceTokenRe = /\$([0-9]{1,4}(?:\.[0-9]{2})?)(?:\s*[–-]\s*\$?([0-9]{1,4}(?:\.[0-9]{2})?))?(?:\s*USD)?/g;
+    var nodesToProcess = [];
 
-    var nodesToWrap = [];
     while ((node = walker.nextNode())) {
       var txt = node.nodeValue;
       if (!txt || txt.indexOf('$') === -1) continue;
-      // Skip script/style
+      // Skip script/style/option and elements marked to ignore
       var parent = node.parentElement;
-      if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.classList.contains('sns-price-tag')) continue;
+      if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.tagName === 'OPTION') continue;
+      if (parent.classList.contains('sns-price-tag') || (parent.closest && parent.closest('.sns-price-tag'))) continue;
+      if (parent.classList.contains('sns-no-convert') || (parent.closest && parent.closest('.sns-no-convert'))) continue;
 
-      if (priceRangeRe.test(txt)) {
-        nodesToWrap.push({ node: node, type: 'range' });
-      } else if (singlePriceRe.test(txt)) {
-        nodesToWrap.push({ node: node, type: 'single' });
-      }
+      nodesToProcess.push(node);
     }
 
-    nodesToWrap.forEach(function(item) {
-      var n = item.node;
+    nodesToProcess.forEach(function(n) {
       var text = n.nodeValue;
-      var span = document.createElement('span');
-      if (item.type === 'range') {
-        var m = text.match(priceRangeRe);
-        if (m) {
-          var min = parseFloat(m[1]);
-          var max = parseFloat(m[2]);
-          span.className = 'sns-price-tag';
+      if (!text || text.indexOf('$') === -1) return;
+      priceTokenRe.lastIndex = 0;
+      var match;
+      var lastIndex = 0;
+      var frag = document.createDocumentFragment();
+      var found = false;
+
+      while ((match = priceTokenRe.exec(text)) !== null) {
+        found = true;
+        var matchIndex = match.index;
+        if (matchIndex > lastIndex) {
+          frag.appendChild(document.createTextNode(text.substring(lastIndex, matchIndex)));
+        }
+        var min = parseFloat(match[1]);
+        var isRange = match[2] !== undefined && match[2] !== '';
+        var max = isRange ? parseFloat(match[2]) : null;
+
+        var span = document.createElement('span');
+        span.className = 'sns-price-tag';
+        if (isRange) {
           span.setAttribute('data-usd-min', min);
           span.setAttribute('data-usd-max', max);
           span.textContent = formatRangeConverted(min, max, currentCurrency);
-          
-          var parts = text.split(m[0]);
-          var frag = document.createDocumentFragment();
-          if (parts[0]) frag.appendChild(document.createTextNode(parts[0]));
-          frag.appendChild(span);
-          if (parts[1]) frag.appendChild(document.createTextNode(parts[1]));
-          if (n.parentNode) n.parentNode.replaceChild(frag, n);
+        } else {
+          span.setAttribute('data-usd-val', min);
+          span.textContent = formatConverted(min, currentCurrency);
         }
-      } else if (item.type === 'single') {
-        var sm = text.match(singlePriceRe);
-        if (sm) {
-          var val = parseFloat(sm[1]);
-          span.className = 'sns-price-tag';
-          span.setAttribute('data-usd-val', val);
-          span.textContent = formatConverted(val, currentCurrency);
+        frag.appendChild(span);
+        lastIndex = priceTokenRe.lastIndex;
+      }
 
-          var sparts = text.split(sm[0]);
-          var sfrag = document.createDocumentFragment();
-          if (sparts[0]) sfrag.appendChild(document.createTextNode(sparts[0]));
-          sfrag.appendChild(span);
-          if (sparts[1]) sfrag.appendChild(document.createTextNode(sparts[1]));
-          if (n.parentNode) n.parentNode.replaceChild(sfrag, n);
+      if (found) {
+        if (lastIndex < text.length) {
+          frag.appendChild(document.createTextNode(text.substring(lastIndex)));
+        }
+        if (n.parentNode) {
+          n.parentNode.replaceChild(frag, n);
         }
       }
     });
@@ -189,6 +191,12 @@
         }
       }
     }
+
+    // Update currency code displays if any
+    var currCodeEls = document.querySelectorAll('.sns-curr-code, #calc-curr-code');
+    currCodeEls.forEach(function(el) {
+      el.textContent = currency;
+    });
 
     // Dispatch event for any interactive widget
     window.dispatchEvent(new CustomEvent('spice:currency-changed', {

@@ -141,7 +141,7 @@ permalink: "/transfers/index.html"
             <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold, #D4AF37); font-weight: 700; display: block; margin-bottom: 0.25rem;">Catalogue Planning Range</span>
             <div style="display: flex; align-items: baseline; gap: 0.75rem;">
               <span id="calc-fare-display" style="font-size: 2.5rem; font-weight: 800; color: #ffffff; line-height: 1;">{% catPrice "airport-transfer-znz-to-nungwikendwa" %}</span>
-              <span style="color: #94a3b8; font-size: 0.95rem;">USD (per private vehicle, up to 4 guests)</span>
+              <span style="color: #94a3b8; font-size: 0.95rem;">(<span id="calc-curr-code">USD</span> per private vehicle, up to 4 guests)</span>
             </div>
             <p id="calc-route-summary" style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: #cbd5e1;">ZNZ Airport → Nungwi / Kendwa • 2 passenger(s) • {% catPrice "airport-transfer-znz-to-nungwikendwa" %} planning range — our team confirms the final rate.</p>
             <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #34d399;">
@@ -342,8 +342,19 @@ permalink: "/transfers/index.html"
       const flightVal = flightEl && flightEl.value.trim() ? ' (' + flightEl.value.trim() + ')' : '';
 
       // Accurate route-dependent planning fare
-      const baseFare = calculateFare(pickup, destKey);
+      const nums = getFareNumbers(pickup, destKey);
+      const currCode = window.SpiceInternational ? window.SpiceInternational.getCurrency() : 'USD';
+      const baseFare = window.SpiceInternational
+        ? window.SpiceInternational.formatRangeConverted(nums[0], nums[1], currCode)
+        : '$' + nums[0] + '–$' + nums[1];
+
       fareDisplayEl.textContent = baseFare;
+      fareDisplayEl.setAttribute('data-usd-min', nums[0]);
+      fareDisplayEl.setAttribute('data-usd-max', nums[1]);
+
+      const currCodeEl = document.getElementById('calc-curr-code');
+      if (currCodeEl) currCodeEl.textContent = currCode;
+
       routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + baseFare + ' planning range — our team confirms the final rate.';
 
       var lang = window.SpiceInternational ? window.SpiceInternational.getLanguage() : 'en';
@@ -380,9 +391,16 @@ permalink: "/transfers/index.html"
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ serviceSlug: slug, adults: parseInt(paxCount, 10) || 1, children: 0, date: dateVal && dateVal !== 'Upcoming date' ? dateVal : null })
       }).then(function (r) { return r.json(); }).then(function (q) {
-        if (q && q.status === 'quoted' && q.totalDisplay) {
-          fareDisplayEl.textContent = q.totalDisplay;
-          routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + (q.totalDisplay) + ' planning range — our team confirms the final rate.';
+        if (q && q.status === 'quoted') {
+          const currentCurr = window.SpiceInternational ? window.SpiceInternational.getCurrency() : 'USD';
+          let displayFare = q.totalDisplay;
+          if (window.SpiceInternational && q.totalLow != null && q.totalHigh != null) {
+            displayFare = window.SpiceInternational.formatRangeConverted(q.totalLow, q.totalHigh, currentCurr);
+            fareDisplayEl.setAttribute('data-usd-min', q.totalLow);
+            fareDisplayEl.setAttribute('data-usd-max', q.totalHigh);
+          }
+          fareDisplayEl.textContent = displayFare;
+          routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + displayFare + ' planning range — our team confirms the final rate.';
         } else if (q && q.reasons && q.reasons.length) {
           fareDisplayEl.textContent = baseFare;
           routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + q.reasons.join(' ');
