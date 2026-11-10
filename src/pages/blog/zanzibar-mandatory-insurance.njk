@@ -7,12 +7,17 @@ permalink: "/blog/zanzibar-mandatory-insurance/index.html"
 {% include "header.njk" %}
 
 <main class="content">
-  <article style="max-width: 850px; margin: 0 auto; padding: 3rem 1.5rem;">
-    <header style="margin-bottom: 2.5rem; text-align: center;">
+  {% set featured = page.inputPath | featuredImage %}
+  {% set cdnSrc = page.inputPath | cdnImage %}
+  <header class="page-header" style="background: linear-gradient(135deg, rgba(12,26,36,0.85), rgba(0,56,83,0.85)), url('{{ cdnSrc }}') center/cover no-repeat; color: #fff; padding: 5rem 1.5rem;">
+    <div class="container" style="max-width: 800px;">
       <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Official Requirement 2026</span>
-      <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; color: #0C1A24; margin-bottom: 1rem;">Zanzibar Mandatory Travel Insurance (ZIC) 2026 — Complete Guide</h1>
-      <p style="font-size: 1.1rem; color: #5c727f; max-width: 700px; margin: 0 auto;">$44/adult, $22/child (3–17). Official government requirement since Oct 2024. Step-by-step purchase guide, coverage details, exemptions, and FAQs. Buy at <a href="https://inbound.visitzanzibar.go.tz" target="_blank" rel="noopener" style="color: #005f8a; text-decoration: underline;">inbound.visitzanzibar.go.tz</a>.</p>
-    </header>
+      <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; color: #fff; margin-bottom: 1rem;">Zanzibar Mandatory Travel Insurance (ZIC) 2026 — Complete Guide</h1>
+      <p style="font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto;">$44/adult, $22/child (3–17). Official government requirement since Oct 2024. Step-by-step purchase guide, coverage details, exemptions, and FAQs. Buy at <a href="https://inbound.visitzanzibar.go.tz" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">inbound.visitzanzibar.go.tz</a>.</p>
+    </div>
+  </header>
+
+  <article style="max-width: 850px; margin: 0 auto; padding: 3rem 1.5rem;">
 
     <section style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2.5rem;">
       <h2 style="font-size: 1.2rem; color: #92400e; margin-bottom: 0.75rem;">⚠️ THIS IS MANDATORY — No Exceptions for Tourists</h2>

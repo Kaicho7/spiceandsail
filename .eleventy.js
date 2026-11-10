@@ -61,7 +61,7 @@ module.exports = function(eleventyConfig) {
   // Map tour slug → existing image filename (1-to-1 mandatory verified assets)
   const slugMap = {
     "stone-town-walking-tour": "stone-town-guided-walking-tour-zanzibar.jpg",
-    "stone-town-spice-prison-combo": "giant-tortoises-rocky-terrain.jpg",
+    "stone-town-spice-prison-combo": "aldabra-giant-tortoise-changuu-island.jpg",
     "spice-farm": "zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg",
     "village-community-tour": "child-walking-dirt-path-village.jpg",
     "safari-blue": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg",
@@ -75,8 +75,27 @@ module.exports = function(eleventyConfig) {
     "kuza-cave-seaweed": "people-swimming-turquoise-water-steps.jpg",
     "mikumi-nyerere-day-safari": "mikumi-day-trip-safari-from-zanzibar.jpg",
     "serengeti-3day-flyin": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
-    "zanzibar-essentials-3day": "zanzibar-beach-palm-trees-thatched-huts.jpg",
+    "zanzibar-essentials-3day": "aerial-beach-boat-turquoise-water.jpg",
     "zanzibar-essentials-3-day-pass": "tourists-waving-dhow-boat-sea.jpg"
+  };
+
+  // Map blog slug → existing image filename for blog post hero images
+  const blogSlugMap = {
+    "best-time-to-visit-zanzibar": "aerial-beach-zanzibar-turquoise-water.jpg",
+    "nungwi-vs-kendwa": "nungwi-beach-aerial-resort-turquoise-water.jpg",
+    "packing-guide-zanzibar": "beach-walk-person-colorful-dress.jpg",
+    "responsible-tourism-zanzibar": "women-walking-beach-zanzibar-village.jpg",
+    "safari-blue-vs-mnemba-snorkeling": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg",
+    "safari-from-zanzibar-guide": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
+    "stone-town-walking-tour-guide": "stone-town-walking-tour-people-photograph.jpg",
+    "zanzibar-airport-transfer-cost-2026": "white-minivan-zanzibar-transfer-vehicle.jpg",
+    "zanzibar-airport-transfer-guide": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
+    "zanzibar-in-december": "dhow-sail-sunset-zanzibar-water.jpg",
+    "zanzibar-itinerary-3-days": "aerial-coastal-town-beach-turquoise-water.jpg",
+    "zanzibar-itinerary-5-days": "aerial-beach-boat-turquoise-water.jpg",
+    "zanzibar-itinerary-7-days": "zanzibar-beach-palm-trees-thatched-huts.jpg",
+    "zanzibar-mandatory-insurance": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
+    "zanzibar-marine-fees-explained": "underwater-fish-coral-reef-zanzibar.jpg"
   };
 
   // Map area zone name → existing image filename (for /areas/ cards and zone pages)
@@ -465,6 +484,21 @@ module.exports = function(eleventyConfig) {
       const pool = zoneFiles[zoneKey] || [zoneImage[zoneKey] || "default-tour-hero.jpg"];
       featuredImage = pool[0];
       featuredAlt = metadataIndex[featuredImage]?.alt_text || "";
+    }
+
+    // Blog pages: use blogSlugMap for hero images
+    if (tourPath.startsWith("pages/blog/")) {
+      const blogSlug = tourPath.replace("pages/blog/", "").replace(/\.(njk|md)$/, "");
+      if (blogSlugMap[blogSlug]) {
+        const mapSlug = blogSlugMap[blogSlug];
+        if (metadataIndex[mapSlug]) {
+          featuredImage = metadataIndex[mapSlug].file || mapSlug;
+          featuredAlt = metadataIndex[mapSlug].alt_text || "";
+        } else {
+          featuredImage = mapSlug;
+          featuredAlt = "";
+        }
+      }
     }
 
     if (!featuredImage && tourPath) {

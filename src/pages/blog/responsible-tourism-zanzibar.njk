@@ -7,12 +7,17 @@ permalink: "/blog/responsible-tourism-zanzibar/index.html"
 {% include "header.njk" %}
 
 <main class="content">
-  <article style="max-width: 850px; margin: 0 auto; padding: 3rem 1.5rem;">
-    <header style="margin-bottom: 2.5rem; text-align: center;">
+  {% set featured = page.inputPath | featuredImage %}
+  {% set cdnSrc = page.inputPath | cdnImage %}
+  <header class="page-header" style="background: linear-gradient(135deg, rgba(12,26,36,0.85), rgba(0,56,83,0.85)), url('{{ cdnSrc }}') center/cover no-repeat; color: #fff; padding: 5rem 1.5rem;">
+    <div class="container" style="max-width: 800px;">
       <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Ethical Travel 2026</span>
-      <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; color: #0C1A24; margin-bottom: 1rem;">Responsible Tourism in Zanzibar — Ethical Travel Guide for Conscious Visitors</h1>
-      <p style="font-size: 1.1rem; color: #5c727f; max-width: 700px; margin: 0 auto;">How to ensure your Zanzibar trip benefits local communities, protects marine life, respects culture, and leaves a positive footprint. Practical choices for conscious travelers.</p>
-    </header>
+      <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; color: #fff; margin-bottom: 1rem;">Responsible Tourism in Zanzibar — Ethical Travel Guide for Conscious Visitors</h1>
+      <p style="font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto;">How to ensure your Zanzibar trip benefits local communities, protects marine life, respects culture, and leaves a positive footprint. Practical choices for conscious travelers.</p>
+    </div>
+  </header>
+
+  <article style="max-width: 850px; margin: 0 auto; padding: 3rem 1.5rem;">
 
     <section style="background: #ecfdf5; border-left: 4px solid #059669; padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2.5rem;">
       <h2 style="font-size: 1.2rem; color: #065f46; margin-bottom: 0.75rem;">Our Responsible Tourism Commitment</h2>

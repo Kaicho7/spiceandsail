@@ -7,8 +7,12 @@ permalink: "/blog/zanzibar-airport-transfer-guide.html"
 {% include "header.njk" %}
 
 <main class="content">
-  <header class="page-header">
-    <h1>Zanzibar Airport Transfer Guide</h1>
+  {% set featured = page.inputPath | featuredImage %}
+  {% set cdnSrc = page.inputPath | cdnImage %}
+  <header class="page-header" style="background: linear-gradient(135deg, rgba(12,26,36,0.85), rgba(0,56,83,0.85)), url('{{ cdnSrc }}') center/cover no-repeat; color: #fff; padding: 5rem 1.5rem;">
+    <div class="container" style="max-width: 800px;">
+      <h1>Zanzibar Airport Transfer Guide</h1>
+    </div>
   </header>
 
   <section class="section">

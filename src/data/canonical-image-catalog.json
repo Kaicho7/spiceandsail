@@ -14500,5 +14500,39 @@
       "wildlife",
       "gallery"
     ]
+  },
+  "suzuki-grand-vitara-4x4-rental-zanzibar.jpg": {
+    "file": "suzuki-grand-vitara-4x4-rental-zanzibar.jpg",
+    "alt_text": "Silver Suzuki Grand Vitara 4x4 compact SUV rental for coastal self-drive exploration in Zanzibar.",
+    "category": "self-drive",
+    "activity": "self-drive",
+    "place": "zanzibar",
+    "subject": "Suzuki Grand Vitara 4x4 coastal SUV rental",
+    "quality_score": 5,
+    "width": 2249,
+    "height": 1665,
+    "bytes": 316416,
+    "subcategory": "vehicle",
+    "description": "Reliable 4x4 compact SUV rental vehicle ideal for exploring Zanzibar rugged beach tracks, coral roads, and coastal villages.",
+    "primary_use": [
+      "self-drive"
+    ]
+  },
+  "vespa-sprint-scooter-rental-zanzibar.jpg": {
+    "file": "vespa-sprint-scooter-rental-zanzibar.jpg",
+    "alt_text": "Classic Vespa scooter rental parked for easy coastal and Stone Town two-wheel island exploration.",
+    "category": "self-drive",
+    "activity": "self-drive",
+    "place": "stone-town",
+    "subject": "Vespa scooter rental in Zanzibar",
+    "quality_score": 5,
+    "width": 4896,
+    "height": 3672,
+    "bytes": 1153434,
+    "subcategory": "vehicle",
+    "description": "Modern Vespa scooter moped rental perfect for zipping through Stone Town historical streets and cruising coastal beach avenues.",
+    "primary_use": [
+      "self-drive"
+    ]
   }
 }
