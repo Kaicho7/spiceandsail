@@ -30,6 +30,24 @@
 <link rel="icon" type="image/svg+xml" sizes="16x16" href="/images/favicon-16x16.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+{% if alternate_it or alternate_de or alternate_en %}
+{% set langCode = lang or 'en' %}
+{% set currentUrl = SITE_URL + page.url %}
+{% if langCode == 'en' %}
+<link rel="alternate" hreflang="en" href="{{ currentUrl }}">
+{% if alternate_it %}<link rel="alternate" hreflang="it" href="{{ alternate_it }}">{% endif %}
+{% if alternate_de %}<link rel="alternate" hreflang="de" href="{{ alternate_de }}">{% endif %}
+{% elif langCode == 'it' %}
+<link rel="alternate" hreflang="it" href="{{ currentUrl }}">
+{% if alternate_en %}<link rel="alternate" hreflang="en" href="{{ alternate_en }}">{% endif %}
+{% if alternate_de %}<link rel="alternate" hreflang="de" href="{{ alternate_de }}">{% endif %}
+{% elif langCode == 'de' %}
+<link rel="alternate" hreflang="de" href="{{ currentUrl }}">
+{% if alternate_en %}<link rel="alternate" hreflang="en" href="{{ alternate_en }}">{% endif %}
+{% if alternate_it %}<link rel="alternate" hreflang="it" href="{{ alternate_it }}">{% endif %}
+{% endif %}
+<link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}/">
+{% endif %}
 
 {% if site.ga_measurement_id %}
 <!-- Google tag (gtag.js) - GA4 -->
@@ -112,66 +130,35 @@
       }
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": "{{ SITE_URL | safe }}{{ page.url }}#breadcrumbs",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{{ SITE_URL | safe }}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Tours",
-          "item": "{{ SITE_URL | safe }}/tours/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "{{ pageTitle }}"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "{{ SITE_URL | safe }}{{ page.url }}#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How do I book and when do I pay for this tour?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Booking is fast and flexible via WhatsApp (+255 672 450 934). Send us your preferred dates, hotel location, and group size. Zero upfront deposit required for standard day tours — pay upon meeting your guide in cash (USD or TZS) or via secure card payment link."
+      "@type": "TouristTrip",
+      "@id": "{{ SITE_URL | safe }}{{ page.url }}#touristtrip",
+      "name": "{{ pageTitle }}",
+      "description": "{{ pageDesc }}",
+      "image": "{{ SITE_URL | safe }}{{ ogImage }}",
+      "touristType": "Leisure",
+      "itinerary": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "TouristAttraction",
+              "name": "{{ pageTitle }}",
+              "description": "{{ pageDesc }}"
+            }
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Are government marine conservation and park fees included?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! All official Zanzibar government conservation fees and permits are fully included upfront in our planning rates with zero surprise cash demands at the boat or park gates."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the cancellation and bad weather policy?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We provide 100% free cancellation or rescheduling up to 24 hours prior to tour departure, as well as complimentary rescheduling or a full refund if marine weather makes boat crossings unsafe."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is hotel pickup and drop-off available across Zanzibar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, private air-conditioned vehicle transfers can be bundled door-to-door from any hotel across Stone Town, Nungwi, Kendwa, Paje, Jambiani, Kiwengwa, and Matemwe."
-          }
-        }
-      ]
-    }{% elseif page.url != '/' %},
+        ]
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": {{ tour_slug | catMin }},
+        "highPrice": {{ tour_slug | catMax }},
+        "availability": "https://schema.org/InStock",
+        "url": "{{ SITE_URL | safe }}{{ page.url }}"
+      }
+    }{% endif %}{% if page.url != '/' and not tour_slug %},
     {
       "@type": "BreadcrumbList",
       "@id": "{{ SITE_URL | safe }}{{ page.url }}#breadcrumbs",
@@ -192,3 +179,4 @@
   ]
 }
 </script>
+</head>

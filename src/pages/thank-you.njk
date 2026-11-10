@@ -24,6 +24,10 @@ permalink: "/thank-you/index.html"
           💬 Continue to WhatsApp with Reference
         </a>
       </div>
+
+      <!-- Review Request Container -->
+      <div id="review-request-container"></div>
+
       <script>
         document.getElementById('thank-you-time').textContent =
           new Date().toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' });
@@ -39,6 +43,34 @@ permalink: "/thank-you/index.html"
             if (waBtn) waBtn.href = 'https://wa.me/255672450934?text=' + encodeURIComponent('Hello Spice and Sail! Following up on my enquiry reference: ' + ref);
           }
         } catch (e) {}
+      </script>
+
+      <!-- Review Capture Script -->
+      <script src="/js/review-capture.js"></script>
+      <script>
+        // Trigger review capture if this is a post-service thank you
+        // Check for service completion params
+        (function() {
+          var params = new URLSearchParams(window.location.search);
+          var serviceCompleted = params.get('completed') === 'true';
+          var serviceType = params.get('serviceType');
+          var serviceName = params.get('serviceName');
+          var bookingRef = params.get('ref') || params.get('bookingRef');
+          var phone = params.get('phone');
+
+          if (serviceCompleted && serviceType && serviceName && phone) {
+            // Trigger review capture
+            if (window.SpiceReviewCapture) {
+              window.SpiceReviewCapture.trigger({
+                phone: phone,
+                serviceType: serviceType,
+                serviceName: serviceName,
+                bookingRef: bookingRef,
+                language: document.documentElement.lang || 'en'
+              });
+            }
+          }
+        })();
       </script>
     </div>
   </section>

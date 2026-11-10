@@ -274,6 +274,11 @@ module.exports = function(eleventyConfig) {
     return label;
   });
 
+  // Add urlencode filter for WhatsApp message encoding
+  eleventyConfig.addFilter("urlencode", (str) => {
+    return encodeURIComponent(String(str || ""));
+  });
+
   // Deduplicate tour categories for area cards (fixes Cultural Cultural glitch)
   eleventyConfig.addNunjucksFilter("zoneCategories", function(tourSlugs, toursList) {
     if (!Array.isArray(tourSlugs) || !Array.isArray(toursList)) return [];
