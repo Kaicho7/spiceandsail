@@ -24,7 +24,7 @@ alternate_it: "https://spiceandsail.com/it/tour/spice-farm/"
         <span class="price-amount">{% catPrice "spice-farm" %}</span>
         <span class="price-note">pro Person</span>
       </div>
-      <a href="https://wa.me/255672450934?text=Hallo%21%20Ich%20m%C3%B6chte%20eine%20gew%C3%BCrzfarm-tour%20buchen" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Auf WhatsApp Buchen</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hallo%21%20Ich%20m%C3%B6chte%20eine%20gew%C3%BCrzfarm-tour%20buchen" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Auf WhatsApp Buchen</a>
     </div>
   </section>
 
@@ -145,7 +145,7 @@ alternate_it: "https://spiceandsail.com/it/tour/spice-farm/"
           <div class="price">{% catPrice tour_slug %} <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ Person</span></div>
           <h3>Bereit zu Buchen?</h3>
           <p style="opacity: 0.8; margin-bottom: 1.25rem;">Senden Sie uns Ihr Wunschdatum und die Gruppengröße per WhatsApp. Wir bestätigen mit Festpreis inklusive aller Gebühren.</p>
-          <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20ich%20m%C3%B6chte%20{{ title | urlencode }}%20buchen" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: +255 672 450 934</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20ich%20m%C3%B6chte%20{{ title | urlencode }}%20buchen" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
           <p class="note">✓ Verifizierter Planungsbereich • Meeres-Naturschutzgebühren inklusive • Keine Buchungs-Anzahlung</p>
         </div>
       </div>

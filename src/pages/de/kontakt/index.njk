@@ -30,7 +30,7 @@ alternate_it: "https://spiceandsail.com/it/contatti/"
           <div class="quick-pick-content">
             <h3>WhatsApp (Am Schnellsten)</h3>
             <p>Schreiben Sie uns direkt für Angebote, Buchungen und Fragen. Vorgefertigte Nachricht bereit.</p>
-            <a href="https://wa.me/255672450934?text=Hallo%20Ich%20m%C3%B6chte%20eine%20Sansibar%20Tour%20buchen" target="_blank" rel="noopener" class="btn btn-accent">WhatsApp Chat Öffnen</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hallo%20Ich%20m%C3%B6chte%20eine%20Sansibar%20Tour%20buchen" target="_blank" rel="noopener" class="btn btn-accent">WhatsApp Chat Öffnen</a>
           </div>
         </article>
         <article class="quick-pick reveal">
@@ -40,7 +40,7 @@ alternate_it: "https://spiceandsail.com/it/contatti/"
           <div class="quick-pick-content">
             <h3>WhatsApp für Dokumente</h3>
             <p>Für formelle Anfragen, Gruppenbuchungen oder Dokumenten-Anfragen senden Sie diese per WhatsApp — wir antworten in Minuten.</p>
-            <a href="https://wa.me/255672450934?text=Hallo%20Spice%20and%20Sail%2C%20ich%20habe%20eine%20Buchungsanfrage" target="_blank" rel="noopener" class="btn btn-primary">Auf WhatsApp Schreiben</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hallo%20Spice%20and%20Sail%2C%20ich%20habe%20eine%20Buchungsanfrage" target="_blank" rel="noopener" class="btn btn-primary">Auf WhatsApp Schreiben</a>
           </div>
         </article>
         <article class="quick-pick reveal">
@@ -50,7 +50,7 @@ alternate_it: "https://spiceandsail.com/it/contatti/"
           <div class="quick-pick-content">
             <h3>Telefon / SMS</h3>
             <p>Anrufen oder SMS während der Geschäftszeiten (8 – 18 Uhr EAT).</p>
-            <a href="tel:+255672450934" class="btn btn-secondary">+255 672 450 934</a>
+            <a href="tel:{{ site.contact.phone }}" class="btn btn-secondary">{{ site.contact.whatsapp_display }}</a>
           </div>
         </article>
       </div>
@@ -116,7 +116,7 @@ alternate_it: "https://spiceandsail.com/it/contatti/"
           <div class="form-group consent-group" style="margin: 1.25rem 0;">
             <label class="checkbox-label" style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: #4e5d66; cursor: pointer;">
               <input type="checkbox" name="consent_contact" id="consent_contact" required style="margin-top: 0.2rem;">
-              <span>Ich stimme zu, per WhatsApp/E-Mail bezüglich meiner Reiseanfrage kontaktiert zu werden, gemäß der <a href="/de/privacy/" target="_blank" style="color: var(--dct-ocean); text-decoration: underline;">Datenschutzerklärung</a>. *</span>
+              <span>Ich stimme zu, per WhatsApp/E-Mail bezüglich meiner Reiseanfrage kontaktiert zu werden, gemäß der <a href="/privacy/" target="_blank" style="color: var(--dct-ocean); text-decoration: underline;">Datenschutzerklärung</a>. *</span>
             </label>
           </div>
           <button type="submit" class="btn btn-primary btn-lg btn-full">Anfrage Senden</button>
@@ -142,7 +142,7 @@ alternate_it: "https://spiceandsail.com/it/contatti/"
             <p>Hauptbetrieb & Depot: In der Nähe von Mbuzini Krankenhaus, Mbuzini, Magharibi Distrikt, Mjini Magharibi, 71208, Sansibar, Tansania.</p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--dct-text-muted);">Bedienen alle Insel-Abholungen in Stone Town, Flughafen, Nungwi, Kendwa, Paje, Jambiani und Matemwe.</p>
             <p style="margin-top: 0.5rem;">
-              <a href="https://wa.me/255672450934" target="_blank" rel="noopener" style="color: var(--dct-ocean); font-weight: 500;">WhatsApp: +255 672 450 934</a><br>
+              <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" style="color: var(--dct-ocean); font-weight: 500;">WhatsApp: {{ site.contact.whatsapp_display }}</a><br>
               <span style="color: var(--dct-ocean); font-weight: 500;">WhatsApp-first — Antworten innerhalb Minuten</span>
             </p>
           </div>
@@ -185,12 +185,12 @@ alternate_it: "https://spiceandsail.com/it/contatti/"
     <div class="cta-content reveal">
       <h2>Schnelllinks zu Beliebten Seiten</h2>
       <div class="quick-link-grid">
-        <a href="/de/tour/" class="quick-link">Alle Touren Durchsuchen</a>
+        <a href="/tours/" class="quick-link">Alle Touren Durchsuchen</a>
         <a href="/de/transfers/" class="quick-link">Flughafentransfers</a>
         <a href="/de/pakete/" class="quick-link">Mehrtages-Pakete</a>
-        <a href="/de/hotels/" class="quick-link">Wo Übernachten</a>
-        <a href="/de/areas/" class="quick-link">Nach Zone Erkunden</a>
-        <a href="/de/about/" class="quick-link">Über Uns</a>
+        <a href="/hotels/" class="quick-link">Wo Übernachten</a>
+        <a href="/areas/" class="quick-link">Nach Zone Erkunden</a>
+        <a href="/about/" class="quick-link">Über Uns</a>
       </div>
     </div>
   </section>

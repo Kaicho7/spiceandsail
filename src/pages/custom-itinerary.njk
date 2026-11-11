@@ -94,7 +94,7 @@ permalink: /custom-itinerary/index.html
     <!-- Submit CTAs -->
     <div style="text-align: center; border-top: 1px solid #e2e8f0; padding-top: 2rem;">
       <button type="button" id="build-wa-itinerary" class="btn btn-primary btn-lg" style="background: #16a34a; border-color: #16a34a; color: white; padding: 0.85rem 2.25rem; border-radius: 8px; font-weight: 700; font-size: 1.05rem; cursor: pointer; margin-right: 0.75rem;">
-        💬 Plan on WhatsApp (+255 672 450 934)
+        💬 Plan on WhatsApp ({{ site.contact.whatsapp_display }})
       </button>
       <button type="button" onclick="window.snsConcierge && window.snsConcierge.open()" class="btn btn-secondary btn-lg" style="padding: 0.85rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 1.05rem; cursor: pointer;">
         Use Website Concierge Form
@@ -123,7 +123,7 @@ permalink: /custom-itinerary/index.html
             "• Preferred Highlights: " + (activities.join(', ') || 'Recommend top activities') + "\n\n" +
             "Please send recommended day-by-day plan and quote.";
 
-          var url = "https://wa.me/255672450934?text=" + encodeURIComponent(msg);
+          var url = "https://wa.me/{{ site.contact.whatsapp }}?text=" + encodeURIComponent(msg);
           window.open(url, '_blank', 'noopener,noreferrer');
         });
       }

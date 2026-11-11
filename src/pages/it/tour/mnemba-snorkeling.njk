@@ -24,7 +24,7 @@ alternate_de: "https://spiceandsail.com/de/tour/mnemba-snorkeling/"
         <span class="price-amount">{% catPrice "mnemba-snorkeling" %}</span>
         <span class="price-note">a persona</span>
       </div>
-      <a href="https://wa.me/255672450934?text=Ciao%21%20Vorrei%20prenotare%20snorkeling%20mnemba" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Prenota su WhatsApp</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Ciao%21%20Vorrei%20prenotare%20snorkeling%20mnemba" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Prenota su WhatsApp</a>
     </div>
   </section>
 
@@ -100,7 +100,7 @@ alternate_de: "https://spiceandsail.com/de/tour/mnemba-snorkeling/"
           <div class="price">{% catPrice tour_slug %} <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ persona</span></div>
           <h3>Pronto a Prenotare?</h3>
           <p style="opacity: 0.8; margin-bottom: 1.25rem;">Inviaci la data preferita e la dimensione del gruppo su WhatsApp. Confermeremo con prezzo fisso comprensivo di tutte le tasse.</p>
-          <a href="https://wa.me/255672450934?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20{{ title | urlencode }}" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: +255 672 450 934</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20{{ title | urlencode }}" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
           <p class="note">✓ Tasse conservazione marina incluse • 20% deposito blocca barca & attrezzatura • Garanzia Meteo 100%</p>
         </div>
       </div>

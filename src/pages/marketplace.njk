@@ -339,9 +339,9 @@ eleventyNavigation:
 
           <div class="modal-booking">
             <h3>Book this experience</h3>
-            <button class="book-activity-btn" onclick="location.href='/bookings?activity=${activity.id}'">
+            <a class="book-activity-btn" href="https://wa.me/{{ site.contact.whatsapp }}?text=${encodeURIComponent('Jambo Spice & Sail! I would like to book ' + activity.name + '.')}" target="_blank" rel="noopener">
               Book Now — $${activity.pricing.basePrice}
-            </button>
+            </a>
           </div>
         </div>
       `;

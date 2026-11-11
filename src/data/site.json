@@ -7,7 +7,26 @@
   "contact": {
     "whatsapp": "255672450934",
     "whatsapp_display": "+255 672 450 934",
+    "phone": "+255672450934",
+    "phone_display": "+255 672 450 934",
     "email": "reservations@spiceandsail.com"
+  },
+  "address": {
+    "name": "Spice & Sail Zanzibar Operations Hub",
+    "street": "Near Mbuzini Hospital, Mbuzini, Magharibi District",
+    "city": "Zanzibar City",
+    "region": "Mjini Magharibi",
+    "postal_code": "71208",
+    "country": "Tanzania",
+    "country_code": "TZ",
+    "short": "Mbuzini, Magharibi District, Zanzibar, Tanzania",
+    "display": "Near Mbuzini Hospital, Mbuzini, Magharibi District, Mjini Magharibi, 71208, Zanzibar, Tanzania"
+  },
+  "hours": {
+    "days": "Monday–Saturday",
+    "open": "08:00",
+    "close": "18:00",
+    "timezone": "EAT (UTC+3)"
   },
   "social": {
     "instagram": "",

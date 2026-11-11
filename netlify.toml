@@ -2,6 +2,9 @@
   publish = "dist"
   command = "npm install && npm run build"
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [images]
   # Netlify Image CDN — used via /.netlify/images?url=...&fm=webp&q=85
   # Serve, resize and convert images at the edge with caching.
@@ -37,17 +40,9 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "https://spiceandsail.netlify.app/*"
-  to = "https://spiceandsail.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://spiceandsail.netlify.app/*"
-  to = "https://spiceandsail.com/:splat"
-  status = 301
-  force = true
+# The Netlify preview host is intentionally not redirected: it must stay usable
+# until the custom domain is attached. Canonical-domain enforcement belongs in
+# Netlify's primary-domain setting, not in a preview-blocking redirect.
 
 [[redirects]]
   from = "/pages/thank-you/*"
@@ -159,6 +154,129 @@
 [[redirects]]
   from = "/safety-health-guide"
   to = "/health-safety/"
+  status = 301
+  force = true
+
+# Legacy localized paths without a localized page yet
+[[redirects]]
+  from = "/it/about/*"
+  to = "/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/aree/*"
+  to = "/areas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/hotel/*"
+  to = "/hotels/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/privacy/*"
+  to = "/privacy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/tour"
+  to = "/tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/tour/"
+  to = "/tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/trasferimenti/terminale-traghetti-hotel/*"
+  to = "/transfers/ferry-to-hotel/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/about/*"
+  to = "/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/areas/*"
+  to = "/areas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/hotels/*"
+  to = "/hotels/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/privacy/*"
+  to = "/privacy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/tour"
+  to = "/tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/tour/"
+  to = "/tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/transfers/ferry-to-hotel/*"
+  to = "/transfers/ferry-to-hotel/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/transfers/ferry-to-stone-town/*"
+  to = "/transfers/ferry-to-hotel/"
+  status = 301
+  force = true
+
+# Legacy booking / pricing paths
+[[redirects]]
+  from = "/pages/bookings/*"
+  to = "/tours/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/pricing-plans/*"
+  to = "/packages/"
+  status = 301
+  force = true
+
+# Blog links used short package slugs that were never generated
+[[redirects]]
+  from = "/packages/zanzibar-essentials-3-day/*"
+  to = "/packages/zanzibar-essentials-3day/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/packages/zanzibar-hidden-gems-sacred-caves/*"
+  to = "/packages/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/packages/bush-to-beach-vip-luxury/*"
+  to = "/packages/"
   status = 301
   force = true
 

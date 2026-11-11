@@ -55,7 +55,7 @@ permalink: "/areas/michamvi/index.html"
         <span class="card-price">{{ hotel.price_range or "Contact for rates" }}</span>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
           <a href="{{ hotel.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Website</a>
-          <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20inquire%20about%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20inquire%20about%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ permalink: "/areas/michamvi/index.html"
       {% if attraction.website %}
         <a href="{{ attraction.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website</a>
       {% else %}
-        <a href="https://wa.me/255672450934?text=Hi%20Spice%20and%20Sail%2C%20please%20send%20prices%20and%20a%20bookable%20slot%20for%20{{ attraction.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book via WhatsApp</a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20please%20send%20prices%20and%20a%20bookable%20slot%20for%20{{ attraction.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book via WhatsApp</a>
       {% endif %}
     </div>
   </article>

@@ -1,52 +1,52 @@
-# Spice & Sail — Progress Report
+# Spice & Sail Zanzibar
 
-**Current Status:**
-- 114/205 hotel photos downloaded (102 ok + 12 skipped) from initial seed run
-- Photo fields added to hotels.json (205 entries) ✅
-- hotelPhoto filter implemented in .eleventy.js ✅
-- Template updated to use hotelPhoto filter ✅
-- CSS tagline fix applied to .hero-tagline ✅
-- All changes committed and pushed to GitHub ✅
+Static marketing site and WhatsApp-first concierge for Spice & Sail Zanzibar.
+Built with Eleventy 2, deployed on Netlify.
 
-## Key Fixes Implemented
+## Commands
 
-1. **Photo Field Standardization**: All 205 hotels now have photo fields with mixed extensions (.jpg, .webp, .jpeg, .png)
+```bash
+npm install
+npm run build        # build dist/ and verify image references
+npm test             # node:test suite
+npm start            # Eleventy dev server
+npm run preview:local
+```
 
-2. **Per-Hotel Photo Selection**: New `hotelPhoto` filter in .eleventy.js that:
-   - Checks for downloaded photos first (in `public/images/hotels/`)
-   - Falls back to curated hotelPhotoPool for authentic hotel imagery
-   - Prioritizes authentic hotel website-sourced photos
+Node 22 is pinned in `.nvmrc` and `netlify.toml`. Environment variables are
+documented in `.env.example`.
 
-3. **CSS Tagline Visibility Fix**: Fixed `.hero-tagline { z-index: 2 }` to clear fixed header
+## Structure
 
-4. **Photo Management**: 
-   - 102 hotel photos successfully downloaded and stored
-   - 103 hotels still need authentic photos from official websites (Phase 2)
-   - Photo reconciliation script handled extension mismatches
+- `src/pages/` — Eleventy pages (EN, `it/`, `de/`)
+- `src/_includes/` — layout, SEO/JSON-LD, header, footer, tour FAQ
+- `src/data/` — site facts, catalogue, hotels, tours, packages, translations
+- `src/lib/concierge/` — deterministic replies, pricing, validation, security
+- `netlify/functions/` — chat, lead capture, review capture, admin
+- `public/images/` — source images served from `/images/`
+- `_headers` / `netlify.toml` — security headers, redirects, caching
+- `scripts/optimize-images.py` — resize/recompress oversized source images
 
-## Next Steps
+## Booking and payments
 
-Phase 2: Download remaining 103 authentic photos from hotel websites
-- Use improved download script with better error handling
-- Implement robust fallback strategy for blocked sites
-- Focus on domains with highest failure rates
-- Continue until all 205 hotels have authentic photos
+Booking is WhatsApp-first. The website does not collect card details and does
+not run a checkout. After the team confirms availability, it sends a secure
+DPO or Pesapal payment link to the guest on WhatsApp. Copy must reflect that
+flow; do not imply on-site card processing.
 
-## Files Changed in This Session
+## Contact data
 
-- `.eleventy.js`: Added hotelPhoto filter
-- `src/data/hotels.json`: Added photo fields to all 205 entries
-- `src/pages/hotels.njk`: Updated to use hotelPhoto filter
-- `download_hotel_photos.py`: Fixed download script
-- `reports/download-report.json`: Generated download report
-- Various photo files in `public/images/hotels/`
+Public contact details and opening hours live in `src/data/site.json`. Templates
+should read `site.contact`, `site.address`, and `site.hours` instead of
+hardcoding another copy.
 
-All changes have been committed and pushed to GitHub per project requirements.
+## Verification
 
-## Technical Notes
+```bash
+npm run build
+npm test
+```
 
-- Used ThreadPoolExecutor for concurrent downloads (6 workers)
-- Handled SSL verification bypass for misconfigured hotel sites
-- Added rate limiting and retry logic
-- Implemented bad keyword filtering to avoid banners/logos
-- Progress tracking via reports/download-report.json
+The build fails if an image reference in `dist/` does not resolve. The tests
+cover redirects, international pages, privacy, concierge gates, image integrity,
+and the SEO/social bindings.

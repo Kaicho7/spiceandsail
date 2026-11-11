@@ -20,7 +20,7 @@ permalink: "/thank-you/index.html"
       </div>
 
       <div style="margin-top: 1.5rem;">
-        <a id="wa-continue-btn" href="https://wa.me/255672450934" class="btn btn-accent btn-block" target="_blank" rel="noopener">
+        <a id="wa-continue-btn" href="https://wa.me/{{ site.contact.whatsapp }}" class="btn btn-accent btn-block" target="_blank" rel="noopener">
           💬 Continue to WhatsApp with Reference
         </a>
       </div>
@@ -40,7 +40,7 @@ permalink: "/thank-you/index.html"
             var waBtn = document.getElementById('wa-continue-btn');
             if (refEl) refEl.textContent = ref;
             if (refBox) refBox.style.display = 'block';
-            if (waBtn) waBtn.href = 'https://wa.me/255672450934?text=' + encodeURIComponent('Hello Spice and Sail! Following up on my enquiry reference: ' + ref);
+            if (waBtn) waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent('Hello Spice and Sail! Following up on my enquiry reference: ' + ref);
           }
         } catch (e) {}
       </script>

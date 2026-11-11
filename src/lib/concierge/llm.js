@@ -11,9 +11,13 @@ const TIMEOUT_MS = 8000;
 function stripPII(text) {
   if (!text) return '';
   return text
-    .replace(/\+?\d[\d\s\-().]{7,15}/g, '[phone]')  // phone numbers
+    .replace(/\+?\d[\d\s\-().]{5,15}\d/g, '[phone]')  // phone numbers
     .replace(/[^\s@]+@[^\s@]+\.[^\s@]+/g, '[email]')  // emails
-    .replace(/\b[A-Z][a-z]+\s+[A-Z][a-z]+\b/g, '[name]');  // probable names (conservative)
+    // Only redact names explicitly introduced by the guest. A blanket
+    // "Capitalised Word Capitalised Word" rule also destroys place names
+    // such as "Stone Town" and "Nungwi Beach". Keep the name part
+    // case-sensitive; only the introducer is case-insensitive.
+    .replace(/(\b(?:[Mm]y name is|[Ii] am|[Ii]'m|[Nn]ame\s*[:\-]))\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2}/g, '$1 [name]');
 }
 
 /** Call Gemini API */
@@ -21,8 +25,8 @@ async function callGemini(systemPrompt, userMessage, toolResults) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return null;
 
-  const model = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
-  const url = 'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent?key=' + apiKey;
+  const model = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
+  const url = 'https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent';
 
   const contents = [
     { role: 'user', parts: [{ text: systemPrompt }] },
@@ -50,7 +54,7 @@ async function callGemini(systemPrompt, userMessage, toolResults) {
   try {
     const resp = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
       body: body,
       signal: controller.signal,
     });

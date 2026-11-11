@@ -3,11 +3,28 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>{{ site.url }}/</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url><loc>{{ site.url }}/</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><priority>1.0</priority>
+<xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/"/>
+<xhtml:link rel="alternate" hreflang="it" href="{{ site.url }}/it/"/>
+<xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/"/>
+<xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/"/>
+</url>
 {%- for page in collections.all %}
 {%- if page.url and page.url.indexOf("/404") == -1 and page.url.indexOf("/thank-you") == -1 and page.url.indexOf("/bookings") == -1 and page.url != "/sitemap.xml" and page.url != "/" %}
-<url><loc>{{ site.url }}{{ page.url }}</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><changefreq>weekly</changefreq><priority>{% if page.url == "/about/" or page.url == "/contact/" %}0.8{% else %}0.6{% endif %}</priority></url>
+<url><loc>{{ site.url }}{{ page.url }}</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><changefreq>weekly</changefreq><priority>{% if page.url == "/about/" or page.url == "/contact/" %}0.8{% else %}0.6{% endif %}</priority>
+{%- set altEn = page.data.alternate_en %}
+{%- set altIt = page.data.alternate_it %}
+{%- set altDe = page.data.alternate_de %}
+{%- set selfUrl = site.url + page.url %}
+{%- if altEn or altIt or altDe %}
+{%- if page.data.lang == "it" %}{% set altIt = selfUrl %}{% elif page.data.lang == "de" %}{% set altDe = selfUrl %}{% else %}{% set altEn = selfUrl %}{% endif %}
+{%- if altEn %}<xhtml:link rel="alternate" hreflang="en" href="{{ altEn }}"/>{% endif %}
+{%- if altIt %}<xhtml:link rel="alternate" hreflang="it" href="{{ altIt }}"/>{% endif %}
+{%- if altDe %}<xhtml:link rel="alternate" hreflang="de" href="{{ altDe }}"/>{% endif %}
+<xhtml:link rel="alternate" hreflang="x-default" href="{{ altEn or selfUrl }}"/>
+{%- endif %}
+</url>
 {%- endif %}
 {%- endfor %}
 </urlset>

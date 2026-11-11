@@ -4,6 +4,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"public/js": "js"});
   eleventyConfig.addPassthroughCopy({"public/images": "images"});
   eleventyConfig.addPassthroughCopy({"public/favicon.ico": "favicon.ico"});
+  eleventyConfig.addPassthroughCopy({"public/site.webmanifest": "site.webmanifest"});
+  // Client-side review capture lives under src/js; copy it into the served js dir.
+  eleventyConfig.addPassthroughCopy({"src/js/review-capture.js": "js/review-capture.js"});
   // Copy _headers into the publish dir (Netlify applies custom headers from dist)
   eleventyConfig.addPassthroughCopy({"_headers": "_headers"});
   
@@ -539,7 +542,7 @@ module.exports = function(eleventyConfig) {
     // Check if we're running on Netlify or localhost
     const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
     if (isNetlify) {
-      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&q=85`;
+      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
     }
 
     // For local development, use direct image path
@@ -554,7 +557,7 @@ module.exports = function(eleventyConfig) {
     // Check if we're running on Netlify or localhost
     const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
     if (isNetlify) {
-      return `/.netlify/images?url=${encodeURIComponent("/images/" + f)}&fm=webp&q=85`;
+      return `/.netlify/images?url=${encodeURIComponent("/images/" + f)}&fm=webp&w=1600&q=80`;
     }
 
     // For local development, use direct image path

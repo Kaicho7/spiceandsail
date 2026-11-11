@@ -29,7 +29,7 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
           <div class="quick-pick-content">
             <h3>WhatsApp (Fastest)</h3>
             <p>Message us directly for quotes, bookings, and questions. Pre-filled message ready.</p>
-            <a href="https://wa.me/255672450934?text=I'd%20like%20to%20book%20a%20Zanzibar%20tour" target="_blank" rel="noopener" class="btn btn-accent">Open WhatsApp Chat</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I'd%20like%20to%20book%20a%20Zanzibar%20tour" target="_blank" rel="noopener" class="btn btn-accent">Open WhatsApp Chat</a>
           </div>
         </article>
         <article class="quick-pick reveal">
@@ -39,7 +39,7 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
           <div class="quick-pick-content">
             <h3>WhatsApp for Documents</h3>
             <p>For formal inquiries, group bookings, or documentation requests, send them over WhatsApp — we reply in minutes.</p>
-            <a href="https://wa.me/255672450934?text=Hello%20Spice%20and%20Sail%2C%20I%20have%20a%20booking%20enquiry" target="_blank" rel="noopener" class="btn btn-primary">Message us on WhatsApp</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hello%20Spice%20and%20Sail%2C%20I%20have%20a%20booking%20enquiry" target="_blank" rel="noopener" class="btn btn-primary">Message us on WhatsApp</a>
           </div>
         </article>
         <article class="quick-pick reveal">
@@ -49,7 +49,7 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
           <div class="quick-pick-content">
             <h3>Phone / SMS</h3>
             <p>Call or text during business hours (8 AM – 6 PM EAT).</p>
-            <a href="tel:+255672450934" class="btn btn-secondary">+255 672 450 934</a>
+            <a href="tel:{{ site.contact.phone }}" class="btn btn-secondary">{{ site.contact.phone_display }}</a>
           </div>
         </article>
       </div>
@@ -138,10 +138,10 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
           </div>
           <div class="quick-pick-content">
             <h3>Spice and Sail Zanzibar Hub</h3>
-            <p>Main Operations & Depot: Near Mbuzini Hospital, Mbuzini, Magharibi District, Mjini Magharibi, 71208, Zanzibar, Tanzania.</p>
+            <p>Main Operations &amp; Depot: {{ site.address.display }}.</p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--dct-text-muted);">Serving all island pickups across Stone Town, Airport, Nungwi, Kendwa, Paje, Jambiani, and Matemwe.</p>
             <p style="margin-top: 0.5rem;">
-              <a href="https://wa.me/255672450934" target="_blank" rel="noopener" style="color: var(--dct-ocean); font-weight: 500;">WhatsApp: +255 672 450 934</a><br>
+              <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" style="color: var(--dct-ocean); font-weight: 500;">WhatsApp: {{ site.contact.whatsapp_display }}</a><br>
               <span style="color: var(--dct-ocean); font-weight: 500;">WhatsApp-first — replies within minutes</span>
             </p>
           </div>

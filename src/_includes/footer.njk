@@ -40,8 +40,8 @@
     </div>
 <div class="footer-col">
       <h4>Contact</h4>
-      <p>Mbuzini, Magharibi District, Zanzibar, Tanzania</p>
-      <p><a href="tel:+255672450934">Call: +255 672 450 934</a> &bull; <a href="https://wa.me/255672450934" target="_blank" rel="noopener">WhatsApp Chat</a></p>
+      <p>{{ site.address.short }}</p>
+      <p><a href="tel:{{ site.contact.phone }}">Call: {{ site.contact.phone_display }}</a> &bull; <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener">WhatsApp Chat</a></p>
       {% if site.contact and site.contact.email %}<p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>{% endif %}
       <p style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.5rem; font-size: 0.88rem;">
         <a href="/privacy/" style="color: var(--dct-ocean); font-weight: 500;">Privacy Notice</a> &bull;

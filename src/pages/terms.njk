@@ -34,18 +34,21 @@ permalink: "/terms/index.html"
     </p>
     <ul style="color: var(--dct-text-muted); line-height: 1.75; margin-left: 1.5rem; margin-bottom: 1rem;">
       <li><strong>Private Airport &amp; Inter-Hotel Transfers:</strong> <strong>Zero advance deposit</strong>. Reserve without prepayment and pay your private driver directly upon meeting him at the airport or hotel lobby (cash USD/TZS or driver mobile card machine).</li>
-      <li><strong>Marine Tours &amp; Boat Charters (Safari Blue, Mnemba Atoll, Prison Island + Nakupenda Sandbank, Dolphin Tours, Sunset Dhows, Catamaran Charters):</strong> <strong>20% advance deposit</strong> required upon booking via secure payment link. This deposit locks your dedicated boat captain, crew, fuel, and fresh morning seafood market procurement. The remaining 80% balance is settled upon boarding on the day of your tour.</li>
+      <li><strong>Marine Tours &amp; Boat Charters (Safari Blue, Mnemba Atoll, Prison Island + Nakupenda Sandbank, Dolphin Tours, Sunset Dhows, Catamaran Charters):</strong> <strong>20% advance deposit</strong> required upon booking via a secure DPO or Pesapal payment link sent to you on WhatsApp. This deposit locks your dedicated boat captain, crew, fuel, and fresh morning seafood market procurement. The remaining 80% balance is settled upon boarding on the day of your tour.</li>
       <li><strong>Fly-in Bush Safaris (Serengeti, Nyerere, Ruaha):</strong> <strong>30% advance deposit</strong> required upon booking to issue non-refundable scheduled domestic airline tickets and TANAPA national park permits.</li>
     </ul>
     <p style="color: var(--dct-text-muted); line-height: 1.75;">
-      When you submit a booking request through our website or concierge, you receive an <strong>Enquiry Reference (#SP-YYYY-XXXXXX)</strong> confirming that your request is safely logged in our system. Our operations team then verifies live availability and connects with you directly on WhatsApp to issue your confirmed itinerary and payment link.
+      When you submit a booking request through our website or concierge, you receive an <strong>Enquiry Reference (#SP-YYYY-XXXXXX)</strong> confirming that your request is safely logged in our system. Our operations team then verifies live availability and connects with you directly on WhatsApp to issue your confirmed itinerary and secure payment link.
     </p>
   </section>
 
   <section style="margin-bottom: 2.5rem;">
     <h2 style="font-size: 1.4rem; color: #003853; margin-bottom: 0.75rem;">4. Payment Methods &amp; Cancellation Policy</h2>
     <p style="color: var(--dct-text-muted); line-height: 1.75;">
-      <strong>Payment Methods:</strong> We accept online card payments (Visa, Mastercard, American Express via 3D-Secure payment links powered by DPO Group and Pesapal), local mobile money (M-Pesa, Airtel Money, Tigo Pesa), and cash (clean United States Dollars USD printed post-2013 per East African banking standards, or Tanzanian Shillings TZS at prevailing market rates).
+      <strong>Payment Methods:</strong> We accept online card payments (Visa, Mastercard, American Express via 3D-Secure payment links powered by DPO Group and Pesapal) sent to you on WhatsApp, local mobile money (M-Pesa, Airtel Money, Tigo Pesa), and cash (clean United States Dollars USD printed post-2013 per East African banking standards, or Tanzanian Shillings TZS at prevailing market rates).
+    </p>
+    <p style="color: var(--dct-text-muted); line-height: 1.75;">
+      <strong>Important:</strong> We do not collect card details on this website. After your booking is confirmed, our team sends the DPO or Pesapal payment link directly to you on WhatsApp.
     </p>
     <p style="color: var(--dct-text-muted); line-height: 1.75;">
       <strong>Fair Cancellation &amp; Weather Guarantee:</strong>
@@ -84,9 +87,9 @@ permalink: "/terms/index.html"
     <p style="color: var(--dct-text-muted); line-height: 1.75;">
       For contractual inquiries or formal communication:<br>
       <strong>Spice &amp; Sail Zanzibar</strong><br>
-      Operations Hub: Near Mbuzini Hospital, Magharibi District, Zanzibar, Tanzania<br>
-      WhatsApp / Phone: <a href="https://wa.me/255672450934" target="_blank" rel="noopener">+255 672 450 934</a><br>
-      Email: <a href="mailto:reservations@spiceandsail.com">reservations@spiceandsail.com</a>
+      Operations Hub: {{ site.address.display }}<br>
+      WhatsApp / Phone: <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener">{{ site.contact.whatsapp_display }}</a> / <a href="tel:{{ site.contact.phone }}">{{ site.contact.phone_display }}</a><br>
+      Email: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
     </p>
   </section>
 </main>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang or 'en' }}">
 <head>
 <meta charset="utf-8">
 {% set computedTitle = title or (page.fileSlug | replace("-", " ") | capitalize) %}
@@ -77,12 +77,13 @@
       "description": "Zanzibar tour operator and transfer specialist based in Mbuzini & Stone Town — authentic tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Near Mbuzini Hospital, Mbuzini, Magharibi District",
-        "addressLocality": "Zanzibar",
-        "postalCode": "71208",
-        "addressCountry": "TZ"
+        "streetAddress": "{{ site.address.street }}",
+        "addressLocality": "{{ site.address.city }}",
+        "addressRegion": "{{ site.address.region }}",
+        "postalCode": "{{ site.address.postal_code }}",
+        "addressCountry": "{{ site.address.country_code }}"
       },
-      "telephone": "+255 672 450 934",
+      "telephone": "{{ site.contact.phone_display }}",
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": "-6.1659",
@@ -92,12 +93,12 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "08:00",
-          "closes": "18:00"
+          "opens": "{{ site.hours.open }}",
+          "closes": "{{ site.hours.close }}"
         }
       ],
       "sameAs": [
-        "https://wa.me/255672450934"{% if site.social and site.social.instagram %},
+        "https://wa.me/{{ site.contact.whatsapp }}"{% if site.social and site.social.instagram %},
         "{{ site.social.instagram }}"{% endif %}{% if site.social and site.social.tiktok %},
         "{{ site.social.tiktok }}"{% endif %}{% if site.social and site.social.youtube %},
         "{{ site.social.youtube }}"{% endif %}{% if site.social and site.social.twitter %},
@@ -125,7 +126,6 @@
         "lowPrice": {{ tour_slug | catMin }},
         "highPrice": {{ tour_slug | catMax }},
         "offerCount": "1",
-        "availability": "https://schema.org/InStock",
         "url": "{{ SITE_URL | safe }}{{ page.url }}"
       }
     },
@@ -155,7 +155,6 @@
         "priceCurrency": "USD",
         "lowPrice": {{ tour_slug | catMin }},
         "highPrice": {{ tour_slug | catMax }},
-        "availability": "https://schema.org/InStock",
         "url": "{{ SITE_URL | safe }}{{ page.url }}"
       }
     }{% endif %}{% if page.url != '/' and not tour_slug %},

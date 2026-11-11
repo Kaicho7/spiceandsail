@@ -30,10 +30,12 @@ function detectIntent(text) {
   if (/\b(cancel|cancellation|refund|reschedule|weather policy|bad weather)\b/i.test(lower)) return 'cancellation';
   if (/\b(how do i pay|payment|pay for|payment method|pay by|mpesa|m-pesa|cash|card|deposit|prepayment|down.?payment)\b/i.test(lower)) return 'payments';
   if (/\b(honeymoon|romantic|anniversary|couples?\s+trip)\b/i.test(lower)) return 'honeymoon';
+  if (/\b(availab(?:le|ility)|spots? left|seats? left|sold out|booked out|open on)\b/i.test(lower)) return 'availability';
+  if (/\b(private|shared|join (?:a )?group|group tours?|small group|semi.?private)\b/i.test(lower) && /\b(tours?|trips?|excursions?|dhow|safari|boat|snorkel)\b/i.test(lower)) return 'tour_type';
+  if (/\b(get a quote|price|cost|how much|quote|rate)\b/i.test(lower)) return 'quote';
   if (/\b(family|kids|children|child|toddler|teenager)\b/i.test(lower)) return 'family';
   if (/\b(book|reserve|confirm|hold|how do i book|book an experience|book this)\b/i.test(lower)) return 'book';
   if (/\b(show all tours|view all tours|all tours|list tours|see all tours|browse tours)\b/i.test(lower)) return 'all_tours';
-  if (/\b(get a quote|price|cost|how much|quote|rate)\b/i.test(lower)) return 'quote';
   if (/\b(recommend|suggest|what should|best|popular|must.?do|plan my (zanzibar )?trip|help me plan|itinerary)\b/i.test(lower)) return 'recommend';
 
   // If text mentions a specific service (or specific transfer route), treat as quote/service query
@@ -221,6 +223,12 @@ function extractEntities(text, profile) {
     }
   }
 
+  // name — only when the guest explicitly introduces it
+  if (!profile.name) {
+    const nameMatch = text.match(/(?:\b(?:[Mm]y name is|[Ii] am|[Ii]'m|[Nn]ame\s*[:\-]))\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2})/);
+    if (nameMatch) extracted.name = nameMatch[1];
+  }
+
   // interests — append if not already present
   if (!profile.interests || profile.interests.length === 0) {
     const found = [];
@@ -266,6 +274,7 @@ function mergeProfile(incomingProfile, extracted) {
   const merged = Object.assign({}, incomingProfile);
 
   if (extracted.dates) merged.dates = extracted.dates;
+  if (extracted.name) merged.name = extracted.name;
   if (extracted.adults != null) merged.adults = extracted.adults;
   if (extracted.children != null) merged.children = extracted.children;
   if (extracted.budgetBand) merged.budgetBand = extracted.budgetBand;
@@ -286,6 +295,7 @@ function mergeProfile(incomingProfile, extracted) {
 function profileCompleteness(profile) {
   let count = 0;
   if (profile.dates) count++;
+  if (profile.name) count++;
   if (profile.adults) count++;
   if (profile.interests && profile.interests.length > 0) count++;
   if (profile.pickupZone) count++;
@@ -302,6 +312,7 @@ function buildWhatsAppUrl(profile, serviceSlugs) {
     if (svc) tourNames.push(svc.name);
   }
   const parts = ['Hi Spice & Sail! I\'d like to book: ' + (tourNames.length > 0 ? tourNames.join(', ') : 'a Zanzibar experience') + '.'];
+  if (profile.name) parts.push('Name: ' + profile.name + '.');
   if (profile.dates) parts.push('Dates: ' + profile.dates + '.');
   if (profile.adults) parts.push('Group: ' + profile.adults + (profile.children ? ' adults + ' + profile.children + ' children' : ' traveller' + (profile.adults > 1 ? 's' : '')) + '.');
   if (profile.pickupZone) {
@@ -363,7 +374,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     return {
       message: '**Payment Methods & Deposit Policy:**\n\n' +
         '• **Airport & Hotel Transfers**: Zero advance deposit — reserve with peace of mind and pay your private driver on arrival (USD cash or card).\n' +
-        '• **Sea Tours & Boat Charters (Safari Blue, Mnemba, Prison Island + Nakupenda, Catamaran)**: 20% advance deposit via secure payment link (Visa/Mastercard via DPO or Pesapal) to lock in your boat captain, fuel, and morning fresh seafood market procurement. The remaining 80% balance is paid on the day of the tour.\n' +
+        '• **Sea Tours & Boat Charters (Safari Blue, Mnemba, Prison Island + Nakupenda, Catamaran)**: 20% advance deposit via a secure DPO or Pesapal payment link our team sends on WhatsApp (Visa/Mastercard) to lock in your boat captain, fuel, and morning fresh seafood market procurement. The remaining 80% balance is paid on the day of the tour.\n' +
         '• **Fly-in Safaris (Serengeti, Nyerere)**: 30% advance deposit to secure non-refundable scheduled domestic airline seats and TANAPA national park entry permits.\n' +
         '• **Captain\'s Weather Guarantee**: If sea conditions or weather prevent sailing, you receive an immediate **100% full refund** or priority rescheduling!' + hoursNote,
       quickReplies: ['Cancellation policy', 'Plan my trip', 'Book an experience'],
@@ -415,6 +426,33 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     };
   }
 
+  if (intent === 'availability') {
+    const availabilitySlugs = matchServices(text);
+    const availabilityService = availabilitySlugs.length > 0 ? getService(availabilitySlugs[0]) : null;
+    const waMsg = 'Jambo Spice & Sail! I would like to check availability' +
+      (availabilityService ? ' for ' + availabilityService.name : '') +
+      (profile.dates ? ' on ' + profile.dates : '') +
+      (profile.adults ? ' for ' + profile.adults + (profile.children ? ' adults + ' + profile.children + ' children' : ' guests') : '') +
+      (profile.name ? '. My name is ' + profile.name : '') + '.';
+    const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
+    return {
+      message: '**Live Availability**\n\n' +
+        (availabilityService ? 'For **' + availabilityService.name + '**, ' : '') +
+        'I can\'t see the live booking calendar from this chat, so I won\'t guess. Send us the date, number of adults/children and pickup area, and our operations team will confirm availability and hold options on WhatsApp (+255 672 450 934).\n\n[💬 Check availability on WhatsApp](' + waUrl + ')',
+      quickReplies: ['💬 Check on WhatsApp', 'Get a quote', 'Show all tours'],
+      requestContact: false,
+      whatsapp_url: waUrl,
+    };
+  }
+
+  if (intent === 'tour_type') {
+    return {
+      message: '**Private vs Shared Tours**\n\nMost of our day tours and boat trips can run as a **private** charter or a **shared** seat, depending on the experience and date. Published rates are planning ranges; private charters and small-group seats are quoted separately.\n\nTell me the tour, date and number of adults/children and our team will confirm both options on WhatsApp.' + hoursNote,
+      quickReplies: ['Safari Blue', 'Mnemba snorkeling', 'Get a quote', '💬 Open WhatsApp'],
+      requestContact: false,
+    };
+  }
+
   if (intent === 'quote') {
     let targetSlug = null;
     const slugs = matchServices(text);
@@ -437,14 +475,15 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
         const depositNotice = isSafari
           ? '(30% advance deposit locks scheduled domestic flights & TANAPA permits)'
           : isSeaTour
-            ? '(20% advance deposit locks boat captain & fresh seafood lunch, backed by our 100% Weather Guarantee)'
+            ? '(20% advance deposit via a DPO/Pesapal link sent on WhatsApp locks boat captain & fresh seafood lunch, backed by our 100% Weather Guarantee)'
             : isTransfer
               ? '(zero advance deposit — pay your driver on arrival)'
               : '(zero advance deposit — pay on arrival)';
 
-        const waMsg = isTransfer
+        const waMsg = (isTransfer
           ? 'Jambo Spice & Sail! I would like to book a private transfer: ' + svc.name + (profile.dates ? ' on ' + profile.dates : '') + '.'
-          : 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.';
+          : 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.') +
+          (profile.name ? ' My name is ' + profile.name + '.' : '');
         const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
         const inc = (svc.includes || []).join(', ') || 'Licensed guide, gear & marine fees';
 
@@ -457,6 +496,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
             '• **Planning Rate:** ' + svc.pricing.display + ' ' + unitLabel(svc) + '\n' +
             '• **Duration:** ' + svc.duration + '\n' +
             '• **Includes:** ' + inc + '\n\n' +
+            (profile.children ? '• **Family:** ' + profile.children + ' child' + (profile.children > 1 ? 'ren' : '') + ' — child pricing is confirmed by our team.\n\n' : '') +
             'Hold your date directly with our local operations team via WhatsApp ' + depositNotice + ':\n\n' +
             '[💬 Chat on WhatsApp to Confirm & Reserve](' + waUrl + ')',
           quickReplies: quickReplies,
@@ -520,14 +560,14 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     }
 
     const svcName = targetSvc ? targetSvc.name : 'a Zanzibar experience';
-    const waMsg = 'Jambo Spice & Sail! I would like to reserve ' + svcName + (profile.adults ? ' for ' + profile.adults + ' guests' : '') + (profile.dates ? ' on ' + profile.dates : '') + '.';
+    const waMsg = 'Jambo Spice & Sail! I would like to reserve ' + svcName + (profile.adults ? ' for ' + profile.adults + (profile.children ? ' adults + ' + profile.children + ' children' : ' guests') : '') + (profile.dates ? ' on ' + profile.dates : '') + (profile.name ? '. My name is ' + profile.name : '') + '.';
     const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
     
     return {
       message: '**Reserve Your Zanzibar Experience**\n\n' +
         'Our transparent booking process:\n' +
         '1. **Airport & Hotel Transfers**: Zero advance deposit — reserve with peace of mind and pay your driver on arrival.\n' +
-        '2. **Sea Tours & Boat Charters (Safari Blue, Mnemba, Nakupenda, Catamaran)**: 20% confirmation deposit via secure payment link (Visa/Mastercard) to secure your boat captain, fuel, and morning fresh seafood procurement. Balance paid on tour day.\n' +
+        '2. **Sea Tours & Boat Charters (Safari Blue, Mnemba, Nakupenda, Catamaran)**: 20% confirmation deposit via a DPO or Pesapal payment link sent on WhatsApp (Visa/Mastercard) to secure your boat captain, fuel, and morning fresh seafood procurement. Balance paid on tour day.\n' +
         '3. **Fly-in Safaris**: 30% advance deposit to lock domestic flights and TANAPA national park permits.\n' +
         '4. **Captain\'s Weather Guarantee**: 100% full refund or priority reschedule if weather/sea conditions prevent sailing.\n\n' +
         '[💬 Open WhatsApp to Reserve (' + svcName + ')](' + waUrl + ')',
@@ -747,6 +787,7 @@ exports.handler = async function (event) {
     requestContact: false,
     quote: deterministicResult.quote || null,
     profile: mergedProfile,
+    whatsapp_url: deterministicResult.whatsapp_url || null,
   };
 
   if (isTerminal) {

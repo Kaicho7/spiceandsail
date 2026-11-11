@@ -19,7 +19,7 @@ alternate_de: "https://spiceandsail.com/de/"
       <p class="hero-subtitle reveal delay-3">Curated tours, seamless transfers, and multi-day packages. Marine fees included. Stone Town based. <strong>{{ stats.total_tours }} tours, {{ stats.total_hotels }} hotels, {{ stats.total_attractions }} attractions.</strong></p>
       <div class="hero-cta reveal delay-4">
         <a href="/tours/" class="btn btn-primary btn-lg">Browse All Zanzibar Tours</a>
-        <a href="https://wa.me/255672450934" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Chat on WhatsApp</a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Chat on WhatsApp</a>
       </div>
       <div class="hero-trust reveal delay-5">
         <div class="trust-item"><span class="trust-icon">✓</span>Small-Group & Private Options</div>
@@ -155,7 +155,7 @@ alternate_de: "https://spiceandsail.com/de/"
             </ul>
           </div>
           <div class="route-actions">
-            <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20to%20reserve%20a%20private%20transfer%20from%20ZNZ%20Airport%20to%20Stone%20Town." target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-full">Reserve on WhatsApp</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20to%20reserve%20a%20private%20transfer%20from%20ZNZ%20Airport%20to%20Stone%20Town." target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-full">Reserve on WhatsApp</a>
           </div>
         </article>
 
@@ -178,7 +178,7 @@ alternate_de: "https://spiceandsail.com/de/"
             </ul>
           </div>
           <div class="route-actions">
-            <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20to%20reserve%20a%20private%20transfer%20from%20ZNZ%20Airport%20to%20Paje%20%26%20Jambiani." target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-full">Reserve on WhatsApp</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20to%20reserve%20a%20private%20transfer%20from%20ZNZ%20Airport%20to%20Paje%20%26%20Jambiani." target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-full">Reserve on WhatsApp</a>
           </div>
         </article>
 
@@ -201,7 +201,7 @@ alternate_de: "https://spiceandsail.com/de/"
             </ul>
           </div>
           <div class="route-actions">
-            <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20to%20reserve%20a%20private%20transfer%20from%20ZNZ%20Airport%20to%20Nungwi%20%26%20Kendwa." target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-full">Reserve on WhatsApp</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20to%20reserve%20a%20private%20transfer%20from%20ZNZ%20Airport%20to%20Nungwi%20%26%20Kendwa." target="_blank" rel="noopener" class="btn btn-primary btn-sm btn-full">Reserve on WhatsApp</a>
           </div>
         </article>
       </div>
@@ -249,7 +249,7 @@ alternate_de: "https://spiceandsail.com/de/"
                 <span class="card-price">{{ tour.price.display }} <span class="price-basis">per person</span></span>
                 <div class="card-actions">
                   <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-primary btn-sm">View Details</a>
-                  <a href="https://wa.me/255672450934?text=Hello%20Spice%20and%20Sail%2C%20I%27m%20interested%20in%20{{ tour.title | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Ask on WhatsApp</a>
+                  <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hello%20Spice%20and%20Sail%2C%20I%27m%20interested%20in%20{{ tour.title | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Ask on WhatsApp</a>
                 </div>
               </div>
             </div>
@@ -431,7 +431,7 @@ alternate_de: "https://spiceandsail.com/de/"
             <p class="card-description">Stone Town (1 night) + Nungwi/Kendwa (2 nights) + Spice tour + Mnemba snorkeling + sunset cruise.</p>
             <div class="card-footer">
               <span class="card-price">Custom quote</span>
-              <a href="https://wa.me/255672450934?text=I'd%20like%20a%204-5%20day%20Zanzibar%20itinerary" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Request Quote</a>
+              <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I'd%20like%20a%204-5%20day%20Zanzibar%20itinerary" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Request Quote</a>
             </div>
           </div>
         </article>
@@ -478,7 +478,7 @@ alternate_de: "https://spiceandsail.com/de/"
       <h2>Ready to Experience Zanzibar?</h2>
       <p>Message us on WhatsApp with your dates and interests. We'll send a personalized itinerary with transparent pricing within 24 hours.</p>
       <div class="cta-buttons">
-        <a href="https://wa.me/255672450934?text=I'd%20like%20to%20plan%20my%20Zanzibar%20trip" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Plan My Trip on WhatsApp</a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I'd%20like%20to%20plan%20my%20Zanzibar%20trip" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Plan My Trip on WhatsApp</a>
         <a href="/tours/" class="btn btn-outline btn-lg">Browse Tours First</a>
       </div>
     </div>

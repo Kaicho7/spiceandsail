@@ -40,11 +40,11 @@ Under NO circumstances may any coder substitute stock photos or make code mappin
 - **One-Image-One-Alt Invariant:** Every image rendered across the site must have an accurate, descriptive, and consistent alt text.
 - **Valid Fallbacks Only:** Never reference non-existent fallback images (e.g. `/images/excursions.png`).
 
-## 4. Canonical Executive Contact Details (NON-NEGOTIABLE)
+## 4. Canonical Public Contact Details (NON-NEGOTIABLE)
+- **Canonical source:** `src/data/site.json` (`contact`, `address`, `hours`). Templates must read from that file, not hardcode a second copy.
 - **Primary WhatsApp & Telephone:** `+255 672 450 934`
-- **Primary Executive Emails:** `philip@jobkijiji.site` / `philip.kinyanjui.jumbe@gmail.com`
-- **Alternative Contact Mobile:** `+255 655 830 226`
-- **Location:** Zanzibar, Tanzania
+- **Public email:** use the value in `src/data/site.json` (`contact.email`); do not hardcode a separate address.
+- **Location:** Near Mbuzini Hospital, Mbuzini, Magharibi District, Mjini Magharibi, 71208, Zanzibar, Tanzania
 - **Strict Prohibition on Fake Numbers:** Under NO circumstances should fake sequential dummy numbers (`+255770000000990`, etc.) ever appear in data files, templates, or WhatsApp links. Hotel inquiry buttons must link to the operator's verified WhatsApp (`+255 672 450 934`) with a prefilled message.
 
 ## 5. Verification & Zero Speculation Invariant

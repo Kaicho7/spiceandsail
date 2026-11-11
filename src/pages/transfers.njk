@@ -21,8 +21,8 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         <a href="#transfer-calculator" class="btn btn-primary btn-lg" style="background: var(--dct-gold, #D4AF37); border-color: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700;">
           🚖 Fare Calculator (Planning Range)
         </a>
-        <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20a%20private%20airport%20transfer." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">
-          💬 WhatsApp Live Ops (+255 672 450 934)
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20a%20private%20airport%20transfer." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">
+          💬 WhatsApp Live Ops ({{ site.contact.whatsapp_display }})
         </a>
       </div>
     </div>
@@ -152,7 +152,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px;">
-            <a id="calc-whatsapp-btn" href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20reserve%20a%20Private%20Airport%20Transfer%20to%20Nungwi%20%26%20Kendwa." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700; padding: 0.85rem 1.25rem; font-size: 0.98rem; text-align: center; border-radius: 8px;">
+            <a id="calc-whatsapp-btn" href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20reserve%20a%20Private%20Airport%20Transfer%20to%20Nungwi%20%26%20Kendwa." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700; padding: 0.85rem 1.25rem; font-size: 0.98rem; text-align: center; border-radius: 8px;">
               💬 Book on WhatsApp Now
             </a>
             <button type="button" class="btn btn-secondary" onclick="window.snsConcierge ? window.snsConcierge.open('airport-transfer-znz-to-nungwikendwa') : null" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.85rem; padding: 0.6rem; border-radius: 8px;">
@@ -268,7 +268,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
                   <span style="font-size: 0.75rem; color: #64748b; display: block;">Planning range per private vehicle</span>
                   <span class="card-price" style="font-size: 1.4rem; font-weight: 800; color: #0C1A24;">{% catPrice transfer.slug %}</span>
                 </div>
-                <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20the%20{{ transfer.title | urlencode }}." target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700;">
+                <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20the%20{{ transfer.title | urlencode }}." target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700;">
                   💬 WhatsApp
                 </a>
               </div>
@@ -445,7 +445,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         '• Passengers: ' + paxCount + ' pax\n' +
         '• Planning Fare: ' + baseFare + langNote + '\n' +
         'Please confirm driver availability and the rate.';
-      if (waBtn) waBtn.href = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMessage);
+      if (waBtn) waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent(waMessage);
 
       // Only query airport catalogue quote if the pickup origin is Airport or Ferry terminal
       const isAirportOrFerry = pickup.includes('Airport') || pickup.includes('Ferry');

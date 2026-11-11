@@ -30,7 +30,7 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm ci && npm run build
-      - uses: netlify/actions/cli@master
+      - uses: netlify/actions/cli@3185065f4ab2f6df6f2ef41ee013626e1c02a426
         with:
           args: deploy --dir=dist --alias=pr-${{ github.event.number }}
         env:
@@ -48,7 +48,7 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm ci && npm run build
-      - uses: netlify/actions/cli@master
+      - uses: netlify/actions/cli@3185065f4ab2f6df6f2ef41ee013626e1c02a426
         with:
           args: deploy --dir=dist --prod
         env:

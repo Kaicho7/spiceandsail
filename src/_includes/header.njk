@@ -45,8 +45,8 @@
         </div>
       </div>
       <span class="contact">
-        <a href="tel:+255672450934" class="top-tel" title="Call operations directly">+255 672 450 934</a>
-        <a href="https://wa.me/255672450934" target="_blank" rel="noopener" class="top-wa-btn" title="Chat on WhatsApp">💬 WhatsApp</a>
+        <a href="tel:{{ site.contact.phone }}" class="top-tel" title="Call operations directly">{{ site.contact.whatsapp_display }}</a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" class="top-wa-btn" title="Chat on WhatsApp">💬 WhatsApp</a>
       </span>
     </div>
   </div>
@@ -147,7 +147,7 @@
 
       <!-- Quick WhatsApp Nav Button -->
       <div class="nav-cta">
-        <a href="https://wa.me/255672450934" target="_blank" rel="noopener" class="btn btn-nav-wa" title="Instant WhatsApp Booking">
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" class="btn btn-nav-wa" title="Instant WhatsApp Booking">
           <span>💬</span> <span data-i18n="btn_whatsapp_book">Book on WhatsApp</span>
         </a>
       </div>

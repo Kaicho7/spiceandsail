@@ -1,31 +1,53 @@
 /**
  * Review Capture System - Netlify Function
- * Sends post-service WhatsApp review request with GBP/TripAdvisor links
+ * Builds a post-service WhatsApp review request with configured GBP/TripAdvisor links.
  */
-const fetch = require('node-fetch');
+const HEADERS = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
 
-exports.handler = async (event, context) => {
-  // Only allow POST
+function allowedOrigin(value) {
+  if (!value) return false;
+  try {
+    const host = new URL(value).hostname;
+    return host === 'spiceandsail.com'
+      || host === 'www.spiceandsail.com'
+      || host === 'spiceandsail.netlify.app'
+      || host.endsWith('--spiceandsail.netlify.app')
+      || host === 'localhost'
+      || host === '127.0.0.1';
+  } catch (e) {
+    return false;
+  }
+}
+
+exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
+    return { statusCode: 405, headers: HEADERS, body: JSON.stringify({ error: 'Method Not Allowed' }) };
+  }
+
+  const origin = event.headers.origin || event.headers.Origin || event.headers.referer || event.headers.Referer;
+  if (!allowedOrigin(origin)) {
+    return { statusCode: 403, headers: HEADERS, body: JSON.stringify({ error: 'Origin not allowed' }) };
   }
 
   try {
     const { phone, serviceType, serviceName, bookingRef, language = 'en' } = JSON.parse(event.body);
 
     if (!phone || !serviceType) {
-      return { statusCode: 400, body: JSON.stringify({ error: 'Missing required fields: phone, serviceType' }) };
+      return { statusCode: 400, headers: HEADERS, body: JSON.stringify({ error: 'Missing required fields: phone, serviceType' }) };
     }
 
-    // Clean phone number (ensure E.164 format)
-    const cleanPhone = phone.replace(/\D/g, '').startsWith('255') 
-      ? phone.replace(/\D/g, '') 
-      : '255' + phone.replace(/\D/g, '').replace(/^0/, '');
-
-    // Generate review links - REPLACE THESE WITH ACTUAL URLS WHEN AVAILABLE
-    const gbpLink = process.env.GBP_REVIEW_LINK || 'https://g.page/r/CREATE_YOUR_GBP_LINK_HERE/review';
-    const tripadvisorLink = process.env.TRIPADVISOR_REVIEW_LINK || 'https://www.tripadvisor.com/Review-CREATE_YOUR_TRIPADVISOR_LINK_HERE';
+    // Review links are owner-configured; never substitute placeholder URLs.
+    const gbpLink = (process.env.GBP_REVIEW_LINK || '').trim();
+    const tripadvisorLink = (process.env.TRIPADVISOR_REVIEW_LINK || '').trim();
     const whatsappNumber = '255672450934'; // Spice & Sail WhatsApp
+
+    if (!gbpLink && !tripadvisorLink) {
+      return {
+        statusCode: 503,
+        headers: HEADERS,
+        body: JSON.stringify({ error: 'Review links are not configured' })
+      };
+    }
 
     // Multilingual templates
     const templates = {
@@ -82,22 +104,21 @@ exports.handler = async (event, context) => {
     };
 
     const t = templates[language] || templates.en;
+    const reviewLinks = [];
+    if (gbpLink) reviewLinks.push(`${t.gbp}\n${gbpLink}`);
+    if (tripadvisorLink) reviewLinks.push(`${t.ta}\n${tripadvisorLink}`);
 
-    // Build WhatsApp message
-    const message = `${t.greeting}\n\n${t.service}\n\n${t.ask}\n\n${t.gbp}\n${gbpLink}\n\n${t.ta}\n${tripadvisorLink}\n\n${t.direct}\n\n${t.thanks}\n\n${t.unsubscribe}`;
+    // Build the WhatsApp message; it is returned for the client to send manually.
+    const message = [t.greeting, t.service, t.ask, ...reviewLinks, t.direct, t.thanks, t.unsubscribe].join('\n\n');
 
-    // In production, send via WhatsApp Business API (Twilio, 360dialog, etc.)
-    // For now, return the message for manual sending or integration
-    console.log(`[REVIEW REQUEST] To: ${cleanPhone}, Service: ${serviceName}, Ref: ${bookingRef}`);
-    console.log(`[REVIEW MESSAGE]:\n${message}`);
+    console.log(`[REVIEW REQUEST] Service: ${serviceName || 'n/a'}, Ref: ${bookingRef || 'n/a'}`);
 
-    // Return success with the message for logging/manual sending
     return {
       statusCode: 200,
+      headers: HEADERS,
       body: JSON.stringify({
         success: true,
-        message: 'Review request queued',
-        phone: cleanPhone,
+        message: 'Review request prepared',
         whatsappMessage: message,
         gbpLink,
         tripadvisorLink,
@@ -106,10 +127,11 @@ exports.handler = async (event, context) => {
     };
 
   } catch (error) {
-    console.error('[REVIEW CAPTURE ERROR]', error);
+    console.error('[REVIEW CAPTURE ERROR]', error.message);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Internal server error', details: error.message })
+      headers: HEADERS,
+      body: JSON.stringify({ error: 'Internal server error' })
     };
   }
 };

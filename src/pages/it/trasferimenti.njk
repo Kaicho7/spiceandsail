@@ -21,8 +21,8 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         <a href="#calcolatore-trasferimento" class="btn btn-primary btn-lg" style="background: var(--dct-gold, #D4AF37); border-color: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700;">
           🚐 Calcolatore Tariffe (Fascia di Pianificazione)
         </a>
-        <a href="https://wa.me/255672450934?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20un%20trasferimento%20privato%20dall%27aeroporto." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">
-          💬 WhatsApp Operativo Live (+255 672 450 934)
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20un%20trasferimento%20privato%20dall%27aeroporto." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">
+          💬 WhatsApp Operativo Live ({{ site.contact.whatsapp_display }})
         </a>
       </div>
     </div>
@@ -133,7 +133,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
             </div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px;">
-            <a id="calc-whatsapp-btn" href="https://wa.me/255672450934?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20un%20Trasferimento%20Privato%20Aeroporto%20per%20Nungwi%20%26%20Kendwa." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700; padding: 0.85rem 1.25rem; font-size: 0.98rem; text-align: center; border-radius: 8px;">
+            <a id="calc-whatsapp-btn" href="https://wa.me/{{ site.contact.whatsapp }}?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20un%20Trasferimento%20Privato%20Aeroporto%20per%20Nungwi%20%26%20Kendwa." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700; padding: 0.85rem 1.25rem; font-size: 0.98rem; text-align: center; border-radius: 8px;">
               💬 Prenota su WhatsApp Ora
             </a>
             <button type="button" class="btn btn-secondary" onclick="window.snsConcierge ? window.snsConcierge.open('airport-transfer-znz-to-nungwikendwa') : null" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.85rem; padding: 0.6rem; border-radius: 8px;">
@@ -225,7 +225,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
                 <span style="font-size: 0.75rem; color: #64748b; display: block;">Fascia di pianificazione per veicolo privato</span>
                 <span class="card-price" style="font-size: 1.4rem; font-weight: 800; color: #0C1A24;">{% catPrice transfer.slug %}</span>
               </div>
-              <a href="https://wa.me/255672450934?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20il%20{{ transfer.title | urlencode }}." target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700;">
+              <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20il%20{{ transfer.title | urlencode }}." target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700;">
                 💬 WhatsApp
               </a>
             </div>
@@ -391,7 +391,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         '• Passeggeri: ' + paxCount + ' pax\n' +
         '• Fascia Pianificazione: ' + baseFare + langNote + '\n' +
         'Prego confermare disponibilità autista e tariffa.';
-      if (waBtn) waBtn.href = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMessage);
+      if (waBtn) waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent(waMessage);
 
       const isAirportOrFerry = pickup.includes('Airport') || pickup.includes('Ferry');
       if (!slug || !isAirportOrFerry) return;

@@ -75,8 +75,8 @@ permalink: "/cancellation/index.html"
     <h2 style="font-size: 1.4rem; color: #003853; margin-bottom: 0.75rem;">6. How to Request Cancellation or Rescheduling</h2>
     <p style="color: var(--dct-text-muted); line-height: 1.75;">
       Simply send a quick WhatsApp message with your enquiry reference (#SP-YYYY-XXXXXX) or full name:<br>
-      <strong>WhatsApp Live Ops:</strong> <a href="https://wa.me/255672450934" target="_blank" rel="noopener">+255 672 450 934</a> (Replies in minutes, Mon–Sat 08:00–18:00 EAT)<br>
-      <strong>Email:</strong> <a href="mailto:reservations@spiceandsail.com">reservations@spiceandsail.com</a>
+      <strong>WhatsApp Live Ops:</strong> <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener">{{ site.contact.whatsapp_display }}</a> (Replies in minutes, {{ site.hours.days }} {{ site.hours.open }}–{{ site.hours.close }} {{ site.hours.timezone }})<br>
+      <strong>Email:</strong> <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
     </p>
   </section>
 </main>

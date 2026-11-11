@@ -15,7 +15,7 @@ permalink: "/safaris/mikumi-day-trip/index.html"
       <p style="font-size: 1.2rem; color: #e2e8f0; max-width: 760px; margin: 0 auto 2rem; line-height: 1.6;">Witness lions, elephants, giraffes, and zebras on the African savanna and be back at your Zanzibar beach resort by sunset dinner.</p>
       
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="https://wa.me/255672450934?text=Jambo%21%20I%20am%20interested%20in%20the%20Mikumi%20Day%20Trip%20Safari%20from%20Zanzibar." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.05rem; padding: 12px 26px;">💬 Check Safari Dates on WhatsApp</a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20am%20interested%20in%20the%20Mikumi%20Day%20Trip%20Safari%20from%20Zanzibar." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.05rem; padding: 12px 26px;">💬 Check Safari Dates on WhatsApp</a>
         <button onclick="window.snsConcierge && window.snsConcierge.open()" class="btn btn-secondary" style="border: 2px solid #e8a817; color: #fff; background: rgba(0,0,0,0.3); font-size: 1rem; padding: 12px 22px;">🛎️ Trip Concierge</button>
       </div>
     </div>
@@ -297,7 +297,7 @@ permalink: "/safaris/mikumi-day-trip/index.html"
     <div class="container" style="max-width: 800px; margin: 0 auto;">
       <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 0.8rem; color: #fff;">Ready for Your African Safari Adventure?</h2>
       <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 2rem;">Inquire on WhatsApp with your preferred travel dates and party size. Aircraft seats are confirmed by the team, subject to availability.</p>
-      <a href="https://wa.me/255672450934?text=Jambo%21%20I%20would%20like%20to%20inquire%20about%20Mikumi%20Day%20Safari%20seats%20for%20my%20dates%3A" target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.1rem; padding: 14px 28px;">💬 Inquire on WhatsApp (+255 672 450 934)</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20inquire%20about%20Mikumi%20Day%20Safari%20seats%20for%20my%20dates%3A" target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.1rem; padding: 14px 28px;">💬 Inquire on WhatsApp ({{ site.contact.whatsapp_display }})</a>
     </div>
   </section>
 
@@ -307,7 +307,7 @@ permalink: "/safaris/mikumi-day-trip/index.html"
         <span class="sticky-cta-title">Mikumi Day Safari</span>
         <span class="sticky-cta-price">From {% catPrice "mikumi-nyerere-day-safari" %}</span>
       </div>
-      <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20the%20Mikumi%20Day%20Safari" target="_blank" rel="noopener" class="btn-whatsapp-sticky">
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20the%20Mikumi%20Day%20Safari" target="_blank" rel="noopener" class="btn-whatsapp-sticky">
         💬 Book on WhatsApp
       </a>
     </div>
@@ -332,7 +332,6 @@ permalink: "/safaris/mikumi-day-trip/index.html"
         "lowPrice": {{ 'mikumi-nyerere-day-safari' | catMin }},
         "highPrice": {{ 'mikumi-nyerere-day-safari' | catMax }},
         "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
         "url": "https://spiceandsail.com/safaris/mikumi-day-trip/"
       }
     },

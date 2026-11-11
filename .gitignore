@@ -15,6 +15,7 @@ audit-output.txt
 _bad_photos/
 _candidates/
 .env.*
+!.env.example
 reports/image-identity/cache/
 BUILD_TOKEN
 Run

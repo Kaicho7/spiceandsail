@@ -22,7 +22,7 @@ tour_slug: "selous-nyerere-fly-in-safari"
         <span class="price-amount">{% catPrice "selous-nyerere-fly-in-safari" %}</span>
         <span class="price-note">per person</span>
       </div>
-      <a href="https://wa.me/255672450934?text=I%27d%20like%20to%20book%20Selous%20Nyerere%202%20day%20safari%20from%20Zanzibar" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20Selous%20Nyerere%202%20day%20safari%20from%20Zanzibar" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
     </div>
   </section>
 
@@ -104,7 +104,7 @@ tour_slug: "selous-nyerere-fly-in-safari"
           <div class="price">{% catPrice tour_slug %} <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ person</span></div>
           <h3>Ready to Book?</h3>
           <p style="opacity: 0.8; margin-bottom: 1.25rem;">Chat with us on WhatsApp with your preferred dates and group size. We'll check flight manifests and lock in your reservation.</p>
-          <a href="https://wa.me/255672450934?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20{{ title | urlencode }}" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: +255 672 450 934</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20{{ title | urlencode }}" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
           <p class="note">✓ Verified TANAPA 2026 rates • Return flights &amp; lodge included • 30% deposit secures seats</p>
         </div>
       </div>

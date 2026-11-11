@@ -7,6 +7,27 @@
 
 const { getGlobalStore } = require('./store');
 
+// Per-instance fallback buckets. Used only when the shared store fails, so an
+// outage cannot turn the rate limiter into an unlimited allowance.
+const memoryBuckets = new Map();
+
+function memoryRateLimit(key, maxRequests, windowMs) {
+  const now = Date.now();
+  for (const [bucketKey, bucket] of memoryBuckets) {
+    if (now - bucket.start > windowMs) memoryBuckets.delete(bucketKey);
+  }
+  const data = memoryBuckets.get(key);
+  if (!data || now - data.start > windowMs) {
+    memoryBuckets.set(key, { count: 1, start: now });
+    return { allowed: true, remaining: maxRequests - 1 };
+  }
+  if (data.count >= maxRequests) {
+    return { allowed: false, remaining: 0 };
+  }
+  data.count++;
+  return { allowed: true, remaining: maxRequests - data.count };
+}
+
 // Allowed origins from env + Netlify deploy URLs
 function getAllowedOrigins() {
   const origins = new Set();
@@ -73,8 +94,8 @@ async function checkRateLimit(ip, windowKey, maxRequests, windowMs, store) {
     await store.setJSON(key, data);
     return { allowed: true, remaining: maxRequests - data.count };
   } catch (e) {
-    // If store fails, allow the request (don't block leads)
-    return { allowed: true, remaining: maxRequests };
+    // Store failed: fall back to a per-instance bucket instead of failing open.
+    return memoryRateLimit(key, maxRequests, windowMs);
   }
 }
 
