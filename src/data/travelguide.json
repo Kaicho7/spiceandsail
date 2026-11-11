@@ -21,23 +21,23 @@
   },
   "budget_tiers": {
     "budget": {
-      "daily_range": "$25-60/day",
-      "accommodation": "$10-15/night (hostel), $20-40 (guesthouse)",
-      "food": "$5-15/day (street food, local markets)",
-      "transport": "$1-8 (dala dala, Zanzibus)",
-      "activities": "$5-15/day"
+      "daily_range": "$75-130/day",
+      "accommodation": "$35-65/night (boutique guesthouse, B&B)",
+      "food": "$20-35/day (local Swahili bistros, fresh seafood)",
+      "transport": "$10-25 (shared transfers, scooter rental)",
+      "activities": "$35-45/tour (Spice farm, Stone Town walking)"
     },
     "mid_range": {
-      "daily_range": "$60-250/day",
-      "accommodation": "$50-120/night (mid-range hotels, boutique)",
-      "food": "$15-30/day (restaurant meals)",
-      "transport": "$20-50 (private taxis)",
-      "activities": "$25-60/tour"
+      "daily_range": "$160-320/day",
+      "accommodation": "$90-180/night (3-star & 4-star boutique beachfront hotels)",
+      "food": "$35-65/day (beachfront restaurants, seafood grills)",
+      "transport": "$35-60 (private AC transfers & tours)",
+      "activities": "$60-85/tour (Safari Blue, Mnemba snorkeling)"
     },
     "luxury": {
-      "daily_range": "$250+/day",
-      "accommodation": "$150-400+/night (luxury resorts, villas)",
-      "per_day": "$40-80 food, $50-100 private transfers, $100-200 premium excursions"
+      "daily_range": "$380-850+/day",
+      "accommodation": "$250-650+/night (5-star luxury resorts, private villas)",
+      "per_day": "$70-140 fine dining, $70-120 dedicated private vehicle & driver, $160-450+ premium excursions & fly-in safaris"
     }
   },
   "key_prices": {

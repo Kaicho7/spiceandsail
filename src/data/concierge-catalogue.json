@@ -1402,6 +1402,54 @@
         "morning",
         "afternoon"
       ]
+    },
+    {
+      "id": "SAF-04",
+      "slug": "selous-nyerere-fly-in-safari",
+      "name": "Selous (Nyerere) 2-day fly-in safari from Zanzibar",
+      "type": "tour",
+      "category": "SAF",
+      "location": "Zanzibar → Selous / Nyerere National Park → Zanzibar",
+      "zones": [],
+      "duration": "2 days / 1 night",
+      "pricing": {
+        "basis": "per_person",
+        "min": 750,
+        "max": 1100,
+        "display": "$750–$1,100",
+        "basisNote": "per person ($750–$850 shared flight & tented camp; $950–$1,100 luxury river lodge with private 4x4)",
+        "sourceQuality": "Authentic 2026 Selous fly-in package verified with licensed Tanzanian operators",
+        "sourceFiles": "Zanzibar_Master_Venture_Plan.md; TANAPA Nyerere National Park rates",
+        "verified": true
+      },
+      "includes": [
+        "Return domestic flights, all 4x4 game drives, sunset Rufiji River boat safari, park conservation fees, full-board accommodation, lunch and water"
+      ],
+      "importantNotes": [
+        "Soft luggage only (maximum 15 kg / 33 lbs per person due to bush plane cargo limitations)",
+        "All TANAPA park conservation and concession fees are included — zero hidden on-site costs",
+        "Professional licensed Tanzanian driver-guide in open-sided 4x4 safari cruiser",
+        "Best travel months: June to October (peak dry season) and December to March"
+      ],
+      "whatToExpect": [
+        "Scenic 45-minute light aircraft flight from Zanzibar (ZNZ) straight into the heart of Selous (Mtemere Airstrip)",
+        "Full afternoon 4x4 game drive tracking big cats, giraffes, zebras, and vast herds of elephants and buffaloes",
+        "Spectacular sunset boat safari along the Rufiji River observing giant Nile crocodiles, hippo pods, and riverine birds",
+        "Overnight full-board stay in a comfortable riverside tented camp with hot meals, en-suite bathroom, and ambient wilderness sounds",
+        "Early morning sunrise game drive during peak predator hunting hours before your return flight to Zanzibar"
+      ],
+      "description": "Fly directly from Zanzibar to Selous (Nyerere) for a 2-day safari: 4x4 game drives, sunset Rufiji River boat cruise, and luxury tented camp accommodation.",
+      "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) — hotel transfer included",
+      "interests": [
+        "safari",
+        "wildlife",
+        "boat safari",
+        "fly-in safari"
+      ],
+      "timeOfDay": [
+        "morning",
+        "afternoon"
+      ]
     }
   ]
 }

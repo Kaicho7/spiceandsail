@@ -75,6 +75,7 @@ module.exports = function(eleventyConfig) {
     "kuza-cave-seaweed": "people-swimming-turquoise-water-steps.jpg",
     "mikumi-nyerere-day-safari": "mikumi-day-trip-safari-from-zanzibar.jpg",
     "saadani-national-park-safari": "saadani-national-park-elephant.jpg",
+    "selous-nyerere-fly-in-safari": "selous-rufiji-river-boat-safari.jpg",
     "serengeti-3day-flyin": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
     "zanzibar-essentials-3day": "aerial-beach-boat-turquoise-water.jpg",
     "zanzibar-essentials-3-day-pass": "tourists-waving-dhow-boat-sea.jpg"
