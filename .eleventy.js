@@ -63,7 +63,7 @@ module.exports = function(eleventyConfig) {
     "stone-town-walking-tour": "stone-town-guided-walking-tour-zanzibar.jpg",
     "stone-town-spice-prison-combo": "aldabra-giant-tortoise-changuu-island.jpg",
     "spice-farm": "zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg",
-    "village-community-tour": "child-walking-dirt-path-village.jpg",
+    "village-community-tour": "women-walking-beach-zanzibar-village.jpg",
     "safari-blue": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg",
     "mnemba-snorkeling": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
     "prison-island-nakupenda": "prison-island-nakupenda-combo-tour-zanzibar.jpg",
@@ -74,6 +74,7 @@ module.exports = function(eleventyConfig) {
     "jozani-forest": "jozani-forest-red-colobus-monkey-tour-zanzibar.jpg",
     "kuza-cave-seaweed": "people-swimming-turquoise-water-steps.jpg",
     "mikumi-nyerere-day-safari": "mikumi-day-trip-safari-from-zanzibar.jpg",
+    "saadani-national-park-safari": "saadani-national-park-elephant.jpg",
     "serengeti-3day-flyin": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
     "zanzibar-essentials-3day": "aerial-beach-boat-turquoise-water.jpg",
     "zanzibar-essentials-3-day-pass": "tourists-waving-dhow-boat-sea.jpg"
@@ -105,15 +106,15 @@ module.exports = function(eleventyConfig) {
     "Kendwa": "dhows-beach-sunset-zanzibar.jpg",
     "Paje": "kite-centre-zanzibar-aerial-kitesurfing.jpg",
     "Jambiani": "women-collecting-seaweed-beach-zanzibar.jpg",
-    "Kiwengwa": "beach-front-hotel-palm-trees-people.jpg",
+    "Kiwengwa": "kiwengwa-beach-zanzibar.jpg",
     "Pongwe / Michamvi": "zanzibar-house-on-rock-beach-scene.jpg",
     "Bwejuu / Dongwe": "zanzibar-beach-palm-trees-thatched-huts.jpg",
     "Michamvi / Pingwe": "zanzibar-beach-women-walking-white-sand.jpg",
     "Kizimkazi / Dimbani": "dolphins-leaping-ocean-zanzibar.jpg",
     "Fumba / Mbweni": "dhow-boat-mangroves-turquoise-water.jpg",
-    "Matemwe / Kigomani": "snorkeling-zanzibar-shallow-water-coral.jpg",
-    "Chake Chake (Pemba)": "aerial-coastal-town-beach-turquoise-water.jpg",
-    "Wambaa Gulf / Makangale (Pemba)": "boardwalk-sea-boats-cloudy-sky.jpg"
+    "Matemwe / Kigomani": "matemwe-beach-zanzibar.jpg",
+    "Chake Chake (Pemba)": "chake-chake-pemba-jetty.jpg",
+    "Wambaa Gulf / Makangale (Pemba)": "pemba-misali-island-reef.jpg"
   };
 
   // Load single canonical image catalog (vision-audited)

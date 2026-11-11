@@ -14534,5 +14534,89 @@
     "primary_use": [
       "self-drive"
     ]
+  },
+  "kiwengwa-beach-zanzibar.jpg": {
+    "file": "kiwengwa-beach-zanzibar.jpg",
+    "alt_text": "Pristine white-sand beach and turquoise ocean shallows at Kiwengwa, Zanzibar.",
+    "category": "beach",
+    "activity": "beach",
+    "place": "Kiwengwa",
+    "subject": "authentic Kiwengwa beach with turquoise shallow lagoon and palm-fringed shoreline",
+    "quality_score": 5,
+    "width": 2016,
+    "height": 1512,
+    "bytes": 513253
+  },
+  "matemwe-beach-zanzibar.jpg": {
+    "file": "matemwe-beach-zanzibar.jpg",
+    "alt_text": "Tranquil white sandy beach and coral reef lagoon at Matemwe overlooking Mnemba Atoll.",
+    "category": "beach",
+    "activity": "beach",
+    "place": "Matemwe",
+    "subject": "Matemwe beach and turquoise lagoon on the northeast coast of Zanzibar",
+    "quality_score": 5,
+    "width": 3648,
+    "height": 2736,
+    "bytes": 1935616
+  },
+  "pemba-misali-island-reef.jpg": {
+    "file": "pemba-misali-island-reef.jpg",
+    "alt_text": "Aerial view of Misali Island and its protected coral atoll reef in Pemba, Zanzibar.",
+    "category": "marine",
+    "activity": "diving",
+    "place": "Pemba Island",
+    "subject": "Misali Island marine conservation area with coral reefs and turquoise waters off Pemba",
+    "quality_score": 5,
+    "width": 4664,
+    "height": 3090,
+    "bytes": 2394821
+  },
+  "chake-chake-pemba-jetty.jpg": {
+    "file": "chake-chake-pemba-jetty.jpg",
+    "alt_text": "Traditional harbor and waterfront jetty of Chake Chake, the historic main town of Pemba Island.",
+    "category": "cultural",
+    "activity": "walking_tour",
+    "place": "Chake Chake",
+    "subject": "coastal jetty and mangrove waters in Chake Chake, Pemba",
+    "quality_score": 5,
+    "width": 1280,
+    "height": 960,
+    "bytes": 354124
+  },
+  "saadani-national-park-beach.jpg": {
+    "file": "saadani-national-park-beach.jpg",
+    "alt_text": "Wild coastal shoreline where the savanna wilderness of Saadani National Park meets the Indian Ocean.",
+    "category": "safari",
+    "activity": "safari",
+    "place": "Saadani National Park",
+    "subject": "coastal wilderness where bush meets ocean at Saadani National Park",
+    "quality_score": 5,
+    "width": 800,
+    "height": 398,
+    "bytes": 78240
+  },
+  "saadani-national-park-elephant.jpg": {
+    "file": "saadani-national-park-elephant.jpg",
+    "alt_text": "Wild African elephant grazing in coastal savanna grassland at Saadani National Park.",
+    "category": "safari",
+    "activity": "safari",
+    "place": "Saadani National Park",
+    "subject": "wild elephant in Saadani National Park",
+    "quality_score": 5,
+    "width": 1224,
+    "height": 816,
+    "bytes": 289410
+  },
+  "saadani-wami-river-boat-safari.jpg": {
+    "file": "saadani-wami-river-boat-safari.jpg",
+    "alt_text": "Riverboat safari gliding along the wildlife-rich Wami River in Saadani National Park.",
+    "category": "safari",
+    "activity": "safari",
+    "place": "Saadani National Park",
+    "subject": "boat safari on the Wami River with riverine wildlife at Saadani",
+    "quality_score": 5,
+    "width": 1600,
+    "height": 1204,
+    "bytes": 541203
   }
 }

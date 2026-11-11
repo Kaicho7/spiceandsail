@@ -701,5 +701,48 @@
     ],
     "has_itinerary": true,
     "featured_image": "zanzibar-beach-palm-trees-thatched-huts.jpg"
+  },
+  {
+    "id": "SAF-03",
+    "slug": "saadani-national-park-safari",
+    "seo_slug": "saadani-national-park-safari",
+    "title": "Saadani National Park safari from Zanzibar",
+    "description": "Experience East Africa\u2019s only coastal national park where the bush meets the beach. Fly in 15 minutes or cross by speedboat directly from Zanzibar to Saadani for open-vehicle game drives, Wami River boat safari with hippos and crocodiles, and coastal wildlife.",
+    "short_description": "Experience East Africa\u2019s only coastal national park where the bush meets the beach. Fly in 15 minutes or cross by speedboat directly from Zanzibar to Saadani for big game drives and river safaris.",
+    "duration": "Full day or 2 days / 1 night",
+    "location": "Zanzibar \u2192 Saadani National Park \u2192 Zanzibar",
+    "price": {
+      "min": 390.0,
+      "max": 750.0,
+      "basis": "per person (90\u201350 boat / shared flight; 50\u201350 overnight beach lodge package)",
+      "display": "90\u201350"
+    },
+    "includes": [
+      "Return flights or speedboat, 4x4 game drive, Wami River boat safari, park fees, lunch"
+    ],
+    "product_type": "Safari",
+    "source_quality": "Authentic coastal safari package + 2026 market range",
+    "source_files": "Zanzibar_Master_Venture_Plan.md; TANAPA Saadani National Park guides",
+    "category": "SAF",
+    "meta_description": "Book Saadani National Park day safari from Zanzibar. Bush meets beach: 4x4 game drives, Wami River boat cruise, elephants & lions. From 90/person.",
+    "overview": "Saadani National Park is the only wildlife sanctuary in East Africa bordering the Indian Ocean. Watch elephants and giraffes stroll across coastal savanna, take a thrilling boat safari down the mangrove-fringed Wami River among pods of hippos and basking crocodiles, and return to Zanzibar the same evening or stay overnight in a beachfront safari lodge.",
+    "what_to_expect": [
+      "Convenient 15-minute flight from Zanzibar Airport or scenic 1-hour coastal speedboat transfer",
+      "Morning 4x4 open-sided game drive tracking elephants, giraffes, buffaloes, lions, and waterbucks",
+      "Boat safari along the Wami River spotting hippos, Nile crocodiles, and diverse kingfishers and fish eagles",
+      "Bush lunch overlooking the river or Indian Ocean coastline",
+      "TANAPA conservation entry fees, licensed safari guide, and all logistics handled seamlessly"
+    ],
+    "duration_detail": "Full day (8\u201310 hours) or 2-day / 1-night lodge extension",
+    "meeting_point": "Abeid Amani Karume Airport (ZNZ) or hotel pickup for speedboat transfer",
+    "important_notes": [
+      "Only 15 minutes flying time from Zanzibar \u2014 the closest mainland wildlife safari to the islands",
+      "Speedboat transfers operate weather-permitting in calm sea conditions",
+      "Overnight lodge options available at luxury tented camps along the Saadani coast",
+      "Year-round wildlife viewing with best dry seasons from June\u2013October and December\u2013March"
+    ],
+    "itinerary": [],
+    "has_itinerary": false,
+    "featured_image": "saadani-national-park-elephant.jpg"
   }
 ]
