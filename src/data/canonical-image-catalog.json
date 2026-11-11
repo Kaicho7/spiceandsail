@@ -14651,5 +14651,49 @@
     "quality_score": 5,
     "width": 3872,
     "height": 2592
+  },
+  "zanzibar-clove-harvest-pemba-island.jpg": {
+    "file": "zanzibar-clove-harvest-pemba-island.jpg",
+    "alt_text": "Fresh aromatic clove flower buds clustered on branch in a traditional Zanzibar spice plantation.",
+    "category": "spice",
+    "activity": "cultural",
+    "place": "Kizimbani / Pemba",
+    "subject": "fresh clove flower buds on tree branch ready for harvest",
+    "quality_score": 5,
+    "width": 4000,
+    "height": 3000
+  },
+  "toyota-alphard-vip-minivan-zanzibar.jpg": {
+    "file": "toyota-alphard-vip-minivan-zanzibar.jpg",
+    "alt_text": "Luxury white Toyota Alphard VIP MPV with air conditioning and captain leather seating for private Zanzibar transfers.",
+    "category": "transfer",
+    "activity": "transfer",
+    "place": "Zanzibar Airport",
+    "subject": "Toyota Alphard VIP MPV luxury airport transfer vehicle",
+    "quality_score": 5,
+    "width": 2213,
+    "height": 1092
+  },
+  "toyota-hiace-commuter-minivan-zanzibar.jpg": {
+    "file": "toyota-hiace-commuter-minivan-zanzibar.jpg",
+    "alt_text": "White high-roof Toyota HiAce Commuter minibus with multi-zone AC and luggage space for group transfers.",
+    "category": "transfer",
+    "activity": "transfer",
+    "place": "Zanzibar",
+    "subject": "Toyota HiAce Commuter group transfer van with high roof",
+    "quality_score": 5,
+    "width": 2361,
+    "height": 1771
+  },
+  "toyota-coaster-minibus-zanzibar.jpg": {
+    "file": "toyota-coaster-minibus-zanzibar.jpg",
+    "alt_text": "Spacious Toyota Coaster private mini-coach bus (22-25 passengers) for wedding parties, conference delegations, and large group excursions in Zanzibar.",
+    "category": "transfer",
+    "activity": "transfer",
+    "place": "Zanzibar",
+    "subject": "Toyota Coaster private charter bus for large group transfers and events",
+    "quality_score": 5,
+    "width": 1071,
+    "height": 923
   }
 }

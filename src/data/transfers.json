@@ -7,13 +7,13 @@
     "route": "Abeid Amani Karume International Airport → Stone Town",
     "duration": "10–20 min",
     "price": {
-      "min": 35.0,
-      "max": 40.0,
+      "min": 35,
+      "max": 40,
       "basis": "per private vehicle up to 4 pax",
       "display": "$35–$40"
     },
     "price_display": "$35–$40",
-    "image": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
+    "image": "toyota-alphard-vip-minivan-zanzibar.jpg",
     "includes": [
       "Meet & greet, flight tracking, waiting, water, luggage help"
     ],
@@ -28,13 +28,13 @@
     "route": "ZNZ → Paje/Jambiani",
     "duration": "55–70 min",
     "price": {
-      "min": 45.0,
-      "max": 55.0,
+      "min": 45,
+      "max": 55,
       "basis": "per private vehicle up to 4 pax",
       "display": "$45–$55"
     },
     "price_display": "$45–$55",
-    "image": "white-nissan-elgrand-van-parked-gravel.jpg",
+    "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
     "includes": [
       "Meet & greet, flight tracking, waiting, water, luggage help"
     ],
@@ -49,13 +49,13 @@
     "route": "ZNZ → Nungwi/Kendwa",
     "duration": "70–90 min",
     "price": {
-      "min": 50.0,
-      "max": 60.0,
+      "min": 50,
+      "max": 60,
       "basis": "per private vehicle up to 4 pax",
       "display": "$50–$60"
     },
     "price_display": "$50–$60",
-    "image": "white-van-beach-zanzibar-sand-ocean.jpg",
+    "image": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
     "includes": [
       "Meet & greet, flight tracking, waiting, water, luggage help"
     ],
