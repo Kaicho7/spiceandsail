@@ -34,7 +34,7 @@ permalink: "/tours/index.html"
           <p class="tour-meta">{{ tour.duration }} • {{ tour.location }}</p>
           <p class="tour-description">{{ tour.short_description }}</p>
           <div class="card-footer">
-            <span class="card-price">{{ tour.price.display }} <span class="price-basis">per person</span></span>
+            <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
             <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-sm">Details & Booking</a>
           </div>
         </div>

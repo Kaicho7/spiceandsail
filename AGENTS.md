@@ -21,8 +21,7 @@ No coder (including this AI assistant) shall commit, amend, push, force-push, or
 
 ### Why:
 - The user has explicitly had a coder push without permission, causing a blocked 447 MB push attempt and session timeout.
-- All fixes in this session are **local and uncommitted** (791 files changed, 114 MB of images).
-- Nothing will be pushed until the user explicitly names the remote, branch, and gives permission.
+- Nothing is pushed until the user explicitly names the remote, branch, and gives permission.
 
 ### How to request a push:
 The user must state:
@@ -92,4 +91,4 @@ Under NO circumstances may any coder substitute stock photos or make code mappin
 ## 5. Verification & Zero Speculation Invariant
 
 - **Zero Unverified "Fix" Claims:** Never claim a bug or issue is fixed until it is verified locally via `npm run build` AND in the rendered HTML output.
-- **Production Truth Invariant:** Never claim changes are live on `https://spiceandsail.com` unless verified by inspecting live HTTP headers and deploy state via the Netlify Production API. Git push does NOT deploy this site automatically (CI is unlinked; production requires direct CLI deploy).
+- **Production Truth Invariant:** Never claim changes are live on `https://spiceandsail.com` unless verified by inspecting live HTTP headers and deploy state via the Netlify Production API or explicit deploy evidence. Pushes to `master` run CI build/test; production deploy is manual (`workflow_dispatch`) or handled directly by the site owner in Netlify. GitHub push must not be treated as a production deploy.

@@ -120,3 +120,28 @@
 - Real GBP/TripAdvisor review URLs still needed; review capture stays disabled with 503 until configured.
 - No commit or deploy was requested or made.
 - Hotel data/photo licensing remains an owner decision.
+
+## 2026-11-11 — audit follow-up: local Safari fix, price source, deploy gate
+
+### Changes
+
+- Fixed the two Safari cards in `src/data/tours.json`: Saadani now shows `$390–$750` and Selous now shows `$750–$1,100`; corrupted `basis` and `meta_description` text corrected to match.
+- Consolidated displayed tour price rendering to the concierge catalogue: templates now use `{% catPrice tour.slug %}` instead of `{{ tour.price.display }}`.
+- Added `tests/pricing-integrity.test.js` to assert tour prices match the catalogue and templates do not bypass that source.
+- GitHub workflow now runs build/test on pushes and PRs, but `deploy-prod` only runs on manual `workflow_dispatch`. No automatic Netlify production deploy on `master` push.
+- Updated `AGENTS.md` and `README.md` so GitHub push is not treated as a production deploy; production truth still requires direct verification.
+
+### Verification
+
+- `python3` YAML parse of `.github/workflows/deploy.yml` → OK.
+- `npm run build` → exit 0; `Copied 661 files / Wrote 116 files`; "all image refs in dist/ resolve".
+- `npm test` → exit 0; `tests 64`, `pass 64`, `fail 0`.
+- Internal-link crawl → 11,005 refs checked, **0 missing**.
+- `grep -R '{{ tour.price.display }}' src` → no matches.
+- `dist/tours/index.html` → `$390–$750` and `$750–$1,100`.
+
+### Still open
+
+- Live/production HTML has not been verified in this session. The owner handles Netlify deployment; after deploy, verify headers and representative pages directly.
+- GA ID, GBP/TripAdvisor URLs, DPO/Pesapal operating flow, owner email/hours, and photo rights remain owner decisions.
+- P2 backlog remains: centralize remaining hardcoded prices, indicative FX label, legacy function migration before July 2027.

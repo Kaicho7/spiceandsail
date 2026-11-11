@@ -246,7 +246,7 @@ alternate_de: "https://spiceandsail.com/de/"
               <p class="card-meta">{{ tour.duration }} • {{ tour.location }}</p>
               <p class="card-description">{{ tour.short_description }}</p>
               <div class="card-footer">
-                <span class="card-price">{{ tour.price.display }} <span class="price-basis">per person</span></span>
+                <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
                 <div class="card-actions">
                   <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-primary btn-sm">View Details</a>
                   <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hello%20Spice%20and%20Sail%2C%20I%27m%20interested%20in%20{{ tour.title | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Ask on WhatsApp</a>

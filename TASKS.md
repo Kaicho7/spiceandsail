@@ -50,6 +50,10 @@ Rule: tick a task only after its Check command exits 0. Record the command outpu
 - [x] Resolve FR/PL claim and update stale README/CLAUDE claims.
   - Correction: FR/PL are served by the Google Translate widget, not missing static pages, so the selector stays.
   - Check: README rewritten for the current repo; CLAUDE contact section points at `site.json` and no longer lists personal emails.
+- [x] Consolidate displayed tour price rendering on the concierge catalogue and add a consistency test.
+  - Check: `tests/pricing-integrity.test.js` passes; `grep -R '{{ tour.price.display }}' src` returns nothing.
+- [x] Keep Netlify production deploy manual while still pushing code to GitHub.
+  - Check: `.github/workflows/deploy.yml` only runs `deploy-prod` on `workflow_dispatch`; master push runs build/test only.
 
 ## P2 — quality
 

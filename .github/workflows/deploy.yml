@@ -5,6 +5,7 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+  workflow_dispatch:
 
 jobs:
   build-test:
@@ -19,27 +20,12 @@ jobs:
       - run: npm run build
       - run: npm test
 
-  deploy-preview:
-    needs: build-test
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-      - run: npm ci && npm run build
-      - uses: netlify/actions/cli@3185065f4ab2f6df6f2ef41ee013626e1c02a426
-        with:
-          args: deploy --dir=dist --alias=pr-${{ github.event.number }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
+  # Netlify production deployment is manual. GitHub must not publish the site
+  # on every master push; the site owner handles Netlify or dispatches this
+  # workflow explicitly when they want a deploy.
   deploy-prod:
     needs: build-test
-    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
