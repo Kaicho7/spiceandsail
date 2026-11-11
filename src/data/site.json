@@ -2,7 +2,7 @@
   "name": "Spice and Sail Zanzibar",
   "url": "https://spiceandsail.com",
   "logo": "/images/logo.png",
-  "description": "Zanzibar tour operator based in Stone Town — tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
+  "description": "Zanzibar tour operator based in Mbuzini — tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
   "ga_measurement_id": "G-SNSZNZ2026",
   "contact": {
     "whatsapp": "255672450934",
@@ -12,15 +12,15 @@
     "email": "reservations@spiceandsail.com"
   },
   "address": {
-    "name": "Spice & Sail Zanzibar Operations Hub",
-    "street": "Near Mbuzini Hospital, Mbuzini, Magharibi District",
-    "city": "Zanzibar City",
+    "name": "Spice & Sail Zanzibar",
+    "street": "Mbuzini",
+    "city": "Mbuzini",
     "region": "Mjini Magharibi",
     "postal_code": "71208",
     "country": "Tanzania",
     "country_code": "TZ",
-    "short": "Mbuzini, Magharibi District, Zanzibar, Tanzania",
-    "display": "Near Mbuzini Hospital, Mbuzini, Magharibi District, Mjini Magharibi, 71208, Zanzibar, Tanzania"
+    "short": "Mbuzini, Mjini Magharibi, Zanzibar, Tanzania",
+    "display": "Mbuzini, Mjini Magharibi, Zanzibar, Tanzania — Postcode 71208"
   },
   "hours": {
     "days": "Monday–Saturday",
@@ -29,11 +29,13 @@
     "timezone": "EAT (UTC+3)"
   },
   "social": {
-    "instagram": "",
-    "tiktok": "",
-    "youtube": "",
+    "instagram": "https://www.instagram.com/spiceandsailzanzibar/",
+    "tiktok": "https://www.tiktok.com/@spiceandsailtours",
+    "youtube": "https://www.youtube.com/@spiceandsailzanzibar",
     "twitter": "",
     "facebook": "",
-    "tripadvisor": ""
+    "tripadvisor": "",
+    "trustpilot": "https://www.trustpilot.com/review/spiceandsail.com",
+    "google_maps": "https://www.google.com/maps/place/Spice+%26+Sail+Zanzibar/data=!4m2!3m1!1s0x0:0xaa066bcd6a73b31b"
   }
 }

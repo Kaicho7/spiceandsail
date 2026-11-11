@@ -54,6 +54,11 @@ Rule: tick a task only after its Check command exits 0. Record the command outpu
   - Check: `tests/pricing-integrity.test.js` passes; `grep -R '{{ tour.price.display }}' src` returns nothing.
 - [x] Keep Netlify production deploy manual while still pushing code to GitHub.
   - Check: `.github/workflows/deploy.yml` only runs `deploy-prod` on `workflow_dispatch`; master push runs build/test only.
+- [x] Pre-deploy data/doc hygiene: stale tour meta descriptions match the catalogue, currency conversions are labelled indicative, and tracked private contact details are removed from `AGENTS.md`.
+  - Check: `tests/pricing-integrity.test.js` covers stale meta prices; build and `npm test` pass; `grep -E 'philip@jobkijiji|philip.kinyanjui' AGENTS.md` returns nothing.
+- [x] Wire owner-confirmed business identity into the site (address, Maps, Trustpilot, socials, structured data).
+  - Check: `dist/index.html` JSON-LD has official `PostalAddress`, social `sameAs`, and no unverified `geo`; footer/contact/about show the Mbuzini address and Maps link.
+
 
 ## P2 — quality
 

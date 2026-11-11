@@ -81,7 +81,7 @@ Under NO circumstances may any coder substitute stock photos or make code mappin
 ## 4. Canonical Executive Contact Details (NON-NEGOTIABLE)
 
 - **Primary WhatsApp & Telephone:** `+255 672 450 934`
-- **Primary Executive Emails:** `philip@jobkijiji.site` / `philip.kinyanjui.jumbe@gmail.com`
+- **Public contact email:** use `src/data/site.json` (`site.contact.email`); do not hardcode private or personal inboxes in templates.
 - **Alternative Contact Mobile:** `+255 655 830 226`
 - **Location:** Zanzibar, Tanzania
 - **Strict Prohibition on Fake Numbers:** Under NO circumstances should fake sequential dummy numbers (`+255770000000990`, `+255770000000910`, etc.) ever appear in data files, templates, or WhatsApp links. Hotel inquiry buttons must link to the operator's verified WhatsApp (`+255 672 450 934`) with a prefilled message.

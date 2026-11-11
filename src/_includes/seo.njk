@@ -74,7 +74,7 @@
       "url": "{{ SITE_URL | safe }}",
       "logo": "{{ SITE_URL | safe }}/images/logo.png",
       "image": "{{ SITE_URL | safe }}/images/sunset-dhow-cruise-zanzibar-stone-town.jpg",
-      "description": "Zanzibar tour operator and transfer specialist based in Mbuzini & Stone Town — authentic tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
+      "description": "{{ site.description }}",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "{{ site.address.street }}",
@@ -84,11 +84,6 @@
         "addressCountry": "{{ site.address.country_code }}"
       },
       "telephone": "{{ site.contact.phone_display }}",
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-6.1659",
-        "longitude": "39.2026"
-      },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -98,13 +93,15 @@
         }
       ],
       "sameAs": [
-        "https://wa.me/{{ site.contact.whatsapp }}"{% if site.social and site.social.instagram %},
+        "https://wa.me/{{ site.contact.whatsapp }}"{% if site.social and site.social.google_maps %},
+        "{{ site.social.google_maps }}"{% endif %}{% if site.social and site.social.instagram %},
         "{{ site.social.instagram }}"{% endif %}{% if site.social and site.social.tiktok %},
         "{{ site.social.tiktok }}"{% endif %}{% if site.social and site.social.youtube %},
         "{{ site.social.youtube }}"{% endif %}{% if site.social and site.social.twitter %},
         "{{ site.social.twitter }}"{% endif %}{% if site.social and site.social.facebook %},
         "{{ site.social.facebook }}"{% endif %}{% if site.social and site.social.tripadvisor %},
-        "{{ site.social.tripadvisor }}"{% endif %}
+        "{{ site.social.tripadvisor }}"{% endif %}{% if site.social and site.social.trustpilot %},
+        "{{ site.social.trustpilot }}"{% endif %}
       ],
       "priceRange": "$$",
       "currenciesAccepted": "USD, TZS",

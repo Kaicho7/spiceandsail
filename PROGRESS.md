@@ -145,3 +145,56 @@
 - Live/production HTML has not been verified in this session. The owner handles Netlify deployment; after deploy, verify headers and representative pages directly.
 - GA ID, GBP/TripAdvisor URLs, DPO/Pesapal operating flow, owner email/hours, and photo rights remain owner decisions.
 - P2 backlog remains: centralize remaining hardcoded prices, indicative FX label, legacy function migration before July 2027.
+
+## 2026-11-11 — pre-deploy hygiene pass (local only)
+
+### Changes
+
+- Corrected stale `meta_description` minimums for Stone Town + Spice Farm + Prison Island, Safari Blue, Mnemba Atoll, Prison Island + Nakupenda, and Nakupenda Sandbank so they no longer understate the live catalogue price.
+- Extended `tests/pricing-integrity.test.js` to reject tour meta descriptions that understate the catalogue minimum.
+- `AGENTS.md`: removed private executive email addresses; public email is now sourced from `src/data/site.json`.
+- FX conversions are labelled indicative in the currency switcher tooltip and footer disclaimer.
+- `PROCESS.md` rewritten as a superseded/image-status note; `docs/diagnosis.md` and `docs/other-bugs-found.md` marked historical/superseded.
+
+### Verification
+
+- Private-email scan → no matches outside TASKS' search-pattern text.
+- `npm run build` → exit 0; 661 copied, 116 written; image refs resolve.
+- `npm test` → exit 0; `tests 64`, `pass 64`, `fail 0`.
+- Internal-link crawl → 11,005 refs checked, **0 missing**.
+
+### Not done / blocked
+
+- No Netlify deploy or domain verification was performed or attempted.
+- GA ID, GBP/TripAdvisor URLs, DPO/Pesapal operating flow, photo rights, and hours/email confirmation require owner input.
+- CSP `unsafe-inline`, legacy Netlify functions, broader price centralisation, and full visual image identity audit remain.
+
+## 2026-11-11 — owner identity/profile details wired in
+
+### Changes
+
+- Updated `src/data/site.json` address to the owner-confirmed public address: Mbuzini, Mjini Magharibi, Zanzibar, Tanzania — Postcode 71208.
+- Updated `src/data/site.json` socials to owner-supplied profiles: Instagram, TikTok, YouTube, Google Maps, Trustpilot.
+- `src/_includes/seo.njk`: removed unverified `geo`, fixed duplicate `dayOfWeek`, uses `site.description`, and emits official `sameAs` links.
+- Contact, German and Italian contact pages now use the supplied Google Maps embed instead of OpenStreetMap/old coordinates.
+- Footer shows the Mbuzini address, Google Maps directions link, and Trustpilot review link.
+- Terms/About copy updated to Mbuzini; no “Near Mbuzini Hospital” or old openstreetmap coordinates remain.
+
+### Verification
+
+- `npm run build` → exit 0; image refs resolve.
+- `npm test` → exit 0; `tests 64`, `pass 64`, `fail 0`.
+- Internal-link crawl → 11,575 refs checked, **0 missing**.
+- `dist/index.html` JSON-LD → official `PostalAddress`; `geo` absent; `sameAs` includes WhatsApp, Maps, Instagram, TikTok, YouTube, Trustpilot.
+
+### Not done / blocked
+
+- No Netlify deploy/domain action or live verification performed.
+- GBP/Search Console verification and business-profile completeness require owner-side access.
+- Photo rights, final GBP categories/hours/services/photos/reviews, and DPO/Pesapal flow remain owner decisions.
+
+### Follow-up — exact address string
+
+- Normalised visible address strings and generated pages to `Mbuzini, Mjini Magharibi, Zanzibar, Tanzania`; structured `PostalAddress` keeps `postalCode: 71208`.
+- Replaced remaining stale IT/DE contact-location copy and Google Maps query URLs with the supplied Google Maps place link.
+- Re-verified: build exit 0, tests 64/64, 11,575 link refs / 0 missing.

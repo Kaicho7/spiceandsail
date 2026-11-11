@@ -1,5 +1,8 @@
 # Concierge Chatbot & Architecture Diagnosis
 
+> **Historical OpenCode diagnosis — superseded.** Current `public/js/concierge.js` sends `profile` and `history`; `netlify/functions/chat.js` extracts/merges entities and returns an updated `profile`. Keep this file for provenance only and rely on the current code and tests.
+
+
 **Date:** 2026-11-06  
 **Repository:** `~/spiceandsail`  
 **Branch:** `fix-p0-v1` (created from `master`)  

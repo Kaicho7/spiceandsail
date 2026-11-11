@@ -44,7 +44,7 @@ Under NO circumstances may any coder substitute stock photos or make code mappin
 - **Canonical source:** `src/data/site.json` (`contact`, `address`, `hours`). Templates must read from that file, not hardcode a second copy.
 - **Primary WhatsApp & Telephone:** `+255 672 450 934`
 - **Public email:** use the value in `src/data/site.json` (`contact.email`); do not hardcode a separate address.
-- **Location:** Near Mbuzini Hospital, Mbuzini, Magharibi District, Mjini Magharibi, 71208, Zanzibar, Tanzania
+- **Location:** Mbuzini, Mjini Magharibi, Zanzibar, Tanzania — Postcode 71208 (use `src/data/site.json` as source)
 - **Strict Prohibition on Fake Numbers:** Under NO circumstances should fake sequential dummy numbers (`+255770000000990`, etc.) ever appear in data files, templates, or WhatsApp links. Hotel inquiry buttons must link to the operator's verified WhatsApp (`+255 672 450 934`) with a prefilled message.
 
 ## 5. Verification & Zero Speculation Invariant

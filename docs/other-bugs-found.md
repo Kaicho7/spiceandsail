@@ -1,5 +1,8 @@
 # Other Bugs Found (Out of Scope)
 
+> **Historical note.** Status summary: item 1 is fixed; item 2 is addressed by catalogue-driven price rendering; item 3 returns a WhatsApp handoff; item 4 is implemented; item 5 remains cosmetic. Historical document only.
+
+
 **Date:** 2026-11-06  
 **Branch:** fix-p0-v1  
 

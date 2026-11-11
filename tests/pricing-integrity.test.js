@@ -39,6 +39,14 @@ test('tour prices match the concierge catalogue', () => {
       `${tour.slug} price matches catalogue`
     );
     assert.match(cp.display, /^\$\d[\d,]*(–\$\d[\d,]*)?$/, `${tour.slug} display has no stripped currency symbols`);
+    const meta = tour.meta_description || '';
+    const fromPrice = meta.match(/From\s+\$?([0-9][0-9,]*)/i);
+    if (fromPrice && tp.min != null) {
+      assert.ok(
+        Number(fromPrice[1].replace(/,/g, '')) >= Number(tp.min),
+        `${tour.slug} meta_description does not understate the catalogue minimum`
+      );
+    }
   }
 });
 
