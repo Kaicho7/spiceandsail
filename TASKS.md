@@ -58,6 +58,22 @@ Rule: tick a task only after its Check command exits 0. Record the command outpu
   - Check: `tests/pricing-integrity.test.js` covers stale meta prices; build and `npm test` pass; `grep -E 'philip@jobkijiji|philip.kinyanjui' AGENTS.md` returns nothing.
 - [x] Wire owner-confirmed business identity into the site (address, Maps, Trustpilot, socials, structured data).
   - Check: `dist/index.html` JSON-LD has official `PostalAddress`, social `sameAs`, and no unverified `geo`; footer/contact/about show the Mbuzini address and Maps link.
+- [x] Fix all sitemap hreflang alternates: create the missing `/de/transfers/airport-to-nungwi/` page; add `tests/hreflang-integrity.test.js` so every alternate must resolve to a built page.
+  - Check: `npm run build` then `npm test` pass; sitemap carries 116 alternates with 0 missing; DE Nungwi page serves with de/en/it/x-default links.
+- [x] Add `width`/`height` to every rendered `<img>` via a build step (`scripts/add-img-dimensions.js`) with a regression test.
+  - Check: build logs `816 <img> tags patched ... 0 without resolvable intrinsic size`; `tests/img-dimensions.test.js` passes.
+- [x] Rewrite the 13 truncated tour `short_description`s as complete sentences.
+  - Check: no `short_description` in `src/data/tours.json` ends mid-word; build + tests pass.
+- [x] Align `paymentAccepted` in JSON-LD with the terms (remove unsupported "Bank Transfer").
+  - Check: `grep -n "paymentAccepted" src/_includes/seo.njk` shows Cash/Mobile Money/Card-via-link only.
+- [x] Remove remaining "Stone Town based" business-identity claims in favour of the confirmed Mbuzini location.
+  - Check: `grep -rn "Stone Town based\|Town–based" src/pages src/_includes` returns nothing.
+- [x] Align travel-guide hardcoded prices with the concierge catalogue.
+  - Check: `src/pages/travel-guide.njk` activity table matches `src/data/concierge-catalogue.json` ranges.
+- [x] Fix heading-hierarchy skips site-wide (0 skips across all 115 built pages).
+  - Check: rebuild + heading scan shows 0 `h(n)->h(n+>1)` jumps; `npm test` passes.
+- [x] Hygiene: delete stale `src/data/_site.json`, remove `.eleventy.js.backup*` from the tree, fix `czytaemy` typo in `review-capture.js`, correct CLAUDE.md deploy claim.
+  - Check: `git ls-files | grep -E "_site\.json|backup"` is empty; `grep -n "czytamy" netlify/functions/review-capture.js` matches; CLAUDE.md names `workflow_dispatch`.
 
 
 ## P2 — quality

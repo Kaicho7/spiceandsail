@@ -2,7 +2,7 @@
 <footer class="site-footer">
   <div class="footer-grid footer-top">
     <div class="footer-col footer-brand">
-      <h4>Spice and Sail Zanzibar</h4>
+      <p class="footer-col-title">Spice and Sail Zanzibar</p>
       <p>WhatsApp-first booking. Transparent pricing with marine fees included. Based in {{ site.address.short }}.</p>
       <p style="font-size: 0.85rem; margin-top: 0.35rem;"><a href="{{ site.social.google_maps }}" target="_blank" rel="noopener noreferrer">Google Maps &amp; directions</a> &bull; <a href="{{ site.social.trustpilot }}" target="_blank" rel="noopener noreferrer">Review us on Trustpilot</a></p>
       {% if site.social and (site.social.instagram or site.social.tiktok or site.social.youtube or site.social.twitter or site.social.facebook or site.social.tripadvisor) %}
@@ -17,7 +17,7 @@
       {% endif %}
     </div>
     <div class="footer-col">
-      <h4>Tours & Experiences</h4>
+      <p class="footer-col-title">Tours &amp; Experiences</p>
       <ul>
         <li><a href="/experiences/">Rare Hidden Gems & Activities</a></li>
         <li><a href="/tours/stone-town-walking-tour/">Stone Town Walking Tour</a></li>
@@ -30,7 +30,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Transfers & Packages</h4>
+      <p class="footer-col-title">Transfers &amp; Packages</p>
       <ul>
         <li><a href="/transfers/">Airport Transfers Overview</a></li>
         <li><a href="/transfers/airport-to-nungwi/">Airport to Nungwi Transfer</a></li>
@@ -40,7 +40,7 @@
       </ul>
     </div>
 <div class="footer-col">
-      <h4>Contact</h4>
+      <p class="footer-col-title">Contact</p>
       <p>{{ site.address.short }}</p>
       <p><a href="tel:{{ site.contact.phone }}">Call: {{ site.contact.phone_display }}</a> &bull; <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener">WhatsApp Chat</a></p>
       {% if site.contact and site.contact.email %}<p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>{% endif %}

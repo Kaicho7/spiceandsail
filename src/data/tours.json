@@ -5,7 +5,7 @@
     "seo_slug": "stone-town-walking-tour",
     "title": "Stone Town walking tour",
     "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House of Wonders, and the Old Fort.",
-    "short_description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House ",
+    "short_description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide — from the Sultan's palace to the bustling Darajani market, the House of Wonders and the Old Fort.",
     "duration": "2–4 hours",
     "location": "Stone Town",
     "price": {
@@ -49,7 +49,7 @@
     "seo_slug": "spice-farm",
     "title": "Spice farm tour",
     "description": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade — how Zanzibar became the \"Spice Island\" — while you taste fresh nutmeg, cloves, cinnamon, and cardamom straight from the source.",
-    "short_description": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade — how Zanzibar became the \"Spice Island\" — while you taste fresh nutmeg, cloves, c",
+    "short_description": "Journey into Zanzibar's lush interior to a working spice farm and taste fresh nutmeg, cloves, cinnamon and cardamom straight from the source while your guide brings the island's spice history to life.",
     "duration": "3–4 hours",
     "location": "Kidichi / Kizimbani / island interior",
     "price": {
@@ -135,7 +135,7 @@
     "seo_slug": "stone-town-spice-prison-combo",
     "title": "Stone Town + Spice Farm + Prison Island combo",
     "description": "Maximize your day with the most popular Zanzibar combination tour. Start with a Stone Town walking tour, then head to a spice farm for lunch, and finish with a boat trip to Prison Island for giant tortoises and snorkeling.",
-    "short_description": "Maximize your day with the most popular Zanzibar combination tour. Start with a Stone Town walking tour, then head to a spice farm for lunch, and finish with a boat trip to Prison Island for giant tor",
+    "short_description": "Maximize your day with Zanzibar's most popular combination: a guided Stone Town walking tour, a spice-farm lunch, and a boat trip to Prison Island for giant tortoises and snorkeling.",
     "duration": "5–8 hours",
     "location": "Stone Town / Kidichi / Changuu",
     "price": {
@@ -178,7 +178,7 @@
     "seo_slug": "safari-blue",
     "title": "Safari Blue / Menai Bay dhow day",
     "description": "Zanzibar's most famous dhow excursion: cruise to the Menai Bay Conservation Area, snorkel over vibrant coral reefs, feast on a seafood barbecue on a private sandbank, and visit Kwale Island. Operated by the original Safari Blue since 1990.",
-    "short_description": "Zanzibar's most famous dhow excursion: cruise to the Menai Bay Conservation Area, snorkel over vibrant coral reefs, feast on a seafood barbecue on a private sandbank, and visit Kwale Island. Operated ",
+    "short_description": "Zanzibar's most famous dhow excursion: cruise Menai Bay Conservation Area, snorkel vibrant reefs, feast on a seafood barbecue on a private sandbank and visit Kwale Island. Original Safari Blue since 1990.",
     "duration": "7–9 hours",
     "location": "Fumba → Menai Bay → Kwale Island",
     "price": {
@@ -222,7 +222,7 @@
     "seo_slug": "mnemba-snorkeling",
     "title": "Mnemba Atoll snorkeling / dolphin trip",
     "description": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area. Spot green sea turtles, observe colorful fish over healthy coral reefs, and enjoy fruit and water on a traditional dhow.",
-    "short_description": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area. Spot green sea turtles, observe colorful fish over healthy coral reefs, and enjoy fruit and water on a traditi",
+    "short_description": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area — spot green sea turtles and colorful reef fish, with fruit and water served on a traditional dhow.",
     "duration": "3–6 hours",
     "location": "Matemwe / Nungwi / Kendwa → Mnemba Atoll",
     "price": {
@@ -267,7 +267,7 @@
     "seo_slug": "prison-island-nakupenda",
     "title": "Prison Island + Nakupenda sandbank",
     "description": "A classic Zanzibar half-day or full-day excursion: take a short boat ride to Changuu (Prison Island) to meet the resident giant Aldabra tortoises, then cruise to Nakupenda sandbank for snorkeling over coral gardens.",
-    "short_description": "A classic Zanzibar half-day or full-day excursion: take a short boat ride to Changuu (Prison Island) to meet the resident giant Aldabra tortoises, then cruise to Nakupenda sandbank for snorkeling over",
+    "short_description": "Meet the giant Aldabra tortoises on Changuu (Prison Island), then cruise to the Nakupenda sandbank for snorkeling over coral gardens on this classic half- or full-day excursion.",
     "duration": "Half day to 6 hours",
     "location": "Stone Town → Changuu → Nakupenda",
     "price": {
@@ -353,7 +353,7 @@
     "seo_slug": "chumbe-island",
     "title": "Chumbe Island coral park day",
     "description": "Visit the world's first private marine conservation park. Chumbe Island limits visitors to just 14 per day to protect its fragile coral ecosystem. Snorkel guided by a marine biologist, learn about coral restoration, and support conservation.",
-    "short_description": "Visit the world's first private marine conservation park. Chumbe Island limits visitors to just 14 per day to protect its fragile coral ecosystem. Snorkel guided by a marine biologist, learn about cor",
+    "short_description": "Visit the world's first private marine conservation park. Visitor numbers are capped at 14 per day — snorkel with a marine biologist, learn about coral restoration and support conservation.",
     "duration": "Full day",
     "location": "Mbweni → Chumbe Island",
     "price": {
@@ -397,7 +397,7 @@
     "seo_slug": "sunset-dhow-cruise",
     "title": "Sunset dhow cruise",
     "description": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and purple.",
-    "short_description": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and ",
+    "short_description": "End your day aboard a traditional dhow sailing along Zanzibar's coastline — watch the sun dip into the Indian Ocean, sip refreshing drinks and enjoy fresh fruit on deck as the sky turns gold.",
     "duration": "2–3 hours",
     "location": "Nungwi, Kendwa or Stone Town",
     "price": {
@@ -440,7 +440,7 @@
     "seo_slug": "kizimkazi-dolphin-tour",
     "title": "Kizimkazi dolphin tour",
     "description": "Kizimkazi on Zanzibar's southeast coast is the only place in East Africa where you can see wild bottlenose dolphins in their natural habitat. We only work with operators certified by the Zanzibar Marine Conservation Society.",
-    "short_description": "Kizimkazi on Zanzibar's southeast coast is the only place in East Africa where you can see wild bottlenose dolphins in their natural habitat. We only work with operators certified by the Zanzibar Mari",
+    "short_description": "See wild bottlenose dolphins in their natural habitat off Kizimkazi, the only place in East Africa where this is possible. We only work with marine-park-certified responsible operators.",
     "duration": "3–4 hours",
     "location": "Kizimkazi",
     "price": {
@@ -484,7 +484,7 @@
     "seo_slug": "jozani-forest",
     "title": "Jozani Forest & red colobus walk",
     "description": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabies, and over 200 bird species.",
-    "short_description": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabie",
+    "short_description": "Walk guided trails through Jozani Chwaka Bay National Park, Zanzibar's only national park — see the endemic red colobus monkey, blue monkeys, bushbabies and over 200 bird species.",
     "duration": "2–4 hours",
     "location": "Jozani Chwaka Bay National Park",
     "price": {
@@ -570,7 +570,7 @@
     "seo_slug": "mikumi-nyerere-day-safari",
     "title": "Mikumi or Nyerere fly-in day safari",
     "description": "Escape to mainland Tanzania for a thrilling day safari. Fly from Zanzibar to either Mikumi National Park (famous for the \"S\" curve of the river) or Nyerere National Park (formerly Selous Game Reserve, vast wetlands and wildlife). Return the same evening.",
-    "short_description": "Escape to mainland Tanzania for a thrilling day safari. Fly from Zanzibar to either Mikumi National Park (famous for the \"S\" curve of the river) or Nyerere National Park (formerly Selous Game Reserve,",
+    "short_description": "Escape to mainland Tanzania for a thrilling day safari — fly from Zanzibar to Mikumi or Nyerere National Park for big game viewing and return the same evening.",
     "duration": "8–10 hours",
     "location": "Zanzibar → mainland Tanzania → Zanzibar",
     "price": {
@@ -613,7 +613,7 @@
     "seo_slug": "serengeti-3day-flyin",
     "title": "Serengeti 3-day fly-in safari",
     "description": "Experience the legendary Serengeti on a 3-day fly-in safari. Stay at a luxury tented camp inside the park, enjoy full-board dining, and witness the Great Migration (seasonal) or resident wildlife year-round.",
-    "short_description": "Experience the legendary Serengeti on a 3-day fly-in safari. Stay at a luxury tented camp inside the park, enjoy full-board dining, and witness the Great Migration (seasonal) or resident wildlife year",
+    "short_description": "Experience the legendary Serengeti on a 3-day fly-in safari — stay at a luxury tented camp inside the park, enjoy full-board dining and witness the Great Migration or resident wildlife year-round.",
     "duration": "3 days / 2 nights",
     "location": "Zanzibar → Serengeti → Zanzibar",
     "price": {
@@ -656,7 +656,7 @@
     "seo_slug": "zanzibar-essentials-3day",
     "title": "Zanzibar Essentials 3-day pass",
     "description": "Our signature introduction to Zanzibar. This 3-day package covers the island's must-see highlights: the spice heritage, the marine wonderland of Menai Bay, and the cultural treasures of Stone Town — all in one seamless itinerary.",
-    "short_description": "Our signature introduction to Zanzibar. This 3-day package covers the island's must-see highlights: the spice heritage, the marine wonderland of Menai Bay, and the cultural treasures of Stone Town — a",
+    "short_description": "Our signature introduction to Zanzibar: three days covering the island's must-see highlights — spice heritage, the marine wonderland of Menai Bay and the cultural treasures of Stone Town.",
     "duration": "3 days",
     "location": "Zanzibar",
     "price": {

@@ -97,7 +97,7 @@ exports.handler = async (event) => {
         ask: 'Twoja opinia pomaga nam się doskonalić i innym podróżnym w podejmowaniu decyzji.',
         gbp: '📍 Recenzja Google (30 sekund):',
         ta: '⭐ Recenzja TripAdvisor:',
-        direct: 'Lub po prostu odpowiedz na ten WhatsApp swoimi myślami — czytaemy wszystko.',
+        direct: 'Lub po prostu odpowiedz na ten WhatsApp swoimi myślami — czytamy wszystko.',
         thanks: 'Asante sana! Zespół Spice & Sail',
         unsubscribe: 'Odpowiedz STOP, aby nie otrzymywać więcej prośb o recenzje.'
       }

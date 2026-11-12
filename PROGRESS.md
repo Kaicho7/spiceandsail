@@ -198,3 +198,33 @@
 - Normalised visible address strings and generated pages to `Mbuzini, Mjini Magharibi, Zanzibar, Tanzania`; structured `PostalAddress` keeps `postalCode: 71208`.
 - Replaced remaining stale IT/DE contact-location copy and Google Maps query URLs with the supplied Google Maps place link.
 - Re-verified: build exit 0, tests 64/64, 11,575 link refs / 0 missing.
+
+## 2026-11-12 — audit remediation pass (hreflang, images, identity, headings)
+
+### Changes
+
+- Created the missing German page `src/pages/de/transfers/airport-to-nungwi.njk` (mirrors EN/IT), so all `alternate_de` hreflang targets now exist.
+- New build step `scripts/add-img-dimensions.js`: injects `width`/`height` on every `<img>` in `dist/` from intrinsic file dimensions (JPEG/PNG/WebP/AVIF sniffed by magic bytes, SVG by attrs/viewBox). Wired into `npm run build` before `check-images.js`. Result: 816/816 local imgs sized, 0 unresolvable.
+- New tests: `tests/img-dimensions.test.js` (every local img must carry width/height) and `tests/hreflang-integrity.test.js` (every sitemap alternate must resolve to a built page).
+- Rewrote 13 truncated `short_description`s in `src/data/tours.json` as complete sentences.
+- `src/_includes/seo.njk`: `paymentAccepted` now matches terms — `Cash (USD, TZS), Mobile Money (M-Pesa, Airtel Money, Tigo Pesa), Card (via DPO/Pesapal payment link)`; removed unsupported "Bank Transfer".
+- Business identity: replaced remaining "Stone Town based" claims with Mbuzini on EN homepage (3 spots), About meta, DE/IT homepage meta, `problem-solution-template.njk`, cultural-experiences page; simplified unverified "CRDB Bank, Stone Town branch" to "CRDB Bank, Zanzibar".
+- `src/pages/travel-guide.njk`: aligned hardcoded prices with catalogue (spice/walking $35–$80, Safari Blue/Mnemba $60–$160, combo $75–$165 relabelled Prison Island & Nakupenda $75–$145, Mikumi $400–$800).
+- Deleted stale `src/data/_site.json`; removed untracked `.eleventy.js.backup*` from the working tree (moved to `/tmp/opencode/ss-backups`).
+- Fixed `czytaemy` → `czytamy` typo in `netlify/functions/review-capture.js`.
+- `CLAUDE.md`: corrected stale "CI is unlinked / direct CLI deploy" claim to the current manual `workflow_dispatch` policy.
+- Heading hierarchy: 0 skips across all 115 built pages. Footer column titles are now `p.footer-col-title` (out of the outline); concierge dialog title h3→h2; quick-link cards h3→h2; tour-list page gained a visually-hidden h2; tour sidebar "Tour Details" h4→h3 (EN/IT/DE); one-off content h3/h4 jumps fixed on marketplace, marketplace-submit, cancellation, custom-itinerary, safaris, thirty-six-hours, forty-activities, safety-health-guide, cultural-experiences, blog/zanzibar-in-december.
+
+### Verification
+
+- `npm run build` → exit 0; `img-dimensions: 816 <img> tags patched ... 0 without resolvable intrinsic size`; all image refs resolve.
+- `npm test` → exit 0; `tests 66`, `pass 66`, `fail 0` (includes the two new gates).
+- Internal-link crawl → 7,008 refs checked, **0 missing**.
+- JSON-LD → 135 blocks, **0 invalid**.
+- Sitemap → 110 URLs, 116 hreflang alternates, **0 missing targets**; DE Nungwi page serves 200 with de/en/it/x-default `<link rel="alternate">` tags.
+- `npm audit --omit=dev` → **0 vulnerabilities**.
+- Heading-skip scan across 115 built pages → **0 skips**.
+
+### Not done / blocked (owner decisions, unchanged)
+
+- GA ID `G-SNSZNZ2026` verification, CSP `unsafe-inline` removal, legacy `exports.handler` migration (July 2027 deadline), hotel photo/licensing rights, DPO/Pesapal account, domain/DNS/Netlify deploy.

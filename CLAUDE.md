@@ -49,4 +49,4 @@ Under NO circumstances may any coder substitute stock photos or make code mappin
 
 ## 5. Verification & Zero Speculation Invariant
 - **Zero Unverified "Fix" Claims:** Never claim a bug or issue is fixed until verified locally via `npm run build` AND in the rendered HTML output.
-- **Production Truth Invariant:** Never claim changes are live on `https://spiceandsail.com` unless verified by inspecting live HTTP headers and deploy state via Netlify Production API. Git push does NOT deploy this site automatically (CI is unlinked; production requires direct CLI deploy: `npx netlify deploy --prod --dir=dist`).
+- **Production Truth Invariant:** Never claim changes are live on `https://spiceandsail.com` unless verified by inspecting live HTTP headers and deploy state via the Netlify Production API or explicit deploy evidence. Pushes to `master` run CI build/test only; production deploy is manual (`workflow_dispatch`) or handled directly by the site owner in Netlify. GitHub push must not be treated as a production deploy.
