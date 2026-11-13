@@ -22,6 +22,64 @@ function currentSeason(pub) {
   return pub.seasons.find((s) => s.id === pub.currentSeasonId) || pub.seasons[0] || null;
 }
 
+/** Numeric month*100+day so ranges can be compared arithmetically. */
+function mdValue(month, day) {
+  return month * 100 + day;
+}
+
+/** True when a month/day falls inside one {from:[m,d], to:[m,d]} range (wraps year end). */
+function inSeasonRange(month, day, range) {
+  if (!range || !range.from || !range.to) return false;
+  const v = mdValue(month, day);
+  const from = mdValue(range.from[0], range.from[1]);
+  const to = mdValue(range.to[0], range.to[1]);
+  if (from <= to) return v >= from && v <= to;
+  return v >= from || v <= to;
+}
+
+/** Season whose machine-readable ranges cover a month/day (1-12, 1-31). */
+function seasonForMonthDay(pub, month, day) {
+  if (!pub || !Array.isArray(pub.seasons) || !month) return null;
+  for (const s of pub.seasons) {
+    if (Array.isArray(s.ranges) && s.ranges.some((r) => inSeasonRange(month, day, r))) return s;
+  }
+  return null;
+}
+
+const MONTH_INDEX = {
+  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
+  jul: 7, aug: 8, sep: 9, sept: 9, oct: 10, nov: 11, dec: 12,
+};
+const MONTH_RE = 'jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec';
+
+/**
+ * Extract a travel month/day from free text: ISO dates, "21 Dec",
+ * "21st of December", "December 21", or a bare month used with a
+ * preposition/qualifier ("in August", "for December", "August rates").
+ * A bare "may" is ignored otherwise so "may I ask" is not read as May.
+ * Returns [month, day] or null.
+ */
+function extractTravelMonthDay(text) {
+  if (!text) return null;
+  const t = String(text).toLowerCase();
+  const iso = t.match(/\b\d{4}-(\d{1,2})-(\d{1,2})\b/);
+  if (iso) return [Number(iso[1]), Number(iso[2])];
+  const dmy = t.match(new RegExp('\\b(\\d{1,2})(?:st|nd|rd|th)?\\s+(?:of\\s+)?(' + MONTH_RE + ')[a-z]*'));
+  if (dmy) return [MONTH_INDEX[dmy[2]], Number(dmy[1])];
+  const mdy = t.match(new RegExp('\\b(' + MONTH_RE + ')[a-z]*\\s+(\\d{1,2})(?:st|nd|rd|th)?\\b'));
+  if (mdy) return [MONTH_INDEX[mdy[1]], Number(mdy[2])];
+  const qualified = t.match(new RegExp(
+    '\\b(?:in|for|during|from|around|early|mid|late|this|next|end\\s+of|start\\s+of|beginning\\s+of)\\s+(?:the\\s+)?(' +
+    MONTH_RE + ')[a-z]*\\b'
+  ));
+  if (qualified) return [MONTH_INDEX[qualified[1]], 15];
+  const trailing = t.match(new RegExp(
+    '\\b(' + MONTH_RE + ')[a-z]*\\s+(?:rates?|prices?|pricing|trip|holiday|stay|travel|booking)\\b'
+  ));
+  if (trailing) return [MONTH_INDEX[trailing[1]], 15];
+  return null;
+}
+
 const KEYWORDS = [
   { slug: 'stonetown-view-hotel', patterns: [/stone\s*town\s*view/i] },
   { slug: 'the-island-stonetown', patterns: [/island\s*stonetown/i, /kokoni/i] },
@@ -93,17 +151,33 @@ function propertyFactReply(contract) {
 }
 
 /** Format a contract into a deterministic concierge reply. */
-function hotelStayReply(contract) {
+function hotelStayReply(contract, text) {
   if (!contract) return null;
   const pub = publicRateSheet(contract.slug);
   const lines = [];
   lines.push('**' + contract.name + ' — Our Partner Hotel** (' + contract.area + ')');
 
-  const rateRooms = (pub && pub.rooms && pub.rooms.length) ? pub.rooms : (contract.rooms || []);
-  const season = currentSeason(pub);
+  const defaultSeason = currentSeason(pub);
+  const guestDate = extractTravelMonthDay(text);
+  const requestedSeason = guestDate ? seasonForMonthDay(pub, guestDate[0], guestDate[1]) : null;
+  const season = requestedSeason || defaultSeason;
+  const seasonForDates = !!(requestedSeason && requestedSeason !== defaultSeason);
+
+  let rateRooms;
+  if (requestedSeason && Array.isArray(requestedSeason.rooms) && requestedSeason.rooms.length) {
+    rateRooms = requestedSeason.rooms.map((r) => ({
+      roomType: r.roomType,
+      ourRate: r.ourHalfBoard != null ? r.ourHalfBoard : r.ourRate,
+      ourAllInclusive: r.ourAllInclusive,
+    }));
+  } else {
+    rateRooms = (pub && pub.rooms && pub.rooms.length) ? pub.rooms : (contract.rooms || []);
+  }
   if (rateRooms.length) {
     lines.push('');
-    if (season) {
+    if (season && seasonForDates) {
+      lines.push('For your dates — ' + season.label + ' (' + season.dates + ') — per room per night for 2 people:');
+    } else if (season) {
       lines.push('Our current partner stay rates, ' + season.label + ' (' + season.dates + ') — per room per night for 2 people:');
     } else {
       lines.push('Our current partner stay rates (per room per night):');
@@ -131,7 +205,18 @@ function hotelStayReply(contract) {
       lines.push('Half board +$' + supp.halfBoardPerPersonPerNight + ' pp/night; full board +$' + supp.fullBoardPerPersonPerNight + ' pp/night.');
     }
     if (pub && pub.extraPerson && pub.extraPerson.halfBoard) {
-      lines.push('Extra person +$' + pub.extraPerson.halfBoard + '/night Half Board (All Inclusive +$' + (pub.extraPerson.allInclusive || pub.extraPerson.allInclusive75 || 0) + ').');
+      const ep = pub.extraPerson;
+      let extra = 'Extra person +$' + ep.halfBoard + '/night Half Board';
+      const aiRate = ep.allInclusive || ep.allInclusive75;
+      if (aiRate) {
+        extra += ' (All Inclusive +$' + aiRate;
+        if (ep.allInclusiveChild4to16) extra += ', ages 4–16 +$' + ep.allInclusiveChild4to16;
+        extra += ')';
+      }
+      if (ep.childFreeUnder) {
+        extra += '; under ' + ep.childFreeUnder.allInclusive + ' free on All Inclusive, under ' + ep.childFreeUnder.halfBoard + ' free on Half Board';
+      }
+      lines.push(extra + '.');
     }
     if (pub && pub.singleOccupancyDiscount && pub.singleOccupancyDiscount.halfBoard) {
       lines.push('Single occupancy −$' + pub.singleOccupancyDiscount.halfBoard + ' Half Board.');
@@ -226,6 +311,9 @@ module.exports = {
   isPropertyFactQuestion: isPropertyFactQuestion,
   propertyFactReply: propertyFactReply,
   hotelStayReply: hotelStayReply,
+  currentSeason: currentSeason,
+  seasonForMonthDay: seasonForMonthDay,
+  extractTravelMonthDay: extractTravelMonthDay,
   partnerMentionReply: partnerMentionReply,
   approvedPriceSheets: approvedPriceSheets,
 };

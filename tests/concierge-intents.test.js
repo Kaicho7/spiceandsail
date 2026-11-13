@@ -88,3 +88,40 @@ test('The One quotes the official rack-based mid-season partner rate', async () 
   assert.match(body.message, /15% below the hotel's own published rack rate/i);
   assert.match(body.message, /All Inclusive is also available/i);
 });
+
+test('The One quotes High season rates for an August date', async () => {
+  const body = await ask('The One Resort Zanzibar room rates for 10 August');
+  assert.match(body.message, /High Season/);
+  assert.match(body.message, /\$230/);
+  assert.doesNotMatch(body.message, /\$191/);
+});
+
+test('The One quotes Festive season rates for Christmas', async () => {
+  const body = await ask('The One Resort Zanzibar rates for 25 December');
+  assert.match(body.message, /Festive Season/);
+  assert.match(body.message, /\$298/);
+});
+
+test('The One quotes Green season rates for May', async () => {
+  const body = await ask('How much is The One Resort in May?');
+  assert.match(body.message, /Green Season/);
+  assert.match(body.message, /\$136/);
+});
+
+test('early-January dates fall in Mid season (Jan-Apr range)', async () => {
+  const body = await ask('The One Resort price for 15 January');
+  assert.match(body.message, /Mid Season/);
+  assert.match(body.message, /\$191/);
+});
+
+test('"may I" is not read as the month of May', async () => {
+  const body = await ask('May I see The One Resort room rates?');
+  assert.match(body.message, /Mid Season/);
+  assert.doesNotMatch(body.message, /Green Season/);
+});
+
+test('extra person line carries the All Inclusive child band', async () => {
+  const body = await ask('The One Resort room rates');
+  assert.match(body.message, /ages 4–16 \+\$50/);
+  assert.match(body.message, /under 4 free on All Inclusive/);
+});

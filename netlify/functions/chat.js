@@ -346,7 +346,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   if (intent === 'hotel_stay') {
     const hotelMentions = hotelContracts.matchHotelContracts(text);
     if (hotelMentions.length > 0) {
-      const hotelReply = hotelContracts.hotelStayReply(hotelMentions[0]);
+      const hotelReply = hotelContracts.hotelStayReply(hotelMentions[0], text);
       if (hotelReply) return hotelReply;
     }
   }

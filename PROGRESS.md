@@ -336,3 +336,29 @@ Firecrawl REST API (`FIRECRAWL_API_KEY`) + direct official-site fetches. Finding
 2. Direct-deal margin floors for Le Paradis and The One.
 3. Licensing confirmation for the OTA-hosted (property-uploaded) images used for Mkeka.
 4. Google Hotel Ads / GTSS, meta-search profiles, other distribution accounts.
+
+## 2026-11-13 (2) — Contracted-hotel review fixes
+
+Review of the 5 contracted hotels (scored 7.5/10) surfaced four fixable defects; all are now fixed.
+
+### 1. Mid-season date range was incomplete
+- `hotelRates.json` `seasons.mid.dates` said "01 Jun – 30 Jun & 01 Sep – 20 Dec" and omitted **07 Jan – 30 Apr**, which the official sheet lists. Corrected, and every season now also carries machine-readable `ranges` (`from`/`to` month-day intervals, festive wraps the year end).
+
+### 2. Quotes ignored the guest's travel dates
+- The concierge always quoted `currentSeasonId` (Mid), so an August guest saw $191 instead of High-season $230 (-20% underquote) and a Christmas guest $191 instead of Festive $298 (-36%).
+- Added `seasonForMonthDay()` and `extractTravelMonthDay()` in `src/lib/concierge/hotel-contracts.js`; `hotelStayReply(contract, text)` now prices the season covering the guest's month/day and labels it "For your dates — …".
+- Parser handles ISO dates, "21 Dec", "21st of December", "December 21", and bare months only when qualified ("in August", "for December", "August rates"), so "may I ask" is not read as May.
+- `netlify/functions/chat.js` passes the guest text to the reply.
+
+### 3. AI child band was missing from machine-readable rates
+- `extraPerson` now carries `allInclusiveChild4to16: 50` and `childFreeUnder: {halfBoard: 2, allInclusive: 4}`; the concierge extra-person line states the 4–16 band and which ages are free on each board.
+
+### 4. Responsive images + stale alt text
+- `scripts/hotel-gallery-variants.py` generates 480w/800w variants (never upscaled) for the 27 partner gallery cells and writes `srcset`/`sizes` into `hotels.json`; the hero keeps its original with `sizes` only. 52 variants, 3.0 MB, committed alongside the originals.
+- `hotels.json` `photo_alt` was out of sync with the canonical catalog for 3 hotels (Stone Town View still claimed a "clear ocean view"); all now match the catalog (the rendered pages were already correct via `normalize_img_alt`, but the source was not).
+
+### Verification
+- `npm run build` exit 0 — 753 files copied (+52 variants), 856 `<img>` tags sized, all image refs resolve; all 79 srcset URLs exist on disk.
+- `npm test` **79 pass / 0 fail** (6 new: High/August $230, Festive/Christmas $298, Green/May $136, Mid/January $191, "may I" not May, child band).
+- Rate audit re-run: 46/46 values still equal round(rack × 0.85); all `fromRate` values still the minimum.
+- Headless browser: 375px dpr1 loads the 480w file, 375px dpr3 the original, 1440px dpr2 the 800w file; galleries still fill every row at 1440/900/480 and the 16:9 hero is unchanged.

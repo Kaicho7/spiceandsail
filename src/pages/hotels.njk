@@ -297,14 +297,14 @@ permalink: "/hotels/index.html"
       <div style="margin-bottom: 3rem; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 18px rgba(12,26,36,0.07); border: 1px solid #eceff1;">
         <div class="partner-gallery">
           <div class="partner-gallery-hero">
-            <img src="/images/{{ hotel.gallery[0].src }}" alt="{{ hotel.gallery[0].alt }}" loading="lazy">
+            <img src="/images/{{ hotel.gallery[0].src }}" alt="{{ hotel.gallery[0].alt }}"{% if hotel.gallery[0].sizes %} sizes="{{ hotel.gallery[0].sizes }}"{% endif %} loading="lazy">
             <span class="gallery-caption">{{ hotel.gallery[0].caption }}</span>
           </div>
           <div class="partner-gallery-grid">
             {% for g in hotel.gallery %}
             {% if not loop.first %}
             <figure>
-              <img src="/images/{{ g.src }}" alt="{{ g.alt }}" loading="lazy">
+              <img src="/images/{{ g.src }}" alt="{{ g.alt }}"{% if g.srcset %} srcset="{{ g.srcset }}" sizes="{{ g.sizes }}"{% endif %} loading="lazy">
               <figcaption class="gallery-caption">{{ g.caption }}</figcaption>
             </figure>
             {% endif %}

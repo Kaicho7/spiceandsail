@@ -208,12 +208,24 @@
               "rackAllInclusive": 285,
               "ourAllInclusive": 242
             }
+          ],
+          "ranges": [
+            {
+              "from": [
+                5,
+                1
+              ],
+              "to": [
+                5,
+                31
+              ]
+            }
           ]
         },
         {
           "id": "mid",
           "label": "Mid Season",
-          "dates": "01 Jun – 30 Jun & 01 Sep – 20 Dec",
+          "dates": "07 Jan – 30 Apr, 01 Jun – 30 Jun & 01 Sep – 20 Dec",
           "rooms": [
             {
               "roomType": "Deluxe Double (Lychee)",
@@ -242,6 +254,38 @@
               "ourHalfBoard": 255,
               "rackAllInclusive": 350,
               "ourAllInclusive": 298
+            }
+          ],
+          "ranges": [
+            {
+              "from": [
+                1,
+                7
+              ],
+              "to": [
+                4,
+                30
+              ]
+            },
+            {
+              "from": [
+                6,
+                1
+              ],
+              "to": [
+                6,
+                30
+              ]
+            },
+            {
+              "from": [
+                9,
+                1
+              ],
+              "to": [
+                12,
+                20
+              ]
             }
           ]
         },
@@ -278,6 +322,18 @@
               "rackAllInclusive": 380,
               "ourAllInclusive": 323
             }
+          ],
+          "ranges": [
+            {
+              "from": [
+                7,
+                1
+              ],
+              "to": [
+                8,
+                31
+              ]
+            }
           ]
         },
         {
@@ -313,13 +369,30 @@
               "rackAllInclusive": 430,
               "ourAllInclusive": 366
             }
+          ],
+          "ranges": [
+            {
+              "from": [
+                12,
+                21
+              ],
+              "to": [
+                1,
+                7
+              ]
+            }
           ]
         }
       ],
       "source": "Official rack rate sheet 01.05.2026-30.04.2027 (theonezanzibar.com) — display = 85% of published rack rate",
       "extraPerson": {
         "halfBoard": 60,
-        "allInclusive": 75
+        "allInclusive": 75,
+        "allInclusiveChild4to16": 50,
+        "childFreeUnder": {
+          "halfBoard": 2,
+          "allInclusive": 4
+        }
       },
       "singleOccupancyDiscount": {
         "halfBoard": 15,
