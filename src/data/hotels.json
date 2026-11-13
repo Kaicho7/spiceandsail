@@ -5108,67 +5108,47 @@
       "contact_form_url": "",
       "scrape_status": "official site is a placeholder - no live official website",
       "slug": "stonetown-view-hotel",
-      "photo": "hotels/stonetown-view-hotel-41.jpg",
-      "photo_credit": "Owner-supplied partner photos",
-      "photo_alt": "The rooftop terrace at Stone Town View Hotel with dining tables looking over the rooftops of Stone Town",
+      "photo": "hotels/stonetown-view-hotel-balcony-room.jpg",
+      "photo_credit": "Property-uploaded photographs (Booking.com listing) and owner-supplied photos",
+      "photo_alt": "A twin room at Stone Town View Hotel with two beds in white linens, mosquito nets and a door opening onto a carved wooden balcony",
       "description": "3-star boutique hotel on Malindi Street opposite Cinema Afrique in Stone Town, with 23 rooms overlooking Zanzibar City. The rooftop restaurant Verde serves Mediterranean and international cuisine with an Indian Ocean panorama and breakfast is served on the sun terrace.",
       "price_range": "$29–$52 per night",
       "partnerStay": true,
       "gallery": [
         {
-          "src": "hotels/stonetown-view-hotel-dining.jpg",
-          "alt": "A long dining table set on the covered rooftop terrace at Stone Town View Hotel, looking over the rooftops of Stone Town",
-          "caption": "Dining on the covered rooftop terrace",
+          "src": "hotels/stonetown-view-hotel-sunset.jpg",
+          "alt": "An aerial view of the Stone Town harbour at sunset, dhows moored below historic rooftops and the House of Wonders",
+          "caption": "Sunset over the Stone Town harbour",
           "sizes": "(max-width: 1240px) 100vw, 1240px"
         },
         {
           "src": "hotels/stonetown-view-hotel-balcony-room.jpg",
-          "alt": "A twin room at Stone Town View Hotel with two beds in white linens and a door opening onto a carved wooden balcony",
-          "caption": "Twin rooms opening onto a balcony",
+          "alt": "A twin room at Stone Town View Hotel with two beds in white linens, mosquito nets and a door opening onto a carved wooden balcony",
+          "caption": "Twin room with balcony",
           "srcset": "/images/hotels/stonetown-view-hotel-balcony-room-480.jpg 480w, /images/hotels/stonetown-view-hotel-balcony-room-800.jpg 800w, /images/hotels/stonetown-view-hotel-balcony-room.jpg 1024w",
           "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/stonetown-view-hotel-41.jpg",
-          "alt": "The rooftop terrace at Stone Town View Hotel with dining tables looking over the rooftops of Stone Town",
-          "caption": "Rooftop terrace over Stone Town",
-          "srcset": "/images/hotels/stonetown-view-hotel-41-480.jpg 480w, /images/hotels/stonetown-view-hotel-41-800.jpg 800w, /images/hotels/stonetown-view-hotel-41.jpg 960w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
-        },
-        {
-          "src": "hotels/stonetown-view-hotel-33.jpg",
-          "alt": "A twin room with two single beds and a dressing table at Stone Town View Hotel",
-          "caption": "Twin room with dressing table",
-          "srcset": "/images/hotels/stonetown-view-hotel-33-480.jpg 480w, /images/hotels/stonetown-view-hotel-33-800.jpg 800w, /images/hotels/stonetown-view-hotel-33.jpg 960w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "src": "hotels/stonetown-view-hotel-lounge.jpg",
+          "alt": "A seating area with armchairs in a common room at Stone Town View Hotel with local artwork on the walls",
+          "caption": "Lounge with local character"
         },
         {
           "src": "hotels/stonetown-view-hotel-13.jpg",
-          "alt": "A twin room with colourful stained-glass windows at Stone Town View Hotel",
-          "caption": "Twin rooms with stained glass",
+          "alt": "A twin room at Stone Town View Hotel with colourful stained-glass windows",
+          "caption": "Heritage stained-glass twin",
           "srcset": "/images/hotels/stonetown-view-hotel-13-480.jpg 480w, /images/hotels/stonetown-view-hotel-13-800.jpg 800w, /images/hotels/stonetown-view-hotel-13.jpg 960w",
           "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/stonetown-view-hotel-22.jpg",
-          "alt": "A triple room with a colourful stained-glass window at Stone Town View Hotel",
-          "caption": "Triple rooms for families",
-          "srcset": "/images/hotels/stonetown-view-hotel-22-480.jpg 480w, /images/hotels/stonetown-view-hotel-22-800.jpg 800w, /images/hotels/stonetown-view-hotel-22.jpg 960w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "src": "hotels/stonetown-view-hotel-dining.jpg",
+          "alt": "A long dining table set for breakfast on the covered rooftop terrace at Stone Town View Hotel",
+          "caption": "Breakfast on the rooftop terrace"
         },
         {
-          "src": "hotels/stonetown-view-hotel-42.jpg",
-          "alt": "Rooftop dining terrace at Stone Town View Hotel overlooking the coast",
-          "caption": "Rooftop dining with coast view",
-          "srcset": "/images/hotels/stonetown-view-hotel-42-480.jpg 480w, /images/hotels/stonetown-view-hotel-42-800.jpg 800w, /images/hotels/stonetown-view-hotel-42.jpg 960w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
-        },
-        {
-          "src": "hotels/stonetown-view-hotel-27.jpg",
-          "alt": "Bathroom with bathtub and toilet at Stone Town View Hotel",
-          "caption": "Family bathroom with bathtub",
-          "srcset": "/images/hotels/stonetown-view-hotel-27-480.jpg 480w, /images/hotels/stonetown-view-hotel-27-800.jpg 800w, /images/hotels/stonetown-view-hotel-27.jpg 960w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "src": "hotels/stonetown-view-hotel-bathroom.jpg",
+          "alt": "The en-suite shower and WC at Stone Town View Hotel",
+          "caption": "En-suite shower"
         }
       ]
     },
@@ -5339,58 +5319,47 @@
       "scrape_status": "official site offline - domain has no DNS record",
       "slug": "the-island-stonetown",
       "photo": "hotels/the-island-stonetown-16.jpg",
-      "photo_credit": "Owner-supplied partner photos",
-      "photo_alt": "Panoramic open-air rooftop dining terrace at The Island Stonetown with Zanzibar skyline views",
+      "photo_credit": "Owner-supplied and property-uploaded photographs (Booking.com listing)",
+      "photo_alt": "The open-air rooftop terrace at The Island Stonetown with tables set for breakfast, overlooking the rooftops of Stone Town",
       "description": "Boutique 4-star hotel on Kokoni Street in Stone Town, 350 m from Malindi and a 6-minute walk from Stone Town Beach. Air-conditioned rooms with private bathrooms and mosquito nets, a rooftop terrace restaurant, spa, children's buffet and 24-hour reception.",
       "price_range": "$29–$46 per night",
       "partnerStay": true,
       "gallery": [
         {
-          "src": "hotels/the-island-stonetown-exterior.jpg",
-          "alt": "The carved wooden entrance door of The Island Stonetown lit at night in Kokoni, Stone Town",
-          "caption": "Carved Zanzibar entrance in Kokoni",
+          "src": "hotels/the-island-stonetown-16.jpg",
+          "alt": "The open-air rooftop terrace at The Island Stonetown with tables set for breakfast, overlooking the rooftops of Stone Town",
+          "caption": "Rooftop terrace over Stone Town",
           "sizes": "(max-width: 1240px) 100vw, 1240px"
         },
         {
-          "src": "hotels/the-island-stonetown-16.jpg",
-          "alt": "Panoramic open-air rooftop dining terrace at The Island Stonetown with Zanzibar skyline views",
-          "caption": "Rooftop dining with skyline views",
-          "srcset": "/images/hotels/the-island-stonetown-16-480.jpg 480w, /images/hotels/the-island-stonetown-16-800.jpg 800w, /images/hotels/the-island-stonetown-16.jpg 1045w",
+          "src": "hotels/the-island-stonetown-room.jpg",
+          "alt": "A guest room at The Island Stonetown with a four-poster bed draped in mosquito netting and warm wooden accents",
+          "caption": "Four-poster room",
+          "srcset": "/images/hotels/the-island-stonetown-room-480.jpg 480w, /images/hotels/the-island-stonetown-room-800.jpg 800w, /images/hotels/the-island-stonetown-room.jpg 1024w",
           "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/the-island-stonetown-09.jpg",
-          "alt": "Bright spacious four-poster bedroom with mosquito net at The Island Stonetown",
-          "caption": "Spacious four-poster room",
-          "srcset": "/images/hotels/the-island-stonetown-09-480.jpg 480w, /images/hotels/the-island-stonetown-09.jpg 710w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "src": "hotels/the-island-stonetown-room2.jpg",
+          "alt": "A four-poster bed with mosquito netting in a rustic guest room at The Island Stonetown",
+          "caption": "Rustic four-poster room"
         },
         {
           "src": "hotels/the-island-stonetown-08.jpg",
-          "alt": "Canopy bed bedroom with soft natural light at The Island Stonetown",
-          "caption": "Canopy bed rooms",
+          "alt": "A four-poster bed with mosquito net and a rustic wood ceiling at The Island Stonetown",
+          "caption": "Mosquito-net canopy room",
           "srcset": "/images/hotels/the-island-stonetown-08-480.jpg 480w, /images/hotels/the-island-stonetown-08.jpg 726w",
           "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/the-island-stonetown-14.jpg",
-          "alt": "The dining room at The Island Stonetown with tables set and a breakfast buffet",
-          "caption": "Breakfast buffet in the dining room",
-          "srcset": "/images/hotels/the-island-stonetown-14-480.jpg 480w, /images/hotels/the-island-stonetown-14-800.jpg 800w, /images/hotels/the-island-stonetown-14.jpg 1044w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "src": "hotels/the-island-stonetown-shower.jpg",
+          "alt": "The shower area with patterned tiles and a towel rack at The Island Stonetown",
+          "caption": "En-suite shower"
         },
         {
-          "src": "hotels/the-island-stonetown-11.jpg",
-          "alt": "An open-air dining area with wooden chairs and blue cushions at The Island Stonetown",
-          "caption": "Open-air restaurant",
-          "srcset": "/images/hotels/the-island-stonetown-11-480.jpg 480w, /images/hotels/the-island-stonetown-11-800.jpg 800w, /images/hotels/the-island-stonetown-11.jpg 1045w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
-        },
-        {
-          "src": "hotels/the-island-stonetown-07.jpg",
-          "alt": "En-suite bathroom with sink and mirror at The Island Stonetown",
-          "caption": "En-suite bathrooms",
-          "srcset": "/images/hotels/the-island-stonetown-07-480.jpg 480w, /images/hotels/the-island-stonetown-07-800.jpg 800w, /images/hotels/the-island-stonetown-07.jpg 1044w",
+          "src": "hotels/the-island-stonetown-exterior.jpg",
+          "alt": "The carved wooden entrance door of The Island Stonetown lit at night in Kokoni, Stone Town",
+          "caption": "Carved Zanzibar entrance",
+          "srcset": "/images/hotels/the-island-stonetown-exterior-480.jpg 480w, /images/hotels/the-island-stonetown-exterior.jpg 576w",
           "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         }
       ]

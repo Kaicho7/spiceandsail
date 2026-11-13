@@ -362,3 +362,18 @@ Review of the 5 contracted hotels (scored 7.5/10) surfaced four fixable defects;
 - `npm test` **79 pass / 0 fail** (6 new: High/August $230, Festive/Christmas $298, Green/May $136, Mid/January $191, "may I" not May, child band).
 - Rate audit re-run: 46/46 values still equal round(rack × 0.85); all `fromRate` values still the minimum.
 - Headless browser: 375px dpr1 loads the 480w file, 375px dpr3 the original, 1440px dpr2 the 800w file; galleries still fill every row at 1440/900/480 and the 16:9 hero is unchanged.
+
+## 2026-11-13 (3) — OTA-standard photo re-curation for contracted partners
+
+Independent audit (pixel-level, Gemini) of every contracted-partner photo showed the previous selection over-promised:
+
+- Stone Town View (Malindi): card photo claimed a "rooftop terrace... clear ocean view" while the file shows city rooftops; worse, that same photo scored 1/5 for visible structural damage. Several room shots (-13/22/27/33) scored 1-2 (dated, cluttered, exposed wiring, toilet paper in frame).
+- The Island Stonetown (Kokoni): bathroom dated, dining shots overexposed and cluttered, exterior blurry; hallmarks of a heritage-budget property, not sellable as-is.
+
+Selection now follows OTA showcase order (emotional opener → best room → lifestyle → amenity/bathroom) using only property-uploaded Booking.com images (same tokens as the listing) and owner-supplied files, with honest captions:
+
+- Kokoni (7 → 6): hero rooftop terrace at dawn (-16) → four-poster room → rustic four-poster room → mosquito-net canopy room (-08) → en-suite shower → carved Zanzibar door at night.
+- Malindi (8 → 6): hero sunset over the Stone Town harbour (restored; it is a property-uploaded location shot, labelled as such) → twin room with balcony (now also the card photo) → lounge corridor vibe → stained-glass twin (-13) → breakfast rooftop terrace → en-suite shower. Dropped damaged rooftop/dining shots and all three dated rooms.
+- Mkeka and The One unchanged (official, verified). Le Paradis unchanged.
+
+MachtaCry protocol research/rate logic untouched. Verification: build exit 0 (736 files, 853 img tags sized, all refs resolve); npm test 79/79; 0 of 55 srcset URLs missing; galleries re-measure full-width rows.
