@@ -1891,6 +1891,78 @@ body {
 }
 
 /* ==========================================
+   PARTNER HOTEL PHOTO GALLERY
+   ========================================== */
+.partner-gallery {
+  background: #eceff1;
+  display: block;
+}
+.partner-gallery-hero {
+  position: relative;
+  background: #FBF9F5;
+  overflow: hidden;
+}
+.partner-gallery-hero img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+.partner-gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  background: #eceff1;
+  padding: 2px;
+}
+.partner-gallery-grid figure {
+  position: relative;
+  margin: 0;
+  flex: 1 1 30%;
+  min-width: 180px;
+  height: 210px;
+  background: #FBF9F5;
+  overflow: hidden;
+}
+.partner-gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.partner-gallery-grid figure:hover img { transform: scale(1.04); }
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(12, 26, 36, 0.72);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  line-height: 1.35;
+}
+.partner-gallery-hero .gallery-caption {
+  left: 1rem;
+  right: auto;
+  bottom: 1rem;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  backdrop-filter: blur(4px);
+}
+@media (max-width: 900px) {
+  .partner-gallery-grid figure { flex: 1 1 45%; height: 190px; }
+}
+@media (max-width: 560px) {
+  .partner-gallery-grid figure { flex: 1 1 100%; height: 210px; }
+  .partner-gallery-hero img { aspect-ratio: 4 / 3; }
+  .gallery-caption { font-size: 0.68rem; }
+}
+
+/* ==========================================
    PRINT
    ========================================== */
 @media print {

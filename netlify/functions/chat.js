@@ -14,6 +14,7 @@ const { getQuote } = require('../../src/lib/concierge/pricing');
 const { checkReply } = require('../../src/lib/concierge/guardrail');
 const { tryLLM } = require('../../src/lib/concierge/llm');
 const { catalogue, CONFIG, isWithinBusinessHours, getService } = require('../../src/lib/concierge/catalogue');
+const hotelContracts = require('../../src/lib/concierge/hotel-contracts');
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
@@ -32,6 +33,9 @@ function detectIntent(text) {
   if (/\b(honeymoon|romantic|anniversary|couples?\s+trip)\b/i.test(lower)) return 'honeymoon';
   if (/\b(availab(?:le|ility)|spots? left|seats? left|sold out|booked out|open on)\b/i.test(lower)) return 'availability';
   if (/\b(private|shared|join (?:a )?group|group tours?|small group|semi.?private)\b/i.test(lower) && /\b(tours?|trips?|excursions?|dhow|safari|boat|snorkel)\b/i.test(lower)) return 'tour_type';
+  const hotelMentions = hotelContracts.matchHotelContracts(text);
+  if (hotelMentions.length > 0 && hotelContracts.isStayRateQuestion(text) && !/\b(transfer|transfers|airport|pickup|drop.?off|taxi|cab|drive|ride|tour|tours|safari|excursion|snorkel|dhow|cruise)\b/i.test(lower)) return 'hotel_stay';
+  if (hotelMentions.length > 0 && hotelContracts.isPropertyFactQuestion(text) && !/\b(transfer|transfers|airport|pickup|drop.?off|taxi|cab|drive|ride|tour|tours|safari|excursion|snorkel|dhow|cruise)\b/i.test(lower)) return 'hotel_facts';
   if (/\b(get a quote|price|cost|how much|quote|rate)\b/i.test(lower)) return 'quote';
   if (/\b(family|kids|children|child|toddler|teenager)\b/i.test(lower)) return 'family';
   if (/\b(book|reserve|confirm|hold|how do i book|book an experience|book this)\b/i.test(lower)) return 'book';
@@ -337,6 +341,24 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   const hoursNote = (afterHours && turnCount === 1)
     ? '\n\n*Note: Our human operations desk is offline right now — messages are answered the next business morning (Mon–Sat, 08:00–18:00 EAT).*'
     : '';
+
+  // ---- hotel stay rates (partner hotels, private quoting) ----
+  if (intent === 'hotel_stay') {
+    const hotelMentions = hotelContracts.matchHotelContracts(text);
+    if (hotelMentions.length > 0) {
+      const hotelReply = hotelContracts.hotelStayReply(hotelMentions[0]);
+      if (hotelReply) return hotelReply;
+    }
+  }
+
+  // ---- hotel property facts (rooms, views, facilities, distance) ----
+  if (intent === 'hotel_facts') {
+    const hotelMentions = hotelContracts.matchHotelContracts(text);
+    if (hotelMentions.length > 0) {
+      const factReply = hotelContracts.propertyFactReply(hotelMentions[0]);
+      if (factReply) return factReply;
+    }
+  }
 
   // ---- inclusions intent ----
   if (intent === 'inclusions') {
@@ -742,7 +764,11 @@ exports.handler = async function (event) {
 
   // 1. Deterministic engine produces the base reply and data
   const deterministicResult = buildDeterministicReply(intent, userMessage, mergedProfile, turnCount);
-  const toolResults = deterministicResult.quote ? [deterministicResult.quote] : [];
+  let toolResults = deterministicResult.quote ? [deterministicResult.quote] : [];
+  if (intent === 'hotel_stay') {
+    const hotelMentions = hotelContracts.matchHotelContracts(userMessage);
+    if (hotelMentions.length > 0) toolResults = toolResults.concat(hotelContracts.approvedPriceSheets(hotelMentions));
+  }
 
   // 2. Try LLM enhancement (optional)
   let finalReply = deterministicResult;

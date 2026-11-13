@@ -177,7 +177,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         <!-- VIP Minivan -->
         <div class="card reveal" style="background: #FBF9F5; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8ed; box-shadow: 0 4px 15px rgba(12,26,36,0.05);">
           <div style="height: 220px; overflow: hidden; position: relative;">
-            <img src="{{ 'toyota-alphard-vip-minivan-zanzibar.jpg' | cdnFile }}" alt="{{ 'toyota-alphard-vip-minivan-zanzibar.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img src="{{ 'fleet/toyota-alphard-vip-minivan.jpg' | cdnFile }}" alt="Toyota Alphard VIP minivan available for private Zanzibar airport transfers" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 1rem; left: 1rem; background: #003853; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.8rem; border-radius: 50px; text-transform: uppercase;">VIP Luxury (1–5 Pax)</span>
           </div>
           <div style="padding: 1.5rem;">
@@ -229,7 +229,41 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
     </div>
   </section>
 
-  <!-- TRANSFER ROUTES GRID -->
+  <!-- REAL FLEET GALLERY (owner-supplied photos) -->
+  <section class="section" style="padding: 3.5rem 1rem; background: #FBF9F5; border-top: 1px solid #f0e8dc;">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="section-tag" style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Our Fleet — Real Vehicles</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">The Actual Cars &amp; Scooters You Will Ride</h2>
+        <p class="section-subtitle" style="color: #5c727f; max-width: 760px; margin: 0.5rem auto 0;">Photographed on our own fleet — no stock imagery. Every vehicle is air-conditioned, fully insured and driven by our own licensed Zanzibar drivers.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+        {% set fleet = [
+          { src: 'fleet/toyota-alphard-vip-minivan.jpg', alt: 'Toyota Alphard VIP minivan in our private Zanzibar transfer fleet', label: 'Toyota Alphard', note: 'VIP · 5 pax' },
+          { src: 'fleet/toyota-land-cruiser-prado.jpg', alt: 'Toyota Land Cruiser Prado available for private transfers and safari excursions', label: 'Land Cruiser Prado', note: '4x4 · Safari-ready' },
+          { src: 'fleet/toyota-rav4-suv.jpg', alt: 'Toyota RAV4 SUV available for private airport transfers in Zanzibar', label: 'Toyota RAV4', note: 'SUV · 4 pax' },
+          { src: 'fleet/toyota-rav4-3door.jpg', alt: 'Toyota RAV4 three-door SUV in our private transfer fleet', label: 'RAV4 Compact', note: 'Couples &amp; solo' },
+          { src: 'fleet/suzuki-grand-vitara.jpg', alt: 'Suzuki Grand Vitara available for private Zanzibar tours', label: 'Suzuki Grand Vitara', note: 'Compact 4x4' },
+          { src: 'fleet/toyota-hilux-double-cab.jpg', alt: 'Toyota Hilux double cab available for safari and dive equipment transfers', label: 'Toyota Hilux', note: 'Double cab · Gear load' },
+          { src: 'fleet/toyota-ist-hatchback.jpg', alt: 'Toyota ist hatchback available for short city transfers in Stone Town', label: 'Toyota ist', note: 'City runaround' },
+          { src: 'fleet/scooters-mopeds.jpg', alt: 'Scooters and mopeds for independent Zanzibar island exploration', label: 'Scooters &amp; Mopeds', note: 'Island exploration' }
+        ] %}
+        {% for v in fleet %}
+        <figure style="margin: 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(12,26,36,0.06); border: 1px solid #e2e8ed;">
+          <img src="{{ v.src | cdnFile }}" alt="{{ v.alt }}" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;" loading="lazy">
+          <figcaption style="padding: 0.9rem 1.1rem;">
+            <div style="font-weight: 700; color: #003853; font-size: 1rem;">{{ v.label }}</div>
+            <div style="font-size: 0.82rem; color: #64748b; margin-top: 0.15rem;">{{ v.note | safe }}</div>
+          </figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20to%20book%20a%20scooter%20or%20a%20private%20transfer%20from%20the%20airport." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 600;">💬 Book a ride or a scooter</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section" style="padding: 3.5rem 1rem; background: #fdfaf5; border-top: 1px solid #f0e8dc;">
     <div class="container">
       <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">

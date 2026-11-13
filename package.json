@@ -7,7 +7,9 @@
     "test": "node --test tests/*.test.js",
     "start": "eleventy --serve",
     "preview:local": "npm run build && node scripts/local-preview-server.js",
-    "catalogue:build": "node scripts/catalogue-build.js"
+    "rates:sync": "node scripts/hotel-rates-sync.js",
+    "catalogue:build": "node scripts/catalogue-build.js",
+    "rates:sync:apply": "node scripts/hotel-rates-sync.js --apply"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"

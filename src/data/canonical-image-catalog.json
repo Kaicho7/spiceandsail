@@ -14695,5 +14695,421 @@
     "quality_score": 5,
     "width": 1071,
     "height": 923
+  },
+  "the-one-resort-zanzibar-aerial.jpg": {
+    "file": "the-one-resort-zanzibar-aerial.jpg",
+    "alt_text": "Aerial view of The One Resort Zanzibar showing the large swimming pool, white buildings and the sandy beach on the South Coast",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Makunduchi",
+    "subject": "Aerial view of The One Resort Zanzibar showing the large swimming pool, white buildings and the sandy beach on the South Coast",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property The One Resort Zanzibar.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-one-resort-zanzibar-room.jpg": {
+    "file": "the-one-resort-zanzibar-room.jpg",
+    "alt_text": "A Deluxe Double room at The One Resort Zanzibar with a large bed and floor-to-ceiling windows opening towards palm trees and the tropical gardens",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Makunduchi",
+    "subject": "A Deluxe Double room at The One Resort Zanzibar with a large bed and floor-to-ceiling windows opening towards palm trees and the tropical gardens",
+    "quality_score": 5,
+    "description": "A Deluxe Double room at The One Resort Zanzibar with a large bed and floor-to-ceiling windows opening towards palm trees and the tropical gardens. Deluxe Double rooms opening onto tropical gardens.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-one-resort-zanzibar-suite.jpg": {
+    "file": "the-one-resort-zanzibar-suite.jpg",
+    "alt_text": "A spacious suite at The One Resort Zanzibar with a mosquito-netted bed, seating area and a tea station",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Makunduchi",
+    "subject": "A spacious suite at The One Resort Zanzibar with a mosquito-netted bed, seating area and a tea station",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property The One Resort Zanzibar.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-one-resort-zanzibar-sea-view-room.jpg": {
+    "file": "the-one-resort-zanzibar-sea-view-room.jpg",
+    "alt_text": "A modern guest room at The One Resort Zanzibar with a large bed and a private balcony overlooking the ocean and tropical gardens",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Makunduchi",
+    "subject": "A modern guest room at The One Resort Zanzibar with a large bed and a private balcony overlooking the ocean and tropical gardens",
+    "quality_score": 5,
+    "description": "A modern guest room at The One Resort Zanzibar with a large bed and a private balcony overlooking the ocean and tropical gardens. Rooms with a private balcony and ocean view.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-one-resort-zanzibar-beach-dinner.jpg": {
+    "file": "the-one-resort-zanzibar-beach-dinner.jpg",
+    "alt_text": "A romantic heart-shaped floral arch set up on the white sand private beach at The One Resort Zanzibar",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Makunduchi",
+    "subject": "A romantic heart-shaped floral arch set up on the white sand private beach at The One Resort Zanzibar",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property The One Resort Zanzibar.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-island-stonetown-16.jpg": {
+    "file": "the-island-stonetown-16.jpg",
+    "alt_text": "Panoramic open-air rooftop dining terrace at The Island Stonetown with Zanzibar skyline views",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "Panoramic open-air rooftop dining terrace at The Island Stonetown with Zanzibar skyline views",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property The Island Stonetown.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-island-stonetown-exterior.jpg": {
+    "file": "the-island-stonetown-exterior.jpg",
+    "alt_text": "The carved wooden entrance door of The Island Stonetown lit at night in Kokoni, Stone Town",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "The carved wooden entrance door of The Island Stonetown lit at night in Kokoni, Stone Town",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property The Island Stonetown.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-island-stonetown-09.jpg": {
+    "file": "the-island-stonetown-09.jpg",
+    "alt_text": "Bright spacious four-poster bedroom with mosquito net at The Island Stonetown",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "Bright spacious four-poster bedroom with mosquito net at The Island Stonetown",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property The Island Stonetown.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-island-stonetown-08.jpg": {
+    "file": "the-island-stonetown-08.jpg",
+    "alt_text": "Canopy bed bedroom with soft natural light at The Island Stonetown",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "Canopy bed bedroom with soft natural light at The Island Stonetown",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property The Island Stonetown.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-island-stonetown-14.jpg": {
+    "file": "the-island-stonetown-14.jpg",
+    "alt_text": "The dining room at The Island Stonetown with tables set and a breakfast buffet",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "The dining room at The Island Stonetown with tables set and a breakfast buffet",
+    "quality_score": 5,
+    "description": "The dining room at The Island Stonetown with tables set and a breakfast buffet. Breakfast buffet in the dining room.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-island-stonetown-11.jpg": {
+    "file": "the-island-stonetown-11.jpg",
+    "alt_text": "An open-air dining area with wooden chairs and blue cushions at The Island Stonetown",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "An open-air dining area with wooden chairs and blue cushions at The Island Stonetown",
+    "quality_score": 5,
+    "description": "An open-air dining area with wooden chairs and blue cushions at The Island Stonetown. Open-air restaurant.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "the-island-stonetown-07.jpg": {
+    "file": "the-island-stonetown-07.jpg",
+    "alt_text": "En-suite bathroom with sink and mirror at The Island Stonetown",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "En-suite bathroom with sink and mirror at The Island Stonetown",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property The Island Stonetown.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "stonetown-view-hotel-41.jpg": {
+    "file": "stonetown-view-hotel-41.jpg",
+    "alt_text": "The rooftop terrace at Stone Town View Hotel with dining tables looking over the rooftops of Stone Town",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "The rooftop terrace at Stone Town View Hotel with dining tables looking over the rooftops of Stone Town",
+    "quality_score": 5,
+    "description": "The rooftop terrace at Stone Town View Hotel with dining tables looking over the rooftops of Stone Town. Rooftop terrace over Stone Town.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "stonetown-view-hotel-dining.jpg": {
+    "file": "stonetown-view-hotel-dining.jpg",
+    "alt_text": "A long dining table set on the covered rooftop terrace at Stone Town View Hotel, looking over the rooftops of Stone Town",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "A long dining table set on the covered rooftop terrace at Stone Town View Hotel, looking over the rooftops of Stone Town",
+    "quality_score": 5,
+    "description": "A long dining table set on the covered rooftop terrace at Stone Town View Hotel, looking over the rooftops of Stone Town. Dining on the covered rooftop terrace.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "stonetown-view-hotel-balcony-room.jpg": {
+    "file": "stonetown-view-hotel-balcony-room.jpg",
+    "alt_text": "A twin room at Stone Town View Hotel with two beds in white linens and a door opening onto a carved wooden balcony",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "A twin room at Stone Town View Hotel with two beds in white linens and a door opening onto a carved wooden balcony",
+    "quality_score": 5,
+    "description": "A twin room at Stone Town View Hotel with two beds in white linens and a door opening onto a carved wooden balcony. Twin rooms opening onto a balcony.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "stonetown-view-hotel-33.jpg": {
+    "file": "stonetown-view-hotel-33.jpg",
+    "alt_text": "A twin room with two single beds and a dressing table at Stone Town View Hotel",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "A twin room with two single beds and a dressing table at Stone Town View Hotel",
+    "quality_score": 5,
+    "description": "A twin room with two single beds and a dressing table at Stone Town View Hotel. Twin room with dressing table.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "stonetown-view-hotel-13.jpg": {
+    "file": "stonetown-view-hotel-13.jpg",
+    "alt_text": "A twin room with colourful stained-glass windows at Stone Town View Hotel",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "A twin room with colourful stained-glass windows at Stone Town View Hotel",
+    "quality_score": 5,
+    "description": "A twin room with colourful stained-glass windows at Stone Town View Hotel. Twin rooms with stained glass.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "stonetown-view-hotel-22.jpg": {
+    "file": "stonetown-view-hotel-22.jpg",
+    "alt_text": "A triple room with a colourful stained-glass window at Stone Town View Hotel",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "A triple room with a colourful stained-glass window at Stone Town View Hotel",
+    "quality_score": 5,
+    "description": "A triple room with a colourful stained-glass window at Stone Town View Hotel. Triple rooms for families.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "stonetown-view-hotel-42.jpg": {
+    "file": "stonetown-view-hotel-42.jpg",
+    "alt_text": "Rooftop dining terrace at Stone Town View Hotel overlooking the coast",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "Rooftop dining terrace at Stone Town View Hotel overlooking the coast",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Stonetown View Hotel.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "stonetown-view-hotel-27.jpg": {
+    "file": "stonetown-view-hotel-27.jpg",
+    "alt_text": "Bathroom with bathtub and toilet at Stone Town View Hotel",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Stone Town",
+    "subject": "Bathroom with bathtub and toilet at Stone Town View Hotel",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Stonetown View Hotel.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "mkeka-spice-lodge-aerial.jpg": {
+    "file": "mkeka-spice-lodge-aerial.jpg",
+    "alt_text": "Aerial perspective of Mkeka Spice Lodge showing the swimming pool area and the nearby Jambiani coastline",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "Aerial view of Mkeka Spice Lodge showing the swimming pool area and the nearby Jambiani coastline",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Mkeka Spice Lodge.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "mkeka-spice-lodge-room.jpg": {
+    "file": "mkeka-spice-lodge-room.jpg",
+    "alt_text": "A bedroom at Mkeka Spice Lodge with wooden bed frames draped in white mosquito nets",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "A bedroom at Mkeka Spice Lodge with wooden bed frames draped in white mosquito nets",
+    "quality_score": 5,
+    "description": "A bedroom at Mkeka Spice Lodge with wooden bed frames draped in white mosquito nets. Thatched-bungalow rooms with mosquito nets.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "mkeka-spice-lodge-bungalows.jpg": {
+    "file": "mkeka-spice-lodge-bungalows.jpg",
+    "alt_text": "The swimming pool and surrounding thatched-roof bungalows at Mkeka Spice Lodge lit up at night",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "The swimming pool and surrounding thatched-roof bungalows at Mkeka Spice Lodge lit up at night",
+    "quality_score": 5,
+    "description": "The swimming pool and surrounding thatched-roof bungalows at Mkeka Spice Lodge lit up at night. Thatched bungalows around the pool.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "mkeka-spice-lodge-pool.jpg": {
+    "file": "mkeka-spice-lodge-pool.jpg",
+    "alt_text": "A palm tree at the swimming pool of Mkeka Spice Lodge with the thatched-roof bungalows behind it",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "A palm tree at the swimming pool of Mkeka Spice Lodge with the thatched-roof bungalows behind it",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Mkeka Spice Lodge.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "mkeka-spice-lodge-restaurant.jpg": {
+    "file": "mkeka-spice-lodge-restaurant.jpg",
+    "alt_text": "The outdoor dining area at Mkeka Spice Lodge with wooden tables under a thatched roof overlooking the swimming pool",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "The outdoor dining area at Mkeka Spice Lodge with wooden tables under a thatched roof overlooking the swimming pool",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Mkeka Spice Lodge.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "mkeka-spice-lodge-spice-detail.jpg": {
+    "file": "mkeka-spice-lodge-spice-detail.jpg",
+    "alt_text": "A bunch of green bananas hanging from a tree near the swimming pool and thatched bungalows at Mkeka Spice Lodge",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "A bunch of green bananas hanging from a tree near the swimming pool and thatched bungalows at Mkeka Spice Lodge",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Mkeka Spice Lodge.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "le-paradis-boutique-hotel-zanzibar-exterior.jpg": {
+    "file": "le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt_text": "An aerial view showing the building of Le Paradis Boutique Hotel Zanzibar nestled among palm trees in Jambiani",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "Aerial view of the Le Paradis Boutique Hotel Zanzibar building nestled among palm trees in Jambiani",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Le Paradis Boutique Hotel Zanzibar.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "le-paradis-boutique-hotel-zanzibar-room.jpg": {
+    "file": "le-paradis-boutique-hotel-zanzibar-room.jpg",
+    "alt_text": "A bright bedroom at Le Paradis Boutique Hotel Zanzibar with a sliding glass door opening onto a balcony with a view of the turquoise ocean",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "A bright bedroom at Le Paradis Boutique Hotel Zanzibar with a sliding glass door opening onto a balcony with a view of the turquoise ocean",
+    "quality_score": 5,
+    "description": "A bright bedroom at Le Paradis Boutique Hotel Zanzibar with a sliding glass door opening onto a balcony with a view of the turquoise ocean. Executive Seaside View Room.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "le-paradis-boutique-hotel-zanzibar-room2.jpg": {
+    "file": "le-paradis-boutique-hotel-zanzibar-room2.jpg",
+    "alt_text": "A guest room at Le Paradis Boutique Hotel Zanzibar with a four-poster bed and a small seating area",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "A guest room at Le Paradis Boutique Hotel Zanzibar with a four-poster bed and a small seating area",
+    "quality_score": 5,
+    "description": "A guest room at Le Paradis Boutique Hotel Zanzibar with a four-poster bed and a small seating area. Garden rooms with four-poster beds.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "le-paradis-boutique-hotel-zanzibar-pool.jpg": {
+    "file": "le-paradis-boutique-hotel-zanzibar-pool.jpg",
+    "alt_text": "The outdoor swimming pool at Le Paradis Boutique Hotel Zanzibar surrounded by a white wall and wooden lounge chairs",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "The outdoor swimming pool at Le Paradis Boutique Hotel Zanzibar surrounded by a white wall and wooden lounge chairs",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Le Paradis Boutique Hotel Zanzibar.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "le-paradis-boutique-hotel-zanzibar-bar.jpg": {
+    "file": "le-paradis-boutique-hotel-zanzibar-bar.jpg",
+    "alt_text": "The bar at Le Paradis Boutique Hotel Zanzibar with wooden stools and a well-stocked back bar",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "The bar at Le Paradis Boutique Hotel Zanzibar with wooden stools and a well-stocked back bar",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Le Paradis Boutique Hotel Zanzibar.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "le-paradis-boutique-hotel-zanzibar-bathroom.jpg": {
+    "file": "le-paradis-boutique-hotel-zanzibar-bathroom.jpg",
+    "alt_text": "A modern bathroom at Le Paradis Boutique Hotel Zanzibar with a white sink and a shower area in textured grey tiles",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "A modern bathroom at Le Paradis Boutique Hotel Zanzibar with a white sink and a shower area in textured grey tiles",
+    "quality_score": 5,
+    "description": "Official or owner-supplied photograph of the partner property Le Paradis Boutique Hotel Zanzibar.",
+    "primary_use": [
+      "hotels"
+    ]
   }
 }

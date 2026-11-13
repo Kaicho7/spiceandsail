@@ -1,0 +1,179 @@
+{
+  "version": "2026-11-12",
+  "purpose": "Server-side only. Net contracted partner stay rates for private concierge quoting. Never render on public pages. Contains NO personal contact data.",
+  "hotels": [
+    {
+      "slug": "stonetown-view-hotel",
+      "name": "Stone Town View Hotel",
+      "area": "Malindi, Stone Town",
+      "partner": true,
+      "ratesStatus": "contracted",
+      "source": "STO Agreement 2026-2027 (Bed & Breakfast, net rates, USD)",
+      "rooms": [
+        {
+          "type": "Single",
+          "rate": 25,
+          "maxOccupancy": "1 pax",
+          "count": 4
+        },
+        {
+          "type": "Double",
+          "rate": 35,
+          "maxOccupancy": "2 adults + 1 child",
+          "count": 11
+        },
+        {
+          "type": "Twin",
+          "rate": 40,
+          "maxOccupancy": "3 adults + 1 child",
+          "count": 5
+        },
+        {
+          "type": "Triple",
+          "rate": 45,
+          "maxOccupancy": "3 pax",
+          "count": 3
+        }
+      ],
+      "boardSupplements": {
+        "halfBoardPerPersonPerNight": 15,
+        "fullBoardPerPersonPerNight": 30
+      },
+      "infrastructureTaxPerPersonPerNight": 2,
+      "policy": {
+        "checkIn": "12:30",
+        "checkOut": "11:00",
+        "earlyCheckInLateCheckOut": "50% of nightly rate, subject to availability",
+        "cancellation": "More than 30 days: full refund. 30-15 days: 50% fee. Less than 15 days or no-show: 100% fee",
+        "payment": "25% deposit within 7 days of confirmation; 75% balance 14 days before arrival",
+        "childPolicy": "Infant 0-2 free; child 3-11; adult 12+"
+      },
+      "propertyFacts": "23 rooms, all overlooking Zanzibar City. The rooftop restaurant Verde is a bistro and juice bar serving Mediterranean and international cuisine with an Indian Ocean panorama, and breakfast is served on the sun terrace. Free Wi-Fi, family rooms, 24-hour front desk, room service, daily housekeeping, parking on site, bike rental and car hire. There is no swimming pool.",
+      "viewFacts": "All 23 rooms overlook Zanzibar City. The rooftop restaurant and sun terrace give the ocean panorama.",
+      "distanceFacts": "5.1 mi (about 8 km) from Abeid Amani Karume International Airport. 8 minutes' walk from Darajani Market and a few steps from the Zanzibar Ferry Terminal."
+    },
+    {
+      "slug": "the-island-stonetown",
+      "name": "The Island Stonetown",
+      "area": "Kokoni, Stone Town",
+      "partner": true,
+      "ratesStatus": "contracted",
+      "independentOf": "stonetown-view-hotel",
+      "sameOwnerAs": "stonetown-view-hotel",
+      "source": "STO Agreement 2026-2027 (Bed & Breakfast, net rates per room, USD)",
+      "rooms": [
+        {
+          "type": "Single",
+          "rate": 25,
+          "maxOccupancy": "1 pax",
+          "count": 3
+        },
+        {
+          "type": "Double",
+          "rate": 35,
+          "maxOccupancy": "2 adults + 1 child",
+          "count": 8
+        },
+        {
+          "type": "Twin",
+          "rate": 40,
+          "maxOccupancy": "3 adults + 1 child",
+          "count": 2
+        }
+      ],
+      "boardSupplements": {
+        "halfBoardPerPersonPerNight": 15,
+        "fullBoardPerPersonPerNight": 30
+      },
+      "infrastructureTaxPerPersonPerNight": 2,
+      "policy": {
+        "checkIn": "12:30",
+        "checkOut": "11:00",
+        "earlyCheckInLateCheckOut": "50% of nightly rate, subject to availability",
+        "cancellation": "More than 30 days: full refund. 30-15 days: 50% fee. Less than 15 days or no-show: 100% fee",
+        "payment": "25% deposit within 7 days of confirmation; 75% balance 14 days before arrival",
+        "childPolicy": "Infant 0-2 free; child 3-11; adult 12+"
+      },
+      "propertyFacts": "Boutique hotel with a rooftop terrace restaurant, a coffee shop, a spa centre with full body, head, foot and back massage, BBQ facilities, a children's buffet, free Wi-Fi, 24-hour reception and security, luggage storage, currency exchange, room service, housekeeping, laundry, car hire and tour and ticket assistance. There is no swimming pool.",
+      "viewFacts": "Rooms have city views over the Stone Town rooftops. There are no sea or ocean view rooms - the hotel stands 350 m inland from Stone Town Beach.",
+      "distanceFacts": "About 5 km (5-7 minutes by road) from Abeid Amani Karume International Airport. 7 minutes' walk from Darajani Market, 11 minutes' walk to the Old Fort and a 6-minute walk to Stone Town Beach."
+    },
+    {
+      "slug": "mkeka-spice-lodge",
+      "name": "Mkeka Spice Lodge",
+      "area": "Jambiani",
+      "partner": true,
+      "ratesStatus": "contracted",
+      "source": "Owner-confirmed rates (breakfast included, USD per room per night)",
+      "rooms": [
+        {
+          "type": "Single",
+          "rate": 30,
+          "count": 8
+        },
+        {
+          "type": "Double",
+          "rate": 45,
+          "count": 8
+        },
+        {
+          "type": "Twin",
+          "rate": 45,
+          "count": 8
+        },
+        {
+          "type": "Triple",
+          "rate": 55,
+          "count": 8
+        }
+      ],
+      "breakfastIncluded": true,
+      "policy": {},
+      "propertyFacts": "Lodge of thatched-roof bungalows with a year-round outdoor swimming pool, a restaurant serving African cuisine, a bar and outdoor lounge with a fireplace, an outdoor breakfast area, a rooftop terrace, a spa with massage, free Wi-Fi, free private parking and a paid airport shuttle. Rooms are Triple Rooms with a full bed and a queen bed, plus Family Rooms, each with a private bathroom, terrace or balcony and garden or pool views.",
+      "viewFacts": "Rooms have garden or pool views from the terrace or balcony. The pool and the Indian Ocean are visible from the lodge.",
+      "distanceFacts": "About 1 hour by road from Abeid Amani Karume International Airport. A 2-minute walk to Paje Beach."
+    },
+    {
+      "slug": "le-paradis-boutique-hotel-zanzibar",
+      "name": "Le Paradis Boutique Hotel Zanzibar",
+      "area": "Kibigija, Jambiani",
+      "partner": true,
+      "ratesStatus": "confirmed",
+      "source": "Official website room rates (leparadiszanzibar.com). Public display rate = 20% below the published online rate.",
+      "breakfastIncluded": true,
+      "rooms": [],
+      "policy": {
+        "ratePlans": "Flexible (7-day cancellation), non-refundable, and 2-night-minimum shoulder-season saver plans available; breakfast included"
+      },
+      "propertyFacts": "Boutique hotel a one-minute walk from the Indian Ocean shore at Jambiani and a short walk from lively Paje. Three room types: Standard Garden Room, Superior Garden Room and Executive Seaside View Room. Pool with an ocean outlook, fine-dining restaurant, bar, spa, high-ceilinged lounge with local art and a tropical courtyard.",
+      "viewFacts": "The Executive Seaside View Room faces the ocean; the garden rooms look over the gardens and village.",
+      "distanceFacts": "About 1 hour by road from Abeid Amani Karume International Airport."
+    },
+    {
+      "slug": "the-one-resort-zanzibar",
+      "name": "The One Resort Zanzibar",
+      "area": "Makunduchi, South Coast",
+      "partner": true,
+      "ratesStatus": "confirmed",
+      "source": "Official rack rate sheet 01.05.2026-30.04.2027 (theonezanzibar.com). Public display rate = 15% below published rack.",
+      "breakfastIncluded": true,
+      "rooms": [],
+      "policy": {
+        "basis": "Half Board or All Inclusive",
+        "minStay": "Minimum 2 nights in all seasons; 4 nights in Festive Season (21 Dec – 07 Jan)",
+        "childPolicy": "Half Board: kids under 2 free; each additional person +$60. All Inclusive: kids under 4 free, ages 4-16 +$50, 17+ +$75",
+        "singleOccupancy": "Single occupancy: -$15 in Half Board, -$35 in All Inclusive",
+        "paymentPolicy": "Standard: full payment 30 days before arrival. Festive Season: full payment after reservation.",
+        "cancellationPolicy": "Standard: 25% cancellation fee 30-15 days prior, 50% at 14-7 days, 100% within 7 days or no-show. Festive Season: non-refundable.",
+        "festiveSupplement": "Christmas Eve (24 Dec) +$50 per adult; New Year's Eve (31 Dec) +$70 per adult; children 4-11.99 at 50% of adult rate, under 4 complimentary",
+        "boardIncludes": "Half Board: buffet breakfast and dinner (breakfast only on departure day). All Inclusive: breakfast, lunch and dinner, welcome drink, bottled water daily, housekeeping and turndown",
+        "fullBoardUpgradePerPersonPerDay": 45,
+        "earlyCheckInFee": 40,
+        "lateCheckOutFee": "USD 40 until 18:00; USD 120 until 23:00 (includes room, lunch, dinner and drinks)"
+      },
+      "propertyFacts": "36 rooms across four types: Lychee Deluxe Double (17 rooms, 2 pax), Mango Deluxe Double/Twin (13 rooms, 2-3 pax), Papaya Junior Suite (4 rooms, 2-4 pax) and Tiki Deluxe Suite (2 rooms, 2-5 pax). Every room has a terrace or balcony, air conditioning, a ceiling fan and a mosquito net. Private beach, the biggest swimming pool on Zanzibar's east coast with a Jacuzzi, a pool bar, the Meza gourmet restaurant, a wellness spa, a water sports centre and daily and evening activities.",
+      "viewFacts": "Rooms face the ocean, the swimming pool or the internal garden depending on location. Every room has a terrace or balcony.",
+      "distanceFacts": "About 1 hour by road from Abeid Amani Karume International Airport (ZNZ)."
+    }
+  ]
+}

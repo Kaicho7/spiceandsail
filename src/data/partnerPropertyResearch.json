@@ -1,0 +1,343 @@
+{
+  "version": "2026-11-13",
+  "note": "Verified property research for the five partner stays. Sources: live official websites, Booking.com property pages, Expedia property pages, TripAdvisor property pages and aggregator listings, retrieved 2026-11-13. No figure here is estimated - where a fact could not be confirmed it is stated as unknown.",
+  "properties": {
+    "the-one-resort-zanzibar": {
+      "name": "The One Resort Zanzibar",
+      "officialSite": "https://www.theonezanzibar.com",
+      "officialSiteStatus": "live",
+      "address": "Makunduchi, South Coast, Zanzibar, Tanzania",
+      "area": "Makunduchi, South Coast",
+      "airportDistance": "About 1 hour by road from Abeid Amani Karume International Airport (ZNZ)",
+      "rooms": 36,
+      "starRating": "4-Star",
+      "viewTypes": "Ocean, swimming pool or internal garden depending on room location; every room has a terrace or balcony",
+      "roomTypes": [
+        {
+          "name": "Lychee",
+          "type": "Deluxe Double Room",
+          "occupancy": "2 pax",
+          "count": 17,
+          "bathroom": "Shower",
+          "features": "Big double bed, terrace or balcony"
+        },
+        {
+          "name": "Mango",
+          "type": "Deluxe Double Room",
+          "occupancy": "2-3 pax",
+          "count": 13,
+          "bathroom": "Shower",
+          "features": "Big double bed with sofa, terrace or balcony"
+        },
+        {
+          "name": "Papaya",
+          "type": "Junior Suite",
+          "occupancy": "2-4 pax",
+          "count": 4,
+          "bathroom": "Bathtub",
+          "features": "Separate living room with fold-able sofa, mini-fridge, tea station"
+        },
+        {
+          "name": "Tiki",
+          "type": "Deluxe Suite",
+          "occupancy": "2-5 pax",
+          "count": 2,
+          "bathroom": "Bathtub",
+          "features": "Two bedrooms with two queen beds, living area, mini-fridge, tea station"
+        }
+      ],
+      "amenities": [
+        "Biggest swimming pool on Zanzibar's east coast, with Jacuzzi",
+        "Private beach",
+        "Pool bar",
+        "Meza gourmet restaurant - breakfast and dinner buffet plus an a la carte lunch menu",
+        "Wellness and spa with massage menu",
+        "Water sports centre - surfing, kite surfing and diving classes",
+        "Daily and evening activities for children and adults",
+        "Wi-Fi throughout the resort",
+        "Air conditioning and ceiling fan in all rooms",
+        "Daily housekeeping and turndown service",
+        "All fees and taxes included in the published rate"
+      ],
+      "boards": {
+        "halfBoard": "Buffet breakfast and buffet dinner (breakfast only on departure day), welcome drink, bottle of water daily, housekeeping and turndown, pool and Jacuzzi access, complimentary guest activities, Wi-Fi, all fees and taxes",
+        "allInclusive": "Buffet breakfast, lunch and dinner (breakfast only on departure day), welcome drink, bottle of water daily, housekeeping and turndown, pool and Jacuzzi access, complimentary guest activities, Wi-Fi, all fees and taxes"
+      },
+      "rateSheet": {
+        "period": "01.05.2026 - 30.04.2027",
+        "currency": "USD per room or suite per night for 2 people",
+        "roomOrder": [
+          "Lychee",
+          "Mango",
+          "Papaya",
+          "Tiki"
+        ],
+        "seasons": {
+          "green": {
+            "label": "Green Season",
+            "dates": "01 May - 31 May",
+            "hb": [
+              160,
+              160,
+              180,
+              220
+            ],
+            "ai": [
+              240,
+              240,
+              270,
+              285
+            ]
+          },
+          "mid": {
+            "label": "Mid Season",
+            "dates": "01 Jun - 30 Jun & 01 Sep - 20 Dec",
+            "hb": [
+              225,
+              225,
+              270,
+              300
+            ],
+            "ai": [
+              285,
+              285,
+              330,
+              350
+            ]
+          },
+          "high": {
+            "label": "High Season",
+            "dates": "01 Jul - 31 Aug",
+            "hb": [
+              270,
+              270,
+              310,
+              340
+            ],
+            "ai": [
+              315,
+              315,
+              350,
+              380
+            ]
+          },
+          "festive": {
+            "label": "Festive Season",
+            "dates": "21 Dec - 07 Jan",
+            "hb": [
+              350,
+              350,
+              385,
+              410
+            ],
+            "ai": [
+              380,
+              380,
+              410,
+              430
+            ]
+          }
+        },
+        "extraPerson": {
+          "halfBoard": 60,
+          "allInclusiveAdult": 75,
+          "allInclusiveChild4to16": 50,
+          "freeUnderHalfBoard": 2,
+          "freeUnderAllInclusive": 4
+        },
+        "singleOccupancy": {
+          "halfBoard": -15,
+          "allInclusive": -35
+        },
+        "minStay": {
+          "standard": 2,
+          "festive": 4
+        },
+        "paymentPolicy": "Standard: full payment 30 days before arrival. Festive season: full payment after the reservation is confirmed.",
+        "cancellationPolicy": "Standard: 25% cancellation fee 30-15 days before arrival, 50% at 14-7 days, 100% within 7 days or no-show. Festive season: non-refundable.",
+        "festiveSupplement": "Christmas Eve (24 December) +$50 per adult; New Year's Eve (31 December) +$70 per adult; children aged 4-11.99 at 50% of the adult rate; children aged 4 and below complimentary",
+        "creditCardFee": "5% if the guest settles the balance by credit card",
+        "combinableOffers": "The Honeymoon Package is the only offer that can be combined with other offers"
+      },
+      "contact": {
+        "email": "booking@theonezanzibar.com",
+        "phone": "+255 620 819 537",
+        "whatsapp": "+255 620 819 537",
+        "instagram": "@theonezanzibar"
+      },
+      "viewFacts": "Ocean, swimming pool or internal garden depending on room location; every room has a terrace or balcony",
+      "distanceFacts": "About 1 hour by road from Abeid Amani Karume International Airport (ZNZ)"
+    },
+    "the-island-stonetown": {
+      "name": "The Island Stone Town Hotel",
+      "officialSite": "https://www.theislandstonetown.com",
+      "officialSiteStatus": "The domain has no DNS record, so the official website is offline",
+      "address": "R5RV+4J9, Kokoni Street, Zanzibar City (Malindi area), Stone Town, Zanzibar, Tanzania",
+      "area": "Kokoni, Stone Town",
+      "airportDistance": "About 5 km, 5-7 minutes by road, from Abeid Amani Karume International Airport (ZNZ)",
+      "starRating": "4-Star",
+      "viewTypes": "City views over the Stone Town rooftops. There are no sea or ocean view rooms - the hotel stands 350 m inland from Stone Town Beach.",
+      "roomTypes": [
+        {
+          "name": "Deluxe Double Room with Bath",
+          "occupancy": "2 pax",
+          "beds": "1 full bed",
+          "size": "35 m2",
+          "features": "Air conditioning, flat-screen TV, tea and coffee maker, wardrobe, work desk, fan, private bathroom with shower, city views"
+        },
+        {
+          "name": "Deluxe Single Room",
+          "occupancy": "1 pax",
+          "beds": "1 twin bed",
+          "features": "Air conditioning, private bathroom, city views"
+        }
+      ],
+      "amenities": [
+        "Restaurant with daily breakfast, in-room breakfast and special diet menus",
+        "Rooftop terrace restaurant",
+        "Coffee shop",
+        "Spa centre with full body, head, foot and back massage",
+        "BBQ facilities",
+        "Free Wi-Fi, tea and coffee facilities and ironing facilities",
+        "Air conditioning, flat-screen TV, work desk, wardrobe and fan in the rooms",
+        "24-hour reception and 24-hour security, luggage storage, currency exchange",
+        "Room service, housekeeping, laundry, car hire, tours and ticket assistance",
+        "Paid airport shuttle and parking on site",
+        "Children's buffet",
+        "Diving, snorkelling, horseback riding and fishing arranged nearby"
+      ],
+      "locationNotes": "350 m from Malindi, 5 minutes' walk from Malindi, 7 minutes' walk from Darajani Market, 11 minutes' walk to the 17th-century Old Fort, 0.7 km from Kiponda and a 6-minute walk to Stone Town Beach",
+      "checkIn": "From 14:00 until 23:59",
+      "checkOut": "Until 04:00",
+      "noPool": "The property does not have a swimming pool",
+      "notPetFriendly": true,
+      "contact": {
+        "bookingUrl": "https://www.booking.com/hotel/tz/the-island-stone-town.html"
+      },
+      "viewFacts": "City views over the Stone Town rooftops. There are no sea or ocean view rooms - the hotel stands 350 m inland from Stone Town Beach.",
+      "distanceFacts": "About 5 km, 5-7 minutes by road, from Abeid Amani Karume International Airport (ZNZ)"
+    },
+    "stonetown-view-hotel": {
+      "name": "Stonetown View Hotel",
+      "officialSite": "https://stonetownviewhotel.com",
+      "officialSiteStatus": "The domain resolves but serves a placeholder ('the website is currently not available'), so there is no live official website",
+      "address": "Malindi Street, opposite Cinema Afrique, Zanzibar City (Malindi), Stone Town, Zanzibar, Tanzania",
+      "area": "Malindi, Stone Town",
+      "airportDistance": "5.1 mi, about 8 km, from Abeid Amani Karume International Airport (ZNZ)",
+      "rooms": 23,
+      "starRating": "3-Star",
+      "viewTypes": "All 23 rooms overlook Zanzibar City; the rooftop restaurant and sun terrace give the ocean panorama",
+      "roomTypes": [
+        {
+          "name": "Double, Twin, Triple and Family Rooms",
+          "features": "Air conditioning, ceiling fan, mosquito net, flat-screen TV, dressing table with a large mirror, private bathroom with hot shower"
+        }
+      ],
+      "amenities": [
+        "Rooftop restaurant Verde - bistro and juice bar with Mediterranean and international cuisine and an Indian Ocean panorama",
+        "Sun terrace with ocean view",
+        "Breakfast served on the rooftop terrace",
+        "Free Wi-Fi, guest-rated 8.5",
+        "Family rooms",
+        "24-hour front desk, room service and daily housekeeping",
+        "Parking on site and non-smoking rooms",
+        "Bike rental and car hire",
+        "Complimentary welcome drinks and a manager's reception",
+        "No swimming pool"
+      ],
+      "locationNotes": "8 minutes' walk from Darajani Market, a few steps from the Zanzibar Ferry Terminal at 1148 ft, 0.4 miles from the 17th-century Old Fort and 0.4 miles from the Old Slave Market, 5-minute drive to Jamhuri Gardens",
+      "notPetFriendly": true,
+      "contact": {
+        "bookingUrl": "https://www.booking.com/hotel/tz/ikala-zanzibar-stonetown-lodge.html"
+      },
+      "viewFacts": "All 23 rooms overlook Zanzibar City; the rooftop restaurant and sun terrace give the ocean panorama",
+      "distanceFacts": "5.1 mi, about 8 km, from Abeid Amani Karume International Airport (ZNZ)"
+    },
+    "mkeka-spice-lodge": {
+      "name": "Mkeka Spice Lodge",
+      "officialSite": "https://www.mkekalodge.com",
+      "officialSiteStatus": "The domain has no DNS record, so the official website is offline",
+      "address": "Unnamed Road, Jambiani, Zanzibar, Tanzania",
+      "area": "Jambiani",
+      "airportDistance": "About 1 hour by road from Abeid Amani Karume International Airport (ZNZ)",
+      "starRating": "3-Star",
+      "viewTypes": "Garden view or pool view from the rooms, with terraces and balconies; the pool and the Indian Ocean are visible from the lodge",
+      "roomTypes": [
+        {
+          "name": "Triple Room with Private Bathroom",
+          "occupancy": "2-3 pax",
+          "beds": "1 full bed and 1 queen bed",
+          "features": "Private bathroom, terrace, balcony, garden or pool view, hairdryer, outdoor furniture"
+        },
+        {
+          "name": "Family Room",
+          "occupancy": "up to 4 pax",
+          "features": "Private bathroom, terrace or balcony, garden or pool view"
+        }
+      ],
+      "amenities": [
+        "Year-round outdoor swimming pool",
+        "Restaurant serving African cuisine",
+        "Bar and outdoor lounge with a fireplace",
+        "Outdoor breakfast area and rooftop terrace",
+        "Free Wi-Fi at 25+ Mbps",
+        "Free private parking on site",
+        "Paid airport shuttle",
+        "Massage and couples' massage",
+        "Family rooms, non-smoking rooms and room service",
+        "Laundry facilities",
+        "Dining area and outdoor furniture in the rooms"
+      ],
+      "locationNotes": "A 2-minute walk to Paje Beach, a top-rated beach nearby, and close to Jambiani town",
+      "contact": {
+        "bookingUrl": "https://www.booking.com/hotel/tz/mkeka-spice-lodge-jambiani1.html"
+      },
+      "viewFacts": "Garden view or pool view from the rooms, with terraces and balconies; the pool and the Indian Ocean are visible from the lodge",
+      "distanceFacts": "About 1 hour by road from Abeid Amani Karume International Airport (ZNZ)"
+    },
+    "le-paradis-boutique-hotel-zanzibar": {
+      "name": "Le Paradis Boutique Hotel Zanzibar",
+      "officialSite": "https://leparadiszanzibar.com",
+      "officialSiteStatus": "live",
+      "address": "1014 Kibigija, Jambiani, Zanzibar, Tanzania",
+      "area": "Kibigija, Jambiani",
+      "airportDistance": "About 1 hour by road from Abeid Amani Karume International Airport (ZNZ)",
+      "starRating": "4-Star",
+      "viewTypes": "The Executive Seaside View Room faces the ocean; the garden rooms look over the gardens and village",
+      "roomTypes": [
+        {
+          "name": "Standard Garden Room",
+          "publishedRate": 70,
+          "occupancy": "2 pax"
+        },
+        {
+          "name": "Superior Garden Room",
+          "publishedRate": 80,
+          "occupancy": "2 pax"
+        },
+        {
+          "name": "Executive Seaside View Room",
+          "publishedRate": 120,
+          "occupancy": "2 pax",
+          "features": "Balcony with garden, village and sea view"
+        }
+      ],
+      "amenities": [
+        "1-minute walk to the Indian Ocean shore at Jambiani",
+        "Pool with lounge chairs and an ocean outlook",
+        "Fine-dining restaurant and bar",
+        "Spa",
+        "Lounge with high ceiling, wooden furniture and local art",
+        "Tropical courtyard and terrace with a planted walkway",
+        "A short walk to the lively Paje town and beach"
+      ],
+      "contact": {
+        "email": "reservations@leparadiszanzibar.com",
+        "phone": "+255 794 939 972",
+        "instagram": "@leparadiszanzibar"
+      },
+      "viewFacts": "The Executive Seaside View Room faces the ocean; the garden rooms look over the gardens and village",
+      "distanceFacts": "About 1 hour by road from Abeid Amani Karume International Airport (ZNZ)"
+    }
+  }
+}

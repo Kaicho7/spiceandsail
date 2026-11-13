@@ -228,3 +228,111 @@
 ### Not done / blocked (owner decisions, unchanged)
 
 - GA ID `G-SNSZNZ2026` verification, CSP `unsafe-inline` removal, legacy `exports.handler` migration (July 2027 deadline), hotel photo/licensing rights, DPO/Pesapal account, domain/DNS/Netlify deploy.
+
+## 2026-11-12 — Partner hotel stay rates (private concierge quoting)
+
+### What
+- New server-side-only `src/data/hotel-contracts.json`: net partner stay rates for Stone Town View Hotel (Malindi), The Island Stonetown (Kokoni — independent property, same owner as Stone Town View), Mkeka Spice Lodge (owner-confirmed rates), Le Paradis (rates pending — plan names only) and The One Resort Zanzibar (rates pending — Half Board basis + published policies). NO personal contact data committed.
+- New `src/lib/concierge/hotel-contracts.js`: matcher + reply formatters + guardrail price sheets (net rates stay server-side; not copied to dist/).
+- `netlify/functions/chat.js`: new `hotel_stay` intent — stay-rate questions about partner hotels quote contracted room rates deterministically; transfer/tour questions about the same hotels are untouched; guardrail approves contract figures in LLM replies.
+- `src/data/hotels.json`: `partnerStay: true` on the 5 partner hotels.
+- `src/pages/hotels.njk`: "Contracted Partner Hotel" perk chip + "Partner Stay · Best-rate quote on WhatsApp" price line (replaces "Seasonal Rates" on partner cards only).
+- Sources: owner-supplied STO PDFs (both 2026–27 agreements), WhatsApp owner confirmations (extracted to /tmp/opencode/hotel-contracts — contains third-party PII, kept out of the repo), Le Paradis Booking.com extranet screenshots (rate plans; prices calendar-managed), The One official site policies (FB upgrade $45pp/day, child 3–17 $60/night).
+
+### Verification
+- `npm run build` → exit 0; `npm test` → 70 tests, 70 pass, 0 fail (4 new hotel-stay intent tests in `tests/concierge-intents.test.js`, incl. transfer non-hijack and Island-Stonetown independence).
+- Live smoke via local preview: Stone Town View / Island Stonetown / Mkeka quote contracted rates; Le Paradis & The One hand off to team; "transfer to Mkeka Spice Lodge" and "Safari Blue price" unchanged.
+- `dist/hotels/` shows exactly 5 "Partner Stay" chips; net rate figures absent from `dist/` (data is server-side only).
+
+## 2026-11-12 — Partner hotel public rates, packages & distribution prep
+
+### What
+- New public rate model `src/data/hotelRates.json` (5 partner hotels): `ourRate = max(round(0.8 × otaAnchor), marginFloor)` per room type, with per-room anchor sources. OTA anchors gathered 2026-11-12 from Booking.com listings' mirrors (Vio, Onevia, ZenHotels, Priceline, Trip.com, EaseMyTrip, zanzibarhotelstoday, UTU Kwanza agency sheet) + Le Paradis' own published room rates. Booking.com blocks automated fetches — `npm run rates:sync` (`scripts/hotel-rates-sync.js`) recalculates and accepts a manual override file for extranet-pasted B.com rates.
+- Margin floors: owner-confirmed rates for Stone Town View ($25–45), Island Stonetown ($25–40), Mkeka ($30–55). Le Paradis & The One floors unset until direct-deal nets are negotiated (owner action).
+- Hotels page: partner cards now show "From $X/night · ~20% below OTA rates" ($36/$28/$40/$56/$115); packages section with 5 stay+tour+transfer bundles (per-person pricing, pain-point notes, WhatsApp reserve CTA); LodgingBusiness JSON-LD (5 blocks, lowPrice + offers URL) for Google free-booking-links eligibility.
+- Catalogue: 5 `type: "package"` services added (concierge quotes them deterministically; validated by catalogue-build, 36 services).
+
+### Verification
+- `npm run build` exit 0; `npm test` 70/70; catalogue-build 36 services validated.
+- dist/hotels: 5 "From $X" rate lines, 5 LodgingBusiness blocks (priceRange fixed to single-$), packages section live; chat quotes "Stone Town Starter Break" $95–$140 pp with duration and includes.
+- Net contract rates from `hotel-contracts.json` remain server-side (margin protection); public display uses the 0.8× anchor model.
+
+### Owner actions for distribution (not code)
+1. Negotiate/paste true Booking.com extranet rates into the override file → run `npm run rates:sync` (keeps anchors exact).
+2. Google Hotel Ads / free booking links: submit `spiceandsail.com` to Google Partner via a Travel Partner integration (GTSS) or point free booking links at `/hotels/` hotel anchors; the new LodgingBusiness + Offer markup is the prerequisite.
+3. Meta-search: create TripAdvisor/Trip.com/Trivago partner profiles bidding to spiceandsail.com landing pages; commission model must stay below the 20% spread.
+4. 24/7 revenue loop that already works: concierge auto-quotes rooms/packages/transfers any hour, saves the lead, staff confirms next business morning (mon–sat 08:00–18:00 EAT).
+
+## 2026-11-12 (2) — Rate model correction per owner
+- Kokoni (Island Stonetown) & Malindi (Stone Town View): display = confirmed net + 15% (Single $29 / Double $40 / Twin $46 / Triple $52). Mkeka: net + 20% ($36 / $54 / $66). Le Paradis & The One stay on OTA-anchor −20%.
+- hotelRates.json rooms now carry netRate+marginPct (model A) vs otaAnchor (model B); hotel-rates-sync.js handles both, net+margin rooms ignore OTA overrides.
+- Chat stay quotes switched to public rates (net stays internal only); test updated to assert $29 and absence of $25 in guest replies.
+- Verified: build exit 0, tests 70/70, dist shows 3× "direct-deal partner rate" + 2× "~20% below OTA"; chat quotes $29/$40/$46/$52.
+
+## 2026-11-12 (3) — The One Resort: real Booking.com anchors
+- Owner pasted live B.com listing (stay 15–16 Nov 2026, 2 adults, TZS): Deluxe Double/Twin Ocean View TZS 596,250; Junior Suite 667,800; Deluxe Suite 715,500; Villa Garden View 715,500 — Half Board (breakfast & dinner included), free cancellation 1 day out.
+- Converted at Bank of Tanzania official mid rate 12-Nov-26 (2,643.5 TZS/USD): anchors $226/$253/$271/$271 → display −20%: $181/$202/$217/$217. fromRate $181.
+- Guidebook PDF confirmed rate-free (room counts only: 2 Tiki, 4 Papaya, 30 Mango).
+- South Coast Family Getaway package repriced $360–$460 pp (3 nights double HB + transfer + Safari Blue).
+- Verified: build 0, tests 70/70, dist "From $181", catalogue 36 services.
+
+## 2026-11-12 (4) — Owner-supplied partner hotel photos
+- Extracted 60 owner-supplied WhatsApp photos (16 The Island Stonetown/Kokoni, 44 Stone Town View/Malindi) into public/images/hotels/ as `the-island-stonetown-01..16.jpg` and `stonetown-view-hotel-01..44.jpg` (real JPEGs, sized by build).
+- Vision-checked (Gemini 2.5 Flash, temperature 0): Kokoni card = reception lobby (tile 1 → -02.jpg); Malindi card = twin room with mosquito nets + colorful window (tile 13 → -14.jpg). All tiles judged well-lit, no people, none blurry.
+- hotels.json: `photo` replaced with the chosen card image, `gallery` added (6 representative shots each: lobby/bedrooms/rooftop restaurant for Kokoni; rooms/terrace for Malindi), `photo_credit` = "Owner-supplied partner photos".
+- hotels.njk: new "Inside Our Partner Hotels — Real Photos, No Stock Imagery" showcase section (6 thumbs per partner hotel with a gallery).
+- Verified: build exit 0, tests 70/70, 828 imgs dimension-patched, all refs resolve, showcase renders on /hotels/.
+
+## 2026-11-13 — Partner property research, official-rate pricing, real-photo galleries, fleet gallery
+
+### 1. Property research (5 partner hotels, online)
+Firecrawl REST API (`FIRECRAWL_API_KEY`) + direct official-site fetches. Findings stored in `src/data/partnerPropertyResearch.json`
+(camelCase filename required — Eleventy global data key = filename; hyphens break dot access) and mirrored into
+`src/data/hotel-contracts.json` (`propertyFacts`, `viewFacts`, `distanceFacts`).
+
+| Hotel | Verified fact | Site status |
+|---|---|---|
+| The One Resort Zanzibar | Makunduchi; 36 rooms (Lychee 17 / Mango 13 / Papaya 4 / Tiki 2); private beach; largest pool on the east coast; Meza restaurant; spa; water sports; `booking@theonezanzibar.com`, +255 620 819 537 | `theoneresortzanzibar.com` **no DNS** → fixed to live `https://www.theonezanzibar.com` |
+| The Island Stonetown (Kokoni) | **City views only — no sea/ocean-view rooms**; 350 m inland of Stone Town Beach; 550 m / 7 min to Darajani Market; 6 min walk to Stone Town Beach; ~5 km to airport; rooftop terrace restaurant, coffee shop, spa, BBQ, kids buffet, 24h reception, **no pool**; Deluxe Double Room with Bath (35 m²) + Deluxe Single; check-in from 14:00, check-out until 04:00 | `theislandstonetown.com` **no DNS** → website now points to the live Booking listing |
+| Stonetown View Hotel (Malindi) | 23 rooms, all over Stone Town City; rooftop restaurant "Verde" (Mediterranean/international) with Indian Ocean panorama; breakfast on the sun terrace; 8 min walk to Darajani Market; Ferry Terminal 1148 ft; 5.1 mi to airport; no pool; not pet-friendly | `stonetownviewhotel.com` resolves to a placeholder → website now points to the live Booking listing |
+| Mkeka Spice Lodge | Jambiani, 2-min walk to Paje Beach; thatched bungalows; year-round pool; African-cuisine restaurant; bar/lounge with fireplace; rooftop terrace; free private parking; paid airport shuttle; Triple Room (full + queen) and Family Room; garden/pool views | `mkekalodge.com` **no DNS** → website now points to the live Booking listing |
+| Le Paradis Boutique | 1014 Kibigija, Jambiani, 1-min walk to the Indian Ocean shore; Standard Garden $70 / Superior Garden $80 / Executive Seaside View $120; pool with ocean outlook; fine-dining restaurant, bar, spa; `reservations@leparadiszanzibar.com`, +255 794 939 972 | `leparadiszanzibar.com` live |
+
+### 2. The One official rack rates, priced at −15% (owner correction)
+- Source: `~/Downloads/Rack rates All inclusive Halfboad 2026&2027.pdf` (official 2026–2027 rack sheet). Display rule changed by the owner from "−20% below OTA" to **−15% off the hotel's own published rack rate**.
+- `src/data/hotelRates.json`: three pricing models now explicit per hotel — `net_plus_margin` (Stone Town View, Island Stonetown, Mkeka), `ota_minus_discount` (Le Paradis, 20%), `rack_minus_discount` (The One, 15%).
+- The One seasons (rack → our HB / our AI): Green $136/$136/$153/$187 → AI $204/$204/$230/$242; Mid $191/$191/$230/$255 → AI $242/$242/$281/$298; High $230/$230/$264/$289 → AI $268/$268/$298/$323; Festive $298/$298/$327/$349 → AI $323/$323/$349/$366. `fromRate` $136; flat room list mirrors the current (Mid) season; `currentSeasonId: "mid"`.
+- `src/data/hotel-contracts.json`: The One `ratesStatus: confirmed` + full rack policy (basis HB or AI, min stay 2 nights / 4 festive, child & extra-person policy, single occupancy −$15 / −$35, payment, cancellation ladder, festive supplement, board inclusions).
+- `scripts/hotel-rates-sync.js` rewritten: handles all three models, recomputes seasons, rebuilds the flat room list from `currentSeasonId`, `fromRate` = lowest season for seasonal hotels, **dry-run by default**, `--apply` to write, optional override file. `package.json`: `rates:sync`, `rates:sync:apply`.
+
+### 3. Concierge
+- `src/lib/concierge/hotel-contracts.js`: `currentSeason()` helper; season-aware `hotelStayReply` (season label + dates, AI range, "That is N% below the hotel's own published rack rate", extra person / single occupancy / min stay / cancellation lines); `approvedPriceSheets` extended with AI, extra-person and single-occupancy rows; new `isPropertyFactQuestion()` + `propertyFactReply()` (exported).
+- `netlify/functions/chat.js`: new `hotel_facts` intent → property questions (room types, facilities, board, address, view type) answered from the verified facts instead of guessed.
+- Tests: 3 new cases in `tests/concierge-intents.test.js` (Kokoni has no sea-view rooms; Mkeka facilities; The One quotes $191 + 15% + AI). Suite **73/73**.
+
+### 4. Real-photo galleries (no stock imagery)
+- **The One** — 59 official Wix CDN originals → curated 5: aerial (hero), room, suite, sea-view room, beach dinner.
+- **Le Paradis** — 27 official Shopify CDN originals → curated 6: exterior (hero), room, room2, pool, bar, bathroom.
+- **Mkeka** — official site dead, no owner set → property-uploaded Booking.com bstatic (`k=` token) + Expedia property-scoped CDN, with alt text explicitly tagged to the property only; 6: aerial (hero), room, bungalows, pool, restaurant, spice detail. A duplicate (imagehash distance 0 between "spice detail" and "pool") was found and the pool shot replaced with a different frame.
+- **Kokoni** — owner set (6 picks) + 1 property exterior added → 7. **Malindi** — owner set (6 picks) + 4 added → 8.
+- Provenance recorded per image in `src/data/canonical-image-catalog.json` (34 partner entries added, 852 total) so alt text is canonical site-wide.
+- **Pixel-level alt-text audit (Gemini, temperature 0, all 34 gallery images):** 14 alt/caption corrections applied — e.g. The One "room" shot overlooks the gardens, not the ocean; Le Paradis room view is through a sliding door to a balcony (not a window); Mkeka room has double beds (not twin); Kokoni -14 is the indoor buffet (not a terrace); Malindi -33 is a twin room (not a double); Malindi -13 has no mosquito nets.
+- **Two Malindi drone shots removed** (`stonetown-view-hotel-sunset.jpg`, `stonetown-view-hotel-aerial.jpg`): both are drone/aerial views of Stone Town harbour, not photographs of the property — they broke the "photographed at the property itself" promise. Files deleted and catalog entries removed. Malindi gallery is now owner-supplied + property-only shots.
+
+### 5. Transfers — real fleet gallery
+- `src/pages/transfers.njk`: Alphard card now uses the real `fleet/toyota-alphard-vip-minivan.jpg`; new "Our Fleet — The Actual Cars & Scooters You Will Ride" section with all 8 real vehicle photos (Alphard, Prado, RAV4, RAV4 3-door, Grand Vitara, Hilux, ist, scooters & mopeds) + WhatsApp "Book a ride or a scooter" CTA.
+
+### 6. Gallery layout fix
+- The old 2-column hero/thumb grid forced the hero image to stretch to the height of the thumbnail column, cropping landscape photos into a portrait strip. Replaced with a full-width 16:9 hero banner plus a flex-wrapped thumbnail grid (new `.partner-gallery*` rules in `public/css/styles.css`) — every row fills the container with no ragged gaps, at 1440 / 900 / 480 px.
+
+### Verification
+- `npm run build` exit 0 — "Copied 701 files / Wrote 117 files", "normalize_img_alt: 30 HTML files rewritten", "✓ img-dimensions: 856 <img> tags patched across 115 HTML files (0 without resolvable intrinsic size)", "✓ all image refs in dist/ resolve".
+- `npm test` → **73 pass / 0 fail**.
+- Local preview (`node scripts/local-preview-server.js`, http://localhost:8888): `/hotels/` 200, `/transfers/` 200, images 200.
+- Headless-browser layout check: hero 1190×669 (16:9) at 1440 px, 802×451 at 900 px, 382×287 (4:3) at 480 px; all gallery rows fill the container exactly; 34/34 gallery images load, 0 broken.
+
+### Still owner-side
+1. Booking.com extranet room rates → paste into the override file, run `npm run rates:sync:apply`.
+2. Direct-deal margin floors for Le Paradis and The One.
+3. Licensing confirmation for the OTA-hosted (property-uploaded) images used for Mkeka.
+4. Google Hotel Ads / GTSS, meta-search profiles, other distribution accounts.

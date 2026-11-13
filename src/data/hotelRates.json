@@ -1,0 +1,420 @@
+{
+  "version": "2026-11-12",
+  "model": "Per-hotel pricing model: net_plus_margin (ourRate = round(netRate * (1+marginPct))) or ota_minus_discount (ourRate = max(round(anchor * (1-discount)), marginFloor)); The One uses rack_minus_discount on the official seasonal rack sheet. Indicative public rates — the concierge/team confirms exact dates and availability before booking. Refresh with: npm run rates:sync",
+  "bySlug": {
+    "stonetown-view-hotel": {
+      "name": "Stone Town View Hotel",
+      "lastSynced": "2026-11-12",
+      "rooms": [
+        {
+          "roomType": "Single",
+          "ourRate": 29,
+          "netRate": 25,
+          "marginPct": 0.15,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        },
+        {
+          "roomType": "Double",
+          "ourRate": 40,
+          "netRate": 35,
+          "marginPct": 0.15,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        },
+        {
+          "roomType": "Twin",
+          "ourRate": 46,
+          "netRate": 40,
+          "marginPct": 0.15,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        },
+        {
+          "roomType": "Triple",
+          "ourRate": 52,
+          "netRate": 45,
+          "marginPct": 0.15,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        }
+      ],
+      "fromRate": 29,
+      "basis": "Bed & Breakfast, per room per night (breakfast included for Mkeka)",
+      "pricingModel": "net_plus_margin"
+    },
+    "the-island-stonetown": {
+      "name": "The Island Stonetown",
+      "lastSynced": "2026-11-12",
+      "rooms": [
+        {
+          "roomType": "Deluxe Single",
+          "ourRate": 29,
+          "netRate": 25,
+          "marginPct": 0.15,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        },
+        {
+          "roomType": "Deluxe Double",
+          "ourRate": 40,
+          "netRate": 35,
+          "marginPct": 0.15,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        },
+        {
+          "roomType": "Deluxe Twin",
+          "ourRate": 46,
+          "netRate": 40,
+          "marginPct": 0.15,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        }
+      ],
+      "fromRate": 29,
+      "basis": "Bed & Breakfast, per room per night (breakfast included for Mkeka)",
+      "pricingModel": "net_plus_margin"
+    },
+    "mkeka-spice-lodge": {
+      "name": "Mkeka Spice Lodge",
+      "lastSynced": "2026-11-12",
+      "rooms": [
+        {
+          "roomType": "Single",
+          "ourRate": 36,
+          "netRate": 30,
+          "marginPct": 0.2,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        },
+        {
+          "roomType": "Double",
+          "ourRate": 54,
+          "netRate": 45,
+          "marginPct": 0.2,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        },
+        {
+          "roomType": "Twin",
+          "ourRate": 54,
+          "netRate": 45,
+          "marginPct": 0.2,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        },
+        {
+          "roomType": "Triple",
+          "ourRate": 66,
+          "netRate": 55,
+          "marginPct": 0.2,
+          "source": "Owner-confirmed net rate + margin (no OTA anchor verified)"
+        }
+      ],
+      "fromRate": 36,
+      "basis": "Bed & Breakfast, per room per night (breakfast included for Mkeka)",
+      "pricingModel": "net_plus_margin"
+    },
+    "le-paradis-boutique-hotel-zanzibar": {
+      "name": "Le Paradis Boutique Hotel Zanzibar",
+      "basis": "Breakfast included, per room per night",
+      "lastSynced": "2026-11-12",
+      "rooms": [
+        {
+          "roomType": "Standard Garden Room",
+          "otaAnchor": 70,
+          "anchorSource": "leparadiszanzibar.com own rate sheet",
+          "marginFloor": null,
+          "ourRate": 56
+        },
+        {
+          "roomType": "Superior Garden Room",
+          "otaAnchor": 80,
+          "anchorSource": "leparadiszanzibar.com own rate sheet",
+          "marginFloor": null,
+          "ourRate": 64
+        },
+        {
+          "roomType": "Executive Seaside View Room",
+          "otaAnchor": 120,
+          "anchorSource": "leparadiszanzibar.com own rate sheet",
+          "marginFloor": null,
+          "ourRate": 96
+        }
+      ],
+      "fromRate": 56,
+      "pricingModel": "ota_minus_discount",
+      "discount": 0.2,
+      "discountPct": 20
+    },
+    "the-one-resort-zanzibar": {
+      "name": "The One Resort Zanzibar",
+      "basis": "Half Board or All Inclusive, per room/suite per night for 2 people",
+      "lastSynced": "2026-11-12",
+      "rooms": [
+        {
+          "roomType": "Deluxe Double (Lychee)",
+          "otaAnchor": 225,
+          "anchorSource": "Official rack sheet Mid Season Half Board $225",
+          "marginFloor": null,
+          "ourRate": 191
+        },
+        {
+          "roomType": "Deluxe Double/Twin (Mango)",
+          "otaAnchor": 225,
+          "anchorSource": "Official rack sheet Mid Season Half Board $225",
+          "marginFloor": null,
+          "ourRate": 191
+        },
+        {
+          "roomType": "Junior Suite (Papaya)",
+          "otaAnchor": 270,
+          "anchorSource": "Official rack sheet Mid Season Half Board $270",
+          "marginFloor": null,
+          "ourRate": 230
+        },
+        {
+          "roomType": "Deluxe Suite (Tiki)",
+          "otaAnchor": 300,
+          "anchorSource": "Official rack sheet Mid Season Half Board $300",
+          "marginFloor": null,
+          "ourRate": 255
+        }
+      ],
+      "fromRate": 136,
+      "anchorDate": "2026-11-12 (stay 15-16 Nov 2026)",
+      "seasons": [
+        {
+          "id": "green",
+          "label": "Green Season",
+          "dates": "01 May – 31 May",
+          "rooms": [
+            {
+              "roomType": "Deluxe Double (Lychee)",
+              "rackHalfBoard": 160,
+              "ourHalfBoard": 136,
+              "rackAllInclusive": 240,
+              "ourAllInclusive": 204
+            },
+            {
+              "roomType": "Deluxe Double/Twin (Mango)",
+              "rackHalfBoard": 160,
+              "ourHalfBoard": 136,
+              "rackAllInclusive": 240,
+              "ourAllInclusive": 204
+            },
+            {
+              "roomType": "Junior Suite (Papaya)",
+              "rackHalfBoard": 180,
+              "ourHalfBoard": 153,
+              "rackAllInclusive": 270,
+              "ourAllInclusive": 230
+            },
+            {
+              "roomType": "Deluxe Suite (Tiki)",
+              "rackHalfBoard": 220,
+              "ourHalfBoard": 187,
+              "rackAllInclusive": 285,
+              "ourAllInclusive": 242
+            }
+          ]
+        },
+        {
+          "id": "mid",
+          "label": "Mid Season",
+          "dates": "01 Jun – 30 Jun & 01 Sep – 20 Dec",
+          "rooms": [
+            {
+              "roomType": "Deluxe Double (Lychee)",
+              "rackHalfBoard": 225,
+              "ourHalfBoard": 191,
+              "rackAllInclusive": 285,
+              "ourAllInclusive": 242
+            },
+            {
+              "roomType": "Deluxe Double/Twin (Mango)",
+              "rackHalfBoard": 225,
+              "ourHalfBoard": 191,
+              "rackAllInclusive": 285,
+              "ourAllInclusive": 242
+            },
+            {
+              "roomType": "Junior Suite (Papaya)",
+              "rackHalfBoard": 270,
+              "ourHalfBoard": 230,
+              "rackAllInclusive": 330,
+              "ourAllInclusive": 281
+            },
+            {
+              "roomType": "Deluxe Suite (Tiki)",
+              "rackHalfBoard": 300,
+              "ourHalfBoard": 255,
+              "rackAllInclusive": 350,
+              "ourAllInclusive": 298
+            }
+          ]
+        },
+        {
+          "id": "high",
+          "label": "High Season",
+          "dates": "01 Jul – 31 Aug",
+          "rooms": [
+            {
+              "roomType": "Deluxe Double (Lychee)",
+              "rackHalfBoard": 270,
+              "ourHalfBoard": 230,
+              "rackAllInclusive": 315,
+              "ourAllInclusive": 268
+            },
+            {
+              "roomType": "Deluxe Double/Twin (Mango)",
+              "rackHalfBoard": 270,
+              "ourHalfBoard": 230,
+              "rackAllInclusive": 315,
+              "ourAllInclusive": 268
+            },
+            {
+              "roomType": "Junior Suite (Papaya)",
+              "rackHalfBoard": 310,
+              "ourHalfBoard": 264,
+              "rackAllInclusive": 350,
+              "ourAllInclusive": 298
+            },
+            {
+              "roomType": "Deluxe Suite (Tiki)",
+              "rackHalfBoard": 340,
+              "ourHalfBoard": 289,
+              "rackAllInclusive": 380,
+              "ourAllInclusive": 323
+            }
+          ]
+        },
+        {
+          "id": "festive",
+          "label": "Festive Season",
+          "dates": "21 Dec – 07 Jan",
+          "rooms": [
+            {
+              "roomType": "Deluxe Double (Lychee)",
+              "rackHalfBoard": 350,
+              "ourHalfBoard": 298,
+              "rackAllInclusive": 380,
+              "ourAllInclusive": 323
+            },
+            {
+              "roomType": "Deluxe Double/Twin (Mango)",
+              "rackHalfBoard": 350,
+              "ourHalfBoard": 298,
+              "rackAllInclusive": 380,
+              "ourAllInclusive": 323
+            },
+            {
+              "roomType": "Junior Suite (Papaya)",
+              "rackHalfBoard": 385,
+              "ourHalfBoard": 327,
+              "rackAllInclusive": 410,
+              "ourAllInclusive": 349
+            },
+            {
+              "roomType": "Deluxe Suite (Tiki)",
+              "rackHalfBoard": 410,
+              "ourHalfBoard": 349,
+              "rackAllInclusive": 430,
+              "ourAllInclusive": 366
+            }
+          ]
+        }
+      ],
+      "source": "Official rack rate sheet 01.05.2026-30.04.2027 (theonezanzibar.com) — display = 85% of published rack rate",
+      "extraPerson": {
+        "halfBoard": 60,
+        "allInclusive": 75
+      },
+      "singleOccupancyDiscount": {
+        "halfBoard": 15,
+        "allInclusive": 35
+      },
+      "minStay": {
+        "standard": 2,
+        "festive": 4
+      },
+      "currentSeasonId": "mid",
+      "discount": 0.15,
+      "discountPct": 15,
+      "pricingModel": "rack_minus_discount"
+    }
+  },
+  "packages": [
+    {
+      "id": "pkg-stone-town-starter",
+      "name": "Stone Town Starter Break",
+      "hotelSlug": "stonetown-view-hotel",
+      "nights": 2,
+      "perPerson": {
+        "min": 95,
+        "max": 140
+      },
+      "includes": [
+        "2 nights at Stone Town View Hotel (Double, B&B)",
+        "Return private airport transfer",
+        "Stone Town walking tour with licensed historian guide"
+      ],
+      "solves": "Late-flight arrivals handled, no taxi haggling, city highlights covered on day one"
+    },
+    {
+      "id": "pkg-spice-beach-escape",
+      "name": "Spice & Beach Escape",
+      "hotelSlug": "mkeka-spice-lodge",
+      "nights": 2,
+      "perPerson": {
+        "min": 95,
+        "max": 120
+      },
+      "includes": [
+        "2 nights at Mkeka Spice Lodge (breakfast included)",
+        "Return private airport transfer",
+        "Spice farm tour with lunch"
+      ],
+      "solves": "One booking covers room, ride and the classic spice experience"
+    },
+    {
+      "id": "pkg-jambiani-rooftop-romance",
+      "name": "Jambiani Rooftop Romance",
+      "hotelSlug": "le-paradis-boutique-hotel-zanzibar",
+      "nights": 3,
+      "perPerson": {
+        "min": 220,
+        "max": 290
+      },
+      "includes": [
+        "3 nights Executive Seaside View Room at Le Paradis (breakfast included)",
+        "Return private airport transfer",
+        "Sunset dhow cruise for two"
+      ],
+      "solves": "Honeymooners avoid OTA non-refundable traps — flexible dates, rooftop sundowners"
+    },
+    {
+      "id": "pkg-south-coast-family",
+      "name": "South Coast Family Getaway",
+      "hotelSlug": "the-one-resort-zanzibar",
+      "nights": 3,
+      "perPerson": {
+        "min": 360,
+        "max": 460
+      },
+      "includes": [
+        "3 nights at The One Resort Zanzibar (Half Board — breakfast & dinner included)",
+        "Return private airport transfer",
+        "Safari Blue full-day dhow, snorkel & seafood lunch"
+      ],
+      "solves": "Kids' pricing and meals confirmed up front; biggest pool on the east coast"
+    },
+    {
+      "id": "pkg-kokoni-city-sea",
+      "name": "Kokoni City & Sea Mini-Moon",
+      "hotelSlug": "the-island-stonetown",
+      "nights": 2,
+      "perPerson": {
+        "min": 165,
+        "max": 280
+      },
+      "includes": [
+        "2 nights at The Island Stonetown (B&B)",
+        "Return private airport transfer",
+        "Prison Island & Nakupenda sandbank snorkel trip"
+      ],
+      "solves": "Walk-everywhere Stone Town base plus the island-hop highlight in one package"
+    }
+  ]
+}

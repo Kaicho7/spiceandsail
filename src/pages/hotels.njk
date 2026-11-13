@@ -134,6 +134,20 @@ permalink: "/hotels/index.html"
                   ✨ <strong>Unguja Hotel Lobby Pickup:</strong> Available for Mnemba, Safari Blue, and Stone Town tours.
                 </div>
                 {% endif %}
+                {% if hotel.partnerStay %}
+                <div class="card-perk" style="background: rgba(37, 211, 102, 0.08); border-left: 3px solid #25D366; padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
+                  🤝 <strong>Contracted Partner Hotel:</strong> Direct-deal rates below OTA — bundled with licensed tours &amp; transfers.
+                </div>
+                {% set research = partnerPropertyResearch.properties[hotel.slug] %}
+                {% if research %}
+                <div class="card-perk" style="background: rgba(0, 95, 138, 0.06); border-left: 3px solid var(--dct-ocean, #005F8A); padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
+                  {% if research.viewFacts %}<strong>Views:</strong> {{ research.viewFacts }}{% endif %}
+                </div>
+                <div class="card-perk" style="background: rgba(12,26,36,0.04); border-left: 3px solid #94a3b8; padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.78rem; margin-bottom: 1rem; color: #33454f;">
+                  {% if research.distanceFacts %}<strong>Getting there:</strong> {{ research.distanceFacts }}{% endif %}
+                </div>
+                {% endif %}
+                {% endif %}
               </div>
 
               <div class="card-actions" style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
@@ -153,7 +167,18 @@ permalink: "/hotels/index.html"
                 </div>
 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.35rem; padding-top: 0.5rem; border-top: 1px solid rgba(0,0,0,0.06); font-size: 0.78rem;">
-                  <span class="card-price" style="font-weight: 600; color: #0C1A24;">{{ hotel.price_range or 'Seasonal Rates' }}</span>
+                  {% if hotel.partnerStay and hotelRates.bySlug[hotel.slug] %}
+                    {% set rates = hotelRates.bySlug[hotel.slug] %}
+                    {% if rates.rooms[0].netRate %}
+                    <span class="card-price" style="font-weight: 600; color: #0C1A24;">From ${{ rates.fromRate }}/night · direct-deal partner rate</span>
+                    {% elseif rates.seasons %}
+                    <span class="card-price" style="font-weight: 600; color: #0C1A24;">From ${{ rates.fromRate }}/night · {{ rates.discountPct }}% below the published rack rate</span>
+                    {% else %}
+                    <span class="card-price" style="font-weight: 600; color: #0C1A24;">From ${{ rates.fromRate }}/night · ~20% below OTA rates</span>
+                    {% endif %}
+                  {% else %}
+                    <span class="card-price" style="font-weight: 600; color: #0C1A24;">{{ hotel.price_range or 'Seasonal Rates' }}</span>
+                  {% endif %}
                   {% if hotel.website %}
                     <a href="{{ hotel.website }}" target="_blank" rel="noopener nofollow" style="color: #64748b; text-decoration: underline;" title="Visit official property website">Official Site ↗</a>
                   {% endif %}
@@ -168,6 +193,196 @@ permalink: "/hotels/index.html"
       </p>
     </div>
   </section>
+
+  <!-- Custom Stay + Tour Packages (direct deals) -->
+  <section class="section" style="padding: 4rem 1.5rem; background: #fff;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Stay + Tour Bundles</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Custom Hotel Packages — Room, Ride &amp; Experience in One Booking</h2>
+        <p style="color: #4e5d66; max-width: 720px; margin: 0.5rem auto 0; font-size: 0.98rem;">
+          Built on our contracted partner hotels. One message books the room, the airport transfer and the tour — no OTA non-refundable traps, no hidden extras.
+        </p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        {% for pkg in hotelRates.packages %}
+        <article class="card" style="background: #FBF9F5; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(12,26,36,0.06); display: flex; flex-direction: column;">
+          <h3 style="margin-top: 0; font-size: 1.15rem; color: #003853;">{{ pkg.name }}</h3>
+          <p class="card-price" style="font-weight: 700; color: #0C1A24; font-size: 1.25rem; margin: 0.35rem 0;">${{ pkg.perPerson.min }}–${{ pkg.perPerson.max }} <span style="font-size: 0.8rem; font-weight: 500; color: #64748b;">per person · {{ pkg.nights }} nights</span></p>
+          <ul style="list-style: none; padding: 0; margin: 0.75rem 0; font-size: 0.88rem; color: #4e5d66; line-height: 1.6;">
+            {% for inc in pkg.includes %}<li>✓ {{ inc }}</li>{% endfor %}
+          </ul>
+          <p style="font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;"><em>Why it works: {{ pkg.solves }}</em></p>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20want%20the%20{{ pkg.name | urlencode }}%20package%20for%20my%20dates." target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top: auto; text-align: center; font-size: 0.85rem; padding: 0.6rem; background: #25D366; border-color: #25D366; color: #fff; font-weight: 600;">💬 Reserve this package on WhatsApp</a>
+        </article>
+        {% endfor %}
+      </div>
+      <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #64748b;">Indicative partner rates — our team confirms exact dates, availability and final total before any payment.</p>
+    </div>
+  </section>
+
+  <!-- SEASONAL RATE SHEETS (official published rack vs our partner rate) -->
+  {% set seasonalHotels = [] %}
+  {% for hotel in hotels.hotels %}
+    {% if hotel.partnerStay and hotelRates.bySlug[hotel.slug] and hotelRates.bySlug[hotel.slug].seasons %}
+      {% set _ = seasonalHotels.push(hotel) %}
+    {% endif %}
+  {% endfor %}
+  {% if seasonalHotels.length %}
+  <section class="section" style="padding: 3.5rem 1rem; background: #FBF9F5; border-top: 1px solid #f0e8dc;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Published Rack Sheet, Priced For You</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Season-by-Season Rates, {{ seasonalHotels[0].name }}</h2>
+        <p style="color: #4e5d66; max-width: 760px; margin: 0.5rem auto 0; font-size: 0.98rem;">
+          The hotel's own published rack rate and the rate you get through us, side by side — Half Board or All Inclusive, per room per night for two people. No OTA markup, no surge surprises.
+        </p>
+      </div>
+      {% for hotel in seasonalHotels %}
+      {% set rates = hotelRates.bySlug[hotel.slug] %}
+      <div style="overflow-x: auto; background: #fff; border-radius: 12px; border: 1px solid #e2e8ed; box-shadow: 0 4px 15px rgba(12,26,36,0.06);">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 760px;">
+          <thead>
+            <tr style="background: #003853; color: #fff;">
+              <th style="padding: 0.9rem 1rem; text-align: left;">Season</th>
+              {% for room in rates.seasons[0].rooms %}
+              <th style="padding: 0.9rem 1rem; text-align: left;">{{ room.roomType }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for season in rates.seasons %}
+            <tr style="border-top: 1px solid #eef2f5; {% if season.id == rates.currentSeasonId %}background: #fffbeb;{% endif %}">
+              <td style="padding: 0.9rem 1rem;">
+                <div style="font-weight: 700; color: #003853;">{{ season.label }}{% if season.id == rates.currentSeasonId %} <span style="font-size: 0.7rem; background: #F59E0B; color: #fff; padding: 0.1rem 0.45rem; border-radius: 4px; vertical-align: middle;">CURRENT</span>{% endif %}</div>
+                <div style="font-size: 0.78rem; color: #64748b;">{{ season.dates }}</div>
+              </td>
+              {% for room in season.rooms %}
+              <td style="padding: 0.9rem 1rem;">
+                <div style="font-weight: 700; color: #0C1A24;">${{ room.ourHalfBoard }} <span style="font-size: 0.75rem; font-weight: 500; color: #64748b;">Half Board</span></div>
+                <div style="font-size: 0.78rem; color: #64748b;">All Inclusive ${{ room.ourAllInclusive }}</div>
+                <div style="font-size: 0.75rem; color: #94a3b8; text-decoration: line-through;">rack ${{ room.rackHalfBoard }} / ${{ room.rackAllInclusive }}</div>
+              </td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 1.25rem auto 0; max-width: 900px; font-size: 0.85rem; color: #4e5d66; line-height: 1.7;">
+        <li>✓ Minimum 2 nights (4 nights in Festive Season 21 Dec – 07 Jan)</li>
+        <li>✓ Extra person: +$60 Half Board · All Inclusive +$75 (17+) / +$50 (ages 4–16), under 4 free</li>
+        <li>✓ Single occupancy: −$15 Half Board · −$35 All Inclusive</li>
+        <li>✓ All taxes and fees included — Zanzibar infrastructure tax is not added on top</li>
+      </ul>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Partner hotel photo showcases (owner-supplied) -->
+  {% set partnerWithGallery = [] %}
+  {% for hotel in hotels.hotels %}
+    {% if hotel.partnerStay and hotel.gallery and hotel.gallery | length > 1 %}{% set _ = partnerWithGallery.push(hotel) %}{% endif %}
+  {% endfor %}
+  {% if partnerWithGallery | length > 0 %}
+  <section class="section" style="padding: 4rem 1.5rem; background: #FBF9F5;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Real Photos — No Stock Imagery</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Inside Our Partner Hotels</h2>
+        <p style="color: #4e5d66; max-width: 700px; margin: 0.5rem auto 0; font-size: 0.98rem;">Photographed at the property itself — owner-supplied for Malindi and Kokoni, and the hotels' own official galleries for The One Resort and Le Paradis. What you see is what you get.</p>
+      </div>
+      {% for hotel in partnerWithGallery %}
+      <div style="margin-bottom: 3rem; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 18px rgba(12,26,36,0.07); border: 1px solid #eceff1;">
+        <div class="partner-gallery">
+          <div class="partner-gallery-hero">
+            <img src="/images/{{ hotel.gallery[0].src }}" alt="{{ hotel.gallery[0].alt }}" loading="lazy">
+            <span class="gallery-caption">{{ hotel.gallery[0].caption }}</span>
+          </div>
+          <div class="partner-gallery-grid">
+            {% for g in hotel.gallery %}
+            {% if not loop.first %}
+            <figure>
+              <img src="/images/{{ g.src }}" alt="{{ g.alt }}" loading="lazy">
+              <figcaption class="gallery-caption">{{ g.caption }}</figcaption>
+            </figure>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div style="padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <h3 style="margin: 0; font-size: 1.3rem; color: #003853;">{{ hotel.name }} <span style="font-size: 0.85rem; font-weight: 500; color: #64748b;">· {{ hotel.zone }}, {{ hotel.island }}</span></h3>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20saw%20the%20photos%20of%20{{ hotel.name | urlencode }}%20and%20would%20like%20a%20rate%20for%20my%20dates." target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="font-size: 0.85rem; padding: 0.6rem 1.1rem; background: #25D366; border-color: #25D366; color: #fff; font-weight: 600;">💬 Get my rate</a>
+        </div>
+        {% set research = partnerPropertyResearch.properties[hotel.slug] %}
+        {% if research %}
+        <div style="padding: 0 1.5rem 1.5rem; border-top: 1px solid #eef2f5; padding-top: 1.25rem; margin: 0 1.5rem; padding-left: 0; padding-right: 0;">
+          <p style="font-size: 0.9rem; color: #4e5d66; margin: 0 0 1rem; line-height: 1.6;">{{ research.description if research.description else hotel.description }}</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            {% if research.roomTypes %}
+            <div>
+              <h4 style="margin: 0 0 0.5rem; font-size: 0.95rem; color: #003853;">Room types</h4>
+              <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: #4e5d66; line-height: 1.65;">
+                {% for rt in research.roomTypes %}
+                <li>✓ <strong style="color: #0C1A24;">{{ rt.name }}</strong>{% if rt.type %} — {{ rt.type }}{% endif %}{% if rt.occupancy %} · sleeps {{ rt.occupancy }}{% endif %}{% if rt.bathroom %} · {{ rt.bathroom | lower }}{% endif %}{% if rt.features %} · {{ rt.features }}{% endif %}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+            {% if research.amenities %}
+            <div>
+              <h4 style="margin: 0 0 0.5rem; font-size: 0.95rem; color: #003853;">Facilities &amp; services</h4>
+              <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: #4e5d66; line-height: 1.65;">
+                {% for a in research.amenities %}<li>✓ {{ a }}</li>{% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+            {% if research.boards %}
+            <div>
+              <h4 style="margin: 0 0 0.5rem; font-size: 0.95rem; color: #003853;">What your board includes</h4>
+              <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: #4e5d66; line-height: 1.65;">
+                <li>✓ <strong style="color: #0C1A24;">Half Board:</strong> {{ research.boards.halfBoard }}</li>
+                <li>✓ <strong style="color: #0C1A24;">All Inclusive:</strong> {{ research.boards.allInclusive }}</li>
+              </ul>
+            </div>
+            {% endif %}
+          </div>
+          <p style="font-size: 0.8rem; color: #94a3b8; margin: 1rem 0 0;">{% if research.address %}<strong>Address:</strong> {{ research.address }}{% endif %}{% if research.airportDistance %} · {{ research.airportDistance }}{% endif %}</p>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <script type="application/ld+json">
+  [
+    {% for hotel in hotels.hotels %}
+    {% if hotel.partnerStay and hotelRates.bySlug[hotel.slug] %}{% set rates = hotelRates.bySlug[hotel.slug] %}
+    {
+      "@type": "LodgingBusiness",
+      "name": {{ hotel.name | json | safe }},
+      "image": {{ ((site.url | default('https://spiceandsail.com')) + '/images/' + hotel.photo) | json | safe }},
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": {{ hotel.zone | json | safe }},
+        "addressRegion": "Zanzibar",
+        "addressCountry": "TZ"
+      },
+      "priceRange": "$${{ rates.fromRate }}–${{ rates.fromRate * 4 }}",
+      "offers": {
+        "@type": "Offer",
+        "lowPrice": {{ rates.fromRate }},
+        "priceCurrency": "USD",
+        "url": "{{ site.url | default('https://spiceandsail.com') }}/hotels/#{{ hotel.slug }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endif %}
+    {% endfor %}
+  ]
+  </script>
 
   <!-- Statutory Levies & Mandatory Insurance Transparency Notice -->
   <section style="background: #0C1A24; color: #fff; padding: 4rem 1.5rem;">
