@@ -14925,33 +14925,33 @@
     "place": "Jambiani",
     "subject": "Aerial view of the Le Paradis Boutique Hotel Zanzibar building nestled among palm trees in Jambiani",
     "quality_score": 5,
-    "description": "Official or owner-supplied photograph of the partner property Le Paradis Boutique Hotel Zanzibar.",
+    "description": "Official aerial photograph of the partner property Le Paradis Boutique Hotel Zanzibar in Jambiani.",
     "primary_use": [
       "hotels"
     ]
   },
   "le-paradis-boutique-hotel-zanzibar-room.jpg": {
     "file": "le-paradis-boutique-hotel-zanzibar-room.jpg",
-    "alt_text": "A bright bedroom at Le Paradis Boutique Hotel Zanzibar with a sliding glass door opening onto a balcony with a view of the turquoise ocean",
+    "alt_text": "Contemporary guest room at Le Paradis Boutique Hotel Zanzibar with clean linens and private balcony",
     "category": "partner-hotel",
     "activity": "accommodation",
     "place": "Jambiani",
-    "subject": "A bright bedroom at Le Paradis Boutique Hotel Zanzibar with a sliding glass door opening onto a balcony with a view of the turquoise ocean",
+    "subject": "Contemporary guest room at Le Paradis Boutique Hotel Zanzibar with clean linens and private balcony",
     "quality_score": 5,
-    "description": "A bright bedroom at Le Paradis Boutique Hotel Zanzibar with a sliding glass door opening onto a balcony with a view of the turquoise ocean. Executive Seaside View Room.",
+    "description": "Owner-supplied photograph of an executive room with balcony at Le Paradis Boutique Hotel Zanzibar.",
     "primary_use": [
       "hotels"
     ]
   },
   "le-paradis-boutique-hotel-zanzibar-room2.jpg": {
     "file": "le-paradis-boutique-hotel-zanzibar-room2.jpg",
-    "alt_text": "A guest room at Le Paradis Boutique Hotel Zanzibar with a four-poster bed and a small seating area",
+    "alt_text": "A spacious guest room at Le Paradis Boutique Hotel Zanzibar featuring a handcrafted four-poster wooden bed and natural lighting",
     "category": "partner-hotel",
     "activity": "accommodation",
     "place": "Jambiani",
-    "subject": "A guest room at Le Paradis Boutique Hotel Zanzibar with a four-poster bed and a small seating area",
+    "subject": "Guest room at Le Paradis Boutique Hotel Zanzibar with handcrafted four-poster bed",
     "quality_score": 5,
-    "description": "A guest room at Le Paradis Boutique Hotel Zanzibar with a four-poster bed and a small seating area. Garden rooms with four-poster beds.",
+    "description": "Owner-supplied photograph of a garden four-poster bedroom at Le Paradis Boutique Hotel Zanzibar.",
     "primary_use": [
       "hotels"
     ]
@@ -14971,26 +14971,39 @@
   },
   "le-paradis-boutique-hotel-zanzibar-bar.jpg": {
     "file": "le-paradis-boutique-hotel-zanzibar-bar.jpg",
-    "alt_text": "The bar at Le Paradis Boutique Hotel Zanzibar with wooden stools and a well-stocked back bar",
+    "alt_text": "The restaurant and cocktail bar area at Le Paradis Boutique Hotel Zanzibar prepared for dining",
     "category": "partner-hotel",
     "activity": "accommodation",
     "place": "Jambiani",
-    "subject": "The bar at Le Paradis Boutique Hotel Zanzibar with wooden stools and a well-stocked back bar",
+    "subject": "Restaurant and cocktail bar area at Le Paradis Boutique Hotel Zanzibar",
     "quality_score": 5,
-    "description": "Official or owner-supplied photograph of the partner property Le Paradis Boutique Hotel Zanzibar.",
+    "description": "Owner-supplied photograph of the restaurant and bar at Le Paradis Boutique Hotel Zanzibar.",
     "primary_use": [
       "hotels"
     ]
   },
   "le-paradis-boutique-hotel-zanzibar-bathroom.jpg": {
     "file": "le-paradis-boutique-hotel-zanzibar-bathroom.jpg",
-    "alt_text": "A modern bathroom at Le Paradis Boutique Hotel Zanzibar with a white sink and a shower area in textured grey tiles",
+    "alt_text": "A clean modern en-suite bathroom at Le Paradis Boutique Hotel Zanzibar with walk-in shower and stone vanity",
     "category": "partner-hotel",
     "activity": "accommodation",
     "place": "Jambiani",
-    "subject": "A modern bathroom at Le Paradis Boutique Hotel Zanzibar with a white sink and a shower area in textured grey tiles",
+    "subject": "Modern en-suite bathroom with walk-in shower and vanity at Le Paradis Boutique Hotel Zanzibar",
     "quality_score": 5,
-    "description": "Official or owner-supplied photograph of the partner property Le Paradis Boutique Hotel Zanzibar.",
+    "description": "Owner-supplied photograph of an en-suite bathroom at Le Paradis Boutique Hotel Zanzibar.",
+    "primary_use": [
+      "hotels"
+    ]
+  },
+  "le-paradis-boutique-hotel-zanzibar-beach.jpg": {
+    "file": "le-paradis-boutique-hotel-zanzibar-beach.jpg",
+    "alt_text": "The white sand beach and turquoise Indian Ocean lagoon at Jambiani directly in front of Le Paradis Boutique Hotel Zanzibar",
+    "category": "partner-hotel",
+    "activity": "accommodation",
+    "place": "Jambiani",
+    "subject": "White sand beach and turquoise Indian Ocean lagoon in Jambiani",
+    "quality_score": 5,
+    "description": "Owner-supplied photograph of the Jambiani beach directly in front of Le Paradis Boutique Hotel Zanzibar.",
     "primary_use": [
       "hotels"
     ]

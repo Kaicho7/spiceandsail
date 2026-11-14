@@ -5175,7 +5175,7 @@
       "scrape_status": "live",
       "slug": "le-paradis-boutique-hotel-zanzibar",
       "photo": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
-      "photo_credit": "Official partner property photographs",
+      "photo_credit": "Owner-supplied property camera photographs (Dec 2025)",
       "photo_alt": "An aerial view showing the building of Le Paradis Boutique Hotel Zanzibar nestled among palm trees in Jambiani",
       "description": "4-star boutique hotel at 1014 Kibigija in Jambiani, a one-minute walk from the Indian Ocean shore and a short walk from lively Paje. Three room types from the Standard Garden Room to the Executive Seaside View Room, plus a pool with an ocean outlook, a fine-dining restaurant, a bar and a spa.",
       "price_range": "$56–$96 per night",
@@ -5189,38 +5189,38 @@
         },
         {
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-room.jpg",
-          "alt": "A bright bedroom at Le Paradis Boutique Hotel Zanzibar with a sliding glass door opening onto a balcony with a view of the turquoise ocean",
-          "caption": "Executive Seaside View Room",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-room-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room.jpg 960w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "alt": "Contemporary guest room at Le Paradis Boutique Hotel Zanzibar with clean linens and private balcony",
+          "caption": "Executive room with private balcony",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-room-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room.jpg 1200w"
         },
         {
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-room2.jpg",
-          "alt": "A guest room at Le Paradis Boutique Hotel Zanzibar with a four-poster bed and a small seating area",
-          "caption": "Garden rooms with four-poster beds",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-room2-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room2-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room2.jpg 1200w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "alt": "A spacious guest room at Le Paradis Boutique Hotel Zanzibar featuring a handcrafted four-poster wooden bed and natural lighting",
+          "caption": "Four-poster room with authentic Swahili woodwork",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-room2-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room2-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room2.jpg 1350w"
         },
         {
-          "src": "hotels/le-paradis-boutique-hotel-zanzibar-pool.jpg",
-          "alt": "The outdoor swimming pool at Le Paradis Boutique Hotel Zanzibar surrounded by a white wall and wooden lounge chairs",
-          "caption": "Pool with an ocean outlook",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-pool-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-pool-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-pool.jpg 1600w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "src": "hotels/le-paradis-boutique-hotel-zanzibar-beach.jpg",
+          "alt": "The white sand beach and turquoise Indian Ocean lagoon at Jambiani directly in front of Le Paradis Boutique Hotel Zanzibar",
+          "caption": "Steps to the turquoise Jambiani lagoon",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-beach-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-beach-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-beach.jpg 1000w"
         },
         {
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-bar.jpg",
-          "alt": "The bar at Le Paradis Boutique Hotel Zanzibar with wooden stools and a well-stocked back bar",
-          "caption": "Bar and lounge",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bar-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bar-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bar.jpg 1600w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "alt": "The restaurant and cocktail bar area at Le Paradis Boutique Hotel Zanzibar prepared for dining",
+          "caption": "Fine-dining restaurant and bar",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bar-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bar-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bar.jpg 1200w"
         },
         {
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-bathroom.jpg",
-          "alt": "A modern bathroom at Le Paradis Boutique Hotel Zanzibar with a white sink and a shower area in textured grey tiles",
-          "caption": "En-suite bathrooms",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom.jpg 1600w",
-          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+          "alt": "A clean modern en-suite bathroom at Le Paradis Boutique Hotel Zanzibar with walk-in shower and stone vanity",
+          "caption": "Modern en-suite shower",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom.jpg 1600w"
         }
       ]
     },

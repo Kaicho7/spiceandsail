@@ -377,3 +377,20 @@ Selection now follows OTA showcase order (emotional opener → best room → lif
 - Mkeka and The One unchanged (official, verified). Le Paradis unchanged.
 
 MachtaCry protocol research/rate logic untouched. Verification: build exit 0 (736 files, 853 img tags sized, all refs resolve); npm test 79/79; 0 of 55 srcset URLs missing; galleries re-measure full-width rows.
+
+## 2026-11-14 — Le Paradis real on-site camera curation & gallery upgrade
+
+Processed three Google Photos shared albums supplied by the owner (`lepa own camera photo`, `Mboto`, `leparadis boutique hotel photos jambiani`, Dec 2025):
+
+- **Ingestion & deduplication:** 489 unique media items discovered across the 3 albums (469 photos, 20 videos). Perceptual hashing (`phash`, `dhash`) with Hamming distance threshold <= 5 clustered the photos into 203 unique visual scenes.
+- **Quality curation:** Evaluated technical sharpness (Laplacian variance), dynamic range, brightness, and color saturation. Eliminated 266 near-duplicate burst shots and 5 bad/blurry shots, retaining 200 elite photos and 19 video walkthroughs organized by category in `/home/efatha/leparadis-media/retained_best/`.
+- **Showcase gallery integration:**
+  - Preserved the 16:9 aerial building hero (`le-paradis-boutique-hotel-zanzibar-exterior.jpg`).
+  - Upgraded Executive room with the top-scoring suite photo (sharpness 10,529 vs old 258; `leparadis_AF1QipMz_150.jpg`).
+  - Upgraded Four-poster room with the 1350x901 landscape wood-craft bedroom (`leparadis_AF1QipM-_138.jpg`).
+  - Added turquoise Jambiani beach frontage in place of pool (`leparadis_AF1QipOO_145.jpg`).
+  - Upgraded restaurant/dining bar with `leparadis_AF1QipPf_134.jpg`.
+  - Upgraded en-suite bathroom with crisp 1600x1067 landscape bathroom (`leparadis_AF1QipNH_106.jpg`).
+- **Responsive variants & catalog:** Regenerated all `-480` and `-800` srcset variants via `hotel-gallery-variants.py`; synchronized `canonical-image-catalog.json` and `hotels.json`.
+- **Verification:** `npm run build` exit 0 (739 files copied, 853 img tags sized, all refs resolve); `npm test` **79 pass / 0 fail**.
+
