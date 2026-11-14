@@ -14087,48 +14087,6 @@
       "3-star zanzibar hotel"
     ]
   },
-  "the-island-stonetown.jpg": {
-    "file": "hotels/the-island-stonetown.jpg",
-    "alt_text": "The Island Stonetown — 4-Star Boutique Hotel in Stone Town, Zanzibar",
-    "category": "hotel",
-    "subcategory": "boutique-hotel",
-    "place": "Stone Town",
-    "subject": "The Island Stonetown boutique hotel exterior and amenities in Stone Town",
-    "quality_score": 5,
-    "description": "Boutique Hotel in Stone Town, Unguja. 4-Star rating.",
-    "primary_use": [
-      "hotels",
-      "areas/stone-town"
-    ],
-    "keywords": [
-      "the island stonetown",
-      "hotels in stone town",
-      "stone town resorts",
-      "zanzibar accommodation",
-      "4-star zanzibar hotel"
-    ]
-  },
-  "hotels/the-island-stonetown.jpg": {
-    "file": "hotels/the-island-stonetown.jpg",
-    "alt_text": "The Island Stonetown — 4-Star Boutique Hotel in Stone Town, Zanzibar",
-    "category": "hotel",
-    "subcategory": "boutique-hotel",
-    "place": "Stone Town",
-    "subject": "The Island Stonetown boutique hotel exterior and amenities in Stone Town",
-    "quality_score": 5,
-    "description": "Boutique Hotel in Stone Town, Unguja. 4-Star rating.",
-    "primary_use": [
-      "hotels",
-      "areas/stone-town"
-    ],
-    "keywords": [
-      "the island stonetown",
-      "hotels in stone town",
-      "stone town resorts",
-      "zanzibar accommodation",
-      "4-star zanzibar hotel"
-    ]
-  },
   "cape-buffalo-serengeti-tanzania.jpg": {
     "file": "cape-buffalo-serengeti-tanzania.jpg",
     "alt_text": "Majestic Cape buffalo standing in the golden grasses of Serengeti National Park, Tanzania.",
@@ -14729,45 +14687,6 @@
       "hotels"
     ]
   },
-  "the-island-stonetown-16.jpg": {
-    "file": "the-island-stonetown-16.jpg",
-    "alt_text": "The open-air rooftop terrace at The Island Stonetown with tables set for breakfast, overlooking the rooftops of Stone Town",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Stone Town",
-    "subject": "The open-air rooftop terrace at The Island Stonetown with tables set for breakfast, overlooking the rooftops of Stone Town",
-    "quality_score": 5,
-    "description": "Official or owner-supplied photograph of the partner property The Island Stonetown.",
-    "primary_use": [
-      "hotels"
-    ]
-  },
-  "the-island-stonetown-exterior.jpg": {
-    "file": "the-island-stonetown-exterior.jpg",
-    "alt_text": "The carved wooden entrance door of The Island Stonetown lit at night in Kokoni, Stone Town",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Stone Town",
-    "subject": "The carved wooden entrance door of The Island Stonetown lit at night in Kokoni, Stone Town",
-    "quality_score": 5,
-    "description": "Official or owner-supplied photograph of the partner property The Island Stonetown.",
-    "primary_use": [
-      "hotels"
-    ]
-  },
-  "the-island-stonetown-08.jpg": {
-    "file": "the-island-stonetown-08.jpg",
-    "alt_text": "A four-poster bed with mosquito net and a rustic wood ceiling at The Island Stonetown",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Stone Town",
-    "subject": "A four-poster bed with mosquito net and a rustic wood ceiling at The Island Stonetown",
-    "quality_score": 5,
-    "description": "Official or owner-supplied photograph of the partner property The Island Stonetown.",
-    "primary_use": [
-      "hotels"
-    ]
-  },
   "stonetown-view-hotel-dining.jpg": {
     "file": "stonetown-view-hotel-dining.jpg",
     "alt_text": "A long dining table set for breakfast on the covered rooftop terrace at Stone Town View Hotel",
@@ -14919,5 +14838,59 @@
     "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
     "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
     "credit": "Owner-supplied property camera photographs (Dec 2025)"
+  },
+  "the-island-stonetown-rooftop.jpg": {
+    "file": "the-island-stonetown-rooftop.jpg",
+    "alt_text": "The open-air rooftop restaurant at The Island Stonetown with green-clothed tables overlooking Stone Town rooftops and palm trees",
+    "category": "hotel",
+    "hotel": "The Island Stonetown",
+    "width": 1047,
+    "height": 704,
+    "orientation": "landscape"
+  },
+  "the-island-stonetown-reception.jpg": {
+    "file": "the-island-stonetown-reception.jpg",
+    "alt_text": "The reception area at The Island Stonetown with carved wooden desk, African sculptures in wall niches and a red velvet guest chair",
+    "category": "hotel",
+    "hotel": "The Island Stonetown",
+    "width": 1044,
+    "height": 693,
+    "orientation": "landscape"
+  },
+  "the-island-stonetown-lounge.jpg": {
+    "file": "the-island-stonetown-lounge.jpg",
+    "alt_text": "The guest lounge at The Island Stonetown with a red three-seater sofa beneath shelves of hand-carved wooden sculptures",
+    "category": "hotel",
+    "hotel": "The Island Stonetown",
+    "width": 1035,
+    "height": 692,
+    "orientation": "landscape"
+  },
+  "the-island-stonetown-room-new.jpg": {
+    "file": "the-island-stonetown-room-new.jpg",
+    "alt_text": "A four-poster bed draped in white mosquito netting with folded towel art in a warm guest room at The Island Stonetown",
+    "category": "hotel",
+    "hotel": "The Island Stonetown",
+    "width": 1030,
+    "height": 674,
+    "orientation": "landscape"
+  },
+  "the-island-stonetown-dining.jpg": {
+    "file": "the-island-stonetown-dining.jpg",
+    "alt_text": "The rooftop terrace dining area with green table linens and wooden chairs overlooking Stone Town at The Island Stonetown",
+    "category": "hotel",
+    "hotel": "The Island Stonetown",
+    "width": 1045,
+    "height": 691,
+    "orientation": "landscape"
+  },
+  "the-island-stonetown-bathroom.jpg": {
+    "file": "the-island-stonetown-bathroom.jpg",
+    "alt_text": "An en-suite bathroom with patterned leaf-motif tiles, wall-mounted shower, basin and wooden-framed mirror at The Island Stonetown",
+    "category": "hotel",
+    "hotel": "The Island Stonetown",
+    "width": 1044,
+    "height": 667,
+    "orientation": "landscape"
   }
 }
