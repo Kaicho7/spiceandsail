@@ -5054,7 +5054,8 @@
           "src": "hotels/the-one-resort-zanzibar-aerial.jpg",
           "alt": "Aerial view of The One Resort Zanzibar showing the large swimming pool, white buildings and the sandy beach on the South Coast",
           "caption": "Private beach and the biggest pool on the east coast",
-          "sizes": "(max-width: 1240px) 100vw, 1240px"
+          "sizes": "(max-width: 1240px) 100vw, 1240px",
+          "srcset": "/images/hotels/the-one-resort-zanzibar-aerial.jpg 1600w"
         },
         {
           "src": "hotels/the-one-resort-zanzibar-room.jpg",
@@ -5108,47 +5109,54 @@
       "contact_form_url": "",
       "scrape_status": "official site is a placeholder - no live official website",
       "slug": "stonetown-view-hotel",
-      "photo": "hotels/stonetown-view-hotel-balcony-room.jpg",
+      "photo": "hotels/stonetown-view-hotel-rooftop.jpg",
       "photo_credit": "Property-uploaded photographs (Booking.com listing) and owner-supplied photos",
-      "photo_alt": "A twin room at Stone Town View Hotel with two beds in white linens, mosquito nets and a door opening onto a carved wooden balcony",
+      "photo_alt": "The open-air rooftop dining terrace at Stonetown View Hotel with wooden tables and chairs overlooking Malindi, Stone Town",
       "description": "3-star boutique hotel on Malindi Street opposite Cinema Afrique in Stone Town, with 23 rooms overlooking Zanzibar City. The rooftop restaurant Verde serves Mediterranean and international cuisine with an Indian Ocean panorama and breakfast is served on the sun terrace.",
       "price_range": "$29–$52 per night",
       "partnerStay": true,
       "gallery": [
         {
-          "src": "hotels/stonetown-view-hotel-sunset.jpg",
-          "alt": "An aerial view of the Stone Town harbour at sunset, dhows moored below historic rooftops and the House of Wonders",
-          "caption": "Sunset over the Stone Town harbour",
+          "src": "hotels/stonetown-view-hotel-rooftop.jpg",
+          "alt": "The open-air rooftop dining terrace at Stonetown View Hotel with wooden tables and chairs overlooking Malindi, Stone Town",
+          "caption": "Rooftop dining terrace",
+          "srcset": "/images/hotels/stonetown-view-hotel-rooftop-480.jpg 480w, /images/hotels/stonetown-view-hotel-rooftop-800.jpg 800w, /images/hotels/stonetown-view-hotel-rooftop.jpg 960w",
           "sizes": "(max-width: 1240px) 100vw, 1240px"
         },
         {
-          "src": "hotels/stonetown-view-hotel-balcony-room.jpg",
-          "alt": "A twin room at Stone Town View Hotel with two beds in white linens, mosquito nets and a door opening onto a carved wooden balcony",
-          "caption": "Twin room with balcony",
-          "srcset": "/images/hotels/stonetown-view-hotel-balcony-room-480.jpg 480w, /images/hotels/stonetown-view-hotel-balcony-room-800.jpg 800w, /images/hotels/stonetown-view-hotel-balcony-room.jpg 1024w",
+          "src": "hotels/stonetown-view-hotel-room-maasai.jpg",
+          "alt": "A double room at Stonetown View Hotel with orange Maasai-check bedding, stained-glass windows and AC",
+          "caption": "Double room with Maasai bedding",
+          "srcset": "/images/hotels/stonetown-view-hotel-room-maasai-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-maasai-800.jpg 800w, /images/hotels/stonetown-view-hotel-room-maasai.jpg 1080w",
           "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/stonetown-view-hotel-lounge.jpg",
-          "alt": "A seating area with armchairs in a common room at Stone Town View Hotel with local artwork on the walls",
-          "caption": "Lounge with local character"
-        },
-        {
-          "src": "hotels/stonetown-view-hotel-13.jpg",
-          "alt": "A twin room at Stone Town View Hotel with colourful stained-glass windows",
-          "caption": "Heritage stained-glass twin",
-          "srcset": "/images/hotels/stonetown-view-hotel-13-480.jpg 480w, /images/hotels/stonetown-view-hotel-13-800.jpg 800w, /images/hotels/stonetown-view-hotel-13.jpg 960w",
+          "src": "hotels/stonetown-view-hotel-twin-room.jpg",
+          "alt": "A twin room at Stonetown View Hotel with Maasai-check throws, mosquito nets and colourful stained-glass windows",
+          "caption": "Twin room with stained glass",
+          "srcset": "/images/hotels/stonetown-view-hotel-twin-room-480.jpg 480w, /images/hotels/stonetown-view-hotel-twin-room-800.jpg 800w, /images/hotels/stonetown-view-hotel-twin-room.jpg 810w",
           "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/stonetown-view-hotel-dining.jpg",
-          "alt": "A long dining table set for breakfast on the covered rooftop terrace at Stone Town View Hotel",
-          "caption": "Breakfast on the rooftop terrace"
+          "src": "hotels/stonetown-view-hotel-room-stained-glass.jpg",
+          "alt": "A guest room interior at Stonetown View Hotel showing carved Zanzibar door, stained-glass window and wooden vanity",
+          "caption": "Heritage stained-glass room",
+          "srcset": "/images/hotels/stonetown-view-hotel-room-stained-glass-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-stained-glass-800.jpg 800w, /images/hotels/stonetown-view-hotel-room-stained-glass.jpg 960w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/stonetown-view-hotel-bathroom.jpg",
-          "alt": "The en-suite shower and WC at Stone Town View Hotel",
-          "caption": "En-suite shower"
+          "src": "hotels/stonetown-view-hotel-room-vanity.jpg",
+          "alt": "A guest room at Stonetown View Hotel with Maasai-check throw, wooden vanity with mirror and towel art",
+          "caption": "Room with vanity",
+          "srcset": "/images/hotels/stonetown-view-hotel-room-vanity-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-vanity-800.jpg 800w, /images/hotels/stonetown-view-hotel-room-vanity.jpg 960w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+        },
+        {
+          "src": "hotels/stonetown-view-hotel-bathroom-new.jpg",
+          "alt": "An en-suite bathroom with grey mosaic tiles, WC and shower at Stonetown View Hotel",
+          "caption": "En-suite bathroom",
+          "srcset": "/images/hotels/stonetown-view-hotel-bathroom-new-480.jpg 480w, /images/hotels/stonetown-view-hotel-bathroom-new-800.jpg 800w, /images/hotels/stonetown-view-hotel-bathroom-new.jpg 960w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         }
       ]
     },
@@ -5185,7 +5193,8 @@
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
           "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
           "caption": "Boutique hotel in the heart of Jambiani",
-          "sizes": "(max-width: 1240px) 100vw, 1240px"
+          "sizes": "(max-width: 1240px) 100vw, 1240px",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-exterior-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-exterior-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg 1200w"
         },
         {
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-room.jpg",
@@ -5257,7 +5266,8 @@
           "src": "hotels/mkeka-spice-lodge-aerial.jpg",
           "alt": "Aerial perspective of Mkeka Spice Lodge showing the swimming pool area and the nearby Jambiani coastline",
           "caption": "The lodge from the air, minutes from the sea",
-          "sizes": "(max-width: 1240px) 100vw, 1240px"
+          "sizes": "(max-width: 1240px) 100vw, 1240px",
+          "srcset": "/images/hotels/mkeka-spice-lodge-aerial.jpg 1024w"
         },
         {
           "src": "hotels/mkeka-spice-lodge-room.jpg",
