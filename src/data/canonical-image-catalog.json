@@ -14036,46 +14036,14 @@
     ]
   },
   "le-paradis-boutique-hotel-zanzibar.jpg": {
-    "file": "hotels/le-paradis-boutique-hotel-zanzibar.jpg",
-    "alt_text": "Le Paradis Boutique Hotel Zanzibar — 4-Star Boutique Hotel in Jambiani, Zanzibar",
-    "category": "hotel",
-    "subcategory": "boutique-hotel",
-    "place": "Jambiani",
-    "subject": "Le Paradis Boutique Hotel Zanzibar boutique hotel exterior and amenities in Jambiani",
-    "quality_score": 5,
-    "description": "Boutique Hotel in Jambiani, Unguja. 4-Star rating.",
-    "primary_use": [
-      "hotels",
-      "areas/jambiani"
-    ],
-    "keywords": [
-      "le paradis boutique hotel zanzibar",
-      "hotels in jambiani",
-      "jambiani resorts",
-      "zanzibar accommodation",
-      "4-star zanzibar hotel"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   },
   "hotels/le-paradis-boutique-hotel-zanzibar.jpg": {
-    "file": "hotels/le-paradis-boutique-hotel-zanzibar.jpg",
-    "alt_text": "Le Paradis Boutique Hotel Zanzibar — 4-Star Boutique Hotel in Jambiani, Zanzibar",
-    "category": "hotel",
-    "subcategory": "boutique-hotel",
-    "place": "Jambiani",
-    "subject": "Le Paradis Boutique Hotel Zanzibar boutique hotel exterior and amenities in Jambiani",
-    "quality_score": 5,
-    "description": "Boutique Hotel in Jambiani, Unguja. 4-Star rating.",
-    "primary_use": [
-      "hotels",
-      "areas/jambiani"
-    ],
-    "keywords": [
-      "le paradis boutique hotel zanzibar",
-      "hotels in jambiani",
-      "jambiani resorts",
-      "zanzibar accommodation",
-      "4-star zanzibar hotel"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   },
   "mkeka-spice-lodge.jpg": {
     "file": "hotels/mkeka-spice-lodge.jpg",
@@ -14918,94 +14886,38 @@
     ]
   },
   "le-paradis-boutique-hotel-zanzibar-exterior.jpg": {
-    "file": "le-paradis-boutique-hotel-zanzibar-exterior.jpg",
-    "alt_text": "An aerial view showing the building of Le Paradis Boutique Hotel Zanzibar nestled among palm trees in Jambiani",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Jambiani",
-    "subject": "Aerial view of the Le Paradis Boutique Hotel Zanzibar building nestled among palm trees in Jambiani",
-    "quality_score": 5,
-    "description": "Official aerial photograph of the partner property Le Paradis Boutique Hotel Zanzibar in Jambiani.",
-    "primary_use": [
-      "hotels"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   },
   "le-paradis-boutique-hotel-zanzibar-room.jpg": {
-    "file": "le-paradis-boutique-hotel-zanzibar-room.jpg",
-    "alt_text": "Contemporary guest room at Le Paradis Boutique Hotel Zanzibar with clean linens and private balcony",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Jambiani",
-    "subject": "Contemporary guest room at Le Paradis Boutique Hotel Zanzibar with clean linens and private balcony",
-    "quality_score": 5,
-    "description": "Owner-supplied photograph of an executive room with balcony at Le Paradis Boutique Hotel Zanzibar.",
-    "primary_use": [
-      "hotels"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   },
   "le-paradis-boutique-hotel-zanzibar-room2.jpg": {
-    "file": "le-paradis-boutique-hotel-zanzibar-room2.jpg",
-    "alt_text": "A spacious guest room at Le Paradis Boutique Hotel Zanzibar featuring a handcrafted four-poster wooden bed and natural lighting",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Jambiani",
-    "subject": "Guest room at Le Paradis Boutique Hotel Zanzibar with handcrafted four-poster bed",
-    "quality_score": 5,
-    "description": "Owner-supplied photograph of a garden four-poster bedroom at Le Paradis Boutique Hotel Zanzibar.",
-    "primary_use": [
-      "hotels"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   },
   "le-paradis-boutique-hotel-zanzibar-pool.jpg": {
-    "file": "le-paradis-boutique-hotel-zanzibar-pool.jpg",
-    "alt_text": "The outdoor swimming pool at Le Paradis Boutique Hotel Zanzibar surrounded by a white wall and wooden lounge chairs",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Jambiani",
-    "subject": "The outdoor swimming pool at Le Paradis Boutique Hotel Zanzibar surrounded by a white wall and wooden lounge chairs",
-    "quality_score": 5,
-    "description": "Official or owner-supplied photograph of the partner property Le Paradis Boutique Hotel Zanzibar.",
-    "primary_use": [
-      "hotels"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   },
   "le-paradis-boutique-hotel-zanzibar-bar.jpg": {
-    "file": "le-paradis-boutique-hotel-zanzibar-bar.jpg",
-    "alt_text": "The restaurant and cocktail bar area at Le Paradis Boutique Hotel Zanzibar prepared for dining",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Jambiani",
-    "subject": "Restaurant and cocktail bar area at Le Paradis Boutique Hotel Zanzibar",
-    "quality_score": 5,
-    "description": "Owner-supplied photograph of the restaurant and bar at Le Paradis Boutique Hotel Zanzibar.",
-    "primary_use": [
-      "hotels"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   },
   "le-paradis-boutique-hotel-zanzibar-bathroom.jpg": {
-    "file": "le-paradis-boutique-hotel-zanzibar-bathroom.jpg",
-    "alt_text": "A clean modern en-suite bathroom at Le Paradis Boutique Hotel Zanzibar with walk-in shower and stone vanity",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Jambiani",
-    "subject": "Modern en-suite bathroom with walk-in shower and vanity at Le Paradis Boutique Hotel Zanzibar",
-    "quality_score": 5,
-    "description": "Owner-supplied photograph of an en-suite bathroom at Le Paradis Boutique Hotel Zanzibar.",
-    "primary_use": [
-      "hotels"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   },
   "le-paradis-boutique-hotel-zanzibar-beach.jpg": {
-    "file": "le-paradis-boutique-hotel-zanzibar-beach.jpg",
-    "alt_text": "The white sand beach and turquoise Indian Ocean lagoon at Jambiani directly in front of Le Paradis Boutique Hotel Zanzibar",
-    "category": "partner-hotel",
-    "activity": "accommodation",
-    "place": "Jambiani",
-    "subject": "White sand beach and turquoise Indian Ocean lagoon in Jambiani",
-    "quality_score": 5,
-    "description": "Owner-supplied photograph of the Jambiani beach directly in front of Le Paradis Boutique Hotel Zanzibar.",
-    "primary_use": [
-      "hotels"
-    ]
+    "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+    "alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+    "credit": "Owner-supplied property camera photographs (Dec 2025)"
   }
 }

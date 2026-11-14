@@ -1901,33 +1901,35 @@ body {
   position: relative;
   background: #FBF9F5;
   overflow: hidden;
+  cursor: pointer;
 }
 .partner-gallery-hero img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
+  object-position: center 40%;
   display: block;
 }
 .partner-gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 3px;
   background: #eceff1;
-  padding: 2px;
+  padding: 3px;
 }
 .partner-gallery-grid figure {
   position: relative;
   margin: 0;
-  flex: 1 1 30%;
-  min-width: 180px;
-  height: 210px;
+  aspect-ratio: 3 / 2;
   background: #FBF9F5;
   overflow: hidden;
+  cursor: pointer;
 }
 .partner-gallery-grid img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -1943,6 +1945,7 @@ body {
   font-weight: 600;
   padding: 0.35rem 0.6rem;
   line-height: 1.35;
+  pointer-events: none;
 }
 .partner-gallery-hero .gallery-caption {
   left: 1rem;
@@ -1953,11 +1956,50 @@ body {
   font-size: 0.8rem;
   backdrop-filter: blur(4px);
 }
+/* Lightbox overlay */
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(12, 26, 36, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.gallery-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+.gallery-lightbox img {
+  max-width: 92vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+.gallery-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.gallery-lightbox-close:hover { opacity: 1; }
 @media (max-width: 900px) {
-  .partner-gallery-grid figure { flex: 1 1 45%; height: 190px; }
+  .partner-gallery-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
 }
 @media (max-width: 560px) {
-  .partner-gallery-grid figure { flex: 1 1 100%; height: 210px; }
+  .partner-gallery-grid { grid-template-columns: 1fr; }
   .partner-gallery-hero img { aspect-ratio: 4 / 3; }
   .gallery-caption { font-size: 0.68rem; }
 }

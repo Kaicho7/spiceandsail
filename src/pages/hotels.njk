@@ -579,6 +579,63 @@ permalink: "/hotels/index.html"
     filterHotels();
   });
   </script>
+
+  <!-- Gallery Lightbox -->
+  <div class="gallery-lightbox" id="galleryLightbox">
+    <button class="gallery-lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="" width="1600" height="1067">
+  </div>
+  <script>
+  (function() {
+    var lb = document.getElementById('galleryLightbox');
+    if (!lb) return;
+    var lbImg = lb.querySelector('img');
+    var lbClose = lb.querySelector('.gallery-lightbox-close');
+
+    function openLightbox(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    // Hero images
+    document.querySelectorAll('.partner-gallery-hero').forEach(function(hero) {
+      hero.addEventListener('click', function() {
+        var img = hero.querySelector('img');
+        if (img) openLightbox(img.src, img.alt);
+      });
+    });
+    // Grid images
+    document.querySelectorAll('.partner-gallery-grid figure').forEach(function(fig) {
+      fig.addEventListener('click', function() {
+        var img = fig.querySelector('img');
+        if (img) {
+          // Use the largest srcset source if available
+          var srcset = img.getAttribute('srcset');
+          var fullSrc = img.src;
+          if (srcset) {
+            var parts = srcset.split(',');
+            fullSrc = parts[parts.length - 1].trim().split(' ')[0];
+          }
+          openLightbox(fullSrc, img.alt);
+        }
+      });
+    });
+
+    lb.addEventListener('click', closeLightbox);
+    lbClose.addEventListener('click', function(e) { e.stopPropagation(); closeLightbox(); });
+    lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  })();
+  </script>
 </main>
 
 {% include "footer.njk" %}
