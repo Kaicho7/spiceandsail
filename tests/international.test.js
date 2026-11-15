@@ -57,7 +57,7 @@ test('international: i18n-currency.js exists and is syntactically valid', () => 
   assert.ok(fs.existsSync(p), 'public/js/i18n-currency.js must exist');
   const code = fs.readFileSync(p, 'utf8');
   assert.ok(code.includes('RATES') && code.includes('LANGS') && code.includes('formatRangeConverted'));
-  const langs = (code.match(/var LANGS = \\{([\\s\\S]*?)\\n  \\};/) || [])[1] || '';
+  const langs = (code.match(/var\\s+LANGS\\s*=\\s*\\{([\\s\\S]*?)\\n  \\};/) || [])[1] || '';
   assert.ok(langs.includes('en:') && langs.includes('it:') && langs.includes('de:'), 'Only published languages must be configured');
   assert.ok(!/\\bfr:|\\bpl:/.test(langs), 'French and Polish must not be enabled in the language engine');
   // Syntax check
