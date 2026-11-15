@@ -42,7 +42,8 @@ test('international: header template includes language and currency selectors an
   const html = fs.readFileSync(p, 'utf8');
   assert.ok(html.includes('id="langSelect"'), 'header must contain #langSelect');
   assert.ok(html.includes('id="currencySelect"'), 'header must contain #currencySelect');
-  assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"') && html.includes('value="fr"') && html.includes('value="pl"'));
+  assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"'), "header menu must expose the three implemented page languages");
+  assert.ok(!html.includes('value="fr"') && !html.includes('value="pl"'), "header menu must not link to missing French or Polish page trees");
   assert.ok(html.includes('value="USD"') && html.includes('value="EUR"') && html.includes('value="GBP"') && html.includes('value="PLN"') && html.includes('value="TZS"'));
   
   // Luxury nav structure & brand translate protection
