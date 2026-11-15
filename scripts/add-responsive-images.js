@@ -1,0 +1,120 @@
+#!/usr/bin/env node
+'use strict';
+
+// Add one responsive picture source set to local raster images in the rendered
+// site. Netlify Image CDN creates AVIF/WebP variants on demand; local builds
+// retain the same source file while still receiving sizes/decoding defaults.
+// Intrinsic width/height and canonical alt text are applied by the existing
+// post-build scripts that run after this helper.
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.resolve(__dirname, '..');
+const DIST = path.join(ROOT, 'dist');
+const NETLIFY_BUILD = process.env.NETLIFY === 'true' ||
+  Boolean(process.env.DEPLOY_PRIME_URL || process.env.URL);
+const WIDTHS = [480, 768, 1200, 1600];
+
+if (!fs.existsSync(DIST)) {
+  console.error('dist/ not found — run Eleventy before adding responsive images');
+  process.exit(1);
+}
+
+function walk(dir, callback) {
+  for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+    const file = path.join(dir, item.name);
+    if (item.isDirectory()) walk(file, callback);
+    else if (/\.html?$/i.test(item.name)) callback(file);
+  }
+}
+
+function parseAttrs(tag) {
+  const attrs = {};
+  const re = /([^\s=/>]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g;
+  let match;
+  while ((match = re.exec(tag))) {
+    attrs[match[1].toLowerCase()] = match[2] !== undefined ? match[2]
+      : match[3] !== undefined ? match[3] : match[4];
+  }
+  return attrs;
+}
+
+function encodeHtml(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+}
+
+function sourceImagePath(src) {
+  let value = String(src || '').replace(/&amp;/g, '&');
+  if (/^(?:data:|https?:|\/\/)/i.test(value)) return null;
+  if (/^\/?\.netlify\/images\?/i.test(value)) {
+    const query = value.split('?')[1] || '';
+    const params = new URLSearchParams(query);
+    value = params.get('url') || '';
+  }
+  try { value = decodeURIComponent(value); } catch (_) {}
+  value = value.split(/[?#]/, 1)[0].replace(/^\/+/, '');
+  if (value.startsWith('images/')) value = value.slice(7);
+  if (!value || value.includes('..') || !/\.(?:jpe?g|png|webp)$/i.test(value)) return null;
+  return '/images/' + value;
+}
+
+function netlifyVariant(imagePath, format, width) {
+  return '/.netlify/images?url=' + encodeURIComponent(imagePath) +
+    '&fm=' + format + '&w=' + width + '&q=82';
+}
+
+function makeSrcSet(imagePath, format) {
+  return WIDTHS.map(width => netlifyVariant(imagePath, format, width) + ' ' + width + 'w').join(', ');
+}
+
+function setDefaultAttr(tag, name, value) {
+  const re = new RegExp('\\s' + name + '\\s*=', 'i');
+  if (re.test(tag)) return tag;
+  return tag.replace(/\s*\/?>$/, ' ' + name + '="' + encodeHtml(value) + '"$&');
+}
+
+let scanned = 0;
+let enhanced = 0;
+let localFallback = 0;
+walk(DIST, file => {
+  const original = fs.readFileSync(file, 'utf8');
+  let changed = false;
+  const output = original.replace(/<img\b[^>]*>/gi, (tag, offset, whole) => {
+    scanned++;
+    // Skip an image already inside a picture wrapper.
+    const before = whole.slice(0, offset);
+    if (before.lastIndexOf('<picture') > before.lastIndexOf('</picture>')) return tag;
+    const attrs = parseAttrs(tag);
+    const imagePath = sourceImagePath(attrs.src);
+    if (!imagePath) return tag;
+
+    let next = tag;
+    const className = attrs.class || '';
+    const isCard = /card|thumb|gallery|tile|grid/i.test(className);
+    const defaultSizes = isCard
+      ? '(max-width: 700px) 100vw, (max-width: 1024px) 50vw, 33vw'
+      : '(max-width: 700px) 100vw, (max-width: 1200px) 80vw, 60vw';
+    if (!attrs.sizes) next = setDefaultAttr(next, 'sizes', defaultSizes);
+    if (!attrs.decoding) next = setDefaultAttr(next, 'decoding', 'async');
+    if (!attrs.loading) next = setDefaultAttr(next, 'loading', 'lazy');
+
+    if (!NETLIFY_BUILD) {
+      localFallback++;
+      changed = changed || next !== tag;
+      return next;
+    }
+
+    // Use the original local image path as the immutable fallback. The browser
+    // selects a single AVIF/WebP candidate using the declared sizes value.
+    const avif = '<source type="image/avif" srcset="' + encodeHtml(makeSrcSet(imagePath, 'avif')) + '" sizes="' + encodeHtml(attrs.sizes || defaultSizes) + '">';
+    const webp = '<source type="image/webp" srcset="' + encodeHtml(makeSrcSet(imagePath, 'webp')) + '" sizes="' + encodeHtml(attrs.sizes || defaultSizes) + '">';
+    changed = true;
+    enhanced++;
+    return '<picture class="sns-responsive-picture">' + avif + webp + next + '</picture>';
+  });
+
+  if (changed) fs.writeFileSync(file, output);
+});
+
+console.log('responsive-images: scanned ' + scanned + ' img tags; AVIF/WebP picture sets ' +
+  (NETLIFY_BUILD ? enhanced : 0) + '; local fallbacks ' + localFallback);
