@@ -15,31 +15,49 @@
   }
 
   function initBookingForms() {
-    document.querySelectorAll('[data-wa-booking-form]').forEach(function (form) {
+    document.querySelectorAll('[data-concierge-booking-form]').forEach(function (form) {
       var date = form.querySelector('[name="date"]');
       if (date) date.min = localToday();
+
       form.addEventListener('submit', function (event) {
         event.preventDefault();
-        var tripEl = form.querySelector('[name="trip"]');
+        if (!form.reportValidity()) return;
+
         var dateEl = form.querySelector('[name="date"]');
         var guestsEl = form.querySelector('[name="guests"]');
-        var kindEl = form.querySelector('[name="kind"]');
-        var trip = (tripEl && tripEl.value || '').trim();
-        var dateValue = dateEl && dateEl.value;
-        var guests = guestsEl && guestsEl.value;
-        var kind = kindEl && kindEl.value || 'enquiry';
-        if (!trip || !dateValue || !guests || !form.reportValidity()) return;
-        var kindLabel = kind === 'tour' ? 'Tour' : kind === 'transfer' ? 'Transfer' : 'Trip enquiry';
-        var message = [
-          'Jambo Spice & Sail! I would like to enquire about a ' + kindLabel.toLowerCase() + ': ' + trip + '.',
-          'Preferred date: ' + dateValue + '.',
-          'Guests: ' + guests + '.',
-          'Please confirm availability and the final quote.'
-        ].join(' ');
-        var url = waUrl(message);
-        if (!url) return;
-        window.open(url, '_blank', 'noopener,noreferrer');
-        track('whatsapp_enquiry', { enquiry_type: kind, item_name: trip, guest_count: Number(guests) });
+        var submit = form.querySelector('button[type="submit"]');
+        var options = {
+          serviceSlug: form.getAttribute('data-service-slug') || '',
+          date: dateEl ? dateEl.value : '',
+          guests: guestsEl ? guestsEl.value : ''
+        };
+
+        if (!window.snsConcierge || typeof window.snsConcierge.openBooking !== 'function') {
+          track('concierge_booking_unavailable', { service_slug: options.serviceSlug });
+          return;
+        }
+
+        var originalText = submit ? submit.textContent : '';
+        if (submit) {
+          submit.disabled = true;
+          submit.textContent = 'Opening your concierge…';
+        }
+
+        Promise.resolve(window.snsConcierge.openBooking(options)).then(function (opened) {
+          if (opened) {
+            track('concierge_booking_opened', {
+              service_slug: options.serviceSlug,
+              guest_count: Number(options.guests)
+            });
+          }
+        }).catch(function () {
+          // The concierge shows its own safe error and WhatsApp fallback.
+        }).then(function () {
+          if (submit) {
+            submit.disabled = false;
+            submit.textContent = originalText;
+          }
+        });
       });
     });
   }
