@@ -14,7 +14,7 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
     <div class="tour-hero-content">
       {% set featured = page.inputPath | featuredImage %}
 {% set cdnSrc = page.inputPath | cdnImage %}
-<img src="{{ cdnSrc }}" alt="{{ featured.featuredAlt or page.title }}" class="tour-hero-image" loading="lazy">
+<img src="{{ cdnSrc }}" alt="{{ featured.featuredAlt or page.title }}" class="tour-hero-image" loading="eager" fetchpriority="high">
 
       <span class="card-badge badge-marine">Marine Excursion</span>
       <h1>Safari Blue / Menai Bay dhow day</h1>
@@ -27,6 +27,12 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
       <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20safari%20blue" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
     </div>
   </section>
+
+  {% set booking_trip = "Safari Blue / Menai Bay dhow day" %}
+  {% set booking_kind = "tour" %}
+  {% set booking_heading = "Ask about Safari Blue" %}
+  {% set booking_intro = "Choose your preferred date and guest count. We’ll receive your Safari Blue enquiry directly in WhatsApp." %}
+  {% include "whatsapp-booking-panel.njk" %}
 
   <div class="tour-grid">
     <div class="tour-main">
