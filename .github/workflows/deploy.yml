@@ -103,6 +103,15 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+      - name: Verify Netlify preview credentials are configured
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error::Add NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID under repository Settings > Secrets and variables > Actions. Do not put credentials in source files."
+            exit 1
+          fi
       - run: npm ci
       - name: Build with Netlify image transforms enabled
         run: npm run build
@@ -117,15 +126,6 @@ jobs:
           /*
             X-Robots-Tag: noindex, nofollow
           EOF
-      - name: Verify Netlify preview credentials are configured
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
-            echo "::error::Add NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID under repository Settings > Secrets and variables > Actions. Do not put credentials in source files."
-            exit 1
-          fi
       - name: Publish a draft Netlify preview (never production)
         id: deploy
         run: |
