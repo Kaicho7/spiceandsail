@@ -78,6 +78,31 @@
     window.gtag('event', eventName, params || {});
   }
 
+  function initClickToLoadMaps() {
+    document.querySelectorAll('[data-map-embed][data-map-src]').forEach(function (wrapper) {
+      var button = wrapper.querySelector('.sns-map-load-button');
+      if (!button) return;
+      button.addEventListener('click', function () {
+        if (wrapper.getAttribute('data-map-loaded') === 'true') return;
+        var src = wrapper.getAttribute('data-map-src');
+        if (!src || !/^https:\/\/www\.google\.com\/maps\/embed\?/.test(src)) return;
+        var frame = document.createElement('iframe');
+        frame.title = 'Spice and Sail Zanzibar Operations Hub Location';
+        frame.width = '100%';
+        frame.height = '320';
+        frame.loading = 'eager';
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        frame.allowFullscreen = true;
+        frame.setAttribute('frameborder', '0');
+        frame.setAttribute('scrolling', 'no');
+        frame.src = src;
+        wrapper.setAttribute('data-map-loaded', 'true');
+        wrapper.replaceChildren(frame);
+        track('map_load', { map_provider: 'google_maps' });
+      });
+    });
+  }
+
   function initContactAndAnalytics() {
     document.querySelectorAll('[data-sns-open]').forEach(function (link) {
       link.addEventListener('click', function (event) {
@@ -107,6 +132,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     initBookingForms();
     initCardWhatsAppLinks();
+    initClickToLoadMaps();
     initContactAndAnalytics();
   });
 })();
