@@ -12,23 +12,27 @@ alternate_de: "https://spiceandsail.com/de/"
 <main class="home">
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-tagline reveal delay-1">
-        <span>✦</span> Locally Owned in Mbuzini • Transparent Pricing • WhatsApp-First Booking
-      </div>
-      <h1 class="reveal delay-2">Zanzibar Tours, Transfers & <span class="highlight">Island Experiences</span></h1>
+      <div class="hero-tagline reveal delay-1">We sail, we farm, we guide.</div>
+      <h1 class="reveal delay-2">Zanzibar Tours, Transfers &amp; <span class="highlight">Island Experiences</span></h1>
       <p class="hero-subtitle reveal delay-3">Curated tours, seamless transfers, and multi-day packages. Marine fees included. Mbuzini based. <strong>{{ stats.total_tours }} tours, {{ stats.total_hotels }} hotels, {{ stats.total_attractions }} attractions.</strong></p>
       <div class="hero-cta reveal delay-4">
         <a href="/tours/" class="btn btn-primary btn-lg">Browse All Zanzibar Tours</a>
-        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Chat on WhatsApp</a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Chat on WhatsApp</a>
       </div>
       <div class="hero-trust reveal delay-5">
-        <div class="trust-item"><span class="trust-icon">✓</span>Small-Group & Private Options</div>
+        <div class="trust-item"><span class="trust-icon">✓</span>Small-Group &amp; Private Options</div>
         <div class="trust-item"><span class="trust-icon">💎</span>Marine Fees Included</div>
         <div class="trust-item"><span class="trust-icon">💬</span>WhatsApp-First Booking</div>
         <div class="trust-item"><span class="trust-icon">📍</span>Stone Town Based</div>
       </div>
     </div>
+    <div class="hero-visual reveal">
+      <img src="{{ 'sunset-dhow-cruise-zanzibar-stone-town.jpg' | cdnFile }}" alt="{{ 'sunset-dhow-cruise-zanzibar-stone-town.jpg' | canonicalAlt }}" class="home-hero-image" loading="eager" fetchpriority="high">
+    </div>
   </section>
+  {% set booking_heading = "Ask us about your Zanzibar trip" %}
+  {% set booking_intro = "Choose a tour or transfer, add your preferred date and guest count, and send the details to our team." %}
+  {% include "whatsapp-booking-panel.njk" %}
 
   <section class="quick-links">
     <div class="quick-link-card reveal delay-1">
