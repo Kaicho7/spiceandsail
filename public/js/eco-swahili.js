@@ -4,7 +4,7 @@
 
   function waUrl(message) {
     var number = document.body.getAttribute('data-whatsapp-number') || '';
-    if (!/^\\d{8,15}$/.test(number)) return '';
+    if (!/^\d{8,15}$/.test(number)) return '';
     return 'https://wa.me/' + number + '?text=' + encodeURIComponent(message);
   }
 
