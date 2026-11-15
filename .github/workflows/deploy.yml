@@ -117,12 +117,24 @@ jobs:
           /*
             X-Robots-Tag: noindex, nofollow
           EOF
+      - name: Verify Netlify preview credentials are configured
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error::Add NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID under repository Settings > Secrets and variables > Actions. Do not put credentials in source files."
+            exit 1
+          fi
       - name: Publish a draft Netlify preview (never production)
         id: deploy
         run: |
-          npx --yes netlify-cli@latest deploy --dir=dist --allow-anonymous --json > "$RUNNER_TEMP/netlify-deploy.json"
+          npx --yes netlify-cli@latest deploy --dir=dist --alias="pr-${PR_NUMBER}" --message="Lighthouse preview for PR ${PR_NUMBER}" --json > "$RUNNER_TEMP/netlify-deploy.json"
           node -e 'const fs=require("fs"); const d=JSON.parse(fs.readFileSync(process.env.DEPLOY_JSON,"utf8")); const url=d.deploy_url || d.deployUrl; if (!url) throw new Error("Netlify did not return deploy_url"); fs.appendFileSync(process.env.GITHUB_OUTPUT, "deploy_url="+url+String.fromCharCode(10));'
         env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
           DEPLOY_JSON: ${{ runner.temp }}/netlify-deploy.json
 
   lighthouse:
