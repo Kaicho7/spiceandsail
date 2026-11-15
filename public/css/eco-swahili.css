@@ -89,7 +89,7 @@ p{overflow-wrap:break-word}button,input,select,textarea{max-width:100%}
 .info-card,.booking-card{padding:1.3rem}.booking-card .price{color:var(--palm)}.booking-card a{color:var(--palm)}
 .sns-wa-booking-panel{max-width:1040px;margin:clamp(1.6rem,4vw,3rem) auto;padding:clamp(1.1rem,3vw,2rem);border:1px solid var(--border);border-radius:20px;background:linear-gradient(130deg,var(--card),#f0e7d7);box-shadow:var(--shadow-md)}
 .sns-wa-booking-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}.sns-wa-booking-heading h2{margin:.1rem 0 .4rem;font-size:clamp(1.45rem,2.5vw,2rem)}.sns-wa-booking-heading p{margin:0;color:var(--muted)}
-.sns-wa-booking-fields{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(120px,.65fr) minmax(150px,.8fr) minmax(110px,.55fr) auto;gap:.7rem;align-items:end}
+.sns-wa-booking-fields{display:grid;grid-template-columns:minmax(150px,1fr) minmax(120px,.65fr) auto;gap:.7rem;align-items:end}
 .sns-wa-booking-field{display:grid;gap:.35rem;min-width:0}.sns-wa-booking-field label{color:var(--wood-soft);font-size:.77rem;font-weight:750}
 .sns-wa-booking-field input,.sns-wa-booking-field select{width:100%;min-width:0;min-height:46px;padding:.65rem .8rem;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--wood);font:500 .92rem var(--font-sans)}
 .sns-wa-booking-submit{min-height:46px;padding:.65rem 1rem;border:0;border-radius:999px;background:var(--palm);color:#fff;font-weight:800;cursor:pointer}.sns-wa-booking-submit:hover{background:#24452a}
@@ -182,3 +182,7 @@ p{overflow-wrap:break-word}button,input,select,textarea{max-width:100%}
 }
 .sns-map-load-button:hover { background: #24452a; }
 .sns-map-click-to-load iframe { display: block; width: 100%; max-width: 100%; border: 0; }
+
+.sns-wa-booking-general { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; }
+.sns-wa-booking-general p { max-width:52ch; margin:0; color:var(--muted); }
+.sns-wa-booking-submit:disabled { opacity:.7; cursor:wait; }
