@@ -186,3 +186,24 @@ p{overflow-wrap:break-word}button,input,select,textarea{max-width:100%}
 .sns-wa-booking-general { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; }
 .sns-wa-booking-general p { max-width:52ch; margin:0; color:var(--muted); }
 .sns-wa-booking-submit:disabled { opacity:.7; cursor:wait; }
+
+
+/* Critical content must be visible on first paint. The legacy IntersectionObserver
+   reveal animation delayed H1/card rendering and inflated Lighthouse LCP. */
+.js .reveal,
+.js .reveal.visible,
+.js .card.reveal,
+.js .quick-link-card.reveal,
+.js .stat-item.reveal,
+.js .faq-item.reveal,
+.js .itinerary-day.reveal,
+.js .safari-include-item.reveal,
+.js .info-card.reveal,
+.js .booking-card.reveal,
+.js .quick-pick.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  transition-delay: 0s !important;
+}
