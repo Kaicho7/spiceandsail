@@ -152,13 +152,13 @@ test('redesign: built hotel directory keeps the full catalogue in deferred batch
   const source = JSON.parse(read('src/data/hotels.json'));
   const page = fs.readFileSync(path.join(ROOT, 'dist', 'hotels', 'index.html'), 'utf8');
   const deferred = JSON.parse(fs.readFileSync(path.join(ROOT, 'dist', 'data', 'hotels-more.json'), 'utf8'));
-  const initialCount = (page.match(/<article class="card hotel-card/g) || []).length;
+  const initialCount = (page.match(/<article\\b[^>]*class="card hotel-card/g) || []).length;
   const indexCount = (page.match(/data-hotel-index-link=/g) || []).length;
   assert.strictEqual(initialCount, Math.min(48, source.hotels.length));
   assert.strictEqual(indexCount, source.hotels.length, 'every property must be present in server-rendered HTML');
   assert.strictEqual(deferred.total, source.hotels.length);
   assert.strictEqual(deferred.cards.length, Math.max(0, source.hotels.length - 48));
-  assert.ok(deferred.cards.every(card => /<article class="card hotel-card/.test(card)));
+  assert.ok(deferred.cards.every(card => /<article\\b[^>]*class="card hotel-card/.test(card)));
 });
 
 test('redesign: homepage mobile hero uses a valid single-column rule', () => {
