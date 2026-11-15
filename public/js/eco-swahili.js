@@ -67,7 +67,6 @@
       link.className = 'sns-card-whatsapp';
       link.setAttribute('data-trip-whatsapp', '');
       link.textContent = 'Ask on WhatsApp';
-      link.addEventListener('click', function () { track('whatsapp_enquiry', { enquiry_type: category, item_name: itemName }); });
       var footer = card.querySelector('.card-footer, .route-actions, .card-actions, .card-content') || card;
       footer.appendChild(link);
     });
@@ -89,8 +88,14 @@
       });
     });
     document.addEventListener('click', function (event) {
-      var link = event.target && event.target.closest ? event.target.closest('a[href^="tel:"]') : null;
-      if (link) track('phone_click', { link_url: link.getAttribute('href') });
+      if (!event.target || !event.target.closest) return;
+      var waLink = event.target.closest('a[href*="wa.me/"]');
+      if (waLink) track('whatsapp_click', {
+        link_url: waLink.getAttribute('href'),
+        link_text: (waLink.textContent || '').trim().slice(0, 80)
+      });
+      var phoneLink = event.target.closest('a[href^="tel:"]');
+      if (phoneLink) track('phone_click', { link_url: phoneLink.getAttribute('href') });
     });
     document.addEventListener('submit', function (event) {
       if (event.target && event.target.matches && event.target.matches('form.contact-form')) {
