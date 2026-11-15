@@ -126,6 +126,6 @@ test('redesign: hotel directory loads all 198 properties progressively and keeps
   assert.ok(partial.includes('hotelIndex < 2'));
   assert.ok(partial.includes('fetchpriority="high"'));
   assert.ok(helper.includes("attrs.loading !== 'eager'"), 'build helper must preserve eagerly loaded first cards');
-  assert.ok(!page.includes('{% for hotel in hotels.hotels %}'), 'main listing must not render all 198 cards up front');
+  assert.ok(page.includes('{% for hotel in hotels.hotels.slice(0, 48) %}'), 'main listing must render only the first 48 cards up front');
 });
 
