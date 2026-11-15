@@ -134,7 +134,7 @@
         if (res.ok && res.json && Array.isArray(res.json.services)) {
           state.services = res.json.services;
           state.replyWindow = (res.json.replyWindow || '').slice(0, 160) || null;
-          if (typeof res.json.whatsappNumber === 'string' && /^\\d{8,15}$/.test(res.json.whatsappNumber)) {
+          if (typeof res.json.whatsappNumber === 'string' && /^\d{8,15}$/.test(res.json.whatsappNumber)) {
             WHATSAPP_URL = 'https://wa.me/' + res.json.whatsappNumber;
             if (document.body) document.body.setAttribute('data-whatsapp-number', res.json.whatsappNumber);
           }
@@ -671,7 +671,7 @@
       var dateInput = el('sns-date');
       if (dateInput) dateInput.min = localDateString(new Date());
       var requestedDate = String(opts.date || '');
-      if (dateInput && /^\\d{4}-\\d{2}-\\d{2}$/.test(requestedDate)) {
+      if (dateInput && /^\d{4}-\d{2}-\d{2}$/.test(requestedDate)) {
         dateInput.value = requestedDate;
       }
       var travelersInput = el('sns-travelers');
