@@ -6,11 +6,22 @@
       <p>{{ booking_intro or "Share your trip, preferred date and group size. We’ll receive the details in WhatsApp." }}</p>
     </div>
   </div>
-  <form class="sns-wa-booking-fields" data-wa-booking-form data-trip-kind="{{ booking_kind or 'enquiry' }}" data-trip-fixed="{{ booking_trip or '' }}">
+  <form class="sns-wa-booking-fields" data-wa-booking-form data-trip-fixed="{{ booking_trip or '' }}">
     <div class="sns-wa-booking-field">
       <label for="sns-wa-trip-{{ page.fileSlug }}">Tour or transfer</label>
       <input id="sns-wa-trip-{{ page.fileSlug }}" name="trip" type="text" value="{{ booking_trip or '' }}" placeholder="e.g. Safari Blue or airport transfer to Nungwi" {% if booking_trip %}readonly{% else %}required{% endif %} autocomplete="off">
     </div>
+    {% if booking_kind == "enquiry" %}
+    <div class="sns-wa-booking-field">
+      <label for="sns-wa-kind-{{ page.fileSlug }}">Enquiry type</label>
+      <select id="sns-wa-kind-{{ page.fileSlug }}" name="kind" required>
+        <option value="tour">Tour or experience</option>
+        <option value="transfer">Airport transfer</option>
+      </select>
+    </div>
+    {% else %}
+    <input type="hidden" name="kind" value="{{ booking_kind }}">
+    {% endif %}
     <div class="sns-wa-booking-field">
       <label for="sns-wa-date-{{ page.fileSlug }}">Preferred date</label>
       <input id="sns-wa-date-{{ page.fileSlug }}" name="date" type="date" required>
