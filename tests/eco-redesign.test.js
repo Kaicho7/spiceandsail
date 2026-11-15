@@ -143,7 +143,7 @@ test('redesign: hotel directory loads all 198 properties progressively and keeps
 test('redesign: hotel search and filters have a single progressive controller', () => {
   const page = read('src/pages/hotels.njk');
   assert.ok(!page.includes('<!-- Client-side Unified Filter & Search Script -->'));
-  assert.strictEqual(page.split('filterButtons.forEach(function (button)').length - 1, 1);
+  assert.strictEqual(page.split('function filterHotels()').length - 1, 1);
   assert.ok(page.includes('function ensureAllCardsLoaded()'));
   assert.ok(page.includes("fetch('/data/hotels-more.json'"));
 });
