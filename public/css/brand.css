@@ -63,6 +63,7 @@ a{color:var(--clay-ink);text-underline-offset:3px}
 .booking-panel input{width:100%;min-width:0;min-height:46px;padding:.6rem .68rem;border:1px solid var(--border);border-radius:.62rem;background:#fff;color:var(--wood)}
 .booking-panel button{min-width:138px;white-space:nowrap}
 .brand-booking-block{padding:clamp(1.1rem,3vw,1.8rem);margin:1.5rem 0;background:var(--stone-deep);border:1px solid var(--border);border-radius:1rem}
+.kanga-divider{height:16px;margin:0;background-color:var(--palm);background-image:repeating-linear-gradient(45deg,transparent 0 8px,rgba(255,255,255,.24) 8px 10px,transparent 10px 18px),repeating-linear-gradient(-45deg,transparent 0 8px,rgba(195,154,82,.7) 8px 9px,transparent 9px 18px);border-block:1px solid var(--gold)}
 .brand-booking-block h2{margin:.1rem 0 .4rem;font-size:clamp(1.45rem,2.4vw,2rem)}
 .quick-links{max-width:1200px;margin:0 auto;padding:2.5rem clamp(1rem,3vw,2rem);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
 .quick-link-card{padding:1.25rem;min-width:0;background:var(--card);border:1px solid var(--border);border-radius:1rem;box-shadow:var(--shadow-soft)}
