@@ -44,6 +44,13 @@ jobs:
             -f branch="${GITHUB_HEAD_REF}" \
             -f sha="${file_sha}" \
             -f content="${encoded}"
+      - name: Compare rendered URLs and SEO to the original baseline
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11' && hashFiles('audit/url-inventory-before.csv') != ''
+        env:
+          SEO_INVENTORY_OUTPUT: audit/url-inventory-after.csv
+        run: |
+          node scripts/audit-url-inventory.js
+          node scripts/compare-seo-inventory.js audit/url-inventory-before.csv audit/url-inventory-after.csv
       - name: Upload pre-redesign URL and SEO inventory
         if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11' && hashFiles('audit/url-inventory-before.csv') != ''
         uses: actions/upload-artifact@v4
