@@ -82,3 +82,31 @@ test('redesign: browser scripts are syntactically valid', () => {
     assert.doesNotThrow(() => new Function(code), file + ' must parse');
   }
 });
+
+test('redesign: tour and transfer booking CTAs use the same verified concierge lead flow', () => {
+  const panel = read('src/_includes/whatsapp-booking-panel.njk');
+  const tourPanel = read('src/_includes/tour-booking-panel.njk');
+  const concierge = read('public/js/concierge.js');
+  const bookingScript = read('public/js/eco-swahili.js');
+  const widget = read('src/_includes/concierge-widget.njk');
+  assert.ok(panel.includes('data-concierge-booking-form'));
+  assert.ok(panel.includes('data-service-slug="{{ booking_slug }}"'));
+  assert.ok(!panel.includes('wa.me/'), 'booking panel must not bypass the enquiry reference flow');
+  assert.ok(tourPanel.includes('booking_slug = tour_slug or page.fileSlug'));
+  assert.ok(bookingScript.includes("window.snsConcierge.openBooking(options)"));
+  assert.ok(bookingScript.includes("querySelectorAll('[data-sns-booking-open]')"));
+  assert.ok(concierge.includes('openBooking: openBooking'));
+  assert.ok(concierge.includes("(state.services || []).find(function (service)"));
+  assert.ok(concierge.includes("goToStep(2)"));
+  assert.ok(widget.includes('type="number" id="sns-travelers"'));
+  assert.ok(widget.includes('min="1" max="50"'));
+  const tourDir = path.join(ROOT, 'src', 'pages', 'tours');
+  for (const page of fs.readdirSync(tourDir).filter(name => name.endsWith('.njk'))) {
+    const source = fs.readFileSync(path.join(tourDir, page), 'utf8');
+    assert.ok(source.includes('data-sns-booking-open'), page + ' primary booking CTA must open the concierge');
+    assert.ok(source.includes('data-service-slug="{{ tour_slug }}"'), page + ' must pass its canonical catalogue slug');
+  }
+  const nungwi = read('src/pages/transfers/airport-to-nungwi.njk');
+  assert.ok(nungwi.includes('data-service-slug="airport-transfer-znz-to-nungwikendwa"'));
+});
+
