@@ -152,3 +152,33 @@ p{overflow-wrap:break-word}button,input,select,textarea{max-width:100%}
  .footer-shell{grid-template-columns:minmax(0,1fr)}.footer-brand{grid-column:auto}.mobile-contact-bar{min-height:58px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* Google Maps remains a local placeholder until the visitor asks to load it. */
+.sns-map-click-to-load {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  padding: 2rem 1rem;
+  background:
+    linear-gradient(135deg, rgba(201,214,191,.5), rgba(191,220,217,.55)),
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(42,27,18,.035) 14px 15px);
+  color: var(--wood);
+  text-align: center;
+}
+.sns-map-prompt { max-width: 34ch; margin: 0; color: var(--wood-soft); }
+.sns-map-load-button {
+  min-height: 46px;
+  padding: .7rem 1.15rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--palm);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+.sns-map-load-button:hover { background: #24452a; }
+.sns-map-click-to-load iframe { display: block; width: 100%; max-width: 100%; border: 0; }
