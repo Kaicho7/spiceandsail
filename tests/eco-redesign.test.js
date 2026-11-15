@@ -201,7 +201,8 @@ test('redesign: transfer calculator only quotes verified destinations and hands 
   assert.ok(transfers.includes("window.snsConcierge.openBooking(options)"));
   assert.ok(transfers.includes('serviceSlug: route.slug'));
   assert.ok(transfers.includes('guests: route.passengers'));
-  assert.ok(transfers.includes('flight number: ' ) === false, 'flight details are passed in the pickup/notes fields, not hardcoded');
+  assert.ok(transfers.includes("'Flight number: ' + route.flight"));
+  assert.ok(transfers.includes("paxEl.reportValidity()") && transfers.includes("dateEl.reportValidity()"));
   assert.ok(!transfers.includes('function getFareNumbers'), 'browser must not compute transfer fares');
   assert.ok(!transfers.includes('return [35, 40]') && !transfers.includes('return [50, 60]'));
   assert.ok(transfers.includes('calc-concierge-btn'));
