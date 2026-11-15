@@ -42,7 +42,8 @@ test('international: header template includes language and currency selectors an
   const html = fs.readFileSync(p, 'utf8');
   assert.ok(html.includes('id="langSelect"'), 'header must contain #langSelect');
   assert.ok(html.includes('id="currencySelect"'), 'header must contain #currencySelect');
-  assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"') && html.includes('value="fr"') && html.includes('value="pl"'));
+  assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"'));
+  assert.ok(!html.includes('value="fr"') && !html.includes('value="pl"'), 'French and Polish must not appear in the language menu');
   assert.ok(html.includes('value="USD"') && html.includes('value="EUR"') && html.includes('value="GBP"') && html.includes('value="PLN"') && html.includes('value="TZS"'));
   
   // Luxury nav structure & brand translate protection
@@ -56,6 +57,9 @@ test('international: i18n-currency.js exists and is syntactically valid', () => 
   assert.ok(fs.existsSync(p), 'public/js/i18n-currency.js must exist');
   const code = fs.readFileSync(p, 'utf8');
   assert.ok(code.includes('RATES') && code.includes('LANGS') && code.includes('formatRangeConverted'));
+  const langs = (code.match(/var LANGS = \\{([\\s\\S]*?)\\n  \\};/) || [])[1] || '';
+  assert.ok(langs.includes('en:') && langs.includes('it:') && langs.includes('de:'), 'Only published languages must be configured');
+  assert.ok(!/\\bfr:|\\bpl:/.test(langs), 'French and Polish must not be enabled in the language engine');
   // Syntax check
   assert.doesNotThrow(() => new Function(code), 'i18n-currency.js must be syntactically valid');
 });
