@@ -16,7 +16,7 @@ const { tryLLM } = require('../../src/lib/concierge/llm');
 const { catalogue, CONFIG, isWithinBusinessHours, getService } = require('../../src/lib/concierge/catalogue');
 const hotelContracts = require('../../src/lib/concierge/hotel-contracts');
 
-const BUSINESS_WHATSAPP = (CONFIG && /^\\d{8,15}$/.test(CONFIG.whatsappNumber || ''))
+const BUSINESS_WHATSAPP = (CONFIG && /^\d{8,15}$/.test(CONFIG.whatsappNumber || ''))
   ? CONFIG.whatsappNumber
   : '255672450934';
 const BUSINESS_WHATSAPP_DISPLAY = '+' + BUSINESS_WHATSAPP;
