@@ -5052,32 +5052,45 @@
       "gallery": [
         {
           "src": "hotels/the-one-resort-zanzibar-aerial.jpg",
-          "alt": "Aerial view of The One Resort Zanzibar at golden hour"
+          "alt": "Aerial golden-hour view of The One Resort Zanzibar with the expansive swimming pool, white architecture, and turquoise ocean",
+          "caption": "Private beach and the largest pool on the East Coast",
+          "srcset": "/images/hotels/the-one-resort-zanzibar-aerial.jpg 1600w",
+          "sizes": "(max-width: 1240px) 100vw, 1240px"
         },
         {
           "src": "hotels/the-one-resort-zanzibar-room.jpg",
-          "alt": "Tropical room with palm mural and balcony views",
-          "srcset": "/images/hotels/the-one-resort-zanzibar-room-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-room-800.jpg 800w"
+          "alt": "Sunlit guest room with tropical palm leaf wall mural and private balcony overlooking lush gardens",
+          "caption": "Sunlit balcony room with tropical garden views",
+          "srcset": "/images/hotels/the-one-resort-zanzibar-room-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-room-800.jpg 800w, /images/hotels/the-one-resort-zanzibar-room.jpg 1024w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/the-one-resort-zanzibar-suite.jpg",
-          "alt": "Spacious suite with African art and seating area",
-          "srcset": "/images/hotels/the-one-resort-zanzibar-suite-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-suite-800.jpg 800w"
+          "alt": "Spacious luxury suite with four-poster canopy bed, vibrant African art, and comfortable lounge area",
+          "caption": "Spacious suite with Swahili canopy bed & lounge",
+          "srcset": "/images/hotels/the-one-resort-zanzibar-suite-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-suite-800.jpg 800w, /images/hotels/the-one-resort-zanzibar-suite.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/the-one-resort-zanzibar-sea-view-room.jpg",
-          "alt": "Sea-view room with ocean panorama through glass doors",
-          "srcset": "/images/hotels/the-one-resort-zanzibar-sea-view-room-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-sea-view-room-800.jpg 800w"
+          "alt": "Sea-view guest bedroom opening through glass sliding doors directly towards the palms and Indian Ocean",
+          "caption": "Direct ocean panorama from your bed",
+          "srcset": "/images/hotels/the-one-resort-zanzibar-sea-view-room-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-sea-view-room-800.jpg 800w, /images/hotels/the-one-resort-zanzibar-sea-view-room.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/the-one-resort-zanzibar-pool-bar.jpg",
-          "alt": "Guests enjoying the swim-up pool bar with ocean views",
-          "srcset": "/images/hotels/the-one-resort-zanzibar-pool-bar-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-pool-bar-800.jpg 800w"
+          "alt": "Crystal clear turquoise infinity pool with swim-up cocktail bar overlooking the white sand beach",
+          "caption": "Swim-up pool bar overlooking the ocean",
+          "srcset": "/images/hotels/the-one-resort-zanzibar-pool-bar-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-pool-bar-800.jpg 800w, /images/hotels/the-one-resort-zanzibar-pool-bar.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/the-one-resort-zanzibar-pool-ocean.jpg",
-          "alt": "Infinity pool overlooking the Indian Ocean with beach umbrellas",
-          "srcset": "/images/hotels/the-one-resort-zanzibar-pool-ocean-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-pool-ocean-800.jpg 800w"
+          "alt": "Aqua gym and resort entertainment activities in the expansive main swimming pool",
+          "caption": "Aqua fitness and pool activities for guests",
+          "srcset": "/images/hotels/the-one-resort-zanzibar-pool-ocean-480.jpg 480w, /images/hotels/the-one-resort-zanzibar-pool-ocean-800.jpg 800w, /images/hotels/the-one-resort-zanzibar-pool-ocean.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         }
       ]
     },
@@ -5105,40 +5118,52 @@
       "slug": "stonetown-view-hotel",
       "photo": "hotels/stonetown-view-hotel-room-maasai.jpg",
       "photo_credit": "Property-uploaded photographs (Booking.com listing) and owner-supplied photos",
-      "photo_alt": "The open-air rooftop dining terrace at Stonetown View Hotel with wooden tables and chairs overlooking Malindi, Stone Town",
+      "photo_alt": "Maasai-themed double room at Stonetown View Hotel with orange and yellow check bedding, stained glass windows and AC",
       "description": "3-star boutique hotel on Malindi Street opposite Cinema Afrique in Stone Town, with 23 rooms overlooking Zanzibar City. The rooftop restaurant Verde serves Mediterranean and international cuisine with an Indian Ocean panorama and breakfast is served on the sun terrace.",
       "price_range": "$29–$52 per night",
       "partnerStay": true,
       "gallery": [
         {
           "src": "hotels/stonetown-view-hotel-room-maasai.jpg",
-          "alt": "Maasai-themed room with vibrant orange textiles and stained glass",
-          "srcset": "/images/hotels/stonetown-view-hotel-room-maasai-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-maasai-800.jpg 800w"
-        },
-        {
-          "src": "hotels/stonetown-view-hotel-twin-room.jpg",
-          "alt": "Twin room with Maasai check throws and coloured glass windows",
-          "srcset": "/images/hotels/stonetown-view-hotel-twin-room-480.jpg 480w, /images/hotels/stonetown-view-hotel-twin-room-800.jpg 800w"
+          "alt": "Maasai-themed double room at Stonetown View Hotel with vibrant orange-check bedding, stained-glass windows and AC",
+          "caption": "Double room with authentic Maasai textiles & stained glass",
+          "srcset": "/images/hotels/stonetown-view-hotel-room-maasai-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-maasai-800.jpg 800w, /images/hotels/stonetown-view-hotel-room-maasai.jpg 1080w",
+          "sizes": "(max-width: 1240px) 100vw, 1240px"
         },
         {
           "src": "hotels/stonetown-view-hotel-room-wide.jpg",
-          "alt": "Spacious room with traditional Zanzibari furnishings",
-          "srcset": "/images/hotels/stonetown-view-hotel-room-wide-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-wide-800.jpg 800w"
+          "alt": "Twin bedroom at Stonetown View Hotel opening through carved double doors onto a private wooden balcony overlooking Stone Town",
+          "caption": "Balcony twin room with carved wooden fretwork",
+          "srcset": "/images/hotels/stonetown-view-hotel-room-wide-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-wide-800.jpg 800w, /images/hotels/stonetown-view-hotel-room-wide.jpg 1024w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/stonetown-view-hotel-rooftop.jpg",
-          "alt": "Rooftop dining terrace with Stone Town panorama",
-          "srcset": "/images/hotels/stonetown-view-hotel-rooftop-480.jpg 480w, /images/hotels/stonetown-view-hotel-rooftop-800.jpg 800w"
+          "alt": "Spectacular golden sunset panorama across the Stone Town harbour and traditional wooden dhows",
+          "caption": "Sunset panorama over the historic harbour and dhows",
+          "srcset": "/images/hotels/stonetown-view-hotel-rooftop-480.jpg 480w, /images/hotels/stonetown-view-hotel-rooftop-800.jpg 800w, /images/hotels/stonetown-view-hotel-rooftop.jpg 1024w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/stonetown-view-hotel-room-detail.jpg",
-          "alt": "Room with wooden furniture and stained glass window details",
-          "srcset": "/images/hotels/stonetown-view-hotel-room-detail-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-detail-800.jpg 800w"
+          "alt": "Heritage guest lounge with vintage Zanzibari framed art gallery and arched double doors leading to sunny courtyard",
+          "caption": "Swahili guest lounge with local art collection",
+          "srcset": "/images/hotels/stonetown-view-hotel-room-detail-480.jpg 480w, /images/hotels/stonetown-view-hotel-room-detail-800.jpg 800w, /images/hotels/stonetown-view-hotel-room-detail.jpg 960w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+        },
+        {
+          "src": "hotels/stonetown-view-hotel-twin-room.jpg",
+          "alt": "Twin room with four-poster mosquito net canopy and cobalt blue and amber stained-glass window",
+          "caption": "Heritage twin room with coloured stained glass",
+          "srcset": "/images/hotels/stonetown-view-hotel-twin-room-480.jpg 480w, /images/hotels/stonetown-view-hotel-twin-room-800.jpg 800w, /images/hotels/stonetown-view-hotel-twin-room.jpg 960w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/stonetown-view-hotel-bathroom-new.jpg",
-          "alt": "Clean modern bathroom with mosaic tile walls",
-          "srcset": "/images/hotels/stonetown-view-hotel-bathroom-new-480.jpg 480w, /images/hotels/stonetown-view-hotel-bathroom-new-800.jpg 800w"
+          "alt": "Spotlessly clean en-suite bathroom with modern grey checkered wall tiles and hot shower",
+          "caption": "Spotless modern en-suite bathroom",
+          "srcset": "/images/hotels/stonetown-view-hotel-bathroom-new-480.jpg 480w, /images/hotels/stonetown-view-hotel-bathroom-new-800.jpg 800w, /images/hotels/stonetown-view-hotel-bathroom-new.jpg 960w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         }
       ]
     },
@@ -5166,40 +5191,52 @@
       "slug": "le-paradis-boutique-hotel-zanzibar",
       "photo": "hotels/le-paradis-boutique-hotel-zanzibar-bar.jpg",
       "photo_credit": "Owner-supplied property camera photographs (Dec 2025)",
-      "photo_alt": "The pool and lush tropical gardens at Le Paradis Boutique Hotel Zanzibar in Jambiani",
+      "photo_alt": "Panoramic rooftop ocean bar at Le Paradis Boutique Hotel overlooking the turquoise Indian Ocean in Jambiani",
       "description": "4-star boutique hotel at 1014 Kibigija in Jambiani, a one-minute walk from the Indian Ocean shore and a short walk from lively Paje. Three room types from the Standard Garden Room to the Executive Seaside View Room, plus a pool with an ocean outlook, a fine-dining restaurant, a bar and a spa.",
       "price_range": "$56–$96 per night",
       "partnerStay": true,
       "gallery": [
         {
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-bar.jpg",
-          "alt": "Rooftop bar with ocean panorama at Le Paradis",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bar-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bar-800.jpg 800w"
+          "alt": "Panoramic rooftop ocean bar at Le Paradis with plush daybeds, papasan chair, and Indian Ocean sunset views",
+          "caption": "Rooftop ocean bar with panoramic Indian Ocean views",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bar-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bar-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bar.jpg 1200w",
+          "sizes": "(max-width: 1240px) 100vw, 1240px"
         },
         {
-          "src": "hotels/le-paradis-boutique-hotel-zanzibar-room.jpg",
-          "alt": "Chic suite living area with emerald sofa and rattan wardrobe",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-room-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room-800.jpg 800w"
+          "src": "hotels/le-paradis-boutique-hotel-zanzibar-pool.jpg",
+          "alt": "Sunlit turquoise swimming pool with woven wooden loungers, plush towels, and tropical garden wall",
+          "caption": "Sunlit swimming pool and poolside relaxation loungers",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-pool-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-pool-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-pool.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-bedroom.jpg",
-          "alt": "Bright bedroom with modern furnishings",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bedroom-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bedroom-800.jpg 800w"
+          "alt": "Romantic master suite with four-poster king canopy bed, towel swans, pink bougainvillea petals, and modern African art",
+          "caption": "Master boutique suite with four-poster canopy bed & towel art",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bedroom-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bedroom-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bedroom.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/le-paradis-boutique-hotel-zanzibar-room2.jpg",
-          "alt": "Garden terrace with seating and tropical plants",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-room2-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room2-800.jpg 800w"
-        },
-        {
-          "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
-          "alt": "Le Paradis building exterior with thatched roof bungalows",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-exterior-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-exterior-800.jpg 800w"
+          "src": "hotels/le-paradis-boutique-hotel-zanzibar-room.jpg",
+          "alt": "Chic suite living room with curved emerald velvet sofa, live-edge wood coffee table, and rattan wardrobe",
+          "caption": "Chic boutique living area with emerald velvet sofa & rattan furnishings",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-room-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-room.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/le-paradis-boutique-hotel-zanzibar-bathroom.jpg",
-          "alt": "Designer bathroom with heart mirror and gold-pattern sink",
-          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom-800.jpg 800w"
+          "alt": "Designer bathroom featuring a distinctive heart-shaped mirror, gold filigree basin, and matte black fixtures",
+          "caption": "Designer terrazzo bathroom with heart mirror & gold basin",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-bathroom.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+        },
+        {
+          "src": "hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg",
+          "alt": "Artisan timber-slatted cocktail bar and lounge pavilion with bar stools and tropical palms",
+          "caption": "Artisan timber cocktail bar and lounge",
+          "srcset": "/images/hotels/le-paradis-boutique-hotel-zanzibar-exterior-480.jpg 480w, /images/hotels/le-paradis-boutique-hotel-zanzibar-exterior-800.jpg 800w, /images/hotels/le-paradis-boutique-hotel-zanzibar-exterior.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         }
       ]
     },
@@ -5234,32 +5271,45 @@
       "gallery": [
         {
           "src": "hotels/mkeka-spice-lodge-aerial.jpg",
-          "alt": "Aerial view of Mkeka Spice Lodge bungalows near the sea"
+          "alt": "Aerial perspective of Mkeka Spice Lodge showing thatched-roof bungalows, swimming pool and turquoise Jambiani coastline",
+          "caption": "Thatched bungalows minutes from the Jambiani coastline",
+          "srcset": "/images/hotels/mkeka-spice-lodge-aerial.jpg 1024w",
+          "sizes": "(max-width: 1240px) 100vw, 1240px"
         },
         {
           "src": "hotels/mkeka-spice-lodge-room-new.jpg",
-          "alt": "Comfortable room with mosquito net canopy bed",
-          "srcset": "/images/hotels/mkeka-spice-lodge-room-new-480.jpg 480w, /images/hotels/mkeka-spice-lodge-room-new-800.jpg 800w"
-        },
-        {
-          "src": "hotels/mkeka-spice-lodge-bungalows.jpg",
-          "alt": "Thatched bungalows reflected in the pool at night",
-          "srcset": "/images/hotels/mkeka-spice-lodge-bungalows-480.jpg 480w, /images/hotels/mkeka-spice-lodge-bungalows-800.jpg 800w"
+          "alt": "Traditional Zanzibari bedroom with four-poster bed, mosquito net canopy, and colourful Tingatinga artwork",
+          "caption": "Four-poster canopy bed with Tingatinga art",
+          "srcset": "/images/hotels/mkeka-spice-lodge-room-new-480.jpg 480w, /images/hotels/mkeka-spice-lodge-room-new-800.jpg 800w, /images/hotels/mkeka-spice-lodge-room-new.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/mkeka-spice-lodge-pool-new.jpg",
-          "alt": "Pool and bungalows in sunny daytime with loungers",
-          "srcset": "/images/hotels/mkeka-spice-lodge-pool-new-480.jpg 480w, /images/hotels/mkeka-spice-lodge-pool-new-800.jpg 800w"
+          "alt": "Sunny outdoor swimming pool with blue deck, sun loungers and traditional thatched makuti bungalows",
+          "caption": "Sunlit swimming pool surrounded by thatched bungalows",
+          "srcset": "/images/hotels/mkeka-spice-lodge-pool-new-480.jpg 480w, /images/hotels/mkeka-spice-lodge-pool-new-800.jpg 800w, /images/hotels/mkeka-spice-lodge-pool-new.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+        },
+        {
+          "src": "hotels/mkeka-spice-lodge-bungalows.jpg",
+          "alt": "Thatched eco-bungalows with warm ambient night lighting reflected in the swimming pool waters",
+          "caption": "Evening poolside atmosphere and thatched bungalows",
+          "srcset": "/images/hotels/mkeka-spice-lodge-bungalows-480.jpg 480w, /images/hotels/mkeka-spice-lodge-bungalows-800.jpg 800w, /images/hotels/mkeka-spice-lodge-bungalows.jpg 1024w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/mkeka-spice-lodge-restaurant.jpg",
-          "alt": "Open-air thatched restaurant overlooking the pool",
-          "srcset": "/images/hotels/mkeka-spice-lodge-restaurant-480.jpg 480w, /images/hotels/mkeka-spice-lodge-restaurant-800.jpg 800w"
+          "alt": "Open-air thatched restaurant pavilion with handcrafted wooden dining tables and African sunset mural",
+          "caption": "Open-air thatched restaurant with traditional wood furnishings",
+          "srcset": "/images/hotels/mkeka-spice-lodge-restaurant-480.jpg 480w, /images/hotels/mkeka-spice-lodge-restaurant-800.jpg 800w, /images/hotels/mkeka-spice-lodge-restaurant.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/mkeka-spice-lodge-grounds.jpg",
-          "alt": "Tropical grounds with pool and traditional bungalows",
-          "srcset": "/images/hotels/mkeka-spice-lodge-grounds-480.jpg 480w, /images/hotels/mkeka-spice-lodge-grounds-800.jpg 800w"
+          "alt": "Tropical eco-lodge garden courtyard with seashell wind chimes, white sand path, and pool view",
+          "caption": "Tropical garden courtyard with seashell mobile and pool view",
+          "srcset": "/images/hotels/mkeka-spice-lodge-grounds-480.jpg 480w, /images/hotels/mkeka-spice-lodge-grounds-800.jpg 800w, /images/hotels/mkeka-spice-lodge-grounds.jpg 1200w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         }
       ]
     },
@@ -5285,42 +5335,54 @@
       "contact_form_url": "",
       "scrape_status": "official site offline - domain has no DNS record",
       "slug": "the-island-stonetown",
-      "photo": "hotels/the-island-stonetown-rooftop.jpg",
+      "photo": "hotels/the-island-stonetown-room-new.jpg",
       "photo_credit": "Owner-supplied and property-uploaded photographs (Booking.com listing)",
-      "photo_alt": "The open-air rooftop restaurant at The Island Stonetown with green-clothed tables overlooking Stone Town rooftops and palm trees",
+      "photo_alt": "Inviting four-poster canopy bed with white linens, towel swan, and brass pierced sconce lamp at The Island Stonetown",
       "description": "Boutique 4-star hotel on Kokoni Street in Stone Town, 350 m from Malindi and a 6-minute walk from Stone Town Beach. Air-conditioned rooms with private bathrooms and mosquito nets, a rooftop terrace restaurant, spa, children's buffet and 24-hour reception.",
       "price_range": "$29–$46 per night",
       "partnerStay": true,
       "gallery": [
         {
-          "src": "hotels/the-island-stonetown-rooftop.jpg",
-          "alt": "Rooftop dining with Stone Town views",
-          "srcset": "/images/hotels/the-island-stonetown-rooftop-480.jpg 480w, /images/hotels/the-island-stonetown-rooftop-800.jpg 800w"
-        },
-        {
-          "src": "hotels/the-island-stonetown-rooftop-view.jpg",
-          "alt": "Rooftop terrace overlooking Stone Town rooftops",
-          "srcset": "/images/hotels/the-island-stonetown-rooftop-view-480.jpg 480w, /images/hotels/the-island-stonetown-rooftop-view-800.jpg 800w"
+          "src": "hotels/the-island-stonetown-room-new.jpg",
+          "alt": "Inviting four-poster canopy bed with white linens, towel swan, and brass pierced sconce lamp at The Island Stonetown",
+          "caption": "Four-poster Swahili canopy bed with towel swan",
+          "srcset": "/images/hotels/the-island-stonetown-room-new-480.jpg 480w, /images/hotels/the-island-stonetown-room-new-800.jpg 800w, /images/hotels/the-island-stonetown-room-new.jpg 1030w",
+          "sizes": "(max-width: 1240px) 100vw, 1240px"
         },
         {
           "src": "hotels/the-island-stonetown-lounge.jpg",
-          "alt": "Lounge area with African art carvings on illuminated shelves",
-          "srcset": "/images/hotels/the-island-stonetown-lounge-480.jpg 480w, /images/hotels/the-island-stonetown-lounge-800.jpg 800w"
+          "alt": "Swahili reception lounge with ruby-red plush sofa and carved African sculptures displayed in illuminated wall niches",
+          "caption": "Swahili heritage lounge with carved African sculptures",
+          "srcset": "/images/hotels/the-island-stonetown-lounge-480.jpg 480w, /images/hotels/the-island-stonetown-lounge-800.jpg 800w, /images/hotels/the-island-stonetown-lounge.jpg 1035w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
-          "src": "hotels/the-island-stonetown-room-new.jpg",
-          "alt": "Room with four-poster bed and mosquito net canopy",
-          "srcset": "/images/hotels/the-island-stonetown-room-new-480.jpg 480w, /images/hotels/the-island-stonetown-room-new-800.jpg 800w"
+          "src": "hotels/the-island-stonetown-rooftop-view.jpg",
+          "alt": "Rooftop restaurant dining terrace with carved wooden eaves overlooking Stone Town palm trees and historic rooftops",
+          "caption": "Rooftop restaurant terrace overlooking Stone Town",
+          "srcset": "/images/hotels/the-island-stonetown-rooftop-view-480.jpg 480w, /images/hotels/the-island-stonetown-rooftop-view-800.jpg 800w, /images/hotels/the-island-stonetown-rooftop-view.jpg 1045w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
+        },
+        {
+          "src": "hotels/the-island-stonetown-rooftop.jpg",
+          "alt": "Angled bedroom view showcasing the four-poster canopy bed, arched Swahili alcove, drapery and bedside table",
+          "caption": "Angled canopy bed with Swahili architectural arch",
+          "srcset": "/images/hotels/the-island-stonetown-rooftop-480.jpg 480w, /images/hotels/the-island-stonetown-rooftop-800.jpg 800w, /images/hotels/the-island-stonetown-rooftop.jpg 960w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/the-island-stonetown-bar.jpg",
-          "alt": "Bar and breakfast buffet area with mosaic tiles",
-          "srcset": "/images/hotels/the-island-stonetown-bar-480.jpg 480w, /images/hotels/the-island-stonetown-bar-800.jpg 800w"
+          "alt": "Handcrafted wooden wardrobe nook and dressing vanity desk with mirror and chair",
+          "caption": "Built-in dressing vanity and wooden wardrobe",
+          "srcset": "/images/hotels/the-island-stonetown-bar-480.jpg 480w, /images/hotels/the-island-stonetown-bar-800.jpg 800w, /images/hotels/the-island-stonetown-bar.jpg 960w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         },
         {
           "src": "hotels/the-island-stonetown-reception-wide.jpg",
-          "alt": "Reception with Zanzibari carved wood furniture and art",
-          "srcset": "/images/hotels/the-island-stonetown-reception-wide-480.jpg 480w, /images/hotels/the-island-stonetown-reception-wide-800.jpg 800w"
+          "alt": "Historic Swahili reception area with carved wooden counter, chandelier, louvered shutters and antique chest",
+          "caption": "Historic Swahili reception with carved woodcraft & antique chest",
+          "srcset": "/images/hotels/the-island-stonetown-reception-wide-480.jpg 480w, /images/hotels/the-island-stonetown-reception-wide-800.jpg 800w, /images/hotels/the-island-stonetown-reception-wide.jpg 1000w",
+          "sizes": "(min-width: 1240px) 400px, (max-width: 560px) 92vw, (max-width: 900px) 46vw, 31vw"
         }
       ]
     }
