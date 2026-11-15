@@ -121,6 +121,32 @@
     });
   }
 
+  function initDirectBookingButtons() {
+    document.querySelectorAll('[data-sns-booking-open]').forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        var serviceSlug = button.getAttribute('data-service-slug') || '';
+        if (!serviceSlug || !window.snsConcierge || typeof window.snsConcierge.openBooking !== 'function') {
+          return;
+        }
+        var originalText = button.textContent;
+        button.disabled = true;
+        button.textContent = 'Opening concierge…';
+        Promise.resolve(window.snsConcierge.openBooking({ serviceSlug: serviceSlug }))
+          .then(function (opened) {
+            if (opened) track('concierge_booking_opened', { service_slug: serviceSlug, source: 'hero_cta' });
+          })
+          .catch(function () {
+            // The concierge shows its own safe error and fallback.
+          })
+          .then(function () {
+            button.disabled = false;
+            button.textContent = originalText;
+          });
+      });
+    });
+  }
+
   function initContactAndAnalytics() {
     document.querySelectorAll('[data-sns-open]').forEach(function (link) {
       link.addEventListener('click', function (event) {
@@ -151,6 +177,7 @@
     initBookingForms();
     initCardWhatsAppLinks();
     initClickToLoadMaps();
+    initDirectBookingButtons();
     initContactAndAnalytics();
   });
 })();
