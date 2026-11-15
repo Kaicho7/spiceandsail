@@ -13,8 +13,8 @@ module.exports = function(eleventyConfig) {
   // Copy _headers into the publish dir (Netlify applies custom headers from dist)
   eleventyConfig.addPassthroughCopy({"_headers": "_headers"});
   
-  eleventyConfig.addGlobalData("imageCdnEnabled", () => Boolean(process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL));
-  eleventyConfig.addGlobalData("isPreviewBuild", () => !process.env.NETLIFY || Boolean(process.env.CONTEXT && process.env.CONTEXT !== "production"));
+  eleventyConfig.addGlobalData("imageCdnEnabled", Boolean(process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL));
+  eleventyConfig.addGlobalData("isPreviewBuild", !process.env.NETLIFY || Boolean(process.env.CONTEXT && process.env.CONTEXT !== "production"));
 
   // Load tours.json using fs
   const fs = require("fs");

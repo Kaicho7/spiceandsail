@@ -61,8 +61,7 @@ jobs:
         with:
           urls: |
             http://localhost:8080
-            http://localhost:8080/tours/
-            http://localhost:8080/transfers/
-            http://localhost:8080/hotels/
+            http://localhost:8080/tours/safari-blue/
+            http://localhost:8080/transfers/airport-to-nungwi/
           configPath: ./lighthouserc.json
           uploadArtifacts: true
