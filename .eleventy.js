@@ -14,7 +14,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"_headers": "_headers"});
   
   eleventyConfig.addGlobalData("imageCdnEnabled", () => Boolean(process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL));
-  eleventyConfig.addGlobalData("isPreviewBuild", () => Boolean(process.env.CONTEXT && process.env.CONTEXT !== "production"));
+  eleventyConfig.addGlobalData("isPreviewBuild", () => !process.env.NETLIFY || Boolean(process.env.CONTEXT && process.env.CONTEXT !== "production"));
 
   // Load tours.json using fs
   const fs = require("fs");
