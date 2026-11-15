@@ -137,6 +137,7 @@ test('redesign: hotel directory loads all 198 properties progressively and keeps
   assert.ok(partial.includes('fetchpriority="high"'));
   assert.ok(helper.includes("attrs.loading !== 'eager'"), 'build helper must preserve eagerly loaded first cards');
   assert.ok(page.includes('{% for hotel in hotels.hotels.slice(0, 48) %}'), 'main listing must render only the first 48 cards up front');
+  assert.ok(page.includes('data-hotel-index-link="{{ hotel.slug }}"'), 'all properties must have crawlable index links');
 });
 
 test('redesign: hotel search and filters have a single progressive controller', () => {
@@ -152,7 +153,9 @@ test('redesign: built hotel directory keeps the full catalogue in deferred batch
   const page = fs.readFileSync(path.join(ROOT, 'dist', 'hotels', 'index.html'), 'utf8');
   const deferred = JSON.parse(fs.readFileSync(path.join(ROOT, 'dist', 'data', 'hotels-more.json'), 'utf8'));
   const initialCount = (page.match(/<article class="card hotel-card/g) || []).length;
+  const indexCount = (page.match(/data-hotel-index-link=/g) || []).length;
   assert.strictEqual(initialCount, Math.min(48, source.hotels.length));
+  assert.strictEqual(indexCount, source.hotels.length, 'every property must be present in server-rendered HTML');
   assert.strictEqual(deferred.total, source.hotels.length);
   assert.strictEqual(deferred.cards.length, Math.max(0, source.hotels.length - 48));
   assert.ok(deferred.cards.every(card => /<article class="card hotel-card/.test(card)));
