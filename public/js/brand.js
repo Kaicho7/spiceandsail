@@ -9,11 +9,21 @@
     var service=form.elements.service, date=form.elements.date, guests=form.elements.guests;
     var serviceName=service?String(service.value||"").trim():"";
     if(!serviceName){if(service)service.focus();return;}
-    var message=["Jambo Spice & Sail, I would like to enquire about a trip.","Type: "+(form.getAttribute("data-booking-type")||"Trip enquiry"),"Service: "+serviceName,"Preferred date: "+(date&&date.value?date.value:"Flexible dates"),"Guests: "+(guests?guests.value:"2")].join("\n");
+    var lang=form.getAttribute("data-lang")||"en";
+    var dateValue=date&&date.value?date.value:"Flexible dates";
+    var guestValue=guests?guests.value:"2";
+    var parts;
+    if(lang==="it"){
+      parts=["Jambo Spice & Sail, vorrei informazioni su un'esperienza.","Tipo: "+(form.getAttribute("data-booking-type")||"Richiesta"),"Servizio: "+serviceName,"Data preferita: "+dateValue,"Ospiti: "+guestValue];
+    }else if(lang==="de"){
+      parts=["Hallo Spice & Sail, ich möchte eine Tour oder einen Transfer anfragen.","Art: "+(form.getAttribute("data-booking-type")||"Anfrage"),"Tour/Service: "+serviceName,"Wunschdatum: "+dateValue,"Gäste: "+guestValue];
+    }else{
+      parts=["Jambo Spice & Sail, I would like to enquire about a trip.","Type: "+(form.getAttribute("data-booking-type")||"Trip enquiry"),"Service: "+serviceName,"Preferred date: "+dateValue,"Guests: "+guestValue];
+    }
     var phone=form.getAttribute("data-wa-number");
     if(!phone)return;
     if(window.SNS_ANALYTICS_ENABLED===true&&typeof window.gtag==="function")window.gtag("event","booking_whatsapp_started",{event_category:"Booking",event_label:serviceName});
-    window.open("https://wa.me/"+encodeURIComponent(phone)+"?text="+encodeURIComponent(message),"_blank","noopener,noreferrer");
+    window.open("https://wa.me/"+encodeURIComponent(phone)+"?text="+encodeURIComponent(parts.join("\n")),"_blank","noopener,noreferrer");
    });
   });
  }
