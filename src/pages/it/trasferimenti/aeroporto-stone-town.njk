@@ -276,6 +276,15 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-stone-town/"
       <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Ciao%21%20Vorrei%20prenotare%20un%20trasferimento%20Aeroporto%20a%20Stone%20Town.%20Dettagli%20volo%3A" target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.1rem; padding: 14px 28px;">💬 Prenota su WhatsApp ({{ site.contact.whatsapp_display }})</a>
     </div>
   </section>
+
+  <section class="brand-booking-block">
+    <p class="swahili-kicker"><span>Usafiri</span><small>Transport</small></p>
+    <h2>Richiedi informazioni su questo transfer</h2>
+    {% set bookingType = "Transfer enquiry" %}
+    {% set bookingService = "{{ title }}" %}
+    {% include "booking-panel.njk" %}
+  </section>
+
 </main>
 
 <script type="application/ld+json">

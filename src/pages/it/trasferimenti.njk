@@ -22,7 +22,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           🚐 Calcolatore Tariffe (Fascia di Pianificazione)
         </a>
         <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Ciao%20Spice%20%26%20Sail%2C%20vorrei%20prenotare%20un%20trasferimento%20privato%20dall%27aeroporto." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">
-          💬 WhatsApp Operativo Live ({{ site.contact.whatsapp_display }})
+          Chiedi su WhatsApp Operativo Live ({{ site.contact.whatsapp_display }})
         </a>
       </div>
     </div>
@@ -432,6 +432,15 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
     updateCalculator();
   });
   </script>
+
+  <section class="brand-booking-block">
+    <p class="swahili-kicker"><span>Usafiri</span><small>Transport</small></p>
+    <h2>Richiedi informazioni su questo transfer</h2>
+    {% set bookingType = "Transfer enquiry" %}
+    {% set bookingService = "{{ title }}" %}
+    {% include "booking-panel.njk" %}
+  </section>
+
 </main>
 
 {% include "footer.njk" %}
