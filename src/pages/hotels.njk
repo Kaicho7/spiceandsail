@@ -2,15 +2,16 @@
 title: "Where to Stay in Zanzibar: Best Hotels by Area | Spice & Sail"
 description: "Curated Zanzibar partner hotels across Nungwi, Kendwa, Stone Town, Paje, and Matemwe. Verified rates, airport transfers, and hotel tour pickups."
 permalink: "/hotels/index.html"
-preload_image: "beach-front-hotel-palm-trees-people.jpg"
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
 <main class="content">
   <!-- Page Header -->
-  <header class="page-header" style="background: linear-gradient(135deg, rgba(12,26,36,0.95), rgba(0,56,83,0.92)), url('{{ 'beach-front-hotel-palm-trees-people.jpg' | cdnFile }}') center/cover; padding: 4.5rem 1.5rem; color: #fff; text-align: center;">
-    <div class="container" style="max-width: 900px; margin: 0 auto;">
+  <header class="page-header" style="position: relative; isolation: isolate; overflow: hidden; background: #0C1A24; padding: 4.5rem 1.5rem; color: #fff; text-align: center;">
+    <img class="page-header-bg-image" src="{{ 'beach-front-hotel-palm-trees-people.jpg' | cdnFile }}" alt="" width="1600" height="900" sizes="100vw" loading="eager" fetchpriority="high" decoding="async" style="position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover;">
+    <span aria-hidden="true" style="position: absolute; inset: 0; z-index: -1; background: linear-gradient(135deg, rgba(12,26,36,0.95), rgba(0,56,83,0.92));"></span>
+    <div class="container" style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto;">
       <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Curated Accommodation &amp; Logistics Directory</span>
       <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 1rem; color: #ffffff;">Where to Stay in Zanzibar — Curated Hotels &amp; Resorts</h1>
       <p style="font-size: 1.15rem; line-height: 1.6; color: #e0e8ec; margin-bottom: 2rem;">
