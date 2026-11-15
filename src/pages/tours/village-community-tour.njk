@@ -104,6 +104,15 @@ tour_slug: "village-community-tour"
     </aside>
   </div>
   {% include "tour-mobile-sticky.njk" %}
+
+  <section class="brand-booking-block">
+    <p class="swahili-kicker"><span>Karibu</span><small>Plan your tour</small></p>
+    <h2>Ask about this tour</h2>
+    {% set bookingType = "Tour enquiry" %}
+    {% set bookingService = title %}
+    {% include "booking-panel.njk" %}
+  </section>
+
 </main>
 
 {% include "footer.njk" %}
