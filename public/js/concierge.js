@@ -668,6 +668,7 @@
       }
 
       var dateInput = el('sns-date');
+      if (dateInput) dateInput.min = localDateString(new Date());
       var requestedDate = String(opts.date || '');
       if (dateInput && /^\\d{4}-\\d{2}-\\d{2}$/.test(requestedDate)) {
         dateInput.value = requestedDate;
