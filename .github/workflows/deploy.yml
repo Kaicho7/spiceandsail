@@ -20,11 +20,19 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - name: Capture pre-redesign URL and SEO inventory
+      - name: Capture pre-redesign URL and SEO inventory (once only)
+        id: baseline
         if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
-        run: node scripts/audit-url-inventory.js
+        run: |
+          if [ -s audit/url-inventory-before.csv ] && [ "$(wc -l < audit/url-inventory-before.csv)" -gt 1 ]; then
+            echo "captured=false" >> "$GITHUB_OUTPUT"
+            echo "Existing pre-redesign inventory found; preserving it."
+          else
+            node scripts/audit-url-inventory.js
+            echo "captured=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Commit rendered baseline inventory to the feature branch
-        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11' && steps.baseline.outputs.captured == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_HEAD_REF: ${{ github.head_ref }}
@@ -37,7 +45,7 @@ jobs:
             -f sha="${file_sha}" \
             -f content="${encoded}"
       - name: Upload pre-redesign URL and SEO inventory
-        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11' && hashFiles('audit/url-inventory-before.csv') != ''
         uses: actions/upload-artifact@v4
         with:
           name: url-inventory-before
