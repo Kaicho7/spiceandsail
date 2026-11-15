@@ -225,3 +225,32 @@ p{overflow-wrap:break-word}button,input,select,textarea{max-width:100%}
   .home .hero h1 { display:block; width:100%; max-width:16ch; overflow-wrap:normal; }
   .home .hero-visual { grid-column:1; width:100%; min-width:0; }
 }
+
+
+/* Contrast and accessible naming refinements from the transfer-page audit. */
+.section-header .section-tag {
+  color: var(--palm) !important;
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+}
+.page-header .btn-secondary {
+  color: #fff !important;
+  background: var(--palm) !important;
+  border-color: var(--palm) !important;
+}
+span[style*="background: #059669"] {
+  color: #fff !important;
+  background: var(--palm) !important;
+}
+a[style*="#25D366"], button[style*="#25D366"] {
+  color: #fff !important;
+  background: var(--palm) !important;
+  border-color: var(--palm) !important;
+}
+.transfer-card .card-meta,
+.transfer-card .card-footer span[style*="#64748b"] {
+  color: var(--muted) !important;
+}
+.site-footer .footer-col-title {
+  color: var(--stone) !important;
+}
