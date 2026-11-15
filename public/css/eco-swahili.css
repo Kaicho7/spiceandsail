@@ -254,3 +254,8 @@ a[style*="#25D366"], button[style*="#25D366"] {
 .site-footer .footer-col-title {
   color: var(--stone) !important;
 }
+
+.sns-wa-booking-field small { color:var(--muted); font-size:.72rem; line-height:1.35; }
+.sns-wa-booking-field input[type="number"] { appearance:textfield; }
+.sns-wa-booking-field input[type="number"]::-webkit-inner-spin-button,
+.sns-wa-booking-field input[type="number"]::-webkit-outer-spin-button { opacity:1; }
