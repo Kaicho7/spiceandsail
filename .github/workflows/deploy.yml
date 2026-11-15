@@ -21,6 +21,19 @@ jobs:
       - name: Capture pre-redesign URL and SEO inventory
         if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
         run: node scripts/audit-url-inventory.js
+      - name: Commit rendered baseline inventory to the feature branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          file_sha=$(gh api "repos/${GITHUB_REPOSITORY}/contents/audit/url-inventory-before.csv?ref=${GITHUB_HEAD_REF}" --jq .sha)
+          encoded=$(base64 -w 0 audit/url-inventory-before.csv)
+          gh api --method PUT "repos/${GITHUB_REPOSITORY}/contents/audit/url-inventory-before.csv" \
+            -f message='chore(audit): save rendered pre-redesign SEO inventory [skip ci]' \
+            -f branch="${GITHUB_HEAD_REF}" \
+            -f sha="${file_sha}" \
+            -f content="${encoded}"
       - name: Upload pre-redesign URL and SEO inventory
         if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
         uses: actions/upload-artifact@v4
