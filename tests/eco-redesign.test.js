@@ -110,3 +110,22 @@ test('redesign: tour and transfer booking CTAs use the same verified concierge l
   assert.ok(nungwi.includes('data-service-slug="airport-transfer-znz-to-nungwikendwa"'));
 });
 
+test('redesign: hotel directory loads all 198 properties progressively and keeps search complete', () => {
+  const page = read('src/pages/hotels.njk');
+  const fragment = read('src/pages/hotels-more.json.njk');
+  const partial = read('src/_includes/hotel-card.njk');
+  const helper = read('scripts/add-responsive-images.js');
+  assert.ok(page.includes('hotels.hotels.slice(0, 48)'));
+  assert.ok(page.includes('id="load-more-hotels"'));
+  assert.ok(page.includes('data-total-hotels="{{ hotels.hotels | length }}"'));
+  assert.ok(page.includes("ensureAllCardsLoaded().then(filterHotels)"));
+  assert.ok(page.includes("fetch('/data/hotels-more.json'"));
+  assert.ok(fragment.includes('permalink: /data/hotels-more.json'));
+  assert.ok(fragment.includes('hotels.hotels.slice(48)'));
+  assert.ok(fragment.includes('hotel-card.njk'));
+  assert.ok(partial.includes('hotelIndex < 2'));
+  assert.ok(partial.includes('fetchpriority="high"'));
+  assert.ok(helper.includes("attrs.loading !== 'eager'"), 'build helper must preserve eagerly loaded first cards');
+  assert.ok(!page.includes('{% for hotel in hotels.hotels %}'), 'main listing must not render all 198 cards up front');
+});
+
