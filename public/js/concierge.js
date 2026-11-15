@@ -557,13 +557,13 @@
 
     if (path.indexOf('transfer') !== -1) {
       if (heading) heading.textContent = 'Need an airport transfer quote?';
-      if (sub) sub.textContent = 'Stone Town from $35, Nungwi $50. Instant booking!';
+      if (sub) sub.textContent = 'Share your route, preferred date and guest count. Our team confirms availability and the final quote.';
     } else if (path.indexOf('hotel') !== -1) {
       if (heading) heading.textContent = 'Booking a hotel or transfer?';
-      if (sub) sub.textContent = 'Direct island-wide transfers from your arrival gate.';
+      if (sub) sub.textContent = 'Tell us your pickup point and destination, and our team will help with the route.';
     } else if (path.indexOf('safari') !== -1) {
       if (heading) heading.textContent = 'Mainland safari fly-in questions?';
-      if (sub) sub.textContent = 'Mikumi day trips & Selous packages quoted live.';
+      if (sub) sub.textContent = 'Ask about safari options, dates and group size for a current planning range.';
     }
 
     // Trigger after 6 seconds on desktop/mobile
