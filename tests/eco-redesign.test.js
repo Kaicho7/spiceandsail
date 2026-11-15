@@ -185,3 +185,26 @@ test('redesign: transfer calculator labels, visible accessible names and contras
   assert.ok(css.includes('a[style*="#25D366"]'));
 });
 
+test('redesign: transfer calculator only quotes verified destinations and hands supported routes to concierge', () => {
+  const transfers = read('src/pages/transfers.njk');
+  const catalogue = JSON.parse(read('src/data/concierge-catalogue.json'));
+  const verifiedTransfers = catalogue.services.filter(service => service.type === 'transfer').map(service => service.slug);
+  assert.deepStrictEqual(verifiedTransfers.sort(), [
+    'airport-transfer-znz-to-nungwikendwa',
+    'airport-transfer-znz-to-pajejambiani',
+    'airport-transfer-znz-to-stone-town'
+  ].sort());
+  assert.ok(transfers.includes('type="number" id="calc-pax" min="1" max="50"'));
+  assert.ok(transfers.includes('data-slug="" data-fare="on_request" data-zone="Matemwe"'));
+  assert.ok(transfers.includes('data-slug="" data-fare="on_request" data-zone="Kiwengwa / Pongwe"'));
+  assert.ok(transfers.includes("fetch('/.netlify/functions/quote'"));
+  assert.ok(transfers.includes("window.snsConcierge.openBooking(options)"));
+  assert.ok(transfers.includes('serviceSlug: route.slug'));
+  assert.ok(transfers.includes('guests: route.passengers'));
+  assert.ok(transfers.includes('flight number: ' ) === false, 'flight details are passed in the pickup/notes fields, not hardcoded');
+  assert.ok(!transfers.includes('function getFareNumbers'), 'browser must not compute transfer fares');
+  assert.ok(!transfers.includes('return [35, 40]') && !transfers.includes('return [50, 60]'));
+  assert.ok(transfers.includes('calc-concierge-btn'));
+  assert.ok(!transfers.includes("open('airport-transfer-znz-to-nungwikendwa')"), 'secondary concierge shortcut must not force a fixed route');
+});
+
