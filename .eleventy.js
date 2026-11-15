@@ -1,6 +1,9 @@
 module.exports = function(eleventyConfig) {
   // Passthrough copy for static assets - copy contents of public to output root
   eleventyConfig.addPassthroughCopy({"public/css": "css"});
+  // Self-hosted WOFF2 subsets; no browser requests to third-party font hosts.
+  eleventyConfig.addPassthroughCopy({"node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2": "fonts/fraunces-latin-wght-normal.woff2"});
+  eleventyConfig.addPassthroughCopy({"node_modules/@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2": "fonts/figtree-latin-wght-normal.woff2"});
   eleventyConfig.addPassthroughCopy({"public/js": "js"});
   eleventyConfig.addPassthroughCopy({"public/images": "images"});
   eleventyConfig.addPassthroughCopy({"public/favicon.ico": "favicon.ico"});
@@ -10,6 +13,9 @@ module.exports = function(eleventyConfig) {
   // Copy _headers into the publish dir (Netlify applies custom headers from dist)
   eleventyConfig.addPassthroughCopy({"_headers": "_headers"});
   
+  eleventyConfig.addGlobalData("imageCdnEnabled", () => Boolean(process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL));
+  eleventyConfig.addGlobalData("isPreviewBuild", () => Boolean(process.env.CONTEXT && process.env.CONTEXT !== "production"));
+
   // Load tours.json using fs
   const fs = require("fs");
   const path = require("path");
@@ -562,6 +568,21 @@ module.exports = function(eleventyConfig) {
 
     // For local development, use direct image path
     return `/images/${f}`;
+  });
+
+  // One helper builds responsive AVIF/WebP candidates from local source images.
+  eleventyConfig.addNunjucksFilter("responsiveImageUrl", function(file, width, format) {
+    const f = String(file || "default-tour-hero.jpg").replace(/^\/?images\//, "").replace(/^\/+/, "");
+    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
+    if (!isNetlify) return "/images/" + f;
+    const w = [320, 480, 800, 1200, 1600].includes(Number(width)) ? Number(width) : 1200;
+    const fm = format === "avif" ? "avif" : "webp";
+    return "/.netlify/images?url=" + encodeURIComponent("/images/" + f) + "&fm=" + fm + "&w=" + w + "&q=80";
+  });
+  eleventyConfig.addNunjucksFilter("imageDimensions", function(file) {
+    const f = String(file || "").replace(/^\/?images\//, "").replace(/[?#].*$/, "");
+    const entry = metadataIndex[f] || {};
+    return { width: Number(entry.width) || 1200, height: Number(entry.height) || 800 };
   });
 
   // Canonical alt text filter ensuring exact identical alt text for every image site-wide

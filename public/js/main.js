@@ -276,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // GA4 / Analytics Custom Event Tracking Helper
   function trackEvent(eventName, eventParams) {
+    if (window.SNS_ANALYTICS_ENABLED !== true) return;
     if (typeof window.gtag === 'function') {
       window.gtag('event', eventName, eventParams);
     } else if (window.dataLayer && Array.isArray(window.dataLayer)) {

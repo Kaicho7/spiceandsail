@@ -1,14 +1,11 @@
 <!-- Header -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/concierge.css">
+<link rel="stylesheet" href="/css/brand.css">
 <script src="/js/i18n-currency.js" defer></script>
 <script src="/js/main.js" defer></script>
 <script src="/js/concierge.js" defer></script>
+<script src="/js/brand.js" defer></script>
 </head>
 <body>
 <div id="google_translate_element" style="display:none;" aria-hidden="true"></div>
@@ -20,7 +17,19 @@
       <span class="intent-indicator" id="intentIndicator"></span>
     </div>
     <div class="top-bar-right">
-      <div class="international-bar" aria-label="Language and Currency Selectors">
+      <span class="contact">
+        <a href="tel:{{ site.contact.phone }}" class="top-tel" title="Call operations directly">{{ site.contact.whatsapp_display }}</a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" class="top-wa-btn" title="Chat on WhatsApp">💬 WhatsApp</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+    <a href="/" class="logo notranslate" translate="no">
+      <span class="notranslate" translate="no">Spice and Sail</span>
+    </a>
+    <div class="international-bar" aria-label="Language and Currency Selectors">
         <!-- Language Switcher -->
         <div class="control-item">
           <label for="langSelect" class="sr-only">Language</label>
@@ -28,8 +37,6 @@
             <option value="en">🇬🇧 English</option>
             <option value="it">🇮🇹 Italiano</option>
             <option value="de">🇩🇪 Deutsch</option>
-            <option value="fr">🇫🇷 Français</option>
-            <option value="pl">🇵🇱 Polski</option>
           </select>
         </div>
         <!-- Currency Switcher -->
@@ -44,18 +51,7 @@
           </select>
         </div>
       </div>
-      <span class="contact">
-        <a href="tel:{{ site.contact.phone }}" class="top-tel" title="Call operations directly">{{ site.contact.whatsapp_display }}</a>
-        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" class="top-wa-btn" title="Chat on WhatsApp">💬 WhatsApp</a>
-      </span>
-    </div>
-  </div>
 
-  <!-- Main Navigation Bar -->
-  <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
-    <a href="/" class="logo notranslate" translate="no">
-      <span class="notranslate" translate="no">Spice and Sail</span>
-    </a>
 
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
       <span class="nav-toggle-bar"></span>
@@ -173,3 +169,4 @@
   });
   </script>
 </header>
+

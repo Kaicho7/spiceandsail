@@ -2,6 +2,9 @@
 <html lang="{{ lang or 'en' }}">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preload" href="/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 {% set computedTitle = title or (page.fileSlug | replace("-", " ") | capitalize) %}
 {% set hasBrand = computedTitle and (computedTitle.includes("Spice and Sail") or computedTitle.includes("Spice & Sail")) %}
 {% set pageTitle = computedTitle if hasBrand else (computedTitle + " | Spice and Sail") %}
@@ -13,7 +16,7 @@
 
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
-{% if metaRobots %}<meta name="robots" content="{{ metaRobots }}">{% endif %}
+{% if metaRobots %}<meta name="robots" content="{{ metaRobots }}">{% elif isPreviewBuild %}<meta name="robots" content="noindex,nofollow">{% endif %}
 <link rel="canonical" href="{{ SITE_URL }}{{ page.url }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ SITE_URL }}{{ page.url }}">
@@ -49,19 +52,31 @@
 <link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}/">
 {% endif %}
 
-{% if site.ga_measurement_id %}
-<!-- Google tag (gtag.js) - GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_measurement_id }}"></script>
+{% if site.ga_enabled and site.ga_measurement_id %}
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.ga_measurement_id }}', {
-    page_path: window.location.pathname,
-    cookie_flags: 'SameSite=None;Secure'
-  });
+(function () {
+  var measurementId = {{ site.ga_measurement_id | json }};
+  if (!/^G-[A-Z0-9]+$/.test(measurementId)) { window.SNS_ANALYTICS_ENABLED = false; return; }
+  window.SNS_ANALYTICS_ENABLED = true;
+  function loadAnalytics() {
+    if (window.__snsAnalyticsLoaded) return;
+    window.__snsAnalyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", measurementId, { page_path: window.location.pathname, cookie_flags: "SameSite=None;Secure" });
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+    document.head.appendChild(script);
+  }
+  if ("requestIdleCallback" in window) window.requestIdleCallback(loadAnalytics, { timeout: 2500 });
+  else window.addEventListener("load", function () { window.setTimeout(loadAnalytics, 1800); }, { once: true });
+})();
 </script>
-{% endif %}
+{% else %}
+<script>window.SNS_ANALYTICS_ENABLED = false;</script>
+{% endif %}}
 
 <script type="application/ld+json">
 {
