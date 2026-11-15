@@ -1,0 +1,27 @@
+<section class="sns-wa-booking-panel" aria-labelledby="sns-wa-booking-title">
+  <div class="sns-wa-booking-heading">
+    <div>
+      <span class="swahili-kicker"><strong>Karibu</strong><span>Welcome</span></span>
+      <h2 id="sns-wa-booking-title">{{ booking_heading or "Plan your Zanzibar trip" }}</h2>
+      <p>{{ booking_intro or "Share your trip, preferred date and group size. We’ll receive the details in WhatsApp." }}</p>
+    </div>
+  </div>
+  <form class="sns-wa-booking-fields" data-wa-booking-form data-trip-kind="{{ booking_kind or 'enquiry' }}" data-trip-fixed="{{ booking_trip or '' }}">
+    <div class="sns-wa-booking-field">
+      <label for="sns-wa-trip-{{ page.fileSlug }}">Tour or transfer</label>
+      <input id="sns-wa-trip-{{ page.fileSlug }}" name="trip" type="text" value="{{ booking_trip or '' }}" placeholder="e.g. Safari Blue or airport transfer to Nungwi" {% if booking_trip %}readonly{% else %}required{% endif %} autocomplete="off">
+    </div>
+    <div class="sns-wa-booking-field">
+      <label for="sns-wa-date-{{ page.fileSlug }}">Preferred date</label>
+      <input id="sns-wa-date-{{ page.fileSlug }}" name="date" type="date" required>
+    </div>
+    <div class="sns-wa-booking-field">
+      <label for="sns-wa-guests-{{ page.fileSlug }}">Guests</label>
+      <select id="sns-wa-guests-{{ page.fileSlug }}" name="guests" required>
+        {% for n in range(1, 13) %}<option value="{{ n }}" {% if n == 2 %}selected{% endif %}>{{ n }} {{ "guest" if n == 1 else "guests" }}</option>{% endfor %}
+      </select>
+    </div>
+    <button class="sns-wa-booking-submit" type="submit">Send enquiry on WhatsApp <span aria-hidden="true">↗</span></button>
+  </form>
+  <p class="sns-wa-booking-note">Your message opens in WhatsApp for you to review and send. Availability and the final quote are confirmed by our team.</p>
+</section>
