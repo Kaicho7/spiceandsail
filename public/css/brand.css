@@ -114,7 +114,7 @@ html{scroll-behavior:auto}body{padding-bottom:calc(66px + env(safe-area-inset-bo
 .brand-home-photo{height:clamp(250px,75vw,400px);max-width:520px;width:100%;margin:0 auto}.brand-hero-actions .btn{flex:1 1 100%}
 .quick-links{grid-template-columns:1fr;padding:1.5rem 1rem}
 .booking-panel{grid-template-columns:1fr;padding:1rem}.booking-panel-intro{grid-column:auto}.booking-panel button{width:100%}
-.brand-booking-block{margin:1rem 0;padding:1rem}.brand-transfer-hero{padding:1.3rem 1rem!important}.brand-transfer-hero-image{height:260px;margin:.5rem 0 0}
+.brand-booking-block{margin:1rem 0;padding:1rem}.brand-transfer-hero{padding:1.3rem 1rem!important;grid-template-rows:auto auto}.brand-transfer-hero-image{grid-row:1;height:260px;margin:.5rem 0 0}.brand-transfer-hero-copy{grid-row:2}
 .brand-tour-detail,.brand-transfer-detail{padding:.6rem .7rem 2.5rem}.tour-hero{padding:1.1rem!important}.tour-hero-image{height:250px}
 .site-footer{padding-bottom:2rem}.mobile-contact-bar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:.3rem;padding:.5rem .5rem calc(.5rem + env(safe-area-inset-bottom));background:rgba(251,247,240,.98);border-top:1px solid var(--border);box-shadow:0 -8px 24px rgba(42,27,18,.12)}
 .mobile-contact-bar a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:46px;padding:.5rem .2rem;border-radius:999px;font-size:.8rem;font-weight:800;text-decoration:none;white-space:nowrap}

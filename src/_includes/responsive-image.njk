@@ -1,9 +1,20 @@
 {% macro responsiveImage(file, alt, width, height, sizes, loading, priority, className) %}
+{% if priority %}
 <picture{% if className %} class="{{ className }}"{% endif %}>
   {% if imageCdnEnabled %}
   <source type="image/avif" srcset="{{ file | responsiveImageUrl(320, 'avif') }} 320w, {{ file | responsiveImageUrl(480, 'avif') }} 480w, {{ file | responsiveImageUrl(800, 'avif') }} 800w, {{ file | responsiveImageUrl(1200, 'avif') }} 1200w, {{ file | responsiveImageUrl(1600, 'avif') }} 1600w" sizes="{{ sizes or '100vw' }}">
   <source type="image/webp" srcset="{{ file | responsiveImageUrl(320, 'webp') }} 320w, {{ file | responsiveImageUrl(480, 'webp') }} 480w, {{ file | responsiveImageUrl(800, 'webp') }} 800w, {{ file | responsiveImageUrl(1200, 'webp') }} 1200w, {{ file | responsiveImageUrl(1600, 'webp') }} 1600w" sizes="{{ sizes or '100vw' }}">
   {% endif %}
-  <img src="{{ file | cdnFile }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}" sizes="{{ sizes or '100vw' }}" loading="{% if priority %}eager{% else %}{{ loading or 'lazy' }}{% endif %}" decoding="async"{% if priority %} fetchpriority="high"{% endif %}>
+  <img src="{{ file | cdnFile }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}" sizes="{{ sizes or '100vw' }}" loading="eager" decoding="async" fetchpriority="high">
 </picture>
+{% else %}
+<picture{% if className %} class="{{ className }}"{% endif %} data-lazy-picture>
+  {% if imageCdnEnabled %}
+  <source type="image/avif" data-srcset="{{ file | responsiveImageUrl(320, 'avif') }} 320w, {{ file | responsiveImageUrl(480, 'avif') }} 480w, {{ file | responsiveImageUrl(800, 'avif') }} 800w, {{ file | responsiveImageUrl(1200, 'avif') }} 1200w, {{ file | responsiveImageUrl(1600, 'avif') }} 1600w" data-sizes="{{ sizes or '100vw' }}">
+  <source type="image/webp" data-srcset="{{ file | responsiveImageUrl(320, 'webp') }} 320w, {{ file | responsiveImageUrl(480, 'webp') }} 480w, {{ file | responsiveImageUrl(800, 'webp') }} 800w, {{ file | responsiveImageUrl(1200, 'webp') }} 1200w, {{ file | responsiveImageUrl(1600, 'webp') }} 1600w" data-sizes="{{ sizes or '100vw' }}">
+  {% endif %}
+  <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="{{ file | cdnFile }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}" sizes="{{ sizes or '100vw' }}" loading="lazy" decoding="async" data-lazy-image>
+</picture>
+<noscript><img src="{{ file | cdnFile }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}" loading="lazy"></noscript>
+{% endif %}
 {% endmacro %}

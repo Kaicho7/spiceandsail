@@ -30,6 +30,40 @@
    });
   });
  }
+ function initLazyPictures() {
+  var pictures=document.querySelectorAll("picture[data-lazy-picture]");
+  if(!pictures.length)return;
+  function loadPicture(picture) {
+   picture.querySelectorAll("source[data-srcset]").forEach(function(source) {
+    var sizes=source.getAttribute("data-sizes");
+    if(sizes)source.setAttribute("sizes",sizes);
+    source.setAttribute("srcset",source.getAttribute("data-srcset"));
+    source.removeAttribute("data-srcset");
+    source.removeAttribute("data-sizes");
+   });
+   var image=picture.querySelector("img[data-lazy-image]");
+   if(image) {
+    var src=image.getAttribute("data-src");
+    if(src)image.setAttribute("src",src);
+    image.removeAttribute("data-src");
+    image.removeAttribute("data-lazy-image");
+   }
+   picture.removeAttribute("data-lazy-picture");
+  }
+  if(!("IntersectionObserver" in window)) {
+   pictures.forEach(loadPicture);
+   return;
+  }
+  var observer=new IntersectionObserver(function(entries) {
+   entries.forEach(function(entry) {
+    if(entry.isIntersecting) {
+     observer.unobserve(entry.target);
+     loadPicture(entry.target);
+    }
+   });
+  },{rootMargin:"300px 0px",threshold:0.01});
+  pictures.forEach(function(picture){observer.observe(picture);});
+ }
  function initMaps() {
   document.querySelectorAll("[data-load-map]").forEach(function(button) {
    button.addEventListener("click",function() {
@@ -41,6 +75,6 @@
    },{once:true});
   });
  }
- function init(){initBookingForms();initMaps();}
+ function init(){initBookingForms();initLazyPictures();initMaps();}
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })();

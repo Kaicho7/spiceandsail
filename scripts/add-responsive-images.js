@@ -69,7 +69,12 @@ walk(DIST, function(file) {
   html = html.replace(/<img\b[^>]*>/gi, function(original, offset) {
     // The dedicated responsiveImage macro already emitted picture/source elements.
     const before = html.slice(0, offset);
-    if (before.lastIndexOf("<picture") > before.lastIndexOf("</picture")) return original;
+    if (before.lastIndexOf("<picture") > before.lastIndexOf("</picture")) {
+      const pictureSource = getAttr(original, "src");
+      const pictureAsset = getAsset(pictureSource);
+      if (pictureAsset && !/(?:logo|favicon|icon|avatar)/i.test(pictureAsset)) firstContentImage = true;
+      return original;
+    }
     let tag = original;
     const src = readAttr(tag, "src");
     if (!src || /^(data:|https?:|\/\/)/i.test(src)) {
