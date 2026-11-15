@@ -168,7 +168,7 @@ test('redesign: homepage mobile hero uses a valid single-column rule', () => {
   assert.ok(css.includes('.home .hero-content { grid-column:1;'));
 });
 
-test('redesign: first tour card is eagerly loaded and directory hero backgrounds are preloaded', () => {
+test('redesign: first tour card and directory hero images are eagerly loaded', () => {
   const tours = read('src/pages/tours.njk');
   const seo = read('src/_includes/seo.njk');
   const hotels = read('src/pages/hotels.njk');
@@ -176,8 +176,14 @@ test('redesign: first tour card is eagerly loaded and directory hero backgrounds
   assert.ok(tours.includes('loading="{% if loop.index <= 2 %}eager{% else %}lazy{% endif %}"'));
   assert.ok(tours.includes('fetchpriority="high"'));
   assert.ok(seo.includes('<link rel="preload" as="image" href="{{ preload_image | cdnFile }}" fetchpriority="high">'));
-  assert.ok(hotels.includes('preload_image: "beach-front-hotel-palm-trees-people.jpg"'));
-  assert.ok(transfers.includes('preload_image: "zanzibar-airport-transfer-private-minivan-taxi.jpg"'));
+  for (const page of [hotels, transfers]) {
+    assert.ok(page.includes('class="page-header-bg-image"'));
+    assert.ok(page.includes('sizes="100vw"'));
+    assert.ok(page.includes('loading="eager"'));
+    assert.ok(page.includes('fetchpriority="high"'));
+  }
+  assert.ok(!hotels.includes('preload_image:'));
+  assert.ok(!transfers.includes('preload_image:'));
 });
 
 test('redesign: transfer calculator labels, visible accessible names and contrast hooks are present', () => {
