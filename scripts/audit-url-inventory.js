@@ -8,7 +8,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
-const OUTPUT = path.join(ROOT, 'audit', 'url-inventory-before.csv');
+const OUTPUT = path.resolve(ROOT, process.env.SEO_INVENTORY_OUTPUT || 'audit/url-inventory-before.csv');
 
 if (!fs.existsSync(DIST)) {
   console.error('dist/ not found — run npm run build first');
