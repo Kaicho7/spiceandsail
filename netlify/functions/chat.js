@@ -465,7 +465,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     return {
       message: '**Live Availability**\n\n' +
         (availabilityService ? 'For **' + availabilityService.name + '**, ' : '') +
-        'I can\'t see the live booking calendar from this chat, so I won\'t guess. Send us the date, number of adults/children and pickup area, and our operations team will confirm availability and hold options on WhatsApp (+255 672 450 934).\n\n[💬 Check availability on WhatsApp](' + waUrl + ')',
+        'I can\'t see the live booking calendar from this chat, so I won\'t guess. Send us the date, number of adults/children and pickup area, and our operations team will confirm availability and hold options on WhatsApp (' + BUSINESS_WHATSAPP_DISPLAY + ').\n\n[💬 Check availability on WhatsApp](' + waUrl + ')',
       quickReplies: ['💬 Check on WhatsApp', 'Get a quote', 'Show all tours'],
       requestContact: false,
       whatsapp_url: waUrl,
@@ -667,7 +667,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
 
   if (intent === 'hours') {
     return {
-      message: 'Our team is available **Monday to Saturday, 08:00–18:00** (East Africa Time). ' + (afterHours ? 'We\'re currently offline — messages will be answered the next business morning.' : 'We\'re online right now and reply ' + replyWindow + '.') + '\n\nYou can also reach us on WhatsApp: +255 672 450 934',
+      message: 'Our team is available **Monday to Saturday, 08:00–18:00** (East Africa Time). ' + (afterHours ? 'We\'re currently offline — messages will be answered the next business morning.' : 'We\'re online right now and reply ' + replyWindow + '.') + '\n\nYou can also reach us on WhatsApp: ' + BUSINESS_WHATSAPP_DISPLAY,
       quickReplies: ['Plan my trip', 'Get a quote'],
       requestContact: false,
     };
