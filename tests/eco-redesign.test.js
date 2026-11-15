@@ -159,3 +159,19 @@ test('redesign: first tour card is eagerly loaded and directory hero backgrounds
   assert.ok(transfers.includes('preload_image: "zanzibar-airport-transfer-private-minivan-taxi.jpg"'));
 });
 
+test('redesign: transfer calculator labels, visible accessible names and contrast hooks are present', () => {
+  const transfers = read('src/pages/transfers.njk');
+  const header = read('src/_includes/header.njk');
+  const widget = read('src/_includes/concierge-widget.njk');
+  const css = read('public/css/eco-swahili.css');
+  for (const id of ['calc-pickup', 'calc-dest', 'calc-pax', 'calc-date', 'calc-driver-lang']) {
+    assert.ok(transfers.includes('<label for="' + id + '"'), id + ' must have an associated visible label');
+  }
+  assert.ok(header.includes('aria-label="S&amp;S Spice &amp; Sail Zanzibar home"'));
+  assert.ok(widget.includes('aria-label="Plan My Trip — Open Zanzibar Trip Concierge"'));
+  assert.ok(css.includes('.section-header .section-tag'));
+  assert.ok(css.includes('.page-header .btn-secondary'));
+  assert.ok(css.includes('span[style*="background: #059669"]'));
+  assert.ok(css.includes('a[style*="#25D366"]'));
+});
+
