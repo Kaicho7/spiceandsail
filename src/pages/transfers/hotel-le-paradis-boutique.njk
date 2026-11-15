@@ -228,6 +228,15 @@ permalink: "/transfers/hotel-le-paradis-boutique/index.html"
       <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20book%20a%20private%20transfer%20from%20Zanzibar%20Airport%20to%20Le%20Paradis%20Boutique%20Zanzibar." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.1rem; padding: 14px 28px;">💬 Reserve on WhatsApp ({{ site.contact.whatsapp_display }})</a>
     </div>
   </section>
+
+  <section class="brand-booking-block">
+    <p class="swahili-kicker"><span>Usafiri</span><small>Transport</small></p>
+    <h2>Ask about this transfer</h2>
+    {% set bookingType = "Transfer enquiry" %}
+    {% set bookingService = title %}
+    {% include "booking-panel.njk" %}
+  </section>
+
 </main>
 
 <script type="application/ld+json">
