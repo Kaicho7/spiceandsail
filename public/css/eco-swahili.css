@@ -131,7 +131,7 @@ p{overflow-wrap:break-word}button,input,select,textarea{max-width:100%}
  .tour-grid,.cards-grid,.cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
 }
 @media(max-width:700px){
- .transfer-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--wood)!important}.transfer-hero-image{position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;opacity:.32;border-radius:0}.transfer-hero .container{position:relative;z-index:1}\n.home .hero{grid-template-columns:minmax(0,1fr);gap:1.5rem;padding-block:2.1rem}
+ .transfer-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--wood)!important}.transfer-hero-image{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:.32;border-radius:0}.transfer-hero .container{position:relative;z-index:1}.transfer-hero .section-tag{color:var(--clay-soft)!important;background:rgba(231,183,156,.13)!important;border-color:var(--clay-soft)!important}\n.home .hero{grid-template-columns:minmax(0,1fr);gap:1.5rem;padding-block:2.1rem}
  .home .hero h1{max-width:16ch;font-size:clamp(2.25rem,10vw,3.25rem)}
  .hero-visual{max-width:520px;width:min(100%,520px);margin:0 auto}
  .hero-visual img{max-height:380px;aspect-ratio:5/4;border-radius:999px 999px .6rem .6rem}
