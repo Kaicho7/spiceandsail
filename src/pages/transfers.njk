@@ -102,7 +102,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           <!-- Travel Date -->
           <div>
             <label for="calc-date" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📅 Travel Date</label>
-            <input type="date" id="calc-date" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
+            <input type="date" id="calc-date" required style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
           </div>
 
           <!-- Flight Number (Optional) -->
@@ -525,6 +525,8 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 
     if (waBtn) {
       waBtn.addEventListener('click', function (event) {
+        if (paxEl && !paxEl.reportValidity()) { event.preventDefault(); return; }
+        if (dateEl && !dateEl.reportValidity()) { event.preventDefault(); return; }
         const route = currentRoute();
         if (!route.supported || !window.snsConcierge || typeof window.snsConcierge.openBooking !== 'function') {
           // Keep the prepared WhatsApp URL as a direct human-contact fallback
