@@ -95,17 +95,8 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           <!-- Passengers Count -->
           <div>
             <label for="calc-pax" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">👥 Passengers</label>
-            <select id="calc-pax" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
-              <option value="1">1 Passenger (Private Minivan)</option>
-              <option value="2" selected>2 Passengers (Private Minivan)</option>
-              <option value="3">3 Passengers (Private Minivan)</option>
-              <option value="4">4 Passengers (Private Minivan)</option>
-              <option value="5">5 Passengers (larger vehicle — team confirms)</option>
-              <option value="6">6 Passengers (larger vehicle — team confirms)</option>
-              <option value="7">7 Passengers (larger vehicle — team confirms)</option>
-              <option value="8">8 Passengers (larger vehicle — team confirms)</option>
-              <option value="9">9–14 Passengers (Coaster — team confirms)</option>
-            </select>
+            <input type="number" id="calc-pax" min="1" max="50" step="1" value="2" inputmode="numeric" required aria-describedby="calc-pax-help" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
+            <small id="calc-pax-help" style="display:block;color:#4a3326;font-size:.78rem;margin-top:.4rem;">Enter your exact group size (1–50). The verified minivan rate covers up to four guests; larger vehicles are confirmed by our team.</small>
           </div>
 
           <!-- Travel Date -->
@@ -373,152 +364,200 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
     const routeSummaryEl = document.getElementById('calc-route-summary');
     const waBtn = document.getElementById('calc-whatsapp-btn');
 
-    // Default today's date + 1 day
-    const tmrw = new Date();
-    tmrw.setDate(tmrw.getDate() + 1);
+    let quoteRequestId = 0;
+    let lastQuoteKey = '';
+    let lastFareLabel = 'price on request';
+    let lastQuoteReasons = [];
+
+    function localDateString(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    const today = localDateString(new Date());
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
     if (dateEl) {
-      dateEl.value = tmrw.toISOString().split('T')[0];
+      dateEl.min = today;
+      dateEl.value = localDateString(tomorrow);
     }
 
-    // Dynamic rate matrix for Zanzibar private vehicle transfers (up to 4 guests) [minUSD, maxUSD]
-    function getFareNumbers(origin, destKey) {
-      const isAirportOrFerry = origin.includes('Airport') || origin.includes('Ferry');
-      const isStoneTownHotel = origin.includes('Stone Town Hotel');
-      const isNungwi = origin.includes('Nungwi') || origin.includes('Kendwa');
-      const isPaje = origin.includes('Paje') || origin.includes('Jambiani');
-      const isMatemwe = origin.includes('Matemwe') || origin.includes('Kiwengwa');
-
-      if (isAirportOrFerry || isStoneTownHotel) {
-        if (destKey === 'stone-town') return isStoneTownHotel ? [20, 25] : [35, 40];
-        if (destKey === 'paje-jambiani') return [45, 55];
-        if (destKey === 'matemwe') return [45, 55];
-        if (destKey === 'kiwengwa-pongwe') return [45, 55];
-        if (destKey === 'nungwi-kendwa') return [50, 60];
-        if (destKey === 'michamvi') return [45, 55];
-        if (destKey === 'kizimkazi') return [45, 55];
-      } else if (isNungwi) {
-        if (destKey === 'nungwi-kendwa') return [20, 25];
-        if (destKey === 'stone-town') return [50, 60];
-        if (destKey === 'matemwe') return [40, 50];
-        if (destKey === 'kiwengwa-pongwe') return [45, 55];
-        if (destKey === 'paje-jambiani') return [60, 75];
-        if (destKey === 'michamvi') return [65, 80];
-        if (destKey === 'kizimkazi') return [70, 85];
-      } else if (isPaje) {
-        if (destKey === 'paje-jambiani') return [20, 25];
-        if (destKey === 'stone-town') return [45, 55];
-        if (destKey === 'michamvi') return [25, 35];
-        if (destKey === 'kizimkazi') return [35, 45];
-        if (destKey === 'nungwi-kendwa') return [60, 75];
-        if (destKey === 'matemwe') return [45, 55];
-        if (destKey === 'kiwengwa-pongwe') return [45, 55];
-      } else if (isMatemwe) {
-        if (destKey === 'matemwe' || destKey === 'kiwengwa-pongwe') return [20, 25];
-        if (destKey === 'nungwi-kendwa') return [40, 50];
-        if (destKey === 'stone-town') return [45, 55];
-        if (destKey === 'paje-jambiani') return [45, 55];
-        if (destKey === 'michamvi') return [50, 60];
-        if (destKey === 'kizimkazi') return [55, 65];
-      }
-      return [45, 55];
+    function currentRoute() {
+      const option = destEl && destEl.options[destEl.selectedIndex];
+      const pickup = pickupEl ? pickupEl.value : 'ZNZ Airport';
+      const slug = option ? (option.getAttribute('data-slug') || '') : '';
+      const zone = option ? (option.getAttribute('data-zone') || 'Destination') : 'Destination';
+      const passengers = paxEl ? Math.max(1, Math.min(50, parseInt(paxEl.value, 10) || 1)) : 2;
+      const date = dateEl ? dateEl.value : '';
+      const flight = flightEl ? flightEl.value.trim().slice(0, 80) : '';
+      const driverLanguage = document.getElementById('calc-driver-lang');
+      const language = driverLanguage ? driverLanguage.value : 'English';
+      const isAirportOrFerry = pickup.includes('Airport') || pickup.includes('Ferry');
+      return {
+        pickup: pickup,
+        slug: slug,
+        zone: zone,
+        passengers: passengers,
+        date: date,
+        flight: flight,
+        language: language,
+        supported: Boolean(slug && isAirportOrFerry)
+      };
     }
 
-    function calculateFare(origin, destKey) {
-      const nums = getFareNumbers(origin, destKey);
-      if (window.SpiceInternational) {
-        return window.SpiceInternational.formatRangeConverted(nums[0], nums[1], window.SpiceInternational.getCurrency());
+    function buildWhatsAppMessage(route, fareLabel) {
+      const lang = window.SpiceInternational ? window.SpiceInternational.getLanguage() : 'en';
+      const greetings = {
+        en: 'Jambo Spice & Sail! I would like to enquire about a private transfer:',
+        it: 'Ciao Spice & Sail! Vorrei chiedere un preventivo per un transfer privato:',
+        de: 'Hallo Spice & Sail! Ich möchte einen Preis für einen privaten Transfer anfragen:'
+      };
+      const greeting = greetings[lang] || greetings.en;
+      const pickup = route.pickup + (route.flight ? ' (Flight: ' + route.flight + ')' : '');
+      const languageNote = route.language !== 'English'
+        ? '\n• Driver language requested: ' + route.language + ' (advance request; team confirms availability and any extra cost)'
+        : '';
+      return greeting + '\n' +
+        '• Pickup: ' + pickup + '\n' +
+        '• Destination: ' + route.zone + '\n' +
+        '• Preferred date: ' + (route.date || 'To be confirmed') + '\n' +
+        '• Guests: ' + route.passengers + '\n' +
+        '• Verified catalogue result: ' + fareLabel + '\n' +
+        'Please confirm availability, the appropriate vehicle and the final quote.' +
+        languageNote;
+    }
+
+    function updateWhatsAppFallback(route, fareLabel) {
+      if (!waBtn) return;
+      const message = buildWhatsAppMessage(route, fareLabel);
+      waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent(message);
+    }
+
+    function updateSummary(route, fareLabel, reasons) {
+      if (fareDisplayEl) {
+        fareDisplayEl.textContent = fareLabel;
+        fareDisplayEl.removeAttribute('data-usd-min');
+        fareDisplayEl.removeAttribute('data-usd-max');
       }
-      return '$' + nums[0] + '–$' + nums[1];
+      if (routeSummaryEl) {
+        const note = reasons && reasons.length ? ' — ' + reasons.join(' ') : '';
+        routeSummaryEl.textContent = route.pickup + ' → ' + route.zone + ' • ' +
+          route.passengers + ' guest(s) • ' + (route.date || 'Date to be confirmed') +
+          ' • ' + fareLabel + note + ' Our team confirms the final rate.';
+      }
+      updateWhatsAppFallback(route, fareLabel);
     }
 
     function updateCalculator() {
       if (!destEl || !paxEl) return;
-      const selectedOption = destEl.options[destEl.selectedIndex];
-      const slug = selectedOption.getAttribute('data-slug') || '';
-      const destZone = selectedOption.getAttribute('data-zone') || 'Destination';
-      const destKey = destEl.value;
-      const paxCount = paxEl.value;
+      const route = currentRoute();
+      const quoteKey = [route.slug, route.pickup, route.passengers, route.date].join('|');
 
-      const pickup = pickupEl ? pickupEl.value : 'ZNZ Airport';
-      const dateVal = dateEl && dateEl.value ? dateEl.value : 'Upcoming date';
-      const flightVal = flightEl && flightEl.value.trim() ? ' (' + flightEl.value.trim() + ')' : '';
-
-      // Accurate route-dependent planning fare
-      const nums = getFareNumbers(pickup, destKey);
-      const currCode = window.SpiceInternational ? window.SpiceInternational.getCurrency() : 'USD';
-      const baseFare = window.SpiceInternational
-        ? window.SpiceInternational.formatRangeConverted(nums[0], nums[1], currCode)
-        : '$' + nums[0] + '–$' + nums[1];
-
-      fareDisplayEl.textContent = baseFare;
-      fareDisplayEl.setAttribute('data-usd-min', nums[0]);
-      fareDisplayEl.setAttribute('data-usd-max', nums[1]);
-
-      const currCodeEl = document.getElementById('calc-curr-code');
-      if (currCodeEl) currCodeEl.textContent = currCode;
-
-      routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + baseFare + ' planning range — our team confirms the final rate.';
-
-      var lang = window.SpiceInternational ? window.SpiceInternational.getLanguage() : 'en';
-      var greetings = {
-        en: 'Jambo Spice & Sail! I would like to reserve a Private Transfer:',
-        it: 'Ciao Spice & Sail! Vorrei prenotare un Transfer Privato:',
-        de: 'Hallo Spice & Sail! Ich möchte einen privaten Transfer reservieren:',
-        fr: 'Bonjour Spice & Sail ! Je souhaite réserver un transfert privé :',
-        pl: 'Dzień dobry Spice & Sail! Chciałbym zarezerwować prywatny transfer:'
-      };
-      var greeting = greetings[lang] || greetings.en;
-
-      const driverLangEl = document.getElementById('calc-driver-lang');
-      const driverLang = driverLangEl ? driverLangEl.value : 'English';
-      const langNote = driverLang !== 'English' ? '\n• Multilingual Driver Requested: ' + driverLang + ' (advance request — team confirms extra cost)' : '';
-
-      const waMessage = greeting + '\n' +
-        '• Pickup: ' + pickup + flightVal + '\n' +
-        '• Destination: ' + destZone + '\n' +
-        '• Date: ' + dateVal + '\n' +
-        '• Passengers: ' + paxCount + ' pax\n' +
-        '• Planning Fare: ' + baseFare + langNote + '\n' +
-        'Please confirm driver availability and the rate.';
-      if (waBtn) waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent(waMessage);
-
-      // Only query airport catalogue quote if the pickup origin is Airport or Ferry terminal
-      const isAirportOrFerry = pickup.includes('Airport') || pickup.includes('Ferry');
-      if (!slug || !isAirportOrFerry) {
+      if (!route.supported) {
+        quoteRequestId++;
+        lastQuoteKey = quoteKey;
+        lastFareLabel = 'price on request';
+        lastQuoteReasons = [route.slug
+          ? 'This pickup route is not covered by an exact catalogue transfer service.'
+          : 'This destination does not yet have a verified catalogue rate.'];
+        updateSummary(route, lastFareLabel, lastQuoteReasons);
         return;
       }
+
+      if (quoteKey === lastQuoteKey) {
+        updateWhatsAppFallback(route, lastFareLabel);
+        return;
+      }
+
+      lastQuoteKey = quoteKey;
+      const requestId = ++quoteRequestId;
+      lastFareLabel = 'Checking verified catalogue range…';
+      lastQuoteReasons = [];
+      updateSummary(route, lastFareLabel, lastQuoteReasons);
 
       fetch('/.netlify/functions/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ serviceSlug: slug, adults: parseInt(paxCount, 10) || 1, children: 0, date: dateVal && dateVal !== 'Upcoming date' ? dateVal : null })
-      }).then(function (r) { return r.json(); }).then(function (q) {
-        if (q && q.status === 'quoted') {
-          const currentCurr = window.SpiceInternational ? window.SpiceInternational.getCurrency() : 'USD';
-          let displayFare = q.totalDisplay;
-          if (window.SpiceInternational && q.totalLow != null && q.totalHigh != null) {
-            displayFare = window.SpiceInternational.formatRangeConverted(q.totalLow, q.totalHigh, currentCurr);
-            fareDisplayEl.setAttribute('data-usd-min', q.totalLow);
-            fareDisplayEl.setAttribute('data-usd-max', q.totalHigh);
+        body: JSON.stringify({
+          serviceSlug: route.slug,
+          adults: route.passengers,
+          children: 0,
+          date: route.date || null
+        })
+      }).then(function (response) {
+        if (!response.ok) throw new Error('Catalogue quote request failed');
+        return response.json();
+      }).then(function (quote) {
+        if (requestId !== quoteRequestId) return;
+        if (!quote || !quote.status) throw new Error('Catalogue quote response was invalid');
+
+        let displayFare = quote.totalDisplay || 'price on request';
+        if (quote.status === 'quoted' && quote.totalLow != null && quote.totalHigh != null && window.SpiceInternational) {
+          displayFare = window.SpiceInternational.formatRangeConverted(
+            quote.totalLow, quote.totalHigh, window.SpiceInternational.getCurrency()
+          );
+          if (fareDisplayEl) {
+            fareDisplayEl.setAttribute('data-usd-min', quote.totalLow);
+            fareDisplayEl.setAttribute('data-usd-max', quote.totalHigh);
           }
-          fareDisplayEl.textContent = displayFare;
-          routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + displayFare + ' planning range — our team confirms the final rate.';
-        } else if (q && q.reasons && q.reasons.length) {
-          fareDisplayEl.textContent = baseFare;
-          routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' passenger(s) • ' + q.reasons.join(' ');
         }
+        lastFareLabel = displayFare;
+        lastQuoteReasons = Array.isArray(quote.reasons) ? quote.reasons : [];
+        updateSummary(route, lastFareLabel, lastQuoteReasons);
       }).catch(function () {
-        // Retain verified catalogue baseFare seamlessly
+        if (requestId !== quoteRequestId) return;
+        lastFareLabel = 'price on request';
+        lastQuoteReasons = ['Our team will confirm this route and vehicle rate.'];
+        updateSummary(route, lastFareLabel, lastQuoteReasons);
       });
     }
 
-    const driverLangEl = document.getElementById('calc-driver-lang');
+    if (waBtn) {
+      waBtn.addEventListener('click', function (event) {
+        const route = currentRoute();
+        if (!route.supported || !window.snsConcierge || typeof window.snsConcierge.openBooking !== 'function') {
+          // Keep the prepared WhatsApp URL as a direct human-contact fallback
+          // for unlisted routes or when the concierge is unavailable.
+          return;
+        }
+        event.preventDefault();
+        const notes = [
+          'Destination: ' + route.zone,
+          route.flight ? 'Flight number: ' + route.flight : '',
+          route.language !== 'English' ? 'Driver language requested: ' + route.language + ' (team to confirm availability and any extra cost)' : ''
+        ].filter(Boolean).join('\n');
+        const options = {
+          serviceSlug: route.slug,
+          date: route.date,
+          guests: route.passengers,
+          pickup: route.pickup + (route.flight ? ' — Flight: ' + route.flight : ''),
+          notes: notes
+        };
+        const originalText = waBtn.textContent;
+        waBtn.textContent = 'Opening Island Concierge…';
+        waBtn.setAttribute('aria-busy', 'true');
+        Promise.resolve(window.snsConcierge.openBooking(options)).then(function (opened) {
+          if (!opened) {
+            waBtn.setAttribute('aria-label', 'Concierge could not open; use the WhatsApp fallback link');
+          }
+        }).catch(function () {
+          // The concierge presents its own safe error and the WhatsApp fallback remains available.
+        }).then(function () {
+          waBtn.textContent = originalText;
+          waBtn.removeAttribute('aria-busy');
+        });
+      });
+    }
+
     if (pickupEl) pickupEl.addEventListener('change', updateCalculator);
     if (destEl) destEl.addEventListener('change', updateCalculator);
-    if (paxEl) paxEl.addEventListener('change', updateCalculator);
+    if (paxEl) paxEl.addEventListener('input', updateCalculator);
     if (dateEl) dateEl.addEventListener('change', updateCalculator);
     if (flightEl) flightEl.addEventListener('input', updateCalculator);
-    if (driverLangEl) driverLangEl.addEventListener('change', updateCalculator);
+    const driverLanguageEl = document.getElementById('calc-driver-lang');
+    if (driverLanguageEl) driverLanguageEl.addEventListener('change', updateCalculator);
 
     window.addEventListener('spice:currency-changed', updateCalculator);
     window.addEventListener('spice:language-changed', updateCalculator);
