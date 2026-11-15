@@ -145,10 +145,10 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 
           <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px;">
             <a id="calc-whatsapp-btn" href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20reserve%20a%20Private%20Airport%20Transfer%20to%20Nungwi%20%26%20Kendwa." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700; padding: 0.85rem 1.25rem; font-size: 0.98rem; text-align: center; border-radius: 8px;">
-              💬 Book on WhatsApp Now
+              Check price &amp; availability
             </a>
-            <button type="button" class="btn btn-secondary" onclick="window.snsConcierge ? window.snsConcierge.open('airport-transfer-znz-to-nungwikendwa') : null" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.85rem; padding: 0.6rem; border-radius: 8px;">
-              🛎️ Request to Hold via the Trip Concierge
+            <button type="button" class="btn btn-secondary" id="calc-concierge-btn" type="button" onclick="window.snsConcierge && window.snsConcierge.open()" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.85rem; padding: 0.6rem; border-radius: 8px;">
+              Ask the Island Concierge
             </button>
           </div>
         </div>
@@ -511,6 +511,15 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         lastFareLabel = 'price on request';
         lastQuoteReasons = ['Our team will confirm this route and vehicle rate.'];
         updateSummary(route, lastFareLabel, lastQuoteReasons);
+      });
+    }
+
+    const conciergeButton = document.getElementById('calc-concierge-btn');
+    if (conciergeButton) {
+      conciergeButton.addEventListener('click', function () {
+        if (window.snsConcierge && typeof window.snsConcierge.open === 'function') {
+          window.snsConcierge.open();
+        }
       });
     }
 
