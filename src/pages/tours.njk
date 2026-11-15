@@ -37,6 +37,7 @@ permalink: "/tours/index.html"
           <div class="card-footer">
             <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
             <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-sm">Details & Booking</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20details%20and%20a%20quote%20for%20{{ tour.title | urlencode }}." target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ tour.title }}">Ask on WhatsApp</a>
           </div>
         </div>
       </article>
