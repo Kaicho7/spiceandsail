@@ -67,7 +67,7 @@ function makeSrcSet(imagePath, format) {
   return WIDTHS.map(width => netlifyVariant(imagePath, format, width) + ' ' + width + 'w').join(', ');
 }
 
-function setDefaultAttr(tag, name, value) {
+function setAttr(tag, name, value) {
   const re = new RegExp('\\s' + name + '\\s*=', 'i');
   if (re.test(tag)) return tag;
   return tag.replace(/\s*\/?>$/, ' ' + name + '="' + encodeHtml(value) + '"$&');
@@ -90,13 +90,19 @@ walk(DIST, file => {
 
     let next = tag;
     const className = attrs.class || '';
+    const isHero = /(^|\\s)(tour-hero-image|home-hero-image|transfer-hero-image)(\\s|$)/i.test(className);
     const isCard = /card|thumb|gallery|tile|grid/i.test(className);
     const defaultSizes = isCard
       ? '(max-width: 700px) 100vw, (max-width: 1024px) 50vw, 33vw'
       : '(max-width: 700px) 100vw, (max-width: 1200px) 80vw, 60vw';
-    if (!attrs.sizes) next = setDefaultAttr(next, 'sizes', defaultSizes);
-    if (!attrs.decoding) next = setDefaultAttr(next, 'decoding', 'async');
-    if (!attrs.loading) next = setDefaultAttr(next, 'loading', 'lazy');
+    if (!attrs.sizes) next = setAttr(next, 'sizes', defaultSizes);
+    if (!attrs.decoding) next = setAttr(next, 'decoding', 'async');
+    if (isHero) {
+      next = setAttr(next, 'loading', 'eager');
+      next = setAttr(next, 'fetchpriority', 'high');
+    } else {
+      next = setAttr(next, 'loading', 'lazy');
+    }
 
     if (!NETLIFY_BUILD) {
       localFallback++;
