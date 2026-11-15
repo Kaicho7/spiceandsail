@@ -142,7 +142,7 @@ test('redesign: built hotel directory keeps the full catalogue in deferred batch
 
 test('redesign: homepage mobile hero uses a valid single-column rule', () => {
   const css = read('public/css/eco-swahili.css');
-  assert.ok(!css.includes('\\\\n.home .hero{'), 'CSS must not contain a literal backslash-n selector');
+  assert.ok(!css.includes('\\n.home .hero{'), 'CSS must not contain a literal backslash-n selector');
   assert.ok(css.includes('.home .hero{grid-template-columns:minmax(0,1fr);'));
   assert.ok(css.includes('.home .hero-content { grid-column:1;'));
 });
