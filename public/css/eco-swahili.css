@@ -207,3 +207,12 @@ p{overflow-wrap:break-word}button,input,select,textarea{max-width:100%}
   transition: none !important;
   transition-delay: 0s !important;
 }
+
+
+/* Off-screen hotel cards do not need layout/paint work until they approach view. */
+.hotel-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 430px;
+}
+#hotels-load-more-wrap[hidden] { display: none !important; }
+#hotels-load-more { min-width: 220px; }
