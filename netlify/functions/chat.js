@@ -19,6 +19,7 @@ const hotelContracts = require('../../src/lib/concierge/hotel-contracts');
 const BUSINESS_WHATSAPP = (CONFIG && /^\\d{8,15}$/.test(CONFIG.whatsappNumber || ''))
   ? CONFIG.whatsappNumber
   : '255672450934';
+const BUSINESS_WHATSAPP_DISPLAY = '+' + BUSINESS_WHATSAPP;
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
@@ -416,7 +417,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
         '• **Sea Tours & Boat Charters (Safari Blue, Mnemba, Prison Island)**: 100% free cancellation up to **24 hours before pickup** with a full refund of your deposit. Within 24 hours, the 20% deposit is retained to cover pre-paid boat captain bookings, fuel, and fresh seafood market procurement.\n' +
         '• **Captain\'s Weather Guarantee**: In the event of adverse sea conditions, swells, or weather advisories from the Zanzibar Maritime Authority, we offer an immediate **100% full refund** or complimentary rescheduling.\n' +
         '• **Fly-in Safaris**: Governed by scheduled domestic airline cancellation and TANAPA national park rules.\n\n' +
-        'Our team manages all adjustments swiftly on WhatsApp: +255 672 450 934.' + hoursNote,
+        'Our team manages all adjustments swiftly on WhatsApp: ' + BUSINESS_WHATSAPP_DISPLAY + '.' + hoursNote,
       quickReplies: ['Plan my trip', 'Payment methods', 'Book an experience'],
       requestContact: false,
     };
