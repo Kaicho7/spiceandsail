@@ -108,7 +108,7 @@ p{overflow-wrap:break-word}button,input,select,textarea{max-width:100%}
 .sns-concierge-btn{right:20px;bottom:calc(22px + env(safe-area-inset-bottom,0px));background:var(--palm)!important;border:1px solid var(--gold)!important}
 .sns-concierge-callout{right:20px;bottom:86px;background:var(--card);border-color:var(--border)}
 .sns-concierge-header{background:var(--wood)!important;border-bottom-color:var(--gold)!important}.sns-concierge-badge{background:var(--palm-soft);color:var(--palm);border-color:var(--palm-soft)}
-.sns-concierge-title{font-family:var(--font-display)!important}.sns-btn-next,.sns-btn-whatsapp{background:var(--palm)!important}
+.sns-concierge-title{font-family:var(--font-display)!important}.sns-btn-next,.sns-btn-whatsapp,.sns-btn-whatsapp-direct,.sns-btn-submit{background:var(--palm)!important;color:#fff!important;border-color:var(--palm)!important}
 .sns-service-card.selected{border-color:var(--palm)!important;background:var(--palm-soft)!important;box-shadow:0 0 0 1px var(--palm)!important}
 .sns-quote-box{background:var(--ocean-soft)!important;border-color:var(--ocean)!important}.sns-quote-title,.sns-quote-amount,.sns-service-price{color:var(--palm)!important}
 .mobile-contact-bar{display:none}
