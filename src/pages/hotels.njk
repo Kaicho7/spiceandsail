@@ -84,6 +84,24 @@ preload_image: "beach-front-hotel-palm-trees-people.jpg"
     </div>
   </section>
 
+  <!-- Lightweight, server-rendered index keeps every hotel discoverable without shipping 198 full card DOM trees. -->
+  <section aria-labelledby="all-properties-heading" style="padding: 1.5rem 1rem; background: #fff; border-bottom: 1px solid #edf2f7;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto;">
+      <h2 id="all-properties-heading" style="margin: 0 0 .4rem; color: #003853; font-size: 1.35rem;">Browse all {{ hotels.hotels | length }} Zanzibar properties</h2>
+      <p style="margin: 0 0 1rem; color: #64748b; font-size: .9rem;">Every property is listed here for discovery. Select a name to open its full hotel card and enquiry options.</p>
+      <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .25rem .85rem; list-style: none; margin: 0; padding: 0;">
+        {% for hotel in hotels.hotels %}
+        <li>
+          <a href="#hotel-{{ hotel.slug }}" data-hotel-index-link="{{ hotel.slug }}" style="display: flex; flex-direction: column; gap: .12rem; padding: .45rem .55rem; border-bottom: 1px solid #edf2f7; color: #174b43; text-decoration: none;">
+            <strong style="font-size: .88rem;">{{ hotel.name }}</strong>
+            <span style="font-size: .76rem; color: #64748b;">{{ hotel.zone }}{% if hotel.category %} · {{ hotel.category }}{% endif %}{% if hotel.star_rating %} · {{ hotel.star_rating }}{% endif %}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
   <!-- Unified Hotels Cards Grid -->
   <section class="section" style="padding: 3rem 1rem; background: #FBF9F5;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
@@ -279,6 +297,27 @@ preload_image: "beach-front-hotel-palm-trees-people.jpg"
         else filterHotels();
       });
     }
+
+    document.querySelectorAll('[data-hotel-index-link]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const slug = link.getAttribute('data-hotel-index-link');
+        activeZone = 'all';
+        activeTier = 'all';
+        searchQuery = '';
+        if (searchInput) searchInput.value = '';
+        filterButtons.forEach(function (button) {
+          button.classList.toggle('active', button.getAttribute('data-filter-val') === 'all');
+        });
+        ensureAllCardsLoaded().then(function () {
+          const target = document.getElementById('hotel-' + slug);
+          if (target) {
+            history.pushState(null, '', '#hotel-' + slug);
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
 
     if (loadMoreButton) loadMoreButton.addEventListener('click', loadNextBatch);
     filterHotels();
