@@ -368,6 +368,16 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
     let lastQuoteKey = '';
     let lastFareLabel = 'price on request';
     let lastQuoteReasons = [];
+    let lastQuote = null;
+
+    function formatQuoteDisplay(quote) {
+      if (quote && quote.status === 'quoted' && quote.totalLow != null && quote.totalHigh != null && window.SpiceInternational) {
+        return window.SpiceInternational.formatRangeConverted(
+          quote.totalLow, quote.totalHigh, window.SpiceInternational.getCurrency()
+        );
+      }
+      return quote && quote.totalDisplay ? quote.totalDisplay : 'price on request';
+    }
 
     function localDateString(date) {
       const year = date.getFullYear();
@@ -435,11 +445,15 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
       waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent(message);
     }
 
-    function updateSummary(route, fareLabel, reasons) {
+    function updateSummary(route, fareLabel, reasons, quote) {
       if (fareDisplayEl) {
         fareDisplayEl.textContent = fareLabel;
         fareDisplayEl.removeAttribute('data-usd-min');
         fareDisplayEl.removeAttribute('data-usd-max');
+        if (quote && quote.status === 'quoted' && quote.totalLow != null && quote.totalHigh != null) {
+          fareDisplayEl.setAttribute('data-usd-min', quote.totalLow);
+          fareDisplayEl.setAttribute('data-usd-max', quote.totalHigh);
+        }
       }
       if (routeSummaryEl) {
         const note = reasons && reasons.length ? ' — ' + reasons.join(' ') : '';
@@ -458,6 +472,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
       if (!route.supported) {
         quoteRequestId++;
         lastQuoteKey = quoteKey;
+        lastQuote = null;
         lastFareLabel = 'price on request';
         lastQuoteReasons = [route.slug
           ? 'This pickup route is not covered by an exact catalogue transfer service.'
@@ -467,12 +482,18 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
       }
 
       if (quoteKey === lastQuoteKey) {
-        updateWhatsAppFallback(route, lastFareLabel);
+        if (lastQuote) {
+          lastFareLabel = formatQuoteDisplay(lastQuote);
+          updateSummary(route, lastFareLabel, lastQuoteReasons, lastQuote);
+        } else {
+          updateWhatsAppFallback(route, lastFareLabel);
+        }
         return;
       }
 
       lastQuoteKey = quoteKey;
       const requestId = ++quoteRequestId;
+      lastQuote = null;
       lastFareLabel = 'Checking verified catalogue range…';
       lastQuoteReasons = [];
       updateSummary(route, lastFareLabel, lastQuoteReasons);
@@ -493,21 +514,13 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         if (requestId !== quoteRequestId) return;
         if (!quote || !quote.status) throw new Error('Catalogue quote response was invalid');
 
-        let displayFare = quote.totalDisplay || 'price on request';
-        if (quote.status === 'quoted' && quote.totalLow != null && quote.totalHigh != null && window.SpiceInternational) {
-          displayFare = window.SpiceInternational.formatRangeConverted(
-            quote.totalLow, quote.totalHigh, window.SpiceInternational.getCurrency()
-          );
-          if (fareDisplayEl) {
-            fareDisplayEl.setAttribute('data-usd-min', quote.totalLow);
-            fareDisplayEl.setAttribute('data-usd-max', quote.totalHigh);
-          }
-        }
-        lastFareLabel = displayFare;
+        lastQuote = quote;
+        lastFareLabel = formatQuoteDisplay(quote);
         lastQuoteReasons = Array.isArray(quote.reasons) ? quote.reasons : [];
-        updateSummary(route, lastFareLabel, lastQuoteReasons);
+        updateSummary(route, lastFareLabel, lastQuoteReasons, lastQuote);
       }).catch(function () {
         if (requestId !== quoteRequestId) return;
+        lastQuote = null;
         lastFareLabel = 'price on request';
         lastQuoteReasons = ['Our team will confirm this route and vehicle rate.'];
         updateSummary(route, lastFareLabel, lastQuoteReasons);
