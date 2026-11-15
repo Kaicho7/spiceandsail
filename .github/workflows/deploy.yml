@@ -10,6 +10,8 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -18,6 +20,21 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+      - name: Capture pre-redesign URL and SEO inventory
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
+        run: node scripts/audit-url-inventory.js
+      - name: Save baseline inventory to the redesign branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
+        env:
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit/url-inventory-before.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(audit): save rendered pre-redesign SEO inventory [skip ci]"
+            git push origin "HEAD:${GITHUB_HEAD_REF}"
+          fi
       - run: npm test
 
   # Netlify production deployment is manual. GitHub must not publish the site
