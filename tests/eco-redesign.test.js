@@ -129,3 +129,14 @@ test('redesign: hotel directory loads all 198 properties progressively and keeps
   assert.ok(page.includes('{% for hotel in hotels.hotels.slice(0, 48) %}'), 'main listing must render only the first 48 cards up front');
 });
 
+test('redesign: built hotel directory keeps the full catalogue in deferred batches', () => {
+  const source = JSON.parse(read('src/data/hotels.json'));
+  const page = fs.readFileSync(path.join(ROOT, 'dist', 'hotels', 'index.html'), 'utf8');
+  const deferred = JSON.parse(fs.readFileSync(path.join(ROOT, 'dist', 'data', 'hotels-more.json'), 'utf8'));
+  const initialCount = (page.match(/<article class="card hotel-card/g) || []).length;
+  assert.strictEqual(initialCount, Math.min(48, source.hotels.length));
+  assert.strictEqual(deferred.total, source.hotels.length);
+  assert.strictEqual(deferred.cards.length, Math.max(0, source.hotels.length - 48));
+  assert.ok(deferred.cards.every(card => /<article class="card hotel-card/.test(card)));
+});
+
