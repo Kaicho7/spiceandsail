@@ -72,8 +72,8 @@ test('redesign: responsive image helper makes heroes high priority and other ima
   assert.ok(helper.includes("setAttr(next, 'loading', 'eager')"));
   assert.ok(helper.includes("setAttr(next, 'fetchpriority', 'high')"));
   assert.ok(helper.includes("setAttr(next, 'loading', 'lazy')"));
-  assert.ok(helper.includes("type=\\"image/avif\\""));
-  assert.ok(helper.includes("type=\\"image/webp\\""));
+  assert.ok(helper.includes(`type="image/avif"`));
+  assert.ok(helper.includes(`type="image/webp"`));
 });
 
 test('redesign: browser scripts are syntactically valid', () => {
