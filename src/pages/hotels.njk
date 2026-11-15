@@ -89,7 +89,7 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 3rem 1rem; background: #FBF9F5;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div id="hotels-container" class="cards-grid hotel-grid" data-total-hotels="{{ hotels.hotels | length }}" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem;">
-        {% for hotel in hotels.hotels.slice(0, 48) %}
+        {% for hotel in hotels.hotels.slice(0, 16) %}
           {% set hotelIndex = loop.index0 %}
           {% include "hotel-card.njk" %}
         {% endfor %}

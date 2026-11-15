@@ -4,8 +4,8 @@ layout: false
 eleventyExcludeFromCollections: true
 ---
 {% set cards = [] %}
-{% for hotel in hotels.hotels.slice(48) %}
-  {% set hotelIndex = loop.index0 + 48 %}
+{% for hotel in hotels.hotels.slice(16) %}
+  {% set hotelIndex = loop.index0 + 16 %}
   {% set cardHtml %}{% include "hotel-card.njk" %}{% endset %}
   {% set _ = cards.push(cardHtml | trim) %}
 {% endfor %}

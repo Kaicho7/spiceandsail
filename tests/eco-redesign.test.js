@@ -125,18 +125,18 @@ test('redesign: hotel directory loads all 198 properties progressively and keeps
   const fragment = read('src/pages/hotels-more.json.njk');
   const partial = read('src/_includes/hotel-card.njk');
   const helper = read('scripts/add-responsive-images.js');
-  assert.ok(page.includes('hotels.hotels.slice(0, 48)'));
+  assert.ok(page.includes('hotels.hotels.slice(0, 16)'));
   assert.ok(page.includes('id="load-more-hotels"'));
   assert.ok(page.includes('data-total-hotels="{{ hotels.hotels | length }}"'));
   assert.ok(page.includes("ensureAllCardsLoaded().then(filterHotels)"));
   assert.ok(page.includes("fetch('/data/hotels-more.json'"));
   assert.ok(fragment.includes('permalink: /data/hotels-more.json'));
-  assert.ok(fragment.includes('hotels.hotels.slice(48)'));
+  assert.ok(fragment.includes('hotels.hotels.slice(16)'));
   assert.ok(fragment.includes('hotel-card.njk'));
   assert.ok(partial.includes('hotelIndex < 2'));
   assert.ok(partial.includes('fetchpriority="high"'));
   assert.ok(helper.includes("attrs.loading !== 'eager'"), 'build helper must preserve eagerly loaded first cards');
-  assert.ok(page.includes('{% for hotel in hotels.hotels.slice(0, 48) %}'), 'main listing must render only the first 48 cards up front');
+  assert.ok(page.includes('{% for hotel in hotels.hotels.slice(0, 16) %}'), 'main listing must render only the first 16 cards up front');
   assert.ok(page.includes('data-hotel-index-link="{{ hotel.slug }}"'), 'all properties must have crawlable index links');
 });
 
@@ -154,10 +154,10 @@ test('redesign: built hotel directory keeps the full catalogue in deferred batch
   const deferred = JSON.parse(fs.readFileSync(path.join(ROOT, 'dist', 'data', 'hotels-more.json'), 'utf8'));
   const initialCount = (page.match(/<article[^>]*class="card hotel-card/g) || []).length;
   const indexCount = (page.match(/data-hotel-index-link=/g) || []).length;
-  assert.strictEqual(initialCount, Math.min(48, source.hotels.length));
+  assert.strictEqual(initialCount, Math.min(16, source.hotels.length));
   assert.strictEqual(indexCount, source.hotels.length, 'every property must be present in server-rendered HTML');
   assert.strictEqual(deferred.total, source.hotels.length);
-  assert.strictEqual(deferred.cards.length, Math.max(0, source.hotels.length - 48));
+  assert.strictEqual(deferred.cards.length, Math.max(0, source.hotels.length - 16));
   assert.ok(deferred.cards.every(card => /<article[^>]*class="card hotel-card/.test(card)));
 });
 
@@ -234,3 +234,19 @@ test('redesign: transfer calculator only quotes verified destinations and hands 
   assert.strictEqual(site.contact.whatsapp, catalogue.config.whatsappNumber, 'site links and concierge must use the same configured business number');
 });
 
+
+test('redesign: CI Lighthouse audits the local build without requiring a hosting account', () => {
+  const config = JSON.parse(read('lighthouserc.json'));
+  const workflow = read('.github/workflows/deploy.yml');
+  assert.strictEqual(config.ci.collect.startServerCommand, 'PORT=8080 node scripts/local-preview-server.js');
+  assert.deepStrictEqual(config.ci.collect.url, [
+    'http://localhost:8080/',
+    'http://localhost:8080/tours/',
+    'http://localhost:8080/transfers/',
+    'http://localhost:8080/hotels/'
+  ]);
+  assert.strictEqual(config.ci.assert.assertions['categories:performance'][1].minScore, 0.9);
+  assert.strictEqual(config.ci.assert.assertions['categories:seo'][1].minScore, 0.9);
+  assert.ok(workflow.includes('lighthouse-ci-action@v11'));
+  assert.ok(!/NETLIFY_AUTH_TOKEN|NETLIFY_SITE_ID|netlify deploy|preview-deploy/.test(workflow));
+});

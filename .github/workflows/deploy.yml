@@ -1,4 +1,4 @@
-name: Build, Test & Deploy
+name: Build, Test & Lighthouse
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -65,96 +65,9 @@ jobs:
           retention-days: 7
       - run: npm test
 
-  # Netlify production deployment is manual. GitHub must not publish the site
-  # on every master push; the site owner handles Netlify or dispatches this
-  # workflow explicitly when they want a deploy.
-  deploy-prod:
-    needs: build-test
-    if: github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-      - run: npm ci && npm run build
-        env:
-          NETLIFY: 'true'
-          CONTEXT: production
-      - uses: netlify/actions/cli@3185065f4ab2f6df6f2ef41ee013626e1c02a426
-        with:
-          args: deploy --dir=dist --prod
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-  preview-deploy:
-    needs: build-test
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    outputs:
-      deploy_url: ${{ steps.deploy.outputs.deploy_url }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-      - name: Verify Netlify preview credentials are configured
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
-            echo "::error::Add NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID under repository Settings > Secrets and variables > Actions. Do not put credentials in source files."
-            exit 1
-          fi
-      - run: npm ci
-      - name: Build with Netlify image transforms enabled
-        run: npm run build
-        env:
-          NETLIFY: 'true'
-          CONTEXT: deploy-preview
-      - name: Mark this preview as non-indexable
-        run: |
-          cp _headers dist/_headers
-          cat >> dist/_headers <<'EOF'
-
-          /*
-            X-Robots-Tag: noindex, nofollow
-          EOF
-      - name: Publish a draft Netlify preview (never production)
-        id: deploy
-        run: |
-          npx --yes netlify-cli@latest deploy --dir=dist --alias="pr-${PR_NUMBER}" --message="Lighthouse preview for PR ${PR_NUMBER}" --json > "$RUNNER_TEMP/netlify-deploy.json"
-          node -e 'const fs=require("fs"); const d=JSON.parse(fs.readFileSync(process.env.DEPLOY_JSON,"utf8")); const url=d.deploy_url || d.deployUrl; if (!url) throw new Error("Netlify did not return deploy_url"); fs.appendFileSync(process.env.GITHUB_OUTPUT, "deploy_url="+url+String.fromCharCode(10));'
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          DEPLOY_JSON: ${{ runner.temp }}/netlify-deploy.json
-
-  lighthouse:
-    needs: [build-test, preview-deploy]
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-      - name: Run Lighthouse against the real Netlify preview
+      - name: Run Lighthouse against the local production build
         uses: treosh/lighthouse-ci-action@v11
         with:
-          urls: |
-            ${{ needs.preview-deploy.outputs.deploy_url }}/
-            ${{ needs.preview-deploy.outputs.deploy_url }}/tours/
-            ${{ needs.preview-deploy.outputs.deploy_url }}/transfers/
-            ${{ needs.preview-deploy.outputs.deploy_url }}/hotels/
           configPath: ./lighthouserc.json
           uploadArtifacts: true
-          artifactName: lighthouse-preview-results
+          artifactName: lighthouse-local-results
