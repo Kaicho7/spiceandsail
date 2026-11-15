@@ -49,17 +49,28 @@
 <link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}/">
 {% endif %}
 
-{% if site.ga_measurement_id %}
-<!-- Google tag (gtag.js) - GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_measurement_id }}"></script>
+{% if previewRobots %}
+<meta name="robots" content="{{ previewRobots }}">
+{% endif %}
+{% if analytics and analytics.measurementId %}
 <script>
+  window.SNS_ANALYTICS_ID = "{{ analytics.measurementId }}";
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.ga_measurement_id }}', {
-    page_path: window.location.pathname,
-    cookie_flags: 'SameSite=None;Secure'
-  });
+  window.gtag = function(){ window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', "{{ analytics.measurementId }}", { page_path: window.location.pathname });
+  (function () {
+    var loadTag = function () {
+      if (document.getElementById('sns-ga4-script')) return;
+      var tag = document.createElement('script');
+      tag.id = 'sns-ga4-script';
+      tag.async = true;
+      tag.src = 'https://www.googletagmanager.com/gtag/js?id={{ analytics.measurementId }}';
+      document.head.appendChild(tag);
+    };
+    if ('requestIdleCallback' in window) window.requestIdleCallback(loadTag, { timeout: 3000 });
+    else window.setTimeout(loadTag, 1800);
+  })();
 </script>
 {% endif %}
 
