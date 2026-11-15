@@ -91,6 +91,8 @@ test('redesign: tour and transfer booking CTAs use the same verified concierge l
   const widget = read('src/_includes/concierge-widget.njk');
   assert.ok(panel.includes('data-concierge-booking-form'));
   assert.ok(panel.includes('data-service-slug="{{ booking_slug }}"'));
+  assert.ok(panel.includes('type="number" min="1" max="50"'));
+  assert.ok(panel.includes('Enter your exact group size (1–50)'));
   assert.ok(!panel.includes('wa.me/'), 'booking panel must not bypass the enquiry reference flow');
   assert.ok(tourPanel.includes('booking_slug = tour_slug or page.fileSlug'));
   assert.ok(bookingScript.includes("window.snsConcierge.openBooking(options)"));
