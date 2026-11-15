@@ -134,6 +134,9 @@
         if (res.ok && res.json && Array.isArray(res.json.services)) {
           state.services = res.json.services;
           state.replyWindow = (res.json.replyWindow || '').slice(0, 160) || null;
+          if (typeof res.json.whatsappNumber === 'string' && /^\\d{8,15}$/.test(res.json.whatsappNumber)) {
+            WHATSAPP_URL = 'https://wa.me/' + res.json.whatsappNumber;
+          }
           renderServiceGrid();
         }
         return state.services;
@@ -585,6 +588,13 @@
 
   /* ---------- open / close ---------- */
 
+  function localDateString(date) {
+    var year = date.getFullYear();
+    var month = String(date.getMonth() + 1).padStart(2, '0');
+    var day = String(date.getDate()).padStart(2, '0');
+    return year + '-' + month + '-' + day;
+  }
+
   function openConcierge(preselectKey) {
     if (!state.services && !state._loading) {
       state._loading = loadCatalogue().then(function () { state._loading = null; });
@@ -598,7 +608,7 @@
       var dateInput = el('sns-date');
       if (dateInput && !dateInput.value) {
         var t = new Date(); t.setDate(t.getDate() + 1);
-        dateInput.value = t.toISOString().split('T')[0];
+        dateInput.value = localDateString(t);
       }
       if (state.selectedSlug) {
         var radio = document.querySelector('input[name="service"][value="' + state.selectedSlug + '"]');
@@ -611,6 +621,78 @@
       }
       goToStep(1);
     }
+  }
+
+  function openBooking(options) {
+    var opts = options || {};
+    var requestedSlug = String(opts.serviceSlug || '').trim();
+    if (!requestedSlug) {
+      openConcierge();
+      return Promise.resolve(false);
+    }
+
+    // Open the existing concierge immediately; its catalogue request is shared
+    // with the service grid. No parallel request or client-side quote is made.
+    state.selectedSlug = requestedSlug;
+    state.lastReference = null;
+    state.lastQuoteDisplay = null;
+    openConcierge(requestedSlug);
+
+    var loading = state.services
+      ? Promise.resolve(state.services)
+      : (state._loading || Promise.resolve(null));
+
+    return Promise.resolve(loading).then(function () {
+      var selected = (state.services || []).find(function (service) {
+        return service.slug === requestedSlug;
+      });
+      if (!selected) {
+        state.selectedSlug = null;
+        renderServiceGrid();
+        goToStep(1);
+        showStatus('error',
+          'This service is not available in the live catalogue right now. Please choose another service or contact our team.',
+          'I would like help planning a Zanzibar trip.');
+        return false;
+      }
+
+      state.selectedSlug = selected.slug;
+      var radio = document.querySelector('input[name="service"][value="' + selected.slug + '"]');
+      if (radio) {
+        radio.checked = true;
+        document.querySelectorAll('.sns-service-card').forEach(function (card) {
+          card.classList.remove('selected');
+        });
+        var parent = radio.closest('.sns-service-card');
+        if (parent) parent.classList.add('selected');
+      }
+
+      var dateInput = el('sns-date');
+      var requestedDate = String(opts.date || '');
+      if (dateInput && /^\\d{4}-\\d{2}-\\d{2}$/.test(requestedDate)) {
+        dateInput.value = requestedDate;
+      }
+      var travelersInput = el('sns-travelers');
+      var travelers = parseInt(opts.guests, 10);
+      if (travelersInput && Number.isFinite(travelers) && travelers >= 1 && travelers <= 50) {
+        travelersInput.value = String(travelers);
+      }
+      var locationInput = el('sns-location');
+      if (locationInput && opts.pickup) locationInput.value = String(opts.pickup).slice(0, 160);
+      var notesInput = el('sns-guest-notes');
+      if (notesInput && opts.notes) notesInput.value = String(opts.notes).slice(0, 500);
+
+      hideStatus();
+      goToStep(2);
+      return true;
+    }).catch(function () {
+      state.selectedSlug = null;
+      goToStep(1);
+      showStatus('error',
+        'The service catalogue could not be loaded. No price or booking has been assumed. Please try again or contact our team.',
+        'I would like help planning a Zanzibar trip.');
+      return false;
+    });
   }
 
   function closeConcierge() {
@@ -747,6 +829,7 @@
   /* Export to global scope */
   window.snsConcierge = {
     open: openConcierge,
+    openBooking: openBooking,
     close: closeConcierge,
     goToStep: goToStep,
     openChat: openChat,
