@@ -140,3 +140,22 @@ test('redesign: built hotel directory keeps the full catalogue in deferred batch
   assert.ok(deferred.cards.every(card => /<article class="card hotel-card/.test(card)));
 });
 
+test('redesign: homepage mobile hero uses a valid single-column rule', () => {
+  const css = read('public/css/eco-swahili.css');
+  assert.ok(!css.includes('\\\\n.home .hero{'), 'CSS must not contain a literal backslash-n selector');
+  assert.ok(css.includes('.home .hero{grid-template-columns:minmax(0,1fr);'));
+  assert.ok(css.includes('.home .hero-content { grid-column:1;'));
+});
+
+test('redesign: first tour card is eagerly loaded and directory hero backgrounds are preloaded', () => {
+  const tours = read('src/pages/tours.njk');
+  const seo = read('src/_includes/seo.njk');
+  const hotels = read('src/pages/hotels.njk');
+  const transfers = read('src/pages/transfers.njk');
+  assert.ok(tours.includes('loading="{% if loop.index <= 2 %}eager{% else %}lazy{% endif %}"'));
+  assert.ok(tours.includes('fetchpriority="high"'));
+  assert.ok(seo.includes('<link rel="preload" as="image" href="{{ preload_image | cdnFile }}" fetchpriority="high">'));
+  assert.ok(hotels.includes('preload_image: "beach-front-hotel-palm-trees-people.jpg"'));
+  assert.ok(transfers.includes('preload_image: "zanzibar-airport-transfer-private-minivan-taxi.jpg"'));
+});
+
