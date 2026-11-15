@@ -7,6 +7,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
+{% from "responsive-image.njk" import responsiveImage %}
 
 <main class="content">
   <!-- Page Header -->
@@ -277,7 +278,8 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           <article class="card transfer-card reveal" style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(12,26,36,0.06); display: flex; flex-direction: column;">
             <div class="card-image" style="position: relative; height: 210px; overflow: hidden;">
               {% set trImg = transfer.image or "white-nissan-elgrand-van-parked-gravel.jpg" %}
-              <img src="{{ trImg | cdnFile }}" alt="{{ trImg | canonicalAlt(transfer.title) }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+              {% set transferImageMeta = trImg | imageDimensions %}
+              {{ responsiveImage(trImg, trImg | canonicalAlt(transfer.title), transferImageMeta.width, transferImageMeta.height, "(max-width: 760px) 100vw, 33vw", "lazy", false, "") }}
               <span class="card-badge" style="position: absolute; top: 1rem; left: 1rem; background: #003853; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 50px; text-transform: uppercase;">
                 {{ transfer.zone or 'Direct Transfer' }}
               </span>

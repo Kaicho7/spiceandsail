@@ -5,6 +5,7 @@ permalink: "/tours/index.html"
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
+{% from "responsive-image.njk" import responsiveImage %}
 
 <main class="content">
   <header class="page-header">
@@ -20,6 +21,14 @@ permalink: "/tours/index.html"
       <button class="filter-btn" data-filter="PKG">Packages</button>
     </nav>
   </header>
+  <section class="brand-booking-block listing-booking">
+    <p class="swahili-kicker"><span>Bahari</span><small>Sea and island</small></p>
+    <h2>Ask about a Zanzibar tour</h2>
+    {% set bookingType = "Tour enquiry" %}
+    {% set bookingService = "" %}
+    {% include "booking-panel.njk" %}
+  </section>
+
 
   <section class="cards tour-grid">
     <h2 class="visually-hidden">All Tours &amp; Excursions</h2>
@@ -27,7 +36,8 @@ permalink: "/tours/index.html"
       <article class="card tour-card reveal" data-category="{{ tour.category }}">
         <div class="card-image">
           {% set imgFile = __slugMap[tour.slug] or __slugMap[tour.seo_slug] or "default-tour-hero.jpg" %}
-          <img src="{{ imgFile | cdnFile }}" alt="{{ imgFile | canonicalAlt(tour.title) }}" class="tour-card-image" loading="lazy">
+          {% set imgMeta = imgFile | imageDimensions %}
+          {{ responsiveImage(imgFile, imgFile | canonicalAlt(tour.title), imgMeta.width, imgMeta.height, "(max-width: 760px) 100vw, 33vw", "lazy", false, "tour-card-image") }}
         </div>
         <div class="card-content">
           <span class="tour-category">{{ tour.category | attractionTypeLabel }}</span>
@@ -36,7 +46,8 @@ permalink: "/tours/index.html"
           <p class="tour-description">{{ tour.short_description }}</p>
           <div class="card-footer">
             <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
-            <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-sm">Details & Booking</a>
+            <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-sm btn-outline">Details</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text={{ ('Jambo Spice & Sail, I would like to enquire about ' + tour.title + '.') | urlencode }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-whatsapp-card">Ask on WhatsApp</a>
           </div>
         </div>
       </article>

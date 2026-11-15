@@ -7,11 +7,12 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-nungwi/"
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
+{% from "responsive-image.njk" import responsiveImage %}
 
-<main class="content">
+<main class="content brand-transfer-detail">
   <!-- Hero Section -->
-  <header class="page-header" style="background: linear-gradient(rgba(0, 61, 92, 0.85), rgba(0, 38, 59, 0.9)), url('{{ 'white-minivan-zanzibar-transfer-vehicle.jpg' | cdnFile }}') center/cover no-repeat; color: #fff; padding: 4.5rem 1rem 3.5rem; text-align: center;">
-    <div class="container" style="max-width: 900px; margin: 0 auto;">
+  <header class="page-header brand-transfer-hero">
+    <div class="container brand-transfer-hero-copy" style="max-width: 900px; margin: 0 auto;">
       <span class="section-tag" style="background: rgba(232, 168, 23, 0.25); color: #fbd364; border: 1px solid #e8a817; padding: 4px 12px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">ZNZ ⇄ Nungwi Private Transfer</span>
       <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); margin: 1rem 0 0.8rem; line-height: 1.2;">Zanzibar Airport (ZNZ) to Nungwi Private Transfer</h1>
       <p style="font-size: 1.15rem; color: #e2e8f0; max-width: 720px; margin: 0 auto 1.8rem; line-height: 1.6;">Planning range {% catPrice "airport-transfer-znz-to-nungwikendwa" %} per vehicle • Flight delay tracking included • Door-to-door direct to your Nungwi or Kendwa resort • Air-conditioned minivans.</p>
@@ -20,7 +21,18 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-nungwi/"
         <button onclick="window.snsConcierge && window.snsConcierge.open()" class="btn btn-secondary" style="border: 2px solid #e8a817; color: #fff; background: rgba(0,0,0,0.3); font-size: 1rem; padding: 12px 20px;">🛎️ Open Trip Concierge</button>
       </div>
     </div>
+    <div class="brand-transfer-hero-image arch-frame">
+      {{ responsiveImage("zanzibar-airport-transfer-private-minivan-taxi.jpg", "Air-conditioned private minivan for Zanzibar Airport transfers to Nungwi, Paje, and Stone Town hotels.", 960, 540, "(max-width: 760px) 100vw, 42vw", "eager", true, "transfer-hero-image") }}
+    </div>
   </header>
+
+  <section class="brand-booking-block">
+    <p class="swahili-kicker"><span>Usafiri</span><small>Transport</small></p>
+    <h2>Arrange your Nungwi transfer</h2>
+    {% set bookingType = "Transfer enquiry" %}
+    {% set bookingService = "Zanzibar Airport to Nungwi / Kendwa private transfer" %}
+    {% include "booking-panel.njk" %}
+  </section>
 
   <!-- Key Specs Ribbon -->
   <section style="background: #003d5c; color: #fff; padding: 1.25rem 0; border-bottom: 2px solid #e8a817;">

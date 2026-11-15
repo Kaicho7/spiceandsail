@@ -284,6 +284,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Track calls; trackEvent is intentionally guarded until an owner-verified GA ID is enabled.
+  document.addEventListener('click', function(e) {
+    var callLink = e.target.closest('a[href^="tel:"]');
+    if (callLink) trackEvent('phone_call_tap', { event_category: 'Contact', event_label: callLink.getAttribute('href') || '' });
+  });
+
   // Track all WhatsApp Outbound Click CTAs site-wide
   document.addEventListener('click', function(e) {
     var link = e.target.closest('a');
