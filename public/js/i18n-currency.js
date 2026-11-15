@@ -1,6 +1,6 @@
 /**
  * Spice & Sail Zanzibar — Multilingual & Multi-Currency Engine
- * Primary Language: English (en) | Secondary: Italian (it), German (de), French (fr), Polish (pl)
+ * Primary languages: English (en), Italian (it), German (de)
  * Supported Currencies: USD ($), EUR (€), GBP (£), PLN (zł), TZS (TSh)
  */
 (function() {
@@ -18,8 +18,6 @@
     en: { code: 'en', name: 'English', flag: '🇬🇧' },
     it: { code: 'it', name: 'Italiano', flag: '🇮🇹' },
     de: { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    fr: { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    pl: { code: 'pl', name: 'Polski', flag: '🇵🇱' }
   };
 
   var DICT = {
@@ -56,9 +54,7 @@
   var WA_GREETINGS = {
     en: "Hi Spice and Sail, I am inquiring about",
     it: "Ciao Spice and Sail, vorrei richiedere informazioni e preventivo per",
-    de: "Hallo Spice and Sail, ich interessiere mich für ein Angebot für",
-    fr: "Bonjour Spice and Sail, je souhaite demander des informations et un devis pour",
-    pl: "Dzień dobry Spice and Sail, chciałbym zapytać o wycenę i rezerwację dla"
+    de: "Hallo Spice and Sail, ich interessiere mich für ein Angebot für"
   };
 
   // State
@@ -290,7 +286,7 @@
     window.googleTranslateElementInit = function() {
       new window.google.translate.TranslateElement({
         pageLanguage: 'en',
-        includedLanguages: 'en,it,de,fr,pl',
+        includedLanguages: 'en,it,de',
         autoDisplay: false
       }, 'google_translate_element');
 
