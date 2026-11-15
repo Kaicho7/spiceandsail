@@ -1,5 +1,5 @@
 <nav class="mobile-contact-bar" aria-label="Quick contact">
   <a class="mobile-contact-whatsapp" href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
   <a class="mobile-contact-call" href="tel:{{ site.contact.phone }}">{% if lang == "it" %}Chiama{% elif lang == "de" %}Anrufen{% else %}Call{% endif %}</a>
-  <a class="mobile-contact-enquire" href="/contact/">{% if lang == "it" %}Contatti{% elif lang == "de" %}Kontakt{% else %}Enquire{% endif %}</a>
+  <a class="mobile-contact-enquire" href="{% if lang == \"it\" %}/it/contatti/{% elif lang == \"de\" %}/de/kontakt/{% else %}/contact/{% endif %}">{% if lang == "it" %}Contatti{% elif lang == "de" %}Kontakt{% else %}Enquire{% endif %}</a>
 </nav>

@@ -1,11 +1,11 @@
 <form class="booking-panel" data-whatsapp-booking data-wa-number="{{ site.contact.whatsapp }}" data-lang="{{ lang or 'en' }}" data-booking-type="{{ bookingType or 'Trip enquiry' }}">
   <div class="booking-panel-intro">
     {% if lang == "it" %}
-    <span class="booking-panel-label">Richiesta WhatsApp</span><strong>Condividi i dettagli</strong><span>Il nostro team confermerà la disponibilità e il prezzo finale.</span>
+    <span class="booking-panel-label">Richiesta WhatsApp</span><strong>Condividi i dettagli</strong><span>Invia la tua richiesta al team su WhatsApp. [placeholder: confirm]</span>
     {% elif lang == "de" %}
-    <span class="booking-panel-label">WhatsApp-Anfrage</span><strong>Teile die wichtigsten Angaben</strong><span>Unser Team bestätigt Verfügbarkeit und Endpreis.</span>
+    <span class="booking-panel-label">WhatsApp-Anfrage</span><strong>Teile die wichtigsten Angaben</strong><span>Sende deine Anfrage per WhatsApp an unser Team. [placeholder: confirm]</span>
     {% else %}
-    <span class="booking-panel-label">WhatsApp enquiry</span><strong>Share the basics</strong><span>Our team will confirm availability and the final price with you.</span>
+    <span class="booking-panel-label">WhatsApp enquiry</span><strong>Share the basics</strong><span>Send your request to our team on WhatsApp. [placeholder: confirm]</span>
     {% endif %}
   </div>
   <label>

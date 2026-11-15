@@ -12,13 +12,16 @@
     var lang=form.getAttribute("data-lang")||"en";
     var dateValue=date&&date.value?date.value:"Flexible dates";
     var guestValue=guests?guests.value:"2";
+    var enquiryType=form.getAttribute("data-booking-type")||"Trip enquiry";
+    if(lang==="it") enquiryType=enquiryType==="Transfer enquiry"?"Richiesta transfer":(enquiryType==="Tour enquiry"?"Richiesta tour":"Richiesta tour o transfer");
+    else if(lang==="de") enquiryType=enquiryType==="Transfer enquiry"?"Transferanfrage":(enquiryType==="Tour enquiry"?"Touranfrage":"Tour- oder Transferanfrage");
     var parts;
     if(lang==="it"){
-      parts=["Jambo Spice & Sail, vorrei informazioni su un'esperienza.","Tipo: "+(form.getAttribute("data-booking-type")||"Richiesta"),"Servizio: "+serviceName,"Data preferita: "+dateValue,"Ospiti: "+guestValue];
+      parts=["Jambo Spice & Sail, vorrei informazioni su un'esperienza.","Tipo: "+enquiryType,"Servizio: "+serviceName,"Data preferita: "+dateValue,"Ospiti: "+guestValue];
     }else if(lang==="de"){
-      parts=["Hallo Spice & Sail, ich möchte eine Tour oder einen Transfer anfragen.","Art: "+(form.getAttribute("data-booking-type")||"Anfrage"),"Tour/Service: "+serviceName,"Wunschdatum: "+dateValue,"Gäste: "+guestValue];
+      parts=["Hallo Spice & Sail, ich möchte eine Tour oder einen Transfer anfragen.","Art: "+enquiryType,"Tour/Service: "+serviceName,"Wunschdatum: "+dateValue,"Gäste: "+guestValue];
     }else{
-      parts=["Jambo Spice & Sail, I would like to enquire about a trip.","Type: "+(form.getAttribute("data-booking-type")||"Trip enquiry"),"Service: "+serviceName,"Preferred date: "+dateValue,"Guests: "+guestValue];
+      parts=["Jambo Spice & Sail, I would like to enquire about a trip.","Type: "+enquiryType,"Service: "+serviceName,"Preferred date: "+dateValue,"Guests: "+guestValue];
     }
     var phone=form.getAttribute("data-wa-number");
     if(!phone)return;
