@@ -194,6 +194,9 @@ test('redesign: transfer calculator only quotes verified destinations and hands 
     'airport-transfer-znz-to-pajejambiani',
     'airport-transfer-znz-to-stone-town'
   ].sort());
+  for (const id of ['calc-pickup', 'calc-dest', 'calc-pax', 'calc-date', 'calc-flight', 'calc-driver-lang']) {
+    assert.ok(transfers.includes('<label for="' + id + '"'), id + ' must have an associated label');
+  }
   assert.ok(transfers.includes('type="number" id="calc-pax" min="1" max="50"'));
   assert.ok(transfers.includes('data-slug="" data-fare="on_request" data-zone="Matemwe"'));
   assert.ok(transfers.includes('data-slug="" data-fare="on_request" data-zone="Kiwengwa / Pongwe"'));
