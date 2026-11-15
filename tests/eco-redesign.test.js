@@ -210,5 +210,10 @@ test('redesign: transfer calculator only quotes verified destinations and hands 
   assert.ok(!transfers.includes('return [35, 40]') && !transfers.includes('return [50, 60]'));
   assert.ok(transfers.includes('calc-concierge-btn'));
   assert.ok(!transfers.includes("open('airport-transfer-znz-to-nungwikendwa')"), 'secondary concierge shortcut must not force a fixed route');
+  assert.ok(transfers.includes('function formatQuoteDisplay(quote)'));
+  assert.ok(transfers.includes('lastQuote = quote'));
+  assert.ok(!transfers.includes('reserve%20a%20Private%20Airport%20Transfer%20to%20Nungwi'), 'static fallback must not force Nungwi');
+  const site = JSON.parse(read('src/data/site.json'));
+  assert.strictEqual(site.contact.whatsapp, catalogue.config.whatsappNumber, 'site links and concierge must use the same configured business number');
 });
 
