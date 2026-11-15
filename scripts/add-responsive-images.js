@@ -70,7 +70,7 @@ walk(DIST, function(file) {
     // The dedicated responsiveImage macro already emitted picture/source elements.
     const before = html.slice(0, offset);
     if (before.lastIndexOf("<picture") > before.lastIndexOf("</picture")) {
-      const pictureSource = getAttr(original, "src");
+      const pictureSource = readAttr(original, "src");
       const pictureAsset = getAsset(pictureSource);
       if (pictureAsset && !/(?:logo|favicon|icon|avatar)/i.test(pictureAsset)) firstContentImage = true;
       return original;
