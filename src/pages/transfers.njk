@@ -65,7 +65,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
           <!-- Pickup Location -->
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📍 Pickup Location</label>
+            <label for="calc-pickup" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📍 Pickup Location</label>
             <select id="calc-pickup" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
               <option value="Abeid Amani Karume International Airport (ZNZ)" selected>✈️ ZNZ Airport (All Terminals)</option>
               <option value="Stone Town Ferry Terminal">⛴️ Stone Town Ferry Terminal</option>
@@ -78,7 +78,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 
           <!-- Destination Zone -->
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🏁 Destination Hotel / Zone</label>
+            <label for="calc-dest" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🏁 Destination Hotel / Zone</label>
             <select id="calc-dest" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
               <option value="stone-town" data-slug="airport-transfer-znz-to-stone-town" data-fare="{% catPrice "airport-transfer-znz-to-stone-town" %}" data-zone="Stone Town">Stone Town Hotels — {% catPrice "airport-transfer-znz-to-stone-town" %}/vehicle</option>
               <option value="paje-jambiani" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Paje / Jambiani">Paje &amp; Jambiani Hotels — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/vehicle</option>
@@ -94,7 +94,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
           <!-- Passengers Count -->
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">👥 Passengers</label>
+            <label for="calc-pax" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">👥 Passengers</label>
             <select id="calc-pax" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
               <option value="1">1 Passenger (Private Minivan)</option>
               <option value="2" selected>2 Passengers (Private Minivan)</option>
@@ -110,7 +110,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 
           <!-- Travel Date -->
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📅 Travel Date</label>
+            <label for="calc-date" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📅 Travel Date</label>
             <input type="date" id="calc-date" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
           </div>
 
@@ -122,7 +122,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 
           <!-- Multilingual Driver / Guide Preference -->
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🗣️ Driver Language Preference</label>
+            <label for="calc-driver-lang" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🗣️ Driver Language Preference</label>
             <select id="calc-driver-lang" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
               <option value="English" selected>English &amp; Swahili (Standard included)</option>
               <option value="Italian">🇮🇹 Italian speaking driver (Advance request, extra cost)</option>
