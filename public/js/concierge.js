@@ -136,6 +136,7 @@
           state.replyWindow = (res.json.replyWindow || '').slice(0, 160) || null;
           if (typeof res.json.whatsappNumber === 'string' && /^\\d{8,15}$/.test(res.json.whatsappNumber)) {
             WHATSAPP_URL = 'https://wa.me/' + res.json.whatsappNumber;
+            if (document.body) document.body.setAttribute('data-whatsapp-number', res.json.whatsappNumber);
           }
           renderServiceGrid();
         }
@@ -685,6 +686,7 @@
 
       hideStatus();
       goToStep(2);
+      if (travelersInput && typeof travelersInput.focus === 'function') travelersInput.focus({ preventScroll: true });
       return true;
     }).catch(function () {
       state.selectedSlug = null;
