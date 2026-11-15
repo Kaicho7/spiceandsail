@@ -16,6 +16,10 @@ const { tryLLM } = require('../../src/lib/concierge/llm');
 const { catalogue, CONFIG, isWithinBusinessHours, getService } = require('../../src/lib/concierge/catalogue');
 const hotelContracts = require('../../src/lib/concierge/hotel-contracts');
 
+const BUSINESS_WHATSAPP = (CONFIG && /^\\d{8,15}$/.test(CONFIG.whatsappNumber || ''))
+  ? CONFIG.whatsappNumber
+  : '255672450934';
+
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
     setGlobalStore(createStore(process.env.NETLIFY ? 'blob' : 'memory'));
@@ -323,7 +327,7 @@ function buildWhatsAppUrl(profile, serviceSlugs) {
     const zoneLbl = (catalogue.zones.find(function (z) { return z.slug === profile.pickupZone; }) || {}).name || profile.pickupZone;
     parts.push('Pickup: ' + zoneLbl + '.');
   }
-  return 'https://wa.me/255672450934?text=' + encodeURIComponent(parts.join(' '));
+  return 'https://wa.me/' + BUSINESS_WHATSAPP + '?text=' + encodeURIComponent(parts.join(' '));
 }
 
 /** Build deterministic reply with quick-reply buttons */
@@ -456,7 +460,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
       (profile.dates ? ' on ' + profile.dates : '') +
       (profile.adults ? ' for ' + profile.adults + (profile.children ? ' adults + ' + profile.children + ' children' : ' guests') : '') +
       (profile.name ? '. My name is ' + profile.name : '') + '.';
-    const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
+    const waUrl = 'https://wa.me/' + BUSINESS_WHATSAPP + '?text=' + encodeURIComponent(waMsg);
     return {
       message: '**Live Availability**\n\n' +
         (availabilityService ? 'For **' + availabilityService.name + '**, ' : '') +
@@ -506,7 +510,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
           ? 'Jambo Spice & Sail! I would like to book a private transfer: ' + svc.name + (profile.dates ? ' on ' + profile.dates : '') + '.'
           : 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.') +
           (profile.name ? ' My name is ' + profile.name + '.' : '');
-        const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
+        const waUrl = 'https://wa.me/' + BUSINESS_WHATSAPP + '?text=' + encodeURIComponent(waMsg);
         const inc = (svc.includes || []).join(', ') || 'Licensed guide, gear & marine fees';
 
         const quickReplies = isTransfer
@@ -536,19 +540,29 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   }
 
   if (intent === 'all_tours') {
-    const list = [
-      '• **Safari Blue / Menai Bay dhow day** — $60–$160 pp (7–9 hrs, seafood BBQ & sandbank)',
-      '• **Mnemba Atoll Snorkeling & Dolphins** — $70–$150 pp (3–6 hrs, marine reserve reefs)',
-      '• **Stone Town Historical Walking Tour** — $45–$80 pp (2–4 hrs, UNESCO heritage)',
-      '• **Prison Island & Nakupenda Sandbank** — $55–$120 pp (4–6 hrs, giant tortoises)',
-      '• **Organic Spice Farm Cultural Tour** — $30–$50 pp (2–3 hrs, tasting & village lunch)',
-      '• **Jozani Forest & Red Colobus Monkeys** — $40–$70 pp (2–4 hrs, mangrove boardwalk)',
-      '• **Sunset Dhow Sailing Cruise** — $45–$85 pp (2–3 hrs, Stone Town / Kendwa coast)',
-      '• **Private Airport & Inter-Hotel Transfers** — $35–$60 per vehicle (door-to-door)'
-    ].join('\n');
+    // Keep the featured list short, but read every name and rate from the live
+    // catalogue so this summary cannot drift away from /quote.
+    const featuredSlugs = [
+      'safari-blue',
+      'mnemba-snorkeling',
+      'stone-town-walking-tour',
+      'prison-island-nakupenda',
+      'spice-farm',
+      'jozani-forest',
+      'sunset-dhow-cruise',
+      'airport-transfer-znz-to-nungwikendwa'
+    ];
+    const featuredServices = featuredSlugs.map(getService).filter(Boolean);
+    const list = featuredServices.map(function (service) {
+      const price = service.pricing && service.pricing.display
+        ? service.pricing.display + ' ' + unitLabel(service)
+        : 'Price on request';
+      const duration = service.duration ? ' (' + service.duration + ')' : '';
+      return '• **' + service.name + '** — ' + price + duration;
+    }).join('\n');
     return {
-      message: '**Spice & Sail Zanzibar Experiences Catalogue:**\n\n' + list + '\n\nWhich experience would you like to explore or get an exact quote for?' + hoursNote,
-      quickReplies: ['Safari Blue', 'Mnemba snorkeling', 'Stone Town tour', 'Airport transfers'],
+      message: '**Popular Zanzibar Experiences from Our Catalogue:**\n\n' + list + '\n\nWhich experience would you like to explore or get an exact quote for?' + hoursNote,
+      quickReplies: featuredServices.slice(0, 3).map(function (service) { return service.name; }).concat(['Airport transfers']),
       requestContact: false,
     };
   }
@@ -583,7 +597,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
 
     const svcName = targetSvc ? targetSvc.name : 'a Zanzibar experience';
     const waMsg = 'Jambo Spice & Sail! I would like to reserve ' + svcName + (profile.adults ? ' for ' + profile.adults + (profile.children ? ' adults + ' + profile.children + ' children' : ' guests') : '') + (profile.dates ? ' on ' + profile.dates : '') + (profile.name ? '. My name is ' + profile.name : '') + '.';
-    const waUrl = 'https://wa.me/255672450934?text=' + encodeURIComponent(waMsg);
+    const waUrl = 'https://wa.me/' + BUSINESS_WHATSAPP + '?text=' + encodeURIComponent(waMsg);
     
     return {
       message: '**Reserve Your Zanzibar Experience**\n\n' +
@@ -630,7 +644,9 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     const list = transfers.map(function (t) { return '• **' + t.name + '** — ' + t.pricing.display + ' ' + unitLabel(t); }).join('\n');
     return {
       message: '**Airport Transfers**\n\n' + list + '\n\nAll transfers include meet & greet, flight tracking, and private vehicle (up to 4 guests). Zero advance deposit — pay on arrival. Our team confirms your booking.' + hoursNote,
-      quickReplies: ['ZNZ to Stone Town ($35–$40)', 'ZNZ to Paje / Jambiani ($45–$55)', 'ZNZ to Nungwi / Kendwa ($50–$60)', 'Larger group?'],
+      quickReplies: transfers.slice(0, 3).map(function (service) {
+        return service.name + ' (' + ((service.pricing && service.pricing.display) || 'price on request') + ')';
+      }).concat(['Larger group?']),
       requestContact: false,
     };
   }
