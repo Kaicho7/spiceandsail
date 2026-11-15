@@ -68,9 +68,14 @@ function makeSrcSet(imagePath, format) {
 }
 
 function setAttr(tag, name, value) {
-  const re = new RegExp('\\s' + name + '\\s*=', 'i');
-  if (re.test(tag)) return tag;
-  return tag.replace(/\s*\/?>$/, ' ' + name + '="' + encodeHtml(value) + '"$&');
+  const replacement = ' ' + name + '="' + encodeHtml(value) + '"';
+  const doubleQuoted = new RegExp('\\s' + name + '\\s*=\\s*"[^"]*"', 'i');
+  const singleQuoted = new RegExp("\\s" + name + "\\s*=\\s*'[^']*'", 'i');
+  const unquoted = new RegExp('\\s' + name + '\\s*=\\s*[^\\s>]+', 'i');
+  if (doubleQuoted.test(tag)) return tag.replace(doubleQuoted, replacement);
+  if (singleQuoted.test(tag)) return tag.replace(singleQuoted, replacement);
+  if (unquoted.test(tag)) return tag.replace(unquoted, replacement);
+  return tag.replace(/\s*\/?>$/, replacement + '$&');
 }
 
 let scanned = 0;
@@ -90,7 +95,7 @@ walk(DIST, file => {
 
     let next = tag;
     const className = attrs.class || '';
-    const isHero = /(^|\\s)(tour-hero-image|home-hero-image|transfer-hero-image)(\\s|$)/i.test(className);
+    const isHero = /(^|\s)(tour-hero-image|home-hero-image|transfer-hero-image)(\s|$)/i.test(className);
     const isCard = /card|thumb|gallery|tile|grid/i.test(className);
     const defaultSizes = isCard
       ? '(max-width: 700px) 100vw, (max-width: 1024px) 50vw, 33vw'
