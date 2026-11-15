@@ -2,15 +2,13 @@
   "ci": {
     "collect": {
       "numberOfRuns": 3,
-      "startServerCommand": "PORT=8080 node scripts/local-preview-server.js",
       "url": [
-        "http://localhost:8080/",
-        "http://localhost:8080/tours/",
-        "http://localhost:8080/transfers/",
-        "http://localhost:8080/hotels/"
+        "http://localhost/",
+        "http://localhost/tours/",
+        "http://localhost/transfers/",
+        "http://localhost/hotels/"
       ],
-      "startServerReadyPattern": "local preview listening on",
-      "startServerReadyTimeout": 10000
+      "staticDistDir": "./dist"
     },
     "assert": {
       "assertions": {

@@ -235,18 +235,20 @@ test('redesign: transfer calculator only quotes verified destinations and hands 
 });
 
 
-test('redesign: CI Lighthouse audits the local build without requiring a hosting account', () => {
+
+test('redesign: CI Lighthouse audits the static build without requiring a hosting account', () => {
   const config = JSON.parse(read('lighthouserc.json'));
   const workflow = read('.github/workflows/deploy.yml');
-  assert.strictEqual(config.ci.collect.startServerCommand, 'PORT=8080 node scripts/local-preview-server.js');
+  assert.strictEqual(config.ci.collect.staticDistDir, './dist');
   assert.deepStrictEqual(config.ci.collect.url, [
-    'http://localhost:8080/',
-    'http://localhost:8080/tours/',
-    'http://localhost:8080/transfers/',
-    'http://localhost:8080/hotels/'
+    'http://localhost/',
+    'http://localhost/tours/',
+    'http://localhost/transfers/',
+    'http://localhost/hotels/'
   ]);
   assert.strictEqual(config.ci.assert.assertions['categories:performance'][1].minScore, 0.9);
   assert.strictEqual(config.ci.assert.assertions['categories:seo'][1].minScore, 0.9);
+  assert.strictEqual(config.ci.assert.assertions['categories:accessibility'][1].minScore, 0.95);
   assert.ok(workflow.includes('lighthouse-ci-action@v11'));
   assert.ok(!/NETLIFY_AUTH_TOKEN|NETLIFY_SITE_ID|netlify deploy|preview-deploy/.test(workflow));
 });
