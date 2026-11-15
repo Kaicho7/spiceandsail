@@ -76,6 +76,14 @@ test('redesign: responsive image helper makes heroes high priority and other ima
   assert.ok(helper.includes(`type="image/webp"`));
 });
 
+test('redesign: concierge date and WhatsApp prefill validators match real values', () => {
+  const concierge = read('public/js/concierge.js');
+  const chat = read('netlify/functions/chat.js');
+  assert.ok(concierge.includes('/^\\d{4}-\\d{2}-\\d{2}$/'), 'booking date must match YYYY-MM-DD');
+  assert.ok(concierge.includes('/^\\d{8,15}$/'), 'concierge must accept digit-only international WhatsApp numbers');
+  assert.ok(chat.includes('/^\\d{8,15}$/'), 'server chat must validate digit-only WhatsApp configuration');
+});
+ 
 test('redesign: browser scripts are syntactically valid', () => {
   for (const file of ['public/js/eco-swahili.js', 'public/js/concierge.js', 'public/js/i18n-currency.js']) {
     const code = read(file);
