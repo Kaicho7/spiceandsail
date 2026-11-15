@@ -277,6 +277,15 @@ alternate_it: "https://spiceandsail.com/it/trasferimenti/aeroporto-paje/"
       <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hallo%21%20Ich%20m%C3%B6chte%20einen%20Flughafen%20nach%20Paje%20Transfer%20reservieren.%20Flugdaten%3A" target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.1rem; padding: 14px 28px;">💬 Auf WhatsApp Reservieren ({{ site.contact.whatsapp_display }})</a>
     </div>
   </section>
+
+  <section class="brand-booking-block">
+    <p class="swahili-kicker"><span>Usafiri</span><small>Transport</small></p>
+    <h2>Frage diesen Transfer an</h2>
+    {% set bookingType = "Transfer enquiry" %}
+    {% set bookingService = "{{ title }}" %}
+    {% include "booking-panel.njk" %}
+  </section>
+
 </main>
 
 <script type="application/ld+json">
