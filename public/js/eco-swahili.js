@@ -3,7 +3,8 @@
   'use strict';
 
   function waUrl(message) {
-    var number = document.body.getAttribute('data-whatsapp-number') || '255672450934';
+    var number = document.body.getAttribute('data-whatsapp-number') || '';
+    if (!/^\\d{8,15}$/.test(number)) return '';
     return 'https://wa.me/' + number + '?text=' + encodeURIComponent(message);
   }
 
@@ -22,11 +23,12 @@
         var tripEl = form.querySelector('[name="trip"]');
         var dateEl = form.querySelector('[name="date"]');
         var guestsEl = form.querySelector('[name="guests"]');
+        var kindEl = form.querySelector('[name="kind"]');
         var trip = (tripEl && tripEl.value || '').trim();
         var dateValue = dateEl && dateEl.value;
         var guests = guestsEl && guestsEl.value;
+        var kind = kindEl && kindEl.value || 'enquiry';
         if (!trip || !dateValue || !guests || !form.reportValidity()) return;
-        var kind = form.getAttribute('data-trip-kind') || 'enquiry';
         var kindLabel = kind === 'tour' ? 'Tour' : kind === 'transfer' ? 'Transfer' : 'Trip enquiry';
         var message = [
           'Jambo Spice & Sail! I would like to enquire about a ' + kindLabel.toLowerCase() + ': ' + trip + '.',
@@ -34,7 +36,9 @@
           'Guests: ' + guests + '.',
           'Please confirm availability and the final quote.'
         ].join(' ');
-        window.open(waUrl(message), '_blank', 'noopener,noreferrer');
+        var url = waUrl(message);
+        if (!url) return;
+        window.open(url, '_blank', 'noopener,noreferrer');
         track('whatsapp_enquiry', { enquiry_type: kind, item_name: trip, guest_count: Number(guests) });
       });
     });
@@ -54,8 +58,10 @@
       if (!itemName) return;
       var category = url.pathname.indexOf('/transfers/') === 0 ? 'transfer' : 'tour';
       var message = 'Jambo Spice & Sail! I would like details and a quote for ' + category + ': ' + itemName + '. Please share availability.';
+      var url = waUrl(message);
+      if (!url) return;
       var link = document.createElement('a');
-      link.href = waUrl(message);
+      link.href = url;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.className = 'sns-card-whatsapp';
