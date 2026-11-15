@@ -105,7 +105,7 @@ walk(DIST, file => {
     if (isHero) {
       next = setAttr(next, 'loading', 'eager');
       next = setAttr(next, 'fetchpriority', 'high');
-    } else {
+    } else if (attrs.loading !== 'eager') {
       next = setAttr(next, 'loading', 'lazy');
     }
 
