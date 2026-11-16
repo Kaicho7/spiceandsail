@@ -1,6 +1,6 @@
 /**
  * Spice & Sail Zanzibar — Multilingual & Multi-Currency Engine
- * Primary languages: English (en), Italian (it), German (de)
+ * Primary languages: English (en), Italian (it), German (de), French (fr), Polish (pl)
  * Supported Currencies: USD ($), EUR (€), GBP (£), PLN (zł), TZS (TSh)
  */
 (function() {
@@ -18,6 +18,8 @@
     en: { code: 'en', name: 'English', flag: '🇬🇧' },
     it: { code: 'it', name: 'Italiano', flag: '🇮🇹' },
     de: { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    fr: { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    pl: { code: 'pl', name: 'Polski', flag: '🇵🇱' }
   };
 
   var DICT = {
@@ -54,7 +56,9 @@
   var WA_GREETINGS = {
     en: "Hi Spice and Sail, I am inquiring about",
     it: "Ciao Spice and Sail, vorrei richiedere informazioni e preventivo per",
-    de: "Hallo Spice and Sail, ich interessiere mich für ein Angebot für"
+    de: "Hallo Spice and Sail, ich interessiere mich für ein Angebot für",
+    fr: "Bonjour Spice and Sail, je souhaite demander des informations et un devis pour",
+    pl: "Dzień dobry Spice and Sail, chciałbym zapytać o wycenę i rezerwację dla"
   };
 
   // State
@@ -264,50 +268,58 @@
     });
 
     // Trigger full-page Google Translate adapter if not English
-    if (window.googleTranslateElementInit && lang !== 'en') {
+    if (lang !== 'en') {
       applyGoogleTranslate(lang);
-    } else if (lang === 'en') {
+    } else {
       resetGoogleTranslate();
     }
   }
 
   function applyGoogleTranslate(targetLang) {
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo) {
-      combo.value = targetLang;
-      combo.dispatchEvent(new Event('change'));
-    } else {
-      // If Google translate script isn't loaded yet, initialize it
-      loadGoogleTranslateScript(targetLang);
+    var attempts = 0;
+    function tryApply() {
+      var combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        var translated = document.documentElement.classList.contains('translated-ltr') && combo.value === targetLang;
+        if (!translated) {
+          combo.value = targetLang;
+          combo.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        if (!translated && attempts < 40) {
+          attempts++;
+          setTimeout(tryApply, 250);
+        }
+        return;
+      }
+      if (attempts === 0) loadGoogleTranslateScript();
+      if (attempts < 40) {
+        attempts++;
+        setTimeout(tryApply, 250);
+      }
     }
+    tryApply();
   }
 
   function resetGoogleTranslate() {
     var combo = document.querySelector('.goog-te-combo');
     if (combo) {
       combo.value = 'en';
-      combo.dispatchEvent(new Event('change'));
+      combo.dispatchEvent(new Event('change', { bubbles: true }));
     }
   }
 
-  function loadGoogleTranslateScript(initialLang) {
+  function loadGoogleTranslateScript() {
     if (document.getElementById('google-translate-script')) return;
     
     window.googleTranslateElementInit = function() {
       new window.google.translate.TranslateElement({
         pageLanguage: 'en',
-        includedLanguages: 'en,it,de',
+        includedLanguages: 'en,it,de,fr,pl',
         autoDisplay: false
       }, 'google_translate_element');
 
-      if (initialLang && initialLang !== 'en') {
-        setTimeout(function() {
-          var combo = document.querySelector('.goog-te-combo');
-          if (combo) {
-            combo.value = initialLang;
-            combo.dispatchEvent(new Event('change'));
-          }
-        }, 500);
+      if (currentLang && currentLang !== 'en') {
+        applyGoogleTranslate(currentLang);
       }
     };
 
@@ -379,7 +391,7 @@
 
     // Auto-load translation engine if user previously chose non-English
     if (currentLang !== 'en') {
-      loadGoogleTranslateScript(currentLang);
+      loadGoogleTranslateScript();
     }
     if (currentLang !== 'en' || currentCurrency !== 'USD') {
       updateTranslations();

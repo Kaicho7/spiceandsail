@@ -13,7 +13,7 @@ const { recommend } = require('../../src/lib/concierge/recommend');
 const { getQuote } = require('../../src/lib/concierge/pricing');
 const { checkReply } = require('../../src/lib/concierge/guardrail');
 const { tryLLM } = require('../../src/lib/concierge/llm');
-const { catalogue, CONFIG, isWithinBusinessHours, getService } = require('../../src/lib/concierge/catalogue');
+const { catalogue, CONFIG, isWithinBusinessHours, getService, getBusinessHoursLabel } = require('../../src/lib/concierge/catalogue');
 const hotelContracts = require('../../src/lib/concierge/hotel-contracts');
 
 const BUSINESS_WHATSAPP = (CONFIG && /^\d{8,15}$/.test(CONFIG.whatsappNumber || ''))
@@ -335,6 +335,7 @@ function buildWhatsAppUrl(profile, serviceSlugs) {
 function buildDeterministicReply(intent, text, profile, turnCount) {
   const afterHours = !isWithinBusinessHours();
   const replyWindow = CONFIG.replyWindow || 'within a few hours during business hours';
+  const businessHoursLabel = getBusinessHoursLabel();
 
   function unitLabel(svc) {
     const p = svc.pricing || {};
@@ -344,7 +345,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   }
 
   const hoursNote = (afterHours && turnCount === 1)
-    ? '\n\n*Note: Our human operations desk is offline right now — messages are answered the next business morning (Mon–Sat, 08:00–18:00 EAT).*'
+    ? '\n\n*Note: Our human operations desk is offline right now — messages are answered the next business morning (' + businessHoursLabel + ').*'
     : '';
 
   // ---- hotel stay rates (partner hotels, private quoting) ----
@@ -667,7 +668,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
 
   if (intent === 'hours') {
     return {
-      message: 'Our team is available **Monday to Saturday, 08:00–18:00** (East Africa Time). ' + (afterHours ? 'We\'re currently offline — messages will be answered the next business morning.' : 'We\'re online right now and reply ' + replyWindow + '.') + '\n\nYou can also reach us on WhatsApp: ' + BUSINESS_WHATSAPP_DISPLAY,
+      message: 'Our team is available **' + businessHoursLabel + '**. ' + (afterHours ? 'We\'re currently offline — messages will be answered the next business morning.' : 'We\'re online right now and reply ' + replyWindow + '.') + '\n\nYou can also reach us on WhatsApp: ' + BUSINESS_WHATSAPP_DISPLAY,
       quickReplies: ['Plan my trip', 'Get a quote'],
       requestContact: false,
     };

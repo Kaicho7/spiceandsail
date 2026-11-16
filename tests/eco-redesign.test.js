@@ -19,14 +19,18 @@ test('redesign: shared header loads self-hosted fonts and mobile contact actions
   for (const action of ['WhatsApp', 'Call', 'Enquire']) assert.ok(header.includes('>' + action + '<'));
 });
 
-test('redesign: language menu and runtime only enable published language routes', () => {
+test('redesign: language menu and runtime expose all five supported languages', () => {
   const header = read('src/_includes/header.njk');
   const i18n = read('public/js/i18n-currency.js');
-  assert.ok(header.includes('value="en"') && header.includes('value="it"') && header.includes('value="de"'));
-  assert.ok(!header.includes('value="fr"') && !header.includes('value="pl"'));
   const langs = (i18n.match(/var\s+LANGS\s*=\s*\{([\s\S]*?)\n  \};/) || [])[1] || '';
-  assert.ok(langs.includes('en:') && langs.includes('it:') && langs.includes('de:'));
-  assert.ok(!/\bfr:|\bpl:/.test(langs));
+  for (const lang of ['en', 'it', 'de', 'fr', 'pl']) {
+    assert.ok(header.includes('value="' + lang + '"'), 'header must offer ' + lang);
+    assert.ok(new RegExp('\\b' + lang + ':').test(langs), 'LANGS must include ' + lang);
+  }
+  assert.ok(i18n.includes("includedLanguages: 'en,it,de,fr,pl'"), 'Google Translate must include all five languages');
+  assert.ok(i18n.includes('fr: "Bonjour Spice and Sail'), 'French WhatsApp greeting must be restored');
+  assert.ok(i18n.includes('pl: "Dzień dobry Spice and Sail'), 'Polish WhatsApp greeting must be restored');
+  assert.ok(!/window\.googleTranslateElementInit\s*&&\s*lang\s*!==\s*'en'/.test(i18n), 'translator must load on the first non-English selection');
 });
 
 test('redesign: all tour detail pages use the date and guest WhatsApp booking panel', () => {
@@ -65,6 +69,21 @@ test('redesign: analytics remains disabled until a verified build ID is configur
   assert.ok(eleventy.includes('/^G-[A-Z0-9]+$/'));
   assert.ok(seo.includes('requestIdleCallback'));
   assert.ok(!seo.includes('G-SNSZNZ2026'));
+});
+
+test('redesign: business hours are single-sourced and reflect 09:00-17:00 EAT', () => {
+  const config = JSON.parse(read('src/data/concierge-catalogue.json'));
+  const site = JSON.parse(read('src/data/site.json'));
+  const chat = read('netlify/functions/chat.js');
+  const { getBusinessHoursLabel } = require('../src/lib/concierge/catalogue');
+  assert.strictEqual(config.config.businessHours.start, 9);
+  assert.strictEqual(config.config.businessHours.end, 17);
+  assert.ok(config.config.replyWindow.includes('09:00–17:00 EAT'));
+  assert.strictEqual(site.hours.open, '09:00');
+  assert.strictEqual(site.hours.close, '17:00');
+  assert.strictEqual(getBusinessHoursLabel(), 'Mon–Sat, 09:00–17:00 EAT');
+  assert.ok(chat.includes('getBusinessHoursLabel'));
+  assert.ok(!chat.includes('08:00–18:00') && !chat.includes('08:00-18:00'));
 });
 
 test('redesign: responsive image helper makes heroes high priority and other images lazy', () => {
@@ -126,6 +145,10 @@ test('redesign: hotel directory loads all 198 properties progressively and keeps
   const partial = read('src/_includes/hotel-card.njk');
   const helper = read('scripts/add-responsive-images.js');
   assert.ok(page.includes('hotels.hotels.slice(0, 16)'));
+  assert.ok(page.includes('Showing 16 of {{ hotels.hotels | length }} properties'), 'count indicator must match the initial 16 cards');
+  assert.ok(page.includes('The first 16 properties remain available.'), 'fallback must not promise 48 cards');
+  assert.ok(!page.includes('Showing 48'), 'stale 48-card count must be removed');
+  assert.ok(!page.includes('first 48'), 'stale 48-card fallback must be removed');
   assert.ok(page.includes('id="load-more-hotels"'));
   assert.ok(page.includes('data-total-hotels="{{ hotels.hotels | length }}"'));
   assert.ok(page.includes("ensureAllCardsLoaded().then(filterHotels)"));

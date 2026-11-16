@@ -24,8 +24,8 @@
   },
   "hours": {
     "days": "Monday–Saturday",
-    "open": "08:00",
-    "close": "18:00",
+    "open": "09:00",
+    "close": "17:00",
     "timezone": "EAT (UTC+3)"
   },
   "social": {
