@@ -67,6 +67,22 @@ function makeSrcSet(imagePath, format) {
   return WIDTHS.map(width => netlifyVariant(imagePath, format, width) + ' ' + width + 'w').join(', ');
 }
 
+function localVariant(imagePath, width) {
+  const rel = imagePath.replace(/^\/images\//, '').replace(/\.(?:jpe?g|png|webp)$/i, '');
+  return '/images/__resp/' + rel + '-' + width + '.webp';
+}
+
+function localSrcSet(imagePath) {
+  const entries = [];
+  for (const width of WIDTHS) {
+    const url = localVariant(imagePath, width);
+    if (fs.existsSync(path.join(DIST, url.replace(/^\//, '')))) {
+      entries.push(url + ' ' + width + 'w');
+    }
+  }
+  return entries.length ? entries.join(', ') : null;
+}
+
 function setAttr(tag, name, value) {
   const replacement = ' ' + name + '="' + encodeHtml(value) + '"';
   const doubleQuoted = new RegExp('\\s' + name + '\\s*=\\s*"[^"]*"', 'i');
@@ -84,7 +100,8 @@ let localFallback = 0;
 walk(DIST, file => {
   const original = fs.readFileSync(file, 'utf8');
   let changed = false;
-  const output = original.replace(/<img\b[^>]*>/gi, (tag, offset, whole) => {
+  const sizesByImage = new Map();
+  let output = original.replace(/<img\b[^>]*>/gi, (tag, offset, whole) => {
     scanned++;
     // Skip an image already inside a picture wrapper.
     const before = whole.slice(0, offset);
@@ -101,6 +118,7 @@ walk(DIST, file => {
       ? '(max-width: 700px) 100vw, (max-width: 1024px) 50vw, 33vw'
       : '(max-width: 700px) 100vw, (max-width: 1200px) 80vw, 60vw';
     if (!attrs.sizes) next = setAttr(next, 'sizes', defaultSizes);
+    if (!sizesByImage.has(imagePath)) sizesByImage.set(imagePath, attrs.sizes || defaultSizes);
     if (!attrs.decoding) next = setAttr(next, 'decoding', 'async');
     if (isHero) {
       next = setAttr(next, 'loading', 'eager');
@@ -110,7 +128,13 @@ walk(DIST, file => {
     }
 
     if (!NETLIFY_BUILD) {
-      localFallback++;
+      const localSet = localSrcSet(imagePath);
+      if (localSet) {
+        next = setAttr(next, 'srcset', localSet);
+        enhanced++;
+      } else {
+        localFallback++;
+      }
       changed = changed || next !== tag;
       return next;
     }
@@ -124,8 +148,26 @@ walk(DIST, file => {
     return '<picture class="sns-responsive-picture">' + avif + webp + next + '</picture>';
   });
 
+  if (!NETLIFY_BUILD) {
+    let preloadChanged = false;
+    output = output.replace(/<link\b[^>]*>/gi, tag => {
+      if (!/\brel\s*=\s*["']?preload["']?/i.test(tag) ||
+          !/\bas\s*=\s*["']?image["']?/i.test(tag)) return tag;
+      const attrs = parseAttrs(tag);
+      const imagePath = sourceImagePath(attrs.href);
+      if (!imagePath) return tag;
+      const localSet = localSrcSet(imagePath);
+      if (!localSet) return tag;
+      let next = setAttr(tag, 'imagesrcset', localSet);
+      next = setAttr(next, 'imagesizes', sizesByImage.get(imagePath) || '100vw');
+      if (next !== tag) preloadChanged = true;
+      return next;
+    });
+    changed = changed || preloadChanged;
+  }
+
   if (changed) fs.writeFileSync(file, output);
 });
 
-console.log('responsive-images: scanned ' + scanned + ' img tags; AVIF/WebP picture sets ' +
-  (NETLIFY_BUILD ? enhanced : 0) + '; local fallbacks ' + localFallback);
+console.log('responsive-images: scanned ' + scanned + ' img tags; responsive srcsets ' +
+  enhanced + '; local fallbacks ' + localFallback);
