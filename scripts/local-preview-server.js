@@ -138,7 +138,7 @@ function serveFile(res, filePath, err, stat, url, DIST, send) {
   const type = {
     '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css',
     '.json': 'application/json', '.xml': 'application/xml', '.txt': 'text/plain',
-    '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml',
+    '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.webmanifest': 'application/manifest+json',
     '.ico': 'image/x-icon'
   }[ext] || 'application/octet-stream';
   fs.createReadStream(filePath)

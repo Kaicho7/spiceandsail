@@ -27,7 +27,7 @@ permalink: "/tours/index.html"
       <article class="card tour-card reveal" data-category="{{ tour.category }}">
         <div class="card-image">
           {% set imgFile = __slugMap[tour.slug] or __slugMap[tour.seo_slug] or "default-tour-hero.jpg" %}
-          <img src="{{ imgFile | cdnFile }}" alt="{{ imgFile | canonicalAlt(tour.title) }}" class="tour-card-image" loading="lazy">
+          <img src="{{ imgFile | cdnFile }}" alt="{{ imgFile | canonicalAlt(tour.title) }}" class="tour-card-image" width="800" height="500" sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 380px" decoding="async" loading="{% if loop.index <= 2 %}eager{% else %}lazy{% endif %}"{% if loop.first %} fetchpriority="high"{% endif %}>
         </div>
         <div class="card-content">
           <span class="tour-category">{{ tour.category | attractionTypeLabel }}</span>
@@ -37,6 +37,7 @@ permalink: "/tours/index.html"
           <div class="card-footer">
             <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
             <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-sm">Details & Booking</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20details%20and%20a%20quote%20for%20{{ tour.title | urlencode }}." target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ tour.title }}">Ask on WhatsApp</a>
           </div>
         </div>
       </article>

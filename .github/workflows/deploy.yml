@@ -1,4 +1,8 @@
-name: Build, Test & Deploy
+name: Build, Test & Lighthouse
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 on:
   push:
@@ -10,6 +14,8 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -18,51 +24,50 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+      - name: Capture pre-redesign URL and SEO inventory (once only)
+        id: baseline
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11'
+        run: |
+          if [ -s audit/url-inventory-before.csv ] && [ "$(wc -l < audit/url-inventory-before.csv)" -gt 1 ]; then
+            echo "captured=false" >> "$GITHUB_OUTPUT"
+            echo "Existing pre-redesign inventory found; preserving it."
+          else
+            node scripts/audit-url-inventory.js
+            echo "captured=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit rendered baseline inventory to the feature branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11' && steps.baseline.outputs.captured == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          file_sha=$(gh api "repos/${GITHUB_REPOSITORY}/contents/audit/url-inventory-before.csv?ref=${GITHUB_HEAD_REF}" --jq .sha)
+          encoded=$(base64 -w 0 audit/url-inventory-before.csv)
+          gh api --method PUT "repos/${GITHUB_REPOSITORY}/contents/audit/url-inventory-before.csv" \
+            -f message='chore(audit): save rendered pre-redesign SEO inventory [skip ci]' \
+            -f branch="${GITHUB_HEAD_REF}" \
+            -f sha="${file_sha}" \
+            -f content="${encoded}"
+      - name: Compare rendered URLs and SEO to the original baseline
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11' && hashFiles('audit/url-inventory-before.csv') != ''
+        env:
+          SEO_INVENTORY_OUTPUT: audit/url-inventory-after.csv
+        run: |
+          node scripts/audit-url-inventory.js
+          node scripts/compare-seo-inventory.js audit/url-inventory-before.csv audit/url-inventory-after.csv
+      - name: Upload pre-redesign URL and SEO inventory
+        if: github.event_name == 'pull_request' && github.head_ref == 'redesign/eco-swahili-mobile-2026-11' && hashFiles('audit/url-inventory-before.csv') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: url-inventory-before
+          path: audit/url-inventory-before.csv
+          if-no-files-found: error
+          retention-days: 7
       - run: npm test
 
-  # Netlify production deployment is manual. GitHub must not publish the site
-  # on every master push; the site owner handles Netlify or dispatches this
-  # workflow explicitly when they want a deploy.
-  deploy-prod:
-    needs: build-test
-    if: github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-      - run: npm ci && npm run build
-      - uses: netlify/actions/cli@3185065f4ab2f6df6f2ef41ee013626e1c02a426
-        with:
-          args: deploy --dir=dist --prod
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-  lighthouse:
-    needs: build-test
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-      - run: npm ci && npm run build
-      - name: Start preview server
-        run: |
-          npx http-server dist -p 8080 -s &
-          sleep 5
-      - name: Run Lighthouse CI
+      - name: Run Lighthouse against the local production build
         uses: treosh/lighthouse-ci-action@v11
         with:
-          urls: |
-            http://localhost:8080
-            http://localhost:8080/tours/
-            http://localhost:8080/transfers/
-            http://localhost:8080/hotels/
           configPath: ./lighthouserc.json
           uploadArtifacts: true
+          artifactName: lighthouse-local-results

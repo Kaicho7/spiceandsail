@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Close mobile menu when clicking a destination leaf link
-  var leafLinks = document.querySelectorAll('.dropdown-menu a, .nav-item:not(.has-dropdown) a, .nav-cta a');
+  var leafLinks = document.querySelectorAll('.dropdown-menu a, .nav-item:not(.has-dropdown) a, .nav-cta a, .nav-cta');
   leafLinks.forEach(function (link) {
     link.addEventListener('click', function () {
       closeNav();

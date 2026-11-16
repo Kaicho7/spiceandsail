@@ -10,17 +10,25 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-nungwi/"
 
 <main class="content">
   <!-- Hero Section -->
-  <header class="page-header" style="background: linear-gradient(rgba(0, 61, 92, 0.85), rgba(0, 38, 59, 0.9)), url('{{ 'white-minivan-zanzibar-transfer-vehicle.jpg' | cdnFile }}') center/cover no-repeat; color: #fff; padding: 4.5rem 1rem 3.5rem; text-align: center;">
+  <header class="page-header transfer-hero" style="color: #fff; padding: 4.5rem 1rem 3.5rem; text-align: center;">
+    <img src="{{ 'white-minivan-zanzibar-transfer-vehicle.jpg' | cdnFile }}" alt="{{ 'white-minivan-zanzibar-transfer-vehicle.jpg' | canonicalAlt }}" class="transfer-hero-image" loading="eager" fetchpriority="high">
     <div class="container" style="max-width: 900px; margin: 0 auto;">
       <span class="section-tag" style="background: rgba(232, 168, 23, 0.25); color: #fbd364; border: 1px solid #e8a817; padding: 4px 12px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;">ZNZ ⇄ Nungwi Private Transfer</span>
+      <span class="swahili-kicker"><strong>Usafiri</strong><span>Island transfers</span></span>
       <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); margin: 1rem 0 0.8rem; line-height: 1.2;">Zanzibar Airport (ZNZ) to Nungwi Private Transfer</h1>
       <p style="font-size: 1.15rem; color: #e2e8f0; max-width: 720px; margin: 0 auto 1.8rem; line-height: 1.6;">Planning range {% catPrice "airport-transfer-znz-to-nungwikendwa" %} per vehicle • Flight delay tracking included • Door-to-door direct to your Nungwi or Kendwa resort • Air-conditioned minivans.</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20book%20a%20private%20transfer%20from%20Zanzibar%20Airport%20to%20Nungwi." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.05rem; padding: 12px 24px;">💬 Book on WhatsApp</a>
-        <button onclick="window.snsConcierge && window.snsConcierge.open()" class="btn btn-secondary" style="border: 2px solid #e8a817; color: #fff; background: rgba(0,0,0,0.3); font-size: 1rem; padding: 12px 20px;">🛎️ Open Trip Concierge</button>
+        <button type="button" data-sns-booking-open data-service-slug="airport-transfer-znz-to-nungwikendwa" class="btn btn-primary" style="font-size:1.05rem;padding:12px 24px;">Check transfer price &amp; book</button>
+        <button type="button" data-sns-booking-open data-service-slug="airport-transfer-znz-to-nungwikendwa" class="btn btn-secondary" style="border: 2px solid #e8a817; color: #fff; background: rgba(0,0,0,0.3); font-size: 1rem; padding: 12px 20px;">🛎️ Open Trip Concierge</button>
       </div>
     </div>
   </header>
+
+  {% set booking_slug = "airport-transfer-znz-to-nungwikendwa" %}
+  {% set booking_kind = "transfer" %}
+  {% set booking_heading = "Plan your airport transfer" %}
+  {% set booking_intro = "Choose your arrival date and guest count. We’ll receive the route details directly in WhatsApp." %}
+  {% include "whatsapp-booking-panel.njk" %}
 
   <!-- Key Specs Ribbon -->
   <section style="background: #003d5c; color: #fff; padding: 1.25rem 0; border-bottom: 2px solid #e8a817;">
@@ -99,7 +107,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-nungwi/"
             <li>✓ Automatic flight radar delay tracking</li>
             <li>✓ Bottled mineral water included</li>
           </ul>
-          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20book%20a%20Standard%20Minivan%20transfer%20from%20Airport%20to%20Nungwi." target="_blank" rel="noopener" class="btn btn-primary" style="text-align: center; width: 100%;">Book Minivan</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20book%20a%20Standard%20Minivan%20transfer%20from%20Airport%20to%20Nungwi." target="_blank" rel="noopener" class="btn btn-primary" style="text-align: center; width: 100%;">Ask on WhatsApp (Minivan)</a>
         </div>
 
         <!-- Vehicle 2: Extended Minivan / Large Group -->
@@ -117,7 +125,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-nungwi/"
             <li>✓ Flight tracking with standby on delays</li>
             <li>✓ Child safety seats available on request (free)</li>
           </ul>
-          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20book%20a%20Group%20Minivan%20transfer%20from%20Airport%20to%20Nungwi." target="_blank" rel="noopener" class="btn btn-primary" style="text-align: center; width: 100%; background: var(--dct-ocean);">Book Group Van</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20book%20a%20Group%20Minivan%20transfer%20from%20Airport%20to%20Nungwi." target="_blank" rel="noopener" class="btn btn-primary" style="text-align: center; width: 100%; background: var(--dct-ocean);">Ask on WhatsApp (Group Van)</a>
         </div>
 
         <!-- Vehicle 3: Round-Trip Combo Deal -->
@@ -133,7 +141,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-nungwi/"
             <li>✓ Punctual departure pickup timed for your international check-in</li>
             <li>✓ Island logistics planned with the team before you pay</li>
           </ul>
-          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20book%20a%20Round-Trip%20Airport-Nungwi%20transfer%20pass." target="_blank" rel="noopener" class="btn btn-secondary" style="text-align: center; width: 100%;">Book Round-Trip</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20book%20a%20Round-Trip%20Airport-Nungwi%20transfer%20pass." target="_blank" rel="noopener" class="btn btn-secondary" style="text-align: center; width: 100%;">Ask on WhatsApp (Round Trip)</a>
         </div>
       </div>
     </div>
@@ -153,40 +161,28 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-nungwi/"
             <tr style="background: #003d5c; color: #fff; text-align: left;">
               <th style="padding: 14px 16px;">Service Feature</th>
               <th style="padding: 14px 16px; background: #005f8a; color: #fbd364;">Spice and Sail Zanzibar</th>
-              <th style="padding: 14px 16px;">Airport Touts / Walk-in Taxis</th>
-              <th style="padding: 14px 16px;">Shared Hotel Shuttles</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 12px 16px; font-weight: 600;">Pricing Structure</td>
               <td style="padding: 12px 16px; color: #005f8a; font-weight: 700; background: #f0f9ff;">{% catPrice "airport-transfer-znz-to-nungwikendwa" %} per vehicle (confirmed by our team)</td>
-              <td style="padding: 12px 16px; color: #dc2626;">$70–$100 (Haggled on arrival)</td>
-              <td style="padding: 12px 16px;">$35–$45 per person ($70–$90 for 2)</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 12px 16px; font-weight: 600;">Meet & Greet</td>
               <td style="padding: 12px 16px; color: #16a34a; background: #f0f9ff;">✓ Inside terminal with name sign</td>
-              <td style="padding: 12px 16px; color: #dc2626;">✗ Crowd of touts in parking lot</td>
-              <td style="padding: 12px 16px;">△ Shared desk waiting area</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 12px 16px; font-weight: 600;">Flight Delay Tracking</td>
               <td style="padding: 12px 16px; color: #16a34a; background: #f0f9ff;">✓ Real-time radar; zero penalty</td>
-              <td style="padding: 12px 16px; color: #64748b;">Not tracked</td>
-              <td style="padding: 12px 16px; color: #dc2626;">✗ Fixed departure times only</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 12px 16px; font-weight: 600;">Travel Route</td>
               <td style="padding: 12px 16px; color: #16a34a; background: #f0f9ff;">✓ Direct non-stop to your resort</td>
-              <td style="padding: 12px 16px;">Direct (if route known)</td>
-              <td style="padding: 12px 16px; color: #dc2626;">✗ Multiple hotel drop-offs (2+ hrs)</td>
             </tr>
             <tr>
               <td style="padding: 12px 16px; font-weight: 600;">Vehicle Standard</td>
               <td style="padding: 12px 16px; color: #16a34a; background: #f0f9ff;">✓ Modern A/C tourist minivan</td>
-              <td style="padding: 12px 16px; color: #64748b;">Variable / Older sedans</td>
-              <td style="padding: 12px 16px;">Standard minibus</td>
             </tr>
           </tbody>
         </table>
@@ -283,7 +279,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/airport-to-nungwi/"
     <div class="container" style="max-width: 800px; margin: 0 auto;">
       <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 0.8rem; color: #fff;">Arrive in Zanzibar Stress-Free</h2>
       <p style="font-size: 1.1rem; color: #cbd5e1; margin-bottom: 2rem;">Message us your flight details on WhatsApp. We confirm your driver and send your meet & greet voucher after the team confirms.</p>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20reserve%20an%20Airport%20to%20Nungwi%20transfer.%20Flight%20details%3A" target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.1rem; padding: 14px 28px;">💬 Reserve on WhatsApp ({{ site.contact.whatsapp_display }})</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20would%20like%20to%20reserve%20an%20Airport%20to%20Nungwi%20transfer.%20Flight%20details%3A" target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.1rem; padding: 14px 28px;">Ask our team on WhatsApp ({{ site.contact.whatsapp_display }})</a>
     </div>
   </section>
 </main>

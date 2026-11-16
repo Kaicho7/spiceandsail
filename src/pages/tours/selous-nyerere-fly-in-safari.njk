@@ -22,9 +22,11 @@ tour_slug: "selous-nyerere-fly-in-safari"
         <span class="price-amount">{% catPrice "selous-nyerere-fly-in-safari" %}</span>
         <span class="price-note">per person</span>
       </div>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20Selous%20Nyerere%202%20day%20safari%20from%20Zanzibar" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
+      <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check price &amp; book</button>
     </div>
   </section>
+
+  {% include "tour-booking-panel.njk" %}
 
   <div class="tour-grid">
     <div class="tour-main">

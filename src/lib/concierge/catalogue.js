@@ -27,6 +27,24 @@ function getService(slug) {
   return (catalogue.services || []).find(s => s.slug === slug) || null;
 }
 
+const DAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+/** Human-readable business-hours label derived from the single config source. */
+function getBusinessHoursLabel() {
+  const bh = CONFIG.businessHours;
+  if (!bh || !Array.isArray(bh.days) || !bh.days.length) return 'business hours';
+  const days = bh.days.slice().sort((a, b) => a - b);
+  let dayLabel;
+  if (days.length === 7) dayLabel = 'Every day';
+  else if (days.join(',') === '1,2,3,4,5,6') dayLabel = 'Mon–Sat';
+  else if (days.join(',') === '1,2,3,4,5') dayLabel = 'Mon–Fri';
+  else dayLabel = days.map(day => DAY_LABELS[day] || day).join(', ');
+  const pad = value => String(value).padStart(2, '0');
+  const timezone = bh.tz === 'Africa/Dar_es_Salaam' ? 'EAT' : (bh.tz || '');
+  const timeLabel = `${pad(bh.start)}:00–${pad(bh.end)}:00${timezone ? ' ' + timezone : ''}`;
+  return `${dayLabel}, ${timeLabel}`;
+}
+
 /** Check if current time is within business hours. */
 function isWithinBusinessHours(now) {
   if (!now) now = new Date();
@@ -63,6 +81,7 @@ module.exports = {
   getZone,
   zoneName,
   getService,
+  getBusinessHoursLabel,
   isWithinBusinessHours,
   profileSummary,
 };

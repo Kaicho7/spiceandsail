@@ -13,7 +13,7 @@
   </div>
 
   <!-- Trigger Button -->
-  <button id="sns-concierge-trigger" class="sns-concierge-btn" aria-label="Open Zanzibar Trip Concierge" onclick="window.snsConcierge.open()">
+  <button id="sns-concierge-trigger" class="sns-concierge-btn" aria-label="Plan My Trip — Open Zanzibar Trip Concierge" onclick="window.snsConcierge.open()">
     <span class="sns-concierge-pulse" aria-hidden="true"></span>
     <span class="sns-concierge-icon" aria-hidden="true">🛎️</span>
     <span class="sns-concierge-label">Plan My Trip</span>
@@ -44,7 +44,7 @@
       </div>
 
       <!-- Form -->
-      <form id="sns-concierge-form" class="sns-concierge-form" novalidate>
+      <form id="sns-concierge-form" class="sns-concierge-form">
         <!-- Honeypot field for bot detection -->
         <input type="text" class="sns-honeypot" name="honeypot" aria-hidden="true" autocomplete="off" tabindex="-1" />
 
@@ -62,15 +62,8 @@
         <div class="sns-form-step" id="sns-step-2">
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-travelers">Number of Travelers</label>
-            <select id="sns-travelers" class="sns-input-select" name="travelers">
-              <option value="1">1 Traveler (Solo)</option>
-              <option value="2" selected>2 Travelers (Couple / Pair)</option>
-              <option value="3">3 Travelers</option>
-              <option value="4">4 Travelers (Small Family/Group)</option>
-              <option value="5">5 Travelers</option>
-              <option value="6">6 Travelers (Private Group Minivan)</option>
-              <option value="9">9+ Travelers (Large Party)</option>
-            </select>
+            <input type="number" id="sns-travelers" class="sns-input-text" name="travelers" min="1" max="50" step="1" value="2" inputmode="numeric" required aria-describedby="sns-travelers-help">
+            <small id="sns-travelers-help">Enter your exact group size (1–50). For larger groups, add details in the notes.</small>
           </div>
 
           <div class="sns-field-group">
@@ -102,7 +95,7 @@
 
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-guest-name">Your Name</label>
-            <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required>
+            <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required minlength="2">
           </div>
 
           <!-- SEPARATE WhatsApp and email fields, at least one required -->

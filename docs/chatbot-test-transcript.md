@@ -12,7 +12,7 @@
 
 **Karibu!** I'm the Spice & Sail Island Concierge — your Zanzibar travel consultant. I recommend from our real tour catalogue, quote from verified prices, and pass requests to our human team who confirm every detail.
 
-Our team replies within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT).
+Our team replies within a few hours during business hours (Mon-Sat, 09:00-17:00 EAT).
 
 _We only use what you share here to answer and handle your request. See our [privacy notice](/privacy/) for details._
 
@@ -37,7 +37,7 @@ What would you like to do?
 
 **Karibu!** I'm the Spice & Sail Island Concierge — your Zanzibar travel consultant. I recommend from our real tour catalogue, quote from verified prices, and pass requests to our human team who confirm every detail.
 
-Our team replies within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT).
+Our team replies within a few hours during business hours (Mon-Sat, 09:00-17:00 EAT).
 
 _We only use what you share here to answer and handle your request. See our [privacy notice](/privacy/) for details._
 
@@ -66,7 +66,7 @@ What would you like to do?
 
 **Karibu!** I'm the Spice & Sail Island Concierge — your Zanzibar travel consultant. I recommend from our real tour catalogue, quote from verified prices, and pass requests to our human team who confirm every detail.
 
-Our team replies within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT).
+Our team replies within a few hours during business hours (Mon-Sat, 09:00-17:00 EAT).
 
 _We only use what you share here to answer and handle your request. See our [privacy notice](/privacy/) for details._
 
@@ -135,7 +135,7 @@ Ready to book? Click the WhatsApp button below to send your request directly to 
 
 **Karibu!** I'm the Spice & Sail Island Concierge — your Zanzibar travel consultant. I recommend from our real tour catalogue, quote from verified prices, and pass requests to our human team who confirm every detail.
 
-Our team replies within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT).
+Our team replies within a few hours during business hours (Mon-Sat, 09:00-17:00 EAT).
 
 _We only use what you share here to answer and handle your request. See our [privacy notice](/privacy/) for details._
 
@@ -316,7 +316,7 @@ All prices are quoted in USD. No online payment processing on the website — ou
 
 **Bot:**
 
-I'd love to help you with that! To send your request to our team, I'll need a few details. A short form will appear below — fill in your name, contact, and preferred date, and our team will confirm everything, within a few hours during business hours (Mon-Sat, 08:00-18:00 EAT).
+I'd love to help you with that! To send your request to our team, I'll need a few details. A short form will appear below — fill in your name, contact, and preferred date, and our team will confirm everything, within a few hours during business hours (Mon-Sat, 09:00-17:00 EAT).
 
 Ready to book? Click the WhatsApp button below to send your request directly to our team!
 

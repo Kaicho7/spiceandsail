@@ -1,6 +1,6 @@
 /**
  * Spice & Sail Zanzibar — Multilingual & Multi-Currency Engine
- * Primary Language: English (en) | Secondary: Italian (it), German (de), French (fr), Polish (pl)
+ * Primary languages: English (en), Italian (it), German (de), French (fr), Polish (pl)
  * Supported Currencies: USD ($), EUR (€), GBP (£), PLN (zł), TZS (TSh)
  */
 (function() {
@@ -67,6 +67,16 @@
 
   var currentLang = localStorage.getItem('sns_lang') || 'en';
   if (!LANGS[currentLang]) currentLang = 'en';
+
+  // Tagging every price rewrites text nodes across the whole document, so it is
+  // deferred until a visitor explicitly chooses a non-USD currency.
+  var pricesTagged = false;
+
+  function ensurePricesTagged() {
+    if (pricesTagged) return;
+    pricesTagged = true;
+    scanAndTagUsdPrices();
+  }
 
   function formatConverted(usdVal, currCode) {
     var c = RATES[currCode] || RATES.USD;
@@ -258,33 +268,47 @@
     });
 
     // Trigger full-page Google Translate adapter if not English
-    if (window.googleTranslateElementInit && lang !== 'en') {
+    if (lang !== 'en') {
       applyGoogleTranslate(lang);
-    } else if (lang === 'en') {
+    } else {
       resetGoogleTranslate();
     }
   }
 
   function applyGoogleTranslate(targetLang) {
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo) {
-      combo.value = targetLang;
-      combo.dispatchEvent(new Event('change'));
-    } else {
-      // If Google translate script isn't loaded yet, initialize it
-      loadGoogleTranslateScript(targetLang);
+    var attempts = 0;
+    function tryApply() {
+      var combo = document.querySelector('.goog-te-combo');
+      if (combo) {
+        var translated = document.documentElement.classList.contains('translated-ltr') && combo.value === targetLang;
+        if (!translated) {
+          combo.value = targetLang;
+          combo.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        if (!translated && attempts < 40) {
+          attempts++;
+          setTimeout(tryApply, 250);
+        }
+        return;
+      }
+      if (attempts === 0) loadGoogleTranslateScript();
+      if (attempts < 40) {
+        attempts++;
+        setTimeout(tryApply, 250);
+      }
     }
+    tryApply();
   }
 
   function resetGoogleTranslate() {
     var combo = document.querySelector('.goog-te-combo');
     if (combo) {
       combo.value = 'en';
-      combo.dispatchEvent(new Event('change'));
+      combo.dispatchEvent(new Event('change', { bubbles: true }));
     }
   }
 
-  function loadGoogleTranslateScript(initialLang) {
+  function loadGoogleTranslateScript() {
     if (document.getElementById('google-translate-script')) return;
     
     window.googleTranslateElementInit = function() {
@@ -294,14 +318,8 @@
         autoDisplay: false
       }, 'google_translate_element');
 
-      if (initialLang && initialLang !== 'en') {
-        setTimeout(function() {
-          var combo = document.querySelector('.goog-te-combo');
-          if (combo) {
-            combo.value = initialLang;
-            combo.dispatchEvent(new Event('change'));
-          }
-        }, 500);
+      if (currentLang && currentLang !== 'en') {
+        applyGoogleTranslate(currentLang);
       }
     };
 
@@ -319,6 +337,7 @@
     localStorage.setItem('sns_currency', code);
     var sel = document.getElementById('currencySelect');
     if (sel) sel.value = code;
+    if (code !== 'USD') ensurePricesTagged();
     updatePricesOnPage();
   }
 
@@ -349,7 +368,10 @@
 
   // Initialize on DOM load
   document.addEventListener('DOMContentLoaded', function() {
-    scanAndTagUsdPrices();
+    if (currentCurrency !== 'USD') {
+      ensurePricesTagged();
+      updatePricesOnPage();
+    }
 
     var cSel = document.getElementById('currencySelect');
     if (cSel) {
@@ -369,10 +391,12 @@
 
     // Auto-load translation engine if user previously chose non-English
     if (currentLang !== 'en') {
-      loadGoogleTranslateScript(currentLang);
+      loadGoogleTranslateScript();
     }
-
-    updatePricesOnPage();
-    updateTranslations();
+    if (currentLang !== 'en' || currentCurrency !== 'USD') {
+      updateTranslations();
+    } else {
+      document.documentElement.lang = 'en';
+    }
   });
 })();

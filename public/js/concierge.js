@@ -54,9 +54,44 @@
 
   function getStatusEl() { return el('sns-submit-status'); }
 
+/* Allowed hrefs for links rendered in chat/status.
+     - relative paths starting with single / (not //, not containing backslash or encoded backslash)
+     - https://spiceandsail.com, https://www.spiceandsail.com
+     - https://wa.me/255672450934 (business WhatsApp)
+     - mailto: with percent-encoded address (validated in appendRichText) */
+  function isAllowedHref(href) {
+    if (!href) return false;
+    // Reject backslashes, encoded backslashes, and control characters
+    if (href.includes('\\') || /%5[Cc]/.test(href) || /[\x00-\x1F\x7F]/.test(href)) return false;
+    // Relative paths: must start with single /, not //, no backslashes
+    if (href.startsWith('/') && !href.startsWith('//')) return true;
+    // Absolute HTTPS: parse and check origin against allowlist
+    if (href.startsWith('https://')) {
+      try {
+        var url = new URL(href);
+        var allowedOrigins = [
+          'https://spiceandsail.com',
+          'https://www.spiceandsail.com',
+          'https://wa.me'
+        ];
+        return allowedOrigins.some(function (o) { return url.origin === o; });
+      } catch (e) {
+        return false; // malformed URL
+      }
+    }
+    // mailto already validated in appendRichText
+    if (href.startsWith('mailto:')) return true;
+    return false;
+  }
+
   /* All status/chat content is built with createElement/textContent — never
      innerHTML — so server text, user text and error details can never mount. */
   function safeLink(href, label) {
+    if (!isAllowedHref(href)) {
+      var span = document.createElement('span');
+      span.textContent = label;
+      return span;
+    }
     var a = document.createElement('a');
     a.setAttribute('href', href);
     a.setAttribute('target', '_blank');
@@ -74,21 +109,26 @@
     var cleaned = String(text)
       .replace(/\*\*/g, '')
       .replace(/(^|\s)_(?=\S)([^_]{1,200}?\S)_(?=\s|$|[.,!?])/g, '$1$2');
-    var re = /\[([^\]\n]{1,120})\]\(((?:\/|https:\/\/|mailto:)[^)\s]{1,200})\)/g;
+    var re = /\[([^\]\n]{1,120})\]\(((?:\/(?!\/)|https:\/\/|mailto:)[^)\s]{1,200})\)/g;
     var last = 0, m = re.exec(cleaned);
     while (m) {
       if (m.index > last) target.appendChild(document.createTextNode(cleaned.slice(last, m.index)));
-      if (m[2].startsWith('mailto:')) {
-        var addr = m[2].slice(7);
+      var href = m[2];
+      var label = m[1];
+      if (href.startsWith('mailto:')) {
+        var addr = href.slice(7);
         /* A mailto: address becomes a link only when percent-encoded
            (no raw '@', spaces, or other unreserved characters). */
         if (addr.includes('%') && !addr.includes('@') && addr.indexOf(' ') === -1) {
-          target.appendChild(safeLink(m[2], m[1]));
+          target.appendChild(safeLink(href, label));
         } else {
           target.appendChild(document.createTextNode(m[0]));
         }
+      } else if (isAllowedHref(href)) {
+        target.appendChild(safeLink(href, label));
       } else {
-        target.appendChild(safeLink(m[2], m[1]));
+        /* Disallowed href: render the full markdown as literal text */
+        target.appendChild(document.createTextNode(m[0]));
       }
       last = m.index + m[0].length;
       m = re.exec(cleaned);
@@ -126,6 +166,36 @@
     return p;
   }
 
+  /* ---------- step validation & field enable/disable ---------- */
+
+  function getStepFields(step) {
+    var stepEl = el('sns-step-' + step);
+    if (!stepEl) return [];
+    return stepEl.querySelectorAll('input, select, textarea');
+  }
+
+  function setStepEnabled(step, enabled) {
+    getStepFields(step).forEach(function (f) {
+      f.disabled = !enabled;
+    });
+  }
+
+  function validateStep(step) {
+    var fields = getStepFields(step);
+    var invalid = [];
+    fields.forEach(function (f) {
+      if (f.required && !f.disabled) {
+        if (!f.checkValidity()) invalid.push(f);
+      }
+    });
+    if (invalid.length > 0) {
+      invalid[0].focus({ preventScroll: true });
+      invalid[0].reportValidity();
+      return false;
+    }
+    return true;
+  }
+
   /* ---------- catalogue + service grid ---------- */
 
   function loadCatalogue() {
@@ -134,6 +204,10 @@
         if (res.ok && res.json && Array.isArray(res.json.services)) {
           state.services = res.json.services;
           state.replyWindow = (res.json.replyWindow || '').slice(0, 160) || null;
+          if (typeof res.json.whatsappNumber === 'string' && /^\d{8,15}$/.test(res.json.whatsappNumber)) {
+            WHATSAPP_URL = 'https://wa.me/' + res.json.whatsappNumber;
+            if (document.body) document.body.setAttribute('data-whatsapp-number', res.json.whatsappNumber);
+          }
           renderServiceGrid();
         }
         return state.services;
@@ -237,14 +311,28 @@
     });
   }
 
-  /* ---------- steps ---------- */
+/* ---------- steps ---------- */
 
   function goToStep(step) {
     if (step < 1 || step > 3) return;
+    if (step > state.currentStep) {
+      if (!validateStep(state.currentStep)) return;
+      // Step 1 → 2: require a service to be selected
+      if (state.currentStep === 1 && step === 2) {
+        var selected = document.querySelector('input[name="service"]:checked');
+        if (!selected) {
+          showStatus('error', 'Please choose a service before continuing.');
+          return;
+        }
+        state.selectedSlug = selected.value;
+      }
+    }
+    setStepEnabled(state.currentStep, false);
     state.currentStep = step;
     document.querySelectorAll('.sns-form-step').forEach(function (e) { e.classList.remove('active'); });
     var targetStep = el('sns-step-' + step);
     if (targetStep) targetStep.classList.add('active');
+    setStepEnabled(step, true);
     document.querySelectorAll('.sns-step-indicator').forEach(function (ind) {
       var stepNum = parseInt(ind.getAttribute('data-step'), 10);
       ind.classList.remove('active', 'completed');
@@ -388,7 +476,9 @@
       } else {
         var detail = (res.json && res.json.error) ? res.json.error :
           (!window.navigator.onLine ? 'You appear to be offline' : 'Sending failed');
-        showStatus('error', 'We could not save your request (' + detail + ').', 'I would like to plan a Zanzibar trip.');
+        var details = (res.json && res.json.details && Array.isArray(res.json.details) && res.json.details.length)
+          ? ' — ' + res.json.details.join('; ') : '';
+        showStatus('error', 'We could not save your request (' + detail + details + ').', 'I would like to plan a Zanzibar trip.');
       }
     }).catch(function () {
       var msg = 'We could not save your request' + (window.navigator.onLine ? '' : ' (you appear to be offline)') +
@@ -557,13 +647,13 @@
 
     if (path.indexOf('transfer') !== -1) {
       if (heading) heading.textContent = 'Need an airport transfer quote?';
-      if (sub) sub.textContent = 'Stone Town from $35, Nungwi $50. Instant booking!';
+      if (sub) sub.textContent = 'Share your route, preferred date and guest count. Our team confirms availability and the final quote.';
     } else if (path.indexOf('hotel') !== -1) {
       if (heading) heading.textContent = 'Booking a hotel or transfer?';
-      if (sub) sub.textContent = 'Direct island-wide transfers from your arrival gate.';
+      if (sub) sub.textContent = 'Tell us your pickup point and destination, and our team will help with the route.';
     } else if (path.indexOf('safari') !== -1) {
       if (heading) heading.textContent = 'Mainland safari fly-in questions?';
-      if (sub) sub.textContent = 'Mikumi day trips & Selous packages quoted live.';
+      if (sub) sub.textContent = 'Ask about safari options, dates and group size for a current planning range.';
     }
 
     // Trigger after 6 seconds on desktop/mobile
@@ -585,6 +675,13 @@
 
   /* ---------- open / close ---------- */
 
+  function localDateString(date) {
+    var year = date.getFullYear();
+    var month = String(date.getMonth() + 1).padStart(2, '0');
+    var day = String(date.getDate()).padStart(2, '0');
+    return year + '-' + month + '-' + day;
+  }
+
   function openConcierge(preselectKey) {
     if (!state.services && !state._loading) {
       state._loading = loadCatalogue().then(function () { state._loading = null; });
@@ -598,7 +695,7 @@
       var dateInput = el('sns-date');
       if (dateInput && !dateInput.value) {
         var t = new Date(); t.setDate(t.getDate() + 1);
-        dateInput.value = t.toISOString().split('T')[0];
+        dateInput.value = localDateString(t);
       }
       if (state.selectedSlug) {
         var radio = document.querySelector('input[name="service"][value="' + state.selectedSlug + '"]');
@@ -609,8 +706,85 @@
           if (parent) parent.classList.add('selected');
         }
       }
+      // Initialize step fields: enable step 1, disable 2 and 3
+      setStepEnabled(2, false);
+      setStepEnabled(3, false);
       goToStep(1);
     }
+  }
+
+  function openBooking(options) {
+    var opts = options || {};
+    var requestedSlug = String(opts.serviceSlug || '').trim();
+    if (!requestedSlug) {
+      openConcierge();
+      return Promise.resolve(false);
+    }
+
+    // Open the existing concierge immediately; its catalogue request is shared
+    // with the service grid. No parallel request or client-side quote is made.
+    state.selectedSlug = requestedSlug;
+    state.lastReference = null;
+    state.lastQuoteDisplay = null;
+    openConcierge(requestedSlug);
+
+    var loading = state.services
+      ? Promise.resolve(state.services)
+      : (state._loading || Promise.resolve(null));
+
+    return Promise.resolve(loading).then(function () {
+      var selected = (state.services || []).find(function (service) {
+        return service.slug === requestedSlug;
+      });
+      if (!selected) {
+        state.selectedSlug = null;
+        renderServiceGrid();
+        goToStep(1);
+        showStatus('error',
+          'This service is not available in the live catalogue right now. Please choose another service or contact our team.',
+          'I would like help planning a Zanzibar trip.');
+        return false;
+      }
+
+      state.selectedSlug = selected.slug;
+      var radio = document.querySelector('input[name="service"][value="' + selected.slug + '"]');
+      if (radio) {
+        radio.checked = true;
+        document.querySelectorAll('.sns-service-card').forEach(function (card) {
+          card.classList.remove('selected');
+        });
+        var parent = radio.closest('.sns-service-card');
+        if (parent) parent.classList.add('selected');
+      }
+
+      var dateInput = el('sns-date');
+      if (dateInput) dateInput.min = localDateString(new Date());
+      var requestedDate = String(opts.date || '');
+      if (dateInput && /^\d{4}-\d{2}-\d{2}$/.test(requestedDate)) {
+        dateInput.value = requestedDate;
+      }
+      var travelersInput = el('sns-travelers');
+      var travelers = parseInt(opts.guests, 10);
+      if (travelersInput && Number.isFinite(travelers) && travelers >= 1 && travelers <= 50) {
+        travelersInput.value = String(travelers);
+      }
+      var locationInput = el('sns-location');
+      if (locationInput && opts.pickup) locationInput.value = String(opts.pickup).slice(0, 160);
+      var notesInput = el('sns-guest-notes');
+      if (notesInput && opts.notes) notesInput.value = String(opts.notes).slice(0, 500);
+
+      hideStatus();
+      goToStep(2);
+      if (travelersInput && typeof travelersInput.focus === 'function') travelersInput.focus({ preventScroll: true });
+      return true;
+    }).catch(function () {
+      state.selectedSlug = null;
+      goToStep(1);
+      showStatus('error',
+        'The service catalogue could not be loaded. No price or booking has been assumed. Please try again or contact our team.',
+        'I would like help planning a Zanzibar trip.');
+      return false;
+    });
   }
 
   function closeConcierge() {
@@ -747,6 +921,7 @@
   /* Export to global scope */
   window.snsConcierge = {
     open: openConcierge,
+    openBooking: openBooking,
     close: closeConcierge,
     goToStep: goToStep,
     openChat: openChat,

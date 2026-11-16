@@ -13,8 +13,9 @@
 
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
-{% if metaRobots %}<meta name="robots" content="{{ metaRobots }}">{% endif %}
+{% if metaRobots or previewRobots %}<meta name="robots" content="{{ previewRobots or metaRobots }}">{% endif %}
 <link rel="canonical" href="{{ SITE_URL }}{{ page.url }}">
+{% if preload_image %}<link rel="preload" as="image" href="{{ preload_image | cdnFile }}" fetchpriority="high">{% endif %}
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ SITE_URL }}{{ page.url }}">
 <meta property="og:title" content="{{ pageTitle }}">
@@ -49,17 +50,25 @@
 <link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}/">
 {% endif %}
 
-{% if site.ga_measurement_id %}
-<!-- Google tag (gtag.js) - GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_measurement_id }}"></script>
+{% if analytics and analytics.measurementId %}
 <script>
+  window.SNS_ANALYTICS_ID = "{{ analytics.measurementId }}";
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.ga_measurement_id }}', {
-    page_path: window.location.pathname,
-    cookie_flags: 'SameSite=None;Secure'
-  });
+  window.gtag = function(){ window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', "{{ analytics.measurementId }}", { page_path: window.location.pathname });
+  (function () {
+    var loadTag = function () {
+      if (document.getElementById('sns-ga4-script')) return;
+      var tag = document.createElement('script');
+      tag.id = 'sns-ga4-script';
+      tag.async = true;
+      tag.src = 'https://www.googletagmanager.com/gtag/js?id={{ analytics.measurementId }}';
+      document.head.appendChild(tag);
+    };
+    if ('requestIdleCallback' in window) window.requestIdleCallback(loadTag, { timeout: 3000 });
+    else window.setTimeout(loadTag, 1800);
+  })();
 </script>
 {% endif %}
 

@@ -261,7 +261,7 @@
 1. Negotiate/paste true Booking.com extranet rates into the override file → run `npm run rates:sync` (keeps anchors exact).
 2. Google Hotel Ads / free booking links: submit `spiceandsail.com` to Google Partner via a Travel Partner integration (GTSS) or point free booking links at `/hotels/` hotel anchors; the new LodgingBusiness + Offer markup is the prerequisite.
 3. Meta-search: create TripAdvisor/Trip.com/Trivago partner profiles bidding to spiceandsail.com landing pages; commission model must stay below the 20% spread.
-4. 24/7 revenue loop that already works: concierge auto-quotes rooms/packages/transfers any hour, saves the lead, staff confirms next business morning (mon–sat 08:00–18:00 EAT).
+4. 24/7 revenue loop that already works: concierge auto-quotes rooms/packages/transfers any hour, saves the lead, staff confirms next business morning (mon–sat 09:00–17:00 EAT).
 
 ## 2026-11-12 (2) — Rate model correction per owner
 - Kokoni (Island Stonetown) & Malindi (Stone Town View): display = confirmed net + 15% (Single $29 / Double $40 / Twin $46 / Triple $52). Mkeka: net + 20% ($36 / $54 / $66). Le Paradis & The One stay on OTA-anchor −20%.

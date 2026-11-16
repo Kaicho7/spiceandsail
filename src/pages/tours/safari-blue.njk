@@ -14,9 +14,10 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
     <div class="tour-hero-content">
       {% set featured = page.inputPath | featuredImage %}
 {% set cdnSrc = page.inputPath | cdnImage %}
-<img src="{{ cdnSrc }}" alt="{{ featured.featuredAlt or page.title }}" class="tour-hero-image" loading="lazy">
+<img src="{{ cdnSrc }}" alt="{{ featured.featuredAlt or page.title }}" class="tour-hero-image" loading="eager" fetchpriority="high">
 
       <span class="card-badge badge-marine">Marine Excursion</span>
+      <span class="swahili-kicker"><strong>Bahari</strong><span>Sea &amp; dhow journeys</span></span>
       <h1>Safari Blue / Menai Bay dhow day</h1>
       <p class="tour-meta">7–9 hours · Fumba → Menai Bay → Kwale Island</p>
       <div class="tour-price-box">
@@ -24,9 +25,15 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
         <span class="price-amount">{% catPrice "safari-blue" %}</span>
         <span class="price-note">per person</span>
       </div>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20safari%20blue" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
+      <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check price &amp; book</button>
     </div>
   </section>
+
+  {% set booking_slug = "safari-blue" %}
+  {% set booking_kind = "tour" %}
+  {% set booking_heading = "Ask about Safari Blue" %}
+  {% set booking_intro = "Choose your preferred date and guest count. We’ll receive your Safari Blue enquiry directly in WhatsApp." %}
+  {% include "whatsapp-booking-panel.njk" %}
 
   <div class="tour-grid">
     <div class="tour-main">

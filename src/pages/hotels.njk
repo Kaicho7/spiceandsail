@@ -8,8 +8,10 @@ permalink: "/hotels/index.html"
 
 <main class="content">
   <!-- Page Header -->
-  <header class="page-header" style="background: linear-gradient(135deg, rgba(12,26,36,0.95), rgba(0,56,83,0.92)), url('{{ 'beach-front-hotel-palm-trees-people.jpg' | cdnFile }}') center/cover; padding: 4.5rem 1.5rem; color: #fff; text-align: center;">
-    <div class="container" style="max-width: 900px; margin: 0 auto;">
+  <header class="page-header" style="position: relative; isolation: isolate; overflow: hidden; background: #0C1A24; padding: 4.5rem 1.5rem; color: #fff; text-align: center;">
+    <img class="page-header-bg-image" src="{{ 'beach-front-hotel-palm-trees-people.jpg' | cdnFile }}" alt="" width="1600" height="900" sizes="100vw" loading="eager" fetchpriority="high" decoding="async" style="position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover;">
+    <span aria-hidden="true" style="position: absolute; inset: 0; z-index: -1; background: linear-gradient(135deg, rgba(12,26,36,0.95), rgba(0,56,83,0.92));"></span>
+    <div class="container" style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto;">
       <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Curated Accommodation &amp; Logistics Directory</span>
       <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 1rem; color: #ffffff;">Where to Stay in Zanzibar — Curated Hotels &amp; Resorts</h1>
       <p style="font-size: 1.15rem; line-height: 1.6; color: #e0e8ec; margin-bottom: 2rem;">
@@ -54,7 +56,7 @@ permalink: "/hotels/index.html"
           <span style="position: absolute; left: 0.85rem; top: 0.8rem; font-size: 1rem; opacity: 0.5;">🏨</span>
         </div>
         <div id="hotel-count-indicator" style="font-size: 0.88rem; font-weight: 600; color: #003853; background: #e8f1f5; padding: 0.5rem 1rem; border-radius: 50px;">
-          Showing {{ hotels.hotels | length }} of {{ hotels.hotels | length }} properties
+          Showing 16 of {{ hotels.hotels | length }} properties
         </div>
       </div>
 
@@ -86,113 +88,253 @@ permalink: "/hotels/index.html"
   <!-- Unified Hotels Cards Grid -->
   <section class="section" style="padding: 3rem 1rem; background: #FBF9F5;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
-      <div id="hotels-container" class="cards-grid hotel-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem;">
-        {% for hotel in hotels.hotels %}
-          <article class="card hotel-card reveal" 
-                   data-tier="{{ hotel.tier | lower }}" 
-                   data-zone="{{ hotel.zone | lower }}" 
-                   data-island="{{ hotel.island | lower }}"
-                   data-name="{{ hotel.name | lower }}"
-                   style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(12,26,36,0.06); display: flex; flex-direction: column;">
-            <div class="card-image" style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
-              {% set hImg = hotel | hotelPhoto %}
-              <img src="{{ hImg | cdnFile }}" alt="{{ hImg | canonicalAlt(hotel.name) }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
-              <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}" style="position: absolute; top: 12px; left: 12px; z-index: 2; background: #003853; color: #fff; font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 50px; text-transform: uppercase;">
-                {{ hotel.tier | capitalize }}
-              </span>
-              {% if hotel.zone %}
-                <span class="card-zone-badge" style="position: absolute; bottom: 12px; left: 12px; background: rgba(12,26,36,0.75); color: #fff; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; backdrop-filter: blur(4px);">
-                  📍 {{ hotel.zone }}
-                </span>
-              {% endif %}
-            </div>
-
-            <div class="card-content" style="display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; padding: 1.25rem;">
-              <div>
-                <h3 class="card-title" style="margin-top: 0; margin-bottom: 0.35rem; font-size: 1.15rem; color: #003853;">
-                  {{ hotel.name }}
-                </h3>
-                <p class="card-meta" style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.6rem;">
-                  {{ hotel.zone }}{% if hotel.zone %}, {% endif %}{{ hotel.island }}{% if hotel.star_rating %} &bull; <strong>{{ hotel.star_rating }}</strong>{% endif %}
-                </p>
-                {% if hotel.category %}
-                  <p class="card-description" style="font-size: 0.88rem; line-height: 1.45; color: #4e5d66; margin-bottom: 0.75rem;">
-                    {{ hotel.category }}
-                  </p>
-                {% endif %}
-                
-                {% if hotel.island == "Pemba" %}
-                <div class="card-perk" style="background: rgba(0, 95, 138, 0.08); border-left: 3px solid var(--dct-ocean, #005F8A); padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
-                  ✈️ <strong>Pemba Island Logistics:</strong> Chake Chake Airport (PMA) / Mkoani Port transfers &amp; Misali Island marine reserve excursions.
-                </div>
-                {% elseif hotel.name.includes("Mnemba") or hotel.name.includes("Bawe") or hotel.name.includes("Chumbe") or hotel.name.includes("Chapwani") %}
-                <div class="card-perk" style="background: rgba(0, 95, 138, 0.08); border-left: 3px solid var(--dct-ocean, #005F8A); padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
-                  🛥️ <strong>Offshore Island Logistics:</strong> Dedicated boat crossing from Stone Town / Mbweni pier. Private airport road transfer connects directly to pier.
-                </div>
-                {% else %}
-                <div class="card-perk" style="background: rgba(212, 175, 55, 0.1); border-left: 3px solid var(--dct-gold, #D4AF37); padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
-                  ✨ <strong>Unguja Hotel Lobby Pickup:</strong> Available for Mnemba, Safari Blue, and Stone Town tours.
-                </div>
-                {% endif %}
-                {% if hotel.partnerStay %}
-                <div class="card-perk" style="background: rgba(37, 211, 102, 0.08); border-left: 3px solid #25D366; padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
-                  🤝 <strong>Contracted Partner Hotel:</strong> Direct-deal rates below OTA — bundled with licensed tours &amp; transfers.
-                </div>
-                {% set research = partnerPropertyResearch.properties[hotel.slug] %}
-                {% if research %}
-                <div class="card-perk" style="background: rgba(0, 95, 138, 0.06); border-left: 3px solid var(--dct-ocean, #005F8A); padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.8rem; margin-bottom: 1rem; color: #1b262c;">
-                  {% if research.viewFacts %}<strong>Views:</strong> {{ research.viewFacts }}{% endif %}
-                </div>
-                <div class="card-perk" style="background: rgba(12,26,36,0.04); border-left: 3px solid #94a3b8; padding: 0.45rem 0.65rem; border-radius: 0 4px 4px 0; font-size: 0.78rem; margin-bottom: 1rem; color: #33454f;">
-                  {% if research.distanceFacts %}<strong>Getting there:</strong> {{ research.distanceFacts }}{% endif %}
-                </div>
-                {% endif %}
-                {% endif %}
-              </div>
-
-              <div class="card-actions" style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-                  {% if hotel.island == "Pemba" %}
-                    <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20please%20quote%20Pemba%20airport%20or%20ferry%20transfer%20logistics%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #005F8A; border-color: #005F8A; color: #fff; font-weight: 600;" title="Pemba Airport & Ferry Transfer Logistics">✈️ Pemba Transfer</a>
-                  {% elseif hotel.name.includes("Mnemba") or hotel.name.includes("Bawe") or hotel.name.includes("Chumbe") or hotel.name.includes("Chapwani") %}
-                    <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20please%20quote%20boat%20transfer%20and%20airport%20connection%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #005F8A; border-color: #005F8A; color: #fff; font-weight: 600;" title="Boat & Airport Transfer Connection">🛥️ Boat Transfer</a>
-                  {% elseif hotel.zone == "Nungwi" or hotel.zone == "Kendwa" %}
-                    <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-nungwikendwa" %})</a>
-                  {% elseif hotel.zone == "Stone Town" %}
-                    <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-stone-town" %})</a>
-                  {% else %}
-                    <a href="/transfers/" class="btn btn-primary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #003853; border-color: #003853; color: #fff; font-weight: 600;" title="Private Minivan Transfer to {{ hotel.name }}">🚖 Transfer ({% catPrice "airport-transfer-znz-to-pajejambiani" %})</a>
-                  {% endif %}
-                  <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20please%20quote%20stay%20and%20tour%20packages%20for%20{{ hotel.name | urlencode }}%20in%20{{ hotel.zone | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="text-align: center; font-size: 0.8rem; padding: 0.5rem 0.3rem; background: #25D366; border-color: #25D366; color: #fff; font-weight: 600;" title="Inquire Stay Rates for {{ hotel.name }}">💬 Check Rates</a>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.35rem; padding-top: 0.5rem; border-top: 1px solid rgba(0,0,0,0.06); font-size: 0.78rem;">
-                  {% if hotel.partnerStay and hotelRates.bySlug[hotel.slug] %}
-                    {% set rates = hotelRates.bySlug[hotel.slug] %}
-                    {% if rates.rooms[0].netRate %}
-                    <span class="card-price" style="font-weight: 600; color: #0C1A24;">From ${{ rates.fromRate }}/night · direct-deal partner rate</span>
-                    {% elseif rates.seasons %}
-                    <span class="card-price" style="font-weight: 600; color: #0C1A24;">From ${{ rates.fromRate }}/night · {{ rates.discountPct }}% below the published rack rate</span>
-                    {% else %}
-                    <span class="card-price" style="font-weight: 600; color: #0C1A24;">From ${{ rates.fromRate }}/night · ~20% below OTA rates</span>
-                    {% endif %}
-                  {% else %}
-                    <span class="card-price" style="font-weight: 600; color: #0C1A24;">{{ hotel.price_range or 'Seasonal Rates' }}</span>
-                  {% endif %}
-                  {% if hotel.website %}
-                    <a href="{{ hotel.website }}" target="_blank" rel="noopener nofollow" style="color: #64748b; text-decoration: underline;" title="Visit official property website">Official Site ↗</a>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          </article>
+      <div id="hotels-container" class="cards-grid hotel-grid" data-total-hotels="{{ hotels.hotels | length }}" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem;">
+        {% for hotel in hotels.hotels.slice(0, 16) %}
+          {% set hotelIndex = loop.index0 %}
+          {% include "hotel-card.njk" %}
         {% endfor %}
+      </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('hotels-container');
+    const searchInput = document.getElementById('hotel-search-input');
+    const countIndicator = document.getElementById('hotel-count-indicator');
+    const noHotelsMsg = document.getElementById('no-hotels-msg');
+    const loadMoreButton = document.getElementById('load-more-hotels');
+    const loadStatus = document.getElementById('hotels-load-status');
+    const totalHotels = container ? Number(container.getAttribute('data-total-hotels')) || 0 : 0;
+    const filterButtons = document.querySelectorAll('[data-filter-type]');
+
+    let activeZone = 'all';
+    let activeTier = 'all';
+    let searchQuery = '';
+    let remainingCards = null;
+    let remainingCursor = 0;
+    let requestPromise = null;
+    let allLoaded = false;
+
+    function getCards() {
+      return container ? Array.from(container.querySelectorAll('.hotel-card')) : [];
+    }
+
+    function getRemainingCards() {
+      if (remainingCards) return Promise.resolve(remainingCards);
+      if (requestPromise) return requestPromise;
+      requestPromise = fetch('/data/hotels-more.json', {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' },
+        credentials: 'same-origin'
+      }).then(function (response) {
+        if (!response.ok) throw new Error('Could not load the remaining hotel directory');
+        return response.json();
+      }).then(function (payload) {
+        if (!payload || !Array.isArray(payload.cards)) throw new Error('Hotel directory data is invalid');
+        remainingCards = payload.cards;
+        return remainingCards;
+      }).catch(function (error) {
+        requestPromise = null;
+        throw error;
+      });
+      return requestPromise;
+    }
+
+    function appendCardMarkup(markup) {
+      // The fragment is generated by this site's own Nunjucks template and
+      // then restricted to one article.hotel-card root before it is attached.
+      const parsed = new DOMParser().parseFromString(String(markup), 'text/html');
+      const article = parsed.body.firstElementChild;
+      if (!article || article.tagName !== 'ARTICLE' || !article.classList.contains('hotel-card')) return false;
+      article.querySelectorAll('script, iframe, object, embed').forEach(function (node) { node.remove(); });
+      container.appendChild(document.importNode(article, true));
+      return true;
+    }
+
+    function updateLoadMore() {
+      if (!loadMoreButton) return;
+      const moreAvailable = !allLoaded && (remainingCards === null || remainingCursor < remainingCards.length);
+      loadMoreButton.closest('#hotels-load-more-wrap').hidden = !moreAvailable;
+      loadMoreButton.textContent = allLoaded ? 'All properties loaded' : 'Load 24 more properties';
+    }
+
+    function appendBatch(batchSize) {
+      if (!remainingCards) return 0;
+      const end = Math.min(remainingCursor + batchSize, remainingCards.length);
+      let appended = 0;
+      for (let index = remainingCursor; index < end; index++) {
+        if (appendCardMarkup(remainingCards[index])) appended++;
+      }
+      remainingCursor = end;
+      allLoaded = remainingCursor >= remainingCards.length;
+      updateLoadMore();
+      return appended;
+    }
+
+    function loadNextBatch() {
+      if (!loadMoreButton || loadMoreButton.disabled || allLoaded) return Promise.resolve(false);
+      loadMoreButton.disabled = true;
+      loadMoreButton.textContent = 'Loading properties…';
+      if (loadStatus) loadStatus.textContent = 'Loading more hotels.';
+      return getRemainingCards().then(function () {
+        const count = appendBatch(24);
+        filterHotels();
+        if (loadStatus) loadStatus.textContent = count + ' more properties added.';
+        return count > 0;
+      }).catch(function () {
+        if (loadStatus) loadStatus.textContent = 'Could not load more properties. Please retry.';
+        return false;
+      }).then(function (result) {
+        loadMoreButton.disabled = false;
+        updateLoadMore();
+        return result;
+      });
+    }
+
+    function ensureAllCardsLoaded() {
+      if (allLoaded) return Promise.resolve(true);
+      if (loadStatus) loadStatus.textContent = 'Loading the full hotel directory for your search.';
+      if (loadMoreButton) {
+        loadMoreButton.disabled = true;
+        loadMoreButton.textContent = 'Loading all properties…';
+      }
+      return getRemainingCards().then(function () {
+        appendBatch(remainingCards.length);
+        allLoaded = true;
+        filterHotels();
+        if (loadStatus) loadStatus.textContent = 'All ' + totalHotels + ' properties are available to filter.';
+        return true;
+      }).catch(function () {
+        if (loadStatus) loadStatus.textContent = 'The full directory could not be loaded. The first 16 properties remain available.';
+        return false;
+      }).then(function (result) {
+        if (loadMoreButton) loadMoreButton.disabled = false;
+        updateLoadMore();
+        return result;
+      });
+    }
+
+    function filterHotels() {
+      let visibleCount = 0;
+      const cards = getCards();
+      cards.forEach(function (card) {
+        const zone = (card.getAttribute('data-zone') || '').toLowerCase();
+        const tier = (card.getAttribute('data-tier') || '').toLowerCase();
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        const island = (card.getAttribute('data-island') || '').toLowerCase();
+
+        let matchesZone = true;
+        if (activeZone !== 'all') {
+          if (activeZone === 'pemba') {
+            matchesZone = island.includes('pemba') || zone.includes('pemba') || zone.includes('chake') || zone.includes('wambaa');
+          } else if (activeZone === 'matemwe') {
+            matchesZone = zone.includes('matemwe') || zone.includes('kiwengwa') || zone.includes('kigomani');
+          } else if (activeZone === 'paje') {
+            matchesZone = zone.includes('paje') || zone.includes('jambiani');
+          } else if (activeZone === 'nungwi') {
+            matchesZone = zone.includes('nungwi') || zone.includes('kendwa');
+          } else if (activeZone === 'michamvi') {
+            matchesZone = zone.includes('michamvi') || zone.includes('bwejuu') || zone.includes('dongwe') || zone.includes('pingwe') || zone.includes('pongwe');
+          } else if (activeZone === 'kizimkazi') {
+            matchesZone = zone.includes('kizimkazi') || zone.includes('fumba') || zone.includes('dimbani') || zone.includes('mbweni') || zone.includes('makunduchi');
+          } else {
+            matchesZone = zone.includes(activeZone);
+          }
+        }
+
+        const matchesTier = activeTier === 'all' || tier === activeTier;
+        const matchesSearch = !searchQuery || name.includes(searchQuery) || zone.includes(searchQuery);
+        if (matchesZone && matchesTier && matchesSearch) {
+          card.style.display = 'flex';
+          card.classList.add('visible');
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (countIndicator) {
+        countIndicator.textContent = allLoaded
+          ? 'Showing ' + visibleCount + ' of ' + totalHotels + ' properties'
+          : 'Showing ' + visibleCount + ' of ' + totalHotels + ' properties — load more or search to browse all';
+      }
+      if (noHotelsMsg) noHotelsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    filterButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        const filterType = button.getAttribute('data-filter-type');
+        const filterValue = button.getAttribute('data-filter-val');
+        document.querySelectorAll('[data-filter-type="' + filterType + '"]').forEach(function (item) {
+          item.classList.remove('active');
+        });
+        button.classList.add('active');
+        if (filterType === 'zone') activeZone = filterValue;
+        if (filterType === 'tier') activeTier = filterValue;
+        ensureAllCardsLoaded().then(filterHotels);
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        searchQuery = searchInput.value.trim().toLowerCase();
+        if (searchQuery) ensureAllCardsLoaded().then(filterHotels);
+        else filterHotels();
+      });
+    }
+
+    document.querySelectorAll('[data-hotel-index-link]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const slug = link.getAttribute('data-hotel-index-link');
+        activeZone = 'all';
+        activeTier = 'all';
+        searchQuery = '';
+        if (searchInput) searchInput.value = '';
+        filterButtons.forEach(function (button) {
+          button.classList.toggle('active', button.getAttribute('data-filter-val') === 'all');
+        });
+        ensureAllCardsLoaded().then(function () {
+          const target = document.getElementById('hotel-' + slug);
+          if (target) {
+            history.pushState(null, '', '#hotel-' + slug);
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+
+    if (loadMoreButton) loadMoreButton.addEventListener('click', loadNextBatch);
+    filterHotels();
+    updateLoadMore();
+  });
+  </script>
+      <div id="hotels-load-more-wrap" style="display:flex;justify-content:center;padding:1.5rem 0 0;">
+        <button type="button" id="load-more-hotels" class="btn btn-primary" style="min-height:46px;padding:.7rem 1.4rem;">Load 24 more properties</button>
+        <span id="hotels-load-status" class="visually-hidden" aria-live="polite"></span>
       </div>
       <p id="no-hotels-msg" style="display: none; text-align: center; padding: 3rem 1rem; color: #64748b; font-size: 1.1rem;">
         No properties matched your selected filters. Please reset your search.
       </p>
     </div>
   </section>
+
+  <!-- Lightweight, server-rendered index keeps every hotel discoverable without shipping 198 full card DOM trees. -->
+  <section aria-labelledby="all-properties-heading" style="padding: 1.5rem 1rem; background: #fff; border-bottom: 1px solid #edf2f7;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto;">
+      <h2 id="all-properties-heading" style="margin: 0 0 .4rem; color: #003853; font-size: 1.35rem;">Browse all {{ hotels.hotels | length }} Zanzibar properties</h2>
+      <p style="margin: 0 0 1rem; color: #64748b; font-size: .9rem;">Every property is listed here for discovery. Select a name to open its full hotel card and enquiry options.</p>
+      <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .25rem .85rem; list-style: none; margin: 0; padding: 0;">
+        {% for hotel in hotels.hotels %}
+        <li>
+          <a href="#hotel-{{ hotel.slug }}" data-hotel-index-link="{{ hotel.slug }}" style="display: flex; flex-direction: column; gap: .12rem; padding: .45rem .55rem; border-bottom: 1px solid #edf2f7; color: #174b43; text-decoration: none;">
+            <strong style="font-size: .88rem;">{{ hotel.name }}</strong>
+            <span style="font-size: .76rem; color: #64748b;">{{ hotel.zone }}{% if hotel.category %} · {{ hotel.category }}{% endif %}{% if hotel.star_rating %} · {{ hotel.star_rating }}{% endif %}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
 
   <!-- Custom Stay + Tour Packages (direct deals) -->
   <section class="section" style="padding: 4rem 1.5rem; background: #fff;">
@@ -480,105 +622,6 @@ permalink: "/hotels/index.html"
       </div>
     </div>
   </section>
-
-  <!-- Client-side Unified Filter & Search Script -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('hotel-search-input');
-    const countIndicator = document.getElementById('hotel-count-indicator');
-    const cards = document.querySelectorAll('.hotel-card');
-    const noHotelsMsg = document.getElementById('no-hotels-msg');
-
-    let activeZone = 'all';
-    let activeTier = 'all';
-    let searchQuery = '';
-
-    const filterButtons = document.querySelectorAll('[data-filter-type]');
-
-    function filterHotels() {
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const zone = (card.getAttribute('data-zone') || '').toLowerCase();
-        const tier = (card.getAttribute('data-tier') || '').toLowerCase();
-        const name = (card.getAttribute('data-name') || '').toLowerCase();
-        const island = (card.getAttribute('data-island') || '').toLowerCase();
-
-        let matchesZone = true;
-        if (activeZone !== 'all') {
-          if (activeZone === 'pemba') {
-            matchesZone = island.includes('pemba') || zone.includes('pemba') || zone.includes('chake') || zone.includes('wambaa');
-          } else if (activeZone === 'matemwe') {
-            matchesZone = zone.includes('matemwe') || zone.includes('kiwengwa') || zone.includes('kigomani');
-          } else if (activeZone === 'paje') {
-            matchesZone = zone.includes('paje') || zone.includes('jambiani');
-          } else if (activeZone === 'nungwi') {
-            matchesZone = zone.includes('nungwi') || zone.includes('kendwa');
-          } else if (activeZone === 'michamvi') {
-            matchesZone = zone.includes('michamvi') || zone.includes('bwejuu') || zone.includes('dongwe') || zone.includes('pingwe') || zone.includes('pongwe');
-          } else if (activeZone === 'kizimkazi') {
-            matchesZone = zone.includes('kizimkazi') || zone.includes('fumba') || zone.includes('dimbani') || zone.includes('mbweni') || zone.includes('makunduchi');
-          } else {
-            matchesZone = zone.includes(activeZone);
-          }
-        }
-
-        let matchesTier = true;
-        if (activeTier !== 'all') {
-          matchesTier = tier === activeTier;
-        }
-
-        let matchesSearch = true;
-        if (searchQuery) {
-          matchesSearch = name.includes(searchQuery) || zone.includes(searchQuery);
-        }
-
-        if (matchesZone && matchesTier && matchesSearch) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-          card.classList.add('visible');
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-      if (countIndicator) {
-        countIndicator.textContent = 'Showing ' + visibleCount + ' of ' + cards.length + ' properties';
-      }
-
-      if (noHotelsMsg) {
-        noHotelsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
-      }
-    }
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const fType = btn.getAttribute('data-filter-type');
-        const fVal = btn.getAttribute('data-filter-val');
-
-        document.querySelectorAll('[data-filter-type="' + fType + '"]').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        if (fType === 'zone') activeZone = fVal;
-        if (fType === 'tier') activeTier = fVal;
-
-        filterHotels();
-      });
-    });
-
-    if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        searchQuery = searchInput.value.trim().toLowerCase();
-        filterHotels();
-      });
-    }
-
-    // Sync count to actual rendered cards on load
-    filterHotels();
-  });
-  </script>
 
   <!-- Gallery Lightbox -->
   <div class="gallery-lightbox" id="galleryLightbox">

@@ -1,0 +1,31 @@
+<section class="sns-wa-booking-panel" aria-labelledby="sns-wa-booking-title">
+  <div class="sns-wa-booking-heading">
+    <div>
+      <span class="swahili-kicker"><strong>Karibu</strong><span>Welcome</span></span>
+      <h2 id="sns-wa-booking-title">{{ booking_heading or "Plan your Zanzibar trip" }}</h2>
+      <p>{{ booking_intro or "Tell our island concierge what you need. We’ll help with the right experience and next steps." }}</p>
+    </div>
+  </div>
+
+  {% if booking_slug %}
+  <form class="sns-wa-booking-fields" data-concierge-booking-form data-service-slug="{{ booking_slug }}">
+    <div class="sns-wa-booking-field">
+      <label for="sns-booking-date-{{ page.fileSlug }}">Preferred date</label>
+      <input id="sns-booking-date-{{ page.fileSlug }}" name="date" type="date" required>
+    </div>
+    <div class="sns-wa-booking-field">
+      <label for="sns-booking-guests-{{ page.fileSlug }}">Guests</label>
+      <input id="sns-booking-guests-{{ page.fileSlug }}" name="guests" type="number" min="1" max="50" step="1" value="2" inputmode="numeric" required aria-describedby="sns-booking-guests-help">
+      <small id="sns-booking-guests-help">Enter your exact group size (1–50). For larger groups, add details in the concierge notes.</small>
+    </div>
+    <button class="sns-wa-booking-submit" type="submit">Continue with Island Concierge <span aria-hidden="true">→</span></button>
+  </form>
+  <p class="sns-wa-booking-note">Next, the concierge checks the verified catalogue range. You can add your hotel, pickup details and contact information, then receive an enquiry reference before WhatsApp handoff. No booking is confirmed until our team replies.</p>
+  {% else %}
+  <div class="sns-wa-booking-general">
+    <p>Choose from tours, transfers and island experiences, then get a planning range from the verified catalogue.</p>
+    <button class="sns-wa-booking-submit" type="button" data-sns-open>Build my trip with the Island Concierge <span aria-hidden="true">→</span></button>
+  </div>
+  <p class="sns-wa-booking-note">Our local team confirms availability and the final quote. You can continue in the concierge or contact us directly by WhatsApp.</p>
+  {% endif %}
+</section>

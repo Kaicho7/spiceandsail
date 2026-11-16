@@ -4,6 +4,7 @@ node_modules/
 .env
 .aider*
 dist/
+.lighthouseci/
 .vision/
 public/images/*.bak
 public/images/*.bak

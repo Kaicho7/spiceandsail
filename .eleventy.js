@@ -1,4 +1,11 @@
 module.exports = function(eleventyConfig) {
+  const analyticsId = process.env.GA_MEASUREMENT_ID || "";
+  eleventyConfig.addGlobalData("analytics", {
+    measurementId: /^G-[A-Z0-9]+$/.test(analyticsId) ? analyticsId : ""
+  });
+  const buildContext = process.env.CONTEXT || "";
+  const isPreviewBuild = buildContext === "deploy-preview" || buildContext === "branch-deploy";
+  eleventyConfig.addGlobalData("previewRobots", isPreviewBuild ? "noindex,nofollow" : "");
   // Passthrough copy for static assets - copy contents of public to output root
   eleventyConfig.addPassthroughCopy({"public/css": "css"});
   eleventyConfig.addPassthroughCopy({"public/js": "js"});

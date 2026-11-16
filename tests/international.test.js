@@ -42,7 +42,7 @@ test('international: header template includes language and currency selectors an
   const html = fs.readFileSync(p, 'utf8');
   assert.ok(html.includes('id="langSelect"'), 'header must contain #langSelect');
   assert.ok(html.includes('id="currencySelect"'), 'header must contain #currencySelect');
-  assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"') && html.includes('value="fr"') && html.includes('value="pl"'));
+  assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"') && html.includes('value="fr"') && html.includes('value="pl"'), 'All five languages must appear in the language menu');
   assert.ok(html.includes('value="USD"') && html.includes('value="EUR"') && html.includes('value="GBP"') && html.includes('value="PLN"') && html.includes('value="TZS"'));
   
   // Luxury nav structure & brand translate protection
@@ -56,6 +56,10 @@ test('international: i18n-currency.js exists and is syntactically valid', () => 
   assert.ok(fs.existsSync(p), 'public/js/i18n-currency.js must exist');
   const code = fs.readFileSync(p, 'utf8');
   assert.ok(code.includes('RATES') && code.includes('LANGS') && code.includes('formatRangeConverted'));
+  const langsStart = code.indexOf('var LANGS = {');
+  const langsEnd = code.indexOf('var DICT =', langsStart);
+  const langs = langsStart >= 0 && langsEnd > langsStart ? code.slice(langsStart, langsEnd) : '';
+  assert.ok(langs.includes('en:') && langs.includes('it:') && langs.includes('de:') && langs.includes('fr:') && langs.includes('pl:'), 'All five languages must be configured');
   // Syntax check
   assert.doesNotThrow(() => new Function(code), 'i18n-currency.js must be syntactically valid');
 });

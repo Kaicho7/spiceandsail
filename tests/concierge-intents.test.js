@@ -8,6 +8,7 @@ delete process.env.OPENAI_COMPAT_BASE_URL;
 delete process.env.OPENAI_COMPAT_API_KEY;
 
 const { handler } = require('../netlify/functions/chat');
+const { catalogue, CONFIG } = require('../src/lib/concierge/catalogue');
 
 async function ask(message) {
   const res = await handler({
@@ -125,3 +126,26 @@ test('extra person line carries the All Inclusive child band', async () => {
   assert.match(body.message, /ages 4–16 \+\$50/);
   assert.match(body.message, /under 4 free on All Inclusive/);
 });
+
+test('all tours reply prices are read from the active concierge catalogue', async () => {
+  const body = await ask('show all tours');
+  const spice = catalogue.services.find(service => service.slug === 'spice-farm');
+  assert.ok(spice && spice.pricing && spice.pricing.display);
+  assert.ok(body.message.includes(spice.pricing.display));
+  assert.ok(body.message.includes(spice.name));
+  assert.ok(!body.message.includes('$30–$50'), 'stale hard-coded spice-farm price must not appear');
+});
+
+test('transfer quick replies are generated from current catalogue routes and ranges', async () => {
+  const body = await ask('airport transfers');
+  const nungwi = catalogue.services.find(service => service.slug === 'airport-transfer-znz-to-nungwikendwa');
+  assert.ok(nungwi && nungwi.pricing && nungwi.pricing.display);
+  assert.ok(body.quickReplies.some(reply => reply.includes(nungwi.name) && reply.includes(nungwi.pricing.display)));
+});
+
+test('chat booking handoffs use the catalogue-configured WhatsApp business number', async () => {
+  const body = await ask('book Safari Blue for 2 adults');
+  assert.ok(CONFIG.whatsappNumber);
+  assert.ok(body.whatsapp_url.startsWith('https://wa.me/' + CONFIG.whatsappNumber + '?'));
+});
+
