@@ -54,19 +54,33 @@
 
   function getStatusEl() { return el('sns-submit-status'); }
 
-  /* Allowed hrefs for links rendered in chat/status.
-     - relative paths starting with single / (not //)
+/* Allowed hrefs for links rendered in chat/status.
+     - relative paths starting with single / (not //, not containing backslash or encoded backslash)
      - https://spiceandsail.com, https://www.spiceandsail.com
      - https://wa.me/255672450934 (business WhatsApp)
      - mailto: with percent-encoded address (validated in appendRichText) */
   function isAllowedHref(href) {
     if (!href) return false;
+    // Reject backslashes, encoded backslashes, and control characters
+    if (href.includes('\\') || /%5[Cc]/.test(href) || /[\x00-\x1F\x7F]/.test(href)) return false;
+    // Relative paths: must start with single /, not //, no backslashes
     if (href.startsWith('/') && !href.startsWith('//')) return true;
-    if (href.startsWith('https://spiceandsail.com/') ||
-        href.startsWith('https://www.spiceandsail.com/')) return true;
-    if (href === 'https://spiceandsail.com' || href === 'https://www.spiceandsail.com') return true;
-    if (href.startsWith('https://wa.me/255672450934')) return true;
-    if (href.startsWith('mailto:')) return true; // mailto already validated in appendRichText
+    // Absolute HTTPS: parse and check origin against allowlist
+    if (href.startsWith('https://')) {
+      try {
+        var url = new URL(href);
+        var allowedOrigins = [
+          'https://spiceandsail.com',
+          'https://www.spiceandsail.com',
+          'https://wa.me'
+        ];
+        return allowedOrigins.some(function (o) { return url.origin === o; });
+      } catch (e) {
+        return false; // malformed URL
+      }
+    }
+    // mailto already validated in appendRichText
+    if (href.startsWith('mailto:')) return true;
     return false;
   }
 
@@ -303,6 +317,15 @@
     if (step < 1 || step > 3) return;
     if (step > state.currentStep) {
       if (!validateStep(state.currentStep)) return;
+      // Step 1 → 2: require a service to be selected
+      if (state.currentStep === 1 && step === 2) {
+        var selected = document.querySelector('input[name="service"]:checked');
+        if (!selected) {
+          showStatus('error', 'Please choose a service before continuing.');
+          return;
+        }
+        state.selectedSlug = selected.value;
+      }
     }
     setStepEnabled(state.currentStep, false);
     state.currentStep = step;
