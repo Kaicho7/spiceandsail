@@ -124,3 +124,41 @@ test('reply_link is scheme-guarded (https only) before becoming a link in the su
   assert.ok(src.includes('reply &&'), 'success path checks reply_link before use');
   assert.ok(src.includes('/^https:\\/\\//'), 'reply_link must pass an https:// scheme check');
 });
+
+test('chat bubble: protocol-relative URL (//evil.com) is rendered as text, never a link', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('see [here](//evil.com/steal) now', 'bot');
+  assert.strictEqual(tagsOf(b).filter((t) => t === 'A').length, 0, 'no anchor for protocol-relative URL');
+  assert.ok(textOf(b).includes('//evil.com/steal'), 'protocol-relative URL preserved as text');
+});
+
+test('chat bubble: arbitrary external HTTPS URL is rendered as text, not a link', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('visit [evil](https://evil.com/phish) now', 'bot');
+  assert.strictEqual(tagsOf(b).filter((t) => t === 'A').length, 0, 'no anchor for arbitrary external HTTPS');
+  assert.ok(textOf(b).includes('https://evil.com/phish'), 'external HTTPS preserved as text');
+});
+
+test('chat bubble: allowed HTTPS (spiceandsail.com) becomes a link', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('see [tours](https://spiceandsail.com/tours/) here', 'bot');
+  const a = b.children.find((n) => n.tag === 'A');
+  assert.ok(a, 'allowed domain anchor must be created');
+  assert.strictEqual(a.attrs.href, 'https://spiceandsail.com/tours/');
+});
+
+test('chat bubble: wa.me business link becomes a link', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('book [here](https://wa.me/255672450934?text=hi)', 'bot');
+  const a = b.children.find((n) => n.tag === 'A');
+  assert.ok(a, 'business wa.me anchor must be created');
+  assert.strictEqual(a.attrs.href, 'https://wa.me/255672450934?text=hi');
+});
+
+test('chat bubble: internal path link becomes a link', () => {
+  const c = loadWidget();
+  const b = c._bubbleNodes('see [privacy](/privacy/) for details', 'bot');
+  const a = b.children.find((n) => n.tag === 'A');
+  assert.ok(a, 'internal path anchor must be created');
+  assert.strictEqual(a.attrs.href, '/privacy/');
+});

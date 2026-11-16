@@ -54,9 +54,30 @@
 
   function getStatusEl() { return el('sns-submit-status'); }
 
+  /* Allowed hrefs for links rendered in chat/status.
+     - relative paths starting with single / (not //)
+     - https://spiceandsail.com, https://www.spiceandsail.com
+     - https://wa.me/255672450934 (business WhatsApp)
+     - mailto: with percent-encoded address (validated in appendRichText) */
+  function isAllowedHref(href) {
+    if (!href) return false;
+    if (href.startsWith('/') && !href.startsWith('//')) return true;
+    if (href.startsWith('https://spiceandsail.com/') ||
+        href.startsWith('https://www.spiceandsail.com/')) return true;
+    if (href === 'https://spiceandsail.com' || href === 'https://www.spiceandsail.com') return true;
+    if (href.startsWith('https://wa.me/255672450934')) return true;
+    if (href.startsWith('mailto:')) return true; // mailto already validated in appendRichText
+    return false;
+  }
+
   /* All status/chat content is built with createElement/textContent — never
      innerHTML — so server text, user text and error details can never mount. */
   function safeLink(href, label) {
+    if (!isAllowedHref(href)) {
+      var span = document.createElement('span');
+      span.textContent = label;
+      return span;
+    }
     var a = document.createElement('a');
     a.setAttribute('href', href);
     a.setAttribute('target', '_blank');
@@ -74,21 +95,26 @@
     var cleaned = String(text)
       .replace(/\*\*/g, '')
       .replace(/(^|\s)_(?=\S)([^_]{1,200}?\S)_(?=\s|$|[.,!?])/g, '$1$2');
-    var re = /\[([^\]\n]{1,120})\]\(((?:\/|https:\/\/|mailto:)[^)\s]{1,200})\)/g;
+    var re = /\[([^\]\n]{1,120})\]\(((?:\/(?!\/)|https:\/\/|mailto:)[^)\s]{1,200})\)/g;
     var last = 0, m = re.exec(cleaned);
     while (m) {
       if (m.index > last) target.appendChild(document.createTextNode(cleaned.slice(last, m.index)));
-      if (m[2].startsWith('mailto:')) {
-        var addr = m[2].slice(7);
+      var href = m[2];
+      var label = m[1];
+      if (href.startsWith('mailto:')) {
+        var addr = href.slice(7);
         /* A mailto: address becomes a link only when percent-encoded
            (no raw '@', spaces, or other unreserved characters). */
         if (addr.includes('%') && !addr.includes('@') && addr.indexOf(' ') === -1) {
-          target.appendChild(safeLink(m[2], m[1]));
+          target.appendChild(safeLink(href, label));
         } else {
           target.appendChild(document.createTextNode(m[0]));
         }
+      } else if (isAllowedHref(href)) {
+        target.appendChild(safeLink(href, label));
       } else {
-        target.appendChild(safeLink(m[2], m[1]));
+        /* Disallowed href: render the full markdown as literal text */
+        target.appendChild(document.createTextNode(m[0]));
       }
       last = m.index + m[0].length;
       m = re.exec(cleaned);
@@ -124,6 +150,36 @@
     });
     p.catch(function () { clearTimeout(timer); });
     return p;
+  }
+
+  /* ---------- step validation & field enable/disable ---------- */
+
+  function getStepFields(step) {
+    var stepEl = el('sns-step-' + step);
+    if (!stepEl) return [];
+    return stepEl.querySelectorAll('input, select, textarea');
+  }
+
+  function setStepEnabled(step, enabled) {
+    getStepFields(step).forEach(function (f) {
+      f.disabled = !enabled;
+    });
+  }
+
+  function validateStep(step) {
+    var fields = getStepFields(step);
+    var invalid = [];
+    fields.forEach(function (f) {
+      if (f.required && !f.disabled) {
+        if (!f.checkValidity()) invalid.push(f);
+      }
+    });
+    if (invalid.length > 0) {
+      invalid[0].focus({ preventScroll: true });
+      invalid[0].reportValidity();
+      return false;
+    }
+    return true;
   }
 
   /* ---------- catalogue + service grid ---------- */
@@ -241,14 +297,19 @@
     });
   }
 
-  /* ---------- steps ---------- */
+/* ---------- steps ---------- */
 
   function goToStep(step) {
     if (step < 1 || step > 3) return;
+    if (step > state.currentStep) {
+      if (!validateStep(state.currentStep)) return;
+    }
+    setStepEnabled(state.currentStep, false);
     state.currentStep = step;
     document.querySelectorAll('.sns-form-step').forEach(function (e) { e.classList.remove('active'); });
     var targetStep = el('sns-step-' + step);
     if (targetStep) targetStep.classList.add('active');
+    setStepEnabled(step, true);
     document.querySelectorAll('.sns-step-indicator').forEach(function (ind) {
       var stepNum = parseInt(ind.getAttribute('data-step'), 10);
       ind.classList.remove('active', 'completed');
@@ -392,7 +453,9 @@
       } else {
         var detail = (res.json && res.json.error) ? res.json.error :
           (!window.navigator.onLine ? 'You appear to be offline' : 'Sending failed');
-        showStatus('error', 'We could not save your request (' + detail + ').', 'I would like to plan a Zanzibar trip.');
+        var details = (res.json && res.json.details && Array.isArray(res.json.details) && res.json.details.length)
+          ? ' — ' + res.json.details.join('; ') : '';
+        showStatus('error', 'We could not save your request (' + detail + details + ').', 'I would like to plan a Zanzibar trip.');
       }
     }).catch(function () {
       var msg = 'We could not save your request' + (window.navigator.onLine ? '' : ' (you appear to be offline)') +
@@ -620,6 +683,9 @@
           if (parent) parent.classList.add('selected');
         }
       }
+      // Initialize step fields: enable step 1, disable 2 and 3
+      setStepEnabled(2, false);
+      setStepEnabled(3, false);
       goToStep(1);
     }
   }

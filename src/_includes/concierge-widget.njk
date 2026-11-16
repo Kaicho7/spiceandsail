@@ -44,7 +44,7 @@
       </div>
 
       <!-- Form -->
-      <form id="sns-concierge-form" class="sns-concierge-form" novalidate>
+      <form id="sns-concierge-form" class="sns-concierge-form">
         <!-- Honeypot field for bot detection -->
         <input type="text" class="sns-honeypot" name="honeypot" aria-hidden="true" autocomplete="off" tabindex="-1" />
 
@@ -95,7 +95,7 @@
 
           <div class="sns-field-group">
             <label class="sns-field-label" for="sns-guest-name">Your Name</label>
-            <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required>
+            <input type="text" id="sns-guest-name" class="sns-input-text" placeholder="First & Last Name" required minlength="2">
           </div>
 
           <!-- SEPARATE WhatsApp and email fields, at least one required -->
