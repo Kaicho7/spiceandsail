@@ -173,11 +173,40 @@
     }, true);
   }
 
+  function initHeaderScrollHide() {
+    var header = document.getElementById('siteHeader');
+    if (!header) return;
+    var lastScroll = 0;
+    var ticking = false;
+    var threshold = 100;
+    function onScroll() {
+      var current = window.scrollY;
+      if (current > threshold) {
+        if (current > lastScroll) {
+          header.classList.add('site-header--hidden');
+        } else {
+          header.classList.remove('site-header--hidden');
+        }
+      } else {
+        header.classList.remove('site-header--hidden');
+      }
+      lastScroll = current;
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initBookingForms();
     initCardWhatsAppLinks();
     initClickToLoadMaps();
     initDirectBookingButtons();
     initContactAndAnalytics();
+    initHeaderScrollHide();
   });
 })();

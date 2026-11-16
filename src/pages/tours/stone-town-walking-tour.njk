@@ -17,12 +17,38 @@ tour_slug: "stone-town-walking-tour"
       <span class="card-badge badge-cultural">CUL — Cultural Tour</span>
       <h1>Stone Town walking tour</h1>
       <p class="tour-meta">2–4 hours · Stone Town</p>
-      <div class="tour-price-box">
+<div class="tour-price-box">
         <span class="price-label">From</span>
         <span class="price-amount">{% catPrice "stone-town-walking-tour" %}</span>
         <span class="price-note">per person</span>
       </div>
-      <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check price &amp; book</button>
+
+      <!-- Stone Town Walking Tour Pricing Table -->
+      <div class="pricing-table">
+        <h4>Stone Town Walking Tour — Per-Person Rates</h4>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Configuration</th>
+                <th>Per-person rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Group walking tour</td>
+                <td>$29 pp</td>
+              </tr>
+              <tr>
+                <td>Private 2 guests (incl. transport)</td>
+                <td>$100 pp ($200 total)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="table-note">Group rate is guided walk only, starting/ending at Forodhani Gardens. Private rate includes licensed guide, complimentary bottled water, and hotel/port pickup/drop-off. Entry fees to museums ($5–10 per person) are payable separately at the venue.</p>
+        </div>
+
+      <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check price & book</button>
     </div>
   </section>
 
