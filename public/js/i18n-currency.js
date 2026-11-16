@@ -64,6 +64,16 @@
   var currentLang = localStorage.getItem('sns_lang') || 'en';
   if (!LANGS[currentLang]) currentLang = 'en';
 
+  // Tagging every price rewrites text nodes across the whole document, so it is
+  // deferred until a visitor explicitly chooses a non-USD currency.
+  var pricesTagged = false;
+
+  function ensurePricesTagged() {
+    if (pricesTagged) return;
+    pricesTagged = true;
+    scanAndTagUsdPrices();
+  }
+
   function formatConverted(usdVal, currCode) {
     var c = RATES[currCode] || RATES.USD;
     var val = usdVal * c.rate;
@@ -315,6 +325,7 @@
     localStorage.setItem('sns_currency', code);
     var sel = document.getElementById('currencySelect');
     if (sel) sel.value = code;
+    if (code !== 'USD') ensurePricesTagged();
     updatePricesOnPage();
   }
 
@@ -345,7 +356,10 @@
 
   // Initialize on DOM load
   document.addEventListener('DOMContentLoaded', function() {
-    scanAndTagUsdPrices();
+    if (currentCurrency !== 'USD') {
+      ensurePricesTagged();
+      updatePricesOnPage();
+    }
 
     var cSel = document.getElementById('currencySelect');
     if (cSel) {
@@ -367,8 +381,10 @@
     if (currentLang !== 'en') {
       loadGoogleTranslateScript(currentLang);
     }
-
-    updatePricesOnPage();
-    updateTranslations();
+    if (currentLang !== 'en' || currentCurrency !== 'USD') {
+      updateTranslations();
+    } else {
+      document.documentElement.lang = 'en';
+    }
   });
 })();
