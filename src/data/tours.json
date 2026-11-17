@@ -12,7 +12,8 @@
       "min": 45,
       "max": 80,
       "basis": "per person",
-      "display": "$45\u2013$80"
+      "display": "$45–$80",
+      "tieredDisplay": "Group walking tour: $29 pp • Private 2 guests (no transfer): $60 pp • Private 2 guests (with transfer): $100 pp"
     },
     "includes": [
       "Licensed guide",
@@ -53,10 +54,11 @@
     "duration": "3\u20134 hours",
     "location": "Kidichi / Kizimbani / island interior",
     "price": {
-      "min": 35,
-      "max": 80,
-      "basis": "per person; floor priced from partner rate (Madebe partner rate: $27pp for 2pax)",
-      "display": "$35\u2013$80"
+      "min": 32,
+      "max": 100,
+      "basis": "per person",
+      "display": "$32–$100",
+      "tieredDisplay": "Walking tour (no transfer): $32 pp • Private 2 guests (with transfer): $100 pp"
     },
     "includes": [
       "Farm walk, spice/fruit tasting, guide",
@@ -183,9 +185,10 @@
     "location": "Fumba \u2192 Menai Bay \u2192 Kwale Island",
     "price": {
       "min": 100,
-      "max": 175,
-      "basis": "per person; 1 pax 75 Stone Town, 3-6 pax 00 pp, beach-hotel supplement 5pp",
-      "display": "$100\u2013$175"
+      "max": 190,
+      "basis": "per person",
+      "display": "$100–$190",
+      "tieredDisplay": "2 guests: $110 pp (Stone Town) / $130 pp (beach hotel) • 3–6 guests: $100 pp (Stone Town) / $110 pp (beach hotel)"
     },
     "includes": [
       "Dhow, snorkeling, sandbank, seafood lunch, drinks, guide"
@@ -227,9 +230,10 @@
     "location": "Matemwe / Nungwi / Kendwa \u2192 Mnemba Atoll",
     "price": {
       "min": 70,
-      "max": 100,
-      "basis": "per person; private 2-guest 00pp includes 5 marine fee, budget shared from 9pp + 0 fee",
-      "display": "$70\u2013$100"
+      "max": 115,
+      "basis": "per person",
+      "display": "$70–$115",
+      "tieredDisplay": "Private 2 guests: $100 pp (includes $25 marine fee) • Budget shared: from $39 pp + $25 marine fee separately"
     },
     "includes": [
       "Boat, snorkel gear, fruit/water, guide",
@@ -273,8 +277,9 @@
     "price": {
       "min": 25,
       "max": 110,
-      "basis": "per person; budget shared from 5pp + 3 entrance, private 2-guest 10pp includes transport & lunch",
-      "display": "$25\u2013$110"
+      "basis": "per person",
+      "display": "$25–$110",
+      "tieredDisplay": "Private 2 guests: $110 pp (includes entrance, boat, lunch) • Budget shared: from $25 pp + $23 entrance separately"
     },
     "includes": [
       "Boat, guide, entry",
@@ -315,10 +320,11 @@
     "duration": "Half day",
     "location": "Stone Town / Nakupenda",
     "price": {
-      "min": 75,
-      "max": 145,
-      "basis": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (Nakupenda leg))",
-      "display": "$75\u2013$145"
+      "min": 115,
+      "max": 185,
+      "basis": "per person",
+      "display": "$115–$185",
+      "tieredDisplay": "2 guests: $145 pp • 3 guests: $125 pp • 4–6 guests: $115 pp"
     },
     "includes": [
       "Fresh seafood & seasonal fruit lunch on sandbank included"
@@ -327,7 +333,7 @@
     "source_quality": "2026 market range",
     "source_files": "2026 market guides",
     "category": "MAR",
-    "meta_description": "Book Nakupenda sandbank only tour from Stone Town. Swim in turquoise waters and snorkel the coral reef. From $75 per person.",
+    "meta_description": "Book Nakupenda sandbank only tour from Stone Town. Swim in turquoise waters and snorkel the coral reef. From $115 per person.",
     "overview": "A relaxed half-day trip to Nakupenda sandbank \u2014 Zanzibar's most famous white-sand strip that emerges at low tide. Perfect for swimming, sunbathing, and snorkeling right off the beach.",
     "what_to_expect": [
       "Boat transfer from Stone Town (30 minutes)",
@@ -401,10 +407,11 @@
     "duration": "2\u20133 hours",
     "location": "Nungwi, Kendwa or Stone Town",
     "price": {
-      "min": 30,
-      "max": 85,
-      "basis": "per person; private charter higher; floor priced from partner rate (Amran local boat rate: $10pp for 2pax)",
-      "display": "$30\u2013$85"
+      "min": 49,
+      "max": 105,
+      "basis": "per person",
+      "display": "$49–$105",
+      "tieredDisplay": "Private 2 guests: $95 pp • 3 guests: $85 pp • 4–6 guests: $75 pp • Budget shared: from $49 pp"
     },
     "includes": [
       "Dhow, drinks/fruit varies"
@@ -413,7 +420,7 @@
     "source_quality": "2026 market range",
     "source_files": "2026 market guides",
     "category": "MAR",
-    "meta_description": "Book sunset dhow cruise in Zanzibar. Sail the Indian Ocean at golden hour, enjoy drinks and fresh fruit. From $30 per person (group) or $85 private.",
+    "meta_description": "Book sunset dhow cruise in Zanzibar. Sail the Indian Ocean at golden hour, enjoy drinks and fresh fruit. From $49 per person.",
     "overview": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and purple.",
     "what_to_expect": [
       "2\u20133 hour sunset cruise on a traditional wooden dhow",
@@ -444,10 +451,11 @@
     "duration": "3\u20134 hours",
     "location": "Kizimkazi",
     "price": {
-      "min": 35,
-      "max": 110,
-      "basis": "per person; floor priced from partner rate (Madebe partner rate: $28pp for 2pax)",
-      "display": "$35\u2013$110"
+      "min": 85,
+      "max": 165,
+      "basis": "per person",
+      "display": "$85–$165",
+      "tieredDisplay": "2 guests: $100 pp (Stone Town) / $95 pp (North beach) • 3–6 guests: $85 pp (North beach)"
     },
     "includes": [
       "Boat, snorkeling, guide",
@@ -457,7 +465,7 @@
     "source_quality": "2026 market range",
     "source_files": "2026 market guides",
     "category": "MAR",
-    "meta_description": "Book Kizimkazi dolphin tour (responsibly). We only partner with operators who follow ethical dolphin-watching guidelines. From $35 per person.",
+    "meta_description": "Book Kizimkazi dolphin tour (responsibly). We only partner with operators who follow ethical dolphin-watching guidelines. From $85 per person.",
     "overview": "Kizimkazi on Zanzibar's southeast coast is the only place in East Africa where you can see wild bottlenose dolphins in their natural habitat. We only work with operators certified by the Zanzibar Marine Conservation Society.",
     "what_to_expect": [
       "Early morning departure (dolphins most active at dawn, 6\u20139 AM)",
@@ -488,10 +496,11 @@
     "duration": "2\u20134 hours",
     "location": "Jozani Chwaka Bay National Park",
     "price": {
-      "min": 45,
-      "max": 98,
-      "basis": "per person; floor priced from partner rate (Madebe partner rate: $45pp for 2pax (Jozani + Butterfly Centre))",
-      "display": "$45\u2013$98"
+      "min": 50,
+      "max": 135,
+      "basis": "per person",
+      "display": "$50–$135",
+      "tieredDisplay": "Group (entry + guide, no transfer): $50 pp • Private (entry + guide, no transfer): $60 pp • Private (entry + guide + hotel pickup): $100 pp (2 guests)"
     },
     "includes": [
       "Guide, park entry varies"
@@ -500,7 +509,7 @@
     "source_quality": "Competitor price + official park + 2026 market range",
     "source_files": "ZTrans (35 USD); zanzibar things to do.docx (50 USD); OCGS attraction data",
     "category": "NAT",
-    "meta_description": "Book Jozani Forest tour \u2014 see rare red colobus monkeys and explore Zanzibar's only national park. From $45 per person.",
+    "meta_description": "Book Jozani Forest tour — see rare red colobus monkeys and explore Zanzibar's only national park. From $50 per person.",
     "overview": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabies, and over 200 bird species.",
     "what_to_expect": [
       "2\u20134 hour guided walk through mangrove and coastal forest",
@@ -659,11 +668,12 @@
     "short_description": "Our signature introduction to Zanzibar: three days covering the island's must-see highlights \u2014 spice heritage, the marine wonderland of Menai Bay and the cultural treasures of Stone Town.",
     "duration": "3 days",
     "location": "Zanzibar",
-    "price": {
+"price": {
       "min": 185,
       "max": 260,
       "basis": "per person",
-      "display": "$185\u2013$260"
+      "display": "$185–$260",
+      "tieredDisplay": "3-day package: $185–$260 pp (includes transfers, Safari Blue, Stone Town tour, spice farm)"
     },
     "includes": [
       "Return transfer, Safari Blue, Stone Town + Spice"

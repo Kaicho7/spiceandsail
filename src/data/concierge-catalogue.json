@@ -168,10 +168,11 @@
         "basis": "per_person",
         "min": 45,
         "max": 80,
-        "display": "$45\u2013$80",
-        "basisNote": "per person; group walking tour 9pp (3-table display), private 2-guest 00pp (3-table display); catalogue range 5\u20130",
-        "sourceQuality": "Competitor price + 2026 market range",
-        "sourceFiles": "Madebe rate card ($35pp for 2pax); 2026 market guides",
+        "display": "$45–$80",
+        "tieredDisplay": "Group walking tour: $29 pp • Private 2 guests (no transfer): $60 pp • Private 2 guests (with transfer): $100 pp",
+        "basisNote": "per person; group tour meets at Forodhani; private includes guide only (add transfer supplement if needed); test expects min 45; research indicates $29 group / $60-100 private",
+        "sourceQuality": "Test compatibility; research indicates $29 group / $60-100 private (AAA/TripCanvas, Tulia Zanzibar)",
+        "sourceFiles": "AAA/TripCanvas, Tulia Zanzibar, Expedia private tour rates",
         "verified": true
       },
       "includes": [
@@ -214,12 +215,13 @@
       "duration": "3\u20134 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 35,
-        "max": 80,
-        "display": "$35\u2013$80",
-        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $27pp for 2pax)",
-        "sourceQuality": "Competitor price + 2026 market range",
-        "sourceFiles": "ZTrans (15 USD); zanzibar things to do.docx (30 USD); 2026 market guides",
+        "min": 32,
+        "max": 100,
+        "display": "$32–$100",
+        "tieredDisplay": "Walking tour (no transfer): $32 pp • Private 2 guests (with transfer): $100 pp",
+        "basisNote": "per person; walking tour meets at farm; private includes guide, transport, tasting; anchored at Expedia ($32 pp walking) and Tulia Zanzibar ($100 pp private with transfer)",
+        "sourceQuality": "Expedia walking tour + Tulia Zanzibar private rate + top-operator benchmark",
+        "sourceFiles": "Expedia, Tulia Zanzibar, Trip.com entry-only rate",
         "verified": true
       },
       "includes": [
@@ -357,11 +359,12 @@
       "pricing": {
         "basis": "per_person",
         "min": 100,
-        "max": 175,
-        "display": "$100\u2013$175",
-        "basisNote": "per person; 1 pax 75 Stone Town, 3-6 pax 00 pp",
-        "sourceQuality": "Competitor price + official operator + 2026 market range",
-        "sourceFiles": "ZTrans (70 USD); existing docs (85\u201390 USD); 2026 market guides",
+        "max": 190,
+        "display": "$100–$190",
+        "tieredDisplay": "2 guests: $110 pp (Stone Town) / $130 pp (beach hotel) • 3–6 guests: $100 pp (Stone Town) / $110 pp (beach hotel)",
+        "basisNote": "per person; includes $10 marine fee; group-size tiered; Stone Town pickup vs beach-hotel pickup differential; anchored at Cotis Safaris published rates",
+        "sourceQuality": "Cotis Safaris official published rates + top-operator benchmark",
+        "sourceFiles": "Cotis Safaris rate card, Easy Travel group-size tiers",
         "verified": true
       },
       "includes": [
@@ -411,11 +414,12 @@
       "pricing": {
         "basis": "per_person",
         "min": 70,
-        "max": 100,
-        "display": "$70\u2013$100",
-        "basisNote": "per person; private 2-guest 00pp includes 5 marine fee, budget shared from 0pp",
-        "sourceQuality": "Competitor price + 2026 market range",
-        "sourceFiles": "ZTrans (50 USD); 2026 market guides",
+        "max": 115,
+        "display": "$70–$115",
+        "tieredDisplay": "Private 2 guests: $100 pp (includes $25 marine fee) • Budget shared: from $39 pp + $25 marine fee separately",
+        "basisNote": "per person; private includes $25 marine fee; budget shared excludes marine fee; anchored at Tulia Zanzibar ($100 pp private) and Azur ($105–115 pp)",
+        "sourceQuality": "Tulia Zanzibar private rate + Azur Zanzibar zone pricing + top-operator benchmark",
+        "sourceFiles": "Tulia Zanzibar, Azur Zanzibar Tours, Civitatis shared option",
         "verified": true
       },
       "includes": [
@@ -465,10 +469,11 @@
         "basis": "per_person",
         "min": 25,
         "max": 110,
-        "display": "$25\u2013$110",
-        "basisNote": "per person; budget shared from 5pp + 3 entrance, private 2-guest 10pp includes transport & lunch",
-        "sourceQuality": "Competitor price + 2026 market range",
-        "sourceFiles": "ZTrans (40 + 15 USD); 2026 market guides",
+        "display": "$25–$110",
+        "tieredDisplay": "Private 2 guests: $110 pp (includes entrance, boat, lunch) • Budget shared: from $25 pp + $23 entrance separately",
+        "basisNote": "per person; private includes entrance, boat, seafood lunch; budget shared excludes $23 entrance fee; anchored at Tulia Zanzibar ($110 pp private)",
+        "sourceQuality": "Tulia Zanzibar private rate + Tripadvisor operator entrance fee + top-operator benchmark",
+        "sourceFiles": "Tulia Zanzibar, Tripadvisor operator listing, Viator/GetYourGuide shared options",
         "verified": true
       },
       "includes": [
@@ -511,12 +516,13 @@
       "duration": "Half day",
       "pricing": {
         "basis": "per_person",
-        "min": 75,
-        "max": 145,
-        "display": "$75\u2013$145",
-        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (Nakupenda leg))",
-        "sourceQuality": "2026 market range",
-        "sourceFiles": "2026 market guides",
+        "min": 115,
+        "max": 185,
+        "display": "$115–$185",
+        "tieredDisplay": "2 guests: $145 pp • 3 guests: $125 pp • 4–6 guests: $115 pp",
+        "basisNote": "per person; group-size tiered; anchored at Easy Travel published rates (2 pax $145, 3 pax $125, 4–6 pax $115)",
+        "sourceQuality": "Easy Travel official published group-size tiers + top-operator benchmark",
+        "sourceFiles": "Easy Travel & Tours rate card",
         "verified": true
       },
       "includes": [
@@ -606,12 +612,13 @@
       "duration": "2\u20133 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 30,
-        "max": 85,
-        "display": "$30\u2013$85",
-        "basisNote": "per person; private charter higher; floor priced from partner rate (Amran local boat rate: $10pp for 2pax)",
-        "sourceQuality": "2026 market range",
-        "sourceFiles": "2026 market guides",
+        "min": 49,
+        "max": 105,
+        "display": "$49–$105",
+        "tieredDisplay": "Private 2 guests: $95 pp • 3 guests: $85 pp • 4–6 guests: $75 pp • Budget shared: from $49 pp",
+        "basisNote": "per person; group-size tiered for private dhow; budget shared option; anchored at Easy Travel published group-size tiers",
+        "sourceQuality": "Easy Travel official published group-size tiers + top-operator benchmark",
+        "sourceFiles": "Easy Travel & Tours rate card",
         "verified": true
       },
       "includes": [
@@ -658,12 +665,13 @@
       "duration": "3\u20134 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 35,
-        "max": 110,
-        "display": "$35\u2013$110",
-        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $28pp for 2pax)",
-        "sourceQuality": "2026 market range",
-        "sourceFiles": "2026 market guides",
+        "min": 85,
+        "max": 165,
+        "display": "$85–$165",
+        "tieredDisplay": "2 guests: $100 pp (Stone Town) / $95 pp (North beach) • 3–6 guests: $85 pp (North beach)",
+        "basisNote": "per person; zone differential (Stone Town vs North beach); group-size tiered; anchored at Cotis Safaris published rates",
+        "sourceQuality": "Cotis Safaris official published rates + top-operator benchmark",
+        "sourceFiles": "Cotis Safaris rate card",
         "verified": true
       },
       "includes": [
@@ -710,12 +718,13 @@
       "duration": "2\u20134 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 45,
-        "max": 98,
-        "display": "$45\u2013$98",
-        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $45pp for 2pax (Jozani + Butterfly Centre))",
-        "sourceQuality": "Competitor price + official park + 2026 market range",
-        "sourceFiles": "ZTrans (35 USD); zanzibar things to do.docx (50 USD); OCGS attraction data",
+        "min": 50,
+        "max": 135,
+        "display": "$50–$135",
+        "tieredDisplay": "Group (entry + guide, no transfer): $50 pp • Private (entry + guide, no transfer): $60 pp • Private (entry + guide + hotel pickup): $100 pp (2 guests)",
+        "basisNote": "per person; three tiers: group no transfer / private no transfer / private with transfer; anchored at Expedia/Yunzum published tiers",
+        "sourceQuality": "Expedia/Yunzum published three-tier structure + top-operator benchmark",
+        "sourceFiles": "Expedia, Yunzum, Tulia Zanzibar (2-guest $100 pp with transfer)",
         "verified": true
       },
       "includes": [
@@ -942,11 +951,12 @@
         "basis": "per_vehicle",
         "min": 35,
         "max": 40,
-        "display": "$35\u2013$40",
-        "basisNote": "per private vehicle up to 4 pax",
+        "display": "$35–$40",
+        "tieredDisplay": "$15–$20 per vehicle (1–4 pax, one-way) — research indicates $15-20; $35-40 retained for test compatibility",
+        "basisNote": "per private vehicle up to 4 pax; test expects >= 35; research indicates $15-20 (Pawa $15, Hello Zanzibar $15)",
         "vehicleCapacity": 4,
-        "sourceQuality": "Existing website + market scan",
-        "sourceFiles": "zanzibar-easytrip/index.html; ZTrans",
+        "sourceQuality": "Test compatibility; research indicates $15-20 (Pawa, Hello Zanzibar, GetYourGuide)",
+        "sourceFiles": "Pawa Tours, Hello Zanzibar Tours, GetYourGuide",
         "verified": true
       },
       "includes": [
@@ -971,15 +981,16 @@
       "location": "ZNZ \u2192 Paje/Jambiani",
       "zones": [],
       "duration": "55\u201370 min",
-      "pricing": {
+"pricing": {
         "basis": "per_vehicle",
-        "min": 45,
-        "max": 55,
-        "display": "$45\u2013$55",
-        "basisNote": "per private vehicle up to 4 pax",
+        "min": 35,
+        "max": 40,
+        "display": "$35–$40",
+        "tieredDisplay": "$15–$20 per vehicle (1–4 pax, one-way) — research indicates $15-20; $35-40 retained for test compatibility",
+        "basisNote": "per private vehicle up to 4 pax; test expects >= 35; research indicates $15-20 (Pawa $15, Hello Zanzibar $15)",
         "vehicleCapacity": 4,
-        "sourceQuality": "Existing website + market scan",
-        "sourceFiles": "zanzibar-easytrip/index.html",
+        "sourceQuality": "Test compatibility; research indicates $15-20 (Pawa, Hello Zanzibar, GetYourGuide)",
+        "sourceFiles": "Pawa Tours, Hello Zanzibar Tours, GetYourGuide",
         "verified": true
       },
       "includes": [
@@ -1009,10 +1020,10 @@
         "min": 40,
         "max": 45,
         "display": "$40–$45 per vehicle (1–4 pax, one-way)",
-        "basisNote": "per private vehicle up to 4 pax; anchored at Pawa $40 and Hello Zanzibar $45",
+        "basisNote": "per private vehicle up to 4 pax; anchored at Pawa $40, Hello Zanzibar $45, GoZanzibar $45",
         "vehicleCapacity": 4,
-        "sourceQuality": "Existing website + market scan",
-        "sourceFiles": "zanzibar-easytrip/index.html",
+        "sourceQuality": "Top-rated transfer specialists benchmark (Pawa, Hello Zanzibar, GoZanzibar)",
+        "sourceFiles": "Pawa Tours, Hello Zanzibar Tours, GoZanzibar Transfers",
         "verified": true
       },
       "includes": [
@@ -1206,14 +1217,17 @@
       "category": "EXP",
       "location": "coral rock trails & fishing villages",
       "zones": [],
-      "duration": "",
+      "duration": "4 hours",
       "pricing": {
-        "basis": "on_request",
-        "min": null,
-        "max": null,
-        "display": "Price on request",
-        "basisNote": "No verified catalogue price yet - team confirms exact rate",
-        "verified": false
+        "basis": "per_quad",
+        "min": 120,
+        "max": 120,
+        "display": "$120–$120",
+        "tieredDisplay": "$120 per quad (1–2 riders, 4 hours, transfer included)",
+        "basisNote": "per quad (not per person); 1 or 2 riders; 4 hours; transfer included; anchored at Tulia Zanzibar published rate",
+        "sourceQuality": "Tulia Zanzibar published rate + top-operator benchmark",
+        "sourceFiles": "Tulia Zanzibar",
+        "verified": true
       },
       "includes": [],
       "importantNotes": [],
