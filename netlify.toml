@@ -291,4 +291,5 @@
 
 [dev]
   port = 8888
-  command = "npm run build"
+  framework = "#static"
+  publish = "dist"
