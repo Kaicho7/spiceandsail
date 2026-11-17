@@ -1006,9 +1006,9 @@
       "duration": "70\u201390 min",
       "pricing": {
         "basis": "per_vehicle",
-        "min": 50,
-        "max": 60,
-        "display": "$40\u2013$45 per vehicle (1\u20134 pax, one-way)",
+        "min": 40,
+        "max": 45,
+        "display": "$40–$45 per vehicle (1–4 pax, one-way)",
         "basisNote": "per private vehicle up to 4 pax; anchored at Pawa $40 and Hello Zanzibar $45",
         "vehicleCapacity": 4,
         "sourceQuality": "Existing website + market scan",
