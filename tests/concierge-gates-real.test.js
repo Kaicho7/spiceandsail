@@ -86,7 +86,7 @@ test('gate 2: UI/response reference equals stored reference equals staff alert r
 
 test('gate 11: floors, using real catalogue slugs', () => {
   const { quotePlan } = require('../src/lib/concierge/pricing');
-  const cases = [['mnemba-snorkeling', 70], ['airport-transfer-znz-to-stone-town', 35]];
+  const cases = [['mnemba-snorkeling', 40], ['airport-transfer-znz-to-stone-town', 15]];
   for (const [slug, floor] of cases) {
     const q = quotePlan([slug], 1, 0).perService[0];
     const text = JSON.stringify(q);

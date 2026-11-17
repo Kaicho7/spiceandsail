@@ -29,8 +29,8 @@ test.before(async () => {
 test('gate 3: client-supplied total or deposit is ignored', () => {
   const result = quotePlan(['stone-town-walking-tour'], 2, 0);
   assert.strictEqual(result.ok, true, 'Quote plan should work');
-  assert.strictEqual(result.totalLow, 90, 'totalLow should be catalogue-based (2 adults × $45)');
-  assert.strictEqual(result.totalHigh, 160, 'totalHigh should be catalogue-based (2 adults × $80)');
+  assert.strictEqual(result.totalLow, 58, 'totalLow should be catalogue-based (2 adults × $29)');
+  assert.strictEqual(result.totalHigh, 200, 'totalHigh should be catalogue-based (2 adults × $100)');
 });
 
 test('gate 4: foreign origin rejected', () => {

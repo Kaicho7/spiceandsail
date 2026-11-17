@@ -7,18 +7,18 @@
     "route": "Abeid Amani Karume International Airport → Stone Town",
     "duration": "10–20 min",
     "price": {
-      "min": 35,
-      "max": 40,
+      "min": 15,
+      "max": 20,
       "basis": "per private vehicle up to 4 pax",
-      "display": "$35–$40"
+      "display": "$15–$20"
     },
-    "price_display": "$35–$40",
+    "price_display": "$15–$20",
     "image": "toyota-alphard-vip-minivan-zanzibar.jpg",
     "includes": [
       "Meet & greet, flight tracking, waiting, water, luggage help"
     ],
-    "source_quality": "Existing website + market scan",
-    "source_files": "zanzibar-easytrip/index.html; ZTrans"
+    "source_quality": "35-operator competitive benchmark + independent Nov 2026 transfer-specialist scan",
+    "source_files": "Pawa Tours $15, Hello Zanzibar $15, GoZanzibar $20, ZanziRide $15-20"
   },
   {
     "id": "TRF-02",
@@ -28,18 +28,18 @@
     "route": "ZNZ → Paje/Jambiani",
     "duration": "55–70 min",
     "price": {
-      "min": 45,
-      "max": 55,
+      "min": 40,
+      "max": 45,
       "basis": "per private vehicle up to 4 pax",
-      "display": "$45–$55"
+      "display": "$40–$45"
     },
-    "price_display": "$45–$55",
+    "price_display": "$40–$45",
     "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
     "includes": [
       "Meet & greet, flight tracking, waiting, water, luggage help"
     ],
-    "source_quality": "Existing website + market scan",
-    "source_files": "zanzibar-easytrip/index.html"
+    "source_quality": "35-operator competitive benchmark + wholesale vault rate card",
+    "source_files": "Pawa Tours $40, Hello Zanzibar $40, GoZanzibar $45, vault PRICE LIST (2).pdf $45 (roundtrip $80)"
   },
   {
     "id": "TRF-03",
@@ -49,17 +49,17 @@
     "route": "ZNZ → Nungwi/Kendwa",
     "duration": "70–90 min",
     "price": {
-      "min": 50,
-      "max": 60,
+      "min": 40,
+      "max": 45,
       "basis": "per private vehicle up to 4 pax",
-      "display": "$50–$60"
+      "display": "$40–$45"
     },
-    "price_display": "$50–$60",
+    "price_display": "$40–$45",
     "image": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
     "includes": [
       "Meet & greet, flight tracking, waiting, water, luggage help"
     ],
-    "source_quality": "Existing website + market scan",
-    "source_files": "zanzibar-easytrip/index.html"
+    "source_quality": "35-operator competitive benchmark + wholesale vault rate card",
+    "source_files": "Pawa Tours $40, Hello Zanzibar $45, GoZanzibar $45, TripMate $45, vault PRICE LIST (2).pdf $45 (roundtrip $80)"
   }
 ]
