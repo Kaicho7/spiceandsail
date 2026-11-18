@@ -12,23 +12,170 @@
     {
       "slug": "airport-transfer-znz-to-stone-town",
       "route": "Abeid Amani Karume International Airport → Stone Town",
-      "oneWayDisplay": "$15–$20",
-      "roundTripDisplay": "from $30",
-      "capacity": 4
+      "oneWayDisplay": "$18 sedan / $35 van",
+      "roundTripDisplay": "from $36",
+      "capacity": 6,
+      "vehicles": [
+        {
+          "label": "Sedan (1–3 pax)",
+          "maxPax": 3,
+          "min": 18,
+          "max": 18
+        },
+        {
+          "label": "Van (4–6 pax)",
+          "maxPax": 6,
+          "min": 35,
+          "max": 35
+        }
+      ]
     },
     {
-      "slug": "airport-transfer-znz-to-pajejambiani",
-      "route": "ZNZ → Paje/Jambiani",
-      "oneWayDisplay": "$40–$45",
-      "roundTripDisplay": "from $80",
-      "capacity": 4
+      "slug": "airport-transfer-znz-to-fumba",
+      "route": "ZNZ → Fumba (Safari Blue departure)",
+      "oneWayDisplay": "$30 sedan / $45 van",
+      "roundTripDisplay": "from $60",
+      "capacity": 6,
+      "vehicles": [
+        {
+          "label": "Sedan (1–3 pax)",
+          "maxPax": 3,
+          "min": 30,
+          "max": 30
+        },
+        {
+          "label": "Van (4–6 pax)",
+          "maxPax": 6,
+          "min": 45,
+          "max": 45
+        }
+      ]
     },
     {
       "slug": "airport-transfer-znz-to-nungwikendwa",
       "route": "ZNZ → Nungwi/Kendwa",
-      "oneWayDisplay": "$40–$45",
+      "oneWayDisplay": "$45 sedan / $50 van",
+      "roundTripDisplay": "from $90",
+      "capacity": 6,
+      "vehicles": [
+        {
+          "label": "Sedan (1–3 pax)",
+          "maxPax": 3,
+          "min": 45,
+          "max": 45
+        },
+        {
+          "label": "Van (4–6 pax)",
+          "maxPax": 6,
+          "min": 50,
+          "max": 50
+        }
+      ]
+    },
+    {
+      "slug": "airport-transfer-znz-to-pajejambiani",
+      "route": "ZNZ → Paje/Jambiani/Bwejuu",
+      "oneWayDisplay": "$45 sedan / $50 van",
+      "roundTripDisplay": "from $90",
+      "capacity": 6,
+      "vehicles": [
+        {
+          "label": "Sedan (1–3 pax)",
+          "maxPax": 3,
+          "min": 45,
+          "max": 45
+        },
+        {
+          "label": "Van (4–6 pax)",
+          "maxPax": 6,
+          "min": 50,
+          "max": 50
+        }
+      ]
+    },
+    {
+      "slug": "airport-transfer-znz-to-matemwe",
+      "route": "ZNZ → Matemwe / Uroa / Kiwengwa / Pongwe",
+      "oneWayDisplay": "$40 sedan / $50 van",
       "roundTripDisplay": "from $80",
-      "capacity": 4
+      "capacity": 6,
+      "vehicles": [
+        {
+          "label": "Sedan (1–3 pax)",
+          "maxPax": 3,
+          "min": 40,
+          "max": 40
+        },
+        {
+          "label": "Van (4–6 pax)",
+          "maxPax": 6,
+          "min": 50,
+          "max": 50
+        }
+      ]
+    },
+    {
+      "slug": "airport-transfer-znz-to-kizimkazi",
+      "route": "ZNZ → Kizimkazi / Makunduchi / Michamvi",
+      "oneWayDisplay": "$50 sedan / $50 van",
+      "roundTripDisplay": "from $100",
+      "capacity": 6,
+      "vehicles": [
+        {
+          "label": "Sedan (1–3 pax)",
+          "maxPax": 3,
+          "min": 50,
+          "max": 50
+        },
+        {
+          "label": "Van (4–6 pax)",
+          "maxPax": 6,
+          "min": 50,
+          "max": 50
+        }
+      ]
+    },
+    {
+      "slug": "stone-town-to-nungwi",
+      "route": "Stone Town → Nungwi/Kendwa",
+      "oneWayDisplay": "$50 sedan / $50 van",
+      "roundTripDisplay": "from $100",
+      "capacity": 6,
+      "vehicles": [
+        {
+          "label": "Sedan (1–3 pax)",
+          "maxPax": 3,
+          "min": 50,
+          "max": 50
+        },
+        {
+          "label": "Van (4–6 pax)",
+          "maxPax": 6,
+          "min": 50,
+          "max": 50
+        }
+      ]
+    },
+    {
+      "slug": "full-day-island-hire",
+      "route": "Zanzibar island-wide, 8 hours incl. 150 km",
+      "oneWayDisplay": "$100 sedan / $150 van",
+      "roundTripDisplay": "from $200",
+      "capacity": 6,
+      "vehicles": [
+        {
+          "label": "Sedan (1–3 pax)",
+          "maxPax": 3,
+          "min": 100,
+          "max": 100
+        },
+        {
+          "label": "Van (4–6 pax)",
+          "maxPax": 6,
+          "min": 150,
+          "max": 150
+        }
+      ]
     }
   ],
   "bundles": [

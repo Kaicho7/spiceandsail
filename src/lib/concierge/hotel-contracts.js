@@ -7,6 +7,7 @@
 
 const contractsData = require('../../data/hotel-contracts.json');
 const publicRates = require('../../data/hotelRates.json');
+const publicHotelRates = require('../../data/hotelPublicRates.json');
 
 const HOTELS = contractsData.hotels || [];
 
@@ -304,6 +305,63 @@ function approvedPriceSheets(contracts) {
   });
 }
 
+/** Public, server-only quote for one contracted hotel stay (room nights + levy). */
+function hotelQuote(slug, opts) {
+  const contract = getHotelContract(slug);
+  if (!contract) return null;
+  const pub = publicRateSheet(slug);
+  const o = opts || {};
+  const nights = Math.max(1, Math.floor(o.nights || 1));
+  const roomCount = Math.max(1, Math.floor(o.rooms || 1));
+  const adults = Math.max(1, Math.floor(o.adults || 2));
+  const children = Math.max(0, Math.floor(o.children || 0));
+  let season = null;
+  const m = String(o.date || '').match(/^\d{4}-(\d{2})-(\d{2})/);
+  if (m) season = seasonForMonthDay(pub, Number(m[1]), Number(m[2]));
+  if (!season) season = currentSeason(pub);
+  let roomRates = [];
+  if (season && Array.isArray(season.rooms) && season.rooms.length) {
+    roomRates = season.rooms.map(function (r) {
+      return { roomType: r.roomType, rate: r.ourHalfBoard != null ? r.ourHalfBoard : r.ourRate };
+    });
+  } else if (pub && Array.isArray(pub.rooms)) {
+    roomRates = pub.rooms.map(function (r) { return { roomType: r.roomType, rate: r.ourRate }; });
+  }
+  roomRates = roomRates.filter(function (r) { return Number.isFinite(r.rate); });
+  if (!roomRates.length) return null;
+  const wanted = o.roomType ? roomRates.filter(function (r) { return r.roomType === o.roomType; }) : roomRates;
+  const chosen = wanted.length ? wanted : roomRates;
+  const min = Math.min.apply(null, chosen.map(function (r) { return r.rate; }));
+  const max = Math.max.apply(null, chosen.map(function (r) { return r.rate; }));
+  const levy = (publicHotelRates.taxPerPersonPerNight && publicHotelRates.taxPerPersonPerNight[slug]) || contract.infrastructureTaxPerPersonPerNight || 0;
+  const roomLow = min * nights * roomCount;
+  const roomHigh = max * nights * roomCount;
+  const levyTotal = levy * (adults + children) * nights;
+  const money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  const display = roomLow === roomHigh ? money(roomLow + levyTotal) : money(roomLow + levyTotal) + "–" + money(roomHigh + levyTotal);
+  return {
+    ok: true,
+    status: 'quoted',
+    serviceSlug: 'hotel:' + slug,
+    serviceName: contract.name + ' — ' + nights + ' night' + (nights > 1 ? 's' : ''),
+    serviceType: 'hotel',
+    currency: 'USD',
+    basis: 'per_room_per_night',
+    totalLow: roomLow + levyTotal,
+    totalHigh: roomHigh + levyTotal,
+    totalDisplay: display,
+    lines: [
+      { label: contract.name + ' — ' + roomCount + ' room' + (roomCount > 1 ? 's' : '') + ' × ' + nights + ' nights', low: roomLow, high: roomHigh, note: (season ? season.label + ': ' : '') + 'per room per night for 2 adults, ' + (pub && pub.basis ? pub.basis : 'board as booked') + '.' },
+      { label: 'Zanzibar infrastructure levy — $' + levy + ' × ' + (adults + children) + ' guests × ' + nights + ' nights', low: levyTotal, high: levyTotal, note: 'Charged per person per night; shown separately for transparency.' }
+    ],
+    includes: [],
+    notes: ['Room rate is quoted per room for 2 adults; extra-person supplements are confirmed by our team.', 'Final availability, room type and board basis are confirmed on WhatsApp before payment.'],
+    flags: [],
+    reasons: [],
+    catalogueVersion: publicHotelRates.version || 'unknown'
+  };
+}
+
 module.exports = {
   getHotelContract: getHotelContract,
   matchHotelContracts: matchHotelContracts,
@@ -316,4 +374,5 @@ module.exports = {
   extractTravelMonthDay: extractTravelMonthDay,
   partnerMentionReply: partnerMentionReply,
   approvedPriceSheets: approvedPriceSheets,
+  hotelQuote: hotelQuote,
 };

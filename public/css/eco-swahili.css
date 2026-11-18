@@ -524,6 +524,13 @@ main:not(.home) .hero-subtitle{max-width:64ch;margin:0 auto;color:#efe5d6;font-s
 .sns-concierge-title{font-family:var(--font-display)!important}
 .sns-btn-next,.sns-btn-whatsapp,.sns-btn-whatsapp-direct,.sns-btn-submit{background:var(--palm)!important;color:#fff!important;border-color:var(--palm)!important}
 .sns-service-card.selected{border-color:var(--palm)!important;background:var(--palm-soft)!important;box-shadow:0 0 0 1px var(--palm)!important}
+.sns-hotel-grid{display:grid;gap:.5rem;max-height:190px;overflow:auto}
+.sns-hotel-card{display:flex;gap:.6rem;align-items:flex-start;border:1px solid var(--border);border-radius:8px;padding:.6rem;cursor:pointer}
+.sns-hotel-card.selected{border-color:var(--palm)!important;background:var(--palm-soft)!important}
+.sns-hotel-price{display:block;font-weight:700;color:var(--palm)}
+.sns-basket{border:1px solid var(--border);border-radius:8px;padding:.75rem;margin-bottom:.75rem;max-height:160px;overflow:auto}
+.sns-basket-item{display:flex;justify-content:space-between;gap:.5rem;align-items:center;font-size:.88rem;padding:.2rem 0}
+.sns-basket-remove{background:none;border:none;color:var(--coral);cursor:pointer;font-weight:700}
 .sns-quote-box{background:var(--ocean-soft)!important;border-color:var(--ocean)!important}
 .sns-quote-title,.sns-quote-amount,.sns-service-price{color:var(--palm)!important}
 

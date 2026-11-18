@@ -11,7 +11,7 @@ const MAX_PAYLOAD_BYTES = 16384; // 16 KB
 // Strict field allowlist for lead submissions
 const ALLOWED_FIELDS = new Set([
   'name', 'whatsapp', 'email', 'date', 'travellers', 'notes',
-  'services', 'consent_contact', 'consent_marketing',
+  'services', 'nights', 'rooms', 'consent_contact', 'consent_marketing',
   'privacy_notice_version', 'session_id', 'honeypot', 'form_loaded_at',
 ]);
 

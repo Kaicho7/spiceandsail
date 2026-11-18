@@ -54,6 +54,10 @@
           <div class="sns-service-grid">
             <!-- Services are populated by JavaScript from the GET /quote catalogue response -->
           </div>
+          <label class="sns-field-label" style="margin-top:1rem;">Or add one of our five contracted hotels</label>
+          <div class="sns-hotel-grid" id="sns-hotel-grid">
+            <!-- Contracted hotels are populated by JavaScript from GET /quote -->
+          </div>
           <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(2)">Next: Dates &amp; Travelers →</button>
           <button type="button" id="sns-chat-open" class="sns-chat-open-btn">💬 Ask the concierge instead</button>
         </div>
@@ -76,21 +80,33 @@
             <input type="text" id="sns-location" class="sns-input-text" placeholder="e.g. ZNZ Airport, Riu Palace Nungwi, Paje, Stone Town...">
           </div>
 
+          <div class="sns-field-group">
+            <label class="sns-field-label" for="sns-nights">Hotel Nights (if a hotel was added)</label>
+            <input type="number" id="sns-nights" class="sns-input-text" name="nights" min="1" max="30" step="1" value="2" inputmode="numeric">
+          </div>
+
+          <div class="sns-field-group">
+            <label class="sns-field-label" for="sns-rooms">Hotel Rooms (if a hotel was added)</label>
+            <input type="number" id="sns-rooms" class="sns-input-text" name="rooms" min="1" max="10" step="1" value="1" inputmode="numeric">
+          </div>
+
           <div class="sns-step-actions">
             <button type="button" class="sns-btn-back" onclick="window.snsConcierge.goToStep(1)">← Back</button>
-            <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(3)">Next: Planning Range →</button>
+            <button type="button" class="sns-btn-next" onclick="window.snsConcierge.goToStep(3)">Next: Published Rate →</button>
           </div>
         </div>
 
-        <!-- Step 3: Planning range (server /quote) & Submit -->
+        <!-- Step 3: Published rate (server /quote) & Submit -->
         <div class="sns-form-step" id="sns-step-3">
-          <!-- Server-computed planning range -->
+          <div class="sns-basket" id="sns-basket" aria-live="polite"></div>
+
+          <!-- Server-computed published rate -->
           <div class="sns-quote-box">
             <div class="sns-quote-header">
-              <span class="sns-quote-title">Planning range (our team confirms final price)</span>
+              <span class="sns-quote-title">Published rate (our team confirms final price)</span>
               <span id="sns-quote-amount" class="sns-quote-amount"></span>
             </div>
-            <p id="sns-quote-summary" class="sns-quote-summary">Select a service above to see the planning range.</p>
+            <p id="sns-quote-summary" class="sns-quote-summary">Select a service above to see the published rate.</p>
           </div>
 
           <div class="sns-field-group">

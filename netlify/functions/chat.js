@@ -319,6 +319,10 @@ function buildWhatsAppUrl(profile, serviceSlugs) {
   for (const slug of slugsToUse) {
     const svc = getService(slug);
     if (svc) tourNames.push(svc.name);
+    else if (slug.indexOf('hotel:') === 0) {
+      var stay = hotelContracts.getHotelContract(slug.slice(6));
+      if (stay) tourNames.push(stay.name);
+    }
   }
   const parts = ['Hi Spice & Sail! I\'d like to book: ' + (tourNames.length > 0 ? tourNames.join(', ') : 'a Zanzibar experience') + '.'];
   if (profile.name) parts.push('Name: ' + profile.name + '.');
@@ -835,9 +839,10 @@ exports.handler = async function (event) {
   };
 
   if (isTerminal) {
-    const targetSlugs = matchedSlugs.length > 0
+    const staySlugs = hotelContracts.matchHotelContracts(userMessage).map(function (h) { return 'hotel:' + h.slug; });
+    const targetSlugs = [...new Set((matchedSlugs.length > 0
       ? matchedSlugs
-      : (mergedProfile.activeSlug ? [mergedProfile.activeSlug] : (mergedProfile.serviceSlugs || []));
+      : (mergedProfile.activeSlug ? [mergedProfile.activeSlug] : (mergedProfile.serviceSlugs || []))).concat(staySlugs))];
     responseBody.whatsapp_url = buildWhatsAppUrl(mergedProfile, targetSlugs);
     // Append a WhatsApp prompt to the message if not already mentioning WhatsApp handoff
     if (!finalReply.message.includes('WhatsApp')) {

@@ -7,6 +7,7 @@
 const { corsHeaders, isAllowedOrigin } = require('../../src/lib/concierge/security');
 const { getQuote, quotePlan } = require('../../src/lib/concierge/pricing');
 const { catalogue, CATALOGUE_VERSION, CONFIG } = require('../../src/lib/concierge/catalogue');
+const publicHotelRates = require('../../src/data/hotelPublicRates.json');
 
 exports.handler = async function (event) {
   const origin = event.headers && event.headers.origin;
@@ -43,6 +44,17 @@ exports.handler = async function (event) {
         privacyNoticeVersion: CONFIG.privacyNoticeVersion || '1.0',
         replyWindow: CONFIG.replyWindow || 'within business hours',
         services: services,
+        hotels: (publicHotelRates.hotels || []).map(function (h) {
+          return {
+            slug: 'hotel:' + h.slug,
+            name: h.name,
+            area: h.area,
+            board: h.board,
+            fromRate: Math.min.apply(null, (h.rooms || []).map(function (r) { return r.guestRatePerRoomPerNight; })),
+            taxPerPersonPerNight: h.taxPerPersonPerNight,
+            roomTypes: (h.rooms || []).map(function (r) { return r.type; })
+          };
+        }),
       }),
     };
   }
@@ -62,7 +74,13 @@ exports.handler = async function (event) {
 
   // Plan quote (multiple services)
   if (body.serviceSlugs && Array.isArray(body.serviceSlugs)) {
-    const result = quotePlan(body.serviceSlugs, body.adults || 2, body.children || 0);
+    const result = quotePlan(body.serviceSlugs, body.adults || 2, body.children || 0, {
+      date: body.date || null,
+      pickupZone: body.pickupZone || null,
+      nights: body.nights || null,
+      rooms: body.rooms || null,
+      roomType: body.roomType || null,
+    });
     return { statusCode: 200, headers: headers, body: JSON.stringify(result) };
   }
 

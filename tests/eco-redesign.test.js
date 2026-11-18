@@ -230,16 +230,22 @@ test('redesign: transfer calculator only quotes verified destinations and hands 
   const catalogue = JSON.parse(read('src/data/concierge-catalogue.json'));
   const verifiedTransfers = catalogue.services.filter(service => service.type === 'transfer').map(service => service.slug);
   assert.deepStrictEqual(verifiedTransfers.sort(), [
+    'airport-transfer-znz-to-stone-town',
+    'airport-transfer-znz-to-fumba',
     'airport-transfer-znz-to-nungwikendwa',
     'airport-transfer-znz-to-pajejambiani',
-    'airport-transfer-znz-to-stone-town'
+    'airport-transfer-znz-to-matemwe',
+    'airport-transfer-znz-to-kizimkazi',
+    'stone-town-to-nungwi',
+    'full-day-island-hire'
   ].sort());
   for (const id of ['calc-pickup', 'calc-dest', 'calc-pax', 'calc-date', 'calc-flight', 'calc-driver-lang']) {
     assert.ok(transfers.includes('<label for="' + id + '"'), id + ' must have an associated label');
   }
   assert.ok(transfers.includes('type="number" id="calc-pax" min="1" max="50"'));
-  assert.ok(transfers.includes('data-slug="" data-fare="on_request" data-zone="Matemwe"'));
-  assert.ok(transfers.includes('data-slug="" data-fare="on_request" data-zone="Kiwengwa / Pongwe"'));
+  assert.ok(transfers.includes('data-slug="airport-transfer-znz-to-matemwe"'));
+  assert.ok(transfers.includes('data-zone="Kiwengwa / Pongwe"'));
+  assert.ok(transfers.includes('data-slug="airport-transfer-znz-to-kizimkazi"'));
   assert.ok(transfers.includes("fetch('/.netlify/functions/quote'"));
   assert.ok(transfers.includes("window.snsConcierge.openBooking(options)"));
   assert.ok(transfers.includes('serviceSlug: route.slug'));

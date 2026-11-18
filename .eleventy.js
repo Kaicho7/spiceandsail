@@ -39,7 +39,7 @@ module.exports = function(eleventyConfig) {
     if (!svc) return "Our team will confirm the price.";
     const p = svc.pricing || {};
     if (p.basis === "on_request" || p.min == null || p.max == null) return "Our team will confirm the price.";
-    return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle") + " (planning range — our team confirms the final price)";
+    return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle") + " (published rate — our team confirms your tier and pickup)";
   });
   eleventyConfig.addShortcode("catPrice", (slug) => {
     const svc = catService(slug);
@@ -91,7 +91,7 @@ module.exports = function(eleventyConfig) {
       return `<span class="price-tiered" tabindex="0" data-tooltip="${escapedTip}">${display} <span class="price-basis">${p.basis === 'per_person' ? 'per person' : 'per vehicle'}</span></span>`;
     }
     
-    return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle") + " (planning range — our team confirms the final price)";
+    return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle") + " (published rate — our team confirms your tier and pickup)";
   });
 
   // Short version for cards - just "From $X" with tiered tooltip

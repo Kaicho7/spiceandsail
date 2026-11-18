@@ -3,63 +3,176 @@
     "id": "TRF-01",
     "slug": "airport-transfer-znz-to-stone-town",
     "title": "Zanzibar Airport Transfer — ZNZ to Stone Town hotel",
-    "description": "",
+    "description": "Abeid Amani Karume International Airport → Stone Town — private transfer, sedan or van by party size.",
     "route": "Abeid Amani Karume International Airport → Stone Town",
     "duration": "10–20 min",
     "price": {
-      "min": 15,
-      "max": 20,
-      "basis": "per private vehicle up to 4 pax",
-      "display": "$15–$20"
+      "min": 18,
+      "max": 18,
+      "basis": "per private vehicle: sedan 1–3 pax / van 4–6 pax",
+      "display": "$18 sedan / $35 van"
     },
-    "price_display": "$15–$20",
+    "price_display": "$18 sedan / $35 van",
     "image": "toyota-alphard-vip-minivan-zanzibar.jpg",
     "includes": [
-      "Meet & greet, flight tracking, waiting, water, luggage help"
+      "Meet & greet, flight tracking, waiting, water, luggage help",
+      "Fuel and driver included — no night surcharge"
     ],
-    "source_quality": "35-operator competitive benchmark + independent Nov 2026 transfer-specialist scan",
-    "source_files": "Pawa Tours $15, Hello Zanzibar $15, GoZanzibar $20, ZanziRide $15-20"
+    "source_quality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+    "source_files": "Taxi Trip Zanzibar $15; launch card v2 $20"
   },
   {
-    "id": "TRF-02",
-    "slug": "airport-transfer-znz-to-pajejambiani",
-    "title": "Zanzibar Airport Transfer — ZNZ to Paje & Jambiani hotels",
-    "description": "",
-    "route": "ZNZ → Paje/Jambiani",
-    "duration": "55–70 min",
+    "id": "TRF-04",
+    "slug": "airport-transfer-znz-to-fumba",
+    "title": "Zanzibar Airport Transfer — ZNZ to Fumba",
+    "description": "ZNZ → Fumba (Safari Blue departure) — private transfer, sedan or van by party size.",
+    "route": "ZNZ → Fumba (Safari Blue departure)",
+    "duration": "25–35 min",
     "price": {
-      "min": 40,
-      "max": 45,
-      "basis": "per private vehicle up to 4 pax",
-      "display": "$40–$45"
+      "min": 30,
+      "max": 30,
+      "basis": "per private vehicle: sedan 1–3 pax / van 4–6 pax",
+      "display": "$30 sedan / $45 van"
     },
-    "price_display": "$40–$45",
+    "price_display": "$30 sedan / $45 van",
     "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
     "includes": [
-      "Meet & greet, flight tracking, waiting, water, luggage help"
+      "Meet & greet, flight tracking, waiting, water, luggage help",
+      "Fuel and driver included — no night surcharge"
     ],
-    "source_quality": "35-operator competitive benchmark + wholesale vault rate card",
-    "source_files": "Pawa Tours $40, Hello Zanzibar $40, GoZanzibar $45, vault PRICE LIST (2).pdf $45 (roundtrip $80)"
+    "source_quality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+    "source_files": "Launch card v2 $30; transfer listings ~$27"
   },
   {
     "id": "TRF-03",
     "slug": "airport-transfer-znz-to-nungwikendwa",
     "title": "Zanzibar Airport Transfer — ZNZ to Nungwi & Kendwa hotels",
-    "description": "",
+    "description": "ZNZ → Nungwi/Kendwa — private transfer, sedan or van by party size.",
     "route": "ZNZ → Nungwi/Kendwa",
     "duration": "70–90 min",
     "price": {
-      "min": 40,
+      "min": 45,
       "max": 45,
-      "basis": "per private vehicle up to 4 pax",
-      "display": "$40–$45"
+      "basis": "per private vehicle: sedan 1–3 pax / van 4–6 pax",
+      "display": "$45 sedan / $50 van"
     },
-    "price_display": "$40–$45",
-    "image": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
+    "price_display": "$45 sedan / $50 van",
+    "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
     "includes": [
-      "Meet & greet, flight tracking, waiting, water, luggage help"
+      "Meet & greet, flight tracking, waiting, water, luggage help",
+      "Fuel and driver included — no night surcharge"
     ],
-    "source_quality": "35-operator competitive benchmark + wholesale vault rate card",
-    "source_files": "Pawa Tours $40, Hello Zanzibar $45, GoZanzibar $45, TripMate $45, vault PRICE LIST (2).pdf $45 (roundtrip $80)"
+    "source_quality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+    "source_files": "Taxi Trip $40 sedan / partner van $50; launch card v2 $50/$50"
+  },
+  {
+    "id": "TRF-02",
+    "slug": "airport-transfer-znz-to-pajejambiani",
+    "title": "Zanzibar Airport Transfer — ZNZ to Paje & Jambiani hotels",
+    "description": "ZNZ → Paje/Jambiani/Bwejuu — private transfer, sedan or van by party size.",
+    "route": "ZNZ → Paje/Jambiani/Bwejuu",
+    "duration": "55–70 min",
+    "price": {
+      "min": 45,
+      "max": 45,
+      "basis": "per private vehicle: sedan 1–3 pax / van 4–6 pax",
+      "display": "$45 sedan / $50 van"
+    },
+    "price_display": "$45 sedan / $50 van",
+    "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
+    "includes": [
+      "Meet & greet, flight tracking, waiting, water, luggage help",
+      "Fuel and driver included — no night surcharge"
+    ],
+    "source_quality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+    "source_files": "Taxi Trip $40 / partner van $50; launch card v2 $50/$50"
+  },
+  {
+    "id": "TRF-05",
+    "slug": "airport-transfer-znz-to-matemwe",
+    "title": "Zanzibar Airport Transfer — ZNZ to Matemwe",
+    "description": "ZNZ → Matemwe / Uroa / Kiwengwa / Pongwe — private transfer, sedan or van by party size.",
+    "route": "ZNZ → Matemwe / Uroa / Kiwengwa / Pongwe",
+    "duration": "50–70 min",
+    "price": {
+      "min": 40,
+      "max": 40,
+      "basis": "per private vehicle: sedan 1–3 pax / van 4–6 pax",
+      "display": "$40 sedan / $50 van"
+    },
+    "price_display": "$40 sedan / $50 van",
+    "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
+    "includes": [
+      "Meet & greet, flight tracking, waiting, water, luggage help",
+      "Fuel and driver included — no night surcharge"
+    ],
+    "source_quality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+    "source_files": "ReiseTaxi $29.9 anchor; launch card v2 $45/$65"
+  },
+  {
+    "id": "TRF-06",
+    "slug": "airport-transfer-znz-to-kizimkazi",
+    "title": "Zanzibar Airport Transfer — ZNZ to Kizimkazi, Makunduchi & Michamvi",
+    "description": "ZNZ → Kizimkazi / Makunduchi / Michamvi — private transfer, sedan or van by party size.",
+    "route": "ZNZ → Kizimkazi / Makunduchi / Michamvi",
+    "duration": "70–100 min",
+    "price": {
+      "min": 50,
+      "max": 50,
+      "basis": "per private vehicle: sedan 1–3 pax / van 4–6 pax",
+      "display": "$50 sedan / $50 van"
+    },
+    "price_display": "$50 sedan / $50 van",
+    "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
+    "includes": [
+      "Meet & greet, flight tracking, waiting, water, luggage help",
+      "Fuel and driver included — no night surcharge"
+    ],
+    "source_quality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+    "source_files": "Taxi Trip $50; launch card v2 $55/$75"
+  },
+  {
+    "id": "TRF-07",
+    "slug": "stone-town-to-nungwi",
+    "title": "Point-to-Point Transfer — Stone Town to Nungwi",
+    "description": "Stone Town → Nungwi/Kendwa — private transfer, sedan or van by party size.",
+    "route": "Stone Town → Nungwi/Kendwa",
+    "duration": "75–95 min",
+    "price": {
+      "min": 50,
+      "max": 50,
+      "basis": "per private vehicle: sedan 1–3 pax / van 4–6 pax",
+      "display": "$50 sedan / $50 van"
+    },
+    "price_display": "$50 sedan / $50 van",
+    "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
+    "includes": [
+      "Meet & greet, flight tracking, waiting, water, luggage help",
+      "Fuel and driver included — no night surcharge"
+    ],
+    "source_quality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+    "source_files": "Transfer benchmark $45–60; launch card v2 $50/$50"
+  },
+  {
+    "id": "TRF-08",
+    "slug": "full-day-island-hire",
+    "title": "Full-Day Island Hire — 8 hours / 150 km",
+    "description": "Zanzibar island-wide, 8 hours incl. 150 km — private transfer, sedan or van by party size.",
+    "route": "Zanzibar island-wide, 8 hours incl. 150 km",
+    "duration": "8 hours",
+    "price": {
+      "min": 100,
+      "max": 100,
+      "basis": "per private vehicle: sedan 1–3 pax / van 4–6 pax",
+      "display": "$100 sedan / $150 van"
+    },
+    "price_display": "$100 sedan / $150 van",
+    "image": "toyota-hiace-commuter-minivan-zanzibar.jpg",
+    "includes": [
+      "Meet & greet, flight tracking, waiting, water, luggage help",
+      "Fuel and driver included — no night surcharge"
+    ],
+    "source_quality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+    "source_files": "Market $50–150; launch card v2 $110/$160"
   }
 ]

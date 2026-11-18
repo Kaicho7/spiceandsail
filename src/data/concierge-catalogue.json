@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-04.1",
+  "version": "2026-11-18.v3-market",
   "sourceRepo": "github.com/Kaicho7/spiceandsail @ 550a5b3 (read-only)",
   "currency": "USD",
   "config": {
@@ -36,7 +36,27 @@
     },
     "privacyNoticeVersion": "1.0",
     "childPricing": "on_request",
-    "pickupSupplement": "on_request"
+    "pickupSupplement": "on_request",
+    "seasons": [
+      {
+        "slug": "green",
+        "name": "Green season",
+        "from": "04-01",
+        "to": "05-31",
+        "dayTripDiscount": 0.1,
+        "safariDiscount": 0.2
+      },
+      {
+        "slug": "shoulder",
+        "name": "Shoulder season",
+        "from": "11-01",
+        "to": "12-15",
+        "dayTripDiscount": 0,
+        "safariDiscount": 0.1
+      }
+    ],
+    "childPolicy": "Ages 6–14 at the published child rate on excursions; under 6 free except marine park fees.",
+    "sharedMinGuests": 6
   },
   "zones": [
     {
@@ -166,14 +186,16 @@
       "duration": "2–4 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 29,
-        "max": 100,
-        "display": "$29–$100",
-        "tieredDisplay": "Group walking tour: $29 pp • Private 2 guests (no transfer): $60 pp • Private 2 guests (with transfer): $100 pp",
+        "min": 35,
+        "max": 90,
+        "display": "$35–$90",
+        "tieredDisplay": "Group walking tour: $35 pp • Private 2 guests (no transfer): $60 pp • Private 2 guests (with transfer): $90 pp",
         "basisNote": "per person; group tour meets at Forodhani; private includes guide only (add transfer supplement if needed); anchored at AAA/TripCanvas $29 group, $60-100 private (Tulia Zanzibar); market scan: zanzibarguides group $20-30, JoyTrekking $45, Navin $25",
-        "sourceQuality": "35-operator competitive benchmark (DeepSeek research) + independent Nov 2026 scan",
+        "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "AAA/TripCanvas, Tulia Zanzibar, zanzibarguides.com, JoyTrekking, Navin Tours",
-        "verified": true
+        "verified": true,
+        "childRate": 20,
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
       },
       "includes": [
         "Licensed Zanzibar official historian guide",
@@ -215,14 +237,16 @@
       "duration": "3–4 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 32,
-        "max": 100,
-        "display": "$32–$100",
-        "tieredDisplay": "Walking tour (no transfer): $32 pp • Private 2 guests (with transfer): $100 pp",
+        "min": 40,
+        "max": 75,
+        "display": "$40–$75",
+        "tieredDisplay": "Walking tour (no transfer): $40 pp • Private 2 guests (with transfer): $75 pp",
         "basisNote": "per person; walking tour meets at farm; private includes guide, transport, tasting; anchored at Expedia ($32 pp walking) and Tulia Zanzibar ($100 pp private with transfer)",
-        "sourceQuality": "Expedia walking tour + Tulia Zanzibar private rate + top-operator benchmark",
+        "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Expedia, Tulia Zanzibar, Trip.com entry-only rate",
-        "verified": true
+        "verified": true,
+        "childRate": 25,
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
       },
       "includes": [
         "Farm walk, spice/fruit tasting, guide",
@@ -358,14 +382,16 @@
       "duration": "7–9 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 100,
-        "max": 190,
-        "display": "$100–$190",
-        "tieredDisplay": "1 guest: $175 pp (Stone Town) / $190 pp (beach hotel) • 2 guests: $110 pp (Stone Town) / $130 pp (beach hotel) • 3–6 guests: $100 pp (Stone Town) / $110 pp (beach hotel)",
+        "min": 85,
+        "max": 150,
+        "display": "$85–$150",
+        "tieredDisplay": "1 guest: $150 pp • 2 guests: $95 pp • 3–6 guests: $85 pp (all-in: fees, lunch, gear)",
         "basisNote": "per person; includes $10 marine fee; group-size tiered; Stone Town pickup vs beach-hotel pickup differential; anchored at Cotis Safaris published rates",
-        "sourceQuality": "Cotis Safaris official published rates + top-operator benchmark",
+        "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Cotis Safaris rate card, Easy Travel group-size tiers",
-        "verified": true
+        "verified": true,
+        "childRate": 50,
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
       },
       "includes": [
         "Dhow, snorkeling, sandbank, seafood lunch, drinks, guide"
@@ -413,14 +439,16 @@
       "duration": "3–6 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 40,
+        "min": 45,
         "max": 115,
-        "display": "$40–$115",
-        "tieredDisplay": "Shared small-group (max 8): $40 pp incl conservation fee • Kendwa departure: $55 pp incl fees • Private 2 guests: $90–100 pp (includes $25 marine fee) • Premium private: $105–115 pp",
-        "basisNote": "per person; shared small-group includes marine fee; private includes $25 Mnemba marine fee; anchored at Zanzibar Star Tours ($40 shared incl fees, $90 private 2 pax), Mnemba Island Tours ($60 private adult), Tulia Zanzibar ($100 pp private incl $25 fee), Azur ($105–115 pp)",
-        "sourceQuality": "35-operator competitive benchmark (DeepSeek research) + independent Nov 2026 scan",
+        "display": "$45–$115",
+        "tieredDisplay": "Shared small-group (max 8): $45 pp + $10 marine fee • Kendwa departure: $55 pp incl fees • Private 2 guests: $85–95 pp (includes $10 marine fee) • Premium private: $105–115 pp",
+        "basisNote": "per person; shared $45 pp + $10 marine fee, private 2 guests $85–95 pp incl $10 marine fee; benchmark: shared typical $55, fee $10 since 1 Sep 2025",
+        "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Zanzibar Star Tours, Mnemba Island Tours, Tulia Zanzibar, Azur Zanzibar Tours, snorkelingzanzibar.com",
-        "verified": true
+        "verified": true,
+        "childRate": 50,
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
       },
       "includes": [
         "Motorized boat, licensed captain & crew",
@@ -430,7 +458,7 @@
         "Official Mnemba marine conservation fee ($25/adult included)"
       ],
       "importantNotes": [
-        "Marine conservation fee: $25 for non-EAC adults (included in our price)",
+        "Marine conservation fee: $10 for non-EAC adults (included in our price)",
         "Best condition: June–October and December–March",
         "Avoid \"guaranteed dolphin\" claims — these are unethical and often illegal",
         "Weather dependent; trips may be rescheduled in rough seas"
@@ -467,14 +495,16 @@
       "duration": "Half day to 6 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 25,
-        "max": 110,
-        "display": "$25–$110",
-        "tieredDisplay": "Private 2 guests: $110 pp (includes entrance, boat, lunch) • Budget shared: from $25 pp + $23 entrance separately",
-        "basisNote": "per person; private includes entrance, boat, seafood lunch; budget shared excludes $23 entrance fee; anchored at Tulia Zanzibar ($110 pp private)",
-        "sourceQuality": "Tulia Zanzibar private rate + Tripadvisor operator entrance fee + top-operator benchmark",
+        "min": 85,
+        "max": 95,
+        "display": "$85–$95",
+        "tieredDisplay": "2 guests: $95 pp (includes $23 entrance, boat, lunch) • 3–6 guests: $85 pp (all-in)",
+        "basisNote": "per person all-in; 2 guests $95 pp, 3–6 guests $85 pp; includes $23 Changuu entrance and $10 Nakupenda sandbank fee; benchmark typical $88",
+        "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Tulia Zanzibar, Tripadvisor operator listing, Viator/GetYourGuide shared options",
-        "verified": true
+        "verified": true,
+        "childRate": 55,
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
       },
       "includes": [
         "Boat, guide, entry",
@@ -483,7 +513,8 @@
       "importantNotes": [
         "Peak season (June–October) gets crowded — book early morning for fewer people",
         "Bring reef-safe sunscreen and a hat",
-        "Lunch at Nakupenda is typically a simple seafood grill — add $10–15 if desired"
+        "Lunch at Nakupenda is typically a simple seafood grill — add $10–15 if desired",
+        "Prison Island entry $23 and Nakupenda sandbank fee $10 are included in the quoted all-in rate."
       ],
       "whatToExpect": [
         "Boat transfer from Stone Town (20 minutes)",
@@ -612,14 +643,16 @@
       "duration": "2–3 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 49,
-        "max": 105,
-        "display": "$49–$105",
-        "tieredDisplay": "1 guest: $105 pp • Private 2 guests: $95 pp • 3 guests: $85 pp • 4–6 guests: $75 pp • Budget shared: from $49 pp",
+        "min": 30,
+        "max": 95,
+        "display": "$30–$95",
+        "tieredDisplay": "1 guest: $95 pp • Private 2 guests: $75 pp • 3 guests: $60 pp • 4–6 guests: $45 pp • Budget shared: from $30 pp",
         "basisNote": "per person; group-size tiered for private dhow; budget shared option; anchored at Easy Travel published group-size tiers",
-        "sourceQuality": "Easy Travel official published group-size tiers + top-operator benchmark",
+        "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Easy Travel & Tours rate card",
-        "verified": true
+        "verified": true,
+        "childRate": 20,
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
       },
       "includes": [
         "Traditional wooden dhow sailing experience",
@@ -665,14 +698,16 @@
       "duration": "3–4 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 85,
-        "max": 165,
-        "display": "$85–$165",
-        "tieredDisplay": "1 guest: $165 pp (Stone Town) • 2 guests: $100 pp (Stone Town) / $95 pp (North beach) • 3–6 guests: $85 pp (North beach)",
+        "min": 60,
+        "max": 140,
+        "display": "$60–$140",
+        "tieredDisplay": "1 guest: $140 pp (Stone Town) / $120 pp (North beach) • 2 guests: $95 pp • 3–6 guests: $75 pp • Budget shared: from $60 pp",
         "basisNote": "per person; zone differential (Stone Town vs North beach); group-size tiered; anchored at Cotis Safaris published rates",
-        "sourceQuality": "Cotis Safaris official published rates + top-operator benchmark",
+        "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Cotis Safaris rate card",
-        "verified": true
+        "verified": true,
+        "childRate": 45,
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
       },
       "includes": [
         "Private motorized boat & experienced captain",
@@ -718,14 +753,16 @@
       "duration": "2–4 hours",
       "pricing": {
         "basis": "per_person",
-        "min": 35,
-        "max": 135,
-        "display": "$35–$135",
-        "tieredDisplay": "Group (entry + guide, no transfer): $35–50 pp • Private incl transfers (2–4 guests): $40–65 pp • Premium private (entry + guide + hotel pickup, 2 guests): $100–135 pp",
+        "min": 50,
+        "max": 95,
+        "display": "$50–$95",
+        "tieredDisplay": "Group (entry + guide, no transfer): $50 pp • Private incl transfers (2–4 guests): $65 pp • Premium private (entry + guide + hotel pickup, 2 guests): $95 pp",
         "basisNote": "per person; anchored at GoSmart Zanzibar tiers ($50/$40/$35 by group size, entry+fees incl, transfer excl), Red Banana private incl transfers ($65/$60/$50/$40), premium private+transfer $100-135 (Expedia/Tulia)",
-        "sourceQuality": "35-operator competitive benchmark (DeepSeek research) + independent Nov 2026 scan",
+        "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "GoSmart Zanzibar Tours, Red Banana Tours, Expedia, Tulia Zanzibar",
-        "verified": true
+        "verified": true,
+        "childRate": 40,
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
       },
       "includes": [
         "Official TANAPA / Jozani certified park ranger",
@@ -824,7 +861,46 @@
         "basisNote": "per person",
         "sourceQuality": "Existing strategy + 2026 market range",
         "sourceFiles": "Zanzibar_Master_Venture_Plan.md; 2026 market guides",
-        "verified": true
+        "verified": true,
+        "groupLadder": [
+          {
+            "minPax": 1,
+            "maxPax": 1,
+            "perPerson": 520,
+            "label": "1 guest"
+          },
+          {
+            "minPax": 2,
+            "maxPax": 2,
+            "perPerson": 450,
+            "label": "2 guests"
+          },
+          {
+            "minPax": 3,
+            "maxPax": 3,
+            "perPerson": 450,
+            "label": "3 guests"
+          },
+          {
+            "minPax": 4,
+            "maxPax": 6,
+            "perPerson": 450,
+            "label": "4–6 guests"
+          },
+          {
+            "minPax": 7,
+            "maxPax": 10,
+            "perPerson": 450,
+            "label": "7–10 guests"
+          },
+          {
+            "minPax": 11,
+            "maxPax": 20,
+            "perPerson": 450,
+            "label": "11–20 guests"
+          }
+        ],
+        "ladderSource": "Corrected from legacy partner ladder ($520 single) and published Mikumi fly-in benchmark $450 pp"
       },
       "includes": [
         "Flights, game drive, park fees, lunch"
@@ -868,7 +944,10 @@
         "basisNote": "per person ($900–$1,200 tented camp; $1,800–$2,500 luxury lodge with return flights & game drives)",
         "sourceQuality": "Existing demo package + 2026 market range",
         "sourceFiles": "zanzibar-tours/packages/core/src/seed.ts; 2026 market guides",
-        "verified": true
+        "verified": true,
+        "parkFeePerPersonPerDay": 82.6,
+        "parkDays": 3,
+        "parkFeeSource": "TANAPA Serengeti adult day tariff incl. 18% VAT (market study §6)"
       },
       "includes": [
         "Flights, park fees, 4x4, guide, full board"
@@ -940,107 +1019,6 @@
         "sailing",
         "spice",
         "family"
-      ],
-      "timeOfDay": []
-    },
-    {
-      "id": "TRF-01",
-      "slug": "airport-transfer-znz-to-stone-town",
-      "name": "Zanzibar Airport Transfer — ZNZ to Stone Town hotel",
-      "type": "transfer",
-      "category": "TRF",
-      "location": "Abeid Amani Karume International Airport → Stone Town",
-      "zones": [],
-      "duration": "10–20 min",
-      "pricing": {
-        "basis": "per_vehicle",
-        "min": 15,
-        "max": 20,
-        "display": "$15–$20",
-        "tieredDisplay": "$15–$20 per vehicle (1–4 pax, one-way) • roundtrip from $30",
-        "basisNote": "per private vehicle up to 4 pax; anchored at Pawa $15, Hello Zanzibar $15, GoZanzibar $20, ZanziRide $15-20",
-        "vehicleCapacity": 4,
-        "sourceQuality": "35-operator competitive benchmark (DeepSeek research) + independent Nov 2026 scan of dedicated transfer specialists",
-        "sourceFiles": "Pawa Tours, Hello Zanzibar Tours, GoZanzibar Transfers, ZanziRide",
-        "verified": true
-      },
-      "includes": [
-        "Meet & greet, flight tracking, waiting, water, luggage help"
-      ],
-      "importantNotes": [],
-      "whatToExpect": [],
-      "description": "Abeid Amani Karume International Airport → Stone Town - 10–20 min private transfer.",
-      "meetingPoint": "",
-      "interests": [
-        "transfer",
-        "airport"
-      ],
-      "timeOfDay": []
-    },
-    {
-      "id": "TRF-02",
-      "slug": "airport-transfer-znz-to-pajejambiani",
-      "name": "Zanzibar Airport Transfer — ZNZ to Paje & Jambiani hotels",
-      "type": "transfer",
-      "category": "TRF",
-      "location": "ZNZ → Paje/Jambiani",
-      "zones": [],
-      "duration": "55–70 min",
-      "pricing": {
-        "basis": "per_vehicle",
-        "min": 40,
-        "max": 45,
-        "display": "$40–$45",
-        "tieredDisplay": "$40–$45 per vehicle (1–4 pax, one-way) • roundtrip from $80",
-        "basisNote": "per private vehicle up to 4 pax; anchored at Pawa $40, Hello Zanzibar $40, GoZanzibar $45, vault operational rate card $45 (roundtrip $80)",
-        "vehicleCapacity": 4,
-        "sourceQuality": "35-operator competitive benchmark (DeepSeek research) + independent Nov 2026 scan + wholesale vault price list",
-        "sourceFiles": "Pawa Tours, Hello Zanzibar Tours, GoZanzibar Transfers, ZANZIBAR EXCURSIONS PRICE LIST (2).pdf",
-        "verified": true
-      },
-      "includes": [
-        "Meet & greet, flight tracking, waiting, water, luggage help"
-      ],
-      "importantNotes": [],
-      "whatToExpect": [],
-      "description": "ZNZ → Paje/Jambiani - 55–70 min private transfer.",
-      "meetingPoint": "",
-      "interests": [
-        "transfer",
-        "airport"
-      ],
-      "timeOfDay": []
-    },
-    {
-      "id": "TRF-03",
-      "slug": "airport-transfer-znz-to-nungwikendwa",
-      "name": "Zanzibar Airport Transfer — ZNZ to Nungwi & Kendwa hotels",
-      "type": "transfer",
-      "category": "TRF",
-      "location": "ZNZ → Nungwi/Kendwa",
-      "zones": [],
-      "duration": "70–90 min",
-      "pricing": {
-        "basis": "per_vehicle",
-        "min": 40,
-        "max": 45,
-        "display": "$40–$45",
-        "basisNote": "per private vehicle up to 4 pax; anchored at Pawa $40, Hello Zanzibar $45, GoZanzibar $45, TripMate $45, vault operational rate card $45",
-        "vehicleCapacity": 4,
-        "sourceQuality": "35-operator competitive benchmark (DeepSeek research) + independent Nov 2026 scan of dedicated transfer specialists",
-        "sourceFiles": "Pawa Tours, Hello Zanzibar Tours, GoZanzibar Transfers, TripMate Zanzibar",
-        "verified": true
-      },
-      "includes": [
-        "Meet & greet, flight tracking, waiting, water, luggage help"
-      ],
-      "importantNotes": [],
-      "whatToExpect": [],
-      "description": "ZNZ → Nungwi/Kendwa - 70–90 min private transfer.",
-      "meetingPoint": "",
-      "interests": [
-        "transfer",
-        "airport"
       ],
       "timeOfDay": []
     },
@@ -1610,6 +1588,398 @@
         "Hotel room + transfers + tours billed as one package; hotel tax and insurance levies are paid separately on arrival"
       ],
       "duration": "2 nights / 3 days"
+    },
+    {
+      "id": "TRF-01",
+      "slug": "airport-transfer-znz-to-stone-town",
+      "name": "Zanzibar Airport Transfer — ZNZ to Stone Town hotel",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "Abeid Amani Karume International Airport → Stone Town",
+      "zones": [],
+      "duration": "10–20 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 18,
+        "max": 18,
+        "display": "$18 sedan / $35 van",
+        "tieredDisplay": "$18 sedan (1–3 pax) • $35 van (4–6 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Taxi Trip Zanzibar $15; launch card v2 $20",
+        "vehicleCapacity": 3,
+        "vehicles": [
+          {
+            "label": "Sedan (1–3 pax)",
+            "maxPax": 3,
+            "min": 18,
+            "max": 18
+          },
+          {
+            "label": "Van (4–6 pax)",
+            "maxPax": 6,
+            "min": 35,
+            "max": 35
+          }
+        ],
+        "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+        "sourceFiles": "Taxi Trip Zanzibar $15; launch card v2 $20",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help",
+        "Fuel and driver included — no night surcharge"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Abeid Amani Karume International Airport → Stone Town — private transfer, sedan or van by party size.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-04",
+      "slug": "airport-transfer-znz-to-fumba",
+      "name": "Zanzibar Airport Transfer — ZNZ to Fumba",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "ZNZ → Fumba (Safari Blue departure)",
+      "zones": [],
+      "duration": "25–35 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 30,
+        "max": 30,
+        "display": "$30 sedan / $45 van",
+        "tieredDisplay": "$30 sedan (1–3 pax) • $45 van (4–6 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Launch card v2 $30; transfer listings ~$27",
+        "vehicleCapacity": 3,
+        "vehicles": [
+          {
+            "label": "Sedan (1–3 pax)",
+            "maxPax": 3,
+            "min": 30,
+            "max": 30
+          },
+          {
+            "label": "Van (4–6 pax)",
+            "maxPax": 6,
+            "min": 45,
+            "max": 45
+          }
+        ],
+        "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+        "sourceFiles": "Launch card v2 $30; transfer listings ~$27",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help",
+        "Fuel and driver included — no night surcharge"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "ZNZ → Fumba (Safari Blue departure) — private transfer, sedan or van by party size.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-03",
+      "slug": "airport-transfer-znz-to-nungwikendwa",
+      "name": "Zanzibar Airport Transfer — ZNZ to Nungwi & Kendwa hotels",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "ZNZ → Nungwi/Kendwa",
+      "zones": [],
+      "duration": "70–90 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 45,
+        "max": 45,
+        "display": "$45 sedan / $50 van",
+        "tieredDisplay": "$45 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Taxi Trip $40 sedan / partner van $50; launch card v2 $50/$50",
+        "vehicleCapacity": 3,
+        "vehicles": [
+          {
+            "label": "Sedan (1–3 pax)",
+            "maxPax": 3,
+            "min": 45,
+            "max": 45
+          },
+          {
+            "label": "Van (4–6 pax)",
+            "maxPax": 6,
+            "min": 50,
+            "max": 50
+          }
+        ],
+        "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+        "sourceFiles": "Taxi Trip $40 sedan / partner van $50; launch card v2 $50/$50",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help",
+        "Fuel and driver included — no night surcharge"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "ZNZ → Nungwi/Kendwa — private transfer, sedan or van by party size.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-02",
+      "slug": "airport-transfer-znz-to-pajejambiani",
+      "name": "Zanzibar Airport Transfer — ZNZ to Paje & Jambiani hotels",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "ZNZ → Paje/Jambiani/Bwejuu",
+      "zones": [],
+      "duration": "55–70 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 45,
+        "max": 45,
+        "display": "$45 sedan / $50 van",
+        "tieredDisplay": "$45 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Taxi Trip $40 / partner van $50; launch card v2 $50/$50",
+        "vehicleCapacity": 3,
+        "vehicles": [
+          {
+            "label": "Sedan (1–3 pax)",
+            "maxPax": 3,
+            "min": 45,
+            "max": 45
+          },
+          {
+            "label": "Van (4–6 pax)",
+            "maxPax": 6,
+            "min": 50,
+            "max": 50
+          }
+        ],
+        "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+        "sourceFiles": "Taxi Trip $40 / partner van $50; launch card v2 $50/$50",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help",
+        "Fuel and driver included — no night surcharge"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "ZNZ → Paje/Jambiani/Bwejuu — private transfer, sedan or van by party size.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-05",
+      "slug": "airport-transfer-znz-to-matemwe",
+      "name": "Zanzibar Airport Transfer — ZNZ to Matemwe",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "ZNZ → Matemwe / Uroa / Kiwengwa / Pongwe",
+      "zones": [],
+      "duration": "50–70 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 40,
+        "max": 40,
+        "display": "$40 sedan / $50 van",
+        "tieredDisplay": "$40 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: ReiseTaxi $29.9 anchor; launch card v2 $45/$65",
+        "vehicleCapacity": 3,
+        "vehicles": [
+          {
+            "label": "Sedan (1–3 pax)",
+            "maxPax": 3,
+            "min": 40,
+            "max": 40
+          },
+          {
+            "label": "Van (4–6 pax)",
+            "maxPax": 6,
+            "min": 50,
+            "max": 50
+          }
+        ],
+        "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+        "sourceFiles": "ReiseTaxi $29.9 anchor; launch card v2 $45/$65",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help",
+        "Fuel and driver included — no night surcharge"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "ZNZ → Matemwe / Uroa / Kiwengwa / Pongwe — private transfer, sedan or van by party size.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-06",
+      "slug": "airport-transfer-znz-to-kizimkazi",
+      "name": "Zanzibar Airport Transfer — ZNZ to Kizimkazi, Makunduchi & Michamvi",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "ZNZ → Kizimkazi / Makunduchi / Michamvi",
+      "zones": [],
+      "duration": "70–100 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 50,
+        "max": 50,
+        "display": "$50 sedan / $50 van",
+        "tieredDisplay": "$50 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Taxi Trip $50; launch card v2 $55/$75",
+        "vehicleCapacity": 3,
+        "vehicles": [
+          {
+            "label": "Sedan (1–3 pax)",
+            "maxPax": 3,
+            "min": 50,
+            "max": 50
+          },
+          {
+            "label": "Van (4–6 pax)",
+            "maxPax": 6,
+            "min": 50,
+            "max": 50
+          }
+        ],
+        "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+        "sourceFiles": "Taxi Trip $50; launch card v2 $55/$75",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help",
+        "Fuel and driver included — no night surcharge"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "ZNZ → Kizimkazi / Makunduchi / Michamvi — private transfer, sedan or van by party size.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-07",
+      "slug": "stone-town-to-nungwi",
+      "name": "Point-to-Point Transfer — Stone Town to Nungwi",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "Stone Town → Nungwi/Kendwa",
+      "zones": [],
+      "duration": "75–95 min",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 50,
+        "max": 50,
+        "display": "$50 sedan / $50 van",
+        "tieredDisplay": "$50 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Transfer benchmark $45–60; launch card v2 $50/$50",
+        "vehicleCapacity": 3,
+        "vehicles": [
+          {
+            "label": "Sedan (1–3 pax)",
+            "maxPax": 3,
+            "min": 50,
+            "max": 50
+          },
+          {
+            "label": "Van (4–6 pax)",
+            "maxPax": 6,
+            "min": 50,
+            "max": 50
+          }
+        ],
+        "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+        "sourceFiles": "Transfer benchmark $45–60; launch card v2 $50/$50",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help",
+        "Fuel and driver included — no night surcharge"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Stone Town → Nungwi/Kendwa — private transfer, sedan or van by party size.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "TRF-08",
+      "slug": "full-day-island-hire",
+      "name": "Full-Day Island Hire — 8 hours / 150 km",
+      "type": "transfer",
+      "category": "TRF",
+      "location": "Zanzibar island-wide, 8 hours incl. 150 km",
+      "zones": [],
+      "duration": "8 hours",
+      "pricing": {
+        "basis": "per_vehicle",
+        "min": 100,
+        "max": 100,
+        "display": "$100 sedan / $150 van",
+        "tieredDisplay": "$100 sedan (1–3 pax) • $150 van (4–6 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Market $50–150; launch card v2 $110/$160",
+        "vehicleCapacity": 3,
+        "vehicles": [
+          {
+            "label": "Sedan (1–3 pax)",
+            "maxPax": 3,
+            "min": 100,
+            "max": 100
+          },
+          {
+            "label": "Van (4–6 pax)",
+            "maxPax": 6,
+            "min": 150,
+            "max": 150
+          }
+        ],
+        "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
+        "sourceFiles": "Market $50–150; launch card v2 $110/$160",
+        "verified": true
+      },
+      "includes": [
+        "Meet & greet, flight tracking, waiting, water, luggage help",
+        "Fuel and driver included — no night surcharge"
+      ],
+      "importantNotes": [],
+      "whatToExpect": [],
+      "description": "Zanzibar island-wide, 8 hours incl. 150 km — private transfer, sedan or van by party size.",
+      "meetingPoint": "",
+      "interests": [
+        "transfer",
+        "airport"
+      ],
+      "timeOfDay": []
     }
   ]
 }

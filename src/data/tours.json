@@ -9,11 +9,11 @@
     "duration": "2–4 hours",
     "location": "Stone Town",
     "price": {
-      "min": 29,
-      "max": 100,
-      "basis": "per person",
-      "display": "$29–$100",
-      "tieredDisplay": "Group walking tour: $29 pp • Private 2 guests (no transfer): $60 pp • Private 2 guests (with transfer): $100 pp"
+      "min": 35,
+      "max": 90,
+      "basis": "per_person",
+      "display": "$35–$90",
+      "tieredDisplay": "Group walking tour: $35 pp • Private 2 guests (no transfer): $60 pp • Private 2 guests (with transfer): $90 pp"
     },
     "includes": [
       "Licensed guide",
@@ -23,7 +23,7 @@
     "source_quality": "35-operator competitive benchmark + Nov 2026 independent scan",
     "source_files": "AAA/TripCanvas $29 group; Tulia Zanzibar $60-100 private; zanzibarguides.com group $20-30; JoyTrekking $45; Navin $25",
     "category": "CUL",
-    "meta_description": "Book Stone Town walking tour with a licensed Zanzibar guide. Explore UNESCO-listed architecture, markets, and historic sites. From $29 per person",
+    "meta_description": "Book Stone Town walking tour with a licensed Zanzibar guide. Explore UNESCO-listed architecture, markets, and historic sites. From $35 per person",
     "overview": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House of Wonders, and the Old Fort.",
     "what_to_expect": [
       "2–4 hour guided walk led by a Zanzibar-licensed guide",
@@ -54,11 +54,11 @@
     "duration": "3–4 hours",
     "location": "Kidichi / Kizimbani / island interior",
     "price": {
-      "min": 32,
-      "max": 100,
-      "basis": "per person",
-      "display": "$32–$100",
-      "tieredDisplay": "Walking tour (no transfer): $32 pp • Private 2 guests (with transfer): $100 pp"
+      "min": 40,
+      "max": 75,
+      "basis": "per_person",
+      "display": "$40–$75",
+      "tieredDisplay": "Walking tour (no transfer): $40 pp • Private 2 guests (with transfer): $75 pp"
     },
     "includes": [
       "Farm walk, spice/fruit tasting, guide",
@@ -68,7 +68,7 @@
     "source_quality": "Competitor price + 2026 market range",
     "source_files": "ZTrans (15 USD); zanzibar things to do.docx (30 USD); 2026 market guides",
     "category": "CUL",
-    "meta_description": "Book Zanzibar spice farm tour with expert guide. Taste cloves, cinnamon, vanilla, and cardamom. Learn the island's spice trade history. From $35 per person.",
+    "meta_description": "Book Zanzibar spice farm tour with expert guide. Taste cloves, cinnamon, vanilla, and cardamom. Learn the island's spice trade history. From $40 per person.",
     "overview": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade — how Zanzibar became the \"Spice Island\" — while you taste fresh nutmeg, cloves, cinnamon, and cardamom straight from the source.",
     "what_to_expect": [
       "3–4 hour farm tour with a local expert guide",
@@ -184,11 +184,11 @@
     "duration": "7–9 hours",
     "location": "Fumba → Menai Bay → Kwale Island",
     "price": {
-      "min": 100,
-      "max": 190,
-      "basis": "per person",
-      "display": "$100–$190",
-      "tieredDisplay": "1 guest: $175 pp (Stone Town) / $190 pp (beach hotel) • 2 guests: $110 pp (Stone Town) / $130 pp (beach hotel) • 3–6 guests: $100 pp (Stone Town) / $110 pp (beach hotel)"
+      "min": 85,
+      "max": 150,
+      "basis": "per_person",
+      "display": "$85–$150",
+      "tieredDisplay": "1 guest: $150 pp • 2 guests: $95 pp • 3–6 guests: $85 pp (all-in: fees, lunch, gear)"
     },
     "includes": [
       "Licensed Safari Blue dhow, captain & crew",
@@ -234,11 +234,11 @@
     "duration": "3–6 hours",
     "location": "Matemwe / Nungwi / Kendwa → Mnemba Atoll",
     "price": {
-      "min": 40,
+      "min": 45,
       "max": 115,
-      "basis": "per person",
-      "display": "$40–$115",
-      "tieredDisplay": "Shared small-group (max 8): $40 pp incl conservation fee • Kendwa departure: $55 pp incl fees • Private 2 guests: $90–100 pp (includes $25 marine fee) • Premium private: $105–115 pp"
+      "basis": "per_person",
+      "display": "$45–$115",
+      "tieredDisplay": "Shared small-group (max 8): $45 pp + $10 marine fee • Kendwa departure: $55 pp incl fees • Private 2 guests: $85–95 pp (includes $10 marine fee) • Premium private: $105–115 pp"
     },
     "includes": [
       "Boat, snorkel gear, fruit/water, guide",
@@ -248,7 +248,7 @@
     "source_quality": "35-operator competitive benchmark + Nov 2026 independent scan",
     "source_files": "Zanzibar Star Tours $40 shared incl fees / $90 private 2 pax; Mnemba Island Tours $60 private; Tulia Zanzibar $100 pp private incl $25 fee; Azur $105-115",
     "category": "MAR",
-    "meta_description": "Mnemba Atoll snorkeling. Shared small-group from 40pp incl marine fee. Private 2-guest 90-100pp includes $25 marine fee.",
+    "meta_description": "Mnemba Atoll snorkeling. Shared small-group from $45 pp + $10 marine fee. Private 2-guest $85–95 pp includes $10 marine fee.",
     "overview": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area. Spot green sea turtles, observe colorful fish over healthy coral reefs, and enjoy fruit and water on a traditional dhow.",
     "what_to_expect": [
       "3–6 hour boat trip to Mnemba Atoll marine reserve",
@@ -280,11 +280,11 @@
     "duration": "Half day to 6 hours",
     "location": "Stone Town → Changuu → Nakupenda",
     "price": {
-      "min": 25,
-      "max": 110,
-      "basis": "per person",
-      "display": "$25–$110",
-      "tieredDisplay": "Private 2 guests: $110 pp (includes entrance, boat, lunch) • Budget shared: from $25 pp + $23 entrance separately"
+      "min": 85,
+      "max": 95,
+      "basis": "per_person",
+      "display": "$85–$95",
+      "tieredDisplay": "2 guests: $95 pp (includes $23 entrance, boat, lunch) • 3–6 guests: $85 pp (all-in)"
     },
     "includes": [
       "Boat, guide, entry",
@@ -294,7 +294,7 @@
     "source_quality": "Competitor price + 2026 market range",
     "source_files": "ZTrans (40 + 15 USD); 2026 market guides",
     "category": "MAR",
-    "meta_description": "Prison Island & Nakupenda sandbank. Budget shared from 25pp + 23 entrance, private 2-guest 110pp includes transport & lunch.",
+    "meta_description": "Prison Island & Nakupenda sandbank. All-in from $85 per person; private 2-guest $95 pp includes entrance, transport & lunch.",
     "overview": "A classic Zanzibar half-day or full-day excursion: take a short boat ride to Changuu (Prison Island) to meet the resident giant Aldabra tortoises, then cruise to Nakupenda sandbank for snorkeling over coral gardens.",
     "what_to_expect": [
       "Boat transfer from Stone Town (20 minutes)",
@@ -412,11 +412,11 @@
     "duration": "2–3 hours",
     "location": "Nungwi, Kendwa or Stone Town",
     "price": {
-      "min": 49,
-      "max": 105,
-      "basis": "per person",
-      "display": "$49–$105",
-      "tieredDisplay": "Private 2 guests: $95 pp • 3 guests: $85 pp • 4–6 guests: $75 pp • Budget shared: from $49 pp"
+      "min": 30,
+      "max": 95,
+      "basis": "per_person",
+      "display": "$30–$95",
+      "tieredDisplay": "1 guest: $95 pp • Private 2 guests: $75 pp • 3 guests: $60 pp • 4–6 guests: $45 pp • Budget shared: from $30 pp"
     },
     "includes": [
       "Dhow, drinks/fruit varies"
@@ -456,11 +456,11 @@
     "duration": "3–4 hours",
     "location": "Kizimkazi",
     "price": {
-      "min": 85,
-      "max": 165,
-      "basis": "per person",
-      "display": "$85–$165",
-      "tieredDisplay": "2 guests: $100 pp (Stone Town) / $95 pp (North beach) • 3–6 guests: $85 pp (North beach)"
+      "min": 60,
+      "max": 140,
+      "basis": "per_person",
+      "display": "$60–$140",
+      "tieredDisplay": "1 guest: $140 pp (Stone Town) / $120 pp (North beach) • 2 guests: $95 pp • 3–6 guests: $75 pp • Budget shared: from $60 pp"
     },
     "includes": [
       "Boat, snorkeling, guide",
@@ -501,11 +501,11 @@
     "duration": "2–4 hours",
     "location": "Jozani Chwaka Bay National Park",
     "price": {
-      "min": 35,
-      "max": 135,
-      "basis": "per person",
-      "display": "$35–$135",
-      "tieredDisplay": "Group (entry + guide, no transfer): $35–50 pp • Private incl transfers (2–4 guests): $40–65 pp • Premium private (entry + guide + hotel pickup, 2 guests): $100–135 pp"
+      "min": 50,
+      "max": 95,
+      "basis": "per_person",
+      "display": "$50–$95",
+      "tieredDisplay": "Group (entry + guide, no transfer): $50 pp • Private incl transfers (2–4 guests): $65 pp • Premium private (entry + guide + hotel pickup, 2 guests): $95 pp"
     },
     "includes": [
       "Licensed JCBNP park entry & conservation fee",
@@ -516,7 +516,7 @@
     "source_quality": "35-operator competitive benchmark + Nov 2026 independent scan",
     "source_files": "GoSmart Zanzibar $50/$40/$35 tiers (entry+fees incl); Red Banana $65/$60/$50/$40 incl transfers; Navin $35; zanzibarone $42",
     "category": "NAT",
-    "meta_description": "Book Jozani Forest tour — see rare red colobus monkeys and explore Zanzibar's only national park. From $35 per person.",
+    "meta_description": "Book Jozani Forest tour — see rare red colobus monkeys and explore Zanzibar's only national park. From $50 per person.",
     "overview": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabies, and over 200 bird species.",
     "what_to_expect": [
       "2–4 hour guided walk through mangrove and coastal forest",

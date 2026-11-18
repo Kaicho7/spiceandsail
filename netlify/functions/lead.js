@@ -63,7 +63,9 @@ async function sendAlerts(lead, reference) {
     (lead.email ? 'Email: [redacted]\n' : '') +
     (lead.date ? 'Date: ' + lead.date + '\n' : '') +
     (lead.travellers ? 'Travellers: ' + lead.travellers + '\n' : '') +
-    (lead.services ? 'Services: ' + lead.services + '\n' : '');
+    (lead.services ? 'Services: ' + lead.services + '\n' : '') +
+    (lead.nights ? 'Hotel nights: ' + lead.nights + '\n' : '') +
+    (lead.rooms ? 'Hotel rooms: ' + lead.rooms + '\n' : '');
 
   for (const url of webhookUrls) {
     try {
@@ -193,6 +195,8 @@ exports.handler = async function (event) {
     date: body.date || null,
     travellers: body.travellers ? Number(body.travellers) : null,
     services: body.services || null,
+    nights: body.nights ? Number(body.nights) : null,
+    rooms: body.rooms ? Number(body.rooms) : null,
     notes: body.notes ? body.notes.slice(0, 2000) : null,
     consent_contact: true,
     consent_marketing: body.consent_marketing === true || body.consent_marketing === 'true',

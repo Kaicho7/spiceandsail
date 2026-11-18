@@ -15,7 +15,11 @@
   var state = {
     currentStep: 1,
     services: null,          // catalogue list from GET /quote
+    hotels: null,            // contracted hotels from GET /quote
     selectedSlug: null,
+    selectedSlugs: [],       // services + hotel slugs in the basket
+    selectedServices: [],
+    selectedHotels: [],
     formLoadedAt: Date.now(),
     formTouched: false,
     lastReference: null,     // only ever set from a server response
@@ -203,12 +207,15 @@
       .then(function (res) {
         if (res.ok && res.json && Array.isArray(res.json.services)) {
           state.services = res.json.services;
+          state.hotels = Array.isArray(res.json.hotels) ? res.json.hotels : [];
           state.replyWindow = (res.json.replyWindow || '').slice(0, 160) || null;
           if (typeof res.json.whatsappNumber === 'string' && /^\d{8,15}$/.test(res.json.whatsappNumber)) {
             WHATSAPP_URL = 'https://wa.me/' + res.json.whatsappNumber;
             if (document.body) document.body.setAttribute('data-whatsapp-number', res.json.whatsappNumber);
           }
           renderServiceGrid();
+          renderHotelGrid();
+          syncSelection();
         }
         return state.services;
       })
@@ -223,17 +230,17 @@
       var p = document.createElement('p');
       p.textContent = 'The service list is temporarily unavailable. Please use WhatsApp or try again shortly.';
       grid.appendChild(p);
-      if (state.selectedSlug) calculateRange();
+      if (state.selectedSlugs.length) calculateRange();
       return;
     }
     state.services.forEach(function (svc) {
       var card = document.createElement('label');
       card.className = 'sns-service-card';
       var input = document.createElement('input');
-      input.type = 'radio';
-      input.name = 'service';
+      input.type = 'checkbox';
+      input.name = 'services';
       input.value = svc.slug;
-      if (svc.slug === state.selectedSlug) { input.checked = true; card.classList.add('selected'); }
+      if (state.selectedSlugs.indexOf(svc.slug) !== -1) { input.checked = true; card.classList.add('selected'); }
       var box = document.createElement('div');
       var name = document.createElement('strong');
       name.textContent = svc.name;
@@ -252,13 +259,90 @@
       grid.appendChild(card);
     });
 
-    grid.querySelectorAll('input[name="service"]').forEach(function (radio) {
-      radio.addEventListener('change', function () {
-        state.selectedSlug = radio.value;
-        grid.querySelectorAll('.sns-service-card').forEach(function (c) { c.classList.remove('selected'); });
-        var parent = radio.closest('.sns-service-card');
-        if (parent) parent.classList.add('selected');
+    grid.querySelectorAll('input[name="services"]').forEach(function (box) {
+      box.addEventListener('change', syncSelection);
+    });
+  }
+
+  function renderHotelGrid() {
+    var grid = el('sns-hotel-grid');
+    if (!grid) return;
+    grid.textContent = '';
+    (state.hotels || []).forEach(function (h) {
+      var card = document.createElement('label');
+      card.className = 'sns-hotel-card';
+      var input = document.createElement('input');
+      input.type = 'checkbox';
+      input.name = 'hotels';
+      input.value = h.slug;
+      if (state.selectedHotels.indexOf(h.slug) !== -1) { input.checked = true; card.classList.add('selected'); }
+      var box = document.createElement('div');
+      var name = document.createElement('strong');
+      name.textContent = h.name;
+      box.appendChild(name);
+      var detail = document.createElement('span');
+      detail.textContent = ' · ' + (h.area || '') + ' · ' + (h.board || '');
+      box.appendChild(detail);
+      var price = document.createElement('span');
+      price.className = 'sns-hotel-price';
+      price.textContent = 'from $' + h.fromRate + ' per room/night · levy $' + h.taxPerPersonPerNight + ' pp/night';
+      box.appendChild(price);
+      card.appendChild(input);
+      card.appendChild(box);
+      grid.appendChild(card);
+    });
+    grid.querySelectorAll('input[name="hotels"]').forEach(function (box) {
+      box.addEventListener('change', syncSelection);
+    });
+  }
+
+  function syncSelection() {
+    var serviceBoxes = document.querySelectorAll('input[name="services"]:checked');
+    var hotelBoxes = document.querySelectorAll('input[name="hotels"]:checked');
+    state.selectedServices = Array.from(serviceBoxes).map(function (b) { return b.value; });
+    state.selectedHotels = Array.from(hotelBoxes).map(function (b) { return b.value; });
+    state.selectedSlugs = state.selectedServices.concat(state.selectedHotels);
+    state.selectedSlug = state.selectedSlugs.length ? state.selectedSlugs[0] : null;
+    document.querySelectorAll('.sns-service-card, .sns-hotel-card').forEach(function (c) { c.classList.remove('selected'); });
+    Array.from(serviceBoxes).concat(Array.from(hotelBoxes)).forEach(function (b) {
+      var parent = b.closest('.sns-service-card, .sns-hotel-card');
+      if (parent) parent.classList.add('selected');
+    });
+    renderBasket();
+  }
+
+  function renderBasket() {
+    var basket = el('sns-basket');
+    if (!basket) return;
+    basket.textContent = '';
+    if (!state.selectedSlugs.length) {
+      var hint = document.createElement('p');
+      hint.textContent = 'Your trip basket is empty. Add tours, transfers or a hotel above.';
+      basket.appendChild(hint);
+      return;
+    }
+    var title = document.createElement('strong');
+    title.textContent = 'Your trip basket (' + state.selectedSlugs.length + ')';
+    basket.appendChild(title);
+    state.selectedSlugs.forEach(function (slug) {
+      var row = document.createElement('div');
+      row.className = 'sns-basket-item';
+      var label = document.createElement('span');
+      var item = (state.services || []).find(function (s) { return s.slug === slug; })
+        || (state.hotels || []).find(function (h) { return h.slug === slug; });
+      label.textContent = item ? item.name : slug;
+      var remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'sns-basket-remove';
+      remove.setAttribute('aria-label', 'Remove ' + label.textContent);
+      remove.textContent = 'Remove';
+      remove.addEventListener('click', function () {
+        var box = document.querySelector('input[name="services"][value="' + slug + '"], input[name="hotels"][value="' + slug + '"]');
+        if (box) { box.checked = false; syncSelection(); if (state.currentStep === 3) calculateRange(); }
       });
+      row.appendChild(label);
+      row.appendChild(remove);
+      basket.appendChild(row);
     });
   }
 
@@ -269,9 +353,9 @@
     var summaryEl = el('sns-quote-summary');
     if (!summaryEl) return null;
 
-    if (!state.selectedSlug) {
+    if (!state.selectedSlugs.length) {
       if (amountEl) amountEl.textContent = '';
-      summaryEl.textContent = 'Select a service above to see the planning range.';
+      summaryEl.textContent = 'Select a tour, transfer or hotel above to see the published rate.';
       return null;
     }
     var travellers = getTravelersCount();
@@ -282,10 +366,12 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        serviceSlug: state.selectedSlug,
+        serviceSlugs: state.selectedSlugs.slice(),
         adults: travellers,
         children: 0,
-        date: getDateValue()
+        date: getDateValue(),
+        nights: getNumberValue('sns-nights', 2),
+        rooms: getNumberValue('sns-rooms', 1)
       })
     }, 12000).then(function (res) {
       if (res.ok && res.json && res.json.totalDisplay) {
@@ -319,12 +405,11 @@
       if (!validateStep(state.currentStep)) return;
       // Step 1 → 2: require a service to be selected
       if (state.currentStep === 1 && step === 2) {
-        var selected = document.querySelector('input[name="service"]:checked');
-        if (!selected) {
-          showStatus('error', 'Please choose a service before continuing.');
+        syncSelection();
+        if (!state.selectedSlugs.length) {
+          showStatus('error', 'Please choose at least one tour, transfer or hotel before continuing.');
           return;
         }
-        state.selectedSlug = selected.value;
       }
     }
     setStepEnabled(state.currentStep, false);
@@ -351,6 +436,12 @@
     var n = parseInt(sel.value, 10);
     if (isNaN(n) || n < 1) return 2;
     return n > 50 ? 50 : n;
+  }
+
+  function getNumberValue(id, fallback) {
+    var input = el(id);
+    var n = input ? parseInt(input.value, 10) : NaN;
+    return Number.isFinite(n) && n >= 1 ? Math.min(n, 30) : fallback;
   }
 
   function getDateValue() {
@@ -406,7 +497,9 @@
       date: getDateValue(),
       travellers: getTravelersCount(),
       notes: notesParts.length ? notesParts.join('. ').slice(0, 1900) : null,
-      services: state.selectedSlug ? [state.selectedSlug] : null,
+      services: state.selectedSlugs.length ? state.selectedSlugs.slice() : null,
+      nights: getNumberValue('sns-nights', 2),
+      rooms: getNumberValue('sns-rooms', 1),
       consent_contact: Boolean(consentEl && consentEl.checked),
       consent_marketing: Boolean(marketingEl && marketingEl.checked),
       privacy_notice_version: versionInput ? versionInput.value : 'v1.0',
@@ -427,8 +520,8 @@
   function $submit() {
     var pre = clientPreflight();
     if (pre) { showStatus('error', pre, 'I would like to plan a Zanzibar trip.'); return; }
-    if (!state.selectedSlug) {
-      showStatus('error', 'Please go back and pick a service first.', 'I would like to plan a Zanzibar trip.');
+    if (!state.selectedSlugs.length) {
+      showStatus('error', 'Please go back and add a tour, transfer or hotel first.', 'I would like to plan a Zanzibar trip.');
       return;
     }
     var payload = buildLeadPayload();
@@ -722,7 +815,12 @@
       state._loading = loadCatalogue().then(function () { state._loading = null; });
     }
     var slug = normaliseSlug(preselectKey);
-    if (slug) state.selectedSlug = slug;
+    if (slug) {
+      state.selectedSlug = slug;
+      state.selectedSlugs = [slug];
+      state.selectedServices = [slug];
+      state.selectedHotels = [];
+    }
     var modal = el('sns-concierge-modal');
     if (modal) {
       modal.removeAttribute('hidden');
@@ -733,13 +831,7 @@
         dateInput.value = localDateString(t);
       }
       if (state.selectedSlug) {
-        var radio = document.querySelector('input[name="service"][value="' + state.selectedSlug + '"]');
-        if (radio) {
-          radio.checked = true;
-          document.querySelectorAll('.sns-service-card').forEach(function (c) { c.classList.remove('selected'); });
-          var parent = radio.closest('.sns-service-card');
-          if (parent) parent.classList.add('selected');
-        }
+        syncSelection();
       }
       // Initialize step fields: enable step 1, disable 2 and 3
       setStepEnabled(2, false);
@@ -759,6 +851,9 @@
     // Open the existing concierge immediately; its catalogue request is shared
     // with the service grid. No parallel request or client-side quote is made.
     state.selectedSlug = requestedSlug;
+    state.selectedSlugs = [requestedSlug];
+    state.selectedServices = [requestedSlug];
+    state.selectedHotels = [];
     state.lastReference = null;
     state.lastQuoteDisplay = null;
     openConcierge(requestedSlug);
@@ -782,7 +877,11 @@
       }
 
       state.selectedSlug = selected.slug;
-      var radio = document.querySelector('input[name="service"][value="' + selected.slug + '"]');
+      state.selectedSlugs = [selected.slug];
+      state.selectedServices = [selected.slug];
+      state.selectedHotels = [];
+      syncSelection();
+      var radio = document.querySelector('input[name="services"][value="' + selected.slug + '"]');
       if (radio) {
         radio.checked = true;
         document.querySelectorAll('.sns-service-card').forEach(function (card) {
@@ -861,6 +960,11 @@
     var dateEl = el('sns-date');
     if (travellersEl) travellersEl.addEventListener('change', function () { if (state.currentStep === 3) calculateRange(); });
     if (dateEl) dateEl.addEventListener('change', function () { if (state.currentStep === 3) calculateRange(); });
+    ['sns-nights', 'sns-rooms'].forEach(function (id) {
+      var input = el(id);
+      if (input) input.addEventListener('change', function () { if (state.currentStep === 3) calculateRange(); });
+    });
+    syncSelection();
 
     initProactiveCallout();
   });
@@ -868,7 +972,13 @@
   function openDirectWhatsApp() {
     var selectedService = state.selectedSlug || state.chatQuotedSlug;
     var svcName = 'a Zanzibar experience';
-    if (state.services && selectedService) {
+    var basketNames = state.selectedSlugs.map(function (slug) {
+      var found = (state.services || []).find(function (s) { return s.slug === slug; })
+        || (state.hotels || []).find(function (h) { return h.slug === slug; });
+      return found ? found.name : slug;
+    });
+    if (basketNames.length) svcName = basketNames.join(', ');
+    else if (state.services && selectedService) {
       var found = state.services.find(function (s) { return s.slug === selectedService; });
       if (found) svcName = found.name;
     }

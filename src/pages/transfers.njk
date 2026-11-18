@@ -21,7 +21,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="#transfer-calculator" class="btn btn-primary btn-lg" style="background: var(--dct-gold, #D4AF37); border-color: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700;">
-          🚖 Fare Calculator (Planning Range)
+          🚖 Fare Calculator (Published Rates)
         </a>
         <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20a%20private%20airport%20transfer." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">
           💬 WhatsApp Live Ops ({{ site.contact.whatsapp_display }})
@@ -44,7 +44,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           <span style="font-size: 1.8rem;">🛡️</span>
           <div>
             <strong style="color: #003853; font-size: 1.05rem;">Booking Direct With Our Driver vs. Airport Touts</strong>
-            <p style="margin: 0; font-size: 0.88rem; color: #4e5d66;">Catalogue planning ranges per private vehicle (up to 4 guests): <strong>{% catPrice "airport-transfer-znz-to-stone-town" %} Stone Town &bull; {% catPrice "airport-transfer-znz-to-pajejambiani" %} Paje/Jambiani &bull; {% catPrice "airport-transfer-znz-to-nungwikendwa" %} Nungwi/Kendwa</strong>. Our team confirms your rate before you pay anything.</p>
+            <p style="margin: 0; font-size: 0.88rem; color: #4e5d66;">Published rates per private vehicle (sedan 1–3 / van 4–6 guests): <strong>{% catPrice "airport-transfer-znz-to-stone-town" %} Stone Town &bull; {% catPrice "airport-transfer-znz-to-fumba" %} Fumba &bull; {% catPrice "airport-transfer-znz-to-matemwe" %} Matemwe corridor &bull; {% catPrice "airport-transfer-znz-to-pajejambiani" %} Paje/Jambiani &bull; {% catPrice "airport-transfer-znz-to-nungwikendwa" %} Nungwi/Kendwa &bull; {% catPrice "airport-transfer-znz-to-kizimkazi" %} South/Michamvi</strong>. Our team confirms your vehicle and pickup before you pay anything.</p>
           </div>
         </div>
       <div style="background: #fff; padding: 0.6rem 1.1rem; border-radius: 8px; border: 1px solid #cbdde6; font-size: 0.85rem; font-weight: 600; color: #0d6b5c;">
@@ -59,7 +59,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
       <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
         <span class="section-tag" style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Interactive Fare Engine</span>
         <h2 style="font-size: 2.2rem; color: #003853; margin-top: 0.4rem;">Zanzibar Transfer Fare Calculator</h2>
-        <p class="section-subtitle" style="color: #5c727f; max-width: 650px; margin: 0.5rem auto 0;">Select your route and party size to see the planning range from our verified catalogue. Our team confirms the final rate before anything is booked.</p>
+        <p class="section-subtitle" style="color: #5c727f; max-width: 650px; margin: 0.5rem auto 0;">Select your route and party size to see the published rate from our verified catalogue. Our team confirms the final rate before anything is booked.</p>
       </div>
 
       <div class="calc-card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(12,26,36,0.06);">
@@ -83,11 +83,11 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
             <select id="calc-dest" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
               <option value="stone-town" data-slug="airport-transfer-znz-to-stone-town" data-fare="{% catPrice "airport-transfer-znz-to-stone-town" %}" data-zone="Stone Town">Stone Town Hotels — {% catPrice "airport-transfer-znz-to-stone-town" %}/vehicle</option>
               <option value="paje-jambiani" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Paje / Jambiani">Paje &amp; Jambiani Hotels — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/vehicle</option>
-              <option value="matemwe" data-slug="" data-fare="on_request" data-zone="Matemwe">Matemwe Beach Resorts — rate on request</option>
-              <option value="kiwengwa-pongwe" data-slug="" data-fare="on_request" data-zone="Kiwengwa / Pongwe">Kiwengwa &amp; Pongwe — rate on request</option>
+              <option value="matemwe" data-slug="airport-transfer-znz-to-matemwe" data-fare="{% catPrice "airport-transfer-znz-to-matemwe" %}" data-zone="Matemwe">Matemwe Beach Resorts — {% catPrice "airport-transfer-znz-to-matemwe" %}/vehicle</option>
+              <option value="kiwengwa-pongwe" data-slug="airport-transfer-znz-to-matemwe" data-fare="{% catPrice "airport-transfer-znz-to-matemwe" %}" data-zone="Kiwengwa / Pongwe">Kiwengwa &amp; Pongwe — {% catPrice "airport-transfer-znz-to-matemwe" %}/vehicle</option>
               <option value="nungwi-kendwa" data-slug="airport-transfer-znz-to-nungwikendwa" data-fare="{% catPrice "airport-transfer-znz-to-nungwikendwa" %}" data-zone="Nungwi / Kendwa" selected>Nungwi &amp; Kendwa Resorts — {% catPrice "airport-transfer-znz-to-nungwikendwa" %}/vehicle</option>
-              <option value="michamvi" data-slug="" data-fare="on request" data-zone="Michamvi / The Rock">Michamvi &amp; The Rock Restaurant — rate on request</option>
-              <option value="kizimkazi" data-slug="" data-fare="on request" data-zone="Kizimkazi">Kizimkazi Dolphin Coast — rate on request</option>
+              <option value="michamvi" data-slug="airport-transfer-znz-to-kizimkazi" data-fare="{% catPrice "airport-transfer-znz-to-kizimkazi" %}" data-zone="Michamvi / The Rock">Michamvi &amp; The Rock Restaurant — {% catPrice "airport-transfer-znz-to-kizimkazi" %}/vehicle</option>
+              <option value="kizimkazi" data-slug="airport-transfer-znz-to-kizimkazi" data-fare="{% catPrice "airport-transfer-znz-to-kizimkazi" %}" data-zone="Kizimkazi">Kizimkazi Dolphin Coast — {% catPrice "airport-transfer-znz-to-kizimkazi" %}/vehicle</option>
             </select>
           </div>
         </div>
@@ -97,7 +97,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           <div>
             <label for="calc-pax" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">👥 Passengers</label>
             <input type="number" id="calc-pax" min="1" max="50" step="1" value="2" inputmode="numeric" required aria-describedby="calc-pax-help" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
-            <small id="calc-pax-help" style="display:block;color:#4a3326;font-size:.78rem;margin-top:.4rem;">Enter your exact group size (1–50). The verified minivan rate covers up to four guests; larger vehicles are confirmed by our team.</small>
+            <small id="calc-pax-help" style="display:block;color:#4a3326;font-size:.78rem;margin-top:.4rem;">Enter your exact group size (1–50). Sedan covers 1–3 guests; a van is quoted automatically for 4–6 guests. Larger parties are confirmed by our team.</small>
           </div>
 
           <!-- Travel Date -->
@@ -133,14 +133,14 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         <!-- Server-computed output card (fetches /.netlify/functions/quote) -->
         <div style="background: #0C1A24; color: #fff; border-radius: 12px; padding: 1.75rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
           <div>
-            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold, #D4AF37); font-weight: 700; display: block; margin-bottom: 0.25rem;">Catalogue Planning Range</span>
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold, #D4AF37); font-weight: 700; display: block; margin-bottom: 0.25rem;">Published Rate</span>
             <div style="display: flex; align-items: baseline; gap: 0.75rem;">
               <span id="calc-fare-display" style="font-size: 2.5rem; font-weight: 800; color: #ffffff; line-height: 1;">{% catPrice "airport-transfer-znz-to-nungwikendwa" %}</span>
-              <span style="color: #94a3b8; font-size: 0.95rem;">(<span id="calc-curr-code">USD</span> per private vehicle, up to 4 guests)</span>
+              <span style="color: #94a3b8; font-size: 0.95rem;">(<span id="calc-curr-code">USD</span> per private vehicle, sedan 1–3 / van 4–6 guests)</span>
             </div>
-            <p id="calc-route-summary" style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: #cbd5e1;">ZNZ Airport → Nungwi / Kendwa • 2 passenger(s) • {% catPrice "airport-transfer-znz-to-nungwikendwa" %} planning range — our team confirms the final rate.</p>
+            <p id="calc-route-summary" style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: #cbd5e1;">ZNZ Airport → Nungwi / Kendwa • 2 passenger(s) • {% catPrice "airport-transfer-znz-to-nungwikendwa" %} published rate — our team confirms the final rate.</p>
             <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #34d399;">
-              ✓ Planning range only — our team confirms the final rate, dates and pickup window.
+              ✓ Published rate only — our team confirms the final rate, dates and pickup window.
             </div>
           </div>
 
@@ -261,7 +261,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
     <div class="container">
       <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
         <span class="section-tag" style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Standardized Tariffs</span>
-        <h2 style="font-size: 2.2rem; color: #003853; margin-top: 0.5rem;">Catalogue Planning Ranges for Private Transfers</h2>
+        <h2 style="font-size: 2.2rem; color: #003853; margin-top: 0.5rem;">Published Rates for Private Transfers</h2>
         <p class="section-subtitle" style="color: #5c727f; max-width: 700px; margin: 0.5rem auto 0;">Ranges are rendered from our verified service catalogue. All rides include an air-conditioned private minivan, meet &amp; greet, flight delay tracking, and luggage handling. Our team confirms your exact rate.</p>
       </div>
 
@@ -292,7 +292,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 
               <div class="card-footer" style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #edf2f7; padding-top: 1rem; margin-top: 1.25rem;">
                 <div>
-                  <span style="font-size: 0.75rem; color: #64748b; display: block;">Planning range per private vehicle</span>
+                  <span style="font-size: 0.75rem; color: #64748b; display: block;">Published rate per private vehicle</span>
                   <span class="card-price" style="font-size: 1.4rem; font-weight: 800; color: #0C1A24;">{% catPrice transfer.slug %}</span>
                 </div>
                 <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20details%20and%20a%20quote%20for%20{{ transfer.title | urlencode }}." target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ transfer.title }}">
