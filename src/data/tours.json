@@ -23,7 +23,7 @@
     "source_quality": "35-operator competitive benchmark + Nov 2026 independent scan",
     "source_files": "AAA/TripCanvas $29 group; Tulia Zanzibar $60-100 private; zanzibarguides.com group $20-30; JoyTrekking $45; Navin $25",
     "category": "CUL",
-    "meta_description": "Book Stone Town walking tour with a licensed Zanzibar guide. Explore UNESCO-listed architecture, markets, and historic sites. From 29 per person",
+    "meta_description": "Book Stone Town walking tour with a licensed Zanzibar guide. Explore UNESCO-listed architecture, markets, and historic sites. From $29 per person",
     "overview": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House of Wonders, and the Old Fort.",
     "what_to_expect": [
       "2–4 hour guided walk led by a Zanzibar-licensed guide",
@@ -62,7 +62,7 @@
     },
     "includes": [
       "Farm walk, spice/fruit tasting, guide",
-      "Optional traditional Swahili farm lunch available on-site (–0 cash)"
+      "Optional traditional Swahili farm lunch available on-site ($5–$10 cash)"
     ],
     "product_type": "Tour",
     "source_quality": "Competitor price + 2026 market range",
@@ -188,10 +188,15 @@
       "max": 190,
       "basis": "per person",
       "display": "$100–$190",
-      "tieredDisplay": "2 guests: $110 pp (Stone Town) / $130 pp (beach hotel) • 3–6 guests: $100 pp (Stone Town) / $110 pp (beach hotel)"
+      "tieredDisplay": "1 guest: $175 pp (Stone Town) / $190 pp (beach hotel) • 2 guests: $110 pp (Stone Town) / $130 pp (beach hotel) • 3–6 guests: $100 pp (Stone Town) / $110 pp (beach hotel)"
     },
     "includes": [
-      "Dhow, snorkeling, sandbank, seafood lunch, drinks, guide"
+      "Licensed Safari Blue dhow, captain & crew",
+      "Snorkeling equipment (mask, fins, life jacket)",
+      "Seafood barbecue lunch on Mango Sandbank (grilled fish, prawns, calamari)",
+      "Fresh fruit, water & soft drinks throughout",
+      "Menai Bay Marine Conservation Area fee ($10 pp) included",
+      "Kwale Island stop for swimming"
     ],
     "product_type": "Tour",
     "source_quality": "Competitor price + official operator + 2026 market range",
@@ -496,20 +501,22 @@
     "duration": "2–4 hours",
     "location": "Jozani Chwaka Bay National Park",
     "price": {
-      "min": 50,
+      "min": 35,
       "max": 135,
       "basis": "per person",
       "display": "$35–$135",
       "tieredDisplay": "Group (entry + guide, no transfer): $35–50 pp • Private incl transfers (2–4 guests): $40–65 pp • Premium private (entry + guide + hotel pickup, 2 guests): $100–135 pp"
     },
     "includes": [
-      "Guide, park entry varies"
+      "Licensed JCBNP park entry & conservation fee",
+      "Certified local forest guide",
+      "Mangrove boardwalk & red colobus monkey trail"
     ],
     "product_type": "Tour",
     "source_quality": "35-operator competitive benchmark + Nov 2026 independent scan",
     "source_files": "GoSmart Zanzibar $50/$40/$35 tiers (entry+fees incl); Red Banana $65/$60/$50/$40 incl transfers; Navin $35; zanzibarone $42",
     "category": "NAT",
-    "meta_description": "Book Jozani Forest tour — see rare red colobus monkeys and explore Zanzibar's only national park. From $50 per person.",
+    "meta_description": "Book Jozani Forest tour — see rare red colobus monkeys and explore Zanzibar's only national park. From $35 per person.",
     "overview": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabies, and over 200 bird species.",
     "what_to_expect": [
       "2–4 hour guided walk through mangrove and coastal forest",

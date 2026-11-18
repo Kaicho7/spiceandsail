@@ -1,15 +1,5 @@
 {
   "version": "2026-11-18",
-  "basis": "Public guest rates per room per night (USD). Rates are ourRate from hotelRates.json = round(netRate × (1+margin)) for net+margin hotels, or OTA/rack minus discount for contracted hotels. Taxes are PER PERSON, PER NIGHT. Bundles (transfer per vehicle, tours per person) are optional add-ons quoted separately.",
-  "rateModel": "ourRate from hotelRates.json (net+margin 15% for STO hotels, 20% for Mkeka; ota_minus_discount 20% for Le Paradis; rack_minus_discount 15% for The One). See hotelRates.json for netRate/margin sources.",
-  "sourceFiles": [
-    "src/data/hotelRates.json",
-    "src/data/hotel-contracts.json",
-    "src/data/concierge-catalogue.json",
-    "STO Rates sheet (Photos-1-001.zip OCR)",
-    "Le Paradis Master Prompt v2025-12-03",
-    "DeepSeek Research 2026-11-17"
-  ],
   "taxPolicy": "City/infrastructure tax is charged per person per night, added to the room rate at quote time. Values below are per person per night.",
   "taxPerPersonPerNight": {
     "stonetown-view-hotel": 4,
@@ -19,9 +9,27 @@
     "the-one-resort-zanzibar": 5
   },
   "transferRatesPerVehicle": [
-    { "slug": "airport-transfer-znz-to-stone-town", "route": "Abeid Amani Karume International Airport → Stone Town", "oneWayDisplay": "$15–$20", "roundTripDisplay": "from $30", "capacity": 4 },
-    { "slug": "airport-transfer-znz-to-pajejambiani", "route": "ZNZ → Paje/Jambiani", "oneWayDisplay": "$40–$45", "roundTripDisplay": "from $80", "capacity": 4 },
-    { "slug": "airport-transfer-znz-to-nungwikendwa", "route": "ZNZ → Nungwi/Kendwa", "oneWayDisplay": "$40–$45", "roundTripDisplay": "from $80", "capacity": 4 }
+    {
+      "slug": "airport-transfer-znz-to-stone-town",
+      "route": "Abeid Amani Karume International Airport → Stone Town",
+      "oneWayDisplay": "$15–$20",
+      "roundTripDisplay": "from $30",
+      "capacity": 4
+    },
+    {
+      "slug": "airport-transfer-znz-to-pajejambiani",
+      "route": "ZNZ → Paje/Jambiani",
+      "oneWayDisplay": "$40–$45",
+      "roundTripDisplay": "from $80",
+      "capacity": 4
+    },
+    {
+      "slug": "airport-transfer-znz-to-nungwikendwa",
+      "route": "ZNZ → Nungwi/Kendwa",
+      "oneWayDisplay": "$40–$45",
+      "roundTripDisplay": "from $80",
+      "capacity": 4
+    }
   ],
   "bundles": [
     {
@@ -97,18 +105,57 @@
       "area": "Malindi, Stone Town",
       "board": "Bed & Breakfast",
       "taxPerPersonPerNight": 4,
-      "source": "STO Agreement 2026-2027 (Bed & Breakfast, net rates, USD) + 15% margin",
-      "rateSource": "hotelRates.json (net+margin 15%); hotel-contracts.json for tax/contracts",
       "photo": "hotels/stonetown-view-hotel-room-maasai.jpg",
       "ratesStatus": "contracted",
       "rooms": [
-        { "type": "Single", "guestRatePerRoomPerNight": 29, "netRate": 25, "marginPct": 0.15, "maxOccupancy": "1 pax", "count": 4 },
-        { "type": "Double", "guestRatePerRoomPerNight": 40, "netRate": 35, "marginPct": 0.15, "maxOccupancy": "2 adults + 1 child", "count": 11 },
-        { "type": "Twin", "guestRatePerRoomPerNight": 46, "netRate": 40, "marginPct": 0.15, "maxOccupancy": "3 adults + 1 child", "count": 5 },
-        { "type": "Triple", "guestRatePerRoomPerNight": 52, "netRate": 45, "marginPct": 0.15, "maxOccupancy": "3 pax", "count": 3 }
+        {
+          "type": "Single",
+          "guestRatePerRoomPerNight": 29,
+          "netRate": 25,
+          "marginPct": 0.15,
+          "maxOccupancy": "1 pax",
+          "count": 4
+        },
+        {
+          "type": "Double",
+          "guestRatePerRoomPerNight": 40,
+          "netRate": 35,
+          "marginPct": 0.15,
+          "maxOccupancy": "2 adults + 1 child",
+          "count": 11
+        },
+        {
+          "type": "Twin",
+          "guestRatePerRoomPerNight": 46,
+          "netRate": 40,
+          "marginPct": 0.15,
+          "maxOccupancy": "3 adults + 1 child",
+          "count": 5
+        },
+        {
+          "type": "Triple",
+          "guestRatePerRoomPerNight": 52,
+          "netRate": 45,
+          "marginPct": 0.15,
+          "maxOccupancy": "3 pax",
+          "count": 3
+        }
       ],
-      "boardSupplements": { "halfBoardPerPersonPerNight": 15, "fullBoardPerPersonPerNight": 30 },
-      "package": { "id": "pkg-stone-town-starter", "nights": 2, "perPersonMin": 95, "perPersonMax": 140, "includes": ["2 nights at Stone Town View Hotel (Double, B&B)", "Return private airport transfer", "Stone Town walking tour with licensed historian guide"] }
+      "boardSupplements": {
+        "halfBoardPerPersonPerNight": 15,
+        "fullBoardPerPersonPerNight": 30
+      },
+      "package": {
+        "id": "pkg-stone-town-starter",
+        "nights": 2,
+        "perPersonMin": 95,
+        "perPersonMax": 140,
+        "includes": [
+          "2 nights at Stone Town View Hotel (Double, B&B)",
+          "Return private airport transfer",
+          "Stone Town walking tour with licensed historian guide"
+        ]
+      }
     },
     {
       "slug": "the-island-stonetown",
@@ -116,17 +163,49 @@
       "area": "Kokoni, Stone Town",
       "board": "Bed & Breakfast",
       "taxPerPersonPerNight": 5,
-      "source": "STO Agreement 2026-2027 (Bed & Breakfast, net rates per room, USD) + 15% margin",
-      "rateSource": "hotelRates.json (net+margin 15%); hotel-contracts.json for tax/contracts",
       "photo": "hotels/the-island-stonetown-room-new.jpg",
       "ratesStatus": "contracted",
       "rooms": [
-        { "type": "Deluxe Single", "guestRatePerRoomPerNight": 29, "netRate": 25, "marginPct": 0.15, "maxOccupancy": "1 pax", "count": 3 },
-        { "type": "Deluxe Double", "guestRatePerRoomPerNight": 40, "netRate": 35, "marginPct": 0.15, "maxOccupancy": "2 adults + 1 child", "count": 8 },
-        { "type": "Deluxe Twin", "guestRatePerRoomPerNight": 46, "netRate": 40, "marginPct": 0.15, "maxOccupancy": "3 adults + 1 child", "count": 2 }
+        {
+          "type": "Deluxe Single",
+          "guestRatePerRoomPerNight": 29,
+          "netRate": 25,
+          "marginPct": 0.15,
+          "maxOccupancy": "1 pax",
+          "count": 3
+        },
+        {
+          "type": "Deluxe Double",
+          "guestRatePerRoomPerNight": 40,
+          "netRate": 35,
+          "marginPct": 0.15,
+          "maxOccupancy": "2 adults + 1 child",
+          "count": 8
+        },
+        {
+          "type": "Deluxe Twin",
+          "guestRatePerRoomPerNight": 46,
+          "netRate": 40,
+          "marginPct": 0.15,
+          "maxOccupancy": "3 adults + 1 child",
+          "count": 2
+        }
       ],
-      "boardSupplements": { "halfBoardPerPersonPerNight": 15, "fullBoardPerPersonPerNight": 30 },
-      "package": { "id": "pkg-kokoni-city-sea", "nights": 2, "perPersonMin": 130, "perPersonMax": 175, "includes": ["2 nights at The Island Stonetown (B&B)", "Return private airport transfer", "Prison Island & Nakupenda sandbank snorkel trip"] }
+      "boardSupplements": {
+        "halfBoardPerPersonPerNight": 15,
+        "fullBoardPerPersonPerNight": 30
+      },
+      "package": {
+        "id": "pkg-kokoni-city-sea",
+        "nights": 2,
+        "perPersonMin": 130,
+        "perPersonMax": 175,
+        "includes": [
+          "2 nights at The Island Stonetown (B&B)",
+          "Return private airport transfer",
+          "Prison Island & Nakupenda sandbank snorkel trip"
+        ]
+      }
     },
     {
       "slug": "mkeka-spice-lodge",
@@ -134,18 +213,54 @@
       "area": "Jambiani",
       "board": "Bed & Breakfast",
       "taxPerPersonPerNight": 4,
-      "source": "Owner-confirmed rates (breakfast included, USD per room per night) + 20% margin",
-      "rateSource": "hotelRates.json (net+margin 20%); hotel-contracts.json for tax/contracts",
       "photo": "hotels/mkeka-spice-lodge-aerial.jpg",
       "ratesStatus": "contracted",
       "rooms": [
-        { "type": "Single", "guestRatePerRoomPerNight": 36, "netRate": 30, "marginPct": 0.2, "maxOccupancy": "1 pax", "count": 8 },
-        { "type": "Double", "guestRatePerRoomPerNight": 54, "netRate": 45, "marginPct": 0.2, "maxOccupancy": "2 adults", "count": 8 },
-        { "type": "Twin", "guestRatePerRoomPerNight": 54, "netRate": 45, "marginPct": 0.2, "maxOccupancy": "3 adults", "count": 8 },
-        { "type": "Triple", "guestRatePerRoomPerNight": 66, "netRate": 55, "marginPct": 0.2, "maxOccupancy": "3 pax", "count": 8 }
+        {
+          "type": "Single",
+          "guestRatePerRoomPerNight": 36,
+          "netRate": 30,
+          "marginPct": 0.2,
+          "maxOccupancy": "1 pax",
+          "count": 8
+        },
+        {
+          "type": "Double",
+          "guestRatePerRoomPerNight": 54,
+          "netRate": 45,
+          "marginPct": 0.2,
+          "maxOccupancy": "2 adults",
+          "count": 8
+        },
+        {
+          "type": "Twin",
+          "guestRatePerRoomPerNight": 54,
+          "netRate": 45,
+          "marginPct": 0.2,
+          "maxOccupancy": "3 adults",
+          "count": 8
+        },
+        {
+          "type": "Triple",
+          "guestRatePerRoomPerNight": 66,
+          "netRate": 55,
+          "marginPct": 0.2,
+          "maxOccupancy": "3 pax",
+          "count": 8
+        }
       ],
       "boardSupplements": {},
-      "package": { "id": "pkg-spice-beach-escape", "nights": 2, "perPersonMin": 145, "perPersonMax": 175, "includes": ["2 nights at Mkeka Spice Lodge (breakfast included)", "Return private airport transfer", "Spice farm tour with lunch"] }
+      "package": {
+        "id": "pkg-spice-beach-escape",
+        "nights": 2,
+        "perPersonMin": 145,
+        "perPersonMax": 175,
+        "includes": [
+          "2 nights at Mkeka Spice Lodge (breakfast included)",
+          "Return private airport transfer",
+          "Spice farm tour with lunch"
+        ]
+      }
     },
     {
       "slug": "le-paradis-boutique-hotel-zanzibar",
@@ -153,25 +268,91 @@
       "area": "Kibigija, Jambiani",
       "board": "Bed & Breakfast",
       "taxPerPersonPerNight": 5,
-      "source": "STO Rates sheet (official site leparadiszanzibar.com); ota_minus_discount 20% from official site",
-      "rateSource": "hotelRates.json (ota_minus_discount 20%); official site for 6 seasons",
       "photo": "hotels/le-paradis-boutique-hotel-zanzibar-bar.jpg",
       "ratesStatus": "confirmed",
       "rooms": [
-        { "type": "Standard Garden View", "guestRatePerRoomPerNight": 56, "maxOccupancy": "2 adults", "count": 4 },
-        { "type": "Superior Garden View", "guestRatePerRoomPerNight": 72, "maxOccupancy": "2 adults", "count": 4 },
-        { "type": "Executive Seaside View", "guestRatePerRoomPerNight": 96, "maxOccupancy": "2 adults", "count": 4 }
+        {
+          "type": "Standard Garden View",
+          "guestRatePerRoomPerNight": 56,
+          "maxOccupancy": "2 adults",
+          "count": 4
+        },
+        {
+          "type": "Superior Garden View",
+          "guestRatePerRoomPerNight": 72,
+          "maxOccupancy": "2 adults",
+          "count": 4
+        },
+        {
+          "type": "Executive Seaside View",
+          "guestRatePerRoomPerNight": 96,
+          "maxOccupancy": "2 adults",
+          "count": 4
+        }
       ],
       "seasons": [
-        { "id": "low", "label": "Low Season", "dates": "1 Mar – 4 Jul", "Standard Garden View": 70, "Superior Garden View": 90, "Executive Seaside View": 120 },
-        { "id": "high1", "label": "High Season", "dates": "5 Jul – 1 Sep", "Standard Garden View": 85, "Superior Garden View": 105, "Executive Seaside View": 145 },
-        { "id": "mid", "label": "Mid Season", "dates": "1 Sep – 30 Nov", "Standard Garden View": 80, "Superior Garden View": 100, "Executive Seaside View": 130 },
-        { "id": "pre-festive", "label": "Pre-Festive", "dates": "30 Nov – 19 Dec", "Standard Garden View": 90, "Superior Garden View": 110, "Executive Seaside View": 140 },
-        { "id": "festive", "label": "Festive Season", "dates": "20 Dec – 7 Jan", "Standard Garden View": 120, "Superior Garden View": 150, "Executive Seaside View": 200, "minStayNights": 3 },
-        { "id": "high2", "label": "High Season", "dates": "7 Jan – 29 Feb", "Standard Garden View": 110, "Superior Garden View": 130, "Executive Seaside View": 160 }
+        {
+          "id": "low",
+          "label": "Low Season",
+          "dates": "1 Mar – 4 Jul",
+          "Standard Garden View": 70,
+          "Superior Garden View": 90,
+          "Executive Seaside View": 120
+        },
+        {
+          "id": "high1",
+          "label": "High Season",
+          "dates": "5 Jul – 1 Sep",
+          "Standard Garden View": 85,
+          "Superior Garden View": 105,
+          "Executive Seaside View": 145
+        },
+        {
+          "id": "mid",
+          "label": "Mid Season",
+          "dates": "1 Sep – 30 Nov",
+          "Standard Garden View": 80,
+          "Superior Garden View": 100,
+          "Executive Seaside View": 130
+        },
+        {
+          "id": "pre-festive",
+          "label": "Pre-Festive",
+          "dates": "30 Nov – 19 Dec",
+          "Standard Garden View": 90,
+          "Superior Garden View": 110,
+          "Executive Seaside View": 140
+        },
+        {
+          "id": "festive",
+          "label": "Festive Season",
+          "dates": "20 Dec – 7 Jan",
+          "Standard Garden View": 120,
+          "Superior Garden View": 150,
+          "Executive Seaside View": 200,
+          "minStayNights": 3
+        },
+        {
+          "id": "high2",
+          "label": "High Season",
+          "dates": "7 Jan – 29 Feb",
+          "Standard Garden View": 110,
+          "Superior Garden View": 130,
+          "Executive Seaside View": 160
+        }
       ],
       "boardSupplements": {},
-      "package": { "id": "pkg-jambiani-rooftop-romance", "nights": 3, "perPersonMin": 230, "perPersonMax": 350, "includes": ["3 nights Executive Seaside View Room at Le Paradis (breakfast included)", "Return private airport transfer", "Sunset dhow cruise for two"] }
+      "package": {
+        "id": "pkg-jambiani-rooftop-romance",
+        "nights": 3,
+        "perPersonMin": 230,
+        "perPersonMax": 350,
+        "includes": [
+          "3 nights Executive Seaside View Room at Le Paradis (breakfast included)",
+          "Return private airport transfer",
+          "Sunset dhow cruise for two"
+        ]
+      }
     },
     {
       "slug": "the-one-resort-zanzibar",
@@ -179,38 +360,183 @@
       "area": "Makunduchi, South Coast",
       "board": "Half Board / All Inclusive",
       "taxPerPersonPerNight": 5,
-      "source": "Official rack rate sheet 01.05.2026–30.04.2027 (theonezanzibar.com); Public display rate = 15% below published rack",
-      "rateSource": "hotelRates.json (rack_minus_discount 15%); hotel-contracts.json for tax/contracts/policy",
       "photo": "hotels/the-one-resort-zanzibar-aerial.jpg",
       "ratesStatus": "confirmed",
       "rooms": [
-        { "type": "Deluxe Double (Lychee)", "guestRatePerRoomPerNight": null, "maxOccupancy": "2 adults", "count": 17 },
-        { "type": "Deluxe Double/Twin (Mango)", "guestRatePerRoomPerNight": null, "maxOccupancy": "2-3 adults", "count": 13 },
-        { "type": "Junior Suite (Papaya)", "guestRatePerRoomPerNight": null, "maxOccupancy": "2-4 adults", "count": 4 },
-        { "type": "Deluxe Suite (Tiki)", "guestRatePerRoomPerNight": null, "maxOccupancy": "2-5 adults", "count": 2 },
-        { "type": "Family Garden View Villa", "guestRatePerRoomPerNight": null, "maxOccupancy": "2-4 adults", "count": 4 }
+        {
+          "type": "Deluxe Double (Lychee)",
+          "guestRatePerRoomPerNight": null,
+          "maxOccupancy": "2 adults",
+          "count": 17
+        },
+        {
+          "type": "Deluxe Double/Twin (Mango)",
+          "guestRatePerRoomPerNight": null,
+          "maxOccupancy": "2-3 adults",
+          "count": 13
+        },
+        {
+          "type": "Junior Suite (Papaya)",
+          "guestRatePerRoomPerNight": null,
+          "maxOccupancy": "2-4 adults",
+          "count": 4
+        },
+        {
+          "type": "Deluxe Suite (Tiki)",
+          "guestRatePerRoomPerNight": null,
+          "maxOccupancy": "2-5 adults",
+          "count": 2
+        },
+        {
+          "type": "Family Garden View Villa",
+          "guestRatePerRoomPerNight": null,
+          "maxOccupancy": "2-4 adults",
+          "count": 4
+        }
       ],
       "seasons": [
-        { "id": "green", "label": "Green Season", "dates": "01 May – 31 May", "Lychee": { "ourHalfBoard": 136, "ourAllInclusive": 204 }, "Mango": { "ourHalfBoard": 136, "ourAllInclusive": 204 }, "Papaya": { "ourHalfBoard": 153, "ourAllInclusive": 230 }, "Tiki": { "ourHalfBoard": 187, "ourAllInclusive": 242 } },
-        { "id": "mid", "label": "Mid Season", "dates": "07 Jan – 30 Apr, 01 Jun – 30 Jun & 01 Sep – 20 Dec", "Lychee": { "ourHalfBoard": 191, "ourAllInclusive": 242 }, "Mango": { "ourHalfBoard": 191, "ourAllInclusive": 242 }, "Papaya": { "ourHalfBoard": 230, "ourAllInclusive": 281 }, "Tiki": { "ourHalfBoard": 255, "ourAllInclusive": 298 } },
-        { "id": "high", "label": "High Season", "dates": "01 Jul – 31 Aug", "Lychee": { "ourHalfBoard": 230, "ourAllInclusive": 268 }, "Mango": { "ourHalfBoard": 230, "ourAllInclusive": 268 }, "Papaya": { "ourHalfBoard": 264, "ourAllInclusive": 298 }, "Tiki": { "ourHalfBoard": 289, "ourAllInclusive": 323 } },
-        { "id": "festive", "label": "Festive Season", "dates": "21 Dec – 07 Jan", "Lychee": { "ourHalfBoard": 298, "ourAllInclusive": 323 }, "Mango": { "ourHalfBoard": 298, "ourAllInclusive": 323 }, "Papaya": { "ourHalfBoard": 327, "ourAllInclusive": 349 }, "Tiki": { "ourHalfBoard": 349, "ourAllInclusive": 366 }, "minStayNights": 4 }
+        {
+          "id": "green",
+          "label": "Green Season",
+          "dates": "01 May – 31 May",
+          "Lychee": {
+            "ourHalfBoard": 136,
+            "ourAllInclusive": 204
+          },
+          "Mango": {
+            "ourHalfBoard": 136,
+            "ourAllInclusive": 204
+          },
+          "Papaya": {
+            "ourHalfBoard": 153,
+            "ourAllInclusive": 230
+          },
+          "Tiki": {
+            "ourHalfBoard": 187,
+            "ourAllInclusive": 242
+          }
+        },
+        {
+          "id": "mid",
+          "label": "Mid Season",
+          "dates": "07 Jan – 30 Apr, 01 Jun – 30 Jun & 01 Sep – 20 Dec",
+          "Lychee": {
+            "ourHalfBoard": 191,
+            "ourAllInclusive": 242
+          },
+          "Mango": {
+            "ourHalfBoard": 191,
+            "ourAllInclusive": 242
+          },
+          "Papaya": {
+            "ourHalfBoard": 230,
+            "ourAllInclusive": 281
+          },
+          "Tiki": {
+            "ourHalfBoard": 255,
+            "ourAllInclusive": 298
+          }
+        },
+        {
+          "id": "high",
+          "label": "High Season",
+          "dates": "01 Jul – 31 Aug",
+          "Lychee": {
+            "ourHalfBoard": 230,
+            "ourAllInclusive": 268
+          },
+          "Mango": {
+            "ourHalfBoard": 230,
+            "ourAllInclusive": 268
+          },
+          "Papaya": {
+            "ourHalfBoard": 264,
+            "ourAllInclusive": 298
+          },
+          "Tiki": {
+            "ourHalfBoard": 289,
+            "ourAllInclusive": 323
+          }
+        },
+        {
+          "id": "festive",
+          "label": "Festive Season",
+          "dates": "21 Dec – 07 Jan",
+          "Lychee": {
+            "ourHalfBoard": 298,
+            "ourAllInclusive": 323
+          },
+          "Mango": {
+            "ourHalfBoard": 298,
+            "ourAllInclusive": 323
+          },
+          "Papaya": {
+            "ourHalfBoard": 327,
+            "ourAllInclusive": 349
+          },
+          "Tiki": {
+            "ourHalfBoard": 349,
+            "ourAllInclusive": 366
+          },
+          "minStayNights": 4
+        }
       ],
       "currentSeasonId": "mid",
       "fromRate": 160,
       "boardOptions": [
-        { "name": "Half Board", "includes": "Buffet breakfast and buffet dinner (breakfast only on departure day), welcome drink, bottle of water daily, housekeeping and turndown, pool and Jacuzzi access, complimentary guest activities, Wi-Fi, all fees and taxes", "singleOccupancyAdjustment": -15 },
-        { "name": "All Inclusive", "includes": "Buffet breakfast, lunch and dinner (breakfast only on departure day), welcome drink, bottle of water daily, housekeeping and turndown, pool and Jacuzzi access, complimentary guest activities, Wi-Fi, all fees and taxes", "singleOccupancyAdjustment": -35 }
+        {
+          "name": "Half Board",
+          "includes": "Buffet breakfast and buffet dinner (breakfast only on departure day), welcome drink, bottle of water daily, housekeeping and turndown, pool and Jacuzzi access, complimentary guest activities, Wi-Fi, all fees and taxes",
+          "singleOccupancyAdjustment": -15
+        },
+        {
+          "name": "All Inclusive",
+          "includes": "Buffet breakfast, lunch and dinner (breakfast only on departure day), welcome drink, bottle of water daily, housekeeping and turndown, pool and Jacuzzi access, complimentary guest activities, Wi-Fi, all fees and taxes",
+          "singleOccupancyAdjustment": -35
+        }
       ],
-      "extraPersonPerNight": { "halfBoard": 60, "allInclusiveAdult": 75, "allInclusiveChild4to16": 50, "freeUnderHalfBoard": 2, "freeUnderAllInclusive": 4 },
-      "singleOccupancyAdjustment": { "halfBoard": -15, "allInclusive": -35 },
-      "minStayNights": { "standard": 2, "festive": 4 },
+      "extraPersonPerNight": {
+        "halfBoard": 60,
+        "allInclusiveAdult": 75,
+        "allInclusiveChild4to16": 50,
+        "freeUnderHalfBoard": 2,
+        "freeUnderAllInclusive": 4
+      },
+      "singleOccupancyAdjustment": {
+        "halfBoard": -15,
+        "allInclusive": -35
+      },
+      "minStayNights": {
+        "standard": 2,
+        "festive": 4
+      },
       "paymentPolicy": "Standard: full payment 30 days before arrival. Festive season: full payment after reservation confirmed.",
       "cancellationPolicy": "Standard: 25% fee 30-15 days, 50% at 14-7 days, 100% within 7 days or no-show. Festive: non-refundable.",
-      "festiveSupplement": { "christmasEve": 50, "newYearEve": 70, "children4to11": "50% of adult rate", "under4": "complimentary" },
+      "festiveSupplement": {
+        "christmasEve": 50,
+        "newYearEve": 70,
+        "children4to11": "50% of adult rate",
+        "under4": "complimentary"
+      },
       "creditCardFee": "5% if guest settles balance by credit card",
-      "extraPerson": { "halfBoard": 60, "allInclusiveAdult": 75, "allInclusiveChild4to16": 50, "freeUnderHalfBoard": 2, "freeUnderAllInclusive": 4 },
-      "package": { "id": "pkg-south-coast-family", "nights": 3, "perPersonMin": 330, "perPersonMax": 430, "includes": ["3 nights at The One Resort Zanzibar (Half Board — breakfast & dinner included, per room for 2 adults)", "Return private airport transfer (minivan, up to 6 passengers)", "Safari Blue full-day dhow, snorkel & seafood lunch"] }
+      "extraPerson": {
+        "halfBoard": 60,
+        "allInclusiveAdult": 75,
+        "allInclusiveChild4to16": 50,
+        "freeUnderHalfBoard": 2,
+        "freeUnderAllInclusive": 4
+      },
+      "package": {
+        "id": "pkg-south-coast-family",
+        "nights": 3,
+        "perPersonMin": 330,
+        "perPersonMax": 430,
+        "includes": [
+          "3 nights at The One Resort Zanzibar (Half Board — breakfast & dinner included, per room for 2 adults)",
+          "Return private airport transfer (minivan, up to 6 passengers)",
+          "Safari Blue full-day dhow, snorkel & seafood lunch"
+        ]
+      }
     }
   ]
 }
