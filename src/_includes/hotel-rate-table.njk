@@ -1,0 +1,120 @@
+<!-- Shared hotel rate table include -->
+<!-- Expects: hotel_slug (string) - slug of the hotel from hotelPublicRates.hotels -->
+<!-- For seasonal hotels (Le Paradis, The One), pass seasons flag -->
+
+{% set hotel = hotel_slug | rateFor %}
+
+{% if not hotel %}
+  <section class="hotel-rates" aria-labelledby="rates-heading">
+    <p class="rate-error">Hotel data not found for slug: {{ hotel_slug }}</p>
+  </section>
+{% else %}
+  {% set tax = hotel.taxPerPersonPerNight %}
+  {% set board = hotel.board %}
+
+  <section class="hotel-rates" aria-labelledby="rates-heading">
+    <h2 id="rates-heading" class="section-title">Room Rates (per room, per night)</h2>
+    <p class="rate-basis">Rates shown are <strong>per room, per night</strong> in USD. City/infrastructure tax of <strong>{{ tax }} per person, per night</strong> is added at quote time.</p>
+
+    {% if hotel.seasons %}
+      <div class="rate-seasons">
+        {% for season in hotel.seasons %}
+          <div class="season-block">
+            <h4 class="season-label">{{ season.label }} <span class="season-dates">({{ season.dates }})</span></h4>
+            {% if hotel.slug == 'the-one-resort-zanzibar' %}
+              <div class="table-wrapper">
+                <table class="rate-table">
+                  <thead>
+                    <tr>
+                      <th>Room Type</th>
+                      <th>Half Board (per person/night)</th>
+                      <th>All Inclusive (per person/night)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for room in hotel.rooms %}
+                      {% if season[room.type] and season[room.type].ourHalfBoard is defined %}
+                        {% set hb = season[room.type].ourHalfBoard %}
+                      {% else %}
+                        {% set hb = '-' %}
+                      {% endif %}
+                      {% if season[room.type] and season[room.type].ourAllInclusive is defined %}
+                        {% set ai = season[room.type].ourAllInclusive %}
+                      {% else %}
+                        {% set ai = '-' %}
+                      {% endif %}
+                      <tr>
+                        <td>{{ room.type }}</td>
+                        <td>${{ hb }}</td>
+                        <td>${{ ai }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              {% if season.minStayNights %}
+                <p class="season-note"><strong>Minimum stay:</strong> {{ season.minStayNights }} nights</p>
+              {% endif %}
+            {% else %}
+              <div class="table-wrapper">
+                <table class="rate-table">
+                  <thead>
+                    <tr>
+                      <th>Room Type</th>
+                      <th>Rate (per room/night)</th>
+                      <th>Max Occupancy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for room in hotel.rooms %}
+                      {% if season[room.type] is defined %}
+                        <tr>
+                          <td>{{ room.type }}</td>
+                          <td>${{ season[room.type] }}</td>
+                          <td>{{ room.maxOccupancy }}</td>
+                        </tr>
+                      {% endif %}
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              {% if season.minStayNights %}
+                <p class="season-note"><strong>Minimum stay:</strong> {{ season.minStayNights }} nights</p>
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="table-wrapper">
+        <table class="rate-table">
+          <thead>
+            <tr>
+              <th>Room Type</th>
+              <th>Rate (per room/night)</th>
+              <th>Max Occupancy</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for room in hotel.rooms %}
+              <tr>
+                <td>{{ room.type }}</td>
+                <td>${{ room.guestRatePerRoomPerNight }}</td>
+                <td>{{ room.maxOccupancy }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% if hotel.boardSupplements and hotel.boardSupplements.halfBoardPerPersonPerNight %}
+        <p class="rate-note"><strong>Board supplements (per person/night):</strong> Half Board +${{ hotel.boardSupplements.halfBoardPerPersonPerNight }}, Full Board +${{ hotel.boardSupplements.fullBoardPerPersonPerNight }}</p>
+      {% endif %}
+    {% endif %}
+
+    <div class="rate-notes">
+      <p><strong>Rate basis:</strong> Rates are <strong>per room, per night</strong> in USD. <strong>City/infrastructure tax of {{ tax }} per person, per night</strong> is added at quote time.</p>
+      <p><strong>Board basis:</strong> {{ hotel.board }}{% if hotel.boardSupplements and hotel.boardSupplements.halfBoardPerPersonPerNight %} Half Board supplement +${{ hotel.boardSupplements.halfBoardPerPersonPerNight }}/person/night; Full Board +${{ hotel.boardSupplements.fullBoardPerPersonPerNight }}/person/night.{% endif %}</p>
+      <p class="rate-source"><strong>Rate source:</strong> {{ hotel.rateSource }}</p>
+    </div>
+  </section>
+{% endif %}

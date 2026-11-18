@@ -60,6 +60,25 @@ module.exports = function(eleventyConfig) {
     if (!svc || !svc.pricing || svc.pricing.max == null) return null;
     return svc.pricing.max;
   });
+
+  // Hotel public rates lookup
+  let hotelPublicRates = { hotels: [] };
+  try {
+    hotelPublicRates = JSON.parse(fs.readFileSync(path.join("./src", "data", "hotelPublicRates.json"), "utf8"));
+  } catch (e) {
+    hotelPublicRates = { hotels: [] };
+  }
+
+  function rateFor(slug) {
+    return (hotelPublicRates.hotels || []).find(h => h.slug === slug) || null;
+  }
+
+  eleventyConfig.addFilter("rateFor", (slug) => rateFor(slug));
+  eleventyConfig.addFilter("getFromRate", (slug) => {
+    const h = rateFor(slug);
+    return h ? (h.fromRate || (h.rooms && Math.min(...h.rooms.map(r => r.guestRatePerRoomPerNight || Infinity))) || 0) : 0;
+  });
+
   eleventyConfig.addGlobalData("conciergeCat", () => conciergeCatalogue);
   let toursData = {};
   try {

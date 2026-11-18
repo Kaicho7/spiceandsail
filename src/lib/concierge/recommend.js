@@ -28,13 +28,14 @@ function recommend(profile, limit) {
   const items = [];
 
   for (const s of catalogue.services) {
-    if (s.type === 'transfer') continue;
+    if (s.type === 'transfer' || s.type === 'package') continue;
     let value = 0;
     const reasons = [];
+    const sInterests = s.interests || [];
 
     // interest overlap
     for (const interest of interests) {
-      if (s.interests.some(function (si) { return si.includes(interest) || interest.includes(si); })) {
+      if (sInterests.some(function (si) { return si.includes(interest) || interest.includes(si); })) {
         value += 3;
         reasons.push('matches "' + interest + '"');
         break;
@@ -42,8 +43,9 @@ function recommend(profile, limit) {
     }
 
     // geography
-    if (zone && s.zones.length > 0) {
-      if (s.zones.includes(zone)) {
+    const sZones = s.zones || [];
+    if (zone && sZones.length > 0) {
+      if (sZones.includes(zone)) {
         value += 4;
         reasons.push('departs from ' + zoneName(zone) + ' — no long transfers');
       } else {
@@ -63,11 +65,11 @@ function recommend(profile, limit) {
 
     // group composition
     if (children > 0) {
-      if (s.interests.includes('family')) { value += 2; reasons.push('family-friendly'); }
+      if (sInterests.includes('family')) { value += 2; reasons.push('family-friendly'); }
       if (hasSmallKids && s.timeOfDay && s.timeOfDay.includes('morning')) value += 1;
-      if (s.interests.includes('romance') || s.interests.includes('honeymoon')) { value -= 2; }
+      if (sInterests.includes('romance') || sInterests.includes('honeymoon')) { value -= 2; }
     }
-    if (s.interests.includes('honeymoon') && interests.some(function (i) { return ['honeymoon', 'romance', 'anniversary'].includes(i); })) {
+    if (sInterests.includes('honeymoon') && interests.some(function (i) { return ['honeymoon', 'romance', 'anniversary'].includes(i); })) {
       value += 3;
     }
 
@@ -78,7 +80,7 @@ function recommend(profile, limit) {
       if (budget.startsWith('lux') && s.pricing.min < 80) value -= 1;
     }
 
-    if (value > 0 || s.zones.includes(zone || '')) {
+    if (value > 0 || sZones.includes(zone || '')) {
       items.push({
         slug: s.slug,
         name: s.name,

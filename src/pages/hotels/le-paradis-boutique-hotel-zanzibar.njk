@@ -1,0 +1,112 @@
+---
+title: "Le Paradis Boutique Hotel Zanzibar — B&B from $56/room/night | Spice & Sail"
+description: "Le Paradis Boutique Hotel in Jambiani. 3 room types, seasonal B&B rates from $56/room/night. Verified STO rates (6 seasons), 20% discount, Booking.com policies. Book direct via WhatsApp."
+permalink: "/hotels/le-paradis-boutique-hotel-zanzibar/index.html"
+hotel_slug: "le-paradis-boutique-hotel-zanzibar"
+---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
+<main class="hotel-detail">
+  <section class="hotel-hero" style="background: linear-gradient(135deg, var(--dct-palm) 0%, var(--dct-ocean) 100%);">
+    <div class="hotel-hero-content">
+      {% set featured = page.inputPath | featuredImage %}
+      {% set cdnSrc = page.inputPath | cdnImage %}
+      <img src="{{ cdnSrc }}" alt="Le Paradis Boutique Hotel Zanzibar rooftop bar with ocean view" class="hotel-hero-image" loading="eager" fetchpriority="high">
+      <span class="card-badge badge-hotel">Boutique Hotel</span>
+      <span class="swahili-kicker"><strong>Bahari</strong><span>Rooftop & sea views</span></span>
+      <h1>Le Paradis Boutique Hotel Zanzibar</h1>
+      <p class="hotel-meta">Kibigija, Jambiani · Bed & Breakfast · Seasonal rates from $56/room/night</p>
+      <div class="hotel-price-box">
+        <span class="price-label">From</span>
+        <span class="price-amount">{{ "le-paradis-boutique-hotel-zanzibar" | getFromRate }}</span>
+        <span class="price-note">per room, per night (B&B, Low Season)</span>
+      </div>
+    </div>
+  </section>
+
+  {% set hotel_slug = "le-paradis-boutique-hotel-zanzibar" %}
+{% include "hotel-rate-table.njk" %}
+
+  <section class="hotel-bundles" aria-labelledby="bundles-heading">
+    <h2 id="bundles-heading" class="section-title">Popular Packages (add bundles as options)</h2>
+    <div class="bundle-grid">
+      {% set pkg = hotel.package %}
+      <article class="bundle-card">
+        <h3>{{ pkg.name }}</h3>
+        <p class="bundle-meta">{{ pkg.nights }} nights · From ${{ pkg.perPersonMin }}–${{ pkg.perPersonMax }} per person</p>
+        <ul class="bundle-includes">
+          {% for item in pkg.includes %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <div class="bundle-cta">
+          <a href="/.netlify/functions/quote?service={{ pkg.id }}&adults=2" class="btn btn-primary">Get a Quote</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20{{ pkg.name | urlencode }}%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="hotel-transfers" aria-labelledby="transfers-heading">
+    <h2 id="transfers-heading" class="section-title">Airport Transfers (per vehicle)</h2>
+    <p class="transfer-note">Rates are <strong>per private vehicle, one-way</strong> (up to 4 passengers). Round-trip available.</p>
+    <div class="table-wrapper">
+      <table class="rate-table">
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>One-Way</th>
+            <th>Round-Trip</th>
+            <th>Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ZNZ → Jambiani/Paje</td>
+            <td>$40–$45</td>
+            <td>from $80</td>
+            <td>4 pax</td>
+          </tr>
+          <tr>
+            <td>ZNZ → Stone Town</td>
+            <td>$15–$20</td>
+            <td>from $30</td>
+            <td>4 pax</td>
+          </tr>
+          <tr>
+            <td>ZNZ → Nungwi/Kendwa</td>
+            <td>$40–$45</td>
+            <td>from $80</td>
+            <td>4 pax</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="transfer-note">Transfer rates are per vehicle (up to 4 passengers). Add to your quote as an option.</p>
+  </section>
+
+  <section class="hotel-cta" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" class="section-title">Ready to Book?</h2>
+    <p>Get a personalized quote with exact dates, transfers, and tours. Our team confirms exact room type, dates, and pickup window.</p>
+    <div class="cta-buttons">
+      <a href="/.netlify/functions/quote?service=pkg-jambiani-rooftop-romance&adults=2" class="btn btn-primary">Get a Quote</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20Le%20Paradis%20Boutique%20Hotel%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="rate-source" aria-labelledby="source-heading">
+    <h3 id="source-heading" class="section-title">Rate Verification</h3>
+    <ul class="source-list">
+      <li><strong>Source:</strong> STO Rates sheet (Photos-1-001.zip OCR) / Master Prompt v2025-12-03; ota_minus_discount 20% from official site</li>
+      <li><strong>Guest rates (per room/night):</strong> Standard Garden $56, Superior Garden $64, Executive Seaside $96 (public rates, 20% off rack)</li>
+      <li><strong>STO Rack Rates (6 seasons, incl. 12% hotel levy):</strong> Low $70/$90/$120, High $85/$105/$145, Mid $80/$100/$130, Pre-Festive $90/$110/$140, Festive $120/$150/$200, High $110/$130/$160</li>
+      <li><strong>Tax:</strong> $3 per person/night (infrastructure levy)</li>
+      <li><strong>Booking.com policies:</strong> Flexible 7-day free cancel (no prepay), Non-refundable 10% cheaper (prepay), Shoulder Saver 15% off 2-night min (room only); Damage deposit $20 cash; Check-in 14:00, Check-out 11:00; Full prepayment required before arrival; STO rates require valid STO voucher</li>
+      <li><strong>Source files:</strong> STO Rate sheet (Photos-1-001.zip OCR), Master Prompt v2025-12-03, hotelRates.json, hotel-contracts.json, Booking.com screenshots (lep-20261115T071927Z-1-001.zip)</li>
+    </ul>
+  </section>
+
+</main>
+
+{% include "footer.njk" %}

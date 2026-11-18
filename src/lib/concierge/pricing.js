@@ -23,6 +23,25 @@ function range(low, high) {
   return money(low) + '–' + money(high);
 }
 
+/** Parse tieredDisplay like "2 guests: $110 pp (Stone Town) / $130 pp (beach hotel) • 3–6 guests: $100 pp (Stone Town) / $110 pp (beach hotel)" */
+function parseTieredDisplay(tieredDisplay) {
+  if (!tieredDisplay) return null;
+  const tiers = [];
+  for (const m of tieredDisplay.split('•')) {
+    const t = m.trim();
+    // match "N guests: $X pp" or "N–M guests: $X pp"
+    const mm = t.match(/(\d(?:–\d+)? guests): \$(\d+(?:\.\d+)?)\s*pp/);
+    if (mm) {
+      tiers.push({
+        count: mm[1],
+        low: parseInt(mm[2]),
+        high: parseInt(mm[2]) // same per-person rate for the tier; note may differentiate ST/BH
+      });
+    }
+  }
+  return tiers;
+}
+
 function getQuote(input) {
   const svc = getService(input.serviceSlug);
   const adults = Math.max(1, Math.floor(input.adults || 1));
@@ -94,6 +113,23 @@ function getQuote(input) {
     note: 'From the verified catalogue range (' + p.display + ' per person).',
   };
   lines.push(adultLine);
+
+  // Build tier-aware display using tieredDisplay from catalogue
+  const tieredRates = parseTieredDisplay(p.tieredDisplay);
+  if (tieredRates) {
+    // Find tier matching adults count; fall back to first tier
+    const matchingTier = tieredRates.find(t => {
+      const [a, b] = t.count.split('–').map(Number);
+      return adults >= a && (b === undefined || adults <= b);
+    }) || tieredRates[0];
+    if (matchingTier) {
+      const tierNote = ' (' + matchingTier.count + ': ' + money(matchingTier.low) + ' pp' +
+        (matchingTier.high !== matchingTier.low ? '–' + money(matchingTier.high) + ' pp' : '') + ')';
+      adultLine.note += tierNote;
+      // Also adjust totalDisplay to include tier info
+      base.totalDisplay = range(adultLine.low, adultLine.high) + tierNote;
+    }
+  }
 
   if (children > 0) {
     flags.push('child_pricing_on_request');

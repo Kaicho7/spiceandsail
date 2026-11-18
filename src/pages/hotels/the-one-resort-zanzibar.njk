@@ -1,0 +1,125 @@
+---
+title: "The One Resort Zanzibar — Half Board from $136/pp/night | Spice & Sail"
+description: "The One Resort Zanzibar on the South Coast. 36 rooms, Half Board & All Inclusive seasonal rates from $136/pp/night. Verified rack rates (15% discount), airport transfers, Safari Blue included. Book direct via WhatsApp."
+permalink: "/hotels/the-one-resort-zanzibar/index.html"
+hotel_slug: "the-one-resort-zanzibar"
+---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
+<main class="hotel-detail">
+  <section class="hotel-hero" style="background: linear-gradient(135deg, var(--dct-palm) 0%, var(--dct-ocean) 100%);">
+    <div class="hotel-hero-content">
+      {% set featured = page.inputPath | featuredImage %}
+      {% set cdnSrc = page.inputPath | cdnImage %}
+      <img src="{{ cdnSrc }}" alt="The One Resort Zanzibar aerial view with pool and ocean" class="hotel-hero-image" loading="eager" fetchpriority="high">
+      <span class="card-badge badge-hotel">Resort</span>
+      <span class="swahili-kicker"><strong>Safari</strong><span>South Coast luxury</span></span>
+      <h1>The One Resort Zanzibar</h1>
+      <p class="hotel-meta">Makunduchi, South Coast · Half Board / All Inclusive · From $136/pp/night (Green Season)</p>
+<div class="hotel-price-box">
+        <span class="price-label">From</span>
+        <span class="price-amount">{{ "the-one-resort-zanzibar" | getFromRate }}</span>
+        <span class="price-note">per person/night (Half Board, Green Season)</span>
+      </div>
+    </div>
+  </section>
+
+  {% set hotel_slug = "the-one-resort-zanzibar" %}
+{% include "hotel-rate-table.njk" %}
+
+  <section class="hotel-bundles" aria-labelledby="bundles-heading">
+    <h2 id="bundles-heading" class="section-title">Popular Packages (add bundles as options)</h2>
+    <div class="bundle-grid">
+      {% set pkg = hotel.package %}
+      <article class="bundle-card">
+        <h3>{{ pkg.name }}</h3>
+        <p class="bundle-meta">{{ pkg.nights }} nights · From ${{ pkg.perPersonMin }}–${{ pkg.perPersonMax }} per person</p>
+        <ul class="bundle-includes">
+          {% for item in pkg.includes %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <div class="bundle-cta">
+          <a href="/.netlify/functions/quote?service={{ pkg.id }}&adults=2" class="btn btn-primary">Get a Quote</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20{{ pkg.name | urlencode }}%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="hotel-transfers" aria-labelledby="transfers-heading">
+    <h2 id="transfers-heading" class="section-title">Airport Transfers (per vehicle)</h2>
+    <p class="transfer-note">Rates are <strong>per private vehicle, one-way</strong> (up to 4 passengers). Round-trip available.</p>
+    <div class="table-wrapper">
+      <table class="rate-table">
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>One-Way</th>
+            <th>Round-Trip</th>
+            <th>Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ZNZ → South Coast (Makunduchi)</td>
+            <td>$40–$50</td>
+            <td>from $80</td>
+            <td>4 pax</td>
+          </tr>
+          <tr>
+            <td>ZNZ → Stone Town</td>
+            <td>$15–$20</td>
+            <td>from $30</td>
+            <td>4 pax</td>
+          </tr>
+          <tr>
+            <td>ZNZ → Paje/Jambiani</td>
+            <td>$40–$45</td>
+            <td>from $80</td>
+            <td>4 pax</td>
+          </tr>
+          <tr>
+            <td>ZNZ → Nungwi/Kendwa</td>
+            <td>$40–$45</td>
+            <td>from $80</td>
+            <td>4 pax</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="transfer-note">Transfer rates are per vehicle (up to 4 passengers). Add to your quote as an option.</p>
+  </section>
+
+  <section class="hotel-cta" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" class="section-title">Ready to Book?</h2>
+    <p>Get a personalized quote with exact dates, transfers, and tours. Our team confirms exact room type, dates, and pickup window.</p>
+    <div class="cta-buttons">
+      <a href="/.netlify/functions/quote?service=pkg-south-coast-family&adults=2" class="btn btn-primary">Get a Quote</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20The%20One%20Resort%20Zanzibar%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="rate-source" aria-labelledby="source-heading">
+    <h3 id="source-heading" class="section-title">Rate Verification</h3>
+    <ul class="source-list">
+      <li><strong>Source:</strong> Official rack rate sheet 01.05.2026–30.04.2027 (theonezanzibar.com); Public display rate = 15% below published rack</li>
+      <li><strong>Board basis:</strong> Half Board or All Inclusive (per person, double occupancy); Single occupancy: -$15 HB / -$35 AI</li>
+      <li><strong>Current season (Mid):</strong> Half Board from $191 pp/night; All Inclusive from $242 pp/night</li>
+      <li><strong>Seasonal Half Board rates (per person/night):</strong> Green $136, Mid $191, High $230, Festive $298</li>
+      <li><strong>Seasonal All Inclusive rates (per person/night):</strong> Green $204, Mid $242, High $268, Festive $323</li>
+      <li><strong>Extra person/night:</strong> HB $60, AI Adult $75, AI Child (4-16) $50; Free under 2 (HB) / under 4 (AI)</li>
+      <li><strong>Tax:</strong> $5 per person/night (infrastructure levy)</li>
+      <li><strong>Single occupancy:</strong> -$15 (HB), -$35 (AI)</li>
+      <li><strong>Min stay:</strong> 2 nights standard, 4 nights Festive</li>
+      <li><strong>Festive supplements:</strong> Christmas Eve +$50/adult, NYE +$70/adult; children 4-11 at 50% adult rate</li>
+      <li><strong>Cancellation:</strong> Standard 25% (30-15 days), 50% (14-7 days), 100% within 7 days; Festive non-refundable</li>
+      <li><strong>Credit card fee:</strong> 5% if balance paid by card</li>
+      <li><strong>Source files:</strong> <code>hotelRates.json</code>, <code>hotel-contracts.json</code>, Official rack rate sheet 01.05.2026–30.04.2027</li>
+    </ul>
+  </section>
+
+</main>
+
+{% include "footer.njk" %}

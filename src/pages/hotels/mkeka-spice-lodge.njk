@@ -1,0 +1,112 @@
+---
+title: "Mkeka Spice Lodge — B&B from $54/room/night | Spice & Sail"
+description: "Mkeka Spice Lodge in Jambiani. 4 room types, B&B from $54/room/night. Verified owner rates, airport transfers, spice farm tour included. Book direct via WhatsApp."
+permalink: "/hotels/mkeka-spice-lodge/index.html"
+hotel_slug: "mkeka-spice-lodge"
+---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
+<main class="hotel-detail">
+  <section class="hotel-hero" style="background: linear-gradient(135deg, var(--dct-palm) 0%, var(--dct-ocean) 100%);">
+    <div class="hotel-hero-content">
+      {% set featured = page.inputPath | featuredImage %}
+      {% set cdnSrc = page.inputPath | cdnImage %}
+      <img src="{{ cdnSrc }}" alt="Mkeka Spice Lodge aerial view with garden and pool" class="hotel-hero-image" loading="eager" fetchpriority="high">
+      <span class="card-badge badge-hotel">Spice Lodge</span>
+      <span class="swahili-kicker"><strong>Bahari</strong><span>Spice & beach</span></span>
+      <h1>Mkeka Spice Lodge</h1>
+      <p class="hotel-meta">Jambiani, Southeast Coast · Bed & Breakfast · From $54/room/night</p>
+<div class="hotel-price-box">
+        <span class="price-label">From</span>
+        <span class="price-amount">{{ "mkeka-spice-lodge" | getFromRate }}</span>
+        <span class="price-note">per room, per night (B&B)</span>
+      </div>
+    </div>
+  </section>
+
+  {% set hotel_slug = "mkeka-spice-lodge" %}
+{% include "hotel-rate-table.njk" %}
+
+  <section class="hotel-bundles" aria-labelledby="bundles-heading">
+    <h2 id="bundles-heading" class="section-title">Popular Packages (add bundles as options)</h2>
+    <div class="bundle-grid">
+      {% set pkg = hotel.package %}
+      <article class="bundle-card">
+        <h3>{{ pkg.name }}</h3>
+        <p class="bundle-meta">{{ pkg.nights }} nights · From ${{ pkg.perPersonMin }}–${{ pkg.perPersonMax }} per person</p>
+        <ul class="bundle-includes">
+          {% for item in pkg.includes %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <div class="bundle-cta">
+          <a href="/.netlify/functions/quote?service={{ pkg.id }}&adults=2" class="btn btn-primary">Get a Quote</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20{{ pkg.name | urlencode }}%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="hotel-transfers" aria-labelledby="transfers-heading">
+    <h2 id="transfers-heading" class="section-title">Airport Transfers (per vehicle)</h2>
+    <p class="transfer-note">Rates are <strong>per private vehicle, one-way</strong> (up to 4 passengers). Round-trip available.</p>
+    <div class="table-wrapper">
+      <table class="rate-table">
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>One-Way</th>
+            <th>Round-Trip</th>
+            <th>Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ZNZ → Jambiani/Paje</td>
+            <td>$40–$45</td>
+            <td>from $80</td>
+            <td>4 pax</td>
+          </tr>
+          <tr>
+            <td>ZNZ → Stone Town</td>
+            <td>$15–$20</td>
+            <td>from $30</td>
+            <td>4 pax</td>
+          </tr>
+          <tr>
+            <td>ZNZ → Nungwi/Kendwa</td>
+            <td>$40–$45</td>
+            <td>from $80</td>
+            <td>4 pax</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="transfer-note">Transfer rates are per vehicle (up to 4 passengers). Add to your quote as an option.</p>
+  </section>
+
+  <section class="hotel-cta" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" class="section-title">Ready to Book?</h2>
+    <p>Get a personalized quote with exact dates, transfers, and tours. Our team confirms exact room type, dates, and pickup window.</p>
+    <div class="cta-buttons">
+      <a href="/.netlify/functions/quote?service=pkg-spice-beach-escape&adults=2" class="btn btn-primary">Get a Quote</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20Mkeka%20Spice%20Lodge%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="rate-source" aria-labelledby="source-heading">
+    <h3 id="source-heading" class="section-title">Rate Verification</h3>
+    <ul class="source-list">
+      <li><strong>Source:</strong> Owner-confirmed rates (breakfast included, USD per room per night) + 20% margin</li>
+      <li><strong>Contract net rates:</strong> Single $30, Double $45, Twin $45, Triple $55 (per room/night)</li>
+      <li><strong>Public guest rates:</strong> Single $36, Double $54, Twin $54, Triple $66 (per room/night)</li>
+      <li><strong>Tax:</strong> $2 per person/night (infrastructure levy)</li>
+      <li><strong>Board:</strong> Breakfast included (B&B)</li>
+      <li><strong>Source files:</strong> <code>hotelRates.json</code>, <code>hotel-contracts.json</code>, Owner-confirmed rates</li>
+    </ul>
+  </section>
+
+</main>
+
+{% include "footer.njk" %}

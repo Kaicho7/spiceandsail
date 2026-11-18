@@ -521,7 +521,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
 
         return {
           message: '**' + svc.name + '**\n\n' +
-            '• **Planning Rate:** ' + svc.pricing.display + ' ' + unitLabel(svc) + '\n' +
+            '• **Planning Rate:** ' + svc.pricing.display + ' ' + unitLabel(svc) + (svc.pricing.tieredDisplay ? ' • ' + svc.pricing.tieredDisplay : '') + '\n' +
             '• **Duration:** ' + svc.duration + '\n' +
             '• **Includes:** ' + inc + '\n\n' +
             (profile.children ? '• **Family:** ' + profile.children + ' child' + (profile.children > 1 ? 'ren' : '') + ' — child pricing is confirmed by our team.\n\n' : '') +
