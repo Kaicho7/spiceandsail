@@ -178,7 +178,7 @@ module.exports = function(eleventyConfig) {
     const dirMatch = hotelsJsonList.find((x) => x.slug === ph.slug) || {};
     const pageSlug = hotelPageSlugAliases[ph.slug] || ph.slug;
     const fromRate = ph.fromRate || (ph.rooms && Math.min(...ph.rooms.map(r => r.guestRatePerRoomPerNight || Infinity))) || 0;
-    const rateUnit = ph.slug === "the-one-resort-zanzibar" ? "per person / night" : "per room / night";
+    const rateUnit = ph.slug === "the-one-resort-zanzibar" ? "per room for 2 adults, per night" : "per room / night";
     return {
       slug: ph.slug,
       pageSlug,
