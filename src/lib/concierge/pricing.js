@@ -105,6 +105,25 @@ function getQuote(input) {
     return finalize(base, lines, notes, flags, input);
   }
 
+  // per-quad (ATV/buggy safari - pricing per vehicle/quad, not per person)
+  if (p.basis === 'per_quad') {
+    const riders = p.riderCapacity || 2;
+    if (adults > riders) {
+      lines.push({ label: svc.name + ' (quad, up to ' + riders + ' riders)', low: p.min, high: p.max, note: 'Verified rate covers up to ' + riders + ' riders.' });
+      base.lines = lines;
+      base.reasons.push('Party of ' + adults + ' exceeds the verified quad rider capacity (' + riders + '); our team confirms the larger-vehicle rate.');
+      return base;
+    }
+    lines.push({ label: svc.name + ' — quad (up to ' + riders + ' riders)', low: p.min, high: p.max, note: p.basisNote || 'per quad' });
+    base.status = 'quoted';
+    base.basis = 'per_quad';
+    base.totalLow = p.min;
+    base.totalHigh = p.max;
+    base.totalDisplay = range(p.min, p.max);
+    if (svc.duration) notes.push('Duration: ' + svc.duration + '.');
+    return finalize(base, lines, notes, flags, input);
+  }
+
   // per-person (tours & packages)
   const adultLine = {
     label: svc.name + ' — ' + adults + ' adult' + (adults > 1 ? 's' : '') + ' × ' + range(p.min, p.max) + ' per person',

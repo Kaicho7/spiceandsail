@@ -23,7 +23,7 @@ alternate_de: "https://spiceandsail.com/de/"
         <div class="trust-item"><span class="trust-icon">✓</span>Small-Group &amp; Private Options</div>
         <div class="trust-item"><span class="trust-icon">💎</span>Marine Fees Included</div>
         <div class="trust-item"><span class="trust-icon">💬</span>WhatsApp-First Booking</div>
-        <div class="trust-item"><span class="trust-icon">📍</span>Stone Town Based</div>
+        <div class="trust-item"><span class="trust-icon">📍</span>Mbuzini, Zanzibar Based</div>
       </div>
     </div>
     <div class="hero-visual reveal">
@@ -256,7 +256,7 @@ alternate_de: "https://spiceandsail.com/de/"
               <p class="card-meta">{{ tour.duration }} • {{ tour.location }}</p>
               <p class="card-description">{{ tour.short_description }}</p>
               <div class="card-footer">
-                <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
+                <span class="card-price">{{ tour.slug | catPriceShort | safe }} </span>
                 <div class="card-actions">
                   <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-primary btn-sm">View Details</a>
                   <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hello%20Spice%20and%20Sail%2C%20I%27m%20interested%20in%20{{ tour.title | urlencode }}" target="_blank" rel="noopener" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ tour.title }}">Ask on WhatsApp</a>
@@ -270,11 +270,11 @@ alternate_de: "https://spiceandsail.com/de/"
     </div>
   </section>
 
-  <section class="section" style="background: #fdfaf5; border-top: 1px solid #fae8c8; border-bottom: 1px solid #fae8c8;">
+  <section class="section section-alt">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag" style="background: #fae8c8; color: #854d0e;">High-Impact Bucket List</span>
-        <h2>Rare Experiences & Hidden Gems</h2>
+        <span class="section-tag">High-Impact Bucket List</span>
+        <h2>Rare Experiences &amp; Hidden Gems</h2>
         <p class="section-subtitle">Beyond the ordinary itinerary: swim with horses at low tide, power quad buggies through ancient baobabs, plunge into secret freshwater cenotes, or cross the tidal 'Moses Road' to Uzi Island.</p>
       </div>
       <div class="cards-grid">
@@ -288,7 +288,7 @@ alternate_de: "https://spiceandsail.com/de/"
             <h3 class="card-title">Swimming with Horses in Ocean</h3>
             <p class="card-description">Purebred horses, white sands, and riding bareback into crystal-clear turquoise waters during low tide.</p>
             <div class="card-footer">
-              <span class="card-price">{% catPrice "horse-swimming" %}</span>
+              <span class="card-price">{{ 'horse-swimming' | catPriceShort | safe }}</span>
               <a href="/experiences/" class="btn btn-primary btn-sm">Explore Experience</a>
             </div>
           </div>
@@ -304,7 +304,7 @@ alternate_de: "https://spiceandsail.com/de/"
             <h3 class="card-title">Off-Road Quad & Buggy Safari</h3>
             <p class="card-description">2-seater 4x4 automatic buggies powering through coral rag paths, rural Swahili villages, and baobabs.</p>
             <div class="card-footer">
-              <span class="card-price">{% catPrice "quad-buggy-safari" %}</span>
+              <span class="card-price">{{ 'quad-buggy-safari' | catPriceShort | safe }}</span>
               <a href="/experiences/" class="btn btn-primary btn-sm">Explore Experience</a>
             </div>
           </div>
@@ -320,7 +320,7 @@ alternate_de: "https://spiceandsail.com/de/"
             <h3 class="card-title">Maalum Secret Cenote & Cave Swim</h3>
             <p class="card-description">Natural subterranean freshwater swimming grotto. Strictly limited guest slots and chemical-free preservation.</p>
             <div class="card-footer">
-              <span class="card-price">{% catPrice "maalum-kuza-caves" %}</span>
+              <span class="card-price">{{ 'maalum-kuza-caves' | catPriceShort | safe }}</span>
               <a href="/experiences/" class="btn btn-primary btn-sm">Explore Experience</a>
             </div>
           </div>
@@ -405,6 +405,83 @@ alternate_de: "https://spiceandsail.com/de/"
     </div>
   </section>
 
+  <!-- Where to Stay Strip -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Where to Stay</span>
+        <h2>Hand-Picked Zanzibar Hotels &amp; Resorts</h2>
+        <p class="section-subtitle">{{ stats.total_hotels }} properties across Nungwi, Kendwa, Paje, Jambiani, Stone Town, Kiwengwa, Matemwe &amp; more — starting with our contracted partner stays with verified public rates.</p>
+      </div>
+      <div class="cards-grid cards-grid--4">
+        {% for hotel in featuredPartnerHotels | limit(4) %}
+          <article class="card reveal" data-category="HTL">
+            <div class="card-image">
+              <img src="{{ hotel.photo | cdnFile }}" alt="{{ hotel.name }} in {{ hotel.area }}, Zanzibar" loading="lazy">
+              <span class="image-tag">{{ hotel.area }}</span>
+            </div>
+            <div class="card-content">
+              <span class="card-badge badge-luxury">{{ hotel.board }}</span>
+              <h3 class="card-title"><a href="/hotels/{{ hotel.pageSlug }}/">{{ hotel.name }}</a></h3>
+              <p class="card-meta">{{ hotel.area }} • Verified Partner Rates</p>
+              <p class="card-description">{{ hotel.summary | truncate(120) }}</p>
+              <div class="card-footer">
+                {% if hotel.fromRate > 0 %}
+                  <span class="card-price">From ${{ hotel.fromRate }} <span class="price-basis">{{ hotel.rateUnit }}</span></span>
+                {% else %}
+                  <span class="card-price">Seasonal Rates <span class="price-basis">confirmed by team</span></span>
+                {% endif %}
+                <div class="card-actions">
+                  <a href="/hotels/{{ hotel.pageSlug }}/" class="btn btn-primary btn-sm">View Rates</a>
+                  <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20details%20and%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ hotel.name }}">Ask on WhatsApp</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <p class="view-all reveal"><a href="/hotels/" class="btn btn-secondary">View All {{ stats.total_hotels }} Hotels &amp; Resorts →</a></p>
+    </div>
+  </section>
+
+  <!-- Verified Standards & Direct Channels -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Verified Operations</span>
+        <h2>Transparent Standards, Real Local Accountability</h2>
+        <p class="section-subtitle">Every rate, fee, and transfer quote on this site traces back to contracted Zanzibari partners and published conservation tariffs.</p>
+      </div>
+
+      <div class="trust-standards-grid">
+        <article class="trust-standard-card reveal delay-1">
+          <div class="trust-standard-kicker">Contracted Partner Rates</div>
+          <h3>Published Hotel &amp; Excursion Tariffs</h3>
+          <p>Partner hotel pages list our exact net-plus-margin and contracted rack discounts alongside city levy rules — no dynamic checkout markups.</p>
+        </article>
+        <article class="trust-standard-card reveal delay-2">
+          <div class="trust-standard-kicker">Marine Fees Included</div>
+          <h3>Menai Bay &amp; Mnemba Disclosed Upfront</h3>
+          <p>Government marine park fees ($10/adult Menai Bay, $25/adult Mnemba Atoll) are built into quoted sea tours rather than demanded unexpectedly on the beach.</p>
+        </article>
+        <article class="trust-standard-card reveal delay-3">
+          <div class="trust-standard-kicker">Mbuzini Operations Desk</div>
+          <h3>Human Confirmation Before You Pay</h3>
+          <p>Our local desk ({{ site.hours.days }}, {{ site.hours.open }}–{{ site.hours.close }} EAT) confirms availability and driver details directly on WhatsApp with zero transfer prepayment.</p>
+        </article>
+      </div>
+
+      <div class="view-all trust-profile-links reveal">
+        {% if site.social.google_maps %}
+        <a href="{{ site.social.google_maps }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Verify Us on Google Maps ↗</a>
+        {% endif %}
+        {% if site.social.trustpilot %}
+        <a href="{{ site.social.trustpilot }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read &amp; Leave Reviews on Trustpilot ↗</a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
@@ -420,7 +497,7 @@ alternate_de: "https://spiceandsail.com/de/"
           </div>
           <div class="card-content">
             <span class="card-badge badge-package">Package</span>
-            <div class="itinerary-days" style="font-family: var(--font-display); font-size: 1rem; color: var(--dct-spice); font-weight: 700; margin-bottom: 0.5rem;">3 Days</div>
+            <div class="itinerary-days">3 Days</div>
             <h3 class="card-title"><a href="/packages/zanzibar-essentials-3day/">Zanzibar Essentials 3-Day</a></h3>
             <p class="card-description">Airport transfers + Stone Town tour + Safari Blue + Spice farm. Our signature intro package.</p>
             <div class="card-footer">
@@ -436,7 +513,7 @@ alternate_de: "https://spiceandsail.com/de/"
           </div>
           <div class="card-content">
             <span class="card-badge badge-package">Package</span>
-            <div class="itinerary-days" style="font-family: var(--font-display); font-size: 1rem; color: var(--dct-spice); font-weight: 700; margin-bottom: 0.5rem;">4–5 Days</div>
+            <div class="itinerary-days">4–5 Days</div>
             <h3 class="card-title">Beach & Culture Combo</h3>
             <p class="card-description">Stone Town (1 night) + Nungwi/Kendwa (2 nights) + Spice tour + Mnemba snorkeling + sunset cruise.</p>
             <div class="card-footer">
@@ -452,7 +529,7 @@ alternate_de: "https://spiceandsail.com/de/"
           </div>
           <div class="card-content">
             <span class="card-badge badge-safari">Safari</span>
-            <div class="itinerary-days" style="font-family: var(--font-display); font-size: 1rem; color: var(--dct-spice); font-weight: 700; margin-bottom: 0.5rem;">7 Days</div>
+            <div class="itinerary-days">7 Days</div>
             <h3 class="card-title">Ultimate Zanzibar + Safari</h3>
             <p class="card-description">Zanzibar highlights (4 nights) + Mikumi/Nyerere fly-in day safari or Serengeti 3-day fly-in.</p>
             <div class="card-footer">
@@ -467,6 +544,27 @@ alternate_de: "https://spiceandsail.com/de/"
 
   <section class="section section-alt">
     <div class="container">
+      
+      <!-- FAQPage Schema JSON-LD -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {% for faq in travelguide.faqs %}
+          {
+            "@type": "Question",
+            "name": {{ faq.question | json | safe }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ faq.answer | strip_html | json | safe }}
+            }
+          }{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ]
+      }
+      </script>
+      
       <div class="section-header reveal">
         <span class="section-tag">FAQ</span>
         <h2>Zanzibar Travel FAQs</h2>

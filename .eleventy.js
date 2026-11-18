@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
   // Passthrough copy for static assets - copy contents of public to output root
   eleventyConfig.addPassthroughCopy({"public/css": "css"});
   eleventyConfig.addPassthroughCopy({"public/js": "js"});
+  eleventyConfig.addPassthroughCopy({"public/fonts": "fonts"});
   eleventyConfig.addPassthroughCopy({"public/images": "images"});
   eleventyConfig.addPassthroughCopy({"public/favicon.ico": "favicon.ico"});
   eleventyConfig.addPassthroughCopy({"public/site.webmanifest": "site.webmanifest"});
@@ -61,6 +62,72 @@ module.exports = function(eleventyConfig) {
     return svc.pricing.max;
   });
 
+  // Tiered price display - shows "From $X (shared) / From $Y (private)" with tooltip
+  eleventyConfig.addFilter("catPriceTiered", (slug) => {
+    const svc = catService(slug);
+    if (!svc) return "Our team will confirm the price.";
+    const p = svc.pricing || {};
+    if (p.basis === "on_request" || p.min == null || p.max == null) return "Price on request — our team will confirm";
+    
+    if (p.tieredDisplay) {
+      // Parse tieredDisplay and create a concise "From $X / From $Y" format
+      const tiers = p.tieredDisplay.split('•').map(t => t.trim());
+      const shared = tiers.find(t => t.toLowerCase().includes('shared') || t.toLowerCase().includes('group') || t.toLowerCase().includes('walking'));
+      const privateOption = tiers.find(t => t.toLowerCase().includes('private'));
+      
+      let display = '';
+      if (shared) {
+        const match = shared.match(/\$(\d+)/);
+        if (match) display += `From $${match[1]} (shared)`;
+      }
+      if (privateOption) {
+        const match = privateOption.match(/\$(\d+)/);
+        if (match) display += (display ? ` / ` : '') + `From $${match[1]} (private)`;
+      }
+      if (!display) display = p.display;
+      
+      // Return HTML with tooltip
+      const escapedTip = p.tieredDisplay.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+      return `<span class="price-tiered" tabindex="0" data-tooltip="${escapedTip}">${display} <span class="price-basis">${p.basis === 'per_person' ? 'per person' : 'per vehicle'}</span></span>`;
+    }
+    
+    return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle") + " (planning range — our team confirms the final price)";
+  });
+
+  // Short version for cards - just "From $X" with tiered tooltip
+  eleventyConfig.addFilter("catPriceShort", (slug) => {
+    const svc = catService(slug);
+    if (!svc) return "Price on request";
+    const p = svc.pricing || {};
+    if (p.basis === "on_request" || p.min == null || p.max == null) return "Price on request";
+    
+    if (p.tieredDisplay) {
+      const tiers = p.tieredDisplay.split('•').map(t => t.trim());
+      const lowest = tiers.reduce((min, t) => {
+        const match = t.match(/\$(\d+)/);
+        return match ? Math.min(min, parseInt(match[1])) : min;
+      }, Infinity);
+      if (lowest !== Infinity) {
+        const escapedTip = p.tieredDisplay.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+        return `<span class="price-short" tabindex="0" data-tooltip="${escapedTip}">From $${lowest} <span class="price-basis">${p.basis === 'per_person' ? 'per person' : 'per vehicle'}</span></span>`;
+      }
+    }
+    return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle");
+  });
+
+  // Truncate filter for text
+  eleventyConfig.addFilter("truncate", (str, length = 120) => {
+    if (!str) return '';
+    if (str.length <= length) return str;
+    return str.substring(0, length).trim() + '…';
+  });
+
+  // Strip HTML filter for schema
+  eleventyConfig.addFilter("strip_html", (str) => {
+    if (!str) return '';
+    return str.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+  });
+
   // Hotel public rates lookup
   let hotelPublicRates = { hotels: [] };
   try {
@@ -74,10 +141,58 @@ module.exports = function(eleventyConfig) {
   }
 
   eleventyConfig.addFilter("rateFor", (slug) => rateFor(slug));
+  eleventyConfig.addFilter("bundleFor", (slug) => {
+    const bundle = (hotelPublicRates.bundles || []).find(b => b.hotelSlug === slug);
+    if (bundle) return bundle;
+    const h = rateFor(slug);
+    return h ? h.package : null;
+  });
   eleventyConfig.addFilter("getFromRate", (slug) => {
     const h = rateFor(slug);
     return h ? (h.fromRate || (h.rooms && Math.min(...h.rooms.map(r => r.guestRatePerRoomPerNight || Infinity))) || 0) : 0;
   });
+
+  // Featured partner hotels global data for homepage "Where to Stay" strip
+  let hotelsJsonList = [];
+  try {
+    const h = JSON.parse(fs.readFileSync(path.join("./src", "data", "hotels.json"), "utf8"));
+    hotelsJsonList = Array.isArray(h) ? h : (h.hotels || []);
+  } catch(e) {
+    hotelsJsonList = [];
+  }
+  const hotelPageSlugAliases = {
+    "stonetown-view-hotel": "stone-town-view-hotel"
+  };
+  const hotelPriority = [
+    "the-one-resort-zanzibar",
+    "le-paradis-boutique-hotel-zanzibar",
+    "mkeka-spice-lodge",
+    "the-island-stonetown",
+    "stonetown-view-hotel"
+  ];
+  const featuredPartnerHotels = [...(hotelPublicRates.hotels || [])].sort((a, b) => {
+    const ia = hotelPriority.indexOf(a.slug);
+    const ib = hotelPriority.indexOf(b.slug);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  }).map((ph) => {
+    const dirMatch = hotelsJsonList.find((x) => x.slug === ph.slug) || {};
+    const pageSlug = hotelPageSlugAliases[ph.slug] || ph.slug;
+    const fromRate = ph.fromRate || (ph.rooms && Math.min(...ph.rooms.map(r => r.guestRatePerRoomPerNight || Infinity))) || 0;
+    const rateUnit = ph.slug === "the-one-resort-zanzibar" ? "per person / night" : "per room / night";
+    return {
+      slug: ph.slug,
+      pageSlug,
+      name: ph.name,
+      area: ph.area,
+      board: ph.board,
+      tier: dirMatch.tier || "partner",
+      photo: ph.photo || dirMatch.photo || "default-hotel-hero.jpg",
+      fromRate: Number.isFinite(fromRate) ? fromRate : 0,
+      rateUnit,
+      summary: dirMatch.category || `${ph.board} • Verified partner rate (${ph.taxPerPersonPerNight ? `$${ph.taxPerPersonPerNight}/pp/night local levy` : "direct concierge booking"})`
+    };
+  });
+  eleventyConfig.addGlobalData("featuredPartnerHotels", () => featuredPartnerHotels);
 
   eleventyConfig.addGlobalData("conciergeCat", () => conciergeCatalogue);
   let toursData = {};
@@ -515,6 +630,17 @@ module.exports = function(eleventyConfig) {
       const pool = zoneFiles[zoneKey] || [zoneImage[zoneKey] || "default-tour-hero.jpg"];
       featuredImage = pool[0];
       featuredAlt = metadataIndex[featuredImage]?.alt_text || "";
+    }
+
+    // Hotel landing pages: resolve partner hotel photo from hotelPublicRates.json
+    if (tourPath.startsWith("pages/hotels/")) {
+      const rawSlug = tourPath.replace("pages/hotels/", "").replace(/\.(njk|md)$/, "");
+      const canonSlug = rawSlug === "stone-town-view-hotel" ? "stonetown-view-hotel" : rawSlug;
+      const partner = rateFor(canonSlug);
+      if (partner && partner.photo) {
+        featuredImage = partner.photo;
+        featuredAlt = `${partner.name} in ${partner.area}, Zanzibar`;
+      }
     }
 
     // Blog pages: use blogSlugMap for hero images

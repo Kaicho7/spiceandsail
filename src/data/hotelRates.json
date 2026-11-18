@@ -4,7 +4,7 @@
   "bySlug": {
     "stonetown-view-hotel": {
       "name": "Stone Town View Hotel",
-      "lastSynced": "2026-11-12",
+      "lastSynced": "2026-11-18",
       "rooms": [
         {
           "roomType": "Single",
@@ -36,12 +36,12 @@
         }
       ],
       "fromRate": 29,
-      "basis": "Bed & Breakfast, per room per night (breakfast included for Mkeka)",
+      "basis": "Bed & Breakfast, per room per night",
       "pricingModel": "net_plus_margin"
     },
     "the-island-stonetown": {
       "name": "The Island Stonetown",
-      "lastSynced": "2026-11-12",
+      "lastSynced": "2026-11-18",
       "rooms": [
         {
           "roomType": "Deluxe Single",
@@ -66,7 +66,7 @@
         }
       ],
       "fromRate": 29,
-      "basis": "Bed & Breakfast, per room per night (breakfast included for Mkeka)",
+      "basis": "Bed & Breakfast, per room per night",
       "pricingModel": "net_plus_margin"
     },
     "mkeka-spice-lodge": {
@@ -109,7 +109,7 @@
     "le-paradis-boutique-hotel-zanzibar": {
       "name": "Le Paradis Boutique Hotel Zanzibar",
       "basis": "Breakfast included, per room per night",
-      "lastSynced": "2026-11-12",
+      "lastSynced": "2026-11-18",
       "rooms": [
         {
           "roomType": "Standard Garden Room",
@@ -120,10 +120,10 @@
         },
         {
           "roomType": "Superior Garden Room",
-          "otaAnchor": 80,
+          "otaAnchor": 90,
           "anchorSource": "leparadiszanzibar.com own rate sheet",
           "marginFloor": null,
-          "ourRate": 64
+          "ourRate": 72
         },
         {
           "roomType": "Executive Seaside View Room",
@@ -136,12 +136,20 @@
       "fromRate": 56,
       "pricingModel": "ota_minus_discount",
       "discount": 0.2,
-      "discountPct": 20
+      "discountPct": 20,
+      "seasons": [
+        { "id": "low", "label": "Low Season", "dates": "1 Mar – 4 Jul", "Standard Garden Room": 70, "Superior Garden Room": 90, "Executive Seaside View Room": 120 },
+        { "id": "high1", "label": "High Season", "dates": "5 Jul – 1 Sep", "Standard Garden Room": 85, "Superior Garden Room": 105, "Executive Seaside View Room": 145 },
+        { "id": "mid", "label": "Mid Season", "dates": "1 Sep – 30 Nov", "Standard Garden Room": 80, "Superior Garden Room": 100, "Executive Seaside View Room": 130 },
+        { "id": "pre-festive", "label": "Pre-Festive", "dates": "30 Nov – 19 Dec", "Standard Garden Room": 90, "Superior Garden Room": 110, "Executive Seaside View Room": 140 },
+        { "id": "festive", "label": "Festive Season", "dates": "20 Dec – 7 Jan", "Standard Garden Room": 120, "Superior Garden Room": 150, "Executive Seaside View Room": 200, "minStayNights": 3 },
+        { "id": "high2", "label": "High Season", "dates": "7 Jan – 29 Feb", "Standard Garden Room": 110, "Superior Garden Room": 130, "Executive Seaside View Room": 160 }
+      ]
     },
     "the-one-resort-zanzibar": {
       "name": "The One Resort Zanzibar",
       "basis": "Half Board or All Inclusive, per room/suite per night for 2 people",
-      "lastSynced": "2026-11-12",
+      "lastSynced": "2026-11-18",
       "rooms": [
         {
           "roomType": "Deluxe Double (Lychee)",
@@ -172,8 +180,8 @@
           "ourRate": 255
         }
       ],
-      "fromRate": 136,
-      "anchorDate": "2026-11-12 (stay 15-16 Nov 2026)",
+      "fromRate": 160,
+      "anchorDate": "2026-11-18 (stay 15-16 Nov 2026)",
       "seasons": [
         {
           "id": "green",
@@ -431,8 +439,8 @@
       "hotelSlug": "mkeka-spice-lodge",
       "nights": 2,
       "perPerson": {
-        "min": 95,
-        "max": 120
+        "min": 145,
+        "max": 175
       },
       "includes": [
         "2 nights at Mkeka Spice Lodge (breakfast included)",
@@ -447,8 +455,8 @@
       "hotelSlug": "le-paradis-boutique-hotel-zanzibar",
       "nights": 3,
       "perPerson": {
-        "min": 220,
-        "max": 290
+        "min": 230,
+        "max": 350
       },
       "includes": [
         "3 nights Executive Seaside View Room at Le Paradis (breakfast included)",
@@ -463,12 +471,12 @@
       "hotelSlug": "the-one-resort-zanzibar",
       "nights": 3,
       "perPerson": {
-        "min": 360,
-        "max": 460
+        "min": 330,
+        "max": 430
       },
       "includes": [
-        "3 nights at The One Resort Zanzibar (Half Board — breakfast & dinner included)",
-        "Return private airport transfer",
+        "3 nights at The One Resort Zanzibar (Half Board — breakfast & dinner included, per room for 2 adults)",
+        "Return private airport transfer (minivan, up to 6 passengers)",
         "Safari Blue full-day dhow, snorkel & seafood lunch"
       ],
       "solves": "Kids' pricing and meals confirmed up front; biggest pool on the east coast"
@@ -479,8 +487,8 @@
       "hotelSlug": "the-island-stonetown",
       "nights": 2,
       "perPerson": {
-        "min": 165,
-        "max": 280
+        "min": 130,
+        "max": 175
       },
       "includes": [
         "2 nights at The Island Stonetown (B&B)",

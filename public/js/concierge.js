@@ -656,14 +656,49 @@
       if (sub) sub.textContent = 'Ask about safari options, dates and group size for a current planning range.';
     }
 
-    // Trigger after 6 seconds on desktop/mobile
-    setTimeout(function() {
+    var calloutShown = false;
+    var showCallout = function() {
+      if (calloutShown) return;
       var modal = el('sns-concierge-modal');
       var isModalOpen = modal && !modal.hasAttribute('hidden');
       if (!isModalOpen) {
         bubble.removeAttribute('hidden');
+        calloutShown = true;
       }
-    }, 6000);
+    };
+
+    // Exit-intent detection (mouse leaves viewport top)
+    var exitIntentHandler = function(e) {
+      if (e.clientY <= 0 && !calloutShown) {
+        showCallout();
+      }
+    };
+
+    // Scroll-based trigger: after 30s AND 50% scroll depth
+    var checkScroll = null;
+    var scrollTimer = setTimeout(function() {
+      checkScroll = function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (scrollPercent >= 50) {
+          showCallout();
+          window.removeEventListener('scroll', checkScroll);
+        }
+      };
+      window.addEventListener('scroll', checkScroll, { passive: true });
+      checkScroll(); // Check immediately in case already scrolled
+    }, 30000); // 30 seconds
+
+    // Also listen for exit intent as fallback
+    document.addEventListener('mouseleave', exitIntentHandler);
+
+    // Cleanup function (exposed for testing)
+    window._snsCalloutCleanup = function() {
+      clearTimeout(scrollTimer);
+      if (checkScroll) window.removeEventListener('scroll', checkScroll);
+      document.removeEventListener('mouseleave', exitIntentHandler);
+    };
   }
 
   function closeChat() {

@@ -188,7 +188,7 @@ function hotelStayReply(contract, text) {
       if (room.maxOccupancy) line += ' (max ' + room.maxOccupancy + ')';
       lines.push(line);
     }
-    if (season) {
+    if (season && season.rooms && season.rooms.length) {
       const ai = season.rooms.map((r) => r.ourAllInclusive).filter((v) => v != null);
       if (ai.length) {
         lines.push('All Inclusive is also available: $' + Math.min.apply(null, ai) + '–$' + Math.max.apply(null, ai) + ' per room per night.');
@@ -274,7 +274,7 @@ function approvedPriceSheets(contracts) {
       return '$' + rate;
     });
     const season = currentSeason(pub);
-    if (season) {
+    if (season && season.rooms && Array.isArray(season.rooms)) {
       for (const r of season.rooms) {
         if (r.ourAllInclusive != null) parts.push('$' + r.ourAllInclusive);
       }

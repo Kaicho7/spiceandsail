@@ -1185,14 +1185,17 @@
       "category": "EXP",
       "location": "Nungwi / Kiwengwa",
       "zones": [],
-      "duration": "",
+      "duration": "1.5–2 hours",
       "pricing": {
-        "basis": "on_request",
-        "min": null,
-        "max": null,
-        "display": "Price on request",
-        "basisNote": "No verified catalogue price yet - team confirms exact rate",
-        "verified": false
+        "basis": "per_person",
+        "min": 150,
+        "max": 200,
+        "display": "$150–$200",
+        "tieredDisplay": "Shared small-group (max 4): $150 pp • Private session (1–2 riders): $200 pp • Includes transfer from Nungwi/Kiwengwa area hotels",
+        "basisNote": "per person; low tide dependent; anchored at Tulia Zanzibar & Nungwi Dreams published rates",
+        "sourceQuality": "Tulia Zanzibar + Nungwi Dreams + top-operator benchmark",
+        "sourceFiles": "Tulia Zanzibar rate card, Nungwi Dreams",
+        "verified": true
       },
       "includes": [],
       "importantNotes": [],
@@ -1251,14 +1254,17 @@
       "category": "EXP",
       "location": "Kizimbani / Jambiani",
       "zones": [],
-      "duration": "",
+      "duration": "2–3 hours",
       "pricing": {
-        "basis": "on_request",
-        "min": null,
-        "max": null,
-        "display": "Price on request",
-        "basisNote": "No verified catalogue price yet - team confirms exact rate",
-        "verified": false
+        "basis": "per_person",
+        "min": 80,
+        "max": 120,
+        "display": "$80–$120",
+        "tieredDisplay": "Shared small-group (max 6): $80 pp • Private (1–4 guests): $120 pp • Includes guide, transfer from Paje/Jambiani area hotels, chemical-free preservation fee",
+        "basisNote": "per person; limited daily slots; chemical-free preservation; anchored at Kuza Cave official + Paje operator benchmark",
+        "sourceQuality": "Kuza Cave official + Paje operator rates + top-operator benchmark",
+        "sourceFiles": "Kuza Cave website, Paje operator rates",
+        "verified": true
       },
       "includes": [],
       "importantNotes": [],
@@ -1283,14 +1289,17 @@
       "category": "EXP",
       "location": "Uzi Island",
       "zones": [],
-      "duration": "",
+      "duration": "4–5 hours",
       "pricing": {
-        "basis": "on_request",
-        "min": null,
-        "max": null,
-        "display": "Price on request",
-        "basisNote": "No verified catalogue price yet - team confirms exact rate",
-        "verified": false
+        "basis": "per_person",
+        "min": 100,
+        "max": 150,
+        "display": "$100–$150",
+        "tieredDisplay": "Shared boat + guide (max 8): $100 pp • Private charter (1–6 guests): $150 pp • Includes boat transfer, guide, tidal timing coordination, village visit",
+        "basisNote": "per person; tidal window dependent (low tide only); anchored at Uzi Island operators + Jambiani benchmark",
+        "sourceQuality": "Uzi Island operator rates + Jambiani benchmark + top-operator benchmark",
+        "sourceFiles": "Uzi Island operator, Jambiani tour operators",
+        "verified": true
       },
       "includes": [],
       "importantNotes": [],
@@ -1314,18 +1323,37 @@
       "category": "EXP",
       "location": "central Zanzibar",
       "zones": [],
-      "duration": "",
+      "duration": "2–3 hours",
       "pricing": {
-        "basis": "on_request",
-        "min": null,
-        "max": null,
-        "display": "Price on request",
-        "basisNote": "No verified catalogue price yet - team confirms exact rate",
-        "verified": false
+        "basis": "per_person",
+        "min": 150,
+        "max": 300,
+        "display": "$150–$300",
+        "tieredDisplay": "1 guest: $150 pp • 2 guests: $180 pp • 3–6 guests: $300 pp (shared)",
+        "basisNote": "per person; 15+ age rule applies; group-size tiered; anchored at Cotis Safaris published rates",
+        "sourceQuality": "Cotis Safaris published rates + top-operator benchmark",
+        "sourceFiles": "Cotis Safaris rate card",
+        "verified": true
       },
-      "includes": [],
-      "importantNotes": [],
-      "whatToExpect": [],
+      "includes": [
+        "Private motorized boat & experienced captain",
+        "Snorkel gear & life vests",
+        "Certified local marine guide (ethical viewing protocols)"
+      ],
+      "importantNotes": [
+        "ETHICAL WARNING: Many operators use illegal methods — feeding, chasing, herding. We only book with certified ethical operators.",
+        "Dolphin sightings are NOT guaranteed — it's wildlife, not a show",
+        "Bring your own snorkel gear if possible",
+        "Best period: June–October and December–March",
+        "15+ age rule: participants under 15 not permitted for safety and animal welfare reasons"
+      ],
+      "whatToExpect": [
+        "Early morning departure (dolphins most active at dawn, 6–9 AM)",
+        "3–4 hour boat trip to the dolphin hotspot",
+        "Ethical dolphin watching (no feeding, no chasing, minimal engine noise)",
+        "Snorkeling in the lagoon after dolphin viewing",
+        "Fresh fruit and water included"
+      ],
       "description": "Cheetah's Rock Animal Welfare Tour - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
       "meetingPoint": "",
       "interests": [
@@ -1345,18 +1373,38 @@
       "category": "EXP",
       "location": "Nungwi / north-west coast",
       "zones": [],
-      "duration": "",
+      "duration": "4–6 hours",
       "pricing": {
-        "basis": "on_request",
-        "min": null,
-        "max": null,
-        "display": "Price on request",
-        "basisNote": "No verified catalogue price yet - team confirms exact rate",
-        "verified": false
+        "basis": "per_boat",
+        "min": 850,
+        "max": 1950,
+        "display": "$850–$1,950",
+        "tieredDisplay": "Half day (4 hrs): $850 per boat • Full day (6 hrs): $1,400 per boat • Sunset sail (2 hrs): $1,950 per boat",
+        "basisNote": "per boat (up to 6 passengers); includes captain, crew, snorkel gear, seafood lunch, beverages, and fuel; anchored at Tulia Zanzibar published rates",
+        "sourceQuality": "Tulia Zanzibar published rates + top-operator benchmark",
+        "sourceFiles": "Tulia Zanzibar rate card",
+        "verified": true
       },
-      "includes": [],
-      "importantNotes": [],
-      "whatToExpect": [],
+      "includes": [
+        "Traditional luxury catamaran, captain & crew",
+        "Snorkel gear & safety life jackets",
+        "Seafood lunch & premium beverages",
+        "Snorkeling stop at coral reef",
+        "Hotel pickup & drop-off (Nungwi/Kiwengwa area)"
+      ],
+      "importantNotes": [
+        "Weather dependent — trips may be rescheduled if seas are rough",
+        "Bring reef-safe sunscreen, hat, and camera",
+        "Private charters available at higher end of price range",
+        "Minimum 2 passengers; maximum 6 per catamaran"
+      ],
+      "whatToExpect": [
+        "4–6 hour private catamaran sailing cruise",
+        "Departure from Nungwi or Kiwengwa beach",
+        "Snorkeling over pristine coral reefs",
+        "Seafood lunch and refreshments on board",
+        "Sunset wine service (full-day trips)"
+      ],
       "description": "Private Luxury Catamaran Charter - a rare Zanzibar experience offered by our team. Covered by verified packages where listed; exact rate confirmed by our team.",
       "meetingPoint": "",
       "interests": [

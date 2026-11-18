@@ -17,21 +17,23 @@ hotel_slug: "the-island-stonetown"
       <span class="swahili-kicker"><strong>Mji Mkongwe</strong><span>Stone Town heritage</span></span>
       <h1>The Island Stonetown</h1>
       <p class="hotel-meta">Kokoni, Stone Town · Bed & Breakfast · From $40/room/night</p>
-<div class="hotel-price-box">
+      <div class="hotel-price-box">
         <span class="price-label">From</span>
-        <span class="price-amount">{{ "the-island-stonetown" | getFromRate }}</span>
+        <span class="price-amount">${{ "the-island-stonetown" | getFromRate }}</span>
         <span class="price-note">per room, per night (B&B)</span>
       </div>
     </div>
   </section>
 
   {% set hotel_slug = "the-island-stonetown" %}
-{% include "hotel-rate-table.njk" %}
+  {% set hotel = hotel_slug | rateFor %}
+  {% include "hotel-rate-table.njk" %}
 
   <section class="hotel-bundles" aria-labelledby="bundles-heading">
     <h2 id="bundles-heading" class="section-title">Popular Packages (add bundles as options)</h2>
     <div class="bundle-grid">
-      {% set pkg = hotel.package %}
+      {% set pkg = hotel_slug | bundleFor %}
+      {% if pkg %}
       <article class="bundle-card">
         <h3>{{ pkg.name }}</h3>
         <p class="bundle-meta">{{ pkg.nights }} nights · From ${{ pkg.perPersonMin }}–${{ pkg.perPersonMax }} per person</p>
@@ -41,10 +43,11 @@ hotel_slug: "the-island-stonetown"
           {% endfor %}
         </ul>
         <div class="bundle-cta">
-          <a href="/.netlify/functions/quote?service={{ pkg.id }}&adults=2" class="btn btn-primary">Get a Quote</a>
+          <button type="button" data-sns-booking-open data-service-slug="{{ pkg.id }}" class="btn btn-primary">Check Dates & Quote</button>
           <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20{{ pkg.name | urlencode }}%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp</a>
         </div>
       </article>
+      {% endif %}
     </div>
   </section>
 
@@ -90,21 +93,9 @@ hotel_slug: "the-island-stonetown"
     <h2 id="cta-heading" class="section-title">Ready to Book?</h2>
     <p>Get a personalized quote with exact dates, transfers, and tours. Our team confirms exact room type, dates, and pickup window.</p>
     <div class="cta-buttons">
-      <a href="/.netlify/functions/quote?service=pkg-kokoni-city-sea&adults=2" class="btn btn-primary">Get a Quote</a>
+      <button type="button" data-sns-booking-open data-service-slug="pkg-kokoni-city-sea" class="btn btn-primary">Check Dates & Quote</button>
       <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20The%20Island%20Stonetown%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">Chat on WhatsApp</a>
     </div>
-  </section>
-
-  <section class="rate-source" aria-labelledby="source-heading">
-    <h3 id="source-heading" class="section-title">Rate Verification</h3>
-    <ul class="source-list">
-      <li><strong>Source:</strong> STO Agreement 2026-2027 (Bed & Breakfast, net rates per room, USD) + 15% margin</li>
-      <li><strong>Contract net rates:</strong> Single $25, Double $35, Twin $40 (per person/night)</li>
-      <li><strong>Public guest rates:</strong> Deluxe Single $29, Deluxe Double $40, Deluxe Twin $46 (per room/night)</li>
-      <li><strong>Tax:</strong> $2 per person/night (infrastructure levy)</li>
-      <li><strong>Board supplements:</strong> Half Board +$15 pp/night, Full Board +$30 pp/night</li>
-      <li><strong>Source files:</strong> <code>hotelRates.json</code>, <code>hotel-contracts.json</code>, STO Agreement 2026-2027</li>
-    </ul>
   </section>
 
 </main>

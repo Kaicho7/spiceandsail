@@ -39,7 +39,7 @@
         "halfBoardPerPersonPerNight": 15,
         "fullBoardPerPersonPerNight": 30
       },
-      "infrastructureTaxPerPersonPerNight": 2,
+      "infrastructureTaxPerPersonPerNight": 4,
       "policy": {
         "checkIn": "12:30",
         "checkOut": "11:00",
@@ -85,7 +85,7 @@
         "halfBoardPerPersonPerNight": 15,
         "fullBoardPerPersonPerNight": 30
       },
-      "infrastructureTaxPerPersonPerNight": 2,
+      "infrastructureTaxPerPersonPerNight": 5,
       "policy": {
         "checkIn": "12:30",
         "checkOut": "11:00",
@@ -128,6 +128,7 @@
         }
       ],
       "breakfastIncluded": true,
+      "infrastructureTaxPerPersonPerNight": 5,
       "policy": {},
       "propertyFacts": "Lodge of thatched-roof bungalows with a year-round outdoor swimming pool, a restaurant serving African cuisine, a bar and outdoor lounge with a fireplace, an outdoor breakfast area, a rooftop terrace, a spa with massage, free Wi-Fi, free private parking and a paid airport shuttle. Rooms are Triple Rooms with a full bed and a queen bed, plus Family Rooms, each with a private bathroom, terrace or balcony and garden or pool views.",
       "viewFacts": "Rooms have garden or pool views from the terrace or balcony. The pool and the Indian Ocean are visible from the lodge.",

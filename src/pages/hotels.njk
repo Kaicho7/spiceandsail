@@ -340,7 +340,7 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 4rem 1.5rem; background: #fff;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 2.5rem;">
-        <span style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Stay + Tour Bundles</span>
+        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Stay + Tour Bundles</span>
         <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Custom Hotel Packages — Room, Ride &amp; Experience in One Booking</h2>
         <p style="color: #4e5d66; max-width: 720px; margin: 0.5rem auto 0; font-size: 0.98rem;">
           Built on our contracted partner hotels. One message books the room, the airport transfer and the tour — no OTA non-refundable traps, no hidden extras.
@@ -374,7 +374,7 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 3.5rem 1rem; background: #FBF9F5; border-top: 1px solid #f0e8dc;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 2.5rem;">
-        <span style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Published Rack Sheet, Priced For You</span>
+        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Published Rack Sheet, Priced For You</span>
         <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Season-by-Season Rates, {{ seasonalHotels[0].name }}</h2>
         <p style="color: #4e5d66; max-width: 760px; margin: 0.5rem auto 0; font-size: 0.98rem;">
           The hotel's own published rack rate and the rate you get through us, side by side — Half Board or All Inclusive, per room per night for two people. No OTA markup, no surge surprises.
@@ -431,7 +431,7 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 4rem 1.5rem; background: #FBF9F5;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 2.5rem;">
-        <span style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Real Photos — No Stock Imagery</span>
+        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Real Photos — No Stock Imagery</span>
         <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Inside Our Partner Hotels</h2>
         <p style="color: #4e5d66; max-width: 700px; margin: 0.5rem auto 0; font-size: 0.98rem;">Photographed at the property itself — owner-supplied for Malindi and Kokoni, and the hotels' own official galleries for The One Resort and Le Paradis. What you see is what you get.</p>
       </div>
@@ -578,7 +578,7 @@ permalink: "/hotels/index.html"
   <section class="section section-alt" style="padding: 4rem 1rem; background: #fff;">
     <div class="container" style="max-width: 1200px; margin: 0 auto;">
       <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
-        <span class="section-tag" style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Travel Styles</span>
+        <span class="section-tag" style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Travel Styles</span>
         <h2 style="font-size: 2.2rem; color: #003853;">Find the Ideal Beach for Your Travel Vibe</h2>
         <p class="section-subtitle" style="color: #5c727f; max-width: 700px; margin: 0.5rem auto 0;">Each coast has a distinct personality. Match your vacation style to the right shoreline.</p>
       </div>
@@ -626,10 +626,11 @@ permalink: "/hotels/index.html"
   <!-- Gallery Lightbox -->
   <div class="gallery-lightbox" id="galleryLightbox">
     <button class="gallery-lightbox-close" aria-label="Close">&times;</button>
-    <img src="" alt="" width="1600" height="1067">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1600" height="1067">
   </div>
   <script>
   (function() {
+    var BLANK_SRC = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     var lb = document.getElementById('galleryLightbox');
     if (!lb) return;
     var lbImg = lb.querySelector('img');
@@ -644,7 +645,7 @@ permalink: "/hotels/index.html"
     function closeLightbox() {
       lb.classList.remove('active');
       document.body.style.overflow = '';
-      lbImg.src = '';
+      lbImg.src = BLANK_SRC;
     }
 
     // Hero images

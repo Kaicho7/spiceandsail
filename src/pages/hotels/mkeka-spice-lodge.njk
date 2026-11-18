@@ -17,21 +17,23 @@ hotel_slug: "mkeka-spice-lodge"
       <span class="swahili-kicker"><strong>Bahari</strong><span>Spice & beach</span></span>
       <h1>Mkeka Spice Lodge</h1>
       <p class="hotel-meta">Jambiani, Southeast Coast · Bed & Breakfast · From $54/room/night</p>
-<div class="hotel-price-box">
+      <div class="hotel-price-box">
         <span class="price-label">From</span>
-        <span class="price-amount">{{ "mkeka-spice-lodge" | getFromRate }}</span>
+        <span class="price-amount">${{ "mkeka-spice-lodge" | getFromRate }}</span>
         <span class="price-note">per room, per night (B&B)</span>
       </div>
     </div>
   </section>
 
   {% set hotel_slug = "mkeka-spice-lodge" %}
-{% include "hotel-rate-table.njk" %}
+  {% set hotel = hotel_slug | rateFor %}
+  {% include "hotel-rate-table.njk" %}
 
   <section class="hotel-bundles" aria-labelledby="bundles-heading">
     <h2 id="bundles-heading" class="section-title">Popular Packages (add bundles as options)</h2>
     <div class="bundle-grid">
-      {% set pkg = hotel.package %}
+      {% set pkg = hotel_slug | bundleFor %}
+      {% if pkg %}
       <article class="bundle-card">
         <h3>{{ pkg.name }}</h3>
         <p class="bundle-meta">{{ pkg.nights }} nights · From ${{ pkg.perPersonMin }}–${{ pkg.perPersonMax }} per person</p>
@@ -41,10 +43,11 @@ hotel_slug: "mkeka-spice-lodge"
           {% endfor %}
         </ul>
         <div class="bundle-cta">
-          <a href="/.netlify/functions/quote?service={{ pkg.id }}&adults=2" class="btn btn-primary">Get a Quote</a>
+          <button type="button" data-sns-booking-open data-service-slug="{{ pkg.id }}" class="btn btn-primary">Check Dates & Quote</button>
           <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20{{ pkg.name | urlencode }}%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp</a>
         </div>
       </article>
+      {% endif %}
     </div>
   </section>
 
@@ -90,21 +93,9 @@ hotel_slug: "mkeka-spice-lodge"
     <h2 id="cta-heading" class="section-title">Ready to Book?</h2>
     <p>Get a personalized quote with exact dates, transfers, and tours. Our team confirms exact room type, dates, and pickup window.</p>
     <div class="cta-buttons">
-      <a href="/.netlify/functions/quote?service=pkg-spice-beach-escape&adults=2" class="btn btn-primary">Get a Quote</a>
+      <button type="button" data-sns-booking-open data-service-slug="pkg-spice-beach-escape" class="btn btn-primary">Check Dates & Quote</button>
       <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail!%20I%20would%20like%20to%20book%20Mkeka%20Spice%20Lodge%20for%202%20guests." target="_blank" rel="noopener" class="btn btn-secondary">Chat on WhatsApp</a>
     </div>
-  </section>
-
-  <section class="rate-source" aria-labelledby="source-heading">
-    <h3 id="source-heading" class="section-title">Rate Verification</h3>
-    <ul class="source-list">
-      <li><strong>Source:</strong> Owner-confirmed rates (breakfast included, USD per room per night) + 20% margin</li>
-      <li><strong>Contract net rates:</strong> Single $30, Double $45, Twin $45, Triple $55 (per room/night)</li>
-      <li><strong>Public guest rates:</strong> Single $36, Double $54, Twin $54, Triple $66 (per room/night)</li>
-      <li><strong>Tax:</strong> $2 per person/night (infrastructure levy)</li>
-      <li><strong>Board:</strong> Breakfast included (B&B)</li>
-      <li><strong>Source files:</strong> <code>hotelRates.json</code>, <code>hotel-contracts.json</code>, Owner-confirmed rates</li>
-    </ul>
   </section>
 
 </main>

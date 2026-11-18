@@ -13,8 +13,8 @@
   {% set board = hotel.board %}
 
   <section class="hotel-rates" aria-labelledby="rates-heading">
-    <h2 id="rates-heading" class="section-title">Room Rates (per room, per night)</h2>
-    <p class="rate-basis">Rates shown are <strong>per room, per night</strong> in USD. City/infrastructure tax of <strong>{{ tax }} per person, per night</strong> is added at quote time.</p>
+    <h2 id="rates-heading" class="section-title">Room Rates ({% if hotel.slug == 'the-one-resort-zanzibar' %}per room for 2 adults, per night (Half Board / All Inclusive){% else %}per room, per night{% endif %})</h2>
+    <p class="rate-basis">Rates shown are <strong>{% if hotel.slug == 'the-one-resort-zanzibar' %}per room for 2 adults, per night (Half Board / All Inclusive){% else %}per room, per night{% endif %}</strong> in USD. City/infrastructure tax of <strong>${{ tax }} per person, per night</strong> is added at quote time.</p>
 
     {% if hotel.seasons %}
       <div class="rate-seasons">
@@ -112,9 +112,8 @@
     {% endif %}
 
     <div class="rate-notes">
-      <p><strong>Rate basis:</strong> Rates are <strong>per room, per night</strong> in USD. <strong>City/infrastructure tax of {{ tax }} per person, per night</strong> is added at quote time.</p>
+      <p><strong>Rate basis:</strong> Rates are <strong>{% if hotel.slug == 'the-one-resort-zanzibar' %}per room for 2 adults, per night (Half Board / All Inclusive){% else %}per room, per night{% endif %}</strong> in USD. <strong>City/infrastructure tax of ${{ tax }} per person, per night</strong> is added at quote time.</p>
       <p><strong>Board basis:</strong> {{ hotel.board }}{% if hotel.boardSupplements and hotel.boardSupplements.halfBoardPerPersonPerNight %} Half Board supplement +${{ hotel.boardSupplements.halfBoardPerPersonPerNight }}/person/night; Full Board +${{ hotel.boardSupplements.fullBoardPerPersonPerNight }}/person/night.{% endif %}</p>
-      <p class="rate-source"><strong>Rate source:</strong> {{ hotel.rateSource }}</p>
     </div>
   </section>
 {% endif %}

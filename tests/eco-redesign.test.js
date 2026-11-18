@@ -275,3 +275,42 @@ test('redesign: CI Lighthouse audits the static build without requiring a hostin
   assert.ok(workflow.includes('lighthouse-ci-action@v11'));
   assert.ok(!/NETLIFY_AUTH_TOKEN|NETLIFY_SITE_ID|netlify deploy|preview-deploy/.test(workflow));
 });
+
+test('redesign: unified CSS eliminates conflicting styles.css, copies fonts, and keeps brand/hero visible', () => {
+  const header = read('src/_includes/header.njk');
+  const css = read('public/css/eco-swahili.css');
+  assert.ok(!header.includes('/css/styles.css'), 'header must not load conflicting legacy styles.css');
+  assert.ok(css.includes('url("/fonts/fraunces-latin-wght-italic.woff2")'), 'Fraunces italic must point to fraunces woff2');
+  assert.ok(fs.existsSync(path.join(ROOT, 'dist', 'fonts', 'fraunces-latin-wght-normal.woff2')));
+  assert.ok(fs.existsSync(path.join(ROOT, 'dist', 'fonts', 'figtree-latin-wght-normal.woff2')));
+  assert.ok(css.includes('-webkit-text-fill-color:#fff') && css.includes('-webkit-text-fill-color:var(--wood)'));
+  assert.ok(css.includes('-webkit-text-fill-color:var(--clay-text)'));
+});
+
+test('redesign: homepage renders featured partner hotels, valid FAQPage schema, and honest claims', () => {
+  const html = fs.readFileSync(path.join(ROOT, 'dist', 'index.html'), 'utf8');
+  assert.ok(!html.includes('247 reviews'), 'must not render fabricated aggregate review counts');
+  assert.ok(!html.includes('Stone Town Based'), 'business base must reflect confirmed Mbuzini location');
+  assert.ok(html.includes('Mbuzini, Zanzibar Based'));
+  assert.ok(html.includes('/hotels/the-one-resort-zanzibar/'));
+  assert.ok(html.includes('/hotels/le-paradis-boutique-hotel-zanzibar/'));
+  const faqMatches = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g) || [];
+  const parsed = faqMatches.map(b => JSON.parse(b.replace(/^<script[^>]*>|<\/script>$/g, '')));
+  assert.ok(parsed.some(d => d['@type'] === 'FAQPage' && Array.isArray(d.mainEntity) && d.mainEntity.length > 0), 'homepage must include valid FAQPage JSON-LD');
+});
+
+test('redesign: partner hotel landing pages render bundle titles, dollar rates, and concierge triggers', () => {
+  const slugs = [
+    'the-one-resort-zanzibar',
+    'le-paradis-boutique-hotel-zanzibar',
+    'mkeka-spice-lodge',
+    'stone-town-view-hotel',
+    'the-island-stonetown'
+  ];
+  for (const slug of slugs) {
+    const html = fs.readFileSync(path.join(ROOT, 'dist', 'hotels', slug, 'index.html'), 'utf8');
+    assert.match(html, /<span class="price-amount">\$\d+<\/span>/, slug + ' must show $ price amount');
+    assert.ok(!html.includes('<h3></h3>'), slug + ' bundle title must not be empty');
+    assert.ok(html.includes('data-sns-booking-open'), slug + ' must trigger concierge modal');
+  }
+});
