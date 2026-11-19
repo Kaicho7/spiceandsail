@@ -222,6 +222,7 @@
     $$('.sns-form-step').forEach(hide);
     hide(el('sns-service-grid'));
     hide(el('sns-hotel-grid'));
+    hide(el('sns-dream-builder'));
     
     // Show current step
     if (step === 1) {
@@ -229,7 +230,17 @@
       renderServiceGrid();
       addBotMessage('Perfect! What kind of experience are you looking for?', [
         '🌊 Marine & Snorkeling', '🌿 Culture & History', '🦁 Safari & Wildlife',
-        '🚗 Airport Transfers', '🏨 Book a Hotel', '💬 Chat with Team'
+        '🚗 Airport Transfers', '🏨 Book a Hotel', '🗺️ Build My Dream Trip', '💬 Chat with Team'
+      ]);
+    } else if (step === 'dream') {
+      show(el('sns-dream-builder'));
+      showDreamStep(1);
+      // Set min dates
+      var today = new Date().toISOString().split('T')[0];
+      $('#sns-dream-start').min = today;
+      $('#sns-dream-end').min = today;
+      addBotMessage('Let\'s build your perfect Zanzibar trip! Choose your dates, style, and I\'ll create a day-by-day itinerary with transparent pricing.', [
+        '📅 Next: Choose Dates'
       ]);
     } else if (step === 2) {
       show(el('sns-form-step#sns-step-2'));
@@ -275,9 +286,18 @@
     if (svc && svc.includes && svc.includes.length) msg += ' Includes: ' + svc.includes.join(', ') + '.';
     
     addUserMessage('I\'d like to book ' + (svc ? svc.name : slug));
-    setTimeout(function() { addBotMessage(msg, ['📅 Next: Choose Date', '👥 2 Adults', '🏨 My Hotel']); }, 300);
     
-    setTimeout(function() { goToStep(2); }, 600);
+    // Route packages and multi-day experiences to Dream Trip Builder
+    var isMultiDay = svc && (svc.type === 'package' || (svc.duration && (svc.duration.includes('day') || svc.duration.includes('Day'))));
+    if (svc && (svc.type === 'package' || isMultiDay)) {
+      setTimeout(function() { 
+        addBotMessage(msg + ' This is a multi-day experience — let\'s build your complete itinerary!', ['🗺️ Build My Trip']);
+        setTimeout(function() { goToStep('dream'); }, 800);
+      }, 300);
+    } else {
+      setTimeout(function() { addBotMessage(msg, ['📅 Next: Choose Date', '👥 2 Adults', '🏨 My Hotel']); }, 300);
+      setTimeout(function() { goToStep(2); }, 600);
+    }
   }
 
   function selectHotel(slug) {
@@ -292,6 +312,277 @@
         '💬 WhatsApp for Availability', '📅 Check Dates', '🔙 Back to Tours'
       ]); 
     }, 300);
+  }
+
+  /* ==========================================================================
+     Dream Trip Builder (Concierge v3)
+     ========================================================================== */
+  var dreamState = {
+    startDate: null,
+    endDate: null,
+    pax: 2,
+    style: null,
+    nights: 0,
+    itinerary: null,
+    quote: null
+  };
+
+  function nextDreamStep() {
+    var current = $$('.sns-dream-builder__step:not([hidden])')[0];
+    var currentStep = parseInt(current.id.split('-').pop());
+    if (currentStep === 1) {
+      var start = $('#sns-dream-start').value;
+      var end = $('#sns-dream-end').value;
+      var pax = parseInt($('#sns-dream-pax').value || '2', 10);
+      if (!start || !end) { showStatus('error', 'Please select both start and end dates'); return; }
+      var s = new Date(start), e = new Date(end);
+      if (e <= s) { showStatus('error', 'End date must be after start date'); return; }
+      dreamState.startDate = start;
+      dreamState.endDate = end;
+      dreamState.pax = pax;
+      dreamState.nights = Math.ceil((e - s) / (1000 * 60 * 60 * 24));
+    } else if (currentStep === 2) {
+      var style = $$('input[name="dreamStyle"]:checked')[0];
+      if (!style) { showStatus('error', 'Please select a trip style'); return; }
+      dreamState.style = style.value;
+    }
+    showDreamStep(currentStep + 1);
+  }
+
+  function prevDreamStep() {
+    var current = $$('.sns-dream-builder__step:not([hidden])')[0];
+    var currentStep = parseInt(current.id.split('-').pop());
+    showDreamStep(currentStep - 1);
+  }
+
+  function showDreamStep(stepNum) {
+    $$('.sns-dream-builder__step').forEach(hide);
+    $$('.sns-dream-builder__progress-step').forEach(function(s) { s.classList.remove('active'); s.setAttribute('aria-selected', 'false'); });
+    show(el('sns-dream-step-' + stepNum));
+    var prog = $('.sns-dream-builder__progress-step[data-step="' + stepNum + '"]');
+    if (prog) { prog.classList.add('active'); prog.setAttribute('aria-selected', 'true'); }
+    for (var i = 1; i < stepNum; i++) {
+      var p = $('.sns-dream-builder__progress-step[data-step="' + i + '"]');
+      if (p) { p.classList.add('completed'); }
+    }
+  }
+
+  function generateDreamItinerary() {
+    var btn = el('sns-dream-btn-generate');
+    if (btn) { btn.disabled = true; btn.textContent = 'Building your itinerary…'; }
+    
+    var nights = dreamState.nights;
+    var style = dreamState.style;
+    var pax = dreamState.pax;
+    
+    var days = buildItineraryForStyle(style, nights, pax);
+    dreamState.itinerary = days;
+    
+    renderDreamItinerary(days);
+    
+    if (btn) { btn.disabled = false; btn.textContent = 'Generate Itinerary →'; }
+    showDreamStep(3);
+  }
+
+  function buildItineraryForStyle(style, nights, pax) {
+    var days = [];
+    var dayActivities = {
+      culture: [
+        { slug: 'stone-town-walking-tour', time: 'Morning', note: 'Licensed guide, UNESCO sites' },
+        { slug: 'spice-farm', time: 'Afternoon', note: 'Tasting & lunch included' },
+        { slug: 'stone-town-spice-prison-combo', time: 'Full Day', note: '3-in-1: Town, Spice, Prison Island' },
+        { slug: 'village-community-tour', time: 'Morning', note: 'Seaweed farming & local lunch' },
+      ],
+      beach: [
+        { slug: 'safari-blue', time: 'Full Day', note: 'Dhow, sandbank, seafood BBQ' },
+        { slug: 'mnemba-snorkeling', time: 'Morning', note: 'Turtles & coral gardens' },
+        { slug: 'sunset-dhow-cruise', time: 'Sunset', note: 'Fruit & refreshments' },
+        { slug: 'nakupenda-sandbank', time: 'Half Day', note: 'Pristine sandbank swim' },
+      ],
+      adventure: [
+        { slug: 'horse-swimming', time: 'Morning', note: 'Bareback horses at high tide' },
+        { slug: 'quad-buggy-safari', time: 'Afternoon', note: 'Baobabs & village paths' },
+        { slug: 'maalum-kuza-caves', time: 'Morning', note: 'Secret cenote swim' },
+        { slug: 'uzi-island-moses-road', time: 'Full Day', note: 'Tidal causeway crossing' },
+      ],
+      safari: [
+        { slug: 'mikumi-nyerere-day-safari', time: 'Full Day', note: 'Fly-in, Big Five, park fees included' },
+        { slug: 'serengeti-3day-flyin', time: '3 Days', note: 'Serengeti, Ngorongoro, flights included' },
+        { slug: 'selous-nyerere-fly-in-safari', time: '2 Days', note: 'Boat safari + game drives' },
+        { slug: 'saadani-national-park-safari', time: 'Full Day', note: 'Beach + bush combo' },
+      ],
+      honeymoon: [
+        { slug: 'sunset-dhow-cruise', time: 'Sunset', note: 'Private dhow, romantic dinner' },
+        { slug: 'mnemba-snorkeling', time: 'Morning', note: 'Private boat for two' },
+        { slug: 'stone-town-walking-tour', time: 'Afternoon', note: 'Historic alleys, rooftop drinks' },
+        { slug: 'nakupenda-sandbank', time: 'Morning', note: 'Private sandbank picnic' },
+      ],
+      family: [
+        { slug: 'turtle-sanctuary', time: 'Morning', note: 'Feed turtles, safe for kids' },
+        { slug: 'jozani-forest', time: 'Morning', note: 'Red colobus monkeys, boardwalk' },
+        { slug: 'village-community-tour', time: 'Afternoon', note: 'Seaweed farming, hands-on' },
+        { slug: 'safari-blue', time: 'Full Day', note: 'Family-friendly dhow day' },
+      ]
+    };
+    
+    var activities = dayActivities[style] || dayActivities.culture;
+    var nightsCount = Math.max(1, Math.min(nights, 7));
+    
+    for (var i = 0; i < nightsCount; i++) {
+      var act = activities[i % activities.length];
+      var svc = state.services.find(function(s) { return s.slug === act.slug; });
+      days.push({
+        day: i + 1,
+        date: addDays(dreamState.startDate, i),
+        slug: act.slug,
+        name: svc ? svc.name : act.slug,
+        time: act.time,
+        note: act.note,
+        category: svc ? svc.category : 'TOUR',
+        pricing: svc ? svc.pricing : null
+      });
+    }
+    
+    days.unshift({
+      day: 0,
+      date: dreamState.startDate,
+      slug: 'airport-transfer-arrival',
+      name: 'Airport Transfer & Check-in',
+      time: 'Arrival',
+      note: 'Zero-deposit private transfer, flight tracking, 60min free wait',
+      category: 'TRF',
+      pricing: { min: 18, max: 50, display: '$18–$50 per vehicle' }
+    });
+    
+    days.push({
+      day: nightsCount + 1,
+      date: addDays(dreamState.startDate, nightsCount),
+      slug: 'airport-transfer-departure',
+      name: 'Departure Transfer',
+      time: 'Departure',
+      note: 'Hotel to ZNZ Airport, flight tracking included',
+      category: 'TRF',
+      pricing: { min: 18, max: 50, display: '$18–$50 per vehicle' }
+    });
+    
+    return days;
+  }
+
+  function addDays(dateStr, days) {
+    var d = new Date(dateStr);
+    d.setDate(d.getDate() + days);
+    return d.toISOString().split('T')[0];
+  }
+
+  function renderDreamItinerary(days) {
+    var container = el('sns-dream-itinerary');
+    if (!container) return;
+    
+    container.innerHTML = days.map(function(d) {
+      var catLabels = { MAR: '🌊', CUL: '🌿', NAT: '🌳', SAF: '🦁', PKG: '📦', EXP: '✨', TRF: '🚗' };
+      var cat = catLabels[d.category] || '📍';
+      var priceStr = d.pricing ? d.pricing.display : '—';
+      return '<div class="sns-dream-builder__day">' +
+        '<div class="sns-dream-builder__day-header">' +
+          '<span class="sns-dream-builder__day-title">Day ' + d.day + ' — ' + formatDate(d.date) + '</span>' +
+          '<span style="font-size: var(--text-sm); color: var(--muted);">' + cat + ' ' + priceStr + '</span>' +
+        '</div>' +
+        '<div class="sns-dream-builder__day-activities">' +
+          '<span class="sns-dream-builder__activity">' + cat + ' ' + d.name + '</span>' +
+          '<span class="sns-dream-builder__activity" style="background: var(--gold-soft); color: var(--gold-text);">' + d.time + '</span>' +
+        '</div>' +
+        '<p style="margin-top: var(--space-2); font-size: var(--text-sm); color: var(--muted);">' + d.note + '</p>' +
+      '</div>';
+    }).join('');
+  }
+
+  function formatDate(dateStr) {
+    var d = new Date(dateStr);
+    return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  }
+
+  function goToDreamQuote() {
+    var total = calculateDreamQuote(dreamState.itinerary, dreamState.pax);
+    dreamState.quote = total;
+    renderDreamSummary(total);
+    showDreamStep(4);
+  }
+
+  function calculateDreamQuote(days, pax) {
+    var totalLow = 0;
+    var totalHigh = 0;
+    var lines = [];
+    
+    days.forEach(function(d) {
+      if (d.pricing && d.pricing.min != null) {
+        var low = d.pricing.min;
+        var high = d.pricing.max || low;
+        if (d.pricing.basis === 'per_person') {
+          low *= pax;
+          high *= pax;
+        }
+        totalLow += low;
+        totalHigh += high;
+        lines.push({
+          label: d.name,
+          low: low,
+          high: high,
+          basis: d.pricing.basis || 'per_person'
+        });
+      }
+    });
+    
+    return { totalLow: totalLow, totalHigh: totalHigh, lines: lines, pax: pax, nights: dreamState.nights };
+  }
+
+  function renderDreamSummary(quote) {
+    var container = el('sns-dream-summary');
+    if (!container) return;
+    
+    var depositPercent = Math.max(20, 30);
+    var depositAmount = Math.round(quote.totalLow * depositPercent / 100);
+    
+    container.innerHTML = 
+      '<h4 class="sns-dream-builder__summary-title">Your ' + dreamState.nights + '-Night ' + capitalize(dreamState.style) + ' Trip</h4>' +
+      '<p style="color: var(--muted); margin-bottom: var(--space-3);">' + dreamState.pax + ' travelers · ' + formatDate(dreamState.startDate) + ' – ' + formatDate(dreamState.endDate) + '</p>' +
+      '<div style="max-height: 200px; overflow-y: auto; margin-bottom: var(--space-3);">' +
+        quote.lines.map(function(l) {
+          return '<div class="sns-dream-builder__summary-row">' +
+            '<span>' + l.label + '</span>' +
+            '<span style="font-weight: 600;">' + (l.low === l.high ? '$' + l.low : '$' + l.low + '–$' + l.high) + ' ' + (l.basis === 'per_vehicle' ? '(vehicle)' : '(total)') + '</span>' +
+          '</div>';
+        }).join('') +
+      '</div>' +
+      '<div class="sns-dream-builder__summary-total">' +
+        '<div class="sns-dream-builder__summary-row">' +
+          '<span>Estimated Total</span>' +
+          '<span style="font-weight: 800; color: var(--palm);">' + (quote.totalLow === quote.totalHigh ? '$' + quote.totalLow : '$' + quote.totalLow + '–$' + quote.totalHigh) + ' USD</span>' +
+        '</div>' +
+        '<div class="sns-dream-builder__summary-row" style="color: var(--palm); font-weight: 700;">' +
+          '<span>Deposit to secure (' + depositPercent + '%)</span>' +
+          '<span>$' + depositAmount + ' USD</span>' +
+        '</div>' +
+        '<div class="sns-dream-builder__summary-row" style="font-size: var(--text-xs); color: var(--muted);">' +
+          '<span>Balance due before departure</span>' +
+          '<span>$' + (quote.totalLow - depositAmount) + ' USD</span>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  function openDreamPayment() {
+    if (!dreamState.itinerary || !dreamState.itinerary.length) return;
+    var mainActivity = dreamState.itinerary.find(function(d) { 
+      return ['MAR', 'SAF', 'EXP', 'PKG'].includes(d.category); 
+    });
+    if (!mainActivity) mainActivity = dreamState.itinerary[1];
+    
+    state.selectedSlug = mainActivity.slug;
+    state.selectedSlugs = [mainActivity.slug];
+    openPaymentOptions();
   }
 
   /* ==========================================================================
@@ -711,6 +1002,22 @@
       });
     }
 
+    // Language selector flags
+    $$('.sns-lang-flag', modal).forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var lang = this.getAttribute('data-lang');
+        $$('.sns-lang-flag', modal).forEach(function(b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-pressed', 'true');
+        state.profile.preferredLang = lang;
+        // Could trigger bot to respond in selected language
+        addBotMessage('Language set to ' + this.title + '. Our guides speak ' + this.title + ' — advance request required for dedicated guide.', ['Continue']);
+      });
+    });
+
     // Keyboard: Escape to close
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && state.isOpen) closeConcierge();
@@ -728,6 +1035,12 @@
       openDirectWhatsApp: openDirectWhatsApp,
       dismissCallout: dismissCallout,
       submitHandler: submitHandler,
+      // Dream Trip Builder (v3)
+      nextDreamStep: nextDreamStep,
+      prevDreamStep: prevDreamStep,
+      generateDreamItinerary: generateDreamItinerary,
+      goToDreamQuote: goToDreamQuote,
+      openDreamPayment: openDreamPayment,
       _state: state
     };
   }

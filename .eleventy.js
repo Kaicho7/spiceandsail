@@ -94,7 +94,7 @@ module.exports = function(eleventyConfig) {
     return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle") + " (published rate — our team confirms your tier and pickup)";
   });
 
-  // Short version for cards - just "From $X" with tiered tooltip
+// Short version for cards - just "From $X" with tiered tooltip
   eleventyConfig.addFilter("catPriceShort", (slug) => {
     const svc = catService(slug);
     if (!svc) return "Price on request";
@@ -108,11 +108,54 @@ module.exports = function(eleventyConfig) {
         return match ? Math.min(min, parseInt(match[1])) : min;
       }, Infinity);
       if (lowest !== Infinity) {
-        const escapedTip = p.tieredDisplay.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+        const escapedTip = p.tieredDisplay.replace(/&/g, '&').replace(/"/g, '"');
         return `<span class="price-short" tabindex="0" data-tooltip="${escapedTip}">From $${lowest} <span class="price-basis">${p.basis === 'per_person' ? 'per person' : 'per vehicle'}</span></span>`;
       }
     }
     return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle");
+  });
+
+  // Premium pricing display filters for hybrid+premium UX
+  eleventyConfig.addFilter("catViatorAnchor", (slug) => {
+    const svc = catService(slug);
+    if (!svc || !svc.pricing || svc.pricing.viatorAnchor == null) return null;
+    return svc.pricing.viatorAnchor;
+  });
+
+  eleventyConfig.addFilter("catDepositPercent", (slug) => {
+    const svc = catService(slug);
+    if (!svc || !svc.pricing || svc.pricing.depositPercent == null) return 0;
+    return svc.pricing.depositPercent;
+  });
+
+  eleventyConfig.addFilter("catDepositAmount", (slug) => {
+    const svc = catService(slug);
+    if (!svc || !svc.pricing || svc.pricing.depositAmount == null) return 0;
+    return svc.pricing.depositAmount;
+  });
+
+  eleventyConfig.addFilter("catSavingsVsViator", (slug) => {
+    const svc = catService(slug);
+    if (!svc || !svc.pricing || svc.pricing.savingsVsViator == null) return null;
+    return svc.pricing.savingsVsViator;
+  });
+
+  eleventyConfig.addFilter("catSavingsPercent", (slug) => {
+    const svc = catService(slug);
+    if (!svc || !svc.pricing || svc.pricing.savingsPercent == null) return null;
+    return svc.pricing.savingsPercent;
+  });
+
+  eleventyConfig.addFilter("catIsMarine", (slug) => {
+    const svc = catService(slug);
+    if (!svc) return false;
+    return svc.category === 'MAR' || svc.type === 'experience';
+  });
+
+  eleventyConfig.addFilter("catIsTransfer", (slug) => {
+    const svc = catService(slug);
+    if (!svc) return false;
+    return svc.type === 'transfer';
   });
 
   // Truncate filter for text

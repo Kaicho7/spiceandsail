@@ -51,5 +51,49 @@
   </div>
 </footer>
 {% include "concierge-widget.njk" %}
+
+<!-- Sticky Trust Bar (Mobile) -->
+<div class="sns-trust-bar" id="snsTrustBar" aria-label="Trust signals">
+  <div class="sns-trust-bar__inner">
+    <div class="sns-trust-bar__badges" role="list" aria-label="Trust guarantees">
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🛡️</span>0% Deposit Transfers</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">💎</span>Marine Fees Included</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🌤️</span>Weather Guarantee</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🗣️</span>Multilingual Guides</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">💰</span>20% Less Than Viator</span>
+    </div>
+    <div class="sns-trust-bar__cta">
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%27d%20like%20to%20book%20a%20Zanzibar%20tour" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">Chat WhatsApp</a>
+      <a href="/tours/" class="btn btn-outline btn-sm">Browse Tours</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  var trustBar = document.getElementById('snsTrustBar');
+  if (!trustBar) return;
+  // Show on mobile after brief delay
+  setTimeout(function() {
+    if (window.innerWidth <= 768) {
+      trustBar.classList.add('visible');
+    }
+  }, 2000);
+  // Hide on scroll up, show on scroll down (optional enhancement)
+  var lastScroll = window.scrollY;
+  window.addEventListener('scroll', function() {
+    if (window.innerWidth > 768) return;
+    var currentScroll = window.scrollY;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      trustBar.classList.remove('visible');
+    } else {
+      trustBar.classList.add('visible');
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
+})();
+</script>
+
 </body>
 </html>

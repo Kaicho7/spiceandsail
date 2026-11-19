@@ -618,3 +618,347 @@ a[style*="#25D366"],button[style*="#25D366"]{color:#fff!important;background:var
   .site-header,.hero-cta,.cta-section,.btn,.nav-toggle,.mobile-contact-bar,.tour-mobile-sticky-cta,#sns-concierge-root{display:none!important}
   body{background:#fff}
 }
+
+/* ==========================================================================
+   Sticky Trust Bar (Mobile) - Premium Hybrid
+   ========================================================================== */
+.sns-trust-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  background: linear-gradient(135deg, var(--wood) 0%, var(--wood-soft) 100%);
+  color: var(--stone);
+  box-shadow: 0 -4px 20px rgba(42,27,18,0.15);
+  transform: translateY(100%);
+  transition: transform var(--motion-base);
+  display: none; /* Mobile only */
+}
+.sns-trust-bar.visible {
+  transform: translateY(0);
+}
+.sns-trust-bar__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.sns-trust-bar__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+}
+.sns-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(195,154,82,0.4);
+  border-radius: var(--border-radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+}
+.sns-trust-badge__icon { font-size: 0.9em; }
+.sns-trust-bar__cta {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sns-trust-bar__cta .btn {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sns-trust-bar { display: block; }
+}
+
+/* ==========================================================================
+   Weather Guarantee Badge - for Marine Tour Cards
+   ========================================================================== */
+.sns-weather-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.6rem;
+  background: linear-gradient(135deg, var(--palm) 0%, var(--palm-hover) 100%);
+  color: #fff;
+  border-radius: var(--border-radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: var(--shadow-xs);
+  animation: sns-pulse-soft 3s ease-in-out infinite;
+}
+@keyframes sns-pulse-soft {
+  0%, 100% { box-shadow: var(--shadow-xs); }
+  50% { box-shadow: 0 0 12px rgba(37,71,41,0.4); }
+}
+.sns-weather-badge__icon { font-size: 0.9em; }
+
+/* ==========================================================================
+   Premium Tour Card Pricing Display
+   ========================================================================== */
+.tour-card__price-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: var(--space-3);
+}
+.tour-card__price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.tour-card__price-amount {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--wood);
+  font-family: var(--font-display);
+}
+.tour-card__price-basis {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  font-weight: 500;
+}
+.tour-card__price-anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--gold-soft);
+  color: var(--gold-text);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.tour-card__deposit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--palm-soft);
+  color: var(--palm);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.tour-card__deposit--zero {
+  background: var(--gold-soft);
+  color: var(--gold-text);
+}
+
+/* ==========================================================================
+   Language Flag Selector
+   ========================================================================== */
+.sns-lang-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--border-radius-full);
+  background: var(--card);
+  color: var(--wood);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--motion-fast);
+}
+.sns-lang-flag:hover,
+.sns-lang-flag.active {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+  color: var(--gold-text);
+}
+.sns-lang-flag__emoji { font-size: 1.1em; }
+.sns-lang-flag__code { text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ==========================================================================
+   Premium Hero Enhancement
+   ========================================================================== */
+.hero--premium {
+  position: relative;
+  overflow: hidden;
+}
+.hero--premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 30%, rgba(213,226,204,0.4), transparent 50%),
+              radial-gradient(ellipse at 80% 70%, rgba(205,228,225,0.3), transparent 45%),
+              linear-gradient(135deg, var(--stone) 0%, var(--stone-deep) 100%);
+  z-index: 0;
+}
+.hero--premium .hero-content { position: relative; z-index: 1; }
+.hero--premium .hero-visual { position: relative; z-index: 1; }
+.hero--premium video.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.35;
+}
+.hero--premium .hero-tagline {
+  background: rgba(251,247,240,0.95);
+  backdrop-filter: blur(8px);
+}
+.hero--premium .hero-cta .btn {
+  box-shadow: var(--shadow-md);
+}
+.hero--premium .hero-cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================================================
+   Dream Trip Builder (Concierge v3)
+   ========================================================================== */
+.sns-dream-builder {
+  display: none; /* Activated via JS */
+}
+.sns-dream-builder__step {
+  display: none;
+}
+.sns-dream-builder__step.active { display: block; }
+.sns-dream-builder__progress {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+.sns-dream-builder__progress-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: var(--space-2);
+  border-radius: var(--border-radius);
+  background: var(--stone);
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  transition: all var(--motion-base);
+}
+.sns-dream-builder__progress-step.active {
+  background: var(--palm-soft);
+  color: var(--palm);
+}
+.sns-dream-builder__progress-step.completed {
+  background: var(--palm);
+  color: #fff;
+}
+.sns-dream-builder__progress-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--card);
+  font-size: 0.9rem;
+}
+.sns-dream-builder__progress-step.active .sns-dream-builder__progress-icon {
+  background: var(--palm);
+  color: #fff;
+}
+.sns-dream-builder__progress-step.completed .sns-dream-builder__progress-icon {
+  background: var(--gold);
+  color: var(--wood);
+}
+.sns-dream-builder__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+.sns-dream-builder__option {
+  position: relative;
+}
+.sns-dream-builder__option input { position: absolute; opacity: 0; pointer-events: none; }
+.sns-dream-builder__option-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-3);
+  border: 2px solid var(--border);
+  border-radius: var(--border-radius-lg);
+  background: var(--card);
+  color: var(--wood);
+  cursor: pointer;
+  transition: all var(--motion-base);
+}
+.sns-dream-builder__option input:checked + .sns-dream-builder__option-label {
+  border-color: var(--palm);
+  background: var(--palm-soft);
+  box-shadow: var(--shadow-md);
+}
+.sns-dream-builder__option-icon { font-size: 2rem; }
+.sns-dream-builder__option-title { font-weight: 700; }
+.sns-dream-builder__option-desc { font-size: var(--text-xs); color: var(--muted); text-align: center; }
+.sns-dream-builder__itinerary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.sns-dream-builder__day {
+  padding: var(--space-4);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--palm);
+}
+.sns-dream-builder__day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+.sns-dream-builder__day-title { font-weight: 700; color: var(--wood); }
+.sns-dream-builder__day-activities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.sns-dream-builder__activity {
+  padding: 0.35rem 0.75rem;
+  background: var(--palm-soft);
+  color: var(--palm);
+  border-radius: var(--border-radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+.sns-dream-builder__summary {
+  padding: var(--space-4);
+  background: linear-gradient(135deg, var(--palm-soft) 0%, var(--gold-soft) 100%);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--palm);
+}
+.sns-dream-builder__summary-title { font-weight: 700; margin-bottom: var(--space-2); }
+.sns-dream-builder__summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  font-size: var(--text-sm);
+}
+.sns-dream-builder__summary-total {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--wood);
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+}

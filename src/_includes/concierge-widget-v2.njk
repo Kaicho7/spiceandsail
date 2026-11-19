@@ -31,7 +31,17 @@
           <h1 class="sns-concierge-title" id="sns-modal-title">Island Concierge</h1>
           <p class="sns-concierge-subtitle">Your Zanzibar travel consultant — real rates, real humans</p>
         </div>
-        <button class="sns-concierge-close-btn" id="sns-close" aria-label="Close concierge" type="button">&times;</button>
+        <div class="sns-header-actions" style="display: flex; align-items: center; gap: var(--space-2);">
+          {# Language selector with flags #}
+          <div class="sns-lang-selector" aria-label="Select language">
+            <button class="sns-lang-flag active" data-lang="en" aria-pressed="true" title="English"><span class="sns-lang-flag__emoji">🇬🇧</span><span class="sns-lang-flag__code">EN</span></button>
+            <button class="sns-lang-flag" data-lang="it" aria-pressed="false" title="Italiano"><span class="sns-lang-flag__emoji">🇮🇹</span><span class="sns-lang-flag__code">IT</span></button>
+            <button class="sns-lang-flag" data-lang="de" aria-pressed="false" title="Deutsch"><span class="sns-lang-flag__emoji">🇩🇪</span><span class="sns-lang-flag__code">DE</span></button>
+            <button class="sns-lang-flag" data-lang="fr" aria-pressed="false" title="Français"><span class="sns-lang-flag__emoji">🇫🇷</span><span class="sns-lang-flag__code">FR</span></button>
+            <button class="sns-lang-flag" data-lang="pl" aria-pressed="false" title="Polski"><span class="sns-lang-flag__emoji">🇵🇱</span><span class="sns-lang-flag__code">PL</span></button>
+          </div>
+          <button class="sns-concierge-close-btn" id="sns-close" aria-label="Close concierge" type="button">&times;</button>
+        </div>
       </header>
 
       {# Chat messages area #}
@@ -44,6 +54,133 @@
         {# Service selection grid (Step 1) #}
         <div class="sns-service-grid" id="sns-service-grid" hidden aria-label="Select an experience">
           {# Populated by JS from catalogue #}
+        </div>
+
+        {# Dream Trip Builder (Step 1.5 - between service select and details) #}
+        <div class="sns-dream-builder" id="sns-dream-builder" hidden aria-label="Build your dream trip">
+          <div class="sns-dream-builder__progress" role="tablist" aria-label="Trip builder steps">
+            <div class="sns-dream-builder__progress-step active" role="tab" aria-selected="true" data-step="1">
+              <span class="sns-dream-builder__progress-icon">📅</span>
+              <span>Dates</span>
+            </div>
+            <div class="sns-dream-builder__progress-step" role="tab" aria-selected="false" data-step="2">
+              <span class="sns-dream-builder__progress-icon">🎯</span>
+              <span>Style</span>
+            </div>
+            <div class="sns-dream-builder__progress-step" role="tab" aria-selected="false" data-step="3">
+              <span class="sns-dream-builder__progress-icon">🗺️</span>
+              <span>Itinerary</span>
+            </div>
+            <div class="sns-dream-builder__progress-step" role="tab" aria-selected="false" data-step="4">
+              <span class="sns-dream-builder__progress-icon">💰</span>
+              <span>Quote</span>
+            </div>
+          </div>
+
+          {# Step 1: Dates #}
+          <div class="sns-dream-builder__step active" id="sns-dream-step-1" role="tabpanel" aria-labelledby="dream-step-1-title">
+            <h3 id="dream-step-1-title" class="visually-hidden">Select Travel Dates</h3>
+            <div class="sns-field-group">
+              <label class="sns-field-label" for="sns-dream-start">Trip Start Date</label>
+              <input type="date" class="sns-input-date" id="sns-dream-start" name="dreamStart" required min="">
+            </div>
+            <div class="sns-field-group">
+              <label class="sns-field-label" for="sns-dream-end">Trip End Date</label>
+              <input type="date" class="sns-input-date" id="sns-dream-end" name="dreamEnd" required min="">
+            </div>
+            <div class="sns-field-group">
+              <label class="sns-field-label" for="sns-dream-pax">Total Travelers</label>
+              <input type="number" class="sns-input-number" id="sns-dream-pax" name="dreamPax" min="1" max="20" value="2" required>
+            </div>
+            <div class="sns-step-actions">
+              <button type="button" class="sns-btn-next" onclick="window.snsConciergeV2.nextDreamStep()">Continue →</button>
+            </div>
+          </div>
+
+          {# Step 2: Style #}
+          <div class="sns-dream-builder__step" id="sns-dream-step-2" role="tabpanel" aria-labelledby="dream-step-2-title" hidden>
+            <h3 id="dream-step-2-title" class="visually-hidden">Choose Your Trip Style</h3>
+            <p style="color: var(--muted); margin-bottom: var(--space-4); font-size: var(--text-sm);">Select the vibe that matches your dream Zanzibar trip. We'll build a day-by-day itinerary around it.</p>
+            <div class="sns-dream-builder__options" role="radiogroup" aria-label="Trip style">
+              <label class="sns-dream-builder__option" data-style="culture">
+                <input type="radio" name="dreamStyle" value="culture" required>
+                <span class="sns-dream-builder__option-label">
+                  <span class="sns-dream-builder__option-icon">🏛️</span>
+                  <span class="sns-dream-builder__option-title">Culture & History</span>
+                  <span class="sns-dream-builder__option-desc">Stone Town, spice farms, Prison Island, village visits</span>
+                </span>
+              </label>
+              <label class="sns-dream-builder__option" data-style="beach">
+                <input type="radio" name="dreamStyle" value="beach">
+                <span class="sns-dream-builder__option-label">
+                  <span class="sns-dream-builder__option-icon">🏖️</span>
+                  <span class="sns-dream-builder__option-title">Beach & Relax</span>
+                  <span class="sns-dream-builder__option-desc">Nungwi, Kendwa, Paje, Mnemba snorkeling, sunset dhow</span>
+                </span>
+              </label>
+              <label class="sns-dream-builder__option" data-style="adventure">
+                <input type="radio" name="dreamStyle" value="adventure">
+                <span class="sns-dream-builder__option-label">
+                  <span class="sns-dream-builder__option-icon">🌊</span>
+                  <span class="sns-dream-builder__option-title">Marine Adventure</span>
+                  <span class="sns-dream-builder__option-desc">Safari Blue, Mnemba, dolphins, kitesurfing, cenotes</span>
+                </span>
+              </label>
+              <label class="sns-dream-builder__option" data-style="safari">
+                <input type="radio" name="dreamStyle" value="safari">
+                <span class="sns-dream-builder__option-label">
+                  <span class="sns-dream-builder__option-icon">🦁</span>
+                  <span class="sns-dream-builder__option-title">Safari & Wildlife</span>
+                  <span class="sns-dream-builder__option-desc">Mikumi day trip, Serengeti fly-in, Nyerere, Saadani</span>
+                </span>
+              </label>
+              <label class="sns-dream-builder__option" data-style="honeymoon">
+                <input type="radio" name="dreamStyle" value="honeymoon">
+                <span class="sns-dream-builder__option-label">
+                  <span class="sns-dream-builder__option-icon">💑</span>
+                  <span class="sns-dream-builder__option-title">Honeymoon & Romance</span>
+                  <span class="sns-dream-builder__option-desc">Private dhow, sunset dinner, luxury stays, couples spa</span>
+                </span>
+              </label>
+              <label class="sns-dream-builder__option" data-style="family">
+                <input type="radio" name="dreamStyle" value="family">
+                <span class="sns-dream-builder__option-label">
+                  <span class="sns-dream-builder__option-icon">👨‍👩‍👧‍👦</span>
+                  <span class="sns-dream-builder__option-title">Family Friendly</span>
+                  <span class="sns-dream-builder__option-desc">Turtle sanctuary, Jozani, village tours, safe beaches</span>
+                </span>
+              </label>
+            </div>
+            <div class="sns-step-actions">
+              <button type="button" class="sns-btn-back" onclick="window.snsConciergeV2.prevDreamStep()">← Back</button>
+              <button type="button" class="sns-btn-next" id="sns-dream-btn-generate" onclick="window.snsConciergeV2.generateDreamItinerary()">Generate Itinerary →</button>
+            </div>
+          </div>
+
+          {# Step 3: Visual Itinerary #}
+          <div class="sns-dream-builder__step" id="sns-dream-step-3" role="tabpanel" aria-labelledby="dream-step-3-title" hidden>
+            <h3 id="dream-step-3-title" class="visually-hidden">Your Visual Itinerary</h3>
+            <div class="sns-dream-builder__itinerary" id="sns-dream-itinerary"></div>
+            <div class="sns-step-actions">
+              <button type="button" class="sns-btn-back" onclick="window.snsConciergeV2.prevDreamStep()">← Change Style</button>
+              <button type="button" class="sns-btn-next" onclick="window.snsConciergeV2.goToDreamQuote()">View Quote →</button>
+            </div>
+          </div>
+
+          {# Step 4: Quote Summary #}
+          <div class="sns-dream-builder__step" id="sns-dream-step-4" role="tabpanel" aria-labelledby="dream-step-4-title" hidden>
+            <h3 id="dream-step-4-title" class="visually-hidden">Trip Quote Summary</h3>
+            <div class="sns-dream-builder__summary" id="sns-dream-summary"></div>
+            <div class="sns-step-actions">
+              <button type="button" class="sns-btn-back" onclick="window.snsConciergeV2.prevDreamStep()">← Edit Itinerary</button>
+              <button type="button" class="sns-btn-payment" onclick="window.snsConciergeV2.openDreamPayment()">
+                <span>💳 Secure Booking</span>
+              </button>
+              <button type="button" class="sns-btn-whatsapp-direct" onclick="window.snsConciergeV2.openDirectWhatsApp()">
+                <span>💬 Book via WhatsApp</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         {# Form steps (Step 2-3) #}

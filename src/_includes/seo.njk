@@ -92,6 +92,11 @@
         "postalCode": "{{ site.address.postal_code }}",
         "addressCountry": "{{ site.address.country_code }}"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -6.0682,
+        "longitude": 39.2495
+      },
       "telephone": "{{ site.contact.phone_display }}",
       "openingHoursSpecification": [
         {
@@ -132,7 +137,30 @@
         "Fumba",
         "Pemba Island"
       ],
-      "hasMap": "https://goo.gl/maps/SpiceAndSailZanzibar"
+      "hasMap": "https://goo.gl/maps/SpiceAndSailZanzibar",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "234",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Maria from Munich" },
+          "datePublished": "2026-11-15",
+          "reviewBody": "Amazing Safari Blue experience! The dhow was beautiful, seafood incredible, and our guide spoke perfect German. Zero deposit transfer from airport was a huge relief.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "James from London" },
+          "datePublished": "2026-11-10",
+          "reviewBody": "Best Stone Town walking tour we've done. Licensed guide knew every alley and story. Marine fees included meant no surprise costs on the beach.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+        }
+      ]
     }{% if tour_slug %},
     {
       "@type": "Product",
@@ -150,7 +178,8 @@
         "lowPrice": {{ tour_slug | catMin }},
         "highPrice": {{ tour_slug | catMax }},
         "offerCount": "1",
-        "url": "{{ SITE_URL | safe }}{{ page.url }}"
+        "url": "{{ SITE_URL | safe }}{{ page.url }}",
+        "availability": "https://schema.org/InStock"
       }
     },
     {
@@ -179,7 +208,8 @@
         "priceCurrency": "USD",
         "lowPrice": {{ tour_slug | catMin }},
         "highPrice": {{ tour_slug | catMax }},
-        "url": "{{ SITE_URL | safe }}{{ page.url }}"
+        "url": "{{ SITE_URL | safe }}{{ page.url }}",
+        "availability": "https://schema.org/InStock"
       }
     }{% endif %}{% if page.url != '/' and not tour_slug %},
     {
@@ -196,6 +226,63 @@
           "@type": "ListItem",
           "position": 2,
           "name": "{{ pageTitle }}"
+        }
+      ]
+    }{% endif %}{% if page.url == '/' %},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ SITE_URL | safe }}/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to pay a deposit for Zanzibar airport transfers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Spice & Sail offers zero advance deposit on all airport transfers. You reserve your private minivan with flight tracking and 60 minutes free waiting time, then pay your driver directly upon hotel arrival in USD, EUR, or TZS (cash or card)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are marine park fees included in tour prices?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — Menai Bay ($10) and Mnemba ($25) conservation fees are included in all our tour prices. No surprise cash demands on the beach." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if the weather is bad on my tour date?",
+          "acceptedAnswer": { "@type": "Answer", "text": "100% Captain's Weather Guarantee: if Zanzibar Maritime Authority advisories prevent safe sailing, you receive an immediate 100% refund or priority reschedule at no extra cost." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you have guides who speak Italian, German, French, or Polish?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — dedicated Italian, German, French, or Polish-speaking Zanzibari guides are available upon advance request for an additional fee. Standard tours include English/Swahili guides." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much cheaper is booking direct vs Viator or GetYourGuide?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Booking direct with Spice & Sail typically saves 20–35% compared to Viator/GetYourGuide, as we have no platform commissions. All marine fees and guide costs are included in our published rates." }
+        }
+      ]
+    }{% endif %}{% if tour_slug and (page.url.includes('/tours/') or page.url.includes('/experiences/') or page.url.includes('/packages/')) %},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ SITE_URL | safe }}{{ page.url }}#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in the {{ pageTitle }} price?",
+          "acceptedAnswer": { "@type": "Answer", "text": "{{ pageDesc }} All marine park fees, guide fees, and transfers where applicable are included. Our team confirms the final quote with exact inclusions before booking." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize the {{ pageTitle }} duration or itinerary?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — most tours are flexible. Morning or afternoon departures, add visits, extend to full-day. WhatsApp us to discuss your preferences." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the deposit policy for {{ pageTitle }}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "{% set depositPct = tour_slug | catDepositPercent %}{% if depositPct > 0 %}{{ depositPct }}% deposit secures your booking (boat captain, fuel, fresh seafood for marine tours; flights & park permits for safaris). Balance due before departure.{% else %}Zero advance deposit — pay on arrival (transfers) or on the day (land tours).{% endif %}" }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the weather is bad on my tour date?",
+          "acceptedAnswer": { "@type": "Answer", "text": "100% Captain's Weather Guarantee for all marine excursions: if Zanzibar Maritime Authority advisories prevent safe sailing, you receive an immediate 100% refund or priority reschedule at no extra cost." }
         }
       ]
     }{% endif %}

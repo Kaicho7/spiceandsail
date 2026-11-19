@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-18.v3-market",
+  "version": "2026-11-19.v4-anchor-pricing",
   "sourceRepo": "github.com/Kaicho7/spiceandsail @ 550a5b3 (read-only)",
   "currency": "USD",
   "config": {
@@ -195,7 +195,12 @@
         "sourceFiles": "AAA/TripCanvas, Tulia Zanzibar, zanzibarguides.com, JoyTrekking, Navin Tours",
         "verified": true,
         "childRate": 20,
-        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6",
+        "viatorAnchor": 55,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 20,
+        "savingsPercent": 36
       },
       "includes": [
         "Licensed Zanzibar official historian guide",
@@ -246,7 +251,12 @@
         "sourceFiles": "Expedia, Tulia Zanzibar, Trip.com entry-only rate",
         "verified": true,
         "childRate": 25,
-        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6",
+        "viatorAnchor": 65,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 25,
+        "savingsPercent": 38
       },
       "includes": [
         "Farm walk, spice/fruit tasting, guide",
@@ -297,7 +307,12 @@
         "basisNote": "per person; floor priced from partner rate (Animation team partner rate: $41 total small group)",
         "sourceQuality": "Historical price list + 2026 market range",
         "sourceFiles": "zanzibar things to do.docx (50 USD); 2026 market guides",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 55,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 25,
+        "savingsPercent": 45
       },
       "includes": [
         "Village walk, seaweed/craft visit, local lunch",
@@ -343,7 +358,12 @@
         "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (3-in-1))",
         "sourceQuality": "Existing strategy + 2026 market range",
         "sourceFiles": "Zanzibar_Master_Venture_Plan.md; GetYourGuide 2026 listing",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 125,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 50,
+        "savingsPercent": 40
       },
       "includes": [
         "Guide, transport, entry fees vary by package"
@@ -391,7 +411,12 @@
         "sourceFiles": "Cotis Safaris rate card, Easy Travel group-size tiers",
         "verified": true,
         "childRate": 50,
-        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6",
+        "viatorAnchor": 125,
+        "depositPercent": 20,
+        "depositAmount": 17,
+        "savingsVsViator": 40,
+        "savingsPercent": 32
       },
       "includes": [
         "Dhow, snorkeling, sandbank, seafood lunch, drinks, guide"
@@ -448,7 +473,12 @@
         "sourceFiles": "Zanzibar Star Tours, Mnemba Island Tours, Tulia Zanzibar, Azur Zanzibar Tours, snorkelingzanzibar.com",
         "verified": true,
         "childRate": 50,
-        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6",
+        "viatorAnchor": 85,
+        "depositPercent": 20,
+        "depositAmount": 9,
+        "savingsVsViator": 40,
+        "savingsPercent": 47
       },
       "includes": [
         "Motorized boat, licensed captain & crew",
@@ -504,7 +534,12 @@
         "sourceFiles": "Tulia Zanzibar, Tripadvisor operator listing, Viator/GetYourGuide shared options",
         "verified": true,
         "childRate": 55,
-        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6",
+        "viatorAnchor": 110,
+        "depositPercent": 20,
+        "depositAmount": 17,
+        "savingsVsViator": 25,
+        "savingsPercent": 23
       },
       "includes": [
         "Boat, guide, entry",
@@ -554,7 +589,12 @@
         "basisNote": "per person; group-size tiered; anchored at Easy Travel published rates (2 pax $145, 3 pax $125, 4–6 pax $115)",
         "sourceQuality": "Easy Travel official published group-size tiers + top-operator benchmark",
         "sourceFiles": "Easy Travel & Tours rate card",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 155,
+        "depositPercent": 20,
+        "depositAmount": 23,
+        "savingsVsViator": 40,
+        "savingsPercent": 26
       },
       "includes": [
         "Fresh seafood & seasonal fruit lunch on sandbank included"
@@ -600,7 +640,12 @@
         "basisNote": "per person; floor priced from partner rate (Masoud Amran partner rate: $90pp)",
         "sourceQuality": "Historical price list + 2026 market range",
         "sourceFiles": "zanzibar things to do.docx; 2026 market guides",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 150,
+        "depositPercent": 20,
+        "depositAmount": 23,
+        "savingsVsViator": 35,
+        "savingsPercent": 23
       },
       "includes": [
         "Boat, marine-biology guide, snorkeling, lunch, day room"
@@ -652,7 +697,12 @@
         "sourceFiles": "Easy Travel & Tours rate card",
         "verified": true,
         "childRate": 20,
-        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6",
+        "viatorAnchor": 65,
+        "depositPercent": 20,
+        "depositAmount": 6,
+        "savingsVsViator": 35,
+        "savingsPercent": 54
       },
       "includes": [
         "Traditional wooden dhow sailing experience",
@@ -707,7 +757,12 @@
         "sourceFiles": "Cotis Safaris rate card",
         "verified": true,
         "childRate": 45,
-        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6",
+        "viatorAnchor": 95,
+        "depositPercent": 20,
+        "depositAmount": 12,
+        "savingsVsViator": 35,
+        "savingsPercent": 37
       },
       "includes": [
         "Private motorized boat & experienced captain",
@@ -762,7 +817,12 @@
         "sourceFiles": "GoSmart Zanzibar Tours, Red Banana Tours, Expedia, Tulia Zanzibar",
         "verified": true,
         "childRate": 40,
-        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6"
+        "childSource": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026), Table 6",
+        "viatorAnchor": 75,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 25,
+        "savingsPercent": 33
       },
       "includes": [
         "Official TANAPA / Jozani certified park ranger",
@@ -816,7 +876,12 @@
         "basisNote": "per person ($25 entry & local guide; $65–$85 with private island transfer)",
         "sourceQuality": "2026 market range",
         "sourceFiles": "2026 market guides",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 95,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 70,
+        "savingsPercent": 74
       },
       "includes": [
         "Cave swim, village/seaweed visit (optional Swahili lunch available locally)"
@@ -900,7 +965,12 @@
             "label": "11–20 guests"
           }
         ],
-        "ladderSource": "Corrected from legacy partner ladder ($520 single) and published Mikumi fly-in benchmark $450 pp"
+        "ladderSource": "Corrected from legacy partner ladder ($520 single) and published Mikumi fly-in benchmark $450 pp",
+        "viatorAnchor": 550,
+        "depositPercent": 30,
+        "depositAmount": 120,
+        "savingsVsViator": 150,
+        "savingsPercent": 27
       },
       "includes": [
         "Flights, game drive, park fees, lunch"
@@ -947,7 +1017,12 @@
         "verified": true,
         "parkFeePerPersonPerDay": 82.6,
         "parkDays": 3,
-        "parkFeeSource": "TANAPA Serengeti adult day tariff incl. 18% VAT (market study §6)"
+        "parkFeeSource": "TANAPA Serengeti adult day tariff incl. 18% VAT (market study §6)",
+        "viatorAnchor": 1350,
+        "depositPercent": 30,
+        "depositAmount": 270,
+        "savingsVsViator": 450,
+        "savingsPercent": 33
       },
       "includes": [
         "Flights, park fees, 4x4, guide, full board"
@@ -992,7 +1067,12 @@
         "basisNote": "per person",
         "sourceQuality": "Existing strategy model",
         "sourceFiles": "Zanzibar_Master_Venture_Plan.md",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 240,
+        "depositPercent": 30,
+        "depositAmount": 56,
+        "savingsVsViator": 55,
+        "savingsPercent": 23
       },
       "includes": [
         "Roundtrip airport transfers in private A/C minivan",
@@ -1039,7 +1119,12 @@
         "basisNote": "per person",
         "sourceQuality": "Curated direct partner access",
         "sourceFiles": "Spice and Sail Operations",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 380,
+        "depositPercent": 30,
+        "depositAmount": 96,
+        "savingsVsViator": 60,
+        "savingsPercent": 16
       },
       "includes": [
         "Private vehicle and dedicated Swahili guide throughout",
@@ -1074,7 +1159,12 @@
         "basisNote": "per person",
         "sourceQuality": "Curated direct partner access",
         "sourceFiles": "Spice and Sail Operations",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 340,
+        "depositPercent": 30,
+        "depositAmount": 86,
+        "savingsVsViator": 55,
+        "savingsPercent": 16
       },
       "includes": [
         "Swimming with horses beach session with certified equestrian guides",
@@ -1108,7 +1198,12 @@
         "basisNote": "per person",
         "sourceQuality": "Direct air charter & licensed operator",
         "sourceFiles": "Spice and Sail Operations",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 1100,
+        "depositPercent": 30,
+        "depositAmount": 267,
+        "savingsVsViator": 210,
+        "savingsPercent": 19
       },
       "includes": [
         "Same-day or overnight fly-in return flights Zanzibar ⇄ Mikumi airstrip",
@@ -1144,7 +1239,12 @@
         "basisNote": "per person; high tide dependent; anchored at Tulia Zanzibar & Nungwi Dreams published rates",
         "sourceQuality": "Tulia Zanzibar + Nungwi Dreams + top-operator benchmark",
         "sourceFiles": "Tulia Zanzibar rate card, Nungwi Dreams",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 185,
+        "depositPercent": 20,
+        "depositAmount": 30,
+        "savingsVsViator": 35,
+        "savingsPercent": 19
       },
       "includes": [],
       "importantNotes": [],
@@ -1179,7 +1279,12 @@
         "basisNote": "per quad (not per person); 1 or 2 riders; 4 hours; transfer included; anchored at Tulia Zanzibar published rate",
         "sourceQuality": "Tulia Zanzibar published rate + top-operator benchmark",
         "sourceFiles": "Tulia Zanzibar",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 155,
+        "depositPercent": 20,
+        "depositAmount": 24,
+        "savingsVsViator": 35,
+        "savingsPercent": 23
       },
       "includes": [],
       "importantNotes": [],
@@ -1213,7 +1318,12 @@
         "basisNote": "per person; limited daily slots; chemical-free preservation; anchored at Kuza Cave official + Paje operator benchmark",
         "sourceQuality": "Kuza Cave official + Paje operator rates + top-operator benchmark",
         "sourceFiles": "Kuza Cave website, Paje operator rates",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 105,
+        "depositPercent": 20,
+        "depositAmount": 16,
+        "savingsVsViator": 25,
+        "savingsPercent": 24
       },
       "includes": [],
       "importantNotes": [],
@@ -1248,7 +1358,12 @@
         "basisNote": "per person; tidal window dependent (low tide only); anchored at Uzi Island operators + Jambiani benchmark",
         "sourceQuality": "Uzi Island operator rates + Jambiani benchmark + top-operator benchmark",
         "sourceFiles": "Uzi Island operator, Jambiani tour operators",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 135,
+        "depositPercent": 20,
+        "depositAmount": 20,
+        "savingsVsViator": 35,
+        "savingsPercent": 26
       },
       "includes": [],
       "importantNotes": [],
@@ -1282,7 +1397,12 @@
         "basisNote": "per person; 15+ age requirement strictly enforced; includes roundtrip transfer; anchored at official cheetahsrock.org rates",
         "sourceQuality": "Official Cheetah's Rock published rates (cheetahsrock.org)",
         "sourceFiles": "cheetahsrock.org official tour pricing",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 195,
+        "depositPercent": 20,
+        "depositAmount": 30,
+        "savingsVsViator": 45,
+        "savingsPercent": 23
       },
       "includes": [
         "Licensed sanctuary entry & guided educational tour",
@@ -1329,7 +1449,12 @@
         "basisNote": "per boat (up to 6 passengers); includes captain, crew, snorkel gear, seafood lunch, beverages, and fuel; anchored at Tulia Zanzibar published rates",
         "sourceQuality": "Tulia Zanzibar published rates + top-operator benchmark",
         "sourceFiles": "Tulia Zanzibar rate card",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 1200,
+        "depositPercent": 20,
+        "depositAmount": 170,
+        "savingsVsViator": 350,
+        "savingsPercent": 29
       },
       "includes": [
         "Traditional luxury catamaran, captain & crew",
@@ -1380,7 +1505,12 @@
         "basisNote": "per person ($390–$550 boat / shared flight; $650–$750 overnight beach lodge package)",
         "sourceQuality": "Authentic coastal safari package + 2026 market range",
         "sourceFiles": "TANAPA Saadani National Park guides; 2026 market rates",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 520,
+        "depositPercent": 30,
+        "depositAmount": 117,
+        "savingsVsViator": 130,
+        "savingsPercent": 25
       },
       "includes": [
         "Return flights or speedboat, 4x4 game drive, Wami River boat safari, park fees, lunch"
@@ -1428,7 +1558,12 @@
         "basisNote": "per person ($750–$850 shared flight & tented camp; $950–$1,100 luxury river lodge with private 4x4)",
         "sourceQuality": "Authentic 2026 Selous fly-in package verified with licensed Tanzanian operators",
         "sourceFiles": "Zanzibar_Master_Venture_Plan.md; TANAPA Nyerere National Park rates",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 950,
+        "depositPercent": 30,
+        "depositAmount": 225,
+        "savingsVsViator": 200,
+        "savingsPercent": 21
       },
       "includes": [
         "Return domestic flights, all 4x4 game drives, sunset Rufiji River boat safari, park conservation fees, full-board accommodation, lunch and water"
@@ -1471,7 +1606,12 @@
         "min": 95,
         "max": 140,
         "display": "$95–$140",
-        "basisNote": "per person, 2 adults sharing (children confirmed by team)"
+        "basisNote": "per person, 2 adults sharing (children confirmed by team)",
+        "viatorAnchor": 125,
+        "depositPercent": 30,
+        "depositAmount": 29,
+        "savingsVsViator": 30,
+        "savingsPercent": 24
       },
       "shortDescription": "2 nights at Stone Town View Hotel (Double, B&B) + Return private airport transfer + Stone Town walking tour with licensed historian guide",
       "includes": [
@@ -1497,7 +1637,12 @@
         "min": 95,
         "max": 120,
         "display": "$95–$120",
-        "basisNote": "per person, 2 adults sharing (children confirmed by team)"
+        "basisNote": "per person, 2 adults sharing (children confirmed by team)",
+        "viatorAnchor": 115,
+        "depositPercent": 30,
+        "depositAmount": 29,
+        "savingsVsViator": 20,
+        "savingsPercent": 17
       },
       "shortDescription": "2 nights at Mkeka Spice Lodge (breakfast included) + Return private airport transfer + Spice farm tour with lunch",
       "includes": [
@@ -1523,7 +1668,12 @@
         "min": 220,
         "max": 290,
         "display": "$220–$290",
-        "basisNote": "per person, 2 adults sharing (children confirmed by team)"
+        "basisNote": "per person, 2 adults sharing (children confirmed by team)",
+        "viatorAnchor": 270,
+        "depositPercent": 30,
+        "depositAmount": 66,
+        "savingsVsViator": 50,
+        "savingsPercent": 19
       },
       "shortDescription": "3 nights Executive Seaside View Room at Le Paradis (breakfast included) + Return private airport transfer + Sunset dhow cruise for two",
       "includes": [
@@ -1549,7 +1699,12 @@
         "min": 360,
         "max": 460,
         "display": "$360–$460",
-        "basisNote": "per person, 2 adults sharing (children confirmed by team)"
+        "basisNote": "per person, 2 adults sharing (children confirmed by team)",
+        "viatorAnchor": 420,
+        "depositPercent": 30,
+        "depositAmount": 108,
+        "savingsVsViator": 60,
+        "savingsPercent": 14
       },
       "shortDescription": "3 nights at The One Resort Zanzibar (Half Board) + Return private airport transfer + Safari Blue full-day dhow, snorkel & seafood lunch",
       "includes": [
@@ -1575,7 +1730,12 @@
         "min": 165,
         "max": 280,
         "display": "$165–$280",
-        "basisNote": "per person, 2 adults sharing (children confirmed by team)"
+        "basisNote": "per person, 2 adults sharing (children confirmed by team)",
+        "viatorAnchor": 210,
+        "depositPercent": 30,
+        "depositAmount": 50,
+        "savingsVsViator": 45,
+        "savingsPercent": 21
       },
       "shortDescription": "2 nights at The Island Stonetown (B&B) + Return private airport transfer + Prison Island & Nakupenda sandbank snorkel trip",
       "includes": [
@@ -1622,7 +1782,12 @@
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
         "sourceFiles": "Taxi Trip Zanzibar $15; launch card v2 $20",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 35,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 17,
+        "savingsPercent": 49
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
@@ -1671,7 +1836,12 @@
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
         "sourceFiles": "Launch card v2 $30; transfer listings ~$27",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 50,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 20,
+        "savingsPercent": 40
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
@@ -1720,7 +1890,12 @@
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
         "sourceFiles": "Taxi Trip $40 sedan / partner van $50; launch card v2 $50/$50",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 75,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 30,
+        "savingsPercent": 40
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
@@ -1769,7 +1944,12 @@
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
         "sourceFiles": "Taxi Trip $40 / partner van $50; launch card v2 $50/$50",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 70,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 25,
+        "savingsPercent": 36
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
@@ -1818,7 +1998,12 @@
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
         "sourceFiles": "ReiseTaxi $29.9 anchor; launch card v2 $45/$65",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 65,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 25,
+        "savingsPercent": 38
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
@@ -1867,7 +2052,12 @@
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
         "sourceFiles": "Taxi Trip $50; launch card v2 $55/$75",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 80,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 30,
+        "savingsPercent": 38
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
@@ -1916,7 +2106,12 @@
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
         "sourceFiles": "Transfer benchmark $45–60; launch card v2 $50/$50",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 70,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 20,
+        "savingsPercent": 29
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
@@ -1965,7 +2160,12 @@
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
         "sourceFiles": "Market $50–150; launch card v2 $110/$160",
-        "verified": true
+        "verified": true,
+        "viatorAnchor": 180,
+        "depositPercent": 0,
+        "depositAmount": 0,
+        "savingsVsViator": 80,
+        "savingsPercent": 44
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
