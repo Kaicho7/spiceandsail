@@ -1,0 +1,215 @@
+{# Interactive AI Concierge Widget v2 - Chat-style with quick replies #}
+<div class="sns-concierge-root" id="sns-concierge-root">
+  {# Floating launcher #}
+  <button class="sns-concierge-btn" id="sns-launcher" aria-label="Open Island Concierge" type="button">
+    <span class="sns-concierge-icon" aria-hidden="true">🐚</span>
+    <span>Island Concierge</span>
+    <span class="sns-concierge-pulse" aria-hidden="true"></span>
+  </button>
+
+  {# Proactive welcome callout #}
+  <div class="sns-concierge-callout" id="sns-callout" hidden role="dialog" aria-label="Concierge suggestion">
+    <button class="sns-callout-close" aria-label="Dismiss">&times;</button>
+    <div class="sns-callout-body">
+      <div class="sns-callout-avatar" aria-hidden="true">🐚</div>
+      <div class="sns-callout-text">
+        <strong>Planning a Zanzibar trip?</strong>
+        <p>I'll recommend experiences, show published rates, and connect you to our team on WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+
+  {# Modal #}
+  <div class="sns-concierge-modal" id="sns-modal" hidden role="dialog" aria-modal="true" aria-labelledby="sns-modal-title">
+    <div class="sns-concierge-backdrop" tabindex="-1"></div>
+    <div class="sns-concierge-panel">
+      
+      {# Header #}
+      <header class="sns-concierge-header">
+        <div>
+          <span class="sns-concierge-badge">AI Concierge</span>
+          <h1 class="sns-concierge-title" id="sns-modal-title">Island Concierge</h1>
+          <p class="sns-concierge-subtitle">Your Zanzibar travel consultant — real rates, real humans</p>
+        </div>
+        <button class="sns-concierge-close-btn" id="sns-close" aria-label="Close concierge" type="button">&times;</button>
+      </header>
+
+      {# Chat messages area #}
+      <div class="sns-chat-panel">
+        <div class="sns-chat-messages" id="sns-messages" role="log" aria-live="polite" aria-label="Conversation"></div>
+
+        {# Quick replies #}
+        <div class="sns-chat-quick" id="sns-quick-replies" aria-label="Quick replies"></div>
+
+        {# Service selection grid (Step 1) #}
+        <div class="sns-service-grid" id="sns-service-grid" hidden aria-label="Select an experience">
+          {# Populated by JS from catalogue #}
+        </div>
+
+        {# Form steps (Step 2-3) #}
+        <form class="sns-concierge-form" id="sns-form" hidden novalidate>
+          {# Step 2: Details #}
+          <fieldset class="sns-form-step active" id="sns-step-2" aria-labelledby="step2-title">
+            <legend id="step2-title" class="visually-hidden">Trip Details</legend>
+            
+            <div class="sns-field-group">
+              <label class="sns-field-label" for="sns-date">Travel Date</label>
+              <input type="date" class="sns-input-date" id="sns-date" name="date" required min="">
+            </div>
+
+            <div class="sns-field-group">
+              <label class="sns-field-label" for="sns-pickup">Pickup Location / Hotel Zone</label>
+              <select class="sns-input-select" id="sns-pickup" name="pickupZone">
+                <option value="">Select your area or hotel…</option>
+                <option value="stone-town">🏛️ Stone Town</option>
+                <option value="nungwi">🏖️ Nungwi</option>
+                <option value="kendwa">🏖️ Kendwa</option>
+                <option value="paje">🌊 Paje</option>
+                <option value="jambiani">🌊 Jambiani</option>
+                <option value="kiwengwa">🌴 Kiwengwa</option>
+                <option value="matemwe">🌴 Matemwe</option>
+                <option value="pongwe">🌊 Pongwe / Michamvi</option>
+                <option value="bwejuu">🌊 Bwejuu / Dongwe</option>
+                <option value="michamvi">🌊 Michamvi / Pingwe</option>
+                <option value="kizimkazi">🐬 Kizimkazi / Dimbani</option>
+                <option value="fumba">🌅 Fumba / Mbweni</option>
+                <option value="chake-chake">🌿 Chake Chake (Pemba)</option>
+                <option value="wambaa-gulf">🌿 Wambaa Gulf (Pemba)</option>
+                <option value="other">📍 Other / Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="sns-input-row">
+              <div class="sns-field-group">
+                <label class="sns-field-label" for="sns-adults">Adults</label>
+                <input type="number" class="sns-input-number" id="sns-adults" name="adults" min="1" max="20" value="2" required>
+              </div>
+              <div class="sns-field-group">
+                <label class="sns-field-label" for="sns-children">Children (6–14)</label>
+                <input type="number" class="sns-input-number" id="sns-children" name="children" min="0" max="10" value="0">
+              </div>
+            </div>
+
+            <div class="sns-field-group">
+              <label class="sns-field-label" for="sns-driver-lang">Driver / Guide Language</label>
+              <select class="sns-input-select" id="sns-driver-lang" name="driverLang">
+                <option value="en" selected>English & Swahili (included)</option>
+                <option value="it">🇮🇹 Italian (advance request, extra cost)</option>
+                <option value="de">🇩🇪 German (advance request, extra cost)</option>
+                <option value="fr">🇫🇷 French (advance request, extra cost)</option>
+                <option value="pl">🇵🇱 Polish (advance request, extra cost)</option>
+              </select>
+            </div>
+
+            <div class="sns-field-group">
+              <label class="sns-field-label" for="sns-special">Special Requests (optional)</label>
+              <textarea class="sns-input-text" id="sns-special" name="special" rows="3" placeholder="Dietary needs, accessibility, celebration details…"></textarea>
+            </div>
+
+            <p class="sns-privacy-note">
+              We only use what you share to answer and handle your request. 
+              <a href="/privacy/" target="_blank" rel="noopener">Privacy notice</a>.
+            </p>
+
+            <div class="sns-step-actions">
+              <button type="button" class="sns-btn-back" onclick="window.snsConciergeV2.goToStep(1)">← Change Experience</button>
+              <button type="button" class="sns-btn-next" id="sns-btn-get-quote" onclick="window.snsConciergeV2.getQuote()">Get My Quote →</button>
+            </div>
+          </fieldset>
+
+          {# Step 3: Contact & Quote #}
+          <fieldset class="sns-form-step" id="sns-step-3" aria-labelledby="step3-title">
+            <legend id="step3-title" class="visually-hidden">Contact & Confirmation</legend>
+            
+            <div class="sns-quote-preview" id="sns-quote-preview" hidden>
+              <div class="sns-quote-header">
+                <span class="sns-quote-title">Planning Range</span>
+                <span class="sns-quote-amount" id="sns-quote-amount">–</span>
+              </div>
+              <p class="sns-quote-summary" id="sns-quote-summary"></p>
+              <ul class="sns-quote-perks" id="sns-quote-perks"></ul>
+              <p class="sns-quote-note" id="sns-quote-note" hidden></p>
+            </div>
+
+            <div class="sns-field-group">
+              <label class="sns-field-label" for="sns-name">Your Name</label>
+              <input type="text" class="sns-input-text" id="sns-name" name="name" required autocomplete="name" placeholder="John Doe">
+            </div>
+
+            <div class="sns-input-row">
+              <div class="sns-field-group">
+                <label class="sns-field-label" for="sns-email">Email</label>
+                <input type="email" class="sns-input-text" id="sns-email" name="email" autocomplete="email" placeholder="john@example.com">
+              </div>
+              <div class="sns-field-group">
+                <label class="sns-field-label" for="sns-whatsapp">WhatsApp</label>
+                <input type="tel" class="sns-input-text" id="sns-whatsapp" name="whatsapp" placeholder="+255 7xx xxx xxx" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="sns-field-group">
+              <label class="sns-field-label">
+                <input type="checkbox" id="sns-consent" name="consent" value="1" required>
+                <span>Contact me about this request (required to generate booking reference)</span>
+              </label>
+            </div>
+
+            <p class="sns-privacy-note">
+              We only use what you share to answer and handle your request. 
+              <a href="/privacy/" target="_blank" rel="noopener">Privacy notice</a>.
+            </p>
+
+            <div class="sns-step-actions">
+              <button type="button" class="sns-btn-back" onclick="window.snsConciergeV2.goToStep(2)">← Back</button>
+              <button type="button" class="sns-btn-payment" id="sns-btn-payment" onclick="window.snsConciergeV2.openPaymentOptions()">
+                <span>💳 Choose Payment Method</span>
+              </button>
+              <button type="button" class="sns-btn-whatsapp-direct" id="sns-btn-whatsapp-direct" onclick="window.snsConciergeV2.openDirectWhatsApp()">
+                <span>💬 Book via WhatsApp</span>
+              </button>
+              <button type="submit" class="sns-btn-submit">Send Request</button>
+            </div>
+
+            <div class="sns-submit-status" id="sns-status" hidden></div>
+          </fieldset>
+        </form>
+
+        {# Hotel booking flow (Step 4) #}
+        <fieldset class="sns-form-step" id="sns-step-hotel" hidden aria-labelledby="step-hotel-title">
+          <legend id="step-hotel-title" class="visually-hidden">Hotel Booking</legend>
+          <div class="sns-service-grid" id="sns-hotel-grid" aria-label="Select a hotel"></div>
+          <div class="sns-step-actions">
+            <button type="button" class="sns-btn-back" onclick="window.snsConciergeV2.goToStep(3)">← Back</button>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# Payment Options Modal #}
+<div class="sns-payment-modal" id="sns-payment-modal" hidden role="dialog" aria-modal="true" aria-labelledby="payment-modal-title">
+  <div class="sns-payment-backdrop" tabindex="-1"></div>
+  <div class="sns-payment-panel">
+    <header class="sns-payment-header">
+      <h3 id="payment-modal-title">Secure Payment Options</h3>
+      <button class="sns-payment-close" onclick="document.getElementById('sns-payment-modal').hidden=true" aria-label="Close">&times;</button>
+    </header>
+    <div class="sns-payment-body">
+      <p class="sns-payment-deposit" id="sns-payment-deposit"></p>
+      <p class="sns-payment-total" id="sns-payment-total"></p>
+      <p class="sns-payment-service" id="sns-payment-service"></p>
+      <div class="sns-payment-options" id="sns-payment-options"></div>
+      <p class="sns-payment-note">You will be redirected to the provider's secure payment page. All payments are in USD. Mobile money payments are converted at current rates.</p>
+      <p class="sns-payment-whatsapp-fallback">
+        Prefer WhatsApp? 
+        <a id="sns-payment-wa-link" href="#" target="_blank" rel="noopener">💬 Message our team on WhatsApp</a> 
+        for a direct payment link.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+</style>
