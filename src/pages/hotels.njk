@@ -375,13 +375,17 @@ permalink: "/hotels/index.html"
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 2.5rem;">
         <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Published Rack Sheet, Priced For You</span>
-        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Season-by-Season Rates, {{ seasonalHotels[0].name }}</h2>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Season-by-Season Rates, Priced For You</h2>
         <p style="color: #4e5d66; max-width: 760px; margin: 0.5rem auto 0; font-size: 0.98rem;">
-          The hotel's own published rack rate and the rate you get through us, side by side — Half Board or All Inclusive, per room per night for two people. No OTA markup, no surge surprises.
+          Each partner hotel's own published rack rate and the rate you get through us, side by side — per room per night. No OTA markup, no surge surprises.
         </p>
       </div>
       {% for hotel in seasonalHotels %}
       {% set rates = hotelRates.bySlug[hotel.slug] %}
+      <div style="margin-bottom: 2.5rem;">
+      <h3 style="margin: 0 0 0.25rem; font-size: 1.3rem; color: #003853;">{{ hotel.name }}</h3>
+      <p style="margin: 0 0 1rem; font-size: 0.88rem; color: #4e5d66;">{{ rates.basis }}</p>
+      {% if rates.seasons[0].rooms %}
       <div style="overflow-x: auto; background: #fff; border-radius: 12px; border: 1px solid #e2e8ed; box-shadow: 0 4px 15px rgba(12,26,36,0.06);">
         <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 760px;">
           <thead>
@@ -417,6 +421,43 @@ permalink: "/hotels/index.html"
         <li>✓ Single occupancy: −$15 Half Board · −$35 All Inclusive</li>
         <li>✓ All taxes and fees included — Zanzibar infrastructure tax is not added on top</li>
       </ul>
+      {% else %}
+      {% set disc = (rates.discount * 100) | round %}
+      <div style="overflow-x: auto; background: #fff; border-radius: 12px; border: 1px solid #e2e8ed; box-shadow: 0 4px 15px rgba(12,26,36,0.06);">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 760px;">
+          <thead>
+            <tr style="background: #003853; color: #fff;">
+              <th style="padding: 0.9rem 1rem; text-align: left;">Season</th>
+              {% for room in rates.rooms %}
+              <th style="padding: 0.9rem 1rem; text-align: left;">{{ room.roomType }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for season in rates.seasons %}
+            <tr style="border-top: 1px solid #eef2f5; {% if season.id == rates.currentSeasonId %}background: #fffbeb;{% endif %}">
+              <td style="padding: 0.9rem 1rem;">
+                <div style="font-weight: 700; color: #003853;">{{ season.label }}{% if season.id == rates.currentSeasonId %} <span style="font-size: 0.7rem; background: #F59E0B; color: #fff; padding: 0.1rem 0.45rem; border-radius: 4px; vertical-align: middle;">CURRENT</span>{% endif %}</div>
+                <div style="font-size: 0.78rem; color: #64748b;">{{ season.dates }}</div>
+              </td>
+              {% for room in rates.rooms %}
+              {% if season[room.roomType] is defined %}
+              <td style="padding: 0.9rem 1rem;">
+                <div style="font-weight: 700; color: #0C1A24;">${{ (season[room.roomType] * (1 - rates.discount)) | round }} <span style="font-size: 0.75rem; font-weight: 500; color: #64748b;">our rate</span></div>
+                <div style="font-size: 0.75rem; color: #94a3b8; text-decoration: line-through;">rack ${{ season[room.roomType] }}</div>
+              </td>
+              {% else %}
+              <td style="padding: 0.9rem 1rem;">—</td>
+              {% endif %}
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 0.8rem; color: #64748b; margin: 0.75rem 0 0;">Our rate is {{ disc }}% below the hotel's published rack rate. Breakfast included.</p>
+      {% endif %}
+      </div>
       {% endfor %}
     </div>
   </section>

@@ -14,7 +14,7 @@
 
   <section class="hotel-rates" aria-labelledby="rates-heading">
     <h2 id="rates-heading" class="section-title">Room Rates ({% if hotel.slug == 'the-one-resort-zanzibar' %}per room for 2 adults, per night (Half Board / All Inclusive){% else %}per room, per night{% endif %})</h2>
-    <p class="rate-basis">Rates shown are <strong>{% if hotel.slug == 'the-one-resort-zanzibar' %}per room for 2 adults, per night (Half Board / All Inclusive){% else %}per room, per night{% endif %}</strong> in USD. City/infrastructure tax of <strong>${{ tax }} per person, per night</strong> is added at quote time.</p>
+    <p class="rate-basis">Rates shown are <strong>{% if hotel.slug == 'the-one-resort-zanzibar' %}per room for 2 adults, per night (Half Board / All Inclusive){% else %}per room, per night{% endif %}</strong> in USD{% if hotel.seasons and not hotel.seasons[0].rooms and hotel.discountPct %}; our rate is <strong>{{ hotel.discountPct }}% below</strong> the hotel's published rack rate{% endif %}. City/infrastructure tax of <strong>${{ tax }} per person, per night</strong> is added at quote time.</p>
 
     {% if hotel.seasons %}
       <div class="rate-seasons">
@@ -56,21 +56,25 @@
                 <p class="season-note"><strong>Minimum stay:</strong> {{ season.minStayNights }} nights</p>
               {% endif %}
             {% else %}
+              {% set disc = hotel.discountPct | default(20) %}
               <div class="table-wrapper">
                 <table class="rate-table">
                   <thead>
                     <tr>
                       <th>Room Type</th>
-                      <th>Rate (per room/night)</th>
+                      <th>Published rack rate</th>
+                      <th>Your rate ({{ disc }}% below)</th>
                       <th>Max Occupancy</th>
                     </tr>
                   </thead>
                   <tbody>
                     {% for room in hotel.rooms %}
                       {% if season[room.type] is defined %}
+                        {% set rack = season[room.type] %}
                         <tr>
                           <td>{{ room.type }}</td>
-                          <td>${{ season[room.type] }}</td>
+                          <td style="color:#94a3b8;text-decoration:line-through;">${{ rack }}</td>
+                          <td><strong>${{ (rack * (100 - disc) / 100) | round }}</strong></td>
                           <td>{{ room.maxOccupancy }}</td>
                         </tr>
                       {% endif %}

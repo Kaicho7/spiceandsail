@@ -115,55 +115,6 @@ module.exports = function(eleventyConfig) {
     return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle");
   });
 
-  eleventyConfig.addFilter("catServiceName", (slug) => {
-    const svc = catService(slug);
-    return svc ? svc.name : "";
-  });
-
-  // Structured per-person rate breakdown parsed from the catalogue's
-  // tieredDisplay string, so every card/page shows what the customer pays.
-  eleventyConfig.addFilter("catRateBreakdown", (slug) => {
-    const svc = catService(slug);
-    if (!svc || !svc.pricing) {
-      return { hasRate: false, rows: [], notes: [], depositNote: "", viatorAnchor: null, basisLabel: "per person", display: "" };
-    }
-    const p = svc.pricing;
-    const rows = [];
-    const notes = [];
-    if (p.tieredDisplay) {
-      for (const raw of String(p.tieredDisplay).split("•")) {
-        const text = raw.trim();
-        if (!text) continue;
-        if (text.indexOf("$") === -1) {
-          const clean = text.replace(/^includes?\s+/i, "").trim();
-          if (clean) {
-            const sentence = clean.charAt(0).toUpperCase() + clean.slice(1);
-            notes.push(/[.!]$/.test(sentence) ? sentence : sentence + ".");
-          }
-          continue;
-        }
-        const idx = text.indexOf(":");
-        if (idx === -1) rows.push({ option: null, rate: text });
-        else rows.push({ option: text.slice(0, idx).trim(), rate: text.slice(idx + 1).trim() });
-      }
-    }
-    const basisLabel = p.basis === "per_vehicle" ? "per vehicle" : "per person";
-    let depositNote = "0% deposit — pay on arrival.";
-    if (p.depositPercent > 0) {
-      const amount = p.depositAmount != null ? ` ($${p.depositAmount})` : "";
-      depositNote = `${p.depositPercent}% deposit${amount} secures your booking — balance paid on the day.`;
-    }
-    return {
-      hasRate: true,
-      rows,
-      notes,
-      depositNote,
-      viatorAnchor: p.viatorAnchor || null,
-      basisLabel,
-      display: p.display || "",
-    };
-  });
-
   // Premium pricing display filters for hybrid+premium UX
   eleventyConfig.addFilter("catViatorAnchor", (slug) => {
     const svc = catService(slug);

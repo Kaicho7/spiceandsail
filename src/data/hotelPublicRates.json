@@ -417,6 +417,7 @@
       "taxPerPersonPerNight": 5,
       "photo": "hotels/le-paradis-boutique-hotel-zanzibar-bar.jpg",
       "ratesStatus": "confirmed",
+      "discountPct": 20,
       "rooms": [
         {
           "type": "Standard Garden View",
