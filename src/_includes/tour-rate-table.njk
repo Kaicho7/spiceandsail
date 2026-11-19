@@ -1,0 +1,52 @@
+{% set svcName = tour_slug | catServiceName %}
+{% set rb = tour_slug | catRateBreakdown %}
+{% if svcName %}
+<div class="pricing-table rate-breakdown">
+  <h4>
+    {{ svcName }} —
+    {% if rb.basisLabel == 'per vehicle' %}Per-Vehicle Rates{% else %}Per-Person Rates{% endif %}
+  </h4>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          {% if rb.rows | length %}
+          <th>Group size / option</th>
+          <th>What you pay</th>
+          {% else %}
+          <th>Price</th>
+          <th>What you pay</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rb.rows %}
+        <tr>
+          {% if row.option %}
+          <td>{{ row.option }}</td>
+          <td>{{ row.rate }}</td>
+          {% else %}
+          <td colspan="2">{{ row.rate }}</td>
+          {% endif %}
+        </tr>
+        {% else %}
+        <tr>
+          <td>Published rate range</td>
+          <td>{{ rb.display }} {{ rb.basisLabel }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="table-note">
+      {% if rb.rows | length %}
+      Rates are {{ rb.basisLabel }}, all-inclusive of everything listed under <strong>Inclusions</strong> unless a row says otherwise.
+      {% else %}
+      The range reflects different group sizes, pickup zones and seasons. Your exact, fixed price is confirmed in writing on WhatsApp before any payment — no hidden extras.
+      {% endif %}
+      {{ rb.depositNote }}
+      {% if rb.viatorAnchor %}<br><span class="rate-anchor">Typical OTA price (Viator): ~${{ rb.viatorAnchor }} — booking direct costs less.</span>{% endif %}
+      {% for note in rb.notes %}<br>{{ note }}{% endfor %}
+    </p>
+  </div>
+</div>
+{% endif %}

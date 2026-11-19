@@ -1,0 +1,23 @@
+{% set rb = rb_slug | catRateBreakdown %}
+<details class="rate-compact">
+  <summary>{% if rb.rows | length %}See {{ rb.basisLabel }} rates{% else %}How pricing works{% endif %}</summary>
+  {% if not rb.hasRate %}
+  <p>Entry/park fees and guide are set on site. We confirm the exact total — including any transfer — in writing before you commit or pay anything.</p>
+  {% elif rb.rows | length %}
+  <ul>
+    {% for row in rb.rows %}
+    <li>
+      {% if row.option %}<span>{{ row.option }}</span> <strong>{{ row.rate }}</strong>{% else %}{{ row.rate }}{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="rate-compact__note">
+    {{ rb.depositNote }}
+    {% if rb.viatorAnchor %}Typical OTA price ~${{ rb.viatorAnchor }}; booking direct costs less.{% endif %}
+    {% for note in rb.notes %}{{ note }}{% if not loop.last %} {% endif %}{% endfor %}
+    Your exact, fixed price is confirmed in writing on WhatsApp before any payment.
+  </p>
+  {% else %}
+  <p>{{ rb.display | trim }} {{ rb.basisLabel }} — the exact rate depends on group size, pickup zone and season. Your fixed price is confirmed in writing on WhatsApp before any payment.</p>
+  {% endif %}
+</details>

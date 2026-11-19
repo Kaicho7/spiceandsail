@@ -23,6 +23,8 @@ tour_slug: "jozani-forest"
         <span class="price-amount">{% catPrice "jozani-forest" %}</span>
         <span class="price-note">per person</span>
       </div>
+
+      {% include "tour-rate-table.njk" %}
       <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check price &amp; book</button>
     </div>
   </section>

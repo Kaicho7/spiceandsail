@@ -26,35 +26,7 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
         <span class="price-note">per person</span>
       </div>
 
-      <!-- Safari Blue Pricing Table -->
-      <div class="pricing-table">
-        <h4>Safari Blue Dhow Day — Per-Person Rates</h4>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Group size</th>
-                <th>Per-person rate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1 guest</td>
-                <td>$150 pp (all-in)</td>
-              </tr>
-              <tr>
-                <td>2 guests</td>
-                <td>$95 pp (all-in)</td>
-              </tr>
-              <tr>
-                <td>3–6 guests</td>
-                <td>$85 pp (all-in)</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="table-note">All rates include boat, guide, lunch and the $10 marine conservation fee. Beach-hotel pickup is confirmed by our team at booking; no hidden fee.</p>
-        </div>
-      </div>
+      {% include "tour-rate-table.njk" %}
 
       <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check price & book</button>
     </div>
