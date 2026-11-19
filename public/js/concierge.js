@@ -351,11 +351,13 @@
   function calculateRange() {
     var amountEl = el('sns-quote-amount');
     var summaryEl = el('sns-quote-summary');
+    var stripeBtn = el('sns-btn-stripe');
     if (!summaryEl) return null;
 
     if (!state.selectedSlugs.length) {
       if (amountEl) amountEl.textContent = '';
       summaryEl.textContent = 'Select a tour, transfer or hotel above to see the published rate.';
+      if (stripeBtn) stripeBtn.hidden = true;
       return null;
     }
     var travellers = getTravelersCount();
@@ -387,12 +389,27 @@
         summaryEl.textContent = bits.join(' ') || 'Planning range — our team confirms the final price, dates and pickup window.';
         // stash for the WhatsApp fallback message / staff-side reuse
         state.lastQuoteDisplay = res.json.totalDisplay;
+        state.lastQuoteData = res.json;
+        
+        // Show Stripe button if deposit > 0
+        if (stripeBtn && res.json.totalLow != null && res.json.depositPercent > 0) {
+          stripeBtn.hidden = false;
+          stripeBtn.querySelector('span').textContent = '💳 Pay ' + res.json.depositPercent + '% Deposit (' + (Math.round(res.json.totalLow * res.json.depositPercent / 100)) + ' USD)';
+        } else if (stripeBtn && res.json.totalLow != null && res.json.depositPercent === 0) {
+          // For zero-deposit services, show card verification button
+          stripeBtn.hidden = false;
+          stripeBtn.querySelector('span').textContent = '💳 Verify Card for Zero-Deposit Booking';
+        } else if (stripeBtn) {
+          stripeBtn.hidden = true;
+        }
+        
         return res.json;
       }
       throw new Error('bad quote response');
     }).catch(function () {
       if (amountEl) amountEl.textContent = '';
       summaryEl.textContent = 'The planning range is unavailable right now — no price is shown rather than a guess. Our team will confirm the price.';
+      if (stripeBtn) stripeBtn.hidden = true;
       return null;
     });
   }
@@ -1063,6 +1080,173 @@
     dispatchWA(state.lastReference || null);
   }
 
+  function openPaymentOptions() {
+    if (!state.selectedSlugs.length) {
+      showStatus('error', 'Please select a service first.');
+      return;
+    }
+    
+    var btn = el('sns-btn-payment');
+    var origText = btn ? btn.textContent : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = 'Loading payment options…';
+    }
+    showStatus('', 'Loading secure payment options…');
+
+    var travellers = getTravelersCount();
+    var dateVal = getDateValue();
+    var guestName = (el('sns-guest-name') ? el('sns-guest-name').value : '').trim();
+    var guestEmail = (el('sns-guest-email') ? el('sns-guest-email').value : '').trim();
+    var guestWhatsapp = (el('sns-guest-whatsapp') ? el('sns-guest-whatsapp').value : '').trim();
+    var locationVal = (el('sns-location') ? el('sns-location').value : '').trim();
+
+    fetchJSON('/.netlify/functions/payment-link', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        serviceSlug: state.selectedSlug,
+        adults: travellers,
+        children: 0,
+        date: dateVal,
+        pickupZone: locationVal || null,
+        email: guestEmail || null,
+      })
+    }, 15000).then(function (res) {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = origText;
+      }
+      if (res.ok && res.json && res.json.paymentLinks) {
+        var links = res.json.paymentLinks;
+        state.lastPaymentRef = res.json.bookingRef;
+        state.lastPaymentLinks = links;
+        
+        // Save lead first to get reference
+        var payload = buildLeadPayload();
+        payload.notes = (payload.notes ? payload.notes + '. ' : '') + 'Payment initiated. Deposit: ' + (res.json.depositPercent || 0) + '%. Provider options: ' + links.map(function(l) { return l.name; }).join(', ') + '.';
+        
+        fetchJSON('/.netlify/functions/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }, 10000).then(function (leadRes) {
+          var ref = leadRes.ok && leadRes.json && typeof leadRes.json.reference === 'string' && /^SP-\d{4}-\d+$/.test(leadRes.json.reference)
+            ? leadRes.json.reference : null;
+          if (ref) {
+            state.lastReference = ref;
+            showStatus('success', 'Booking reference: ' + ref + '. Choose a payment method below:');
+          } else {
+            showStatus('success', 'Choose a payment method below:');
+          }
+          
+          // Show payment options modal
+          showPaymentModal(links, res.json);
+        }).catch(function () {
+          // Even if lead save fails, show payment options
+          showPaymentModal(links, res.json);
+        });
+      } else {
+        var detail = (res.json && res.json.error) ? res.json.error : 'Payment system unavailable';
+        var whatsappUrl = res.json && res.json.whatsapp_url ? res.json.whatsapp_url : null;
+        if (whatsappUrl) {
+          showStatus('error', detail, 'Message us on WhatsApp instead');
+          var s = getStatusEl();
+          if (s) {
+            var waLink = document.createElement('a');
+            waLink.href = whatsappUrl;
+            waLink.target = '_blank';
+            waLink.rel = 'noopener';
+            waLink.textContent = '💬 Message us on WhatsApp';
+            waLink.style.display = 'inline-block';
+            waLink.style.marginTop = '0.5rem';
+            waLink.style.color = '#25D366';
+            waLink.style.fontWeight = '600';
+            s.appendChild(document.createElement('br'));
+            s.appendChild(waLink);
+          }
+        } else {
+          showStatus('error', detail);
+        }
+      }
+    }).catch(function () {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = origText;
+      }
+      showStatus('error', 'Could not connect to payment system. Please try again or contact us via WhatsApp.');
+    });
+  }
+
+  function showPaymentModal(links, paymentData) {
+    // Remove existing modal if any
+    var existing = document.getElementById('sns-payment-modal');
+    if (existing) existing.remove();
+    
+    var modal = document.createElement('div');
+    modal.id = 'sns-payment-modal';
+    modal.className = 'sns-payment-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'payment-modal-title');
+    
+    var depositText = paymentData.depositPercent > 0 
+      ? 'Pay ' + paymentData.depositPercent + '% deposit (' + paymentData.depositAmount + ' USD) to confirm'
+      : 'Zero deposit required — pay driver on arrival';
+    
+    var linksHtml = links.map(function(link) {
+      var isManual = link.manual || false;
+      var primaryClass = link.primary ? ' primary' : '';
+      var supportsText = link.supports ? link.supports.join(', ') : '';
+      return '<button type="button" class="sns-payment-option' + primaryClass + '" data-url="' + (link.url || '') + '" data-manual="' + isManual + '" data-provider="' + link.provider + '">' +
+        '<span class="sns-payment-icon">' + (link.icon || '💳') + '</span>' +
+        '<div class="sns-payment-info">' +
+          '<strong class="sns-payment-name">' + link.name + '</strong>' +
+          '<span class="sns-payment-desc">' + link.description + '</span>' +
+          '<span class="sns-payment-supports">Supports: ' + supportsText + '</span>' +
+        '</div>' +
+        '<span class="sns-payment-arrow">→</span>' +
+      '</button>';
+    }).join('');
+    
+    modal.innerHTML = 
+      '<div class="sns-payment-backdrop" onclick="document.getElementById(\'sns-payment-modal\').remove()"></div>' +
+      '<div class="sns-payment-panel" role="document">' +
+        '<div class="sns-payment-header">' +
+          '<h3 id="payment-modal-title">Secure Payment Options</h3>' +
+          '<button class="sns-payment-close" onclick="document.getElementById(\'sns-payment-modal\').remove()" aria-label="Close">×</button>' +
+        '</div>' +
+        '<div class="sns-payment-body">' +
+          '<p class="sns-payment-deposit">' + depositText + '</p>' +
+          '<p class="sns-payment-total">Total: ' + paymentData.totalAmount + ' USD</p>' +
+          '<p class="sns-payment-service">' + paymentData.serviceName + '</p>' +
+          '<div class="sns-payment-options">' + linksHtml + '</div>' +
+          '<p class="sns-payment-note">You will be redirected to the provider\'s secure payment page. All payments are in USD. Mobile money payments are converted at current rates.</p>' +
+          '<p class="sns-payment-whatsapp-fallback">Prefer WhatsApp? <a href="https://wa.me/255672450934?text=' + encodeURIComponent('Jambo Spice & Sail! Please send me the payment link for my ' + paymentData.serviceName + ' booking (Ref: ' + paymentData.bookingRef + ').') + '" target="_blank" rel="noopener">💬 Message our team on WhatsApp</a> for a direct payment link.</p>' +
+        '</div>' +
+      '</div>';
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // Add click handlers
+    modal.querySelectorAll('.sns-payment-option').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var url = btn.getAttribute('data-url');
+        var isManual = btn.getAttribute('data-manual') === 'true';
+        var provider = btn.getAttribute('data-provider');
+        
+        if (isManual || provider === 'whatsapp') {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        } else {
+          window.location.href = url;
+        }
+        modal.remove();
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   /* Export to global scope */
   window.snsConcierge = {
     open: openConcierge,
@@ -1071,6 +1255,7 @@
     goToStep: goToStep,
     openChat: openChat,
     openDirectWhatsApp: openDirectWhatsApp,
+    openPaymentOptions: openPaymentOptions,
     dismissCallout: dismissCallout,
     submitHandler: submitHandler,
     _bubbleNodes: bubbleNodes

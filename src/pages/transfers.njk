@@ -55,6 +55,111 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 
   <!-- INSTANT TRANSFER CALCULATOR -->
   <section id="transfer-calculator" class="section" style="padding: 3.5rem 1rem; background: #fff;">
+    
+    <!-- Service Schema for each transfer route -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "serviceType": "Airport Transfer",
+          "name": "ZNZ Airport to Stone Town Transfer",
+          "provider": { "@id": "{{ SITE_URL | safe }}/#organization" },
+          "areaServed": ["Zanzibar", "Stone Town"],
+          "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "{{ SITE_URL | safe }}/transfers/", "servicePhone": "{{ site.contact.phone_display }}", "serviceMobileApp": "https://wa.me/{{ site.contact.whatsapp }}" },
+          "offers": { "@type": "Offer", "price": "18", "priceCurrency": "USD", "description": "Sedan 1-3 passengers" }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Airport Transfer",
+          "name": "ZNZ Airport to Nungwi/Kendwa Transfer",
+          "provider": { "@id": "{{ SITE_URL | safe }}/#organization" },
+          "areaServed": ["Zanzibar", "Nungwi", "Kendwa"],
+          "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "{{ SITE_URL | safe }}/transfers/", "servicePhone": "{{ site.contact.phone_display }}", "serviceMobileApp": "https://wa.me/{{ site.contact.whatsapp }}" },
+          "offers": { "@type": "Offer", "price": "45", "priceCurrency": "USD", "description": "Sedan 1-3 passengers" }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Airport Transfer",
+          "name": "ZNZ Airport to Paje/Jambiani Transfer",
+          "provider": { "@id": "{{ SITE_URL | safe }}/#organization" },
+          "areaServed": ["Zanzibar", "Paje", "Jambiani"],
+          "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "{{ SITE_URL | safe }}/transfers/", "servicePhone": "{{ site.contact.phone_display }}", "serviceMobileApp": "https://wa.me/{{ site.contact.whatsapp }}" },
+          "offers": { "@type": "Offer", "price": "45", "priceCurrency": "USD", "description": "Sedan 1-3 passengers" }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Airport Transfer",
+          "name": "ZNZ Airport to Matemwe/Kiwengwa Transfer",
+          "provider": { "@id": "{{ SITE_URL | safe }}/#organization" },
+          "areaServed": ["Zanzibar", "Matemwe", "Kiwengwa", "Pongwe"],
+          "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "{{ SITE_URL | safe }}/transfers/", "servicePhone": "{{ site.contact.phone_display }}", "serviceMobileApp": "https://wa.me/{{ site.contact.whatsapp }}" },
+          "offers": { "@type": "Offer", "price": "40", "priceCurrency": "USD", "description": "Sedan 1-3 passengers" }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Airport Transfer",
+          "name": "ZNZ Airport to Kizimkazi/Michamvi Transfer",
+          "provider": { "@id": "{{ SITE_URL | safe }}/#organization" },
+          "areaServed": ["Zanzibar", "Kizimkazi", "Michamvi"],
+          "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "{{ SITE_URL | safe }}/transfers/", "servicePhone": "{{ site.contact.phone_display }}", "serviceMobileApp": "https://wa.me/{{ site.contact.whatsapp }}" },
+          "offers": { "@type": "Offer", "price": "50", "priceCurrency": "USD", "description": "Sedan 1-3 passengers" }
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema for Transfer Calculator -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a Zanzibar airport transfer cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Private airport transfers from ZNZ Airport start at $18 for Stone Town (sedan 1-3 guests), $40-45 for east/north coast (Matemwe, Kiwengwa, Paje, Jambiani), and $45-50 for Nungwi/Kendwa. All prices are per private vehicle, not per person. Vans for 4-6 guests are $35-50." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a deposit required for airport transfers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Spice & Sail offers zero advance deposit on all airport transfers. You reserve your private minivan with flight tracking and 60 minutes free waiting time, then pay your driver directly upon hotel arrival in USD, EUR, or TZS (cash or card)." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the transfer price?",
+          "acceptedAnswer": { "@type": "Answer", "text": "All transfers include: meet & greet in arrivals hall with nameboard, live flight delay tracking, 60 minutes complimentary waiting time, chilled bottled mineral water, air-conditioned private vehicle (sedan or van), fuel, and driver. No night surcharge." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does the transfer take from ZNZ Airport?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Stone Town: 10-20 minutes. Matemwe/Kiwengwa/Pongwe: 50-70 minutes. Paje/Jambiani: 55-70 minutes. Nungwi/Kendwa: 60-75 minutes. Kizimkazi/Michamvi: 70-100 minutes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I book a transfer for a large group?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide Toyota HiAce commuter vans (up to 10 guests) and Toyota Coaster mini-coaches (up to 25 guests) for large groups, weddings, and corporate events. Enter your exact group size in the calculator for an automatic vehicle recommendation." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my flight is delayed?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We track your flight in real-time and provide 60 minutes complimentary waiting time. Your driver will be there when you land, no matter the delay. No extra charges for flight delays within the waiting window." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer multilingual drivers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Standard drivers speak English and Swahili. Dedicated Italian, German, French, or Polish-speaking Zanzibari drivers and guides are available upon advance request for an additional fee." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book a transfer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Use the fare calculator above to see the published rate, then click 'Check price & availability' to open WhatsApp with your details pre-filled. Our team confirms availability and the final quote within business hours (Mon-Sat, 09:00-17:00 EAT). Zero deposit required." }
+        }
+      ]
+    }
+    </script>
+    
     <div class="container" style="max-width: 950px; margin: 0 auto;">
       <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
         <span class="section-tag" style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Interactive Fare Engine</span>

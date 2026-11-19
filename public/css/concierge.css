@@ -765,8 +765,217 @@
   .sns-chat-open-btn,
   .sns-chat-quick-btn,
   .sns-concierge-close-btn,
-  .sns-callout-close {
+  .sns-callout-close,
+  .sns-payment-modal,
+  .sns-payment-panel,
+  .sns-payment-option {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ==========================================================================
+   Payment Options Modal
+   ========================================================================== */
+.sns-payment-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-base);
+}
+.sns-payment-modal:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sns-payment-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 27, 18, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.sns-payment-panel {
+  position: relative;
+  background: var(--card);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  animation: snsSlideUp var(--motion-base) cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sns-payment-header {
+  padding: var(--space-4) var(--space-6);
+  background: linear-gradient(135deg, var(--ocean), var(--ocean-hover));
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: var(--border-radius-xl);
+  border-top-right-radius: var(--border-radius-xl);
+  border-bottom: 2px solid var(--gold);
+}
+.sns-payment-header h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin: 0;
+}
+.sns-payment-close {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--motion-fast), transform var(--motion-fast);
+}
+.sns-payment-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+.sns-payment-body {
+  padding: var(--space-5) var(--space-6);
+}
+.sns-payment-deposit {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--palm);
+  margin: 0 0 var(--space-2);
+  text-align: center;
+}
+.sns-payment-total {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--wood);
+  margin: 0 0 var(--space-1);
+  text-align: center;
+}
+.sns-payment-service {
+  font-size: var(--text-sm);
+  color: var(--muted);
+  margin: 0 0 var(--space-4);
+  text-align: center;
+}
+.sns-payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.sns-payment-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--border);
+  border-radius: var(--border-radius);
+  background: var(--card);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all var(--motion-fast);
+}
+.sns-payment-option:hover {
+  border-color: var(--gold);
+  background: var(--stone);
+  transform: translateX(2px);
+}
+.sns-payment-option.primary {
+  border-color: var(--palm);
+  background: var(--palm-soft);
+  box-shadow: 0 0 0 2px var(--palm);
+}
+.sns-payment-option.primary:hover {
+  border-color: var(--palm-hover);
+  background: var(--palm-soft);
+}
+.sns-payment-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--stone);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border);
+}
+.sns-payment-option.primary .sns-payment-icon {
+  background: var(--palm-soft);
+  border-color: var(--palm);
+}
+.sns-payment-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.sns-payment-name {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--wood);
+}
+.sns-payment-desc {
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+.sns-payment-supports {
+  font-size: var(--text-xs);
+  color: var(--ocean);
+  font-weight: 500;
+}
+.sns-payment-arrow {
+  font-size: var(--text-lg);
+  color: var(--muted);
+  transition: transform var(--motion-fast);
+}
+.sns-payment-option:hover .sns-payment-arrow {
+  transform: translateX(4px);
+  color: var(--palm);
+}
+.sns-payment-note {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  background: var(--ocean-soft);
+  border: 1px solid var(--ocean);
+  border-radius: var(--border-radius);
+  font-size: var(--text-xs);
+  color: var(--ocean);
+  line-height: 1.5;
+}
+.sns-payment-whatsapp-fallback {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: var(--stone);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  font-size: var(--text-sm);
+  color: var(--wood);
+  text-align: center;
+}
+.sns-payment-whatsapp-fallback a {
+  color: #25d366;
+  font-weight: 700;
+  text-decoration: none;
+}
+.sns-payment-whatsapp-fallback a:hover {
+  text-decoration: underline;
 }

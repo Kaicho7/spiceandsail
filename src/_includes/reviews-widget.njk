@@ -1,0 +1,179 @@
+<!-- Review Display Widget -->
+<div class="sns-reviews-widget" id="sns-reviews-widget" data-service-slug="">
+  <div class="sns-reviews-header">
+    <h3>What Our Guests Say</h3>
+    <div class="sns-reviews-summary">
+      <span class="sns-avg-rating" id="sns-avg-rating">–</span>
+      <span class="sns-review-count" id="sns-review-count">(0 reviews)</span>
+    </div>
+  </div>
+  <div class="sns-reviews-list" id="sns-reviews-list">
+    <p class="sns-reviews-loading">Loading reviews…</p>
+  </div>
+  <div class="sns-reviews-cta">
+    <a href="#" class="btn btn-secondary" id="sns-write-review-btn" hidden>Write a Review</a>
+  </div>
+</div>
+
+<style>
+.sns-reviews-widget {
+  background: #FBF9F5;
+  border: 1px solid #e2e8ed;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+.sns-reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.sns-reviews-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #003853;
+}
+.sns-reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sns-avg-rating {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0d6b5c;
+}
+.sns-review-count {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+.sns-reviews-list {
+  display: grid;
+  gap: 1rem;
+}
+.sns-review-card {
+  background: #fff;
+  border: 1px solid #e2e8ed;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.sns-review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.sns-review-author {
+  font-weight: 600;
+  color: #0C1A24;
+}
+.sns-review-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+.sns-review-stars {
+  display: flex;
+  gap: 2px;
+  color: #D4AF37;
+  font-size: 1.1rem;
+}
+.sns-review-text {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+.sns-reviews-loading {
+  text-align: center;
+  color: #94a3b8;
+  padding: 2rem;
+}
+.sns-reviews-cta {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+  
+  function initReviewWidget() {
+    var widget = document.getElementById('sns-reviews-widget');
+    if (!widget) return;
+    
+    var serviceSlug = widget.getAttribute('data-service-slug');
+    if (!serviceSlug) {
+      // Try to infer from page
+      var path = window.location.pathname;
+      var match = path.match(/\/tours\/([^/]+)\//) || path.match(/\/transfers\/([^/]+)\//) || path.match(/\/experiences\/([^/]+)\//);
+      if (match) serviceSlug = match[1];
+    }
+    if (!serviceSlug) {
+      widget.style.display = 'none';
+      return;
+    }
+    
+    loadReviews(serviceSlug);
+  }
+  
+  function loadReviews(serviceSlug) {
+    var listEl = document.getElementById('sns-reviews-list');
+    var avgEl = document.getElementById('sns-avg-rating');
+    var countEl = document.getElementById('sns-review-count');
+    var ctaBtn = document.getElementById('sns-write-review-btn');
+    
+    fetch('/.netlify/functions/reviews?serviceSlug=' + encodeURIComponent(serviceSlug) + '&limit=5')
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data.avgRating) {
+          avgEl.textContent = data.avgRating;
+        }
+        countEl.textContent = '(' + data.approved + ' review' + (data.approved !== 1 ? 's' : '') + ')';
+        
+        if (data.reviews && data.reviews.length > 0) {
+          listEl.innerHTML = data.reviews.map(function(r) {
+            var stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+            var date = new Date(r.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            return '<div class="sns-review-card">' +
+              '<div class="sns-review-header">' +
+                '<span class="sns-review-author">' + escapeHtml(r.author) + '</span>' +
+                '<span class="sns-review-date">' + date + '</span>' +
+              '</div>' +
+              '<div class="sns-review-stars" aria-label="' + r.rating + ' out of 5 stars">' + stars + '</div>' +
+              (r.text ? '<p class="sns-review-text">' + escapeHtml(r.text) + '</p>' : '') +
+            '</div>';
+          }).join('');
+        } else {
+          listEl.innerHTML = '<p class="sns-reviews-loading">No reviews yet. Be the first to share your experience!</p>';
+        }
+        
+        if (ctaBtn) {
+          ctaBtn.hidden = false;
+          ctaBtn.href = 'https://wa.me/255672450934?text=' + encodeURIComponent('I\'d like to leave a review for my ' + serviceSlug + ' experience.');
+        }
+      })
+      .catch(function() {
+        listEl.innerHTML = '<p class="sns-reviews-loading">Unable to load reviews at this time.</p>';
+      });
+  }
+  
+  function escapeHtml(text) {
+    var div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+  
+  // Auto-init on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReviewWidget);
+  } else {
+    initReviewWidget();
+  }
+  
+  // Expose for manual init
+  window.snsReviewsWidget = { init: initReviewWidget };
+})();
+</script>
