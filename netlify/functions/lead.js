@@ -16,7 +16,7 @@ const { corsHeaders, checkRateLimit, checkBotSignals, getClientIP, isAllowedOrig
 const { generateReference } = require('../../src/lib/concierge/reference');
 const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
 const { CONFIG } = require('../../src/lib/concierge/catalogue');
-const crypto = require('node:crypto');
+const { sha256Hex } = require('../../src/lib/concierge/webcrypto');
 
 // Ensure store is initialized
 function ensureStore() {
@@ -101,7 +101,7 @@ function buildReplyLink(ref, whatsapp, email) {
 }
 
 /** Hash payload for idempotency — includes passengers & notes to avoid stale duplicate collisions */
-function payloadHash(body) {
+async function payloadHash(body) {
   const key = JSON.stringify({
     n: body.name,
     w: body.whatsapp,
@@ -111,7 +111,7 @@ function payloadHash(body) {
     t: body.travellers,
     notes: body.notes
   });
-  return crypto.createHash('sha256').update(key).digest('hex').slice(0, 16);
+  return (await sha256Hex(key)).slice(0, 16);
 }
 
 /** Try to send alerts (best-effort, never blocks save) */
@@ -233,7 +233,7 @@ exports.handler = async function (event) {
 
   // Idempotency: session_id + payload hash
   const sessionId = body.session_id || 'anon';
-  const hash = payloadHash(body);
+  const hash = await payloadHash(body);
   const idempotencyKey = 'idem:' + sessionId + ':' + hash;
 
   try {
@@ -278,7 +278,7 @@ exports.handler = async function (event) {
     status: 'request_received',
     alert_status: 'pending',
     created_at: new Date().toISOString(),
-    ip_hash: crypto.createHash('sha256').update(ip).digest('hex').slice(0, 8),
+    ip_hash: (await sha256Hex(ip)).slice(0, 8),
     session_id: sessionId,
   };
 

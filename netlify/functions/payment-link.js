@@ -10,7 +10,7 @@ const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('.
 const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
 const { getQuote } = require('../../src/lib/concierge/pricing');
 const { catalogue, CONFIG } = require('../../src/lib/concierge/catalogue');
-const crypto = require('node:crypto');
+const { sha256Hex, randomBytesHex } = require('../../src/lib/concierge/webcrypto');
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
@@ -18,7 +18,7 @@ function ensureStore() {
   }
 }
 
-function payloadHash(body) {
+async function payloadHash(body) {
   const key = JSON.stringify({
     serviceSlug: body.serviceSlug,
     adults: body.adults,
@@ -26,11 +26,11 @@ function payloadHash(body) {
     date: body.date,
     pickupZone: body.pickupZone,
   });
-  return crypto.createHash('sha256').update(key).digest('hex').slice(0, 16);
+  return (await sha256Hex(key)).slice(0, 16);
 }
 
 function generateReference() {
-  return 'PAY-' + Date.now().toString(36).toUpperCase() + '-' + crypto.randomBytes(4).toString('hex').toUpperCase();
+  return 'PAY-' + Date.now().toString(36).toUpperCase() + '-' + randomBytesHex(4).toUpperCase();
 }
 
 /** Determine deposit config from service */
@@ -247,7 +247,7 @@ exports.handler = async function (event) {
   const depositAmount = depositConfig.percent > 0 ? Math.round(quote.totalLow * (depositConfig.percent / 100)) : 0;
   
   // Idempotency key
-  const hash = payloadHash(body);
+  const hash = await payloadHash(body);
   const idempotencyKey = `payment_link:${hash}:${depositAmount}`;
 
   try {
@@ -322,7 +322,7 @@ exports.handler = async function (event) {
       status: 'pending',
       paymentLinks: resolvedLinks.map(l => l.provider),
       createdAt: new Date().toISOString(),
-      ipHash: crypto.createHash('sha256').update(ip).digest('hex').slice(0, 8),
+      ipHash: (await sha256Hex(ip)).slice(0, 8),
     });
 
     return { 

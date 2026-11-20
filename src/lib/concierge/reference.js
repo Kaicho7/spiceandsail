@@ -5,7 +5,7 @@
  */
 'use strict';
 
-const crypto = require('node:crypto');
+const { randomInt } = require('./webcrypto');
 const { getGlobalStore } = require('./store');
 
 function formatRef(seq) {
@@ -24,7 +24,7 @@ async function generateReference(store) {
 
   for (let attempt = 0; attempt < 15; attempt++) {
     // 6-digit cryptographic random entropy (100000 - 999999)
-    const randomEntropy = crypto.randomInt(100000, 999999);
+    const randomEntropy = randomInt(100000, 999999);
     const ref = 'SP-' + year + '-' + String(randomEntropy);
 
     // Check collision against leads and in-flight reservations
@@ -49,7 +49,7 @@ async function generateReference(store) {
   }
 
   // Fallback: numeric timestamp slice + random digits
-  const fallbackNum = Date.now().toString().slice(-4) + crypto.randomInt(1000, 9999);
+  const fallbackNum = Date.now().toString().slice(-4) + randomInt(1000, 9999);
   return 'SP-' + year + '-' + fallbackNum;
 }
 
