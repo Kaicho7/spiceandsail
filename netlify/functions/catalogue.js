@@ -7,7 +7,7 @@
 const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('../../src/lib/concierge/security');
 const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
 const { catalogue, CONFIG } = require('../../src/lib/concierge/catalogue');
-const hotelContracts = require('../../src/lib/concierge/hotel-contracts');
+const { publicHotelRates, publicFromRate } = require('../../src/lib/concierge/public-data');
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
@@ -66,27 +66,30 @@ exports.handler = async function (event) {
     timeOfDay: s.timeOfDay
   }));
 
-  // 5 contracted hotels
-  const widgetHotels = Object.values(hotelContracts.HOTEL_CONTRACTS || {})
-    .filter(h => h.ratesStatus === 'confirmed')
-    .map(h => ({
-      slug: h.id,
-      name: h.name,
-      location: h.location,
-      contractStatus: h.ratesStatus,
-      pricing: h.rackRate ? {
-        display: '$' + Math.round(h.rackRate) + '/night',
-        min: Math.round(h.rackRate),
-        basis: 'per_night',
-        boardBasis: h.boardBasis,
-        minStay: h.minStay,
-        childPolicy: h.childPolicy,
-        extraPerson: h.extraPersonSupplement,
-        singleSupplement: h.singleSupplement
-      } : null,
-      includes: h.includes,
-      importantNotes: h.importantNotes
-    }));
+  // 5 confirmed partner hotels — public display data only (never net rates).
+  const publicHotels = new Map((publicHotelRates.hotels || []).map(h => [h.slug, h]));
+  const widgetHotels = (catalogue.hotels || [])
+    .filter(h => h.contractStatus === 'confirmed')
+    .map(h => {
+      const pub = publicHotels.get(h.slug) || {};
+      const fromRate = publicFromRate(pub);
+      return {
+        slug: h.slug,
+        name: h.name,
+        location: pub.area || h.location,
+        area: pub.area || h.location,
+        contractStatus: h.contractStatus,
+        board: pub.board || null,
+        taxPerPersonPerNight: pub.taxPerPersonPerNight != null ? pub.taxPerPersonPerNight : null,
+        pricing: fromRate != null ? {
+          display: 'From $' + fromRate + '/night',
+          min: fromRate,
+          basis: 'per_night'
+        } : null,
+        includes: h.includes || [],
+        importantNotes: h.importantNotes || []
+      };
+    });
 
   const widgetZones = (catalogue.zones || []).map(z => ({
     slug: z.slug,

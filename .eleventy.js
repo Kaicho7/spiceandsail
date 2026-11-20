@@ -22,6 +22,7 @@ module.exports = function(eleventyConfig) {
   const fs = require("fs");
   const path = require("path");
   const slugify = require("slugify");
+  const { publicFromRate, packageForHotel } = require("./src/lib/concierge/public-data");
 
   // Concierge catalogue is the single source of truth for concierge pricing.
   // These filters render ranges from the catalogue; a missing or unverified
@@ -185,14 +186,26 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("rateFor", (slug) => rateFor(slug));
   eleventyConfig.addFilter("bundleFor", (slug) => {
+    const svc = packageForHotel(slug);
+    if (svc) {
+      const p = svc.pricing || {};
+      return {
+        id: svc.id || svc.slug,
+        name: svc.name,
+        nights: svc.nights,
+        perPersonMin: p.min,
+        perPersonMax: p.max,
+        includes: svc.includes || []
+      };
+    }
     const bundle = (hotelPublicRates.bundles || []).find(b => b.hotelSlug === slug);
     if (bundle) return bundle;
     const h = rateFor(slug);
     return h ? h.package : null;
   });
   eleventyConfig.addFilter("getFromRate", (slug) => {
-    const h = rateFor(slug);
-    return h ? (h.fromRate || (h.rooms && Math.min(...h.rooms.map(r => r.guestRatePerRoomPerNight || Infinity))) || 0) : 0;
+    const rate = publicFromRate(rateFor(slug));
+    return rate == null ? 0 : rate;
   });
 
   // Featured partner hotels global data for homepage "Where to Stay" strip
@@ -220,7 +233,7 @@ module.exports = function(eleventyConfig) {
   }).map((ph) => {
     const dirMatch = hotelsJsonList.find((x) => x.slug === ph.slug) || {};
     const pageSlug = hotelPageSlugAliases[ph.slug] || ph.slug;
-    const fromRate = ph.fromRate || (ph.rooms && Math.min(...ph.rooms.map(r => r.guestRatePerRoomPerNight || Infinity))) || 0;
+    const fromRate = publicFromRate(ph) || 0;
     const rateUnit = ph.slug === "the-one-resort-zanzibar" ? "per room for 2 adults, per night" : "per room / night";
     return {
       slug: ph.slug,
@@ -238,6 +251,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData("featuredPartnerHotels", () => featuredPartnerHotels);
 
   eleventyConfig.addGlobalData("conciergeCat", () => conciergeCatalogue);
+  eleventyConfig.addGlobalData("cataloguePackages", () => (conciergeCatalogue.services || [])
+    .filter(s => s.type === "package" && s.hotelSlug)
+    .map(s => {
+      const p = s.pricing || {};
+      return {
+        id: s.id,
+        slug: s.slug,
+        name: s.name,
+        nights: s.nights,
+        perPerson: { min: p.min, max: p.max },
+        display: p.display,
+        includes: s.includes || [],
+        solves: s.shortDescription || ""
+      };
+    }));
   let toursData = {};
   try {
     toursData = JSON.parse(fs.readFileSync(path.join("./src", "data", "tours.json"), "utf8"));

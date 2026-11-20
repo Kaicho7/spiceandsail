@@ -345,8 +345,8 @@
       "package": {
         "id": "pkg-kokoni-city-sea",
         "nights": 2,
-        "perPersonMin": 130,
-        "perPersonMax": 175,
+        "perPersonMin": 165,
+        "perPersonMax": 280,
         "includes": [
           "2 nights at The Island Stonetown (B&B)",
           "Return private airport transfer",
@@ -400,8 +400,8 @@
       "package": {
         "id": "pkg-spice-beach-escape",
         "nights": 2,
-        "perPersonMin": 145,
-        "perPersonMax": 175,
+        "perPersonMin": 95,
+        "perPersonMax": 120,
         "includes": [
           "2 nights at Mkeka Spice Lodge (breakfast included)",
           "Return private airport transfer",
@@ -493,8 +493,8 @@
       "package": {
         "id": "pkg-jambiani-rooftop-romance",
         "nights": 3,
-        "perPersonMin": 230,
-        "perPersonMax": 350,
+        "perPersonMin": 220,
+        "perPersonMax": 290,
         "includes": [
           "3 nights Executive Seaside View Room at Le Paradis (breakfast included)",
           "Return private airport transfer",
@@ -677,8 +677,8 @@
       "package": {
         "id": "pkg-south-coast-family",
         "nights": 3,
-        "perPersonMin": 330,
-        "perPersonMax": 430,
+        "perPersonMin": 360,
+        "perPersonMax": 460,
         "includes": [
           "3 nights at The One Resort Zanzibar (Half Board — breakfast & dinner included, per room for 2 adults)",
           "Return private airport transfer (minivan, up to 6 passengers)",

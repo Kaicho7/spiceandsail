@@ -7,7 +7,11 @@
 const { corsHeaders, isAllowedOrigin } = require('../../src/lib/concierge/security');
 const { getQuote, quotePlan } = require('../../src/lib/concierge/pricing');
 const { catalogue, CATALOGUE_VERSION, CONFIG } = require('../../src/lib/concierge/catalogue');
-const publicHotelRates = require('../../src/data/hotelPublicRates.json');
+const {
+  publicHotelRates,
+  publicFromRate,
+  packageServices,
+} = require('../../src/lib/concierge/public-data');
 
 exports.handler = async function (event) {
   const origin = event.headers && event.headers.origin;
@@ -22,6 +26,7 @@ exports.handler = async function (event) {
   if (event.httpMethod === 'GET') {
     const services = (catalogue.services || []).map(function (s) {
       const p = s.pricing || {};
+      const onRequest = p.basis === 'on_request' || p.min == null || p.max == null;
       return {
         slug: s.slug,
         name: s.name,
@@ -29,11 +34,41 @@ exports.handler = async function (event) {
         category: s.category,
         location: s.location,
         duration: s.duration || '',
-        description: s.description || '',
-        priceDisplay: (p.basis === 'on_request' || p.min == null || p.max == null) ? null : p.display,
-        onRequest: p.basis === 'on_request' || p.min == null || p.max == null,
+        description: s.description || s.shortDescription || '',
+        shortDescription: s.shortDescription || '',
+        priceDisplay: onRequest ? null : p.display,
+        onRequest: onRequest,
+        basis: p.basis || null,
+        basisNote: p.basisNote || '',
+        tieredDisplay: p.tieredDisplay || null,
+        includes: s.includes || [],
       };
     });
+
+    const packages = packageServices().map(function (s) {
+      const p = s.pricing || {};
+      return {
+        slug: s.slug,
+        id: s.id || null,
+        name: s.name,
+        hotelSlug: s.hotelSlug,
+        nights: s.nights || null,
+        duration: s.duration || '',
+        shortDescription: s.shortDescription || '',
+        includes: s.includes || [],
+        pricing: {
+          basis: p.basis || null,
+          basisNote: p.basisNote || '',
+          min: p.min == null ? null : p.min,
+          max: p.max == null ? null : p.max,
+          display: p.display || null,
+        },
+      };
+    });
+
+    const catalogueHotels = new Map((catalogue.hotels || []).map(function (h) {
+      return [h.slug, h];
+    }));
     return {
       statusCode: 200,
       headers: headers,
@@ -44,13 +79,18 @@ exports.handler = async function (event) {
         privacyNoticeVersion: CONFIG.privacyNoticeVersion || '1.0',
         replyWindow: CONFIG.replyWindow || 'within business hours',
         services: services,
+        packages: packages,
         hotels: (publicHotelRates.hotels || []).map(function (h) {
+          const catHotel = catalogueHotels.get(h.slug) || {};
           return {
             slug: 'hotel:' + h.slug,
+            hotelSlug: h.slug,
             name: h.name,
             area: h.area,
             board: h.board,
-            fromRate: Math.min.apply(null, (h.rooms || []).map(function (r) { return r.guestRatePerRoomPerNight; })),
+            ratesStatus: h.ratesStatus || catHotel.contractStatus || null,
+            fromRate: publicFromRate(h),
+            pricingDisplay: (catHotel.pricing && catHotel.pricing.display) || null,
             taxPerPersonPerNight: h.taxPerPersonPerNight,
             roomTypes: (h.rooms || []).map(function (r) { return r.type; })
           };

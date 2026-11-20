@@ -65,7 +65,8 @@
       "location": "Malindi, Stone Town",
       "contractStatus": "confirmed",
       "pricing": {
-        "display": "From $35 per room (B&B)"
+        "display": "From $29 per room (B&B)",
+        "min": 29
       }
     },
     {
@@ -74,7 +75,8 @@
       "location": "Kokoni, Stone Town",
       "contractStatus": "confirmed",
       "pricing": {
-        "display": "From $35 per room (B&B)"
+        "display": "From $29 per room (B&B)",
+        "min": 29
       }
     },
     {
@@ -83,7 +85,8 @@
       "location": "Jambiani",
       "contractStatus": "confirmed",
       "pricing": {
-        "display": "From $45 per room (breakfast included)"
+        "display": "From $36 per room (breakfast included)",
+        "min": 36
       }
     },
     {
@@ -92,7 +95,8 @@
       "location": "Kibigija, Jambiani",
       "contractStatus": "confirmed",
       "pricing": {
-        "display": "From $56 per room (breakfast included)"
+        "display": "From $56 per room (breakfast included)",
+        "min": 56
       }
     },
     {
@@ -101,7 +105,8 @@
       "location": "Makunduchi, South Coast",
       "contractStatus": "confirmed",
       "pricing": {
-        "display": "From $136 per room (Half Board)"
+        "display": "From $136 per room (Half Board)",
+        "min": 136
       }
     }
   ],

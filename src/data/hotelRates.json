@@ -439,8 +439,8 @@
       "hotelSlug": "mkeka-spice-lodge",
       "nights": 2,
       "perPerson": {
-        "min": 145,
-        "max": 175
+        "min": 95,
+        "max": 120
       },
       "includes": [
         "2 nights at Mkeka Spice Lodge (breakfast included)",
@@ -455,8 +455,8 @@
       "hotelSlug": "le-paradis-boutique-hotel-zanzibar",
       "nights": 3,
       "perPerson": {
-        "min": 230,
-        "max": 350
+        "min": 220,
+        "max": 290
       },
       "includes": [
         "3 nights Executive Seaside View Room at Le Paradis (breakfast included)",
@@ -471,8 +471,8 @@
       "hotelSlug": "the-one-resort-zanzibar",
       "nights": 3,
       "perPerson": {
-        "min": 330,
-        "max": 430
+        "min": 360,
+        "max": 460
       },
       "includes": [
         "3 nights at The One Resort Zanzibar (Half Board — breakfast & dinner included, per room for 2 adults)",
@@ -487,8 +487,8 @@
       "hotelSlug": "the-island-stonetown",
       "nights": 2,
       "perPerson": {
-        "min": 130,
-        "max": 175
+        "min": 165,
+        "max": 280
       },
       "includes": [
         "2 nights at The Island Stonetown (B&B)",

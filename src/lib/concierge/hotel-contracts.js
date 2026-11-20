@@ -8,6 +8,7 @@
 const contractsData = require('../../data/hotel-contracts.json');
 const publicRates = require('../../data/hotelRates.json');
 const publicHotelRates = require('../../data/hotelPublicRates.json');
+const { publicFromRate } = require('./public-data');
 
 const HOTELS = contractsData.hotels || [];
 
@@ -136,10 +137,11 @@ function propertyFactReply(contract) {
   if (contract.distanceFacts) {
     lines.push('**Getting there:** ' + contract.distanceFacts);
   }
-  const pub = publicRateSheet(contract.slug);
-  if (pub && pub.rooms && pub.rooms.length) {
+  const publicHotel = (publicHotelRates.hotels || []).find((h) => h.slug === contract.slug);
+  const fromRate = publicFromRate(publicHotel);
+  if (fromRate != null) {
     lines.push('');
-    lines.push('From $' + pub.fromRate + '/night through us — send your dates and we will confirm the exact rate and availability.');
+    lines.push('From $' + fromRate + '/night through us — send your dates and we will confirm the exact rate and availability.');
   } else {
     lines.push('');
     lines.push('Send us your dates and we will confirm the exact rate and availability.');
