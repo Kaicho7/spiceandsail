@@ -280,6 +280,15 @@
   status = 301
   force = true
 
+# The sns-chat.js widget calls Cloudflare-style /api/* paths. On Netlify,
+# rewrite those to the existing function handlers so the widget works on both
+# hosts (Cloudflare Pages serves functions/api/* natively).
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+
 # 404 fallback: unknown routes serve the branded 404 page with real 404 status
 [[redirects]]
   from = "/*"

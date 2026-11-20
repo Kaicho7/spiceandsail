@@ -58,6 +58,53 @@
     "childPolicy": "Ages 6–14 at the published child rate on excursions; under 6 free except marine park fees.",
     "sharedMinGuests": 6
   },
+  "hotels": [
+    {
+      "slug": "stonetown-view-hotel",
+      "name": "Stone Town View Hotel",
+      "location": "Malindi, Stone Town",
+      "contractStatus": "confirmed",
+      "pricing": {
+        "display": "From $35 per room (B&B)"
+      }
+    },
+    {
+      "slug": "the-island-stonetown",
+      "name": "The Island Stonetown",
+      "location": "Kokoni, Stone Town",
+      "contractStatus": "confirmed",
+      "pricing": {
+        "display": "From $35 per room (B&B)"
+      }
+    },
+    {
+      "slug": "mkeka-spice-lodge",
+      "name": "Mkeka Spice Lodge",
+      "location": "Jambiani",
+      "contractStatus": "confirmed",
+      "pricing": {
+        "display": "From $45 per room (breakfast included)"
+      }
+    },
+    {
+      "slug": "le-paradis-boutique-hotel-zanzibar",
+      "name": "Le Paradis Boutique Hotel Zanzibar",
+      "location": "Kibigija, Jambiani",
+      "contractStatus": "confirmed",
+      "pricing": {
+        "display": "From $56 per room (breakfast included)"
+      }
+    },
+    {
+      "slug": "the-one-resort-zanzibar",
+      "name": "The One Resort Zanzibar",
+      "location": "Makunduchi, South Coast",
+      "contractStatus": "confirmed",
+      "pricing": {
+        "display": "From $136 per room (Half Board)"
+      }
+    }
+  ],
   "zones": [
     {
       "slug": "stone-town",
@@ -1599,6 +1646,7 @@
       "slug": "stone-town-starter",
       "name": "Stone Town Starter Break",
       "type": "package",
+      "category": "PKG",
       "hotelSlug": "stonetown-view-hotel",
       "nights": 2,
       "pricing": {
@@ -1630,6 +1678,7 @@
       "slug": "spice-beach-escape",
       "name": "Spice & Beach Escape",
       "type": "package",
+      "category": "PKG",
       "hotelSlug": "mkeka-spice-lodge",
       "nights": 2,
       "pricing": {
@@ -1661,6 +1710,7 @@
       "slug": "jambiani-rooftop-romance",
       "name": "Jambiani Rooftop Romance",
       "type": "package",
+      "category": "PKG",
       "hotelSlug": "le-paradis-boutique-hotel-zanzibar",
       "nights": 3,
       "pricing": {
@@ -1692,6 +1742,7 @@
       "slug": "south-coast-family",
       "name": "South Coast Family Getaway",
       "type": "package",
+      "category": "PKG",
       "hotelSlug": "the-one-resort-zanzibar",
       "nights": 3,
       "pricing": {
@@ -1723,6 +1774,7 @@
       "slug": "kokoni-city-sea",
       "name": "Kokoni City & Sea Mini-Moon",
       "type": "package",
+      "category": "PKG",
       "hotelSlug": "the-island-stonetown",
       "nights": 2,
       "pricing": {

@@ -1,11 +1,17 @@
 /**
  * Lead capture endpoint — Netlify function.
- * Validate → idempotency check → save first → alerts → respond.
+ * Normalise widget payload → validate → idempotency check → save first → alerts → respond.
  * Response is 201 with { reference } only after save succeeds.
+ *
+ * PATCH NOTE: the live widget (public/js/concierge-v2.js) sends camelCase and
+ * extra fields (consentContact, serviceSlugs, adults, children, ...). The
+ * validator has a strict allowlist, so every submit used to fail with 400.
+ * normalizeLeadBody() maps the widget payload onto the allowlisted schema
+ * BEFORE validation. Validation rules themselves are unchanged.
  */
 'use strict';
 
-const { validateLead, isPayloadTooLarge, normalizeE164 } = require('../../src/lib/concierge/validate');
+const { validateLead, isPayloadTooLarge, normalizeE164, ALLOWED_FIELDS } = require('../../src/lib/concierge/validate');
 const { corsHeaders, checkRateLimit, checkBotSignals, getClientIP, isAllowedOrigin } = require('../../src/lib/concierge/security');
 const { generateReference } = require('../../src/lib/concierge/reference');
 const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
@@ -17,6 +23,67 @@ function ensureStore() {
   try { getGlobalStore(); } catch (e) {
     setGlobalStore(createStore(process.env.NETLIFY ? 'blob' : 'memory'));
   }
+}
+
+function toInt(v) {
+  const n = Number(v);
+  return Number.isFinite(n) ? Math.floor(n) : null;
+}
+
+/**
+ * Map the widget payload onto the server's allowlisted lead schema.
+ * - keeps only allowlisted fields (extra widget fields are dropped, not rejected)
+ * - consentContact/consentMarketing -> consent_contact/consent_marketing
+ * - adults + children -> travellers
+ * - serviceSlugs[] / hotelSlug -> services (comma separated)
+ * - 00-prefixed numbers -> +prefixed
+ * - over-long notes are truncated instead of rejected
+ * Already-correct payloads pass through unchanged.
+ */
+function normalizeLeadBody(raw) {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return raw;
+
+  const out = {};
+  for (const key of ALLOWED_FIELDS) {
+    if (raw[key] !== undefined) out[key] = raw[key];
+  }
+
+  if (out.consent_contact === undefined && raw.consentContact !== undefined) {
+    out.consent_contact = raw.consentContact;
+  }
+  if (out.consent_marketing === undefined && raw.consentMarketing !== undefined) {
+    out.consent_marketing = raw.consentMarketing;
+  }
+
+  if (out.travellers === undefined && (raw.adults !== undefined || raw.children !== undefined)) {
+    const total = (toInt(raw.adults) || 0) + (toInt(raw.children) || 0);
+    if (total > 0) out.travellers = total;
+  }
+
+  if (out.services === undefined) {
+    const slugs = [];
+    if (Array.isArray(raw.serviceSlugs)) {
+      raw.serviceSlugs.forEach(function (s) {
+        if (typeof s === 'string' && s.trim()) slugs.push(s.trim().slice(0, 100));
+      });
+    }
+    if (typeof raw.hotelSlug === 'string' && raw.hotelSlug.trim()) {
+      slugs.push('hotel:' + raw.hotelSlug.trim().slice(0, 100));
+    }
+    if (slugs.length) out.services = slugs.join(', ').slice(0, 500);
+  }
+
+  if (typeof out.whatsapp === 'string') {
+    let w = out.whatsapp.trim();
+    if (/^00\d/.test(w)) w = '+' + w.slice(2);
+    out.whatsapp = w;
+  }
+
+  if (typeof out.notes === 'string' && out.notes.length > 2000) {
+    out.notes = out.notes.slice(0, 2000);
+  }
+
+  return out;
 }
 
 /** Build reply link server-side: always targets Spice & Sail business channels */
@@ -145,6 +212,13 @@ exports.handler = async function (event) {
     return { statusCode: 400, headers: headers, body: JSON.stringify({ error: 'Invalid JSON' }) };
   }
 
+  if (!body || typeof body !== 'object' || Array.isArray(body)) {
+    return { statusCode: 400, headers: headers, body: JSON.stringify({ error: 'Invalid request body' }) };
+  }
+
+  // Map the widget's payload shape onto the allowlisted schema
+  body = normalizeLeadBody(body);
+
   // Bot check
   const botCheck = checkBotSignals(body);
   if (botCheck.isBot) {
@@ -248,3 +322,5 @@ exports.handler = async function (event) {
     }),
   };
 };
+
+exports.normalizeLeadBody = normalizeLeadBody;

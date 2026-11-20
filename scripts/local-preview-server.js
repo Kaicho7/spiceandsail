@@ -75,8 +75,12 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'OPTIONS') return send(res, 204, '');
 
   /* ---- function routes (real handlers) ---- */
-  if (url.pathname.startsWith('/.netlify/functions/')) {
-    const name = url.pathname.slice('/.netlify/functions/'.length);
+  // Netlify serves /.netlify/functions/*; Cloudflare Pages serves /api/*.
+  const fnPrefix = url.pathname.startsWith('/.netlify/functions/')
+    ? '/.netlify/functions/'
+    : (url.pathname.startsWith('/api/') ? '/api/' : null);
+  if (fnPrefix) {
+    const name = url.pathname.slice(fnPrefix.length);
     try {
       const mod = handlerModule(name);
       if (!mod || typeof mod.handler !== 'function') {

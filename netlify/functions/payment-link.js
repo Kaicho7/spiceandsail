@@ -68,6 +68,10 @@ function buildPaymentLinks(quote, svc, depositConfig, adults, children, bookingR
     currency: currency,
   };
   
+  // USD to TZS conversion rate (configurable via env, fallback to approximate rate)
+  const USD_TO_TZS = parseFloat(process.env.USD_TO_TZS_RATE) || 2600;
+  const toTZS = (usd) => Math.round(usd * USD_TO_TZS);
+  
   const paymentLinks = [];
   
   // 1. AzamPay - Lipia Link (No-code payment link)
@@ -82,8 +86,9 @@ function buildPaymentLinks(quote, svc, depositConfig, adults, children, bookingR
       generateUrl: async () => {
         // In production, call AzamPay API to create Lipia Link
         // For now, return the manual link format
+        const amountTZS = toTZS(depositAmount > 0 ? depositAmount : totalAmount);
         const params = new URLSearchParams({
-          amount: depositAmount > 0 ? depositAmount : totalAmount,
+          amount: amountTZS,
           currency: 'TZS', // AzamPay uses TZS
           reference: bookingRef,
           description: `Spice & Sail: ${svc.name} - ${depositConfig.percent}% deposit`,
@@ -240,21 +245,21 @@ exports.handler = async function (event) {
 
   const depositConfig = getDepositConfig(svc);
   const depositAmount = depositConfig.percent > 0 ? Math.round(quote.totalLow * (depositConfig.percent / 100)) : 0;
-  const bookingRef = generateReference();
   
   // Idempotency key
   const hash = payloadHash(body);
   const idempotencyKey = `payment_link:${hash}:${depositAmount}`;
 
   try {
-    // Check for existing payment links
+    // Check for existing payment links FIRST (before generating new reference)
     const existing = await store.getJSON(idempotencyKey);
     if (existing && existing.paymentLinks) {
+      const originalBookingRef = existing.bookingRef || generateReference();
       return { 
         statusCode: 200, 
         headers: headers, 
         body: JSON.stringify({ 
-          bookingRef,
+          bookingRef: originalBookingRef,
           depositAmount,
           depositPercent: depositConfig.percent,
           totalAmount: quote.totalLow,
@@ -267,6 +272,9 @@ exports.handler = async function (event) {
         }) 
       };
     }
+
+    // Only generate new reference if no existing record
+    const bookingRef = generateReference();
 
     // Build payment links for all configured providers
     const paymentLinks = await buildPaymentLinks(quote, svc, depositConfig, body.adults || 2, body.children || 0, bookingRef);

@@ -402,8 +402,8 @@
       adventure: [
         { slug: 'horse-swimming', time: 'Morning', note: 'Bareback horses at high tide' },
         { slug: 'quad-buggy-safari', time: 'Afternoon', note: 'Baobabs & village paths' },
-        { slug: 'maalum-kuza-caves', time: 'Morning', note: 'Secret cenote swim' },
-        { slug: 'uzi-island-moses-road', time: 'Full Day', note: 'Tidal causeway crossing' },
+        { slug: 'kuza-cave-seaweed', time: 'Morning', note: 'Secret cenote swim' },
+        { slug: 'uzzi-island-moses-road', time: 'Full Day', note: 'Tidal causeway crossing' },
       ],
       safari: [
         { slug: 'mikumi-nyerere-day-safari', time: 'Full Day', note: 'Fly-in, Big Five, park fees included' },
@@ -418,10 +418,10 @@
         { slug: 'nakupenda-sandbank', time: 'Morning', note: 'Private sandbank picnic' },
       ],
       family: [
-        { slug: 'turtle-sanctuary', time: 'Morning', note: 'Feed turtles, safe for kids' },
         { slug: 'jozani-forest', time: 'Morning', note: 'Red colobus monkeys, boardwalk' },
         { slug: 'village-community-tour', time: 'Afternoon', note: 'Seaweed farming, hands-on' },
         { slug: 'safari-blue', time: 'Full Day', note: 'Family-friendly dhow day' },
+        { slug: 'kuza-cave-seaweed', time: 'Morning', note: 'Secret cenote swim + seaweed farm' },
       ]
     };
     
@@ -446,7 +446,7 @@
     days.unshift({
       day: 0,
       date: dreamState.startDate,
-      slug: 'airport-transfer-arrival',
+      slug: 'airport-transfer-znz-to-stone-town',
       name: 'Airport Transfer & Check-in',
       time: 'Arrival',
       note: 'Zero-deposit private transfer, flight tracking, 60min free wait',
@@ -457,7 +457,7 @@
     days.push({
       day: nightsCount + 1,
       date: addDays(dreamState.startDate, nightsCount),
-      slug: 'airport-transfer-departure',
+      slug: 'airport-transfer-znz-to-stone-town',
       name: 'Departure Transfer',
       time: 'Departure',
       note: 'Hotel to ZNZ Airport, flight tracking included',
@@ -575,14 +575,53 @@
 
   function openDreamPayment() {
     if (!dreamState.itinerary || !dreamState.itinerary.length) return;
-    var mainActivity = dreamState.itinerary.find(function(d) { 
-      return ['MAR', 'SAF', 'EXP', 'PKG'].includes(d.category); 
-    });
-    if (!mainActivity) mainActivity = dreamState.itinerary[1];
     
-    state.selectedSlug = mainActivity.slug;
-    state.selectedSlugs = [mainActivity.slug];
-    openPaymentOptions();
+    // Collect all service slugs from the itinerary (skip day 0 arrival transfer if it's a transfer)
+    var allSlugs = dreamState.itinerary
+      .filter(function(d) { return d.slug && d.category !== 'TRF'; })
+      .map(function(d) { return d.slug; });
+    
+    // Deduplicate
+    allSlugs = allSlugs.filter(function(slug, idx, arr) { return arr.indexOf(slug) === idx; });
+    
+    if (!allSlugs.length) return;
+    
+    // Get a combined quote for the full itinerary
+    var adults = parseInt($('#sns-dream-adults').value || '2', 10);
+    var children = parseInt($('#sns-dream-children').value || '0', 10);
+    var date = $('#sns-dream-date').value || null;
+    var pickupZone = $('#sns-dream-pickup').value || null;
+    
+    showStatus('', 'Calculating total for your complete itinerary…');
+    
+    fetchJSON('/.netlify/functions/quote', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        serviceSlugs: allSlugs,
+        adults: adults,
+        children: children,
+        date: date,
+        pickupZone: pickupZone
+      })
+    }, 12000).then(function(res) {
+      if (res.ok && res.json && res.json.totalDisplay) {
+        state.lastQuoteData = res.json;
+        state.lastQuoteDisplay = res.json.totalDisplay;
+        // Select the first main activity (MAR/SAF/EXP/PKG) for payment
+        var mainActivity = dreamState.itinerary.find(function(d) { 
+          return ['MAR', 'SAF', 'EXP', 'PKG'].includes(d.category); 
+        });
+        if (!mainActivity) mainActivity = dreamState.itinerary[1];
+        
+        state.selectedSlug = mainActivity.slug;
+        state.selectedSlugs = [mainActivity.slug];
+        openPaymentOptions();
+      } else {
+        showStatus('error', 'Could not calculate total. Please try again or contact us.');
+      }
+    }).catch(function() {
+      showStatus('error', 'Could not connect. Please try again or contact us via WhatsApp.');
+    });
   }
 
   /* ==========================================================================
@@ -847,15 +886,15 @@
 
     return {
       name: name, email: email, whatsapp: whatsapp,
-      consentContact: consent, consentMarketing: false,
-      serviceSlugs: state.selectedSlugs.slice(),
-      hotelSlug: state.selectedHotel || null,
-      adults: adults, children: children, date: date,
-      pickupZone: pickup, driverLang: driverLang,
+      consent_contact: consent, consent_marketing: false,
+      services: state.selectedSlugs.slice(),
+      hotel_slug: state.selectedHotel || null,
+      travellers: (adults || 0) + (children || 0),
+      pickup_zone: pickup, driver_lang: driverLang,
       notes: bits.join(' | '),
-      utmSource: null, utmMedium: null, utmCampaign: null,
+      utm_source: null, utm_medium: null, utm_campaign: null,
       referrer: document.referrer || null,
-      userAgent: navigator.userAgent
+      user_agent: navigator.userAgent
     };
   }
 
@@ -936,7 +975,14 @@
     var modal = el('sns-modal');
     var launcher = el('sns-launcher');
     if (modal) { modal.hidden = false; launcher && launcher.setAttribute('aria-expanded', 'true'); }
-    if (state.currentStep === 1 && !state.services.length) { loadCatalogue().then(renderServiceGrid); }
+    
+    // Always go to step 1 when opening (shows service grid + welcome message)
+    if (state.currentStep !== 1) {
+      goToStep(1);
+    } else if (!state.services.length) {
+      loadCatalogue().then(renderServiceGrid);
+    }
+    
     document.body.style.overflow = 'hidden';
   }
 
@@ -1042,6 +1088,19 @@
       goToDreamQuote: goToDreamQuote,
       openDreamPayment: openDreamPayment,
       _state: state
+    };
+
+    // Compatibility layer for eco-swahili.js and other V1 callers
+    window.snsConcierge = {
+      open: openConcierge,
+      openBooking: function(options) {
+        openConcierge();
+        if (options && options.serviceSlug) {
+          // Small delay to let modal open, then select service
+          setTimeout(function() { selectService(options.serviceSlug); }, 100);
+        }
+        return Promise.resolve(true);
+      }
     };
   }
 

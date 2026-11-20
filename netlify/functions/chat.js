@@ -43,14 +43,16 @@ function detectIntent(text) {
   if (hotelMentions.length > 0 && hotelContracts.isPropertyFactQuestion(text) && !/\b(transfer|transfers|airport|pickup|drop.?off|taxi|cab|drive|ride|tour|tours|safari|excursion|snorkel|dhow|cruise)\b/i.test(lower)) return 'hotel_facts';
   if (/\b(get a quote|price|cost|how much|quote|rate)\b/i.test(lower)) return 'quote';
   if (/\b(family|kids|children|child|toddler|teenager)\b/i.test(lower)) return 'family';
-  if (/\b(book|reserve|confirm|hold|how do i book|book an experience|book this)\b/i.test(lower)) return 'book';
-  if (/\b(show all tours|view all tours|all tours|list tours|see all tours|browse tours)\b/i.test(lower)) return 'all_tours';
-  if (/\b(recommend|suggest|what should|best|popular|must.?do|plan my (zanzibar )?trip|help me plan|itinerary)\b/i.test(lower)) return 'recommend';
 
-  // If text mentions a specific service (or specific transfer route), treat as quote/service query
+  // Check for specific service mentions BEFORE generic book/reserve intent
+  // So "I want to book Safari Blue" -> quote intent (service-specific response)
   const matched = matchServices(text);
   if (matched.length === 1) return 'quote';
   if (matched.length > 1 && !/^\s*(transfers?|airport transfers?)\s*$/i.test(lower.trim())) return 'quote';
+
+  if (/\b(book|reserve|confirm|hold|how do i book|book an experience|book this)\b/i.test(lower)) return 'book';
+  if (/\b(show all tours|view all tours|all tours|list tours|see all tours|browse tours)\b/i.test(lower)) return 'all_tours';
+  if (/\b(recommend|suggest|what should|best|popular|must.?do|plan my (zanzibar )?trip|help me plan|itinerary)\b/i.test(lower)) return 'recommend';
 
   if (/\b(transfer|transfers|airport|pickup|drop.?off)\b/i.test(lower)) return 'transfer';
   if (/\b(visas?|insurance|health|safety|malaria|yellow.?fever|travel info|travel advice|entry requirements|dress code)\b/i.test(lower)) return 'info';
@@ -408,6 +410,8 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
         '• **Airport & Hotel Transfers**: Zero advance deposit — reserve with peace of mind and pay your private driver on arrival (USD cash or card).\n' +
         '• **Sea Tours & Boat Charters (Safari Blue, Mnemba, Prison Island + Nakupenda, Catamaran)**: 20% advance deposit via a secure DPO or Pesapal payment link our team sends on WhatsApp (Visa/Mastercard) to lock in your boat captain, fuel, and morning fresh seafood market procurement. The remaining 80% balance is paid on the day of the tour.\n' +
         '• **Fly-in Safaris (Serengeti, Nyerere)**: 30% advance deposit to secure non-refundable scheduled domestic airline seats and TANAPA national park entry permits.\n' +
+        '• **Other Experiences (Horse swimming, Quad safari, Cenotes, etc.)**: 20% deposit locks specialist guides and equipment.\n' +
+        '• **Multi-Day Packages**: 30% deposit secures your complete itinerary — balance before departure.\n' +
         '• **Captain\'s Weather Guarantee**: If sea conditions or weather prevent sailing, you receive an immediate **100% full refund** or priority rescheduling!' + hoursNote,
       quickReplies: ['Cancellation policy', 'Plan my trip', 'Book an experience'],
       requestContact: false,
@@ -500,26 +504,43 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
       const svc = getService(targetSlug);
       if (svc && svc.pricing && svc.pricing.min != null) {
         const quote = getQuote({ serviceSlug: targetSlug, adults: profile.adults || 2 });
-        const isTransfer = svc.type === 'transfer';
-        const isSeaTour = ['safari-blue', 'mnemba-snorkeling', 'prison-island-nakupenda', 'nakupenda-sandbank', 'kizimkazi-dolphin-tour', 'sunset-dhow-cruise', 'chumbe-island'].includes(svc.slug);
-        const isSafari = svc.category === 'safari' || (svc.slug.includes('safari') && !svc.slug.includes('safari-blue'));
+        const depositPercent = svc.pricing.depositPercent || 0;
+        const depositAmount = depositPercent > 0 ? Math.round(quote.totalLow * (depositPercent / 100)) : 0;
+        
+        // Build deposit notice from catalogue's authoritative depositPercent
+        let depositNotice;
+        if (depositPercent === 0) {
+          depositNotice = svc.type === 'transfer' 
+            ? '(zero advance deposit — pay your driver on arrival)'
+            : '(zero advance deposit — pay on arrival)';
+        } else if (depositPercent === 20) {
+          if (svc.type === 'experience') {
+            depositNotice = '(20% advance deposit via a DPO/Pesapal link sent on WhatsApp locks specialist guides & equipment)';
+          } else if (svc.category === 'MAR') {
+            depositNotice = '(20% advance deposit via a DPO/Pesapal link sent on WhatsApp locks boat captain & fresh seafood lunch, backed by our 100% Weather Guarantee)';
+          } else {
+            depositNotice = '(20% advance deposit to confirm)';
+          }
+        } else if (depositPercent === 30) {
+          if (svc.type === 'package') {
+            depositNotice = '(30% advance deposit secures your complete itinerary — balance before departure)';
+          } else if (svc.category === 'SAF') {
+            depositNotice = '(30% advance deposit locks scheduled domestic flights & TANAPA permits)';
+          } else {
+            depositNotice = '(30% advance deposit to confirm)';
+          }
+        } else {
+          depositNotice = `(${depositPercent}% advance deposit to confirm)`;
+        }
 
-        const depositNotice = isSafari
-          ? '(30% advance deposit locks scheduled domestic flights & TANAPA permits)'
-          : isSeaTour
-            ? '(20% advance deposit via a DPO/Pesapal link sent on WhatsApp locks boat captain & fresh seafood lunch, backed by our 100% Weather Guarantee)'
-            : isTransfer
-              ? '(zero advance deposit — pay your driver on arrival)'
-              : '(zero advance deposit — pay on arrival)';
-
-        const waMsg = (isTransfer
+        const waMsg = (svc.type === 'transfer'
           ? 'Jambo Spice & Sail! I would like to book a private transfer: ' + svc.name + (profile.dates ? ' on ' + profile.dates : '') + '.'
           : 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.') +
           (profile.name ? ' My name is ' + profile.name + '.' : '');
         const waUrl = 'https://wa.me/' + BUSINESS_WHATSAPP + '?text=' + encodeURIComponent(waMsg);
         const inc = (svc.includes || []).join(', ') || 'Licensed guide, gear & marine fees';
 
-        const quickReplies = isTransfer
+        const quickReplies = svc.type === 'transfer'
           ? ['💬 Open WhatsApp to Reserve', 'Larger group?', 'How long to Nungwi?', 'Show all tours']
           : ['What is included?', '💬 Open WhatsApp', 'Check another tour', 'Airport transfers'];
 
@@ -611,7 +632,9 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
         '1. **Airport & Hotel Transfers**: Zero advance deposit — reserve with peace of mind and pay your driver on arrival.\n' +
         '2. **Sea Tours & Boat Charters (Safari Blue, Mnemba, Nakupenda, Catamaran)**: 20% confirmation deposit via a DPO or Pesapal payment link sent on WhatsApp (Visa/Mastercard) to secure your boat captain, fuel, and morning fresh seafood procurement. Balance paid on tour day.\n' +
         '3. **Fly-in Safaris**: 30% advance deposit to lock domestic flights and TANAPA national park permits.\n' +
-        '4. **Captain\'s Weather Guarantee**: 100% full refund or priority reschedule if weather/sea conditions prevent sailing.\n\n' +
+        '4. **Other Experiences (Horse swimming, Quad safari, Cenotes, etc.)**: 20% deposit to lock specialist guides and equipment.\n' +
+        '5. **Multi-Day Packages**: 30% deposit secures your complete itinerary — balance before departure.\n' +
+        '6. **Captain\'s Weather Guarantee**: 100% full refund or priority reschedule if weather/sea conditions prevent sailing.\n\n' +
         '[💬 Open WhatsApp to Reserve (' + svcName + ')](' + waUrl + ')',
       quickReplies: ['💬 Open WhatsApp', 'View all tours', 'Airport transfers', 'Travel info'],
       requestContact: false,

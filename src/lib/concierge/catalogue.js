@@ -5,6 +5,7 @@
 'use strict';
 
 const catalogue = require('../../data/concierge-catalogue.json');
+const hotelContracts = require('./hotel-contracts');
 
 const CATALOGUE_VERSION = catalogue.version || 'unknown';
 const CONFIG = catalogue.config || {};
@@ -25,6 +26,32 @@ function zoneName(slug) {
 function getService(slug) {
   if (!slug) return null;
   return (catalogue.services || []).find(s => s.slug === slug) || null;
+}
+
+/** Get hotels from catalogue (with contract data merged). */
+function getHotels() {
+  const catHotels = catalogue.hotels || [];
+  const contractHotels = hotelContracts.HOTELS || [];
+  // Merge contract data into catalogue hotels
+  return catHotels.map(catHotel => {
+    const contract = contractHotels.find(c => c.slug === catHotel.slug);
+    if (contract) {
+      return Object.assign({}, catHotel, {
+        location: contract.area,  // Use contract area as location for display
+        area: contract.area,
+        partner: contract.partner,
+        ratesStatus: contract.ratesStatus,
+        rooms: contract.rooms,
+        boardSupplements: contract.boardSupplements,
+        infrastructureTaxPerPersonPerNight: contract.infrastructureTaxPerPersonPerNight,
+        policy: contract.policy,
+        propertyFacts: contract.propertyFacts,
+        viewFacts: contract.viewFacts,
+        distanceFacts: contract.distanceFacts,
+      });
+    }
+    return catHotel;
+  });
 }
 
 const DAY_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -81,6 +108,7 @@ module.exports = {
   getZone,
   zoneName,
   getService,
+  getHotels,
   getBusinessHoursLabel,
   isWithinBusinessHours,
   profileSummary,

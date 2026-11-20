@@ -363,6 +363,8 @@ function hotelQuote(slug, opts) {
 }
 
 module.exports = {
+  HOTELS: HOTELS,
+  HOTEL_CONTRACTS: HOTELS,
   getHotelContract: getHotelContract,
   matchHotelContracts: matchHotelContracts,
   isStayRateQuestion: isStayRateQuestion,
