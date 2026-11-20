@@ -16,7 +16,7 @@ const { corsHeaders, checkRateLimit, checkBotSignals, getClientIP, isAllowedOrig
 const { generateReference } = require('../../src/lib/concierge/reference');
 const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
 const { CONFIG } = require('../../src/lib/concierge/catalogue');
-const crypto = require('crypto');
+const crypto = require('node:crypto');
 
 // Ensure store is initialized
 function ensureStore() {

@@ -51,7 +51,8 @@ class BlobStore {
   _getStore() {
     if (!this._store) {
       try {
-        const { getStore } = require('@netlify/blobs');
+        const blobsModule = ['@netlify', 'blobs'].join('/');
+        const { getStore } = require(blobsModule);
         this._store = getStore({ name: this._storeName, consistency: 'strong' });
       } catch (e) {
         throw new Error('Netlify Blobs not available: ' + e.message);

@@ -5,7 +5,7 @@
  */
 'use strict';
 
-const crypto = require('crypto');
+const crypto = require('node:crypto');
 const { corsHeaders, checkRateLimit, getClientIP, isAllowedOrigin } = require('../../src/lib/concierge/security');
 const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
 const { normalizeE164 } = require('../../src/lib/concierge/validate');

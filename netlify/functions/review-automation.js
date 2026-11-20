@@ -8,7 +8,7 @@
 const { corsHeaders, isAllowedOrigin } = require('../../src/lib/concierge/security');
 const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
 const { catalogue, CONFIG } = require('../../src/lib/concierge/catalogue');
-const crypto = require('crypto');
+const crypto = require('node:crypto');
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {

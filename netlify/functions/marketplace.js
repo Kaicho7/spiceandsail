@@ -24,8 +24,8 @@ exports.handler = async function (event) {
   }
 
   // GET still works for reading approved activities
-  const path = require('path');
-  const fs = require('fs');
+  const path = require('node:path');
+  const fs = require('node:fs');
   try {
     const marketplaceApiPath = path.join(__dirname, '..', '..', 'src', 'api', 'marketplace.js');
     const marketplaceApi = require(marketplaceApiPath);
