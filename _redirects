@@ -1,8 +1,5 @@
 # Cloudflare Pages redirects
 # Canonical domain enforcement
-https://www.spiceandsail.com/* https://spiceandsail.com/:splat 301
-http://spiceandsail.com/* https://spiceandsail.com/:splat 301
-http://www.spiceandsail.com/* https://spiceandsail.com/:splat 301
 
 # Legacy .html blog URLs to clean URLs
 /blog/best-time-to-visit-zanzibar.html /blog/best-time-to-visit-zanzibar/ 301
@@ -10,3 +7,7 @@ http://www.spiceandsail.com/* https://spiceandsail.com/:splat 301
 /blog/stone-town-walking-tour-guide.html /blog/stone-town-walking-tour-guide/ 301
 /blog/zanzibar-airport-transfer-guide.html /blog/zanzibar-airport-transfer-guide/ 301
 
+# Essentials consolidation: move /tours/ and /pages/ variants to /packages/
+/tours/zanzibar-essentials-3day/   /packages/zanzibar-essentials-3day/  301
+/tours/zanzibar-essentials-3day    /packages/zanzibar-essentials-3day/  301
+/pages/tours/zanzibar-essentials-3day/  /packages/zanzibar-essentials-3day/  301
