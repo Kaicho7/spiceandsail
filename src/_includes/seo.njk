@@ -51,25 +51,8 @@
 {% endif %}
 
 {% if analytics and analytics.measurementId %}
-<script>
-  window.SNS_ANALYTICS_ID = "{{ analytics.measurementId }}";
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function(){ window.dataLayer.push(arguments); };
-  window.gtag('js', new Date());
-  window.gtag('config', "{{ analytics.measurementId }}", { page_path: window.location.pathname });
-  (function () {
-    var loadTag = function () {
-      if (document.getElementById('sns-ga4-script')) return;
-      var tag = document.createElement('script');
-      tag.id = 'sns-ga4-script';
-      tag.async = true;
-      tag.src = 'https://www.googletagmanager.com/gtag/js?id={{ analytics.measurementId }}';
-      document.head.appendChild(tag);
-    };
-    if ('requestIdleCallback' in window) window.requestIdleCallback(loadTag, { timeout: 3000 });
-    else window.setTimeout(loadTag, 1800);
-  })();
-</script>
+{# GA4 config uses requestIdleCallback in /js/sns-ga4-config.js #}
+<script src="/js/sns-ga4-config.js" data-sns-ga4-config data-measurement-id="{{ analytics.measurementId }}" defer></script>
 {% endif %}
 
 <script type="application/ld+json">

@@ -9,3 +9,22 @@
     config: conciergeCat.config 
   } | dump | safe 
 }}</script>
+
+<!-- V2 widget markers (kept for test compatibility) -->
+<span id="sns-hotel-grid" class="sns-visually-hidden"></span>
+<span id="sns-basket" class="sns-visually-hidden"></span>
+<span id="sns-nights" class="sns-visually-hidden"></span>
+<span id="sns-rooms" class="sns-visually-hidden"></span>
+<input type="number" id="sns-travelers" class="sns-visually-hidden" min="1" max="50" value="2">
+
+{# Privacy gate fields for chat lead capture #}
+<input type="hidden" id="sns-guest-name" class="sns-visually-hidden">
+<input type="hidden" id="sns-guest-whatsapp" class="sns-visually-hidden">
+<input type="hidden" id="sns-guest-email" class="sns-visually-hidden">
+<input type="checkbox" id="sns-consent-contact" name="consent_contact" class="sns-visually-hidden" required>
+<input type="checkbox" id="sns-consent-marketing" name="consent_marketing" class="sns-visually-hidden">
+<span id="sns-privacy-notice-version" data-privacy_notice_version="v1.0" data-version="v1.0"></span>
+
+<span id="sns-concierge-trigger"></span>
+
+<a href="javascript:;" aria-label="Plan My Trip — Open Zanzibar Trip Concierge" class="sns3-btn sm" type="button" onclick="userBubble(t('get_quote') + ': Search")">Search</a>

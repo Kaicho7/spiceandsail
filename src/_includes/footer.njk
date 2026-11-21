@@ -33,20 +33,20 @@
       </ul>
     </div>
     <div class="footer-col footer-contact">
-      <h2 class="footer-col-title">Talk with our team</h2>
+      <h2 class="footer-col-title">{{ "footer_talk_with_team" | t(lang) }}</h2>
       <a href="tel:{{ site.contact.phone }}">Call {{ site.contact.phone_display }}</a>
       <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer">WhatsApp {{ site.contact.whatsapp_display }}</a>
       {% if site.contact and site.contact.email %}<a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>{% endif %}
       <p>{{ site.hours.days }} · {{ site.hours.open }}–{{ site.hours.close }} EAT</p>
-      {% if site.social and site.social.google_maps %}<a href="{{ site.social.google_maps }}" target="_blank" rel="noopener noreferrer">Find us on Google Maps ↗</a>{% endif %}
+      {% if site.social and site.social.google_maps %}<a href="{{ site.social.google_maps }}" target="_blank" rel="noopener noreferrer">{{ "footer_find_google_maps" | t(lang) }}</a>{% endif %}
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Spice &amp; Sail Zanzibar. All rights reserved.</p>
     <nav aria-label="Legal">
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="/cancellation/">Cancellation</a>
+      <a href="/privacy/">{{ "footer_privacy" | t(lang) }}</a>
+      <a href="/terms/">{{ "footer_terms" | t(lang) }}</a>
+      <a href="/cancellation/">{{ "footer_cancellation" | t(lang) }}</a>
     </nav>
   </div>
 </footer>
@@ -56,44 +56,20 @@
 <div class="sns-trust-bar" id="snsTrustBar" aria-label="Trust signals">
   <div class="sns-trust-bar__inner">
     <div class="sns-trust-bar__badges" role="list" aria-label="Trust guarantees">
-      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🛡️</span>0% Deposit Transfers</span>
-      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">💎</span>Marine Fees Included</span>
-      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🌤️</span>Weather Guarantee</span>
-      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🗣️</span>Multilingual Guides</span>
-      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">💰</span>20% Less Than Viator</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🛡️</span>{{ "footer_0_deposit" | t(lang) }}</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">💎</span>{{ "footer_marine_fees" | t(lang) }}</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🌤️</span>{{ "footer_weather_guarantee" | t(lang) }}</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">🗣️</span>{{ "footer_multilingual_guides" | t(lang) }}</span>
+      <span class="sns-trust-badge" role="listitem"><span class="sns-trust-badge__icon" aria-hidden="true">💰</span>{{ "footer_viator_less" | t(lang) }}</span>
     </div>
     <div class="sns-trust-bar__cta">
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%27d%20like%20to%20book%20a%20Zanzibar%20tour" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">Chat WhatsApp</a>
-      <a href="/tours/" class="btn btn-outline btn-sm">Browse Tours</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%27d%20like%20to%20book%20a%20Zanzibar%20tour" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">{{ "footer_chat_whatsapp" | t(lang) }}</a>
+      <a href="/tours/" class="btn btn-outline btn-sm">{{ "footer_browse_tours" | t(lang) }}</a>
     </div>
   </div>
 </div>
 
-<script>
-(function() {
-  'use strict';
-  var trustBar = document.getElementById('snsTrustBar');
-  if (!trustBar) return;
-  // Show on mobile after brief delay
-  setTimeout(function() {
-    if (window.innerWidth <= 768) {
-      trustBar.classList.add('visible');
-    }
-  }, 2000);
-  // Hide on scroll up, show on scroll down (optional enhancement)
-  var lastScroll = window.scrollY;
-  window.addEventListener('scroll', function() {
-    if (window.innerWidth > 768) return;
-    var currentScroll = window.scrollY;
-    if (currentScroll > lastScroll && currentScroll > 100) {
-      trustBar.classList.remove('visible');
-    } else {
-      trustBar.classList.add('visible');
-    }
-    lastScroll = currentScroll;
-  }, { passive: true });
-})();
-</script>
+<script src="/js/sns-trust-bar.js" defer></script>
 
 </body>
 </html>

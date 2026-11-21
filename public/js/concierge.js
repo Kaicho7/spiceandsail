@@ -1209,7 +1209,7 @@
       '</button>';
     }).join('');
     
-    modal.innerHTML = 
+    modal.innerText = 
       '<div class="sns-payment-backdrop" onclick="document.getElementById(\'sns-payment-modal\').remove()"></div>' +
       '<div class="sns-payment-panel" role="document">' +
         '<div class="sns-payment-header">' +

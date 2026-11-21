@@ -24,6 +24,24 @@ module.exports = function(eleventyConfig) {
   const slugify = require("slugify");
   const { publicFromRate, packageForHotel } = require("./src/lib/concierge/public-data");
 
+  // Load translations for build-time i18n
+  let translationsData = { strings: {} };
+  try {
+    translationsData = JSON.parse(fs.readFileSync(path.join("./src", "data", "translations.json"), "utf8"));
+  } catch (e) { translationsData = { strings: {} }; }
+
+  function translate(key, lang) {
+    const langCode = lang || 'en';
+    const entry = translationsData.strings[key];
+    if (entry && entry[langCode]) return entry[langCode];
+    if (entry && entry.en) return entry.en;
+    return key;
+  }
+
+  eleventyConfig.addNunjucksFilter("t", function(key, lang) {
+    return translate(key, lang);
+  });
+
   // Concierge catalogue is the single source of truth for concierge pricing.
   // These filters render ranges from the catalogue; a missing or unverified
   // price renders as a team-confirms message, never an invented number.

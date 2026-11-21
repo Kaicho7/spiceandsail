@@ -19,7 +19,27 @@ permalink: "/blog/index.html"
         <h2>Zanzibar Travel Guides</h2>
         <p class="section-subtitle">Evidence-backed travel advice from our years of local experience.</p>
       </div>
-      <p>New guides are coming soon. For now, see our <a href="/travel-guide/">Travel Guide</a>.</p>
+      <div class="cards-grid">
+        {% for post in collections.all | reverse %}
+          {% if post.inputPath and post.inputPath.includes("/pages/blog/") and not post.inputPath.includes("index.njk") %}
+        <article class="card reveal">
+          <div class="card-image">
+            {% set featured = post.inputPath | featuredImage %}
+            {% set cdnSrc = post.inputPath | cdnImage %}
+            <img src="{{ cdnSrc }}" alt="{{ featured.featuredAlt or post.data.title }}" loading="lazy">
+          </div>
+          <div class="card-content">
+            <span class="card-badge badge-blog">Guide</span>
+            <h3 class="card-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+            <p class="card-description">{{ post.data.description | truncate(140) }}</p>
+            <div class="card-footer">
+              <a href="{{ post.url }}" class="btn btn-primary btn-sm">Read Guide</a>
+            </div>
+          </div>
+        </article>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </section>
 

@@ -84,6 +84,13 @@
       "fr": "Forfaits Séjour",
       "pl": "Pakiety Pobytowe"
     },
+    "nav_zanzibar_essentials": {
+      "en": "Zanzibar Essentials 3-Day",
+      "it": "Zanzibar Essentials 3 Giorni",
+      "de": "Zanzibar Essentials 3 Tage",
+      "fr": "Zanzibar Essentials 3 Jours",
+      "pl": "Zanzibar Essentials 3 Dni"
+    },
     "nav_safaris": {
       "en": "Mainland Safaris",
       "it": "Safari in Tanzania",
@@ -133,12 +140,54 @@
       "fr": "Attractions",
       "pl": "Atrakcje"
     },
+    "nav_safari_blue": {
+      "en": "Safari Blue Dhow Day",
+      "it": "Safari Blue - Giornata in Dhow",
+      "de": "Safari Blue Dhow-Tag",
+      "fr": "Safari Blue - Journée en Dhow",
+      "pl": "Safari Blue - Dzień na Dhow"
+    },
+    "nav_mnemba_snorkeling": {
+      "en": "Mnemba Atoll Snorkeling",
+      "it": "Schnorcheln am Mnemba-Atoll",
+      "de": "Schnorcheln am Mnemba-Atoll",
+      "fr": "Snorkeling à l'Atoll Mnemba",
+      "pl": "Nurkowanie na Atolu Mnemba"
+    },
+    "nav_stone_town_walking_tour": {
+      "en": "Stone Town Walking Tour",
+      "it": "Tour a Piedi di Stone Town",
+      "de": "Stone Town zu Fuß",
+      "fr": "Visite à Pied de Stone Town",
+      "pl": "Spacer po Stone Town"
+    },
     "nav_areas": {
       "en": "Areas",
       "it": "Località",
       "de": "Regionen",
       "fr": "Régions",
       "pl": "Regiony"
+    },
+    "nav_stone_town": {
+      "en": "Stone Town",
+      "it": "Stone Town",
+      "de": "Stone Town",
+      "fr": "Stone Town",
+      "pl": "Stone Town"
+    },
+    "nav_nungwi_kendwa": {
+      "en": "Nungwi & Kendwa",
+      "it": "Nungwi e Kendwa",
+      "de": "Nungwi & Kendwa",
+      "fr": "Nungwi & Kendwa",
+      "pl": "Nungwi i Kendwa"
+    },
+    "nav_paje_jambiani": {
+      "en": "Paje & Jambiani",
+      "it": "Paje e Jambiani",
+      "de": "Paje & Jambiani",
+      "fr": "Paje & Jambiani",
+      "pl": "Paje i Jambiani"
     },
     "nav_travel_guide": {
       "en": "Travel Guide",
@@ -167,6 +216,13 @@
       "de": "Migrationskalender",
       "fr": "Calendrier de Migration",
       "pl": "Kalendarz Migracji"
+    },
+    "nav_packing_guide": {
+      "en": "Packing Guide",
+      "it": "Guida Bagagli",
+      "de": "Packliste",
+      "fr": "Guide Bagages",
+      "pl": "Przewodnik Pakowania"
     },
     "btn_whatsapp_book": {
       "en": "Book on WhatsApp",
@@ -258,6 +314,111 @@
       "de": "privaten Flughafentransfer nach",
       "fr": "transfert privé depuis l'aéroport vers",
       "pl": "prywatny transfer z lotniska do"
+    },
+    "mobile_whatsapp": {
+      "en": "WhatsApp",
+      "it": "WhatsApp",
+      "de": "WhatsApp",
+      "fr": "WhatsApp",
+      "pl": "WhatsApp"
+    },
+    "mobile_call": {
+      "en": "Call",
+      "it": "Chiamare",
+      "de": "Anrufen",
+      "fr": "Appeler",
+      "pl": "Zadzwonić"
+    },
+    "mobile_enquire": {
+      "en": "Enquire",
+      "it": "Richiedi Info",
+      "de": "Anfragen",
+      "fr": "Demander Info",
+      "pl": "Zapytaj"
+    },
+    "footer_talk_with_team": {
+      "en": "Talk with our team",
+      "it": "Parla con il nostro team",
+      "de": "Sprich mit unserem Team",
+      "fr": "Parlez à notre équipe",
+      "pl": "Porozmawiaj z naszym zespołem"
+    },
+    "footer_0_deposit": {
+      "en": "0% Deposit Transfers",
+      "it": "Transfer 0% Deposito",
+      "de": "Transfers 0% Anzahlung",
+      "fr": "Transferts 0% Acompte",
+      "pl": "Transfery 0% Zaliczka"
+    },
+    "footer_marine_fees": {
+      "en": "Marine Fees Included",
+      "it": "Tasse Marine Incluse",
+      "de": "Marinegebühren Inklusive",
+      "fr": "Frais Marins Inclus",
+      "pl": "Opłaty Morskie Wliczone"
+    },
+    "footer_weather_guarantee": {
+      "en": "Weather Guarantee",
+      "it": "Garanzia Meteo",
+      "de": "Wettergarantie",
+      "fr": "Garantie Météo",
+      "pl": "Gwarancja Pogodowa"
+    },
+    "footer_multilingual_guides": {
+      "en": "Multilingual Guides",
+      "it": "Guide Multilingue",
+      "de": "Mehrsprachige Guides",
+      "fr": "Guides Multilingues",
+      "pl": "Wielojęzyczni Przewodnicy"
+    },
+    "footer_viator_less": {
+      "en": "20% Less Than Viator",
+      "it": "20% Meno di Viator",
+      "de": "20% Weniger als Viator",
+      "fr": "20% Moins que Viator",
+      "pl": "20% Mniej niż Viator"
+    },
+    "footer_chat_whatsapp": {
+      "en": "Chat WhatsApp",
+      "it": "Chatta su WhatsApp",
+      "de": "WhatsApp Chat",
+      "fr": "WhatsApp Chat",
+      "pl": "Czat WhatsApp"
+    },
+    "footer_browse_tours": {
+      "en": "Browse Tours",
+      "it": "Sfoglia Tour",
+      "de": "Touren Durchsuchen",
+      "fr": "Parcourir Excursions",
+      "pl": "Przeglądaj Wycieczki"
+    },
+    "footer_find_google_maps": {
+      "en": "Find us on Google Maps ↗",
+      "it": "Trova su Google Maps ↗",
+      "de": "Bei Google Maps finden ↗",
+      "fr": "Trouver sur Google Maps ↗",
+      "pl": "Znajdź na Google Maps ↗"
+    },
+    "footer_privacy": {
+      "en": "Privacy",
+      "it": "Privacy",
+      "de": "Datenschutz",
+      "fr": "Confidentialité",
+      "pl": "Prywatność"
+    },
+    "footer_terms": {
+      "en": "Terms",
+      "it": "Termini",
+      "de": "AGB",
+      "fr": "Conditions",
+      "pl": "Warunki"
+    },
+    "footer_cancellation": {
+      "en": "Cancellation",
+      "it": "Cancellazione",
+      "de": "Stornierung",
+      "fr": "Annulation",
+      "pl": "Anulowanie"
     }
   }
 }
