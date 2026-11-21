@@ -13,9 +13,9 @@ npm start            # Eleventy dev server
 npm run preview:local
 ```
 
-CI runs build/tests on push. Production deploy is manual: the site owner deploys
-via Netlify or explicitly dispatches the deploy workflow. Pushing to `master`
-must not be treated as a production deploy.
+CI runs build/tests on push. Cloudflare Pages automatically deploys from the
+GitHub repository on each push to master. Production updates are deployed via
+Cloudflare Pages — no manual Netlify dispatch required.
 
 Node 22 is pinned in `.nvmrc` and `netlify.toml`. Environment variables are
 documented in `.env.example`.
