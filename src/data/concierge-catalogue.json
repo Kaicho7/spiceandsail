@@ -458,7 +458,7 @@
         "max": 150,
         "display": "$85–$150",
         "tieredDisplay": "1 guest: $150 pp • 2 guests: $95 pp • 3–6 guests: $85 pp (all-in: fees, lunch, gear)",
-        "basisNote": "per person; includes $10 marine fee; group-size tiered; Stone Town pickup vs beach-hotel pickup differential; anchored at Cotis Safaris published rates",
+        "basisNote": "per person; includes $25 marine fee; group-size tiered; Stone Town pickup vs beach-hotel pickup differential; anchored at Cotis Safaris published rates",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Cotis Safaris rate card, Easy Travel group-size tiers",
         "verified": true,
@@ -477,7 +477,7 @@
         "Marine conservation fee: $10 for non-EAC adults (included in our price)",
         "Bring a towel, hat, sunscreen (reef-safe), and swimwear",
         "Limited daily capacity — booking essential",
-        "Copycat products and overcrowding are key risks — we only recommend the licensed original Safari Blue"
+        "Copycat products and overcrowding are key risks — we only recommend the licensed Safari Blue"
       ],
       "whatToExpect": [
         "Full-day dhow sailing trip (7–9 hours)",
@@ -519,8 +519,8 @@
         "min": 45,
         "max": 115,
         "display": "$45–$115",
-        "tieredDisplay": "Shared small-group (max 8): $45 pp + $10 marine fee • Kendwa departure: $55 pp incl fees • Private 2 guests: $85–95 pp (includes $10 marine fee) • Premium private: $105–115 pp",
-        "basisNote": "per person; shared $45 pp + $10 marine fee, private 2 guests $85–95 pp incl $10 marine fee; benchmark: shared typical $55, fee $10 since 1 Sep 2025",
+        "tieredDisplay": "Shared small-group (max 8): $45 pp + $25 marine fee • Kendwa departure: $55 pp incl fees • Private 2 guests: $85–95 pp (includes $25 marine fee) • Premium private: $105–115 pp",
+        "basisNote": "per person; shared $45 pp + $25 marine fee, private 2 guests $85–95 pp incl $25 marine fee; benchmark: shared typical $55, fee $25 since 1 Nov 2026",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Zanzibar Star Tours, Mnemba Island Tours, Tulia Zanzibar, Azur Zanzibar Tours, snorkelingzanzibar.com",
         "verified": true,
