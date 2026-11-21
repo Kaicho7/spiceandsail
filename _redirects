@@ -10,5 +10,3 @@ http://www.spiceandsail.com/* https://spiceandsail.com/:splat 301
 /blog/stone-town-walking-tour-guide.html /blog/stone-town-walking-tour-guide/ 301
 /blog/zanzibar-airport-transfer-guide.html /blog/zanzibar-airport-transfer-guide/ 301
 
-# Trailing slash normalization
-/*/ /:splat 301
