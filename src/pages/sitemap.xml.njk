@@ -137,4 +137,40 @@ eleventyExcludeFromCollections: true
   <loc>{{ site.url }}{% if page.lang %}{{ page.lang }}{% endif %}/attractions/mnarani-marine-turtle-pond/</loc>
   <lastmod>{% assign d = attr.lastmod | default: '2024-01-01' %}{{ d | date: '%Y-%m-%d' }}</lastmod><priority>0.5</priority>
 </url>
+{%- assign hotels = __hotels_full %}
+{%- for hotel in hotels %}
+  {%- if hotel.slug and hotel.slug != "index" and hotel.slug != "index.html" %}
+  <url>
+    <loc>{{ site.url }}{% if page.lang %}{{ page.lang }}{% endif %}/hotels/{{ hotel.slug }}{% unless page.url contains "/hotels/" %}{{ page.url }}{% endunless %}</loc>
+    <lastmod>{{ hotel.lastmod | default: page.date.toISOString().split("T")[0] }}</lastmod>
+    <priority>0.7</priority>
+  </url>
+{%- endfor %}
+{%- assign attractions = __attractions_full %}
+{%- for attr in attractions %}
+  {%- if attr.slug and attr.slug != "index" and attr.slug != "index.html" %}
+  <url>
+    <loc>{{ site.url }}{% if page.lang %}{{ page.lang }}{% endif %}/attractions/{{ attr.slug }}{% unless page.url contains "/attractions/" %}{{ page.url }}{% enduntil %}</loc>
+    <lastmod>{{ attr.lastmod | default: page.date.toISOString().split("T")[0] }}</lastmod>
+    <priority>0.5</priority>
+  </url>
+{%- endfor %}
+{%- assign hotels = __hotels_full %}
+{%- for hotel in hotels %}
+  {%- if hotel.slug and hotel.slug != "index" and hotel.slug != "index.html" %}
+  <url>
+    <loc>{{ site.url }}/hotels/{{ hotel.slug }}{% unless page.url contains "/hotels/" %}{{ page.url }}{% endunless %}</loc>
+    <lastmod>{{ hotel.lastmod | default: "2026-11-21" }}</lastmod>
+    <priority>0.7</priority>
+  </url>
+{%- endfor %}
+{%- assign hotels = __hotels_full %}
+{%- for hotel in hotels %}
+  {%- if hotel.slug and hotel.slug != "index" and hotel.slug != "index.html" %}
+  <url>
+    <loc>{{ site.url }}/hotels/{{ hotel.slug }}{% unless page.url contains "/hotels/" %}{{ page.url }}{% endunless %}</loc>
+    <lastmod>{{ hotel.lastmod | default: "2026-11-21" }}</lastmod>
+    <priority>0.7</priority>
+  </url>
+{%- endfor %}
 </urlset>
