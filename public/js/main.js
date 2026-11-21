@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
         session_id: 'contact-form-' + Date.now()
       };
 
-      fetch('/.netlify/functions/lead', {
+      fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

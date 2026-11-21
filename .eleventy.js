@@ -17,6 +17,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"src/js/review-capture.js": "js/review-capture.js"});
   // Copy _headers into the publish dir (Netlify applies custom headers from dist)
   eleventyConfig.addPassthroughCopy({"_headers": "_headers"});
+  // Copy _redirects into the publish dir (Cloudflare Pages applies redirects from dist)
+  eleventyConfig.addPassthroughCopy({"_redirects": "_redirects"});
   
   // Load tours.json using fs
   const fs = require("fs");
