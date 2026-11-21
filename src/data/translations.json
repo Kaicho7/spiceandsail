@@ -196,6 +196,13 @@
       "fr": "Guide de Voyage",
       "pl": "Przewodnik"
     },
+    "nav_blog": {
+      "en": "Travel Blog",
+      "it": "Blog di Viaggio",
+      "de": "Reiseblog",
+      "fr": "Blog de Voyage",
+      "pl": "Blog Podróży"
+    },
     "nav_visas_levies": {
       "en": "Cancellation & Weather Policy",
       "it": "Cancellazione & Meteo",

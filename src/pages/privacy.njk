@@ -32,7 +32,7 @@ description: What we collect, why, who sees it, retention, and how to request de
       <dd>Whether you have ticked "Contact me about this request" and/or "Send me marketing information".</dd>
 
       <dt>Technical Data</dt>
-      <dd>IP address, browser type, device type, approximate geographical location (country-level only), pages visited on our site, referral source, and timestamp of visit — collected automatically via standard web server logs and Eleventy/Netlify analytics.</dd>
+      <dd>IP address, browser type, device type, approximate geographical location (country-level only), pages visited on our site, referral source, and timestamp of visit — collected automatically via standard web server logs and Cloudflare Analytics.</dd>
     </dl>
   </div>
 
@@ -50,7 +50,7 @@ description: What we collect, why, who sees it, retention, and how to request de
   <div style="margin-bottom: 2rem;">
     <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Who We Share Data With</h2>
     <ul style="color: var(--dct-text-muted); line-height: 1.8; margin: 0;">
-      <li>Netlify Blobs (production) — encrypted at-rest, used as the persistent store for leads and references. Access limited to server-side functions.</li>
+      <li>Cloudflare KV (production) — encrypted at-rest, used as the persistent store for leads and references. Access limited to server-side functions.</li>
       <li>Configured webhook endpoints — only if you have explicitly set WHATSAPP_OPS_WEBHOOK_URL, OPS_WEBHOOK_URL, DISCORD_WEBHOOK_URL, or SLACK_WEBHOOK_URL in the environment. No data is sent to webhooks that are not configured.</li>
       <li>Law enforcement or regulatory authorities — only where required by applicable law or court order.</li>
       <li>With your consent (if you tick "Send me marketing information") — only to send you promotional emails about Zanzibar travel offers, if an email address is provided.</li>
@@ -59,7 +59,7 @@ description: What we collect, why, who sees it, retention, and how to request de
 
   <div style="margin-bottom: 2rem;">
     <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1min;">Data Retention</h2>
-    <p style="color: var(--dct-text-muted); line-height: 1.8;">We retain lead data for a maximum of 3 years from the date of creation, unless you request deletion earlier. Consent preferences and technical logs are retained for 12 months. Anonymous usage analytics are retained per Netlify's default privacy policy.</p>
+    <p style="color: var(--dct-text-muted); line-height: 1.8;">We retain lead data for a maximum of 3 years from the date of creation, unless you request deletion earlier. Consent preferences and technical logs are retained for 12 months. Anonymous usage analytics are retained per Cloudflare's privacy policy.</p>
   </div>
 
   <div style="margin-bottom: 2rem;">
@@ -77,7 +77,7 @@ description: What we collect, why, who sees it, retention, and how to request de
   <div style="border-top: 1px solid var(--dct-divider); padding-top: 2rem;">
     <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Contact</h2>
     <p style="color: var(--dct-text-muted); line-height: 1.8;">If you have questions about this privacy notice, exercise any of your rights, or wish to request data deletion, please email <a href="mailto:{{ site.contact.email }}" style="color: var(--dct-ocean);"><strong>{{ site.contact.email }}</strong></a>.</p>
-    <p style="color: var(--dct-text-muted); margin-top: 1rem; font-size: 0.9rem;">This notice was last updated on 2026-11-05.</p>
+    <p style="color: var(--dct-text-muted); margin-top: 1rem; font-size: 0.9rem;">This notice was last updated on 2026-11-21.</p>
   </div>
 </main>
 

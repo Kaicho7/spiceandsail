@@ -1,5 +1,8 @@
 {% set booking_slug = tour_slug or page.fileSlug %}
 {% set booking_kind = "tour" %}
+{# Derive tour name from catalogue or page title #}
+{% set svc = (conciergeCat.services | findBySlug(booking_slug)) %}
+{% set booking_trip = svc.name or page.title or "this tour" %}
 {% set booking_heading = "Ask about " + booking_trip %}
-{% set booking_intro = "Choose your preferred date and guest count. We’ll receive your enquiry directly in WhatsApp." %}
+{% set booking_intro = "Choose your preferred date and guest count. We'll receive your enquiry directly in WhatsApp." %}
 {% include "whatsapp-booking-panel.njk" %}

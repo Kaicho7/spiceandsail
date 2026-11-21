@@ -34,8 +34,13 @@
     "youtube": "https://www.youtube.com/@spiceandsailzanzibar",
     "twitter": "",
     "facebook": "",
-    "tripadvisor": "",
-    "trustpilot": "https://www.trustpilot.com/review/spiceandsail.com",
+    "tripadvisor": "https://www.trustpilot.com/review/spiceandsail.com",
     "google_maps": "https://www.google.com/maps/place/Spice+%26+Sail+Zanzibar/data=!4m2!3m1!1s0x0:0xaa066bcd6a73b31b"
+  },
+  "licence": {
+    "authority": "Zanzibar Commission for Tourism",
+    "act": "Zanzibar Tourism Act No. 6 of 2009",
+    "number": "ZCT-[LICENCE-NUMBER-PENDING]",
+    "status": "valid"
   }
 }

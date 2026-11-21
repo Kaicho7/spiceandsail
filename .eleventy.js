@@ -44,6 +44,15 @@ module.exports = function(eleventyConfig) {
     return translate(key, lang);
   });
 
+  function findBySlug(arr, slug) {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].slug === slug) { return arr[i]; }
+    }
+    return null;
+  }
+
+  eleventyConfig.addNunjucksFilter("findBySlug", findBySlug);
+
   // Concierge catalogue is the single source of truth for concierge pricing.
   // These filters render ranges from the catalogue; a missing or unverified
   // price renders as a team-confirms message, never an invented number.
