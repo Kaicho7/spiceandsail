@@ -111,6 +111,8 @@
 # Canonicalize duplicate package & safari tour URLs
 [[redirects]]
   from = "/tours/zanzibar-essentials-3day/*"
+from = "/spice-farm-cultural"
+to = "/tours/spice-farm/"
   to = "/packages/zanzibar-essentials-3day/"
   status = 301
   force = true

@@ -217,7 +217,7 @@ alternate_de: "https://spiceandsail.com/de/"
       </div>
 
       <div class="transfer-strip-footer reveal">
-        <a href="/transfers/#transfer-calculator" class="btn btn-secondary">Open Interactive Fare Calculator (All Zanzibar Zones) →</a>
+        <a href="/transfers/#transfer-calculator" class="btn btn-secondary" onclick="window.dataLayer.push({'event': 'fare_calculator_open', 'page_path': '{{ page.path }}', 'zone': 'all_zones'});">Open Interactive Fare Calculator (All Zanzibar Zones) →</a>
       </div>
     </div>
   </section>

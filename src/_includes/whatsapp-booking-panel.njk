@@ -24,7 +24,7 @@
   {% else %}
   <div class="sns-wa-booking-general">
     <p>Choose from tours, transfers and island experiences, then get a published rate from the verified catalogue.</p>
-    <button class="sns-wa-booking-submit" type="button" data-sns-open>Build my trip with the Island Concierge <span aria-hidden="true">→</span></button>
+    <button class="sns-wa-booking-submit" type="button" data-sns-open onclick="window.dataLayer.push({'event': 'concierge_start', 'page_path': '{{ page.path }}'});>Build my trip with the Island Concierge <span aria-hidden="true">→</span></button>
   </div>
   <p class="sns-wa-booking-note">Our local team confirms availability and the final quote. You can continue in the concierge or contact us directly by WhatsApp.</p>
   {% endif %}
