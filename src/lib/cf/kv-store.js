@@ -1,5 +1,5 @@
 /**
- * Cloudflare KV store adapter. Same interface as the Netlify Blobs store in
+ * Cloudflare KV store adapter. Same interface as the in-memory test store in
  * src/lib/concierge/store.js, so lead.js / chat.js / security.js / reference.js
  * work unchanged.
  *

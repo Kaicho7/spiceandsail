@@ -1,5 +1,5 @@
 /**
- * Review Capture System - Netlify Function
+ * Review Capture System - platform-neutral handler
  * Builds a post-service WhatsApp review request with configured GBP/TripAdvisor links.
  */
 const HEADERS = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
@@ -10,8 +10,7 @@ function allowedOrigin(value) {
     const host = new URL(value).hostname;
     return host === 'spiceandsail.com'
       || host === 'www.spiceandsail.com'
-      || host === 'spiceandsail.netlify.app'
-      || host.endsWith('--spiceandsail.netlify.app')
+      || host.endsWith('.pages.dev')
       || host === 'localhost'
       || host === '127.0.0.1';
   } catch (e) {

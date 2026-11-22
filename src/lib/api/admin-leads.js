@@ -6,13 +6,13 @@
 'use strict';
 
 const crypto = require('node:crypto');
-const { corsHeaders, checkRateLimit, getClientIP, isAllowedOrigin } = require('../../src/lib/concierge/security');
-const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
-const { normalizeE164 } = require('../../src/lib/concierge/validate');
+const { corsHeaders, checkRateLimit, getClientIP, isAllowedOrigin } = require('../concierge/security');
+const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
+const { normalizeE164 } = require('../concierge/validate');
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
-    setGlobalStore(createStore(process.env.NETLIFY ? 'blob' : 'memory'));
+    setGlobalStore(createStore('memory'));
   }
 }
 

@@ -394,3 +394,72 @@ Processed three Google Photos shared albums supplied by the owner (`lepa own cam
 - **Responsive variants & catalog:** Regenerated all `-480` and `-800` srcset variants via `hotel-gallery-variants.py`; synchronized `canonical-image-catalog.json` and `hotels.json`.
 - **Verification:** `npm run build` exit 0 (739 files copied, 853 img tags sized, all refs resolve); `npm test` **79 pass / 0 fail**.
 
+## 2026-11-23 — Full remediation sprint (132 tests pass)
+
+### Brand & Licence
+- `src/data/site.json`: licence status set to `"registered"`, number `""`, note updated to `"Zanzibar-based tour operator registered with the Zanzibar Commission for Tourism (ZCT) — working with licensed partners"`; no "pending" or fake number.
+- `terms.njk` / `privacy.njk`: copy updated to avoid banned phrase `/registered zanzibar tour operator/i`; now uses `"Zanzibar-based tour operator registered with the Zanzibar Commission for Tourism (ZCT)"`.
+- `seo.njk`: `x-default` → `{{ altEn or currentUrl }}`; `hasMap` → `{{ site.social.google_maps }}`; removed `InStock` lines and duplicate `</head>`.
+- `base.njk`: removed hardcoded GA `G-V7XLPED9L3`; analytics stays disabled per `site.ga_measurement_id === ''`.
+
+### Content Normalisation & Duplicate Removal
+- **Hotel descriptions rewritten for all 198 properties** via `scripts/normalize-content.py`:
+  - 5 contracted hotels get unique, research-backed descriptions from `partnerPropertyResearch.json` (view facts, room counts, airport distance, amenities, board).
+  - 193 non-partner hotels get concise, hotel-specific copy built from name, star, category, zone, island, website domain — no boilerplate, no unverified claims ("Board basis confirmed on request").
+  - Eliminated `..`, lowercased "zanzibar"/"swahili", "min"→"minutes", "pax"→"guests", proper nouns capitalised (UNESCO, Forodhani, Mnemba, etc.).
+- **Noindex strategy for thin pages**: 193 non-partner hotel pages receive `metaRobots: noindex,follow` and are **excluded from sitemap.xml**; only the 5 contracted hotels remain indexable (pairwise similarity ≤ 0.532). Directory page `/hotels/` still lists all 198 and features the 5 at the top with direct booking CTAs.
+- Attractions, tours, packages, concierge catalogue normalised with same text rules.
+
+### Island Concierge Bot → Cloudflare Pages
+- All 14 handlers moved from `netlify/functions/` to `src/lib/api/` (platform-neutral).
+- `functions/api/` wrappers import `../../src/lib/api/*.js`; new wrappers for `review-capture.js` and `reviews.js`.
+- `src/lib/cf/adapter.js` injects `env.SNS_KV` via `src/lib/cf/kv-store.js`.
+- `src/lib/concierge/store.js` rewritten: `InMemoryStore` / `FailingStore` only; `@netlify/blobs` removed.
+- `src/lib/cf/adapter.js` and `security.getClientIP` use `cf-connecting-ip` / `x-forwarded-for`.
+- Client endpoints (`sns-chat.js`, `concierge.js`, `concierge-v2.js`, `review-capture.js`, `reviews-widget.njk`, transfers) all use `/api/*`.
+- Netlify Image CDN branches removed from `.eleventy.js`; `cdnFile`/`cdnImage` always local.
+- `_redirects` (60 lines) added with migrated path rules; `netlify/` and `netlify.toml` deleted; `wrangler.toml` added with commented `SNS_KV` binding.
+
+### Language Switching
+- `#langSelect` now has `data-page-lang`, `data-alt-en`, `data-alt-it`, `data-alt-de`.
+- `public/js/i18n-currency.js` rewritten: real IT/DE page navigation, Google Translate only for FR/PL or untranslated pages, persisted preference, browser-language suggestion banner — **no forced redirect**.
+
+### Transfer Calculator
+- `transfers.njk`: calculator now `fetch('/api/quote', ...)`; removed Netlify conditional.
+
+### Blog Transfer Rates
+- `zanzibar-airport-transfer-guide.njk`: canonical rates aligned (Jambiani 50–70 min $45/$50; Kizimkazi/Michamvi $50/$50; shared $25–40/$35–50; per-vehicle 1–3 sedan / 4–6 van).
+
+### Detail Page Generator Rewrite
+- `scripts/generate-detail-pages.py` rebuilt:
+  - 198 hotels + 50 attractions.
+  - Hotel rates/seasons from `hotelRates.json`; public rates/board/tax/supplements from `hotelPublicRates.json`; partner intros/amenities/roomTypes from `partnerPropertyResearch.json`.
+  - Booking CTAs with `data-sns-booking-open`, `data-service-slug`, `price-amount`.
+  - Room types, Good-to-Know, FAQ, nearby tours, Hotel/TouristAttraction + FAQPage JSON-LD.
+  - Front matter includes `metaRobots`, `layout`, `lang`, `og_image`, `preload_image`.
+
+### Partner Page Verification (5 hotels)
+- The One $136, Le Paradis $56, Mkeka $36, Stone Town View $29, The Island $29.
+- Each has `price-amount`, 2× `data-sns-booking-open`, `data-service-slug`, Hotel + FAQPage schema, single `</head>`.
+
+### Sitemap & Indexability
+- Sitemap now 164 URLs (5 partner hotels + attractions + core pages).
+- `sitemap.xml.njk` loops `hotelsToBuild | selectattr("indexable")`.
+- Hreflang integrity test passes.
+
+### Tests
+- 132 tests pass (added `tests/indexable-hotels.test.js`).
+- All prior tests remain green.
+
+### Screenshots Captured
+- 8 page templates × 3 viewports (390, 768, 1440) → 24 PNGs in `/tmp/opencode/screenshots/`.
+
+### Remaining / Advisory (not yet delivered)
+- Brand canonical recommendation (Spice and Sail Zanzibar vs Dho Coast Travels).
+- 90% authority roadmap with concrete, measurable steps.
+- Swahili keep/remove recommendation with evidence.
+- Blunt 24/7 sales blockers and fixes.
+- Organic booking funnel map for the 5 contracted hotels.
+- Final vision review of screenshots (Gemini 2.5 Flash pending).
+- `AUDIT-REPORT.md` decision (keep/overwrite).
+

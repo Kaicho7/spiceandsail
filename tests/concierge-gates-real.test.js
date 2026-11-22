@@ -16,7 +16,7 @@ const leadBody = (sid) => ({
 
 test('gate 1a (control): lead succeeds with a working store', async () => {
   setGlobalStore(new InMemoryStore());
-  const { handler } = require('../netlify/functions/lead');
+  const { handler } = require('../src/lib/api/lead');
   const r = await handler(ev('/lead', leadBody('ctl-1'), '10.0.0.1'));
   assert.ok(r.statusCode >= 200 && r.statusCode < 300,
     'control lead should succeed; got ' + r.statusCode + ' ' + r.body);
@@ -25,7 +25,7 @@ test('gate 1a (control): lead succeeds with a working store', async () => {
 
 test('gate 1b: forced store failure never returns success', async () => {
   setGlobalStore(new FailingStore());
-  const { handler } = require('../netlify/functions/lead');
+  const { handler } = require('../src/lib/api/lead');
   let r, threw = false;
   try { r = await handler(ev('/lead', leadBody('fail-1'), '10.0.0.2')); } catch (e) { threw = true; }
   if (!threw) {
@@ -38,8 +38,8 @@ test('gate 1b: forced store failure never returns success', async () => {
 test('gate 2: UI/response reference equals stored reference equals staff alert reference', async () => {
   process.env.STAFF_PASSCODE = 'gate-2-ref-check';
   setGlobalStore(new InMemoryStore());
-  const { handler: leadHandler } = require('../netlify/functions/lead');
-  const { handler: adminHandler } = require('../netlify/functions/admin-leads');
+  const { handler: leadHandler } = require('../src/lib/api/lead');
+  const { handler: adminHandler } = require('../src/lib/api/admin-leads');
 
   const body = { ...leadBody('gate-2-1'), name: 'Gate Two Guest' };
   let ref = null;
@@ -102,7 +102,7 @@ test('gate 11: floors, using real catalogue slugs', () => {
 test('gate 12: chat gives a useful reply with no LLM key', async () => {
   delete process.env.GEMINI_API_KEY; delete process.env.OPENAI_COMPAT_BASE_URL; delete process.env.OPENAI_COMPAT_API_KEY;
   setGlobalStore(new InMemoryStore());
-  const { handler } = require('../netlify/functions/chat');
+  const { handler } = require('../src/lib/api/chat');
   const r = await handler(ev('/chat', { message: 'How much is the Mnemba snorkeling trip?', session_id: 'c12' }, '10.0.0.3'));
   assert.strictEqual(r.statusCode, 200, 'chat should be 200, got ' + r.statusCode + ' ' + r.body);
   const b = JSON.parse(r.body);
@@ -111,7 +111,7 @@ test('gate 12: chat gives a useful reply with no LLM key', async () => {
 });
 
 test('gate 14a: GET /quote lists catalogue slugs, pricing basis, reply window', async () => {
-  const { handler } = require('../netlify/functions/quote');
+  const { handler } = require('../src/lib/api/quote');
   const r = await handler({ httpMethod: 'GET', headers: {}, path: '/quote' });
   assert.strictEqual(r.statusCode, 200, 'quote GET should be 200, got ' + r.statusCode + ' ' + r.body);
   const j = JSON.parse(r.body);

@@ -50,7 +50,7 @@ permalink: "/tours/index.html"
             <div class="tour-card__price-main">
               <span class="tour-card__price-amount">{{ tour.slug | catPriceShort | safe }}</span>
 {% if viatorAnchor %}
-            <span class="tour-card__price-anchor" title="Typical OTA price">Viator ~${{ viatorAnchor }}</span>
+            <span class="tour-card__price-anchor" title="Typical third-party OTA price">Typical OTA ~${{ viatorAnchor }}</span>
             {% endif %}
             </div>
             {% if depositPercent > 0 %}

@@ -1,5 +1,5 @@
 /**
- * Lead capture endpoint — Netlify function.
+ * Lead capture endpoint — platform-neutral handler.
  * Normalise widget payload → validate → idempotency check → save first → alerts → respond.
  * Response is 201 with { reference } only after save succeeds.
  *
@@ -11,17 +11,17 @@
  */
 'use strict';
 
-const { validateLead, isPayloadTooLarge, normalizeE164, ALLOWED_FIELDS } = require('../../src/lib/concierge/validate');
-const { corsHeaders, checkRateLimit, checkBotSignals, getClientIP, isAllowedOrigin } = require('../../src/lib/concierge/security');
-const { generateReference } = require('../../src/lib/concierge/reference');
-const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
-const { CONFIG } = require('../../src/lib/concierge/catalogue');
-const { sha256Hex } = require('../../src/lib/concierge/webcrypto');
+const { validateLead, isPayloadTooLarge, normalizeE164, ALLOWED_FIELDS } = require('../concierge/validate');
+const { corsHeaders, checkRateLimit, checkBotSignals, getClientIP, isAllowedOrigin } = require('../concierge/security');
+const { generateReference } = require('../concierge/reference');
+const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
+const { CONFIG } = require('../concierge/catalogue');
+const { sha256Hex } = require('../concierge/webcrypto');
 
 // Ensure store is initialized
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
-    setGlobalStore(createStore(process.env.NETLIFY ? 'blob' : 'memory'));
+    setGlobalStore(createStore('memory'));
   }
 }
 

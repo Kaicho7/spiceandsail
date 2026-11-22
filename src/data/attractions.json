@@ -67,7 +67,7 @@
       "zone": "Stone Town",
       "website": null,
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g488129-d317075",
-      "description": "Beit-al-Ajaib (House of Wonders) is Stone Town's most iconic landmark \u2014 a grand ceremonial palace built in 1883 for Sultan Barghash bin Said. It was the first building in Zanzibar to have electricity and an elevator, hence its name. The massive coral stone structure with its distinctive verandas and clock tower dominates the waterfront. Currently undergoing UNESCO-supported restoration; the exterior courtyard and ground floor are accessible, offering glimpses of its former grandeur and Swahili-Omani architecture.",
+      "description": "Beit-al-Ajaib (House of Wonders) is Stone Town's most iconic landmark — a grand ceremonial palace built in 1883 for Sultan Barghash bin Said. It was the first building in Zanzibar to have electricity and an elevator, hence its name. The massive coral stone structure with its distinctive verandas and clock tower dominates the waterfront. Currently undergoing UNESCO-supported restoration; the exterior courtyard and ground floor are accessible, offering glimpses of its former grandeur and Swahili-Omani architecture.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -123,7 +123,7 @@
       "zone": "Fumba / Mbweni",
       "website": null,
       "directory_url": "https://www.tanzaniaparks.go.tz",
-      "description": "Menai Bay Conservation Area encompasses the marine ecosystems off Fumba peninsula and the southwest coast, protecting coral reefs, seagrass beds, mangrove forests, and marine biodiversity. The area is famous for Safari Blue dhow excursions \u2014 traditional sailing trips to sandbanks and snorkeling sites \u2014 and responsible dolphin watching. Community-based management by local fishing villages ensures sustainable tourism and fishing practices. The $10 per adult marine fee (included in our Safari Blue price) funds ranger patrols, reef monitoring, and community development.",
+      "description": "Menai Bay Conservation Area encompasses the marine ecosystems off Fumba peninsula and the southwest coast, protecting coral reefs, seagrass beds, mangrove forests, and marine biodiversity. The area is famous for Safari Blue dhow excursions — traditional sailing trips to sandbanks and snorkeling sites — and responsible dolphin watching. Community-based management by local fishing villages ensures sustainable tourism and fishing practices. The $10 per adult marine fee (included in our Safari Blue price) funds ranger patrols, reef monitoring, and community development.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -151,7 +151,7 @@
       "zone": "Stone Town",
       "website": "https://mrembo-spa.com",
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g488129-d2251141",
-      "description": "Mrembo Spa in Stone Town offers authentic Swahili wellness traditions using locally sourced ingredients \u2014 clove oil from Pemba, coconut from coastal groves, seaweed from Jambiani farms, and henna from Zanzibari gardens. Services include traditional Swahili massage with warm herbal oils, bridal henna artistry, coconut body scrubs, and bridal preparation ceremonies. Located in a restored historic building, the spa provides a cultural wellness journey connecting visitors to Zanzibar's centuries-old healing traditions.",
+      "description": "Mrembo Spa in Stone Town offers authentic Swahili wellness traditions using locally sourced ingredients — clove oil from Pemba, coconut from coastal groves, seaweed from Jambiani farms, and henna from Zanzibari gardens. Services include traditional Swahili massage with warm herbal oils, bridal henna artistry, coconut body scrubs, and bridal preparation ceremonies. Located in a restored historic building, the spa provides a cultural wellness journey connecting visitors to Zanzibar's centuries-old healing traditions.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -207,7 +207,7 @@
       "zone": "Kidichi / Kizimbani",
       "website": null,
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g488129-d10207555",
-      "description": "Princess Salme Spice Garden in Kidichi honors Princess Salme (Emily Ruete, 1844\u20131924), a Zanzibari princess who fled to Germany and wrote 'Memoirs of an Arabian Princess,' offering a rare insider's view of 19th-century sultanate court life. The garden cultivates cloves, nutmeg, cinnamon, vanilla, cardamom, and black pepper in traditional plantation layout. Guided tours include spice tasting, traditional hand-grinding demonstrations, and storytelling about Princess Salme's remarkable life between two worlds. Optional Swahili lunch available.",
+      "description": "Princess Salme Spice Garden in Kidichi honors Princess Salme (Emily Ruete, 1844–1924), a Zanzibari princess who fled to Germany and wrote 'Memoirs of an Arabian Princess,' offering a rare insider's view of 19th-century sultanate court life. The garden cultivates cloves, nutmeg, cinnamon, vanilla, cardamom, and black pepper in traditional plantation layout. Guided tours include spice tasting, traditional hand-grinding demonstrations, and storytelling about Princess Salme's remarkable life between two worlds. Optional Swahili lunch available.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -235,7 +235,7 @@
       "zone": "Paje",
       "website": "https://www.seaweedcenter.com",
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g670440-d3958988",
-      "description": "The Seaweed Center in Paje is a women's cooperative empowering local women through sustainable seaweed farming and value-added cosmetic production. Visitors learn the complete cultivation cycle \u2014 from planting seedlings on rope lines in the intertidal zone to harvesting, drying, and processing into organic skincare products including soaps, lotions, and scrubs. The center provides fair wages, training, and economic independence for over 50 women. Visitors can purchase products directly, supporting the cooperative. Combine with kitesurfing or Kuza Cave visit.",
+      "description": "The Seaweed Center in Paje is a women's cooperative empowering local women through sustainable seaweed farming and value-added cosmetic production. Visitors learn the complete cultivation cycle — from planting seedlings on rope lines in the intertidal zone to harvesting, drying, and processing into organic skincare products including soaps, lotions, and scrubs. The center provides fair wages, training, and economic independence for over 50 women. Visitors can purchase products directly, supporting the cooperative. Combine with kitesurfing or Kuza Cave visit.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -249,7 +249,7 @@
       "zone": "Kidichi / Kizimbani",
       "website": null,
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g488129-d10207555",
-      "description": "Kidichi and Kizimbani spice farms offer immersive guided tours of Zanzibar's legendary spice plantations \u2014 cloves, nutmeg, cinnamon, vanilla, cardamom, black pepper, turmeric, and ginger grown in traditional agroforestry systems. Expert guides explain cultivation, harvesting, and the historical spice trade that made Zanzibar the 'Spice Island' and a global trade hub. Tours include tasting fresh spices, traditional hand-grinding demonstrations using mortar and pestle, and optional Swahili lunch featuring spice-infused dishes. The spice trade shaped Zanzibar's history, architecture, and multicultural identity.",
+      "description": "Kidichi and Kizimbani spice farms offer immersive guided tours of Zanzibar's legendary spice plantations — cloves, nutmeg, cinnamon, vanilla, cardamom, black pepper, turmeric, and ginger grown in traditional agroforestry systems. Expert guides explain cultivation, harvesting, and the historical spice trade that made Zanzibar the 'Spice Island' and a global trade hub. Tours include tasting fresh spices, traditional hand-grinding demonstrations using mortar and pestle, and optional Swahili lunch featuring spice-infused dishes. The spice trade shaped Zanzibar's history, architecture, and multicultural identity.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -263,7 +263,7 @@
       "zone": "Stone Town",
       "website": null,
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g488129-d571874",
-      "description": "Darajani Market is Stone Town's bustling central marketplace where the rhythm of daily Zanzibari life unfolds. Early morning brings fishing boats unloading fresh catch \u2014 tuna, kingfish, octopus, lobster \u2014 while vendors display pyramids of tropical fruits (mangoes, jackfruit, passion fruit, rambutan), aromatic spices, fresh vegetables, and household goods. The sensory immersion \u2014 colors, aromas, Swahili bargaining, calls to prayer \u2014 offers an authentic glimpse into local life. Best visited early morning (7-9 AM) before tourist crowds.",
+      "description": "Darajani Market is Stone Town's bustling central marketplace where the rhythm of daily Zanzibari life unfolds. Early morning brings fishing boats unloading fresh catch — tuna, kingfish, octopus, lobster — while vendors display pyramids of tropical fruits (mangoes, jackfruit, passion fruit, rambutan), aromatic spices, fresh vegetables, and household goods. The sensory immersion — colors, aromas, Swahili bargaining, calls to prayer — offers an authentic glimpse into local life. Best visited early morning (7-9 AM) before tourist crowds.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -291,7 +291,7 @@
       "zone": "Nungwi",
       "website": "https://www.zanzibarhorseclub.com",
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g616018-d7105021",
-      "description": "Zanzibar Horse Club in Nungwi offers the unique experience of swimming with horses in the warm Indian Ocean \u2014 a bucket-list activity where horses and riders enter the water together at high tide, horses swimming alongside riders in crystal-clear turquoise water. Beach riding along Nungwi's pristine white sand at sunset is also available. Suitable for all riding levels; horses are well-trained and guides ensure safety. High-tide sessions for swimming; sunset beach rides daily. A truly unforgettable Zanzibar experience.",
+      "description": "Zanzibar Horse Club in Nungwi offers the unique experience of swimming with horses in the warm Indian Ocean — a bucket-list activity where horses and riders enter the water together at high tide, horses swimming alongside riders in crystal-clear turquoise water. Beach riding along Nungwi's pristine white sand at sunset is also available. Suitable for all riding levels; horses are well-trained and guides ensure safety. High-tide sessions for swimming; sunset beach rides daily. A truly unforgettable Zanzibar experience.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -361,7 +361,7 @@
       "zone": "Wambaa Gulf / Makangale (Pemba)",
       "website": "https://www.dive360pemba.com",
       "directory_url": "https://www.padi.com/dive-shop/tanzania/dive-360-pemba-ltd",
-      "description": "Dive 360 Pemba Ltd on Pemba Island offers exclusive diving in the Pemba Channel \u2014 world-class wall diving, drift dives, and pristine coral reefs with exceptional visibility. Services include PADI courses, technical diving, and guided dives to Misali Island and Fundu Gap. Remote location ensures uncrowded sites. Luxury beachfront accommodation packages available. Accessible by 20-minute flight from Zanzibar or overnight ferry.",
+      "description": "Dive 360 Pemba Ltd on Pemba Island offers exclusive diving in the Pemba Channel — world-class wall diving, drift dives, and pristine coral reefs with exceptional visibility. Services include PADI courses, technical diving, and guided dives to Misali Island and Fundu Gap. Remote location ensures uncrowded sites. Luxury beachfront accommodation packages available. Accessible by 20-minute flight from Zanzibar or overnight ferry.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -515,7 +515,7 @@
       "zone": "Matemwe / Kigomani",
       "website": null,
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g1160352-d3527264",
-      "description": "Mnemba Atoll Divers operates exclusively from Matemwe with dedicated focus on Mnemba Atoll marine reserve \u2014 Zanzibar's premier snorkeling and diving destination with protected coral reefs and resident sea turtle populations. Daily boat trips to multiple reef sites within the atoll, guided by local experts who know every coral head. PADI courses, guided fun dives, snorkeling trips, and marine conservation education. Small groups, experienced local guides, and conservation-focused operations supporting the marine reserve.",
+      "description": "Mnemba Atoll Divers operates exclusively from Matemwe with dedicated focus on Mnemba Atoll marine reserve — Zanzibar's premier snorkeling and diving destination with protected coral reefs and resident sea turtle populations. Daily boat trips to multiple reef sites within the atoll, guided by local experts who know every coral head. PADI courses, guided fun dives, snorkeling trips, and marine conservation education. Small groups, experienced local guides, and conservation-focused operations supporting the marine reserve.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -529,7 +529,7 @@
       "zone": "Stone Town",
       "website": null,
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g488129-d10123547",
-      "description": "Nakupenda Dive Center operates from Stone Town with daily boat trips combining diving at Prison Island reefs, Nakupenda Sandbank snorkeling, and Mnemba Atoll excursions \u2014 a unique one-stop marine activity hub. PADI courses from Discover Scuba to Divemaster, guided dives, and flexible combo packages allowing visitors to experience multiple marine sites in one day. Convenient for Stone Town-based visitors wanting flexible marine activities without multiple operators.",
+      "description": "Nakupenda Dive Center operates from Stone Town with daily boat trips combining diving at Prison Island reefs, Nakupenda Sandbank snorkeling, and Mnemba Atoll excursions — a unique one-stop marine activity hub. PADI courses from Discover Scuba to Divemaster, guided dives, and flexible combo packages allowing visitors to experience multiple marine sites in one day. Convenient for Stone Town-based visitors wanting flexible marine activities without multiple operators.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -571,7 +571,7 @@
       "zone": "Paje",
       "website": null,
       "directory_url": "https://www.padi.com/dive-shop/tanzania/paje-dive-centre",
-      "description": "Paje Dive Center on the southeast coast uniquely combines world-class Mnemba Atoll diving with professional kitesurfing and windsurfing instruction \u2014 a rare dual-sport focus for adventure travelers wanting both underwater and above-water action. IKO-certified kitesurfing instructors, PADI dive courses, and guided Mnemba Atoll dives all from one beachfront location in Paje lagoon. Equipment rental for both sports, progression packages, and combo deals for multi-sport enthusiasts.",
+      "description": "Paje Dive Center on the southeast coast uniquely combines world-class Mnemba Atoll diving with professional kitesurfing and windsurfing instruction — a rare dual-sport focus for adventure travelers wanting both underwater and above-water action. IKO-certified kitesurfing instructors, PADI dive courses, and guided Mnemba Atoll dives all from one beachfront location in Paje lagoon. Equipment rental for both sports, progression packages, and combo deals for multi-sport enthusiasts.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -585,7 +585,7 @@
       "zone": "Wambaa Gulf / Makangale (Pemba)",
       "website": "http://www.pembadivecenter.com",
       "directory_url": "https://www.padi.com/dive-shop/tanzania/pemba-dive-center",
-      "description": "Pemba Dive Center in Wete, Pemba Island offers world-class diving in the Pemba Channel \u2014 vertical walls, exhilarating drift dives, and pristine coral gardens with exceptional visibility. PADI courses, technical diving (trimix, rebreather), and guided dives to Misali Island marine reserve, Njao Gap, and Fundu Gap. Remote location ensures uncrowded, pristine sites with pelagic encounters. Accessible by 20-minute flight from Zanzibar or overnight ferry. Dive and stay packages at partner lodges.",
+      "description": "Pemba Dive Center in Wete, Pemba Island offers world-class diving in the Pemba Channel — vertical walls, exhilarating drift dives, and pristine coral gardens with exceptional visibility. PADI courses, technical diving (trimix, rebreather), and guided dives to Misali Island marine reserve, Njao Gap, and Fundu Gap. Remote location ensures uncrowded, pristine sites with pelagic encounters. Accessible by 20-minute flight from Zanzibar or overnight ferry. Dive and stay packages at partner lodges.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -599,7 +599,7 @@
       "zone": "Chake Chake (Pemba)",
       "website": "http://www.pembaislanddivers.com",
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g1160350-d4766861",
-      "description": "Pemba Island Divers on Pemba Island offers exclusive diving in the Pemba Channel \u2014 vertical walls dropping to 300m, thrilling drift dives, and pristine coral reefs with exceptional visibility and pelagic encounters. PADI courses, guided dives to Misali Island, Fundu Gap, and Njao Gap, and customized multi-day expeditions. Small group philosophy with experienced local guides who know every wall and current. Luxury lodge packages with full board available. 20-minute flight from Zanzibar.",
+      "description": "Pemba Island Divers on Pemba Island offers exclusive diving in the Pemba Channel — vertical walls dropping to 300m, thrilling drift dives, and pristine coral reefs with exceptional visibility and pelagic encounters. PADI courses, guided dives to Misali Island, Fundu Gap, and Njao Gap, and customized multi-day expeditions. Small group philosophy with experienced local guides who know every wall and current. Luxury lodge packages with full board available. 20-minute flight from Zanzibar.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -627,7 +627,7 @@
       "zone": "Nungwi",
       "website": "https://www.scuba-do-zanzibar.com",
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g616018-d1553538",
-      "description": "Scuba Do Zanzibar in Nungwi is a PADI 5-Star IDC center offering comprehensive professional training from Discover Scuba Diving to Instructor Development Course \u2014 one of few IDC centers in East Africa. Daily Mnemba Atoll trips, night dives, deep dives, wreck diving at the MV Dania, and full technical diving program. Modern facilities including classroom, pool, own dive boats, and equipment retail. Multilingual instructor team with decades of combined experience. Popular for professional dive training and career development.",
+      "description": "Scuba Do Zanzibar in Nungwi is a PADI 5-Star IDC center offering comprehensive professional training from Discover Scuba Diving to Instructor Development Course — one of few IDC centers in East Africa. Daily Mnemba Atoll trips, night dives, deep dives, wreck diving at the MV Dania, and full technical diving program. Modern facilities including classroom, pool, own dive boats, and equipment retail. Multilingual instructor team with decades of combined experience. Popular for professional dive training and career development.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -711,7 +711,7 @@
       "zone": "Paje",
       "website": "https://www.aquaholics-zanzibar.com",
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g670440-d2639356",
-      "description": "Aquaholics Kite & Surf in Paje is an IKO-certified kitesurfing and windsurfing center offering comprehensive lessons from first flight to advanced freestyle, foil boarding, and wing foiling \u2014 a complete progression pathway. Latest Core and Duotone kites, Fanatic and Starboard windsurf boards, foil boards, and rescue boat. Paje's shallow lagoon provides ideal flat-water learning conditions with consistent cross-onshore winds. Multilingual IKO instructors, rescue boat, beachfront clubhouse with showers and lounge. Kitesurfing camps, progression packages, and equipment demo days.",
+      "description": "Aquaholics Kite & Surf in Paje is an IKO-certified kitesurfing and windsurfing center offering comprehensive lessons from first flight to advanced freestyle, foil boarding, and wing foiling — a complete progression pathway. Latest Core and Duotone kites, Fanatic and Starboard windsurf boards, foil boards, and rescue boat. Paje's shallow lagoon provides ideal flat-water learning conditions with consistent cross-onshore winds. Multilingual IKO instructors, rescue boat, beachfront clubhouse with showers and lounge. Kitesurfing camps, progression packages, and equipment demo days.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -753,7 +753,7 @@
       "zone": "Paje",
       "website": "https://www.zanzibarprokiting.com",
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g670440-d12860662",
-      "description": "Zanzibar Pro Kiting in Paje offers advanced kitesurfing coaching for intermediate to expert riders, foil boarding mastery, and guided downwinders along the southeast coast \u2014 a training ground for competitive riders and aspiring professionals. Pro-level coaching with video analysis, customized progression plans, and latest high-performance gear from multiple brands for testing. Paje's consistent conditions make it a preferred training ground for competitive riders. Equipment demo, repair, and custom tuning services available.",
+      "description": "Zanzibar Pro Kiting in Paje offers advanced kitesurfing coaching for intermediate to expert riders, foil boarding mastery, and guided downwinders along the southeast coast — a training ground for competitive riders and aspiring professionals. Pro-level coaching with video analysis, customized progression plans, and latest high-performance gear from multiple brands for testing. Paje's consistent conditions make it a preferred training ground for competitive riders. Equipment demo, repair, and custom tuning services available.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -767,7 +767,7 @@
       "zone": "Michamvi / Pingwe",
       "website": null,
       "directory_url": null,
-      "description": "The Rock Restaurant on Michamvi Pingwe beach is an iconic restaurant perched on a coral rock outcrop in the Indian Ocean, accessible by foot at low tide across exposed reef flats, or by boat at high tide. Famous for fresh seafood \u2014 grilled lobster, calamari, prawns \u2014 caught daily by local fishermen, served with panoramic 360-degree ocean views. The thatched-roof structure blends with the coral rock. Reservations essential; low-tide walk-in access is a unique experience. Combine with Michamvi beach relaxation.",
+      "description": "The Rock Restaurant on Michamvi Pingwe beach is an iconic restaurant perched on a coral rock outcrop in the Indian Ocean, accessible by foot at low tide across exposed reef flats, or by boat at high tide. Famous for fresh seafood — grilled lobster, calamari, prawns — caught daily by local fishermen, served with panoramic 360-degree ocean views. The thatched-roof structure blends with the coral rock. Reservations essential; low-tide walk-in access is a unique experience. Combine with Michamvi beach relaxation.",
       "source_dataset": "zanzibar_source_directory.csv"
     },
     {
@@ -781,7 +781,7 @@
       "zone": "Kizimkazi / Dimbani",
       "website": "https://salaamcavetours.com",
       "directory_url": "https://www.tripadvisor.com/Attraction_Review-g1188863-d23812739",
-      "description": "Salaam Cave in Kizimkazi Dimbani is a natural coral limestone cave system with tidal pools where rescued sea turtles are rehabilitated in a semi-natural environment before release. Visitors can swim, snorkel, and feed turtles in crystal-clear tidal water under guidance of local conservationists. The cave's unique geology \u2014 freshwater lens floating on saltwater \u2014 creates a unique habitat. Community-run project supports turtle conservation and local employment. Combine with ethical dolphin tour and 12th-century Kizimkazi Mosque visit.",
+      "description": "Salaam Cave in Kizimkazi Dimbani is a natural coral limestone cave system with tidal pools where rescued sea turtles are rehabilitated in a semi-natural environment before release. Visitors can swim, snorkel, and feed turtles in crystal-clear tidal water under guidance of local conservationists. The cave's unique geology — freshwater lens floating on saltwater — creates a unique habitat. Community-run project supports turtle conservation and local employment. Combine with ethical dolphin tour and 12th-century Kizimkazi Mosque visit.",
       "photo": "salaam-cave-turtle-aquarium-kizimkazi.jpg",
       "photo_source_type": "official_operator",
       "photo_source_url": "https://salaamcavetours.com/storage/caves/cave-1782212260-VdxzMVZMvS.webp",

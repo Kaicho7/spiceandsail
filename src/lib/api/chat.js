@@ -7,14 +7,14 @@
  */
 'use strict';
 
-const { corsHeaders, checkRateLimit, getClientIP, isAllowedOrigin } = require('../../src/lib/concierge/security');
-const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
-const { recommend } = require('../../src/lib/concierge/recommend');
-const { getQuote } = require('../../src/lib/concierge/pricing');
-const { checkReply } = require('../../src/lib/concierge/guardrail');
-const { tryLLM } = require('../../src/lib/concierge/llm');
-const { catalogue, CONFIG, isWithinBusinessHours, getService, getBusinessHoursLabel } = require('../../src/lib/concierge/catalogue');
-const hotelContracts = require('../../src/lib/concierge/hotel-contracts');
+const { corsHeaders, checkRateLimit, getClientIP, isAllowedOrigin } = require('../concierge/security');
+const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
+const { recommend } = require('../concierge/recommend');
+const { getQuote } = require('../concierge/pricing');
+const { checkReply } = require('../concierge/guardrail');
+const { tryLLM } = require('../concierge/llm');
+const { catalogue, CONFIG, isWithinBusinessHours, getService, getBusinessHoursLabel } = require('../concierge/catalogue');
+const hotelContracts = require('../concierge/hotel-contracts');
 
 const BUSINESS_WHATSAPP = (CONFIG && /^\d{8,15}$/.test(CONFIG.whatsappNumber || ''))
   ? CONFIG.whatsappNumber
@@ -23,7 +23,7 @@ const BUSINESS_WHATSAPP_DISPLAY = '+' + BUSINESS_WHATSAPP;
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
-    setGlobalStore(createStore(process.env.NETLIFY ? 'blob' : 'memory'));
+    setGlobalStore(createStore('memory'));
   }
 }
 

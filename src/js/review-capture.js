@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const REVIEW_ENDPOINT = '/.netlify/functions/review-capture';
+  const REVIEW_ENDPOINT = '/api/review-capture';
   const WHATSAPP_NUMBER = '255672450934';
   const LABELS = {
     en: 'Leave a Review',

@@ -28,14 +28,14 @@ function memoryRateLimit(key, maxRequests, windowMs) {
   return { allowed: true, remaining: maxRequests - data.count };
 }
 
-// Allowed origins from env + Netlify deploy URLs
+// Allowed origins from env + deploy URLs
 function getAllowedOrigins() {
   const origins = new Set();
   const envOrigins = process.env.ALLOWED_ORIGINS;
   if (envOrigins) {
     envOrigins.split(',').forEach(function (o) { origins.add(o.trim().replace(/\/$/, '')); });
   }
-  // Netlify provides these
+  // The Pages adapter copies the deployed URL into process.env.URL
   if (process.env.URL) origins.add(process.env.URL.replace(/\/$/, ''));
   if (process.env.DEPLOY_URL) origins.add(process.env.DEPLOY_URL.replace(/\/$/, ''));
   if (process.env.DEPLOY_PRIME_URL) origins.add(process.env.DEPLOY_PRIME_URL.replace(/\/$/, ''));
@@ -122,12 +122,12 @@ function checkBotSignals(body) {
   return { isBot: false, reason: null };
 }
 
-/** Extract client IP from Netlify event */
+/** Extract client IP from the adapter event */
 function getClientIP(event) {
   if (!event) return '0.0.0.0';
   if (event.headers) {
-    return event.headers['x-nf-client-connection-ip'] ||
-      event.headers['x-forwarded-for'] ||
+    return event.headers['cf-connecting-ip'] ||
+      (event.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
       event.headers['client-ip'] ||
       '0.0.0.0';
   }

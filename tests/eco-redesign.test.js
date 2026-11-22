@@ -74,7 +74,7 @@ test('redesign: analytics remains disabled until a verified build ID is configur
 test('redesign: business hours are single-sourced and reflect 09:00-17:00 EAT', () => {
   const config = JSON.parse(read('src/data/concierge-catalogue.json'));
   const site = JSON.parse(read('src/data/site.json'));
-  const chat = read('netlify/functions/chat.js');
+  const chat = read('src/lib/api/chat.js');
   const { getBusinessHoursLabel } = require('../src/lib/concierge/catalogue');
   assert.strictEqual(config.config.businessHours.start, 9);
   assert.strictEqual(config.config.businessHours.end, 17);
@@ -97,7 +97,7 @@ test('redesign: responsive image helper makes heroes high priority and other ima
 
 test('redesign: concierge date and WhatsApp prefill validators match real values', () => {
   const concierge = read('public/js/concierge.js');
-  const chat = read('netlify/functions/chat.js');
+  const chat = read('src/lib/api/chat.js');
   assert.ok(concierge.includes('/^\\d{4}-\\d{2}-\\d{2}$/'), 'booking date must match YYYY-MM-DD');
   assert.ok(concierge.includes('/^\\d{8,15}$/'), 'concierge must accept digit-only international WhatsApp numbers');
   assert.ok(chat.includes('/^\\d{8,15}$/'), 'server chat must validate digit-only WhatsApp configuration');
@@ -246,7 +246,7 @@ test('redesign: transfer calculator only quotes verified destinations and hands 
   assert.ok(transfers.includes('data-slug="airport-transfer-znz-to-matemwe"'));
   assert.ok(transfers.includes('data-zone="Kiwengwa / Pongwe"'));
   assert.ok(transfers.includes('data-slug="airport-transfer-znz-to-kizimkazi"'));
-  assert.ok(transfers.includes("fetch('/.netlify/functions/quote'"));
+  assert.ok(transfers.includes("fetch('/api/quote'"));
   assert.ok(transfers.includes("window.snsConcierge.openBooking(options)"));
   assert.ok(transfers.includes('serviceSlug: route.slug'));
   assert.ok(transfers.includes('guests: route.passengers'));

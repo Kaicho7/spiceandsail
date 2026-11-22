@@ -290,7 +290,8 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
       photo: ph.photo || dirMatch.photo || "default-hotel-hero.jpg",
       fromRate: Number.isFinite(fromRate) ? fromRate : 0,
       rateUnit,
-      summary: dirMatch.category || `${ph.board} • Verified partner rate (${ph.taxPerPersonPerNight ? `$${ph.taxPerPersonPerNight}/pp/night local levy` : "direct concierge booking"})`
+      summary: dirMatch.category || `${ph.board} • Verified partner rate (${ph.taxPerPersonPerNight ? `$${ph.taxPerPersonPerNight}/pp/night local levy` : "direct concierge booking"})`,
+      packageSlug: (packageForHotel(ph.slug) || {}).slug || ""
     };
   });
   eleventyConfig.addGlobalData("featuredPartnerHotels", () => featuredPartnerHotels);
@@ -823,33 +824,22 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     return getFeaturedImage(inputPath);
   });
 
-  // Add filter to get hero image with Netlify Image CDN wrapper (fixes IMG_BIG).
-  // NB the Netlify CDN needs the path WITH the /images/ prefix, else it 404s.
-  // For local development, use direct image paths instead of Netlify CDN
+  // Hero image filter: always return the local /images/ path.
   eleventyConfig.addNunjucksFilter("cdnImage", function(inputPath) {
     const result = getFeaturedImage(inputPath);
     const file = result.featuredImage || "default-tour-hero.jpg";
 
     // Check if we're running on Netlify or localhost
-    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
-    if (isNetlify) {
-      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
-    }
 
     // For local development, use direct image path
     return `/images/${file}`;
   });
 
-  // Wrap an arbitrary image filename in the Netlify Image CDN URL (for card images
-  // selected by hotelImg/zoneImg/trImg/etc, which return bare filenames).
+  // Wrap an arbitrary image filename in the local /images/ path.
   eleventyConfig.addNunjucksFilter("cdnFile", function(file) {
     const f = String(file || "default-tour-hero.jpg");
 
     // Check if we're running on Netlify or localhost
-    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
-    if (isNetlify) {
-      return `/.netlify/images?url=${encodeURIComponent("/images/" + f)}&fm=webp&w=1600&q=80`;
-    }
 
     // For local development, use direct image path
     return `/images/${f}`;
@@ -913,10 +903,6 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
         file = "hotels/" + normalized;
       }
     }
-    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
-    if (isNetlify) {
-      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
-    }
     return `/images/${file}`;
   }
   
@@ -927,6 +913,7 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
       .filter(h => wc(h.description) >= MIN_WORDS && !BOILERPLATE.test(h.description.trim()))
       .map(h => Object.assign({}, h, { 
         slug: SLUG_ALIAS[h.slug] || h.slug,
+        indexable: PARTNER_PAGE_SLUGS.has(SLUG_ALIAS[h.slug] || h.slug),
         cdnPhotoUrl: computeHotelCdnPhotoUrl(h)
       }))
       .filter(h => { if (seen.has(h.slug)) return false; seen.add(h.slug); return true; });
@@ -944,10 +931,6 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     } else {
       const catPool = attrCategoryArrays[category] || attrCategoryArrays["Attraction"];
       if (catPool && catPool.length > 0) file = hashPick(attractionName, catPool);
-    }
-    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
-    if (isNetlify) {
-      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
     }
     return `/images/${file}`;
   }
@@ -1011,10 +994,6 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
       }
     }
     // Apply cdnFile logic
-    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
-    if (isNetlify) {
-      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
-    }
     return `/images/${file}`;
   });
 
@@ -1029,10 +1008,6 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
       if (catPool && catPool.length > 0) file = hashPick(attractionName, catPool);
     }
     // Apply cdnFile logic
-    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
-    if (isNetlify) {
-      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
-    }
     return `/images/${file}`;
   });
 

@@ -7,7 +7,7 @@ delete process.env.GEMINI_API_KEY;
 delete process.env.OPENAI_COMPAT_BASE_URL;
 delete process.env.OPENAI_COMPAT_API_KEY;
 
-const { handler } = require('../netlify/functions/chat');
+const { handler } = require('../src/lib/api/chat');
 const { catalogue, CONFIG } = require('../src/lib/concierge/catalogue');
 
 async function ask(message) {

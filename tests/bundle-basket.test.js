@@ -8,7 +8,7 @@ const path = require('node:path');
 const ROOT = path.resolve(__dirname, '..');
 const { getQuote, quotePlan } = require('../src/lib/concierge/pricing');
 const { validateLead } = require('../src/lib/concierge/validate');
-const { handler: quoteHandler } = require('../netlify/functions/quote');
+const { handler: quoteHandler } = require('../src/lib/api/quote');
 
 test('bundle: contracted hotel quote uses seasonal room rate plus per-person levy', () => {
   const q = getQuote({

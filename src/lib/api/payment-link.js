@@ -6,15 +6,15 @@
  */
 'use strict';
 
-const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('../../src/lib/concierge/security');
-const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
-const { getQuote } = require('../../src/lib/concierge/pricing');
-const { catalogue, CONFIG } = require('../../src/lib/concierge/catalogue');
-const { sha256Hex, randomBytesHex } = require('../../src/lib/concierge/webcrypto');
+const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('../concierge/security');
+const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
+const { getQuote } = require('../concierge/pricing');
+const { catalogue, CONFIG } = require('../concierge/catalogue');
+const { sha256Hex, randomBytesHex } = require('../concierge/webcrypto');
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
-    setGlobalStore(createStore(process.env.NETLIFY ? 'blob' : 'memory'));
+    setGlobalStore(createStore('memory'));
   }
 }
 

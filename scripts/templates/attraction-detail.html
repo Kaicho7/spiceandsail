@@ -1,41 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}}</title>
-  <meta name="description" content="{{description}}">
-  <link rel="canonical" href="https://spiceandsail.com{{canonicalUrl}}">
-  <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-  <header>
-    <nav><a href="/">Spice & Sail Zanzibar</a></nav>
+<article class="attraction-detail">
+  <header class="page-header" style="position:relative;isolation:isolate;overflow:hidden;background:#0C1A24;padding:5rem 1.5rem 4rem;color:#fff;text-align:center;">
+    <img class="page-header-bg-image" src="{{cdnPhotoUrl}}" alt="{{attractionNameHtml}} in {{zoneHtml}}, Zanzibar" width="1600" height="900" sizes="100vw" loading="eager" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.45;">
+    <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,36,.35),rgba(12,26,36,.92));z-index:-1;"></span>
+    <div class="container" style="position:relative;z-index:1;max-width:900px;margin:0 auto;">
+      <p style="text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:#ffd9a0;margin-bottom:.75rem;">{{zoneHtml}} &middot; {{categoryHtml}}</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:0 0 1rem;">{{attractionNameHtml}}</h1>
+      <p style="font-size:1.15rem;line-height:1.6;color:#f2f6f8;max-width:760px;margin:0 auto 1.5rem;">{{ledeHtml}}</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;"><a class="btn btn-primary" href="https://wa.me/{{whatsapp}}?text={{waMsg}}" rel="noopener" data-sns-wa>Plan this visit</a><a class="btn btn-secondary" href="/tours/">Browse tours</a></div>
+    </div>
   </header>
-  <main>
-    <section class="attraction-hero">
-      <img src="{{cdnPhotoUrl}}" alt="{{attractionName}} in {{zone}}, Zanzibar" loading="eager">
-      <h1>{{attractionName}}</h1>
-      <p>{{zone}} · {{island}}</p>
-    </section>
-    <section class="attraction-description">
-      <h2>About {{attractionName}}</h2>
-      <div>{{description}}</div>
-    </section>
-    <section class="attraction-details">
-      <h2>Details</h2>
-      <dl>
-        <dt>Type</dt><dd>{{category}}</dd>
-        <dt>Zone</dt><dd>{{zone}}</dd>
-        <dt>Island</dt><dd>{{island}}</dd>
-        {{#if website}}<dt>Website</dt><dd><a href="{{website}}" target="_blank">{{website}}</a></dd>{{/if}}
-      </dl>
-    </section>
-    <section class="attraction-cta">
-      <h2>Plan Your Visit</h2>
-      <a href="https://wa.me/{{whatsapp}}?text={{waMsg}}" target="_blank" class="btn">Chat on WhatsApp</a>
-    </section>
-  </main>
-  <footer><p>Spice & Sail Zanzibar</p></footer>
-</body>
-</html>
+
+  <section class="section">
+    <div class="container" style="max-width:980px;">
+      <h2>About {{attractionNameHtml}}</h2>
+      <p>{{descriptionHtml}}</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0;">
+        <div class="card" style="padding:1.25rem;"><strong>Area</strong><br>{{zoneHtml}}</div>
+        <div class="card" style="padding:1.25rem;"><strong>Island</strong><br>{{islandHtml}}</div>
+        <div class="card" style="padding:1.25rem;"><strong>Type</strong><br>{{categoryHtml}}</div>
+        <div class="card" style="padding:1.25rem;"><strong>Best with</strong><br>A licensed local guide</div>
+      </div>
+
+      <h2>How to visit</h2>
+      <p>Most visitors reach {{attractionNameHtml}} by private transfer or as part of a guided tour. Tell us where you are staying and we will confirm the route, travel time, entry fees and the best time of day before you commit.</p>
+      <p><a href="/transfers/">See airport transfer rates</a> &middot; <a href="/hotels/">Find a hotel nearby</a> &middot; <a href="/contact/">Ask a question</a></p>
+
+      <h2>Nearby tours and experiences</h2>
+      {{nearbyTours}}
+
+      <h2>Frequently asked questions</h2>
+      {{faqHtml}}
+
+      <div class="card" style="padding:1.5rem;margin-top:2rem;">
+        <h2 style="margin-top:0;">Build it into your itinerary</h2>
+        <p>Send your dates and the places you want to see. We will combine {{attractionNameHtml}} with a licensed guide, private transport and the right tide or opening window.</p>
+        <a class="btn btn-primary" href="https://wa.me/{{whatsapp}}?text={{waMsg}}" rel="noopener" data-sns-wa>WhatsApp the team</a>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">{{schemaJson}}</script>
+</article>

@@ -143,7 +143,7 @@
     "price": {
       "min": 75,
       "max": 165,
-      "basis": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2pax (3-in-1))",
+      "basis": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2 guests (3-in-1))",
       "display": "$75–$165"
     },
     "includes": [
@@ -202,7 +202,7 @@
     "source_quality": "Competitor price + official operator + 2026 market range",
     "source_files": "ZTrans (70 USD); existing docs (85–90 USD); 2026 market guides",
     "category": "MAR",
-    "meta_description": "Safari Blue dhow day trip. 1 pax 175, 2 pax 110 pp, 3-6 pax 100 pp. Beach-hotel supplement 15pp includes marine fees.",
+    "meta_description": "Safari Blue dhow day trip. 1 guests 175, 2 guests 110 pp, 3-6 guests 100 pp. Beach-hotel supplement 15pp includes marine fees.",
     "overview": "Zanzibar's most famous dhow excursion: cruise to the Menai Bay Conservation Area, snorkel over vibrant coral reefs, feast on a seafood barbecue on a private sandbank, and visit Kwale Island. We book the Safari Blue.",
     "what_to_expect": [
       "Full-day dhow sailing trip (7–9 hours)",
@@ -655,7 +655,7 @@
       "Professional guide and 4x4 safari vehicle"
     ],
     "duration_detail": "3 days / 2 nights",
-    "meeting_point": "Transferred from your Zanzibar hotel to ZNZ airport for flights",
+    "meeting_point": "Transferred from your Zanzibar hotel to Zanzibar Airport for flights",
     "important_notes": [
       "Requires a licensed mainland tour operator — we handle all logistics",
       "Best for Great Migration (July–October: Mara River crossings; December–March: Ndutu calving season)",
@@ -805,7 +805,7 @@
       {
         "day": 1,
         "title": "Zanzibar to Selous — Game Drive & Sunset Rufiji River Boat Safari",
-        "description": "Morning pickup from your Zanzibar hotel to ZNZ Airport. Board a 45-minute scheduled charter flight to Mtemere Airstrip. Meet your guide and begin a 4x4 wildlife drive across palm savanna. Check into your riverside tented camp for lunch. In the late afternoon, embark on a 2.5-hour sunset boat safari along the Rufiji River among hippos and crocodiles. Return for dinner under the stars."
+        "description": "Morning pickup from your Zanzibar hotel to Zanzibar Airport. Board a 45-minute scheduled charter flight to Mtemere Airstrip. Meet your guide and begin a 4x4 wildlife drive across palm savanna. Check into your riverside tented camp for lunch. In the late afternoon, embark on a 2.5-hour sunset boat safari along the Rufiji River among hippos and crocodiles. Return for dinner under the stars."
       },
       {
         "day": 2,

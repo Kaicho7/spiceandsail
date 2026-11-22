@@ -30,7 +30,11 @@
         <div class="international-bar" aria-label="Language and currency preferences">
           <div class="control-item">
             <label for="langSelect" class="sr-only">Language</label>
-            <select id="langSelect" class="intl-select" title="Choose language">
+            <select id="langSelect" class="intl-select" title="Choose language"
+              data-page-lang="{{ lang or 'en' }}"
+              data-alt-en="{{ alternate_en or page.url }}"
+              data-alt-it="{{ alternate_it or '' }}"
+              data-alt-de="{{ alternate_de or '' }}">
               <option value="en">EN</option>
               <option value="it">IT</option>
               <option value="de">DE</option>

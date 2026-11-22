@@ -16,7 +16,7 @@
         {
           "name": "Lychee",
           "type": "Deluxe Double Room",
-          "occupancy": "2 pax",
+          "occupancy": "2 guests",
           "count": 17,
           "bathroom": "Shower",
           "features": "Big double bed, terrace or balcony"
@@ -24,7 +24,7 @@
         {
           "name": "Mango",
           "type": "Deluxe Double Room",
-          "occupancy": "2-3 pax",
+          "occupancy": "2-3 guests",
           "count": 13,
           "bathroom": "Shower",
           "features": "Big double bed with sofa, terrace or balcony"
@@ -32,7 +32,7 @@
         {
           "name": "Papaya",
           "type": "Junior Suite",
-          "occupancy": "2-4 pax",
+          "occupancy": "2-4 guests",
           "count": 4,
           "bathroom": "Bathtub",
           "features": "Separate living room with fold-able sofa, mini-fridge, tea station"
@@ -40,7 +40,7 @@
         {
           "name": "Tiki",
           "type": "Deluxe Suite",
-          "occupancy": "2-5 pax",
+          "occupancy": "2-5 guests",
           "count": 2,
           "bathroom": "Bathtub",
           "features": "Two bedrooms with two queen beds, living area, mini-fridge, tea station"
@@ -180,14 +180,14 @@
       "roomTypes": [
         {
           "name": "Deluxe Double Room with Bath",
-          "occupancy": "2 pax",
+          "occupancy": "2 guests",
           "beds": "1 full bed",
           "size": "35 m2",
           "features": "Air conditioning, flat-screen TV, tea and coffee maker, wardrobe, work desk, fan, private bathroom with shower, city views"
         },
         {
           "name": "Deluxe Single Room",
-          "occupancy": "1 pax",
+          "occupancy": "1 guests",
           "beds": "1 twin bed",
           "features": "Air conditioning, private bathroom, city views"
         }
@@ -265,13 +265,13 @@
       "roomTypes": [
         {
           "name": "Triple Room with Private Bathroom",
-          "occupancy": "2-3 pax",
+          "occupancy": "2-3 guests",
           "beds": "1 full bed and 1 queen bed",
           "features": "Private bathroom, terrace, balcony, garden or pool view, hairdryer, outdoor furniture"
         },
         {
           "name": "Family Room",
-          "occupancy": "up to 4 pax",
+          "occupancy": "up to 4 guests",
           "features": "Private bathroom, terrace or balcony, garden or pool view"
         }
       ],
@@ -308,17 +308,17 @@
         {
           "name": "Standard Garden Room",
           "publishedRate": 70,
-          "occupancy": "2 pax"
+          "occupancy": "2 guests"
         },
         {
           "name": "Superior Garden Room",
           "publishedRate": 80,
-          "occupancy": "2 pax"
+          "occupancy": "2 guests"
         },
         {
           "name": "Executive Seaside View Room",
           "publishedRate": 120,
-          "occupancy": "2 pax",
+          "occupancy": "2 guests",
           "features": "Balcony with garden, village and sea view"
         }
       ],

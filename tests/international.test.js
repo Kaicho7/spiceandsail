@@ -76,7 +76,7 @@ test('international: multilingual driver/guide policy is documented in transfers
   const aboutHtml = fs.readFileSync(path.join(ROOT, 'src', 'pages', 'about.njk'), 'utf8');
   assert.ok(aboutHtml.includes('Multilingual Guides &amp; Drivers'), 'about page must highlight multilingual team');
 
-  const chatCode = fs.readFileSync(path.join(ROOT, 'netlify', 'functions', 'chat.js'), 'utf8');
+  const chatCode = fs.readFileSync(path.join(ROOT, 'src', 'lib', 'api', 'chat.js'), 'utf8');
   assert.ok(chatCode.includes("intent === 'language'"), 'chat.js must handle language intent');
 });
 

@@ -1,8 +1,8 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert');
-const { handler: leadHandler } = require('../netlify/functions/lead');
-const { handler: chatHandler } = require('../netlify/functions/chat');
+const { handler: leadHandler } = require('../src/lib/api/lead');
+const { handler: chatHandler } = require('../src/lib/api/chat');
 const { generateReference } = require('../src/lib/concierge/reference');
 const { InMemoryStore, setGlobalStore } = require('../src/lib/concierge/store');
 const catalogue = require('../src/data/concierge-catalogue.json');

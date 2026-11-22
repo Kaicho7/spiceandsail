@@ -138,12 +138,55 @@
       "discount": 0.2,
       "discountPct": 20,
       "seasons": [
-        { "id": "low", "label": "Low Season", "dates": "1 Mar – 4 Jul", "Standard Garden Room": 70, "Superior Garden Room": 90, "Executive Seaside View Room": 120 },
-        { "id": "high1", "label": "High Season", "dates": "5 Jul – 1 Sep", "Standard Garden Room": 85, "Superior Garden Room": 105, "Executive Seaside View Room": 145 },
-        { "id": "mid", "label": "Mid Season", "dates": "1 Sep – 30 Nov", "Standard Garden Room": 80, "Superior Garden Room": 100, "Executive Seaside View Room": 130 },
-        { "id": "pre-festive", "label": "Pre-Festive", "dates": "30 Nov – 19 Dec", "Standard Garden Room": 90, "Superior Garden Room": 110, "Executive Seaside View Room": 140 },
-        { "id": "festive", "label": "Festive Season", "dates": "20 Dec – 7 Jan", "Standard Garden Room": 120, "Superior Garden Room": 150, "Executive Seaside View Room": 200, "minStayNights": 3 },
-        { "id": "high2", "label": "High Season", "dates": "7 Jan – 29 Feb", "Standard Garden Room": 110, "Superior Garden Room": 130, "Executive Seaside View Room": 160 }
+        {
+          "id": "low",
+          "label": "Low Season",
+          "dates": "1 Mar – 4 Jul",
+          "Standard Garden Room": 70,
+          "Superior Garden Room": 90,
+          "Executive Seaside View Room": 120
+        },
+        {
+          "id": "high1",
+          "label": "High Season",
+          "dates": "5 Jul – 1 Sep",
+          "Standard Garden Room": 85,
+          "Superior Garden Room": 105,
+          "Executive Seaside View Room": 145
+        },
+        {
+          "id": "mid",
+          "label": "Mid Season",
+          "dates": "1 Sep – 30 Nov",
+          "Standard Garden Room": 80,
+          "Superior Garden Room": 100,
+          "Executive Seaside View Room": 130
+        },
+        {
+          "id": "pre-festive",
+          "label": "Pre-Festive",
+          "dates": "30 Nov – 19 Dec",
+          "Standard Garden Room": 90,
+          "Superior Garden Room": 110,
+          "Executive Seaside View Room": 140
+        },
+        {
+          "id": "festive",
+          "label": "Festive Season",
+          "dates": "20 Dec – 7 Jan",
+          "Standard Garden Room": 120,
+          "Superior Garden Room": 150,
+          "Executive Seaside View Room": 200,
+          "minStayNights": 3
+        },
+        {
+          "id": "high2",
+          "label": "High Season",
+          "dates": "7 Jan – 29 Feb",
+          "Standard Garden Room": 110,
+          "Superior Garden Room": 130,
+          "Executive Seaside View Room": 160
+        }
       ]
     },
     "the-one-resort-zanzibar": {

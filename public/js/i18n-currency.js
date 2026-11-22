@@ -65,8 +65,10 @@
   var currentCurrency = localStorage.getItem('sns_currency') || 'USD';
   if (!RATES[currentCurrency]) currentCurrency = 'USD';
 
-  var currentLang = localStorage.getItem('sns_lang') || 'en';
-  if (!LANGS[currentLang]) currentLang = 'en';
+  var storedLang = localStorage.getItem('sns_lang');
+  var pageLang = (document.documentElement.lang || 'en').split('-')[0];
+  if (!LANGS[pageLang]) pageLang = 'en';
+  var currentLang = (storedLang && LANGS[storedLang]) ? storedLang : pageLang;
 
   // Tagging every price rewrites text nodes across the whole document, so it is
   // deferred until a visitor explicitly chooses a non-USD currency.
@@ -233,8 +235,9 @@
   function updateTranslations() {
     var lang = currentLang;
 
-    // Update document language
-    document.documentElement.lang = lang;
+    // Real localized pages keep their document language; machine-translated
+    // pages keep the source language and record the target in data-sns-lang.
+    if (!usesGoogleTranslate(lang)) document.documentElement.lang = lang;
 
     // Update dictionary-bound elements
     var transEls = document.querySelectorAll('[data-i18n]');
@@ -267,10 +270,13 @@
       }
     });
 
-    // Trigger full-page Google Translate adapter if not English
-    if (lang !== 'en') {
+    // Real IT/DE pages need no machine translation; FR/PL and untranslated
+    // pages use Google Translate.
+    if (usesGoogleTranslate(lang)) {
+      document.documentElement.setAttribute('data-sns-lang', lang);
       applyGoogleTranslate(lang);
     } else {
+      document.documentElement.lang = lang;
       resetGoogleTranslate();
     }
   }
@@ -313,12 +319,12 @@
     
     window.googleTranslateElementInit = function() {
       new window.google.translate.TranslateElement({
-        pageLanguage: 'en',
+        pageLanguage: pageLang,
         includedLanguages: 'en,it,de,fr,pl',
         autoDisplay: false
       }, 'google_translate_element');
 
-      if (currentLang && currentLang !== 'en') {
+      if (usesGoogleTranslate(currentLang)) {
         applyGoogleTranslate(currentLang);
       }
     };
@@ -328,6 +334,81 @@
     s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
     s.async = true;
     document.head.appendChild(s);
+  }
+
+  function normalizePath(value) {
+    try {
+      var p = new URL(value, window.location.origin).pathname.replace(/\/+$/, '');
+      return p || '/';
+    } catch (e) {
+      return '';
+    }
+  }
+
+  // Real localized page for a language, or '' when the page is not translated.
+  function realPageFor(lang) {
+    var sel = document.getElementById('langSelect');
+    if (!sel) return '';
+    var alt = sel.getAttribute('data-alt-' + lang) || '';
+    if (!alt) return '';
+    var target = normalizePath(alt);
+    if (!target || target === normalizePath(window.location.pathname)) return '';
+    return alt;
+  }
+
+  function usesGoogleTranslate(lang) {
+    if (lang === 'fr' || lang === 'pl') return true;
+    return !realPageFor(lang) && lang !== pageLang;
+  }
+
+  function showLanguageSuggestion(lang) {
+    if (sessionStorage.getItem('sns_lang_suggest_dismissed')) return;
+    if (document.getElementById('sns-lang-suggest')) return;
+    var alt = realPageFor(lang);
+    var canTranslate = !alt && (lang === 'fr' || lang === 'pl');
+    if (!alt && !canTranslate) return;
+
+    var bar = document.createElement('div');
+    bar.id = 'sns-lang-suggest';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Language suggestion');
+    bar.style.cssText = 'position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9999;max-width:620px;margin:0 auto;background:#0C1A24;color:#fff;padding:.9rem 1rem;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);display:flex;gap:.75rem;align-items:center;justify-content:space-between;font-size:.92rem;flex-wrap:wrap;';
+
+    var text = document.createElement('span');
+    text.textContent = alt
+      ? 'This page is available in ' + LANGS[lang].name + '.'
+      : 'Translate this page to ' + LANGS[lang].name + '?';
+
+    var actions = document.createElement('span');
+    actions.style.cssText = 'display:flex;gap:.5rem;flex-shrink:0;';
+
+    var go;
+    if (alt) {
+      go = document.createElement('a');
+      go.href = alt;
+      go.textContent = 'View in ' + LANGS[lang].name;
+    } else {
+      go = document.createElement('button');
+      go.type = 'button';
+      go.textContent = 'Translate';
+      go.addEventListener('click', function () { bar.remove(); setLanguage(lang); });
+    }
+    go.style.cssText = 'background:#ffd9a0;color:#0C1A24;padding:.45rem .8rem;border-radius:8px;font-weight:700;text-decoration:none;border:0;cursor:pointer;';
+
+    var stay = document.createElement('button');
+    stay.type = 'button';
+    stay.textContent = 'Not now';
+    stay.style.cssText = 'background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);padding:.45rem .8rem;border-radius:8px;cursor:pointer;';
+    stay.addEventListener('click', function () {
+      sessionStorage.setItem('sns_lang_suggest_dismissed', '1');
+      bar.remove();
+    });
+
+    actions.appendChild(go);
+    actions.appendChild(stay);
+    bar.appendChild(text);
+    bar.appendChild(actions);
+    document.body.appendChild(bar);
   }
 
   // Set Currency API
@@ -344,8 +425,17 @@
   // Set Language API
   function setLanguage(lang) {
     if (!LANGS[lang]) return;
-    currentLang = lang;
     localStorage.setItem('sns_lang', lang);
+
+    // Italian and German have real, indexable pages. Navigate there instead of
+    // machine-translating the English page in place.
+    var target = realPageFor(lang);
+    if (target) {
+      window.location.href = target;
+      return;
+    }
+
+    currentLang = lang;
     var sel = document.getElementById('langSelect');
     if (sel) sel.value = lang;
     updateTranslations();
@@ -389,14 +479,28 @@
       });
     }
 
-    // Auto-load translation engine if user previously chose non-English
-    if (currentLang !== 'en') {
-      loadGoogleTranslateScript();
+    // A saved preference wins: move to the real localized page when one exists.
+    if (storedLang && LANGS[storedLang] && storedLang !== pageLang) {
+      var persisted = realPageFor(storedLang);
+      if (persisted) {
+        window.location.href = persisted;
+        return;
+      }
     }
-    if (currentLang !== 'en' || currentCurrency !== 'USD') {
+
+    if (currentCurrency !== 'USD' || currentLang !== pageLang || usesGoogleTranslate(currentLang)) {
       updateTranslations();
     } else {
-      document.documentElement.lang = 'en';
+      document.documentElement.lang = pageLang;
+    }
+
+    // First visit: suggest the browser language, but never force a redirect.
+    if (!storedLang) {
+      var browserLang = (navigator.language || 'en').split('-')[0].toLowerCase();
+      if (LANGS[browserLang] && browserLang !== pageLang &&
+          (realPageFor(browserLang) || browserLang === 'fr' || browserLang === 'pl')) {
+        setTimeout(function () { showLanguageSuggestion(browserLang); }, 1200);
+      }
     }
   });
 })();

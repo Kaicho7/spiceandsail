@@ -1,20 +1,20 @@
 /**
  * Review Collection Engine
- * - Stores reviews in Netlify Blobs
+ * - Stores reviews in the platform KV store
  * - Displays reviews on site
  * - Automates post-trip review requests
  * - Syndicates to Google/TripAdvisor
  */
 'use strict';
 
-const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('../../src/lib/concierge/security');
-const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
-const { catalogue, CONFIG } = require('../../src/lib/concierge/catalogue');
+const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('../concierge/security');
+const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
+const { catalogue, CONFIG } = require('../concierge/catalogue');
 const crypto = require('node:crypto');
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
-    setGlobalStore(createStore(process.env.NETLIFY ? 'blob' : 'memory'));
+    setGlobalStore(createStore('memory'));
   }
 }
 

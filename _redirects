@@ -15,3 +15,46 @@
 
 # Remove invalid absolute URLs from sitemap leakage
 /pages/  /  301
+# Migrated from the retired Netlify config (Cloudflare Pages syntax).
+# www -> apex and HTTP -> HTTPS are handled by Cloudflare DNS/redirect rules.
+/pages/thank-you/* /thank-you/ 301
+/transfers/zanzibar-airport-to-nungwi/* /transfers/airport-to-nungwi/ 301
+/transfers/nungwi/* /transfers/airport-to-nungwi/ 301
+/safaris/mikumi/* /safaris/mikumi-day-trip/ 301
+/privacy-policy /privacy/ 301
+/privacy-policy/* /privacy/ 301
+/terms-and-conditions /terms/ 301
+/terms-and-conditions/* /terms/ 301
+/cancellation-policy /cancellation/ 301
+/cancellation-policy/* /cancellation/ 301
+/bookings /tours/ 301
+/bookings/* /tours/ 301
+/tours/zanzibar-essentials-3day /packages/zanzibar-essentials-3day/ 301
+/tours/zanzibar-essentials-3day/* /packages/zanzibar-essentials-3day/ 301
+/tours/mikumi-nyerere-day-safari /safaris/mikumi-day-trip/ 301
+/tours/mikumi-nyerere-day-safari/* /safaris/mikumi-day-trip/ 301
+/spice-farm-cultural /tours/spice-farm/ 301
+/pricing-plans /packages/ 301
+/pricing-plans/* /packages/ 301
+/safety-health-guide /health-safety/ 301
+/safety-health-guide/* /health-safety/ 301
+/it/about/* /about/ 301
+/it/aree/* /areas/ 301
+/it/hotel/* /hotels/ 301
+/it/privacy/* /privacy/ 301
+/it/tour /tours/ 301
+/it/tour/ /tours/ 301
+/it/trasferimenti/terminale-traghetti-hotel/* /transfers/ferry-to-hotel/ 301
+/de/about/* /about/ 301
+/de/areas/* /areas/ 301
+/de/hotels/* /hotels/ 301
+/de/privacy/* /privacy/ 301
+/de/tour /tours/ 301
+/de/tour/ /tours/ 301
+/de/transfers/ferry-to-hotel/* /transfers/ferry-to-hotel/ 301
+/transfers/ferry-to-stone-town/* /transfers/ferry-to-hotel/ 301
+/pages/bookings/* /tours/ 301
+/pages/pricing-plans/* /packages/ 301
+/packages/zanzibar-essentials-3-day/* /packages/zanzibar-essentials-3day/ 301
+/packages/zanzibar-hidden-gems-sacred-caves/* /packages/ 301
+/packages/bush-to-beach-vip-luxury/* /packages/ 301

@@ -1,0 +1,15 @@
+# Cloudflare Pages configuration for spiceandsail.com
+name = "spiceandsail"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-11-22"
+
+# The Island Concierge stores leads in Cloudflare KV.
+# Create the namespace once, then uncomment and paste its id:
+#   npx wrangler kv namespace create SNS_KV
+#
+# [[kv_namespaces]]
+# binding = "SNS_KV"
+# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+#
+# Without the binding the lead endpoint fails honestly (503) and the widget
+# falls back to WhatsApp; chat and quotes still work.

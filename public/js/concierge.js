@@ -2,7 +2,7 @@
  * Spice and Sail Zanzibar — Trip Concierge widget logic.
  * No prices are computed in the browser: every range comes from the
  * server /quote endpoint (catalogue-backed), and every lead goes through
- * /.netlify/functions/lead. A SP-YYYY-NNNNNN reference is shown only when
+ * /api/lead. A SP-YYYY-NNNNNN reference is shown only when
  * the server returns one. On any failure the visitor sees an error message
  * with a WhatsApp fallback link — never a success message.
  */
@@ -203,7 +203,7 @@
   /* ---------- catalogue + service grid ---------- */
 
   function loadCatalogue() {
-    return fetchJSON('/.netlify/functions/quote', { method: 'GET' }, 8000)
+    return fetchJSON('/api/quote', { method: 'GET' }, 8000)
       .then(function (res) {
         if (res.ok && res.json && Array.isArray(res.json.services)) {
           state.services = res.json.services;
@@ -364,7 +364,7 @@
     if (amountEl) amountEl.textContent = 'loading…';
     summaryEl.textContent = 'Checking the verified catalogue range…';
 
-    return fetchJSON('/.netlify/functions/quote', {
+    return fetchJSON('/api/quote', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -544,7 +544,7 @@
     var payload = buildLeadPayload();
     showStatus('', 'Sending your request…');
 
-    fetchJSON('/.netlify/functions/lead', {
+    fetchJSON('/api/lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
@@ -655,7 +655,7 @@
     var q = el('sns-chat-input');
     if (q) { q.value = ''; hintThinking(); }
 
-    return fetchJSON('/.netlify/functions/chat', {
+    return fetchJSON('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -1039,7 +1039,7 @@
       var payload = buildLeadPayload();
       payload.notes = (payload.notes ? payload.notes + '. ' : '') + 'Initiated via direct WhatsApp button.';
 
-      fetchJSON('/.netlify/functions/lead', {
+      fetchJSON('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -1101,7 +1101,7 @@
     var guestWhatsapp = (el('sns-guest-whatsapp') ? el('sns-guest-whatsapp').value : '').trim();
     var locationVal = (el('sns-location') ? el('sns-location').value : '').trim();
 
-    fetchJSON('/.netlify/functions/payment-link', {
+    fetchJSON('/api/payment-link', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -1126,7 +1126,7 @@
         var payload = buildLeadPayload();
         payload.notes = (payload.notes ? payload.notes + '. ' : '') + 'Payment initiated. Deposit: ' + (res.json.depositPercent || 0) + '%. Provider options: ' + links.map(function(l) { return l.name; }).join(', ') + '.';
         
-        fetchJSON('/.netlify/functions/lead', {
+        fetchJSON('/api/lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)

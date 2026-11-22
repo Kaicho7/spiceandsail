@@ -28,6 +28,48 @@ permalink: "/hotels/index.html"
     </div>
   </header>
 
+  <!-- Contracted hotels: book direct -->
+  <section class="section" style="padding: 2.5rem 1rem; background: #fff;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto;">
+      <div class="section-header" style="text-align: center; margin-bottom: 1.75rem;">
+        <span class="section-tag">Book Direct</span>
+        <h2 style="margin: 0.4rem 0;">Our 5 Contracted Hotels</h2>
+        <p class="section-subtitle" style="max-width: 760px; margin: 0 auto;">These are the properties we hold direct rates for. Compare the published from-rate, then send your dates for a confirmed quote — with the airport transfer and tours added in one reply.</p>
+      </div>
+      <div class="cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+        {% for hotel in featuredPartnerHotels %}
+          <article class="card reveal" data-category="HTL">
+            <div class="card-image">
+              <img src="{{ hotel.photo | cdnFile }}" alt="{{ hotel.name }} in {{ hotel.area }}, Zanzibar" loading="lazy">
+              <span class="image-tag">{{ hotel.area }}</span>
+            </div>
+            <div class="card-content">
+              <span class="card-badge badge-luxury">{{ hotel.board }}</span>
+              <h3 class="card-title"><a href="/hotels/{{ hotel.pageSlug }}/">{{ hotel.name }}</a></h3>
+              <p class="card-meta">{{ hotel.area }} • Verified partner rate</p>
+              <p class="card-description">{{ hotel.summary | truncate(120) }}</p>
+              <div class="card-footer">
+                {% if hotel.fromRate > 0 %}
+                  <span class="card-price">From ${{ hotel.fromRate }} <span class="price-basis">{{ hotel.rateUnit }}</span></span>
+                {% else %}
+                  <span class="card-price">Seasonal rates <span class="price-basis">confirmed by team</span></span>
+                {% endif %}
+                <div class="card-actions">
+                  {% if hotel.packageSlug %}
+                    <button type="button" class="btn btn-primary btn-sm" data-sns-booking-open data-service-slug="{{ hotel.packageSlug }}" data-hotel-slug="{{ hotel.slug }}" data-hotel-name="{{ hotel.name }}">Check availability</button>
+                  {% else %}
+                    <a href="/hotels/{{ hotel.pageSlug }}/" class="btn btn-primary btn-sm">View rates</a>
+                  {% endif %}
+                  <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20details%20and%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ hotel.name }}">Ask on WhatsApp</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
   <!-- High-Intent Commercial Booking Callout Banner -->
   <section style="background: #FBF9F5; border-bottom: 1px solid #e2e8ed; padding: 2rem 1rem;">
     <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
@@ -56,7 +98,7 @@ permalink: "/hotels/index.html"
           <span style="position: absolute; left: 0.85rem; top: 0.8rem; font-size: 1rem; opacity: 0.5;">🏨</span>
         </div>
         <div id="hotel-count-indicator" style="font-size: 0.88rem; font-weight: 600; color: #003853; background: #e8f1f5; padding: 0.5rem 1rem; border-radius: 50px;">
-          Showing 16 featured of {{ hotels.hotels | length }} properties
+          Showing 16 of {{ hotels.hotels | length }} properties
         </div>
       </div>
 
@@ -334,7 +376,7 @@ permalink: "/hotels/index.html"
         <li>
           {% set detailSlug = hotelsToBuild | findBySlug(hotel.slug) %}
           {% if detailSlug %}
-            <a href="/hotels/{{ hotel.slug }}/" style="display: flex; flex-direction: column; gap: .12rem; padding: .45rem .55rem; border-bottom: 1px solid #edf2f7; color: #174b43; text-decoration: none;">
+            <a href="/hotels/{{ hotel.slug }}/" data-hotel-index-link="{{ hotel.slug }}" style="display: flex; flex-direction: column; gap: .12rem; padding: .45rem .55rem; border-bottom: 1px solid #edf2f7; color: #174b43; text-decoration: none;">
           {% else %}
             <a href="#hotel-{{ hotel.slug }}" data-hotel-index-link="{{ hotel.slug }}" style="display: flex; flex-direction: column; gap: .12rem; padding: .45rem .55rem; border-bottom: 1px solid #edf2f7; color: #174b43; text-decoration: none;">
           {% endif %}

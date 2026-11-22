@@ -5,14 +5,14 @@
  */
 'use strict';
 
-const { corsHeaders, isAllowedOrigin } = require('../../src/lib/concierge/security');
-const { getGlobalStore, createStore, setGlobalStore } = require('../../src/lib/concierge/store');
-const { catalogue, CONFIG } = require('../../src/lib/concierge/catalogue');
+const { corsHeaders, isAllowedOrigin } = require('../concierge/security');
+const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
+const { catalogue, CONFIG } = require('../concierge/catalogue');
 const crypto = require('node:crypto');
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
-    setGlobalStore(createStore(process.env.NETLIFY ? 'blob' : 'memory'));
+    setGlobalStore(createStore('memory'));
   }
 }
 

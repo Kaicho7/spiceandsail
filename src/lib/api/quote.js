@@ -4,14 +4,14 @@
  */
 'use strict';
 
-const { corsHeaders, isAllowedOrigin } = require('../../src/lib/concierge/security');
-const { getQuote, quotePlan } = require('../../src/lib/concierge/pricing');
-const { catalogue, CATALOGUE_VERSION, CONFIG } = require('../../src/lib/concierge/catalogue');
+const { corsHeaders, isAllowedOrigin } = require('../concierge/security');
+const { getQuote, quotePlan } = require('../concierge/pricing');
+const { catalogue, CATALOGUE_VERSION, CONFIG } = require('../concierge/catalogue');
 const {
   publicHotelRates,
   publicFromRate,
   packageServices,
-} = require('../../src/lib/concierge/public-data');
+} = require('../concierge/public-data');
 
 exports.handler = async function (event) {
   const origin = event.headers && event.headers.origin;

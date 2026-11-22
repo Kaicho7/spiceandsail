@@ -80,7 +80,7 @@
       } catch (e) { console.warn('Inline catalogue parse failed', e); }
     }
     // Fallback: fetch from API
-    return fetch('/.netlify/functions/catalogue', { credentials: 'same-origin' })
+    return fetch('/api/catalogue', { credentials: 'same-origin' })
       .then(function(r) { return r.json(); })
       .then(function(data) {
         state.services = data.services || [];
@@ -594,7 +594,7 @@
     
     showStatus('', 'Calculating total for your complete itinerary…');
     
-    fetchJSON('/.netlify/functions/quote', {
+    fetchJSON('/api/quote', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         serviceSlugs: allSlugs,
@@ -642,7 +642,7 @@
       special: $('#sns-special').value || ''
     };
 
-    fetchJSON('/.netlify/functions/quote', {
+    fetchJSON('/api/quote', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     }, 12000).then(function(res) {
@@ -710,7 +710,7 @@
       email: $('#sns-email').value || null
     };
 
-    fetchJSON('/.netlify/functions/payment-link', {
+    fetchJSON('/api/payment-link', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     }, 15000).then(function(res) {
@@ -832,7 +832,7 @@
       var payload = buildLeadPayload();
       payload.notes = (payload.notes ? payload.notes + '. ' : '') + 'Initiated via direct WhatsApp button.';
 
-      fetchJSON('/.netlify/functions/lead', {
+      fetchJSON('/api/lead', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       }, 10000).then(function(res) {
@@ -900,7 +900,7 @@
 
   function saveLead(extra) {
     var payload = Object.assign(buildLeadPayload(), extra || {});
-    return fetchJSON('/.netlify/functions/lead', {
+    return fetchJSON('/api/lead', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     }, 10000).then(function(res) {

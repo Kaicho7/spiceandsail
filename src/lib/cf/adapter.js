@@ -1,12 +1,9 @@
 /**
- * Netlify-handler -> Cloudflare Pages Function adapter.
+ * Cloudflare Pages Function adapter for the shared event/context handlers.
  *
- * Why this exists: the site moved from Netlify to Cloudflare Pages, but the
- * chatbot's server code (chat, lead, quote, catalogue, payment-link) was
- * written as Netlify Functions that read `event.httpMethod`, call
- * `@netlify/blobs`, and live at /.netlify/functions/*. Cloudflare Pages does
- * not run any of that, so every chat/lead/quote call 404s and the widget looks
- * dead or blank. This adapter lets the existing handlers run unchanged.
+ * The chat, lead, quote, catalogue, payment-link, reviews and admin handlers
+ * are platform-neutral modules in src/lib/api. This adapter supplies the
+ * event shape they expect and injects the Cloudflare KV store.
  */
 'use strict';
 
@@ -38,8 +35,6 @@ function pickStore(env) {
 function toEvent(request, body) {
   const headers = {};
   request.headers.forEach(function (v, k) { headers[k.toLowerCase()] = v; });
-  // security.getClientIP() reads this header first.
-  if (headers['cf-connecting-ip']) headers['x-nf-client-connection-ip'] = headers['cf-connecting-ip'];
   const url = new URL(request.url);
   const qs = {};
   url.searchParams.forEach(function (v, k) { qs[k] = v; });

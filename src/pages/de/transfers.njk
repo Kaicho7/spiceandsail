@@ -413,7 +413,7 @@ alternate_it: "https://spiceandsail.com/it/trasferimenti/"
       const isAirportOrFerry = pickup.includes('Airport') || pickup.includes('Ferry');
       if (!slug || !isAirportOrFerry) return;
 
-      fetch('/.netlify/functions/quote', {
+      fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ serviceSlug: slug, adults: parseInt(paxCount, 10) || 1, children: 0, date: dateVal && dateVal !== 'Kommendes Datum' ? dateVal : null })

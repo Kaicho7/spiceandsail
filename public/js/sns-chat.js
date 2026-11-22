@@ -2,7 +2,7 @@
    Spice & Sail — Island Concierge chat widget (v3)
    One self-contained file: builds its own DOM and styles, no template markup.
 
-   Talks to the existing Netlify functions:
+   Talks to the platform-neutral /api functions:
      GET  /api/quote   -> catalogue list + business config
      POST /api/quote   -> deterministic planning range
      POST /api/chat    -> concierge replies (rules + optional LLM)
@@ -816,6 +816,13 @@
   // Compatibility shim: pages written for the v2 widget keep working.
   window.snsConciergeV2 = window.snsConcierge = {
     open: openChat, close: closeChat, goToStep: openChat, dismissCallout: function () { callout.hidden = true; },
+    openBooking: function (opts) {
+      openChat();
+      if (opts && opts.serviceSlug) {
+        whenReady(function () { quickService(opts.serviceSlug, opts); });
+      }
+      return true;
+    },
     selectService: function (slug, opts) { openChat(); whenReady(function () { quickService(slug, opts); }); },
     openDirectWhatsApp: handoff, getQuote: function () { openChat(); },
     openPaymentOptions: function () { openChat(); whenReady(function () { botSays(t('team_confirms')); leadForm(); }); },

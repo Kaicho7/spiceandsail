@@ -1,46 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}}</title>
-  <meta name="description" content="{{description}}">
-  <link rel="canonical" href="https://spiceandsail.com{{canonicalUrl}}">
-  <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-  <header>
-    <nav><a href="/">Spice & Sail Zanzibar</a></nav>
+<article class="hotel-detail">
+  <header class="page-header" style="position:relative;isolation:isolate;overflow:hidden;background:#0C1A24;padding:5rem 1.5rem 4rem;color:#fff;text-align:center;">
+    <img class="page-header-bg-image" src="{{cdnPhotoUrl}}" alt="{{hotelNameHtml}} in {{zoneHtml}}, Zanzibar" width="1600" height="900" sizes="100vw" loading="eager" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.45;">
+    <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,26,36,.35),rgba(12,26,36,.92));z-index:-1;"></span>
+    <div class="container" style="position:relative;z-index:1;max-width:900px;margin:0 auto;">
+      <p style="text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:#ffd9a0;margin-bottom:.75rem;">{{zoneHtml}} &middot; {{categoryHtml}}</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:0 0 1rem;">{{hotelNameHtml}}</h1>
+      <p style="font-size:1.15rem;line-height:1.6;color:#f2f6f8;max-width:760px;margin:0 auto 1.5rem;">{{ledeHtml}}</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">{{bookingButton}}<a class="btn btn-secondary" href="https://wa.me/{{whatsapp}}?text={{waMsg}}" rel="noopener" data-sns-wa>WhatsApp the team</a></div>
+      {{priceLine}}
+    </div>
   </header>
-  <main>
-    <section class="hotel-hero">
-      <img src="{{cdnPhotoUrl}}" alt="{{hotelName}} in {{zone}}, Zanzibar" loading="eager">
-      <h1>{{hotelName}}</h1>
-      <p>{{zone}} · {{starRating}} · {{category}}</p>
-    </section>
-    <section class="hotel-description">
-      <h2>About {{hotelName}}</h2>
-      <div>{{description}}</div>
-    </section>
-    <section class="hotel-details">
-      <h2>Hotel Details</h2>
-      <dl>
-        <dt>Category</dt><dd>{{category}}</dd>
-        <dt>Star Rating</dt><dd>{{starRating}}</dd>
-        <dt>Board Basis</dt><dd>{{board}}</dd>
-        <dt>Zone</dt><dd>{{zone}}</dd>
-        <dt>Island</dt><dd>{{island}}</dd>
-        <dt>Website</dt><dd><a href="{{website}}" target="_blank">{{websiteDomain}}</a></dd>
-        {{#if email}}<dt>Email</dt><dd>{{email}}</dd>{{/if}}
-        {{#if phone}}<dt>Phone</dt><dd>{{phone}}</dd>{{/if}}
-        {{#if tax}}<dt>Local Levy</dt><dd>${{tax}} per person/night</dd>{{/if}}
-      </dl>
-    </section>
-    <section class="hotel-cta">
-      <h2>Ready to Book?</h2>
-      <a href="https://wa.me/{{whatsapp}}?text={{waMsg}}" target="_blank" class="btn">Chat on WhatsApp</a>
-    </section>
-  </main>
-  <footer><p>Spice & Sail Zanzibar</p></footer>
-</body>
-</html>
+
+  <section class="section">
+    <div class="container" style="max-width:980px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2rem;">
+        <div class="card" style="padding:1.25rem;"><strong>Board</strong><br>{{boardHtml}}</div>
+        <div class="card" style="padding:1.25rem;"><strong>Area</strong><br>{{zoneHtml}}, Zanzibar</div>
+        <div class="card" style="padding:1.25rem;"><strong>Rating</strong><br>{{starHtml}}</div>
+        <div class="card" style="padding:1.25rem;"><strong>Booking</strong><br>{{rateStatusHtml}}</div>
+      </div>
+
+      <h2>Why stay at {{hotelNameHtml}}</h2>
+      <p>{{descriptionHtml}}</p>
+      {{whyList}}
+      {{roomTypesSection}}
+      {{rateSection}}
+      {{goodToKnow}}
+
+      <h2>Getting there and around</h2>
+      <p>{{zoneHtml}} is reached by private transfer from Abeid Amani Karume International Airport (ZNZ). We can pair your stay with a fixed-price airport transfer and licensed excursions, so the whole trip is confirmed in one conversation.</p>
+      <p><a href="/transfers/">See airport transfer rates</a> &middot; <a href="/tours/">Browse Zanzibar tours</a> &middot; <a href="/hotels/">Compare all hotels</a></p>
+
+      <h2>Frequently asked questions</h2>
+      {{faqHtml}}
+
+      <div class="card" style="padding:1.5rem;margin-top:2rem;">
+        <h2 style="margin-top:0;">Ready to check dates?</h2>
+        <p>Send your dates and room preference. We confirm availability, the direct rate and the transfer in one reply.</p>
+        {{bookingButton}}
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">{{schemaJson}}</script>
+</article>
