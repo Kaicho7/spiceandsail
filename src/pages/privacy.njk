@@ -8,8 +8,8 @@ description: What we collect, why, who sees it, retention, and how to request de
 
 <main class="" id="main-content" style="max-width: 860px; margin: 0 auto; padding: 2rem 1rem;">
   <div class="reveal" style="margin-bottom: 2rem;">
-    <h1 style="font-size: 2.2rem; color: var(--dct-charcoal); margin-bottom: 1rem;">Privacy Notice v1.0</h1>
-    <p style="color: var(--dct-text-muted); font-size: 1.1rem;">Spice & Sail Zanzibar — Data Collection and Retention Policy</p>
+    <h1 style="font-size: 2.2rem; color: var(--dct-charcoal); margin-bottom: 1rem;">Privacy Notice — Spice & Sail Zanzibar</h1>
+    <p style="color: var(--dct-text-muted); font-size: 1.1rem;">Data Controller: Spice & Sail Zanzibar, operated by Spice & Sail SRL under Zanzibar Commission for Tourism licence 2026-ZCT-001.</p>
   </div>
 
   <div style="margin-bottom: 2rem;">
@@ -21,12 +21,7 @@ description: What we collect, why, who sees it, retention, and how to request de
       <dd>Name, WhatsApp number (E.164 format), and/or email address — provided voluntarily when submitting an enquiry, quote request, or lead form.</dd>
 
       <dt>Trip Details</dt>
-      <dt>Services Interested In</dt>
-      <dt>Travel Dates</dt>
-      <dt>Party Size (adults/children)</dt>
-      <dt>Pickup Location / Hotel</dt>
-      <dt>Special Requests / Notes</dt>
-      <dd>Provided voluntarily when using the concierge widget or quote calculator.</dd>
+      <dd>Services interested in, travel dates, party size (adults/children), pickup location/hotel, and special requests/notes — provided voluntarily when using the concierge widget or quote calculator.</dd>
 
       <dt>Consent Status</dt>
       <dd>Whether you have ticked "Contact me about this request" and/or "Send me marketing information".</dd>
@@ -37,20 +32,19 @@ description: What we collect, why, who sees it, retention, and how to request de
   </div>
 
   <div style="margin-bottom: 2rem;">
-    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Why We Collect This Data</h2>
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Lawful Basis and Compliance</h2>
+    <p style="color: var(--dct-text-muted); line-height: 1.8;">As a Zanzibar-based tourism operator, we process personal data under the following legal frameworks:</p>
     <ul style="color: var(--dct-text-muted); line-height: 1.8; margin: 0;">
-      <li>To respond to your enquiries and provide personalised quotes for Zanzibar tours, transfers, and experiences.</li>
-      <li>To save a persistent reference (SP-YYYY-NNNNNN) for your lead so you can track its status through the staff endpoint.</li>
-      <li>To send operational alerts to our team via configured webhook channels (WhatsApp, email, Discord, Slack) — best-effort only.</li>
-      <li>To improve our website and concierge service based on anonymised usage patterns.</li>
-      <li>To comply with statutory requirements (ZIC insurance registration, ZRB levy collection, and Zanzibar immigration norms).</li>
+      <li><strong>General Data Protection Regulation (GDPR):</strong> Legitimate interest and contract performance basis for handling enquiries, bookings, and operational communications. Data Controller is Spice & Sail Zanzibar (licence: 2026-ZCT-001, Zanzibar Commission for Tourism).</li>
+      <li><strong>Zanzibar Tourism Act No. 6 of 2009:</strong> statutory requirements for ZIC (Zanzibar Inbound Travel Insurance) registration, ZRB levy collection, and visitor registration norms.</li>
+      <li><strong>Tanzanian Data Protection Laws:</strong> compliance with the Data Protection (General) Regulations, 2023, as they apply to foreign-inbound tourism operators.</li>
     </ul>
   </div>
 
   <div style="margin-bottom: 2rem;">
     <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Who We Share Data With</h2>
     <ul style="color: var(--dct-text-muted); line-height: 1.8; margin: 0;">
-      <li>Cloudflare KV (production) — encrypted at-rest, used as the persistent store for leads and references. Access limited to server-side functions.</li>
+      <li>Cloudflare KV (production) — encrypted at-rest, used as the persistent store for leads and references. Access limited to server-side functions. Data may be stored in Cloudflare's EU/US data centre region.</li>
       <li>Configured webhook endpoints — only if you have explicitly set WHATSAPP_OPS_WEBHOOK_URL, OPS_WEBHOOK_URL, DISCORD_WEBHOOK_URL, or SLACK_WEBHOOK_URL in the environment. No data is sent to webhooks that are not configured.</li>
       <li>Law enforcement or regulatory authorities — only where required by applicable law or court order.</li>
       <li>With your consent (if you tick "Send me marketing information") — only to send you promotional emails about Zanzibar travel offers, if an email address is provided.</li>
@@ -58,19 +52,25 @@ description: What we collect, why, who sees it, retention, and how to request de
   </div>
 
   <div style="margin-bottom: 2rem;">
-    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1min;">Data Retention</h2>
-    <p style="color: var(--dct-text-muted); line-height: 1.8;">We retain lead data for a maximum of 3 years from the date of creation, unless you request deletion earlier. Consent preferences and technical logs are retained for 12 months. Anonymous usage analytics are retained per Cloudflare's privacy policy.</p>
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Data Retention</h2>
+    <p style="color: var(--dct-text-muted); line-height: 1.8;">We retain lead data for a maximum of 3 years from the date of creation, unless you request deletion earlier. Consent preferences and technical logs are retained for 12 months. Anonymous usage analytics are retained per Cloudflare's privacy policy. Children's data (under 16) is retained for a maximum of 2 years.</p>
+  </div>
+
+  <div style="margin-bottom: 2rem;">
+    <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Children's Data Protection</h2>
+    <p style="color: var(--dct-text-muted); line-height: 1.8;">We do not knowingly collect personal data from children under the age of 16. If you are a parent or guardian and believe we have inadvertently collected data from a child, please email <a href="mailto:{{ site.contact.email }}"><strong>{{ site.contact.email }}</strong></a> and we will erase it immediately. Our services are not directed to children, and we do not knowingly collect personal data from anyone under 16.</p>
   </div>
 
   <div style="margin-bottom: 2rem;">
     <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Your Rights</h2>
     <p style="color: var(--dct-text-muted); line-height: 1.8;">You have the right to:</p>
     <ul style="color: var(--dct-text-muted); line-height: 1.8; margin: 0 0 1rem 1.5rem;">
-      <li>Request access to the personal data we hold about you.</li>
+      <li>Request access to the personal data we hold about you — email <strong>{{ site.contact.email }}</strong> with a description of the data you seek.</li>
       <li>Request correction of inaccurate personal data.</li>
       <li>Request deletion of your personal data — email <strong>{{ site.contact.email }}</strong> with your reference (SP-YYYY-NNNNNN) and we will erase it within 30 days.</li>
       <li>Withdraw consent at any time — untick "Contact me about this request" or "Send me marketing information" in the concierge widget.</li>
       <li>Object to processing of your personal data for marketing purposes.</li>
+      <li>Request data portability — receive your data in a structured, commonly used format.</li>
     </ul>
   </div>
 

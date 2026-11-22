@@ -50,7 +50,13 @@ module.exports = function(eleventyConfig) {
     return key;
   }
 
-  eleventyConfig.addNunjucksFilter("t", function(key, lang) {
+  
+
+    // nonce generator
+    eleventyConfig.addNunjucksFilter('getNonce', function() {
+      return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    });
+eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     return translate(key, lang);
   });
 

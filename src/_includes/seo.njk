@@ -48,7 +48,8 @@
 {% if alternate_it %}<link rel="alternate" hreflang="it" href="{{ alternate_it }}">{% endif %}
 {% endif %}
 <link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}/">
-{% endif %}
+{% endif %}    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; font-src 'self' data:; img-src 'self' data: https://*.google-analytics.com https://www.google-analytics.com https://www.googletagmanager.com https://translate.google.com https://*.gstatic.com https://maps.gstatic.com https://maps.googleapis.com https://www.google.com; style-src 'self'; script-src 'self' https://www.googletagmanager.com https://translate.google.com https://translate.googleapis.com; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://translate.googleapis.com; frame-src 'self' https://maps.google.com https://www.google.com;">
+
 
 {% if analytics and analytics.measurementId %}
 {# GA4 config uses requestIdleCallback in /js/sns-ga4-config.js #}
