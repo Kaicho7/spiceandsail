@@ -47,7 +47,7 @@ def compute_hotel_photo(h):
     if photo and isinstance(photo, str):
         cleaned = photo.lstrip("/")
         norm = cleaned.replace("hotels/", "").replace("images/hotels/", "")
-        if (pathlib.Path("/home/efatha/spiceandsail/public/images/hotels") / norm).exists():
+        if (ROOT / "public" / "images" / "hotels" / norm).exists():
             return "/images/hotels/" + norm
     return "/images/image-not-available.svg"
 
@@ -93,8 +93,8 @@ def attr_photo(name, cat):
     pool = CAT_POOLS.get(cat, CAT_POOLS["Attraction"])
     return "/images/" + hash_pick(name, pool)
 
-hotel_tpl = (pathlib.Path("/home/efatha/spiceandsail/scripts/templates/hotel-detail.html")).read_text()
-attr_tpl = (pathlib.Path("/home/efatha/spiceandsail/scripts/templates/attraction-detail.html")).read_text()
+hotel_tpl = (ROOT / "scripts" / "templates" / "hotel-detail.html").read_text()
+attr_tpl = (ROOT / "scripts" / "templates" / "attraction-detail.html").read_text()
 
 def render(tpl, d):
     out = tpl
