@@ -235,7 +235,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           🗣️ <strong>Multilingual Drivers &amp; Guides Available:</strong> Standard drivers and guides are fluent in Swahili and English. Dedicated Italian, German, French, or Polish-speaking Zanzibari drivers and certified guides are available upon advance request for an additional fee.
         </div>
 
-        <!-- Server-computed output card (fetches /.netlify/functions/quote) -->
+
         <div style="background: #0C1A24; color: #fff; border-radius: 12px; padding: 1.75rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
           <div>
             <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold, #D4AF37); font-weight: 700; display: block; margin-bottom: 0.25rem;">Published Rate</span>
@@ -251,14 +251,9 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
 
           <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px;">
             <a id="calc-whatsapp-btn" href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20enquire%20about%20a%20private%20Zanzibar%20transfer.%20Please%20confirm%20pickup%2C%20destination%2C%20date%2C%20group%20size%20and%20the%20final%20quote." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700; padding: 0.85rem 1.25rem; font-size: 0.98rem; text-align: center; border-radius: 8px;">
-              Check price &amp; availability
-            </a>
-            <button type="button" class="btn btn-secondary" id="calc-concierge-btn" type="button" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.85rem; padding: 0.6rem; border-radius: 8px;">
-              Ask the Island Concierge
+              Check price & availability
             </button>
-            <small style="font-size: 0.72rem; color: #64748b; display: block;">The concierge service requires a Netlify function. Use the button above to contact us on WhatsApp for rate confirmation instead.
-            </small>
-          </div>
+            </div>
         </div>
       </div>
     </div>
@@ -609,81 +604,10 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
       lastQuoteReasons = [];
       updateSummary(route, lastFareLabel, lastQuoteReasons);
 
-      fetch('/.netlify/functions/quote', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          serviceSlug: route.slug,
-          adults: route.passengers,
-          children: 0,
-          date: route.date || null
-        })
-      }).then(function (response) {
-        if (!response.ok) throw new Error('Catalogue quote request failed');
-        return response.json();
-      }).then(function (quote) {
-        if (requestId !== quoteRequestId) return;
-        if (!quote || !quote.status) throw new Error('Catalogue quote response was invalid');
-
-        lastQuote = quote;
-        lastFareLabel = formatQuoteDisplay(quote);
-        lastQuoteReasons = Array.isArray(quote.reasons) ? quote.reasons : [];
-        updateSummary(route, lastFareLabel, lastQuoteReasons, lastQuote);
-      }).catch(function () {
-        if (requestId !== quoteRequestId) return;
-        lastQuote = null;
-        lastFareLabel = 'price on request';
-        lastQuoteReasons = ['Our team will confirm this route and vehicle rate.'];
-        updateSummary(route, lastFareLabel, lastQuoteReasons);
-      });
-    }
-
-    const conciergeButton = document.getElementById('calc-concierge-btn');
-    if (conciergeButton) {
-      conciergeButton.addEventListener('click', function () {
-        if (window.snsConcierge && typeof window.snsConcierge.open === 'function') {
-          window.snsConcierge.open();
-        }
-      });
-    }
-
-    if (waBtn) {
-      waBtn.addEventListener('click', function (event) {
-        if (paxEl && !paxEl.reportValidity()) { event.preventDefault(); return; }
-        if (dateEl && !dateEl.reportValidity()) { event.preventDefault(); return; }
-        const route = currentRoute();
-        if (!route.supported || !window.snsConcierge || typeof window.snsConcierge.openBooking !== 'function') {
-          // Keep the prepared WhatsApp URL as a direct human-contact fallback
-          // for unlisted routes or when the concierge is unavailable.
-          return;
-        }
-        event.preventDefault();
-        const notes = [
-          'Destination: ' + route.zone,
-          route.flight ? 'Flight number: ' + route.flight : '',
-          route.language !== 'English' ? 'Driver language requested: ' + route.language + ' (team to confirm availability and any extra cost)' : ''
-        ].filter(Boolean).join('\n');
-        const options = {
-          serviceSlug: route.slug,
-          date: route.date,
-          guests: route.passengers,
-          pickup: route.pickup + (route.flight ? ' — Flight: ' + route.flight : ''),
-          notes: notes
-        };
-        const originalText = waBtn.textContent;
-        waBtn.textContent = 'Opening Island Concierge…';
-        waBtn.setAttribute('aria-busy', 'true');
-        Promise.resolve(window.snsConcierge.openBooking(options)).then(function (opened) {
-          if (!opened) {
-            waBtn.setAttribute('aria-label', 'Concierge could not open; use the WhatsApp fallback link');
-          }
-        }).catch(function () {
-          // The concierge presents its own safe error and the WhatsApp fallback remains available.
-        }).then(function () {
-          waBtn.textContent = originalText;
-          waBtn.removeAttribute('aria-busy');
-        });
-      });
+      lastQuote = null;
+      lastFareLabel = 'price on request';
+      lastQuoteReasons = ['Our team will confirm this route and vehicle rate.'];
+      updateSummary(route, lastFareLabel, lastQuoteReasons);
     }
 
     if (pickupEl) pickupEl.addEventListener('change', updateCalculator);
