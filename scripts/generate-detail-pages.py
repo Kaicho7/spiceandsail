@@ -28,7 +28,7 @@ BOILER = re.compile(r"^Located in .+\. A popular .+ for visitors to Zanzibar\.$"
 wc = lambda s: len(re.findall(r"\S+", s or ""))
 MIN = 50
 
-hotels_build = [h for h in hotels_all if h.get("slug") and h.get("name") and not h.get("partnerStay") and h.get("slug") not in PARTNER]
+hotels_build = [h for h in hotels_all if h.get("slug") and h.get("name")]
 hotels_build = [h for h in hotels_build if wc(h.get("description", "")) >= MIN]
 hotels_build = [{**h, "slug": ALIAS.get(h["slug"], h["slug"])} for h in hotels_build]
 

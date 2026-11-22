@@ -912,7 +912,7 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
   eleventyConfig.addGlobalData("hotelsToBuild", () => {
     const seen = new Set();
     return hotelsAll
-      .filter(h => h && h.slug && h.name && !h.partnerStay && !PARTNER_PAGE_SLUGS.has(h.slug))
+      .filter(h => h && h.slug && h.name)
       .filter(h => wc(h.description) >= MIN_WORDS && !BOILERPLATE.test(h.description.trim()))
       .map(h => Object.assign({}, h, { 
         slug: SLUG_ALIAS[h.slug] || h.slug,
