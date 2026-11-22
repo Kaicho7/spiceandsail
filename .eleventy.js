@@ -855,6 +855,17 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     return `/images/${f}`;
   });
 
+  // File modification time filter for sitemap lastmod — reads actual file mtime from disk
+  eleventyConfig.addNunjucksFilter("fileMtime", function(inputPath) {
+    if (!inputPath) return new Date().toISOString().split("T")[0];
+    try {
+      const stat = fs.statSync(path.resolve(__dirname, inputPath));
+      return stat.mtime.toISOString().split("T")[0];
+    } catch (e) {
+      return new Date().toISOString().split("T")[0];
+    }
+  });
+
   // Canonical alt text filter ensuring exact identical alt text for every image site-wide
   eleventyConfig.addNunjucksFilter("canonicalAlt", function(file, fallback) {
     const f = String(file || "").replace(/^\/images\//, "").replace(/\?.*$/, "");

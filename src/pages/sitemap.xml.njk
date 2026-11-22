@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<url><loc>{{ site.url }}/</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><priority>1.0</priority>
+<url><loc>{{ site.url }}/</loc><lastmod>{{ page.inputPath | fileMtime }}</lastmod><priority>1.0</priority>
 <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/"/>
 <xhtml:link rel="alternate" hreflang="it" href="{{ site.url }}/it/"/>
 <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/"/>
@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
 </url>
 {%- for page in collections.all %}
 {%- if page.url and page.url.indexOf("/404") == -1 and page.url.indexOf("/thank-you") == -1 and page.url.indexOf("/bookings") == -1 and not page.url.endsWith(".html") and page.url != "/sitemap.xml" and page.url != "/" and not page.url.startsWith("/hotels/") and not page.url.startsWith("/attractions/") %}
-<url><loc>{{ site.url }}{{ page.url }}</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><changefreq>weekly</changefreq><priority>{% if page.url == "/about/" or page.url == "/contact/" %}0.8{% else %}0.6{% endif %}</priority>
+<url><loc>{{ site.url }}{{ page.url }}</loc><lastmod>{{ page.inputPath | fileMtime }}</lastmod><changefreq>weekly</changefreq><priority>{% if page.url == "/about/" or page.url == "/contact/" %}0.8{% else %}0.6{% endif %}</priority>
 {%- set altEn = page.data.alternate_en %}
 {%- set altIt = page.data.alternate_it %}
 {%- set altDe = page.data.alternate_de %}
@@ -29,7 +29,7 @@ eleventyExcludeFromCollections: true
 {%- endfor %}
 
 {%- for hotel in hotelsToBuild %}
-<url><loc>{{ site.url }}/hotels/{{ hotel.slug }}/</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+<url><loc>{{ site.url }}/hotels/{{ hotel.slug }}/</loc><lastmod>{{ "/src/data/hotels.json" | fileMtime }}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
 <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/hotels/{{ hotel.slug }}/"/>
 <xhtml:link rel="alternate" hreflang="it" href="{{ site.url }}/it/hotels/{{ hotel.slug }}/"/>
 <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/hotels/{{ hotel.slug }}/"/>
@@ -38,7 +38,7 @@ eleventyExcludeFromCollections: true
 {%- endfor %}
 
 {%- for attraction in attractionsToBuild %}
-<url><loc>{{ site.url }}/attractions/{{ attraction.slug }}/</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+<url><loc>{{ site.url }}/attractions/{{ attraction.slug }}/</loc><lastmod>{{ "/src/data/attractions.json" | fileMtime }}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
 <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/attractions/{{ attraction.slug }}/"/>
 <xhtml:link rel="alternate" hreflang="it" href="{{ site.url }}/it/attractions/{{ attraction.slug }}/"/>
 <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/attractions/{{ attraction.slug }}/"/>

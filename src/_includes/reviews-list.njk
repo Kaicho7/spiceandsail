@@ -1,0 +1,198 @@
+{# Static reviews component — renders from src/data/reviews.json at build time #}
+{% set serviceSlug = serviceSlug | default("") %}
+
+{# First pass: count and sum #}
+{% set reviewCount = 0 %}
+{% set ratingSum = 0 %}
+{% for r in (data.reviews | default([])) %}
+  {% if r.approved == true %}
+    {% if serviceSlug == "" or r.service == serviceSlug %}
+      {% set reviewCount = reviewCount + 1 %}
+      {% set ratingSum = ratingSum + r.rating %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% set avgRating = 0 %}
+{% if reviewCount > 0 %}
+  {% set avgRating = ratingSum / reviewCount %}
+{% endif %}
+
+<section class="reviews-section" id="reviews-section" {% if reviewCount == 0 %}style="display:none"{% endif %}>
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Guest Reviews</span>
+      <h2>What Our Guests Say</h2>
+      <p class="section-subtitle">Real reviews from travellers who booked with us. No incentives, no filters.</p>
+    </div>
+
+    <div class="reviews-summary-bar reveal">
+      {% set reviewPlural = '' %}
+      {% if reviewCount != 1 %}
+        {% set reviewPlural = 's' %}
+      {% endif %}
+      <span class="summary-rating">{{ avgRating | round(1) }}</span>
+      <span class="summary-max">/ 5</span>
+      <span class="summary-count">{{ reviewCount }} review{{ reviewPlural }}</span>
+      <span class="summary-divider">·</span>
+      <span class="summary-trust">Verified guests · WhatsApp bookings</span>
+    </div>
+
+    <div class="reviews-grid reveal">
+      {% for r in (data.reviews | default([])) %}
+        {% if r.approved == true %}
+          {% if serviceSlug == "" or r.service == serviceSlug %}
+      <article class="review-card">
+        <div class="review-header">
+          <div class="review-author-info">
+            <span class="review-author">{{ r.author }}</span>
+            {% if r.authorLocation %}
+              <span class="review-location">{{ r.authorLocation }}</span>
+            {% endif %}
+          </div>
+          <div class="review-stars" aria-label="{{ r.rating }} out of 5 stars">
+            {% set rr = r.rating %}
+            {% for i in range(1, 6) %}
+              <span class="review-star {% if i <= rr %}filled{% endif %}">★</span>
+            {% endfor %}
+          </div>
+        </div>
+        <p class="review-text">{{ r.text }}</p>
+        <div class="review-meta">
+          <span class="review-service">{{ r.serviceName }}</span>
+          <span class="review-date">{{ r.tripDate }}</span>
+          {% if r.groupSize %}
+            {% set groupPlural = '' %}
+            {% if r.groupSize != 1 %}
+              {% set groupPlural = 's' %}
+            {% endif %}
+            <span class="review-group">{{ r.groupSize }} guest{{ groupPlural }}</span>
+          {% endif %}
+        </div>
+      </article>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if reviewCount > 0 %}
+    <div class="reviews-cta reveal">
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20%26%20Sail!%20I%20would%20like%20to%20leave%20a%20review%20for%20my%20recent%20booking." target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        💬 Leave Your Review on WhatsApp
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.reviews-section {
+  background: #FBF9F5;
+  border-top: 1px solid #f0e8dc;
+  padding: 4rem 1rem;
+}
+.reviews-summary-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(12,26,36,0.04);
+}
+.summary-rating {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #D4AF37;
+}
+.summary-max {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+.summary-count {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0C1A24;
+}
+.summary-divider {
+  color: #e2e8ed;
+}
+.summary-trust {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+.review-card {
+  background: #fff;
+  border: 1px solid #e2e8ed;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(12,26,36,0.03);
+}
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.review-author-info {
+  display: flex;
+  flex-direction: column;
+}
+.review-author {
+  font-weight: 700;
+  color: #0C1A24;
+  font-size: 0.95rem;
+}
+.review-location {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+.review-stars {
+  display: flex;
+  gap: 2px;
+  color: #D4AF37;
+  font-size: 1.1rem;
+}
+.review-star.filled {
+  color: #D4AF37;
+}
+.review-star:not(.filled) {
+  color: #e2e8ed;
+}
+.review-text {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+.review-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+.reviews-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (max-width: 640px) {
+  .reviews-summary-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  .summary-divider {
+    display: none;
+  }
+}
+</style>

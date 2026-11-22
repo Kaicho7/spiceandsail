@@ -21,6 +21,9 @@ permalink: "/tours/index.html"
     </nav>
   </header>
 
+  {% set serviceSlug = "" %}
+  {% include "reviews-list.njk" %}
+
   <section class="cards tour-grid">
     <h2 class="visually-hidden">All Tours &amp; Excursions</h2>
     {% for tour in tours %}

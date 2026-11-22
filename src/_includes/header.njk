@@ -10,12 +10,12 @@
 </head>
 <body data-whatsapp-number="{{ site.contact.whatsapp }}">
 <a href="#main-content" class="skip-link">Skip to main content</a>
-<noscript>
-  <div class="noscript-banner" role="alert">
-    <p>This site works best with JavaScript enabled. Some features (currency conversion, interactive fare calculator, WhatsApp booking panel) may not function correctly.</p>
-    <p>You can still contact us directly via <a href="https://wa.me/{{ site.contact.whatsapp }}">WhatsApp</a> or <a href="mailto:{{ site.contact.email }}">email</a>.</p>
-  </div>
-</noscript>
+  <noscript>
+    <div class="noscript-banner" role="alert">
+      <p>This site works best with JavaScript enabled. Some features (currency conversion, interactive fare calculator, WhatsApp booking panel) may not function correctly.</p>
+      <p>You can still contact us directly via <a href="https://wa.me/{{ site.contact.whatsapp }}">WhatsApp</a> or email {{ site.contact.email }}.</p>
+    </div>
+  </noscript>
 <div id="google_translate_element" hidden aria-hidden="true"></div>
 
 <header class="site-header" id="siteHeader">

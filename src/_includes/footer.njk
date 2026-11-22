@@ -36,7 +36,7 @@
       <h2 class="footer-col-title">{{ "footer_talk_with_team" | t(lang) }}</h2>
       <a href="tel:{{ site.contact.phone }}">Call {{ site.contact.phone_display }}</a>
       <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" onclick="window.dataLayer.push({'event': 'whatsapp_click', 'page_path': '{{ page.path }}', 'label': 'Footer WhatsApp'});">WhatsApp {{ site.contact.whatsapp_display }}</a>
-      {% if site.contact and site.contact.email %}<a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>{% endif %}
+      {% if site.contact and site.contact.email %}{{ site.contact.email }}{% endif %}
       <p>{{ site.hours.days }} · {{ site.hours.open }}–{{ site.hours.close }} EAT</p>
       {% if site.social and site.social.google_maps %}<a href="{{ site.social.google_maps }}" target="_blank" rel="noopener noreferrer">{{ "footer_find_google_maps" | t(lang) }}</a>{% endif %}
     </div>
