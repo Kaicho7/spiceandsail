@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="https://spiceandsail.com{{canonicalUrl}}">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header>
+    <nav><a href="/">Spice & Sail Zanzibar</a></nav>
+  </header>
+  <main>
+    <section class="hotel-hero">
+      <img src="{{cdnPhotoUrl}}" alt="{{hotelName}} in {{zone}}, Zanzibar" loading="eager">
+      <h1>{{hotelName}}</h1>
+      <p>{{zone}} · {{starRating}} · {{category}}</p>
+    </section>
+    <section class="hotel-description">
+      <h2>About {{hotelName}}</h2>
+      <div>{{description}}</div>
+    </section>
+    <section class="hotel-details">
+      <h2>Hotel Details</h2>
+      <dl>
+        <dt>Category</dt><dd>{{category}}</dd>
+        <dt>Star Rating</dt><dd>{{starRating}}</dd>
+        <dt>Board Basis</dt><dd>{{board}}</dd>
+        <dt>Zone</dt><dd>{{zone}}</dd>
+        <dt>Island</dt><dd>{{island}}</dd>
+        <dt>Website</dt><dd><a href="{{website}}" target="_blank">{{websiteDomain}}</a></dd>
+        {{#if email}}<dt>Email</dt><dd>{{email}}</dd>{{/if}}
+        {{#if phone}}<dt>Phone</dt><dd>{{phone}}</dd>{{/if}}
+        {{#if tax}}<dt>Local Levy</dt><dd>${{tax}} per person/night</dd>{{/if}}
+      </dl>
+    </section>
+    <section class="hotel-cta">
+      <h2>Ready to Book?</h2>
+      <a href="https://wa.me/{{whatsapp}}?text={{waMsg}}" target="_blank" class="btn">Chat on WhatsApp</a>
+    </section>
+  </main>
+  <footer><p>Spice & Sail Zanzibar</p></footer>
+</body>
+</html>

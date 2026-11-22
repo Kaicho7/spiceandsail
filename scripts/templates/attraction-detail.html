@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="https://spiceandsail.com{{canonicalUrl}}">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header>
+    <nav><a href="/">Spice & Sail Zanzibar</a></nav>
+  </header>
+  <main>
+    <section class="attraction-hero">
+      <img src="{{cdnPhotoUrl}}" alt="{{attractionName}} in {{zone}}, Zanzibar" loading="eager">
+      <h1>{{attractionName}}</h1>
+      <p>{{zone}} · {{island}}</p>
+    </section>
+    <section class="attraction-description">
+      <h2>About {{attractionName}}</h2>
+      <div>{{description}}</div>
+    </section>
+    <section class="attraction-details">
+      <h2>Details</h2>
+      <dl>
+        <dt>Type</dt><dd>{{category}}</dd>
+        <dt>Zone</dt><dd>{{zone}}</dd>
+        <dt>Island</dt><dd>{{island}}</dd>
+        {{#if website}}<dt>Website</dt><dd><a href="{{website}}" target="_blank">{{website}}</a></dd>{{/if}}
+      </dl>
+    </section>
+    <section class="attraction-cta">
+      <h2>Plan Your Visit</h2>
+      <a href="https://wa.me/{{whatsapp}}?text={{waMsg}}" target="_blank" class="btn">Chat on WhatsApp</a>
+    </section>
+  </main>
+  <footer><p>Spice & Sail Zanzibar</p></footer>
+</body>
+</html>
