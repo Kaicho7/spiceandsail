@@ -1,5 +1,17 @@
 module.exports = function(eleventyConfig) {
-  const analyticsId = process.env.GA_MEASUREMENT_ID || "";
+  const fs = require("fs");
+  const path = require("path");
+  let analyticsId = "";
+  try {
+    const siteData = JSON.parse(fs.readFileSync(path.join(__dirname, "src", "data", "site.json"), "utf8"));
+    analyticsId = siteData.ga_measurement_id || "";
+    console.log("[Eleventy] GA analyticsId from site.json:", analyticsId);
+  } catch (e) {
+    console.log("[Eleventy] Error reading site.json:", e.message);
+    analyticsId = process.env.GA_MEASUREMENT_ID || "";
+  }
+  console.log("[Eleventy] Final analyticsId:", analyticsId);
+  console.log("[Eleventy] Regex test:", /^G-[A-Z0-9]+$/.test(analyticsId));
   eleventyConfig.addGlobalData("analytics", {
     measurementId: /^G-[A-Z0-9]+$/.test(analyticsId) ? analyticsId : ""
   });
@@ -21,8 +33,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"_redirects": "_redirects"});
   
   // Load tours.json using fs
-  const fs = require("fs");
-  const path = require("path");
   const slugify = require("slugify");
   const { publicFromRate, packageForHotel } = require("./src/lib/concierge/public-data");
 
@@ -280,6 +290,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData("featuredPartnerHotels", () => featuredPartnerHotels);
 
   eleventyConfig.addGlobalData("conciergeCat", () => conciergeCatalogue);
+  eleventyConfig.addGlobalData("hotelPublicRates", () => hotelPublicRates);
   eleventyConfig.addGlobalData("cataloguePackages", () => (conciergeCatalogue.services || [])
     .filter(s => s.type === "package" && s.hotelSlug)
     .map(s => {
@@ -701,7 +712,7 @@ module.exports = function(eleventyConfig) {
 
   // Standalone featured image lookup (used by both filters)
   function getFeaturedImage(inputPath) {
-    let featuredImage = "default-tour-hero.jpg";
+    let featuredImage = null;
     let featuredAlt = "";
 
     const tourPath = normalizePath(inputPath);
@@ -724,7 +735,7 @@ module.exports = function(eleventyConfig) {
 
     // Area pages: use the zone's canonical pool image so og:image matches the
     // visible hero, instead of falling back to default-tour-hero.jpg.
-    if (tourPath.startsWith("pages/areas/")) {
+    if (!featuredImage && tourPath.startsWith("pages/areas/")) {
       const areaSlug = tourPath.replace("pages/areas/", "").replace(/\.(njk|md)$/, "");
       const zoneKey = (Object.entries(zoneAliases).find(([frag]) => areaSlug.startsWith(frag)) || [])[1] || "Stone Town";
       const pool = zoneFiles[zoneKey] || [zoneImage[zoneKey] || "default-tour-hero.jpg"];
@@ -733,7 +744,7 @@ module.exports = function(eleventyConfig) {
     }
 
     // Hotel landing pages: resolve partner hotel photo from hotelPublicRates.json
-    if (tourPath.startsWith("pages/hotels/")) {
+    if (!featuredImage && tourPath.startsWith("pages/hotels/")) {
       const rawSlug = tourPath.replace("pages/hotels/", "").replace(/\.(njk|md)$/, "");
       const canonSlug = rawSlug === "stone-town-view-hotel" ? "stonetown-view-hotel" : rawSlug;
       const partner = rateFor(canonSlug);
@@ -744,7 +755,7 @@ module.exports = function(eleventyConfig) {
     }
 
     // Blog pages: use blogSlugMap for hero images
-    if (tourPath.startsWith("pages/blog/")) {
+    if (!featuredImage && tourPath.startsWith("pages/blog/")) {
       const blogSlug = tourPath.replace("pages/blog/", "").replace(/\.(njk|md)$/, "");
       if (blogSlugMap[blogSlug]) {
         const mapSlug = blogSlugMap[blogSlug];
@@ -756,6 +767,28 @@ module.exports = function(eleventyConfig) {
           featuredAlt = "";
         }
       }
+    }
+
+    // Commercial/static pages: assign specific hero images
+    const pageHeroMap = {
+      "pages/transfers.njk": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
+      "pages/packages.njk": "aerial-beach-boat-turquoise-water.jpg",
+      "pages/safaris.njk": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
+      "pages/experiences.njk": "horse-riding-beach-zanzibar-sunset.jpg",
+      "pages/about.njk": "aerial-coastal-town-beach-turquoise-water.jpg",
+      "pages/contact.njk": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
+      "pages/travel-guide.njk": "aerial-beach-zanzibar-turquoise-water.jpg",
+      "pages/cancellation.njk": "dhow-boat-turquoise-water-zanzibar.jpg",
+      "pages/health-safety.njk": "beach-walk-person-colorful-dress.jpg",
+      "pages/migration-calendar.njk": "turtle-hatching-zanzibar-beach.jpg",
+      "pages/packing-guide.njk": "beach-walk-person-colorful-dress.jpg",
+      "pages/self-drive.njk": "toyota-land-cruiser-prado-zanzibar.jpg",
+      "pages/fourty-activities/index.njk": "aerial-beach-boat-turquoise-water.jpg",
+      "pages/marketplace.njk": "marketplace-zanzibar-handicrafts.jpg",
+    };
+    if (!featuredImage && pageHeroMap[tourPath]) {
+      featuredImage = pageHeroMap[tourPath];
+      featuredAlt = "";
     }
 
     if (!featuredImage && tourPath) {
@@ -838,6 +871,90 @@ module.exports = function(eleventyConfig) {
     return intentMap[tourPath] || intentMap.default;
   });
 
+  // ---- Permanent expansion: content-gated page datasets ----
+  const PARTNER_PAGE_SLUGS = new Set([
+    "le-paradis-boutique-hotel-zanzibar","mkeka-spice-lodge","stone-town-view-hotel",
+    "stonetown-view-hotel","the-island-stonetown","the-one-resort-zanzibar"
+  ]);
+  const SLUG_ALIAS = { "stonetown-view-hotel": "stone-town-view-hotel" };
+  const wc = (s) => String(s||"").trim().split(/\s+/).filter(Boolean).length;
+  const BOILERPLATE = /^Located in .+\. A popular .+ for visitors to Zanzibar\.$/i;
+  const MIN_WORDS = 50; // quality gate — raise, never lower, to ship stubs
+
+  const hotelsRaw = JSON.parse(fs.readFileSync(path.join(__dirname,"src","data","hotels.json"),"utf8"));
+  const hotelsAll = Array.isArray(hotelsRaw) ? hotelsRaw : (hotelsRaw.hotels||[]);
+  
+  // Helper to compute CDN photo URL for a hotel (replicates hotelPhoto + cdnFile filters)
+  function computeHotelCdnPhotoUrl(hotel) {
+    const photo = hotel && hotel.photo;
+    let file = "image-not-available.svg";
+    if (photo && typeof photo === "string") {
+      const cleaned = String(photo).replace(/^\//, "");
+      const normalized = cleaned.replace(/^hotels\//, "").replace(/^images\/hotels\//, "");
+      const exists = fs.existsSync(path.join(__dirname, "public", "images", "hotels", normalized));
+      if (exists) {
+        file = "hotels/" + normalized;
+      }
+    }
+    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
+    if (isNetlify) {
+      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
+    }
+    return `/images/${file}`;
+  }
+  
+  eleventyConfig.addGlobalData("hotelsToBuild", () => {
+    const seen = new Set();
+    return hotelsAll
+      .filter(h => h && h.slug && h.name && !h.partnerStay && !PARTNER_PAGE_SLUGS.has(h.slug))
+      .filter(h => wc(h.description) >= MIN_WORDS && !BOILERPLATE.test(h.description.trim()))
+      .map(h => Object.assign({}, h, { 
+        slug: SLUG_ALIAS[h.slug] || h.slug,
+        cdnPhotoUrl: computeHotelCdnPhotoUrl(h)
+      }))
+      .filter(h => { if (seen.has(h.slug)) return false; seen.add(h.slug); return true; });
+  });
+
+  const attrRaw = JSON.parse(fs.readFileSync(path.join(__dirname,"src","data","attractions.json"),"utf8"));
+  const attrAll = Array.isArray(attrRaw) ? attrRaw : (attrRaw.attractions||[]);
+  const ATTRACTION_SKIP = new Set([ /* slugs that already have a dedicated /tours/ page — keep in sync */ ]);
+
+  // Helper to compute CDN photo URL for an attraction (replicates attractionImg + cdnFile filters)
+  function computeAttractionCdnPhotoUrl(attractionName, category) {
+    let file = "default-tour-hero.jpg";
+    if (attractionImage[attractionName]) {
+      file = attractionImage[attractionName];
+    } else {
+      const catPool = attrCategoryArrays[category] || attrCategoryArrays["Attraction"];
+      if (catPool && catPool.length > 0) file = hashPick(attractionName, catPool);
+    }
+    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
+    if (isNetlify) {
+      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
+    }
+    return `/images/${file}`;
+  }
+  
+  eleventyConfig.addGlobalData("attractionsToBuild", () => {
+    const seen = new Set();
+    return attrAll
+      .filter(a => a && a.slug && a.name && a.island !== "Pemba" && !ATTRACTION_SKIP.has(a.slug))
+      .filter(a => wc(a.description) >= MIN_WORDS && !BOILERPLATE.test(a.description.trim()))
+      .map(a => Object.assign({}, a, { 
+        cdnPhotoUrl: computeAttractionCdnPhotoUrl(a.name, a.category)
+      }))
+      .filter(a => { if (seen.has(a.slug)) return false; seen.add(a.slug); return true; });
+  });
+
+  // Load canonical rates as single source of truth
+  let canonicalRates = {};
+  try {
+    canonicalRates = JSON.parse(fs.readFileSync(path.join(__dirname,"src","data","canonical-rates.json"),"utf8"));
+  } catch(e) {
+    canonicalRates = {};
+  }
+  eleventyConfig.addGlobalData("rates", () => canonicalRates);
+
   // Enable deep data merging
   eleventyConfig.setDataDeepMerge(true);
   
@@ -861,6 +978,54 @@ module.exports = function(eleventyConfig) {
       return haystack.includes(needle);
     }
     return false;
+  });
+
+  // Shortcode for hotel photo CDN URL (avoids filter chaining in templates)
+  eleventyConfig.addShortcode("hotelPhotoCdn", function(hotel) {
+    // Replicate hotelPhoto filter logic
+    const photo = hotel && hotel.photo;
+    let file = "image-not-available.svg";
+    if (photo && typeof photo === "string") {
+      const cleaned = String(photo).replace(/^\//, "");
+      const normalized = cleaned.replace(/^hotels\//, "").replace(/^images\/hotels\//, "");
+      const exists = fs.existsSync(path.join(__dirname, "public", "images", "hotels", normalized));
+      if (exists) {
+        file = "hotels/" + normalized;
+      }
+    }
+    // Apply cdnFile logic
+    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
+    if (isNetlify) {
+      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
+    }
+    return `/images/${file}`;
+  });
+
+  // Shortcode for attraction photo CDN URL
+  eleventyConfig.addShortcode("attractionPhotoCdn", function(attractionName, category) {
+    // Replicate attractionImg filter logic
+    let file = "default-tour-hero.jpg";
+    if (attractionImage[attractionName]) {
+      file = attractionImage[attractionName];
+    } else {
+      const catPool = attrCategoryArrays[category] || attrCategoryArrays["Attraction"];
+      if (catPool && catPool.length > 0) file = hashPick(attractionName, catPool);
+    }
+    // Apply cdnFile logic
+    const isNetlify = process.env.NETLIFY || process.env.URL || process.env.DEPLOY_PRIME_URL;
+    if (isNetlify) {
+      return `/.netlify/images?url=${encodeURIComponent("/images/" + file)}&fm=webp&w=1600&q=80`;
+    }
+    return `/images/${file}`;
+  });
+
+  // Shortcode for canonical alt text
+  eleventyConfig.addShortcode("canonicalAltText", function(file, fallback) {
+    const f = String(file || "").replace(/^\/images\//, "").replace(/\?.*$/, "");
+    if (metadataIndex[f] && metadataIndex[f].alt_text) {
+      return metadataIndex[f].alt_text;
+    }
+    return fallback || metadataIndex["default-tour-hero.jpg"]?.alt_text || "Spice and Sail Zanzibar";
   });
 
   // Filter a collection (hotels/attractions/tours) by zone name.

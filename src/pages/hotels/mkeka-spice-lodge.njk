@@ -7,7 +7,7 @@ hotel_slug: "mkeka-spice-lodge"
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
-<main class="hotel-detail">
+<main class="" id="main-content">
   <section class="hotel-hero" style="background: linear-gradient(135deg, var(--dct-palm) 0%, var(--dct-ocean) 100%);">
     <div class="hotel-hero-content">
       {% set featured = page.inputPath | featuredImage %}
@@ -53,40 +53,29 @@ hotel_slug: "mkeka-spice-lodge"
 
   <section class="hotel-transfers" aria-labelledby="transfers-heading">
     <h2 id="transfers-heading" class="section-title">Airport Transfers (per vehicle)</h2>
-    <p class="transfer-note">Rates are <strong>per private vehicle, one-way</strong> (up to 4 passengers). Round-trip available.</p>
+    <p class="transfer-note">Rates are <strong>per private vehicle, one-way</strong> (sedan 1–3 / van 4–6 passengers). Round-trip available.</p>
     <div class="table-wrapper">
       <table class="rate-table">
         <thead>
           <tr>
             <th>Route</th>
-            <th>One-Way</th>
-            <th>Round-Trip</th>
-            <th>Capacity</th>
+            <th>Sedan (1–3)</th>
+            <th>Van (4–6)</th>
           </tr>
         </thead>
         <tbody>
+          {% set trf = hotelPublicRates.transferRatesPerVehicle %}
+          {% for t in trf if t.slug in ['airport-transfer-znz-to-stone-town', 'airport-transfer-znz-to-pajejambiani', 'airport-transfer-znz-to-nungwikendwa'] %}
           <tr>
-            <td>ZNZ → Jambiani/Paje</td>
-            <td>$40–$45</td>
-            <td>from $80</td>
-            <td>4 pax</td>
+            <td>{{ t.route }}</td>
+            <td>${{ t.vehicles[0].min }}</td>
+            <td>${{ t.vehicles[1].min }}</td>
           </tr>
-          <tr>
-            <td>ZNZ → Stone Town</td>
-            <td>$15–$20</td>
-            <td>from $30</td>
-            <td>4 pax</td>
-          </tr>
-          <tr>
-            <td>ZNZ → Nungwi/Kendwa</td>
-            <td>$40–$45</td>
-            <td>from $80</td>
-            <td>4 pax</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
-    <p class="transfer-note">Transfer rates are per vehicle (up to 4 passengers). Add to your quote as an option.</p>
+    <p class="transfer-note">Transfer rates are per private vehicle (sedan 1–3 / van 4–6). Our team confirms your vehicle and pickup before you pay anything.</p>
   </section>
 
   <section class="hotel-cta" aria-labelledby="cta-heading">

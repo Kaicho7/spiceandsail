@@ -1,22 +1,25 @@
 ---
-title: "The One Resort Zanzibar — Half Board from $160/room/night | Spice & Sail"
-description: "The One Resort Zanzibar on the South Coast. 40 rooms & villas, Half Board & All Inclusive seasonal rates from $160/room/night (Green Season). Verified rack rates (15% discount), airport transfers, Safari Blue included. Book direct via WhatsApp."
+title: "The One Resort Zanzibar — Half Board from $136/room/night | Spice & Sail"
+description: "The One Resort Zanzibar on the South Coast. 40 rooms & villas, Half Board & All Inclusive seasonal rates from $136/room/night. Verified rack rates (15% discount), airport transfers, Safari Blue included. Book direct via WhatsApp."
 permalink: "/hotels/the-one-resort-zanzibar/"
 hotel_slug: "the-one-resort-zanzibar"
+eleventyComputed:
+  title: "The One Resort Zanzibar — Half Board from ${{ 'the-one-resort-zanzibar' | getFromRate }}/room/night | Spice & Sail"
+  description: "The One Resort Zanzibar on the South Coast. 40 rooms & villas, Half Board & All Inclusive seasonal rates from ${{ 'the-one-resort-zanzibar' | getFromRate }}/room/night. Verified rack rates (15% discount), airport transfers, Safari Blue included. Book direct via WhatsApp."
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
-<main class="hotel-detail">
+<main class="" id="main-content">
   <section class="hotel-hero" style="background: linear-gradient(135deg, var(--dct-palm) 0%, var(--dct-ocean) 100%);">
     <div class="hotel-hero-content">
       {% set featured = page.inputPath | featuredImage %}
       {% set cdnSrc = page.inputPath | cdnImage %}
       <img src="{{ cdnSrc }}" alt="The One Resort Zanzibar aerial view with pool and ocean" class="hotel-hero-image" loading="eager" fetchpriority="high">
       <span class="card-badge badge-hotel">Resort</span>
-      <span class="swahili-kicker"><strong>Safari</strong><span>South Coast luxury</span></span>
+      <span class="swahili-kicker"><strong>South Coast</strong><span>Luxury resort</span></span>
       <h1>The One Resort Zanzibar</h1>
-      <p class="hotel-meta">Makunduchi, South Coast · Half Board / All Inclusive · From $160/room/night (Green Season, 2 adults)</p>
+      <p class="hotel-meta">Makunduchi, South Coast · Half Board / All Inclusive · From ${{ "the-one-resort-zanzibar" | getFromRate }}/room/night (Green Season, 2 adults)</p>
       <div class="hotel-price-box">
         <span class="price-label">From</span>
         <span class="price-amount">${{ "the-one-resort-zanzibar" | getFromRate }}</span>
@@ -53,46 +56,31 @@ hotel_slug: "the-one-resort-zanzibar"
 
   <section class="hotel-transfers" aria-labelledby="transfers-heading">
     <h2 id="transfers-heading" class="section-title">Airport Transfers (per vehicle)</h2>
-    <p class="transfer-note">Rates are <strong>per private vehicle, one-way</strong> (up to 4 passengers). Round-trip available.</p>
+    <p class="transfer-note">Rates are <strong>per private vehicle, one-way</strong> (up to 6 passengers). Round-trip available.</p>
     <div class="table-wrapper">
       <table class="rate-table">
         <thead>
           <tr>
             <th>Route</th>
-            <th>One-Way</th>
-            <th>Round-Trip</th>
-            <th>Capacity</th>
+            <th>Sedan (1–3 pax)</th>
+            <th>Van (4–6 pax)</th>
           </tr>
         </thead>
         <tbody>
+          {% set trf = hotelPublicRates.transferRatesPerVehicle %}
+          {% for t in trf %}
+            {% if t.slug == 'airport-transfer-znz-to-stone-town' or t.slug == 'airport-transfer-znz-to-pajejambiani' or t.slug == 'airport-transfer-znz-to-nungwikendwa' or t.slug == 'airport-transfer-znz-to-kizimkazi' %}
           <tr>
-            <td>ZNZ → South Coast (Makunduchi)</td>
-            <td>$40–$50</td>
-            <td>from $80</td>
-            <td>4 pax</td>
+            <td>{{ t.route }}</td>
+            <td>${{ t.vehicles[0].min }}</td>
+            <td>${{ t.vehicles[1].min }}</td>
           </tr>
-          <tr>
-            <td>ZNZ → Stone Town</td>
-            <td>$15–$20</td>
-            <td>from $30</td>
-            <td>4 pax</td>
-          </tr>
-          <tr>
-            <td>ZNZ → Paje/Jambiani</td>
-            <td>$40–$45</td>
-            <td>from $80</td>
-            <td>4 pax</td>
-          </tr>
-          <tr>
-            <td>ZNZ → Nungwi/Kendwa</td>
-            <td>$40–$45</td>
-            <td>from $80</td>
-            <td>4 pax</td>
-          </tr>
+            {% endif %}
+          {% endfor %}
         </tbody>
       </table>
     </div>
-    <p class="transfer-note">Transfer rates are per vehicle (up to 4 passengers). Add to your quote as an option.</p>
+    <p class="transfer-note">Transfer rates are per private vehicle. Our team confirms your vehicle and pickup before you pay anything.</p>
   </section>
 
   <section class="hotel-cta" aria-labelledby="cta-heading">

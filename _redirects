@@ -8,6 +8,10 @@
 /blog/zanzibar-airport-transfer-guide.html /blog/zanzibar-airport-transfer-guide/ 301
 
 # Essentials consolidation: move /tours/ and /pages/ variants to /packages/
-/tours/zanzibar-essentials-3day/   /packages/zanzibar-essentials-3day/  301
-/tours/zanzibar-essentials-3day    /packages/zanzibar-essentials-3day/  301
+/tours/zanzibar-essentials-3day/        /packages/zanzibar-essentials-3day/  301
+/tours/zanzibar-essentials-3day         /packages/zanzibar-essentials-3day/  301
 /pages/tours/zanzibar-essentials-3day/  /packages/zanzibar-essentials-3day/  301
+/pages/packages/zanzibar-essentials-3day/ /packages/zanzibar-essentials-3day/ 301
+
+# Remove invalid absolute URLs from sitemap leakage
+/pages/  /  301

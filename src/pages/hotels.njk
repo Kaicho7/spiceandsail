@@ -6,7 +6,7 @@ permalink: "/hotels/index.html"
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
-<main class="content">
+<main class="" id="main-content">
   <!-- Page Header -->
   <header class="page-header" style="position: relative; isolation: isolate; overflow: hidden; background: #0C1A24; padding: 4.5rem 1.5rem; color: #fff; text-align: center;">
     <img class="page-header-bg-image" src="{{ 'beach-front-hotel-palm-trees-people.jpg' | cdnFile }}" alt="" width="1600" height="900" sizes="100vw" loading="eager" fetchpriority="high" decoding="async" style="position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover;">
@@ -56,7 +56,7 @@ permalink: "/hotels/index.html"
           <span style="position: absolute; left: 0.85rem; top: 0.8rem; font-size: 1rem; opacity: 0.5;">🏨</span>
         </div>
         <div id="hotel-count-indicator" style="font-size: 0.88rem; font-weight: 600; color: #003853; background: #e8f1f5; padding: 0.5rem 1rem; border-radius: 50px;">
-          Showing 16 of {{ hotels.hotels | length }} properties
+          Showing 16 featured of {{ hotels.hotels | length }} properties
         </div>
       </div>
 
@@ -91,7 +91,14 @@ permalink: "/hotels/index.html"
       <div id="hotels-container" class="cards-grid hotel-grid" data-total-hotels="{{ hotels.hotels | length }}" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem;">
         {% for hotel in hotels.hotels.slice(0, 16) %}
           {% set hotelIndex = loop.index0 %}
-          {% include "hotel-card.njk" %}
+          {% set detailSlug = hotelsToBuild | findBySlug(hotel.slug) %}
+          {% if detailSlug %}
+            <a href="/hotels/{{ hotel.slug }}/" style="text-decoration: none; color: inherit;">
+              {% include "hotel-card.njk" %}
+            </a>
+          {% else %}
+            {% include "hotel-card.njk" %}
+          {% endif %}
         {% endfor %}
       </div>
   <script>
@@ -200,7 +207,7 @@ permalink: "/hotels/index.html"
         appendBatch(remainingCards.length);
         allLoaded = true;
         filterHotels();
-        if (loadStatus) loadStatus.textContent = 'All ' + totalHotels + ' properties are available to filter.';
+        if (loadStatus) loadStatus.textContent = 'All ' + totalHotels + ' curated properties are available to filter.';
         return true;
       }).catch(function () {
         if (loadStatus) loadStatus.textContent = 'The full directory could not be loaded. The first 16 properties remain available.';
@@ -253,8 +260,8 @@ permalink: "/hotels/index.html"
 
       if (countIndicator) {
         countIndicator.textContent = allLoaded
-          ? 'Showing ' + visibleCount + ' of ' + totalHotels + ' properties'
-          : 'Showing ' + visibleCount + ' of ' + totalHotels + ' properties — load more or search to browse all';
+          ? 'Showing ' + visibleCount + ' of ' + totalHotels + ' curated properties'
+          : 'Showing ' + visibleCount + ' of ' + totalHotels + ' curated properties — load more or search to browse all';
       }
       if (noHotelsMsg) noHotelsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
     }
@@ -325,7 +332,12 @@ permalink: "/hotels/index.html"
       <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .25rem .85rem; list-style: none; margin: 0; padding: 0;">
         {% for hotel in hotels.hotels %}
         <li>
-          <a href="#hotel-{{ hotel.slug }}" data-hotel-index-link="{{ hotel.slug }}" style="display: flex; flex-direction: column; gap: .12rem; padding: .45rem .55rem; border-bottom: 1px solid #edf2f7; color: #174b43; text-decoration: none;">
+          {% set detailSlug = hotelsToBuild | findBySlug(hotel.slug) %}
+          {% if detailSlug %}
+            <a href="/hotels/{{ hotel.slug }}/" style="display: flex; flex-direction: column; gap: .12rem; padding: .45rem .55rem; border-bottom: 1px solid #edf2f7; color: #174b43; text-decoration: none;">
+          {% else %}
+            <a href="#hotel-{{ hotel.slug }}" data-hotel-index-link="{{ hotel.slug }}" style="display: flex; flex-direction: column; gap: .12rem; padding: .45rem .55rem; border-bottom: 1px solid #edf2f7; color: #174b43; text-decoration: none;">
+          {% endif %}
             <strong style="font-size: .88rem;">{{ hotel.name }}</strong>
             <span style="font-size: .76rem; color: #64748b;">{{ hotel.zone }}{% if hotel.category %} · {{ hotel.category }}{% endif %}{% if hotel.star_rating %} · {{ hotel.star_rating }}{% endif %}</span>
           </a>

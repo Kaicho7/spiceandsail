@@ -1,6 +1,6 @@
 ---
 title: "Contact Us"
-description: "Contact Spice and Sail Zanzibar on WhatsApp for Zanzibar tour quotes, airport transfers and custom itineraries. We reply within minutes."
+description: "Contact Spice and Sail Zanzibar on WhatsApp for Zanzibar tour quotes, airport transfers and custom itineraries. We reply within 2 hours during business hours."
 permalink: "/contact/index.html"
 alternate_it: "https://spiceandsail.com/it/contatti/"
 alternate_de: "https://spiceandsail.com/de/kontakt/"
@@ -8,10 +8,10 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
-<main class="content">
+<main class="" id="main-content">
   <header class="page-header">
     <h1>Contact Spice and Sail Zanzibar</h1>
-    <p>WhatsApp-first booking. We respond within minutes during business hours (EAT, UTC+3).</p>
+    <p>WhatsApp-first booking. We respond within 2 hours during business hours (EAT, UTC+3).</p>
   </header>
 
   <section class="section section-gradient">
@@ -19,7 +19,7 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
       <div class="section-header reveal">
         <span class="section-tag">Get in Touch</span>
         <h2>Fastest Way to Reach Us</h2>
-        <p class="section-subtitle">Choose your preferred channel — we'll get back to you within minutes during business hours.</p>
+        <p class="section-subtitle">Choose your preferred channel — we'll get back to you within 2 hours during business hours.</p>
       </div>
       <div class="area-quick-picks" style="max-width: 900px; margin: 0 auto;">
         <article class="quick-pick reveal">
@@ -52,6 +52,16 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
             <a href="tel:{{ site.contact.phone }}" class="btn btn-secondary">{{ site.contact.phone_display }}</a>
           </div>
         </article>
+        <article class="quick-pick reveal">
+          <div class="quick-pick-image" style="background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);">
+            <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20 40v-8h4v8h8v-4h-8v-8h-4v8H20zm0-12v8h8v-4h-8v-4h4v-8h-4v8H12v4h8zm-8 12v8h8v-4H12v-4h4v-8H8v8h4zm8-20v8h8v-4h-8v-4H12v8h4zm16 12v8h4v-8h-4zm4-4v8h4v-4h-4v-4h-4v8h4z"/></svg>
+          </div>
+          <div class="quick-pick-content">
+            <h3>Email</h3>
+            <p>For formal inquiries and documentation, email us directly. We reply within 2 hours during business hours.</p>
+            <a href="mailto:{{ site.contact.email }}" class="btn btn-secondary">{{ site.contact.email }}</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -72,13 +82,13 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
               <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-              <label for="email">Email Address <small style="font-weight: 400; color: #64748b;">(or WhatsApp below)</small></label>
-              <input type="email" id="email" name="email">
+              <label for="email">Email Address <small style="font-weight: 400; color: #64748b;">(required — we'll also message you on WhatsApp if you provide a number below)</small></label>
+              <input type="email" id="email" name="email" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="phone">WhatsApp / Mobile Number <small style="font-weight: 400; color: #64748b;">(or Email above)</small></label>
+              <label for="phone">WhatsApp / Mobile Number <small style="font-weight: 400; color: #64748b;">(optional — speeds up our reply)</small></label>
               <input type="tel" id="phone" name="phone" placeholder="e.g. +44 7700 900077, +1 555 123 4567, +255...">
             </div>
             <div class="form-group">
@@ -142,7 +152,7 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
             <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--dct-text-muted);">Serving all island pickups across Stone Town, Airport, Nungwi, Kendwa, Paje, Jambiani, and Matemwe.</p>
             <p style="margin-top: 0.5rem;">
               <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" style="color: var(--dct-ocean); font-weight: 500;">WhatsApp: {{ site.contact.whatsapp_display }}</a><br>
-              <span style="color: var(--dct-ocean); font-weight: 500;">WhatsApp-first — replies within minutes</span>
+              <span style="color: var(--dct-ocean); font-weight: 500;">WhatsApp-first — replies within 2 hours during business hours</span>
             </p>
           </div>
         </article>
@@ -193,10 +203,10 @@ alternate_de: "https://spiceandsail.com/de/kontakt/"
       form.addEventListener('submit', function(e) {
         var emailVal = (document.getElementById('email') ? document.getElementById('email').value : '').trim();
         var phoneVal = (document.getElementById('phone') ? document.getElementById('phone').value : '').trim();
-        if (!emailVal && !phoneVal) {
+        if (!emailVal) {
           e.preventDefault();
-          alert('Please enter either a WhatsApp number or an email address so our team can reply.');
-          if (document.getElementById('phone')) document.getElementById('phone').focus();
+          alert('Please enter an email address so our team can reply.');
+          if (document.getElementById('email')) document.getElementById('email').focus();
         }
       });
     }

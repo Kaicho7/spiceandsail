@@ -11,7 +11,7 @@ const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const NETLIFY_BUILD = process.env.NETLIFY === 'true' ||
   Boolean(process.env.DEPLOY_PRIME_URL || process.env.URL);
-const WIDTHS = [480, 768, 1200, 1600];
+const WIDTHS = [480, 768, 1200];
 
 if (NETLIFY_BUILD) {
   console.log('local-responsive: skipped (Netlify Image CDN build)');
@@ -96,7 +96,7 @@ async function main() {
       try {
         await sharp(job.source)
           .resize({ width: job.width, withoutEnlargement: true })
-          .webp({ quality: 72, effort: 4 })
+          .webp({ quality: job.width >= 1200 ? 65 : 72, effort: 4 })
           .toFile(job.out);
       } catch (error) {
         console.warn('local-responsive: failed ' + job.source + ' @' + job.width + ' (' + error.message + ')');

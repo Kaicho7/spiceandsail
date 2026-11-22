@@ -1,0 +1,62 @@
+{
+  "version": "2026-11-22",
+  "currency": "USD",
+  "transfers": {
+    "airport-transfer-znz-to-stone-town": { "sedan": 18, "van": 35, "capacity_sedan": 3, "capacity_van": 6 },
+    "airport-transfer-znz-to-nungwi-kendwa": { "sedan": 45, "van": 50, "capacity_sedan": 3, "capacity_van": 6 },
+    "airport-transfer-znz-to-paje-jambiani": { "sedan": 45, "van": 50, "capacity_sedan": 3, "capacity_van": 6 },
+    "airport-transfer-znz-to-matemwe-kiwengwa": { "sedan": 40, "van": 50, "capacity_sedan": 3, "capacity_van": 6 },
+    "airport-transfer-znz-to-kizimkazi-michamvi": { "sedan": 50, "van": 50, "capacity_sedan": 3, "capacity_van": 6 },
+    "airport-transfer-znz-to-fumba": { "sedan": 30, "van": 45, "capacity_sedan": 3, "capacity_van": 6 },
+    "stone-town-to-nungwi": { "sedan": 50, "van": 50, "capacity_sedan": 3, "capacity_van": 6 },
+    "full-day-island-hire": { "sedan": 100, "van": 150, "capacity_sedan": 3, "capacity_van": 6 }
+  },
+  "marine_fees": {
+    "mnemba": { "non_eac_adult": 25, "non_eac_child": 10, "eac_adult": 2, "resident_adult": 12 },
+    "menai_bay": { "non_eac_adult": 10, "non_eac_child": 5, "eac_adult": 2, "resident_adult": 5 }
+  },
+  "hotel_infrastructure_tax": { "1-2_star": 1, "3_star": 2, "4_star": 3, "5_star": 5, "underwater": 10 },
+  "inbound_insurance": { "adult": 44, "child": 22 },
+  "vi_tax": { "one_way": 45, "return": 90 },
+  "tours": {
+    "safari-blue": { "group_tiered": { "1": 150, "2": 95, "3-6": 85 }, "includes_fee": "menai_bay" },
+    "mnemba-snorkeling": { "shared": 45, "private_2": 85, "premium": 105, "includes_fee": "mnemba" },
+    "prison-nakupenda": { "2pax": 95, "3-6pax": 85, "includes_fees": ["changuu_23", "nakupenda_10"] },
+    "stone-town-walking": { "group": 35, "private_2_no_transfer": 60, "private_2_with_transfer": 90 },
+    "spice-farm": { "walking": 40, "private_2_with_transfer": 75 },
+    "jozani-forest": { "group": 50, "private_transfer": 65, "premium": 95 },
+    "kuza-cave": { "entry_only": 10, "culture_day": 75, "cooking": 30 },
+    "kizimkazi-dolphin": { "shared": 45, "private_2": 95, "private_3-6": 75 },
+    "sunset-dhow": { "1": 95, "2": 75, "3": 60, "4-6": 45, "budget_shared": 30 },
+    "chumbe-island": { "adult": 125 },
+    "mikumi-day": { "1": 520, "2-20": 450 },
+    "nyerere-2day": { "shared": 750, "luxury": 1000 },
+    "serengeti-3day": { "tented": 1200, "lodge": 2200 },
+    "saadani-day": { "shared": 390, "overnight": 650 },
+    "swimming-horses": { "shared": 150, "private": 200 },
+    "quad-buggy": { "per_quad_1-2_riders": 120 },
+    "maalum-kuza": { "shared": 80, "private": 120 },
+    "uzi-island": { "shared": 100, "private": 150 },
+    "cheetahs-rock": { "otter": 150, "wildlife": 180, "combined": 300 },
+    "catamaran-charter": { "half_day": 850, "full_day": 1400, "sunset": 1950 }
+  },
+  "deposit_policy": {
+    "transfers": 0,
+    "land_tours": 0,
+    "marine_tours": 20,
+    "fly_in_safaris": 30,
+    "packages": 30
+  },
+  "cancellation": {
+    "free_hours_land": 24,
+    "free_hours_marine": 24,
+    "mobilization_fee_within_24h": 20,
+    "weather_guarantee": "100% refund or free reschedule"
+  },
+  "vehicle_capacities": {
+    "sedan": "1-3 passengers + luggage",
+    "van": "4-6 passengers + luggage",
+    "hiace": "7-10 passengers + luggage",
+    "coaster": "11-25 passengers + luggage"
+  }
+}

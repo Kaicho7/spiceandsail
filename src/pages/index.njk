@@ -9,12 +9,12 @@ alternate_de: "https://spiceandsail.com/de/"
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
-<main class="home">
+<main class="home" id="main-content">
   <section class="hero">
     <div class="hero-content">
       <div class="hero-tagline reveal delay-1">We sail, we farm, we guide.</div>
       <h1 class="reveal delay-2">Zanzibar Tours, Transfers &amp; <span class="highlight">Island Experiences</span></h1>
-      <p class="hero-subtitle reveal delay-3">Curated tours, seamless transfers, and multi-day packages. Marine fees included. Mbuzini based. <strong>{{ stats.total_tours }} tours, {{ stats.total_hotels }} hotels, {{ stats.total_attractions }} attractions.</strong></p>
+      <p class="hero-subtitle reveal delay-3">Curated tours, seamless transfers, and multi-day packages. Marine fees included. Mbuzini based. <strong>{{ stats.total_tours }} tours, {{ stats.total_hotels }} curated hotels, {{ stats.total_attractions }} attractions.</strong></p>
       <div class="hero-cta reveal delay-4">
         <a href="/tours/" class="btn btn-primary btn-lg">Browse All Zanzibar Tours</a>
         <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Chat on WhatsApp</a>
@@ -69,7 +69,7 @@ alternate_de: "https://spiceandsail.com/de/"
       </div>
       <span class="swahili-kicker"><strong>Maliza</strong><span>Hotels &amp; areas</span></span>
       <h2>Where to Stay in Zanzibar</h2>
-      <p>{{ stats.total_hotels }} hand-picked hotels and resorts across Nungwi, Kendwa, Paje, Jambiani, Stone Town, Kiwengwa, Matemwe & more.</p>
+      <p>{{ stats.total_hotels }} curated hotels and resorts across Nungwi, Kendwa, Paje, Jambiani, Stone Town, Kiwengwa, Matemwe & more.</p>
       <a href="/hotels/" class="btn btn-primary btn-sm">View Hotels</a>
     </div>
   </section>
@@ -82,7 +82,7 @@ alternate_de: "https://spiceandsail.com/de/"
       </div>
       <div class="stat-item reveal delay-2">
         <span class="stat-number">{{ stats.total_hotels }}</span>
-        <span class="stat-label">Partner Properties</span>
+        <span class="stat-label">Curated Properties</span>
       </div>
       <div class="stat-item reveal delay-3">
         <span class="stat-number">{{ stats.total_attractions }}</span>
@@ -156,7 +156,7 @@ alternate_de: "https://spiceandsail.com/de/"
             </div>
             <div class="route-pricing">
               <span class="route-price">{% catPrice "airport-transfer-znz-to-stone-town" %}</span>
-              <span class="route-basis">per private vehicle (up to 4 pax)</span>
+              <span class="route-basis">per private vehicle (sedan 1–3 / van 4–6)</span>
             </div>
             <ul class="route-inclusions">
               <li><span>✓</span> Meet &amp; greet in arrivals hall</li>
@@ -179,7 +179,7 @@ alternate_de: "https://spiceandsail.com/de/"
             </div>
             <div class="route-pricing">
               <span class="route-price">{% catPrice "airport-transfer-znz-to-pajejambiani" %}</span>
-              <span class="route-basis">per private vehicle (up to 4 pax)</span>
+              <span class="route-basis">per private vehicle (sedan 1–3 / van 4–6)</span>
             </div>
             <ul class="route-inclusions">
               <li><span>✓</span> Meet &amp; greet in arrivals hall</li>
@@ -202,7 +202,7 @@ alternate_de: "https://spiceandsail.com/de/"
             </div>
             <div class="route-pricing">
               <span class="route-price">{% catPrice "airport-transfer-znz-to-nungwikendwa" %}</span>
-              <span class="route-basis">per private vehicle (up to 4 pax)</span>
+              <span class="route-basis">per private vehicle (sedan 1–3 / van 4–6)</span>
             </div>
             <ul class="route-inclusions">
               <li><span>✓</span> Meet &amp; greet in arrivals hall</li>
@@ -411,7 +411,7 @@ alternate_de: "https://spiceandsail.com/de/"
       <div class="section-header reveal">
         <span class="section-tag">Where to Stay</span>
         <h2>Hand-Picked Zanzibar Hotels &amp; Resorts</h2>
-        <p class="section-subtitle">{{ stats.total_hotels }} properties across Nungwi, Kendwa, Paje, Jambiani, Stone Town, Kiwengwa, Matemwe &amp; more — starting with our contracted partner stays with verified public rates.</p>
+        <p class="section-subtitle">{{ stats.total_hotels }} curated properties across Nungwi, Kendwa, Paje, Jambiani, Stone Town, Kiwengwa, Matemwe &amp; more — starting with our contracted partner stays with verified public rates.</p>
       </div>
       <div class="cards-grid cards-grid--4">
         {% for hotel in featuredPartnerHotels | limit(4) %}

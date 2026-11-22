@@ -10,7 +10,7 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
-<main class="tour-detail">
+<main class="" id="main-content">
   <section class="tour-hero" style="background: linear-gradient(135deg, var(--dct-palm) 0%, var(--dct-ocean) 100%);">
     <div class="tour-hero-content">
       {% set featured = page.inputPath | featuredImage %}
@@ -93,12 +93,12 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
             <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Handcrafted Wooden Dhow</span>
           </div>
           <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-            <img src="{{ 'boat-deck-view-turquoise-water-island.jpg' | cdnFile }}" alt="{{ 'boat-deck-view-turquoise-water-island.jpg' | canonicalAlt }}" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
-            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Pristine Sandbank Lagoon</span>
+            <img src="{{ 'snorkeling-turquoise-water-boat-people.jpg' | cdnFile }}" alt="{{ 'snorkeling-turquoise-water-boat-people.jpg' | canonicalAlt }}" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
+            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Snorkeling Coral Reefs</span>
           </div>
           <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-            <img src="{{ 'dhow-boat-kilimanjaro-zanzibar-ocean.jpg' | cdnFile }}" alt="{{ 'dhow-boat-kilimanjaro-zanzibar-ocean.jpg' | canonicalAlt }}" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
-            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Menai Bay Sailing</span>
+            <img src="{{ 'safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg' | cdnFile }}" alt="{{ 'safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg' | canonicalAlt }}" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
+            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Seafood BBQ on Sandbank</span>
           </div>
         </div>
       </section>
@@ -111,7 +111,7 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
       <section class="tour-section">
         <h2>Important Notes</h2>
         <ul class="notes-list">
-      <li>Marine conservation fee: $10 for non-EAC adults (included in our price)</li>
+      <li>Marine conservation fee: $10 for non-EAC adults (Menai Bay, included in our price). Other marine excursions: Mnemba $25/adult, Jozani park fee included. All official government conservation fees are included upfront.</li>
       <li>Bring a towel, hat, sunscreen (reef-safe), and swimwear</li>
       <li>Limited daily capacity — booking essential</li>
       <li>Copycat products and overcrowding are key risks — we book you onto the licensed original Safari Blue excursion</li>
@@ -125,7 +125,6 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
       </section>
       {% include "tour-reviews.njk" %}
       {% include "reviews-widget.njk" %}
-      {% include "reviews-widget.njk" %}
       {% include "tour-faq.njk" %}
     </div>
 
@@ -137,12 +136,12 @@ alternate_de: "https://spiceandsail.com/de/tour/safari-blue/"
           <li><span class="label">Location:</span><span class="value">Fumba → Menai Bay → Kwale Island</span></li>
           <li><span class="label">Category:</span><span class="value">{{ 'MAR' | attractionTypeLabel }}</span></li>
         </ul>
-        <div class="booking-card">
+<div class="booking-card">
           <div class="price">{% catPrice tour_slug %} <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ person</span></div>
           <h3>Ready to Book?</h3>
-          <p style="opacity: 0.8; margin-bottom: 1.25rem;">Send us your preferred date and group size on WhatsApp. We'll confirm with a fixed price including all fees.</p>
+          <p style="opacity: 0.8; margin-bottom: 1.25rem;">Send us your preferred date and group size on WhatsApp. We'll confirm with a fixed price including all fees. A 20% deposit secures your boat and fresh seafood; balance paid on tour day.</p>
           <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20{{ title | urlencode }}" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
-          <p class="note">✓ Marine conservation fees included • 20% deposit locks boat &amp; fresh seafood • 100% Weather Guarantee</p>
+          <p class="note">✓ Marine conservation fees included • 20% deposit locks boat & fresh seafood • 100% Weather Guarantee</p>
         </div>
       </div>
     </aside>

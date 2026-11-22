@@ -33,13 +33,14 @@
                   </thead>
                   <tbody>
                     {% for room in hotel.rooms %}
-                      {% if season[room.type] and season[room.type].ourHalfBoard is defined %}
-                        {% set hb = season[room.type].ourHalfBoard %}
+                      {% set roomKey = room.type | replace('Deluxe Double (', '') | replace('Deluxe Double/Twin (', '') | replace('Junior Suite (', '') | replace('Deluxe Suite (', '') | replace('Family Garden View Villa', 'Villa') | replace(')', '') %}
+                      {% if season[roomKey] and season[roomKey].ourHalfBoard is defined %}
+                        {% set hb = season[roomKey].ourHalfBoard %}
                       {% else %}
                         {% set hb = '-' %}
                       {% endif %}
-                      {% if season[room.type] and season[room.type].ourAllInclusive is defined %}
-                        {% set ai = season[room.type].ourAllInclusive %}
+                      {% if season[roomKey] and season[roomKey].ourAllInclusive is defined %}
+                        {% set ai = season[roomKey].ourAllInclusive %}
                       {% else %}
                         {% set ai = '-' %}
                       {% endif %}

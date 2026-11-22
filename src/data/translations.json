@@ -372,11 +372,11 @@
       "pl": "Gwarancja Pogodowa"
     },
     "footer_multilingual_guides": {
-      "en": "Multilingual Guides",
-      "it": "Guide Multilingue",
-      "de": "Mehrsprachige Guides",
-      "fr": "Guides Multilingues",
-      "pl": "Wielojęzyczni Przewodnicy"
+      "en": "Multilingual Guides (extra fee)",
+      "it": "Guide Multilingue (supplemento)",
+      "de": "Mehrsprachige Guides (Aufpreis)",
+      "fr": "Guides Multilingues (supplément)",
+      "pl": "Wielojęzyczni Przewodnicy (dodatkowa opłata)"
     },
     "footer_viator_less": {
       "en": "Direct Local Rates — No OTA Commission",
