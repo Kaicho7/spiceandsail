@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Static tourism website for Zanzibar with SEO and direct booking",
   "scripts": {
-    "build": "rm -rf dist && eleventy && node scripts/generate-local-responsive.js && node scripts/add-responsive-images.js && node scripts/normalize_img_alt.js && node scripts/add-img-dimensions.js && node scripts/check-images.js && python3 scripts/generate-detail-pages.py && node scripts/validate-sitemap.js",
+    "build": "python3 scripts/generate-detail-pages.py && rm -rf dist && eleventy && node scripts/generate-local-responsive.js && node scripts/add-responsive-images.js && node scripts/normalize_img_alt.js && node scripts/add-img-dimensions.js && node scripts/check-images.js && node scripts/validate-sitemap.js",
     "test": "node --test tests/*.test.js",
     "start": "eleventy --serve",
     "preview:local": "npm run build && node scripts/local-preview-server.js",

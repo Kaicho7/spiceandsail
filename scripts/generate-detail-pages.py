@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-Generate hotel and attraction detail pages
-Workaround for Eleventy/Nunjucks pagination bug on large templates
-Run AFTER eleventy build: python3 scripts/generate-detail-pages.py
+Generate hotel and attraction detail pages as source files for Eleventy
+Run BEFORE eleventy build: python3 scripts/generate-detail-pages.py
 """
 import json
 import re
@@ -10,8 +9,10 @@ import pathlib
 import urllib.parse
 import html
 
-SRC = pathlib.Path(__file__).parent.parent / "src"
-DIST = pathlib.Path(__file__).parent.parent / "dist"
+ROOT = pathlib.Path(__file__).parent.parent
+SRC = ROOT / "src"
+PAGES_HOTELS = SRC / "pages" / "hotels"
+PAGES_ATTR = SRC / "pages" / "attractions"
 
 hotels_raw = json.loads((SRC / "data" / "hotels.json").read_text())
 hotels_all = hotels_raw if isinstance(hotels_raw, list) else hotels_raw.get("hotels", [])
@@ -105,7 +106,27 @@ def render(tpl, d):
     out = re.sub(r"\{\{#if (\w+)\}\}(.*?)\{\{/if\}\}", lambda m: m.group(2) if d.get(m.group(1)) else "", out, flags=re.DOTALL)
     return out
 
-print(f"Generating {len(hotels_build)} hotel pages...")
+def make_front_matter(permalink, title, description):
+    return f"""---
+permalink: "{permalink}"
+title: "{title}"
+description: "{description}"
+---
+"""
+
+# Ensure output directories exist
+PAGES_HOTELS.mkdir(parents=True, exist_ok=True)
+PAGES_ATTR.mkdir(parents=True, exist_ok=True)
+
+# Clean old generated files (keep .gitkeep if exists)
+for f in PAGES_HOTELS.glob("*.njk"):
+    if f.name != ".gitkeep":
+        f.unlink()
+for f in PAGES_ATTR.glob("*.njk"):
+    if f.name != ".gitkeep":
+        f.unlink()
+
+print(f"Generating {len(hotels_build)} hotel pages in src/pages/hotels/...")
 for h in hotels_build:
     slug = ALIAS.get(h["slug"], h["slug"])
     photo = compute_hotel_photo(h)
@@ -131,11 +152,14 @@ for h in hotels_build:
         "cdnPhotoUrl": photo,
     }
     html = render(hotel_tpl, data)
-    out = pathlib.Path("/home/efatha/spiceandsail/dist/hotels") / slug / "index.html"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html)
+    permalink = f"/hotels/{slug}/"
+    title = f"{h['name']} - {h['zone']}, Zanzibar | Spice & Sail"
+    description = truncate(desc)
+    front = make_front_matter(permalink, title, description)
+    out = PAGES_HOTELS / f"{slug}.njk"
+    out.write_text(front + html)
 
-print(f"Generating {len(attractions_build)} attraction pages...")
+print(f"Generating {len(attractions_build)} attraction pages in src/pages/attractions/...")
 for a in attractions_build:
     slug = a["slug"]
     photo = attr_photo(a["name"], a.get("category", "Attraction"))
@@ -154,8 +178,11 @@ for a in attractions_build:
         "cdnPhotoUrl": photo,
     }
     html = render(attr_tpl, data)
-    out = pathlib.Path("/home/efatha/spiceandsail/dist/attractions") / slug / "index.html"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(html)
+    permalink = f"/attractions/{slug}/"
+    title = f"{a['name']} - {a['zone']}, Zanzibar | Spice & Sail"
+    description = truncate(a.get("description", ""))
+    front = make_front_matter(permalink, title, description)
+    out = PAGES_ATTR / f"{slug}.njk"
+    out.write_text(front + html)
 
-print(f"Generated {len(hotels_build)} hotel pages and {len(attractions_build)} attraction pages.")
+print(f"Generated {len(hotels_build)} hotel pages and {len(attractions_build)} attraction pages in src/pages/")
