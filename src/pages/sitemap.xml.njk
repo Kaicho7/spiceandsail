@@ -28,4 +28,22 @@ eleventyExcludeFromCollections: true
 {%- endif %}
 {%- endfor %}
 
+{%- for hotel in hotelsToBuild %}
+<url><loc>{{ site.url }}/hotels/{{ hotel.slug }}/</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+<xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/hotels/{{ hotel.slug }}/"/>
+<xhtml:link rel="alternate" hreflang="it" href="{{ site.url }}/it/hotels/{{ hotel.slug }}/"/>
+<xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/hotels/{{ hotel.slug }}/"/>
+<xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/hotels/{{ hotel.slug }}/"/>
+</url>
+{%- endfor %}
+
+{%- for attraction in attractionsToBuild %}
+<url><loc>{{ site.url }}/attractions/{{ attraction.slug }}/</loc><lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+<xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/attractions/{{ attraction.slug }}/"/>
+<xhtml:link rel="alternate" hreflang="it" href="{{ site.url }}/it/attractions/{{ attraction.slug }}/"/>
+<xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/attractions/{{ attraction.slug }}/"/>
+<xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/attractions/{{ attraction.slug }}/"/>
+</url>
+{%- endfor %}
+
 </urlset>
