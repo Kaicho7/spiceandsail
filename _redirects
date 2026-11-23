@@ -58,3 +58,6 @@
 /packages/zanzibar-essentials-3-day/* /packages/zanzibar-essentials-3day/ 301
 /packages/zanzibar-hidden-gems-sacred-caves/* /packages/ 301
 /packages/bush-to-beach-vip-luxury/* /packages/ 301
+
+# Legacy .html URLs
+/about.html /about/ 301

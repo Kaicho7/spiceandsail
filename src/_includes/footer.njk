@@ -70,6 +70,9 @@
 </div>
 
 <script src="/js/sns-trust-bar.js" defer></script>
+{% if analytics and analytics.measurementId %}
+<script src="/js/sns-consent.js" defer></script>
+{% endif %}
 
 </body>
 </html>

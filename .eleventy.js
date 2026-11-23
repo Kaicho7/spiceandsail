@@ -211,6 +211,45 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     return str.substring(0, length).trim() + '…';
   });
 
+  // Word-boundary clamp used for <title> (max 70) and meta description (max ~158)
+  // Measures HTML-escaped length so entities like &amp; do not push the output over the limit.
+  function escapedLength(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .length;
+  }
+
+  function seoClamp(str, max) {
+    const s = String(str || '').replace(/\s+/g, ' ').trim();
+    if (escapedLength(s) <= max) return s;
+    const words = s.split(' ');
+    while (words.length > 1 && escapedLength(words.join(' ') + '…') > max) {
+      words.pop();
+    }
+    return words.join(' ').replace(/[\s,;:.\-–—|&]+$/, '') + '…';
+  }
+
+  eleventyConfig.addFilter("seoTitle", (str, max = 70) => {
+    const s = String(str || '').replace(/\s+/g, ' ').trim();
+    if (escapedLength(s) <= max) return s;
+    // Drop the trailing brand suffix before clamping so the descriptive part survives.
+    const brandRe = /\s*[|—–-]\s*Spice (?:and|&) Sail(?: Zanzibar)?\s*$/i;
+    const base = s.replace(brandRe, '').trim();
+    if (escapedLength(base) <= max) return base;
+    return seoClamp(base, max);
+  });
+
+  eleventyConfig.addFilter("seoDesc", (str, max = 158) => seoClamp(str, max));
+
+  eleventyConfig.addFilter("isoDate", (d) => {
+    const dt = d instanceof Date ? d : new Date(d || Date.now());
+    return isNaN(dt.getTime()) ? new Date().toISOString().slice(0, 10) : dt.toISOString().slice(0, 10);
+  });
+
   // Strip HTML filter for schema
   eleventyConfig.addFilter("strip_html", (str) => {
     if (!str) return '';

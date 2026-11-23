@@ -94,8 +94,8 @@ permalink: "/hotels/index.html"
       <!-- Search Input -->
       <div style="margin-bottom: 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div style="position: relative; flex: 1; min-width: 260px; max-width: 480px;">
-          <input type="text" id="hotel-search-input" placeholder="🔍 Search hotel name, zone, or beach..." style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.92rem; color: #1e293b; background: #FBF9F5;">
-          <span style="position: absolute; left: 0.85rem; top: 0.8rem; font-size: 1rem; opacity: 0.5;">🏨</span>
+          <input type="text" id="hotel-search-input" aria-label="Search hotels by name, zone, or beach" placeholder="🔍 Search hotel name, zone, or beach..." style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.92rem; color: #1e293b; background: #FBF9F5;">
+          <span aria-hidden="true" style="position: absolute; left: 0.85rem; top: 0.8rem; font-size: 1rem; opacity: 0.5;">🏨</span>
         </div>
         <div id="hotel-count-indicator" style="font-size: 0.88rem; font-weight: 600; color: #003853; background: #e8f1f5; padding: 0.5rem 1rem; border-radius: 50px;">
           Showing 16 of {{ hotels.hotels | length }} properties

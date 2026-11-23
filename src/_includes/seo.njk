@@ -11,20 +11,20 @@
 
 {% set SITE_URL = site.url | replace("http://", "https://") %}
 
-<title>{{ pageTitle }}</title>
-<meta name="description" content="{{ pageDesc }}">
+<title>{{ pageTitle | seoTitle }}</title>
+<meta name="description" content="{{ pageDesc | seoDesc }}">
 {% if metaRobots or previewRobots %}<meta name="robots" content="{{ previewRobots or metaRobots }}">{% endif %}
 <link rel="canonical" href="{{ SITE_URL }}{{ page.url }}">
 {% if preload_image %}<link rel="preload" as="image" href="{{ preload_image | cdnFile }}" fetchpriority="high">{% endif %}
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ SITE_URL }}{{ page.url }}">
-<meta property="og:title" content="{{ pageTitle }}">
-<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:title" content="{{ pageTitle | seoTitle }}">
+<meta property="og:description" content="{{ pageDesc | seoDesc }}">
 <meta property="og:image" content="{{ SITE_URL }}{{ ogImage }}">
 <meta property="og:site_name" content="Spice and Sail Zanzibar">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ pageTitle }}">
-<meta name="twitter:description" content="{{ pageDesc }}">
+<meta name="twitter:title" content="{{ pageTitle | seoTitle }}">
+<meta name="twitter:description" content="{{ pageDesc | seoDesc }}">
 <meta name="twitter:image" content="{{ SITE_URL }}{{ ogImage }}">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">

@@ -1,0 +1,18 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristDestination",
+  "name": {{ (title or page.fileSlug) | json | safe }},
+  "description": {{ (description or '') | json | safe }},
+  "image": "{{ site.url | replace('http://', 'https://') }}{{ og_image or (page.inputPath | rawImage) }}",
+  "url": "{{ site.url | replace('http://', 'https://') }}{{ page.url }}",
+  "containedInPlace": {
+    "@type": "AdministrativeArea",
+    "name": "Zanzibar",
+    "containedInPlace": {
+      "@type": "Country",
+      "name": "Tanzania"
+    }
+  }
+}
+</script>

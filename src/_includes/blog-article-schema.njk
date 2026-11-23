@@ -1,0 +1,29 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ (title or page.fileSlug) | json | safe }},
+  "description": {{ (description or '') | json | safe }},
+  "image": "{{ site.url | replace('http://', 'https://') }}{{ og_image or (page.inputPath | rawImage) }}",
+  "url": "{{ site.url | replace('http://', 'https://') }}{{ page.url }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Spice and Sail Zanzibar",
+    "url": "{{ site.url | replace('http://', 'https://') }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spice and Sail Zanzibar",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url | replace('http://', 'https://') }}/images/logo.webp"
+    }
+  },
+  "datePublished": "{{ datePublished or (page.date | isoDate) }}",
+  "dateModified": "{{ dateModified or datePublished or (page.date | isoDate) }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url | replace('http://', 'https://') }}{{ page.url }}"
+  }
+}
+</script>

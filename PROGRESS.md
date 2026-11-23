@@ -454,12 +454,52 @@ Processed three Google Photos shared albums supplied by the owner (`lepa own cam
 ### Screenshots Captured
 - 8 page templates × 3 viewports (390, 768, 1440) → 24 PNGs in `/tmp/opencode/screenshots/`.
 
-### Remaining / Advisory (not yet delivered)
-- Brand canonical recommendation (Spice and Sail Zanzibar vs Dho Coast Travels).
-- 90% authority roadmap with concrete, measurable steps.
-- Swahili keep/remove recommendation with evidence.
-- Blunt 24/7 sales blockers and fixes.
-- Organic booking funnel map for the 5 contracted hotels.
-- Final vision review of screenshots (Gemini 2.5 Flash pending).
-- `AUDIT-REPORT.md` decision (keep/overwrite).
+### Advisory Documents Created (2026-11-23)
+- `BRAND-RECOMMENDATION.md` — Canonical brand: "Spice and Sail Zanzibar"; retire "Dho Coast Travels".
+- `AUTHORITY-ROADMAP.md` — 4-phase, 12-month plan to DR 60/DA 50; content clusters, link building, CRO.
+- `SWAHILI-RECOMMENDATION.md` — Keep 4 authentic occurrences; restrict to cultural pages only.
+- `SALES-BLOCKERS.md` — 7 blockers ranked; top 2 require partner API creds + Stripe/Paystack.
+- `BOOKING-FUNNEL.md` — Per-hotel funnel with targets: 2,800 organic sessions → 17 confirmed bookings/month.
+
+### Git
+- Commit `f9d800b` pushed to `https://github.com/Kaicho7/spiceandsail.git` (322 files, +14503/-12873).
+
+### Remaining
+- Vision review of 24 screenshots (Gemini 2.5 Flash — pending key quota).
+- `AUDIT-REPORT.md` decision: **archive** (keep historical) — `FULL-AUDIT-2026-11-22.md` is the current baseline.
+- Partner PMS API credentials + Stripe/Paystack onboarding (owner action required for 24/7 sales).
+
+## 2026-11-23 (continued) — Full audit P1/P2 remediation & regression gates
+
+### Changes
+
+- **P1-4 Title/description clamp** (`.eleventy.js`): added `seoTitle` (max 70) and `seoDesc` (max 158) filters measuring HTML-escaped length; `seo.njk` now wraps `pageTitle`/`pageDesc` with them. Result: **0 titles >70, 0 descriptions >160** in `dist/`.
+- **P1-5 Orphan slug fixed**: Stone Town View Hotel detail page now linked from `/hotels/` index and sitemap.
+- **P1-6 Structured data**: shared includes `blog-article-schema.njk` (BlogPosting) and `area-destination-schema.njk` (TouristDestination) injected into all 15 blog posts and 14 area pages; homepage single FAQPage confirmed.
+- **P1-6 reciprocity**: Stone Town transfer page now declares `alternate_it`/`alternate_de`; all 30 multi-language pages have mutual hreflang; sitemap xhtml links pruned to only multi-language pages (120 links, **0 missing** targets).
+- **P1-7**: `/packages/zanzibar-essentials-3day/` already had `<html lang="en">` (audit was stale).
+- **P1-8**: `/about.html → /about/` 301 added to `_redirects`.
+- **P1-9**: sitemap `lastmod` now per-page via `fileMtime` (3 distinct dates in 164 URLs); xhtml alternates all resolve.
+- **P1-11 GA4 consent gate**: `public/js/sns-ga4-config.js` reads `localStorage['sns-analytics-consent']` and **only initialises GA after explicit 'granted'**; `public/js/sns-consent.js` banner included conditionally in footer when measurement ID present; both scripts in `dist/js/`.
+- **P1-12 accessibility**: hotel search input gets `aria-label`; generated detail pages have working skip link (`<main id="main-content">` in `base.njk`); hidden consent checkboxes in `concierge-widget.njk` get `aria-label`; 1×1 pixel already has `alt=""`.
+- **P2-3 hreflang consistency**: sitemap no longer declares self-referencing hreflang for EN-only hotel/attraction pages; HTML and sitemap sets now align.
+- **P2-7 legal entity**: privacy/about already use "Spice and Sail Zanzibar" (no SRL inconsistency).
+- **P2-8 dead Netlify code**: `concierge.js`/`concierge-v2.js` no longer reference `/ .netlify/functions/quote`; left for test stability (tests read them).
+- **Regression test**: `tests/seo-audit-fixes.test.js` (11 tests) covering all above; full suite now **143 pass / 0 fail**.
+
+### Verification
+
+- `npm run build` → exit 0; sitemap 164 URLs, all image refs resolve.
+- `npm test` → exit 0; **143 tests pass** (132 prior + 11 new regression gates).
+- Dist checks: titles ≤70, descriptions ≤160; 15 BlogPosting + 14 TouristDestination + 1 FAQPage; hreflang reciprocity 0 issues; sitemap xhtml 120 links all resolve; skip-link + target on generated pages; hotel search accessible name; GA consent gate present.
+- `git diff --check` → exit 0.
+
+### Still open
+
+- Vision review of 24 screenshots.
+- `AUDIT-REPORT.md` decision: archive (keep historical); `FULL-AUDIT-2026-11-22.md` is current baseline.
+- Partner PMS API credentials + Stripe/Paystack onboarding (owner action required for 24/7 sales).
+- GA measurement ID not configured; consent gate wired but inactive until ID provided.
+- Homepage fallback JPEG weight (P2-2): `src` still full JPEG; `srcset` WebP serves modern browsers — documented as mitigated.
+- Lighthouse/CWV unavailable (npm registry `ERR_SOCKET_TIMEOUT`).
 

@@ -32,17 +32,11 @@ eleventyExcludeFromCollections: true
 <url><loc>{{ site.url }}/attractions/</loc><lastmod>{{ "/src/data/attractions.json" | fileMtime }}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
 {%- for hotel in hotelsToBuild %}{% if hotel.indexable %}
-<url><loc>{{ site.url }}/hotels/{{ hotel.slug }}/</loc><lastmod>{{ "/src/data/hotels.json" | fileMtime }}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-<xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/hotels/{{ hotel.slug }}/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/hotels/{{ hotel.slug }}/"/>
-</url>
+<url><loc>{{ site.url }}/hotels/{{ hotel.slug }}/</loc><lastmod>{{ ("/src/pages/hotels/" + hotel.slug + ".njk") | fileMtime }}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 {%- endif %}{% endfor %}
 
 {%- for attraction in attractionsToBuild %}
-<url><loc>{{ site.url }}/attractions/{{ attraction.slug }}/</loc><lastmod>{{ "/src/data/attractions.json" | fileMtime }}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
-<xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/attractions/{{ attraction.slug }}/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/attractions/{{ attraction.slug }}/"/>
-</url>
+<url><loc>{{ site.url }}/attractions/{{ attraction.slug }}/</loc><lastmod>{{ ("/src/pages/attractions/" + attraction.slug + ".njk") | fileMtime }}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 {%- endfor %}
 
 </urlset>
