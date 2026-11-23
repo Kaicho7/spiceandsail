@@ -1,0 +1,534 @@
+{
+  "version": "2026-11-23",
+  "note": "Micro-content for 14 area pages — climate, demographics, transport, hidden gems. Sources: WMO historical data, Zanzibar tourism stats, on-ground operator knowledge.",
+  "areas": {
+    "Nungwi": {
+      "zone": "Northern Tip",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May (long rains)", "Nov–Dec (short rains)"],
+        "avgTempC": { "min": 24, "max": 31 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 40, "Feb": 30, "Mar": 120, "Apr": 300, "May": 200, "Jun": 60, "Jul": 40, "Aug": 40, "Sep": 40, "Oct": 60, "Nov": 150, "Dec": 100 },
+        "windKnots": { "Jun–Sep": "15–25 (kite season)", "Dec–Mar": "10–15" },
+        "kiteSeason": "Jun–Sep (cross-onshore, consistent 15–25 knots)",
+        "bestSwimMonths": "Jan–Mar, Jun–Oct"
+      },
+      "demographics": {
+        "bestFor": ["Nightlife lovers", "Diving/snorkeling", "Couples", "Solo travelers", "Backpackers"],
+        "lessSuited": ["Families with toddlers (late night noise)", "Kite beginners (busy water)"],
+        "vibe": "High-energy, social, sunset parties, dhow-building heritage"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 60, "timeMax": 75, "taxiUsd": 45, "sharedMinibusUsd": 8 },
+        "fromStoneTown": { "timeMin": 60, "timeMax": 70, "taxiUsd": 40, "daladalaRoute": "403 (Stone Town → Nungwi)", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 5, "bajajUsdKm": 1, "walkable": "Village center yes; beaches require transport" }
+      },
+      "practical": {
+        "atms": "2 (CRDB, NMB) in village center",
+        "medical": "Nungwi dispensary (basic); Stone Town hospital 1h",
+        "supermarket": "Small convenience stores; larger shop in Kendwa 10 min",
+        "wifi": "Most hotels/cafes 10–20 Mbps; SIM card recommended",
+        "currency": "TZS preferred; USD accepted at hotels"
+      },
+      "hiddenGems": [
+        { "name": "Nungwi Natural Aquarium (turtle sanctuary)", "type": "Marine", "details": "Community-run turtle rescue; feed turtles at high tide", "walkFromCenterMin": 15 },
+        { "name": "Mnarani Marine Turtle Conservation Pond", "type": "Marine", "details": "Larger, less touristy than the aquarium", "walkFromCenterMin": 20 },
+        { "name": "Sunset at Kendwa Rocks (full moon parties)", "type": "Viewpoint", "details": "10-min bike ride; legendary full moon parties", "walkFromCenterMin": "N/A" },
+        { "name": "Dhow-building yard (behind beach)", "type": "Cultural", "details": "Traditional carpentry; ask permission to photograph", "walkFromCenterMin": 10 },
+        { "name": "Coral rag cliffs north of village", "type": "Viewpoint", "details": "Dramatic cliffs, fewer tourists, great sunrise", "walkFromCenterMin": 30 }
+      ],
+      "sunsetSpots": ["Kendwa Rocks", "Nungwi beach northern end", "The Z Hotel rooftop", "Langilangi Beach Bungalows deck"],
+      "bestCafes": ["Café Zanzibar (breakfast)", "Mama Mia (Italian)", "Hungry Snapper (seafood)"]
+    },
+    "Kendwa": {
+      "zone": "Northwest Coast",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 31 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 40, "Feb": 30, "Mar": 120, "Apr": 300, "May": 200, "Jun": 60, "Jul": 40, "Aug": 40, "Sep": 40, "Oct": 60, "Nov": 150, "Dec": 100 },
+        "windKnots": { "Jun–Sep": "10–20", "Dec–Mar": "8–12" },
+        "tidalRangeM": 1.2,
+        "bestSwimMonths": "All year (minimal tidal variation)"
+      },
+      "demographics": {
+        "bestFor": ["Couples", "Families", "Swimmers (all-tide beach)", "Full moon party-goers"],
+        "lessSuited": ["Kite surfers (less wind than Nungwi)", "Backpackers on tight budget"],
+        "vibe": "Relaxed, wide white-sand beach, all-tide swimming, famous full moon parties"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 60, "timeMax": 75, "taxiUsd": 45, "sharedMinibusUsd": 8 },
+        "fromStoneTown": { "timeMin": 60, "timeMax": 70, "taxiUsd": 40, "daladalaRoute": "403", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 5, "walkable": "Beach walkable end-to-end; village center compact" }
+      },
+      "practical": {
+        "atms": "1 (NMB) near Kendwa Rocks",
+        "medical": "Kendwa dispensary; Stone Town 1h",
+        "supermarket": "Convenience stores; Nungwi 10 min for more options",
+        "wifi": "Hotel/cafe Wi-Fi 10–20 Mbps"
+      },
+      "hiddenGems": [
+        { "name": "Kendwa Rocks Full Moon Party", "type": "Event", "details": "Monthly on full moon; 2,000+ people, fire dancers, DJs", "walkFromCenterMin": 5 },
+        { "name": "Tidal pools at low tide (north end)", "type": "Natural", "details": "Safe for kids, small fish/crabs visible", "walkFromCenterMin": 15 },
+        { "name": "Sunrise at Matemwe side", "type": "Viewpoint", "details": "Walk the beach boundary at dawn", "walkFromCenterMin": 30 }
+      ],
+      "sunsetSpots": ["Kendwa Rocks deck", "Kendwa beach center", "Paradise Beach Resort terrace"],
+      "bestCafes": ["Kendwa Rocks restaurant", "Mrembo Spa café", "Beachfront shacks (grilled fish)"]
+    },
+    "Matemwe": {
+      "zone": "Northeast Coast",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 31 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 50, "Feb": 40, "Mar": 130, "Apr": 320, "May": 220, "Jun": 70, "Jul": 50, "Aug": 50, "Sep": 50, "Oct": 70, "Nov": 160, "Dec": 110 },
+        "windKnots": { "Jun–Sep": "15–25 (kite season)", "Dec–Mar": "10–15" },
+        "tidalRangeM": 2.5,
+        "bestSwimMonths": "High tide only (significant tidal variation)"
+      },
+      "demographics": {
+        "bestFor": ["Kite surfers", "Divers (Mnemba Atoll access)", "Couples seeking quiet", "Digital nomads"],
+        "lessSuited": ["Families with young kids (tidal walks)", "Nightlife seekers"],
+        "vibe": "Quiet, kite-surfing hub, Mnemba Atoll gateway, long tidal walks"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 50, "timeMax": 60, "taxiUsd": 40, "sharedMinibusUsd": 7 },
+        "fromStoneTown": { "timeMin": 55, "timeMax": 65, "taxiUsd": 35, "daladalaRoute": "402 (Stone Town → Matemwe)", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 5, "bajajUsdKm": 1 }
+      },
+      "practical": {
+        "atms": "None in village; Kiwengwa 15 min",
+        "medical": "Matemwe dispensary; Stone Town 55 min",
+        "supermarket": "Small dukas; Kiwengwa for larger",
+        "wifi": "Hotel-dependent; 5–15 Mbps typical"
+      },
+      "hiddenGems": [
+        { "name": "Mnemba Atoll marine reserve (20-min boat)", "type": "Marine", "details": "Zanzibar's best snorkeling/diving; dolphins common", "walkFromCenterMin": "N/A" },
+        { "name": "Kichwele forest walk (community guide)", "type": "Nature", "details": "Small coastal forest, colobus monkeys possible", "walkFromCenterMin": 20 },
+        { "name": "Tidal sandbanks at extreme low tide", "type": "Natural", "details": "Walk 500m offshore; check tide tables", "walkFromCenterMin": "N/A" }
+      ],
+      "sunsetSpots": ["Matemwe beach (west-facing)", "Zanzibar Pearl Boutique terrace", "Kasha Boutique deck"],
+      "bestCafes": ["Matemwe Lodge restaurant", "Beachfront shacks"]
+    },
+    "Kiwengwa": {
+      "zone": "Northeast Coast",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 31 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 50, "Feb": 40, "Mar": 130, "Apr": 320, "May": 220, "Jun": 70, "Jul": 50, "Aug": 50, "Sep": 50, "Oct": 70, "Nov": 160, "Dec": 110 },
+        "windKnots": { "Jun–Sep": "15–25", "Dec–Mar": "10–15" },
+        "tidalRangeM": 2.5,
+        "bestSwimMonths": "High tide recommended"
+      },
+      "demographics": {
+        "bestFor": ["All-inclusive resort guests", "Families", "Kite surfers", "Package tourists"],
+        "lessSuited": ["Backpackers", "Authentic village experience seekers"],
+        "vibe": "Long resort strip, all-inclusive dominance, wide beach, kite schools"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 45, "timeMax": 55, "taxiUsd": 40, "sharedMinibusUsd": 7 },
+        "fromStoneTown": { "timeMin": 50, "timeMax": 60, "taxiUsd": 35, "daladalaRoute": "402", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 5, "resortShuttles": "Most hotels run shuttles to Kiwengwa/Pongwe" }
+      },
+      "practical": {
+        "atms": "2 (CRDB, NMB) at Kiwengwa junction",
+        "medical": "Kiwengwa health center; Stone Town 50 min",
+        "supermarket": "Small supermarket at junction",
+        "wifi": "Resort Wi-Fi generally good (20+ Mbps)"
+      },
+      "hiddenGems": [
+        { "name": "Pongwe Beach (south, 10-min bike)", "type": "Beach", "details": "Quieter, reef-protected swimming lagoon", "walkFromCenterMin": "N/A" },
+        { "name": "Kiwengwa-Pongwe forest reserve", "type": "Nature", "details": "Coastal forest walk, birdlife, community guides", "walkFromCenterMin": 20 },
+        { "name": "Traditional fishing dhows at dawn", "type": "Cultural", "details": "Watch from beach; buy fresh catch at landing", "walkFromCenterMin": "Varies" }
+      ],
+      "sunsetSpots": ["Breezes Beach Club deck", "The Sands Beach Resort terrace", "Pongwe Beach"],
+      "bestCafes": ["Resort restaurants", "Pongwe Beach shacks"]
+    },
+    "Paje": {
+      "zone": "Southeast Coast",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 32 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 60, "Feb": 50, "Mar": 140, "Apr": 350, "May": 250, "Jun": 80, "Jul": 60, "Aug": 60, "Sep": 60, "Oct": 80, "Nov": 180, "Dec": 120 },
+        "windKnots": { "Jun–Sep": "20–30 (peak kite)", "Dec–Mar": "15–20" },
+        "kiteSeason": "Jun–Sep (world-class, cross-onshore 20–30 knots)",
+        "tidalRangeM": 3.0,
+        "bestSwimMonths": "High tide only (lagoon exposed at low)"
+      },
+      "demographics": {
+        "bestFor": ["Kite surfers (world-class)", "Digital nomads", "Budget-conscious", "Yoga/wellness", "Solo travelers"],
+        "lessSuited": ["Families with toddlers (tidal flats)", "Luxury seekers"],
+        "vibe": "Kite capital, laid-back, strong expat/digital nomad community, yoga retreats"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 55, "timeMax": 65, "taxiUsd": 45, "sharedMinibusUsd": 8 },
+        "fromStoneTown": { "timeMin": 55, "timeMax": 65, "taxiUsd": 40, "daladalaRoute": "404 (Stone Town → Paje/Jambiani)", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 4, "bajajUsdKm": 1, "kiteSchoolShuttles": "Most schools offer pickup" }
+      },
+      "practical": {
+        "atms": "2 (CRDB, NMB) in Paje center",
+        "medical": "Paje health center; Stone Town 55 min",
+        "supermarket": "Several small supermarkets",
+        "wifi": "Cafes/hotels 10–30 Mbps; strong nomad infrastructure",
+        "coworking": "The Zanzibar Nomad Hub (Paje)"
+      },
+      "hiddenGems": [
+        { "name": "Paje lagoon at high tide", "type": "Swimming", "details": "Waist-deep turquoise water, safe for all ages", "walkFromCenterMin": 5 },
+        { "name": "Seaweed Center (women's cooperative)", "type": "Cultural", "details": "Tour seaweed farming, buy skincare products", "walkFromCenterMin": 10 },
+        { "name": "Kite beach at sunset (colors in sky)", "type": "Viewpoint", "details": "Dozens of kites — photographer favorite", "walkFromCenterMin": "Beach center" },
+        { "name": "Blue Oyster dive center (PADI)", "type": "Diving", "details": "Reef dives, night dives, courses", "walkFromCenterMin": 15 }
+      ],
+      "sunsetSpots": ["Kite beach (kites in sky)", "Paje by Night deck", "White Sands deck"],
+      "bestCafes": ["Café del Mar (breakfast/bowls)", "The Local (coffee)", "Jamvi Beach Bar (sunset drinks)"]
+    },
+    "Jambiani": {
+      "zone": "Southeast Coast",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 32 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 60, "Feb": 50, "Mar": 140, "Apr": 350, "May": 250, "Jun": 80, "Jul": 60, "Aug": 60, "Sep": 60, "Oct": 80, "Nov": 180, "Dec": 120 },
+        "windKnots": { "Jun–Sep": "15–25", "Dec–Mar": "12–18" },
+        "tidalRangeM": 3.0,
+        "bestSwimMonths": "High tide only"
+      },
+      "demographics": {
+        "bestFor": ["Couples", "Quiet beach seekers", "Cultural immersion", "Kite surfers (less crowded than Paje)"],
+        "lessSuited": ["Nightlife", "Families with toddlers (tidal)"],
+        "vibe": "Authentic fishing village, quieter than Paje, strong Swahili culture, seaweed farming"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 55, "timeMax": 65, "taxiUsd": 45, "sharedMinibusUsd": 8 },
+        "fromStoneTown": { "timeMin": 55, "timeMax": 65, "taxiUsd": 40, "daladalaRoute": "404", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 4, "bajajUsdKm": 1, "walkable": "Village center walkable; beach requires bike" }
+      },
+      "practical": {
+        "atms": "1 (NMB) in Jambiani center",
+        "medical": "Jambiani dispensary; Paje health center 10 min",
+        "supermarket": "Small dukas; Paje 10 min for supermarkets",
+        "wifi": "Hotel/cafe 5–20 Mbps"
+      },
+      "hiddenGems": [
+        { "name": "Jambiani seaweed farms (women's cooperative)", "type": "Cultural", "details": "Guided tours at low tide; buy seaweed soap/skincare", "walkFromCenterMin": 15 },
+        { "name": "Kuza Cave (15-min drive inland)", "type": "Nature", "details": "Freshwater cave swim, sacred site, local guide required", "walkFromCenterMin": "N/A" },
+        { "name": "Paje lagoon access (10-min bike north)", "type": "Swimming", "details": "Best high-tide swimming on southeast coast", "walkFromCenterMin": "N/A" },
+        { "name": "Traditional dhow building (beach)", "type": "Cultural", "details": "Watch craftsmen; less touristy than Nungwi", "walkFromCenterMin": 20 }
+      ],
+      "sunsetSpots": ["Le Paradis pool deck", "Jambiani beach (fishing boats silhouette)", "Mkeka Spice Lodge terrace"],
+      "bestCafes": ["Le Paradis fine-dining", "Mkeka Lodge restaurant", "Beach shacks (grilled fish, coconut rice)"]
+    },
+    "Bwejuu": {
+      "zone": "Southeast Coast",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 32 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 60, "Feb": 50, "Mar": 140, "Apr": 350, "May": 250, "Jun": 80, "Jul": 60, "Aug": 60, "Sep": 60, "Oct": 80, "Nov": 180, "Dec": 120 },
+        "windKnots": { "Jun–Sep": "12–20", "Dec–Mar": "10–15" },
+        "tidalRangeM": 3.0,
+        "bestSwimMonths": "High tide recommended"
+      },
+      "demographics": {
+        "bestFor": ["Honeymooners", "Couples seeking privacy", "Luxury/wellness", "Digital detox"],
+        "lessSuited": ["Nightlife", "Budget", "Kite surfers (less wind)"],
+        "vibe": "Exclusive, low-density, high-end resorts, pristine beach, wellness-focused"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 60, "timeMax": 70, "taxiUsd": 50, "sharedMinibusUsd": 8 },
+        "fromStoneTown": { "timeMin": 60, "timeMax": 70, "taxiUsd": 45, "daladalaRoute": "404 (to Jambiani) then bajaj", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 5, "resortShuttles": "Most high-end resorts provide" }
+      },
+      "practical": {
+        "atms": "None; Jambiani/Paje 15–20 min",
+        "medical": "Jambiani dispensary 15 min",
+        "supermarket": "Resort boutiques only",
+        "wifi": "Resort Wi-Fi generally excellent (30+ Mbps)"
+      },
+      "hiddenGems": [
+        { "name": "Bwejuu Beach at low tide (endless flats)", "type": "Natural", "details": "Walk 1km offshore; mirror reflections at sunset", "walkFromCenterMin": "Beach access" },
+        { "name": "The Zanzibari spa (overwater)", "type": "Wellness", "details": "Overwater treatment rooms, ocean sounds", "walkFromCenterMin": "Resort guest only" },
+        { "name": "Traditional fishing canoes at dawn", "type": "Cultural", "details": "Authentic, non-touristy; buy fresh catch", "walkFromCenterMin": "Beach" }
+      ],
+      "sunsetSpots": ["The Zanzibari deck", "Bwejuu beach (unobstructed)", "White Paradise terrace"],
+      "bestCafes": ["Resort fine-dining", "Private beach picnics (arranged)"]
+    },
+    "Michamvi": {
+      "zone": "Southeast (Chwaka Bay)",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 32 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 60, "Feb": 50, "Mar": 140, "Apr": 350, "May": 250, "Jun": 80, "Jul": 60, "Aug": 60, "Sep": 60, "Oct": 80, "Nov": 180, "Dec": 120 },
+        "windKnots": { "Jun–Sep": "10–18", "Dec–Mar": "8–12" },
+        "tidalRangeM": 2.5,
+        "bestSwimMonths": "All tide (bay protected)"
+      },
+      "demographics": {
+        "bestFor": ["Families (calm bay)", "Kite beginners (flat water)", "Sunset lovers", "Bioluminescence seekers"],
+        "lessSuited": ["Nightlife", "Open-ocean swimmers"],
+        "vibe": "Chwaka Bay lagoon, calm water, stunning sunsets, bioluminescent plankton (seasonal)"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 50, "timeMax": 60, "taxiUsd": 45, "sharedMinibusUsd": 8 },
+        "fromStoneTown": { "timeMin": 45, "timeMax": 55, "taxiUsd": 40, "daladalaRoute": "404 (to Pingwe) then bajaj", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 5, "bajajUsdKm": 1 }
+      },
+      "practical": {
+        "atms": "None; Pingwe/Paje 15 min",
+        "medical": "Pingwe dispensary; Stone Town 45 min",
+        "supermarket": "Small dukas",
+        "wifi": "Resort-dependent"
+      },
+      "hiddenGems": [
+        { "name": "Bioluminescent plankton (Jul–Sep, new moon)", "type": "Natural", "details": "Swim in glowing water; book night tour", "walkFromCenterMin": "Beach" },
+        { "name": "Chwaka Bay mangrove kayak", "type": "Activity", "details": "Guided kayak through mangroves, birdlife", "walkFromCenterMin": "Resort arranged" },
+        { "name": "The Rock Restaurant (Pingwe, 10 min)", "type": "Dining", "details": "Iconic restaurant on rock; book ahead", "walkFromCenterMin": "N/A" },
+        { "name": "Kite Point (flat water, shallow)", "type": "Kite", "details": "Best beginner kite spot on island", "walkFromCenterMin": "Beach" }
+      ],
+      "sunsetSpots": ["Michamvi Sunset Bay deck", "The Rock Restaurant", "Kite Point (kites at sunset)"],
+      "bestCafes": ["Michamvi Sunset Bay restaurant", "The Rock Restaurant (book)", "Pingwe beach shacks"]
+    },
+    "Pongwe": {
+      "zone": "Northeast Coast",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 31 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 50, "Feb": 40, "Mar": 130, "Apr": 320, "May": 220, "Jun": 70, "Jul": 50, "Aug": 50, "Sep": 50, "Oct": 70, "Nov": 160, "Dec": 110 },
+        "windKnots": { "Jun–Sep": "15–25", "Dec–Mar": "10–15" },
+        "tidalRangeM": 2.5,
+        "bestSwimMonths": "All tide (reef-protected lagoon)"
+      },
+      "demographics": {
+        "bestFor": ["Couples", "Swimmers (lagoon)", "Quiet seekers", "Snorkelers (house reef)"],
+        "lessSuited": ["Kite surfers (less wind)", "Nightlife", "Budget"],
+        "vibe": "Secluded, reef-protected swimming lagoon, high-end boutique, very quiet"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 45, "timeMax": 55, "taxiUsd": 40, "sharedMinibusUsd": 7 },
+        "fromStoneTown": { "timeMin": 50, "timeMax": 60, "taxiUsd": 35, "daladalaRoute": "402 (to Kiwengwa) then bajaj", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 5, "walkable": "Small area; beach walkable" }
+      },
+      "practical": {
+        "atms": "None; Kiwengwa 10 min",
+        "medical": "Kiwengwa health center 10 min",
+        "supermarket": "Kiwengwa junction",
+        "wifi": "Boutique hotel Wi-Fi good"
+      },
+      "hiddenGems": [
+        { "name": "Pongwe reef snorkeling (house reef)", "type": "Marine", "details": "Walk-in snorkeling from beach; colorful fish", "walkFromCenterMin": "Beach" },
+        { "name": "Kiwengwa-Pongwe forest reserve", "type": "Nature", "details": "Coastal forest, guided walks, colobus possible", "walkFromCenterMin": 15 },
+        { "name": "Private beach dinners (resort arranged)", "type": "Dining", "details": "Candlelit on sand; honeymoon specialty", "walkFromCenterMin": "Resort guest" }
+      ],
+      "sunsetSpots": ["Pongwe Beach (west-facing lagoon)", "The Palms terrace", "White Sand Luxury Villas deck"],
+      "bestCafes": ["Resort restaurants", "Pongwe beach shacks"]
+    },
+    "Kizimkazi": {
+      "zone": "Southwest Coast",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 32 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 50, "Feb": 40, "Mar": 130, "Apr": 300, "May": 200, "Jun": 60, "Jul": 40, "Aug": 40, "Sep": 40, "Oct": 60, "Nov": 150, "Dec": 100 },
+        "windKnots": { "Jun–Sep": "10–15", "Dec–Mar": "8–12" },
+        "bestSwimMonths": "All year (sheltered)"
+      },
+      "demographics": {
+        "bestFor": ["Dolphin tours (dawn)", "Cultural/history (oldest mosque)", "Families", "Quiet beach"],
+        "lessSuited": ["Nightlife", "Kite surfing", "Luxury resorts"],
+        "vibe": "Historic fishing village, dawn dolphin tours, 12th-century mosque, authentic Swahili coast"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 65, "timeMax": 75, "taxiUsd": 50, "sharedMinibusUsd": 8 },
+        "fromStoneTown": { "timeMin": 55, "timeMax": 65, "taxiUsd": 45, "daladalaRoute": "309 (Stone Town → Kizimkazi)", "daladalaUsd": 2 },
+        "local": { "bikeRentalUsdDay": 5, "bajajUsdKm": 1, "walkable": "Village compact" }
+      },
+      "practical": {
+        "atms": "None; Jambiani 20 min",
+        "medical": "Kizimkazi dispensary; Makunduchi health center 15 min",
+        "supermarket": "Small dukas",
+        "wifi": "Hotel/guesthouse 5–15 Mbps"
+      },
+      "hiddenGems": [
+        { "name": "Kizimkazi Mosque (12th century)", "type": "Cultural", "details": "Oldest Islamic building in East Africa; kufic inscriptions", "walkFromCenterMin": 5 },
+        { "name": "Dawn dolphin tour (6:00 AM departure)", "type": "Marine", "details": "Wild bottlenose & humpback dolphins; ethical operators only", "walkFromCenterMin": "Harbor" },
+        { "name": "Makunduchi village market (Fridays)", "type": "Cultural", "details": "Traditional market, spices, textiles, livestock", "walkFromCenterMin": "15 min drive" },
+        { "name": "Dimba Beach (south, 10 min)", "type": "Beach", "details": "Quieter, reef-protected, good swimming", "walkFromCenterMin": "N/A" }
+      ],
+      "sunsetSpots": ["Kizimkazi harbor (fishing boats)", "Dimba Beach", "Kizimkazi Beach Resort deck"],
+      "bestCafes": ["Kizimkazi Beach Resort restaurant", "Dolphin tour operator cafes", "Local fish grill shacks"]
+    },
+    "Fumba": {
+      "zone": "Southwest (Menai Bay)",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 32 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 50, "Feb": 40, "Mar": 130, "Apr": 300, "May": 200, "Jun": 60, "Jul": 40, "Aug": 40, "Sep": 40, "Oct": 60, "Nov": 150, "Dec": 100 },
+        "windKnots": { "Jun–Sep": "8–12", "Dec–Mar": "6–10" },
+        "bestSwimMonths": "All year (bay protected)"
+      },
+      "demographics": {
+        "bestFor": ["Safari Blue day trip base", "Conservation/ecotourism", "Families", "Dolphin/whale watching"],
+        "lessSuited": ["Nightlife", "Shopping", "Kite surfing"],
+        "vibe": "Conservation hub, Menai Bay Conservation Area, Safari Blue departure, mangroves"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 40, "timeMax": 50, "taxiUsd": 30, "sharedMinibusUsd": 6 },
+        "fromStoneTown": { "timeMin": 30, "timeMax": 40, "taxiUsd": 25, "daladalaRoute": "309 (Stone Town → Fumba)", "daladalaUsd": 1.5 },
+        "local": { "bikeRentalUsdDay": 5, "boatTransfers": "To sandbanks/reefs arranged by operators" }
+      },
+      "practical": {
+        "atms": "None; Stone Town 30 min",
+        "medical": "Fumba dispensary; Stone Town 30 min",
+        "supermarket": "Small dukas",
+        "wifi": "Lodge-dependent"
+      },
+      "hiddenGems": [
+        { "name": "Safari Blue (full-day dhow, snorkel, seafood)", "type": "Tour", "details": "Menai Bay highlight; book via Spice & Sail", "walkFromCenterMin": "Fumba Beach" },
+        { "name": "Menai Bay mangrove channels", "type": "Nature", "details": "Kayak/SUP through mangroves; flamingos seasonal", "walkFromCenterMin": "Lodge arranged" },
+        { "name": "Sandbank picnic (Kwale Island)", "type": "Experience", "details": "Private sandbank lunch; tide-dependent", "walkFromCenterMin": "Boat" },
+        { "name": "Fumba Town (new sustainable development)", "type": "Cultural", "details": "Visit the eco-urban project; guided tours available", "walkFromCenterMin": 20 }
+      ],
+      "sunsetSpots": ["Fumba Beach Lodge deck", "Menai Bay (dhow silhouettes)", "Kwale Island sandbank"],
+      "bestCafes": ["Fumba Beach Lodge restaurant", "Safari Blue seafood lunch (on tour)"]
+    },
+    "Stone Town": {
+      "zone": "UNESCO World Heritage Site",
+      "climate": {
+        "type": "Tropical monsoon (Am)",
+        "drySeasons": ["Jan–Feb", "Jun–Oct"],
+        "wetSeasons": ["Mar–May", "Nov–Dec"],
+        "avgTempC": { "min": 24, "max": 32 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 50, "Feb": 40, "Mar": 130, "Apr": 300, "May": 200, "Jun": 60, "Jul": 40, "Aug": 40, "Sep": 40, "Oct": 60, "Nov": 150, "Dec": 100 },
+        "windKnots": { "Jun–Sep": "10–15", "Dec–Mar": "8–12" }
+      },
+      "demographics": {
+        "bestFor": ["Culture/history lovers", "Architecture/photography", "Foodies", "Shoppers", "First-time visitors"],
+        "lessSuited": ["Beach resort seekers", "Quiet retreat", "Kite surfing"],
+        "vibe": "Living UNESCO city, labyrinthine alleys, Swahili-Arab-Indian-European fusion, round-the-clock energy"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 15, "timeMax": 25, "taxiUsd": 18, "sharedMinibusUsd": 3 },
+        "fromStoneTown": { "timeMin": 0, "timeMax": 0, "taxiUsd": 0, "walkable": "Entire UNESCO zone walkable" },
+        "local": { "walkable": "Yes — entire Stone Town", "bajajUsdKm": 1, "bikeRentalUsdDay": "Not recommended (narrow alleys)" }
+      },
+      "practical": {
+        "atms": "10+ (CRDB, NMB, KCB, Diamond, Exim) — all major banks",
+        "medical": "Mnazi Mmoja Hospital (main), Aga Khan Clinic, several pharmacies",
+        "supermarket": "Shanga Shop, Mafia Supermarket, multiple convenience stores",
+        "wifi": "Cafes/hotels 10–50 Mbps; best connectivity on island",
+        "currency": "Best USD→TZS rates at forex bureaus"
+      },
+      "hiddenGems": [
+        { "name": "Forodhani Night Food Market", "type": "Food", "details": "Daily 6–10 PM; Zanzibar pizza, urojo, grilled seafood", "walkFromCenterMin": 5 },
+        { "name": "Emerson Spice rooftop (sunset drinks)", "type": "Viewpoint", "details": "Best sunset over Stone Town rooftops; book ahead", "walkFromCenterMin": 10 },
+        { "name": "Darajani Market (dawn for produce)", "type": "Cultural", "details": "Spices, tropical fruit, fish, textiles — sensory overload", "walkFromCenterMin": 8 },
+        { "name": "Tippu Tip's House (slave trade history)", "type": "History", "details": "19th-century slaver's mansion; guided tours", "walkFromCenterMin": 12 },
+        { "name": "Peace Memorial Museum (Beit el Amani)", "type": "Museum", "details": "Zanzibar history, sultans, revolution, natural history", "walkFromCenterMin": 5 },
+        { "name": "Jaws Corner (local coffee ritual)", "type": "Cultural", "details": "Men's coffee circle; strong black coffee, dominoes", "walkFromCenterMin": 10 }
+      ],
+      "sunsetSpots": ["Emerson Spice rooftop", "The Terrace (Park Hyatt)", "Forodhani seawall", "Mizingani Seafront"],
+      "bestCafes": ["Lukmaan (Swahili lunch)", "Archipelago (fine dining)", "Café Zanzibar (breakfast)", "Jaws Corner (coffee)", "6 Degrees South (cocktails)"]
+    },
+    "Chake Chake": {
+      "zone": "Pemba Island",
+      "climate": {
+        "type": "Tropical rainforest (Af) — wetter than Unguja",
+        "drySeasons": ["Jan–Feb", "Jun–Sep"],
+        "wetSeasons": ["Mar–May (heavy)", "Oct–Dec"],
+        "avgTempC": { "min": 23, "max": 30 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 80, "Feb": 60, "Mar": 200, "Apr": 400, "May": 300, "Jun": 100, "Jul": 80, "Aug": 80, "Sep": 80, "Oct": 120, "Nov": 200, "Dec": 150 },
+        "windKnots": { "Jun–Sep": "8–12", "Dec–Mar": "6–10" }
+      },
+      "demographics": {
+        "bestFor": ["Off-beaten-path", "Diving (untouched reefs)", "Clove/spice history", "Hiking (Ngezi Forest)", "Cultural immersion"],
+        "lessSuited": ["Beach resort luxury", "Nightlife", "Easy access (flight required)"],
+        "vibe": "Pemba's capital, clove island, greener/wetter, authentic Swahili, world-class diving"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 15, "timeMax": 20, "taxiUsd": 10, "notes": "Pemba Airport (PMA) — 20-min flight from ZNZ" },
+        "fromStoneTown": { "timeMin": 90, "timeMax": 120, "ferryUsd": 35, "flightMin": 20, "flightUsd": 80, "notes": "Fast ferry 1h45m or 20-min flight" },
+        "local": { "bajajUsdKm": 1, "bikeRentalUsdDay": 5, "daladala": "Limited; bajaj/taxi primary" }
+      },
+      "practical": {
+        "atms": "2 (CRDB, NMB) in Chake Chake center",
+        "medical": "Chake Chake District Hospital; Wete 30 min",
+        "supermarket": "Small shops; limited variety",
+        "wifi": "Hotel/guesthouse 5–15 Mbps; SIM essential",
+        "currency": "TZS; limited USD acceptance"
+      },
+      "hiddenGems": [
+        { "name": "Misali Island Marine Reserve", "type": "Marine", "details": "Pemba's best diving; coral gardens, turtles, rays", "walkFromCenterMin": "Boat from Wete" },
+        { "name": "Ngezi-Vumawimbi Forest Reserve", "type": "Nature", "details": "Endemic Pemba flying fox, colobus, hiking trails", "walkFromCenterMin": "30 min drive" },
+        { "name": "Clove plantation tours (smallholder)", "type": "Cultural", "details": "Walk through clove trees; learn harvest/curing", "walkFromCenterMin": "Village arranged" },
+        { "name": "Ras Mkumbuu ruins (14th century)", "type": "History", "details": "Early Swahili settlement, mosque, tombs", "walkFromCenterMin": "15 min drive" },
+        { "name": "Wete town market (colorful, authentic)", "type": "Cultural", "details": "Pemba's commercial hub; spices, fruit, fabric", "walkFromCenterMin": "30 min drive" }
+      ],
+      "sunsetSpots": ["Chake Chake hilltop view", "Mkoani Bay (ferry arrival)", "Misali Island (on dive trip)"],
+      "bestCafes": ["Local tea shops (chai, mandazi)", "Hotel restaurants (few options)"]
+    },
+    "Wambaa Gulf": {
+      "zone": "Pemba Island (West Coast)",
+      "climate": {
+        "type": "Tropical rainforest (Af)",
+        "drySeasons": ["Jan–Feb", "Jun–Sep"],
+        "wetSeasons": ["Mar–May", "Oct–Dec"],
+        "avgTempC": { "min": 23, "max": 30 },
+        "seaTempC": { "min": 26, "max": 29 },
+        "rainfallMm": { "Jan": 80, "Feb": 60, "Mar": 200, "Apr": 400, "May": 300, "Jun": 100, "Jul": 80, "Aug": 80, "Sep": 80, "Oct": 120, "Nov": 200, "Dec": 150 },
+        "windKnots": { "Jun–Sep": "6–10", "Dec–Mar": "5–8" }
+      },
+      "demographics": {
+        "bestFor": ["Mangrove kayaking", "Birdwatching", "Fishing villages", "Quiet retreat", "Pemba authentic"],
+        "lessSuited": ["Tourist infrastructure", "Nightlife", "Beach resorts"],
+        "vibe": "Vast mangrove bay, fishing villages, bird sanctuary, extremely quiet, raw nature"
+      },
+      "transport": {
+        "fromAirport": { "timeMin": 45, "timeMax": 60, "taxiUsd": 25, "notes": "From Pemba Airport (PMA)" },
+        "fromStoneTown": { "timeMin": 120, "timeMax": 150, "ferryUsd": 35, "flightMin": 20, "notes": "Ferry to Mkoani + 1h drive, or flight + drive" },
+        "local": { "bajajUsdKm": 1, "boatPrimary": "Mangrove channels accessed by boat" }
+      },
+      "practical": {
+        "atms": "None; Chake Chake 45 min",
+        "medical": "Chake Chake Hospital 45 min",
+        "supermarket": "None; village dukas only",
+        "wifi": "Very limited; satellite only"
+      },
+      "hiddenGems": [
+        { "name": "Wambaa Gulf mangrove channels (kayak)", "type": "Nature", "details": "Guided kayak through tunnels; kingfishers, herons, mudskippers", "walkFromCenterMin": "Boat from village" },
+        { "name": "Pemba flying fox roost (dusk)", "type": "Wildlife", "details": "Endemic giant fruit bats; thousands emerge at sunset", "walkFromCenterMin": "Ngezi Forest" },
+        { "name": "Traditional fishing villages (Msuka, Kiuyu)", "type": "Cultural", "details": "Authentic Swahili coast life; dhow building, net mending", "walkFromCenterMin": "Village walk" },
+        { "name": "Kiuyu mangrove boardwalk (community)", "type": "Nature", "details": "Elevated walk through mangroves; interpretive signs", "walkFromCenterMin": "Kiuyu village" }
+      ],
+      "sunsetSpots": ["Wambaa Gulf (mangrove silhouettes)", "Mkoani Bay ferry views"],
+      "bestCafes": ["Village tea stalls only"]
+    }
+  }
+}

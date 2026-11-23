@@ -1,19 +1,24 @@
 ---
 title: "Jambiani"
-description: "Southeast fishing village — authentic Swahili culture, seaweed farming, tide pools, and access to Kuza Cave and Chumbe Island."
+description: "Southeast coast -- authentic fishing village, seaweed farming, quieter than Paje, strong Swahili culture. 1 hour from airport."
 permalink: "/areas/jambiani/"
+areaDataKey: "Jambiani"
 ---
+{% set areaData = areaMicroContent.areas[areaDataKey] %}
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
 <main class="" id="main-content">
-  <section class="area-hero" style="background: linear-gradient(rgba(0, 61, 92, 0.78), rgba(0, 38, 59, 0.88)), url('{{ title | zoneImg | cdnFile }}') center/cover no-repeat; color: #fff;">
+  <section class="area-hero" style="background: linear-gradient(rgba(0, 61, 92, 0.78), rgba(0, 38, 59, 0.88)), url('{{ title | zoneImg | cdnFile }}')) center/cover no-repeat; color: #fff;">
     <div class="area-hero-content">
       <div class="area-tags">
-        <span class="area-tag">Unguja (Main Island)</span>
+        <span class="area-tag">Southeast Coast</span>
+        <span class="area-tag">Seaweed</span>
+        <span class="area-tag">Culture</span>
+        <span class="area-tag">Kite</span>
       </div>
       <h1>Jambiani</h1>
-      <p class="area-description">Southeast fishing village — authentic Swahili culture, seaweed farming, tide pools, and access to Kuza Cave and Chumbe Island.</p>
+      <p class="area-description">Southeast coast -- authentic fishing village, seaweed farming, quieter than Paje, strong Swahili culture. 1 hour from airport.</p>
     </div>
   </section>
 
@@ -23,10 +28,127 @@ permalink: "/areas/jambiani/"
         <span class="section-tag">At a Glance</span>
         <h2>Jambiani Quick Stats</h2>
       </div>
-      <div class="stats-grid" style="max-width: 600px; margin: 0 auto;">
+      <div class="stats-grid" style="max-width: 800px; margin: 0 auto;">
         <div class="stat-item reveal"><span class="stat-number">{{ hotels.hotels | filterByZone(title) | length }}</span><span class="stat-label">Partner Hotels</span></div>
         <div class="stat-item reveal"><span class="stat-number">{{ attractions.attractions | filterByZone(title) | length }}</span><span class="stat-label">Attractions</span></div>
         <div class="stat-item reveal"><span class="stat-number">{{ tours | filterByZone(title) | length }}</span><span class="stat-label">Recommended Tours</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ areaData.climate.bestSwimMonths }}</span><span class="stat-label">Best Swim Months</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ areaData.transport.fromAirport.timeMin }}-{{ areaData.transport.fromAirport.timeMax }} min</span><span class="stat-label">From Airport</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ areaData.practical.atms.split(' ')[0] }} ATMs</span><span class="stat-label">In Area</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Climate & When to Visit</span>
+        <h2>Jambiani Weather Guide</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;">
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">☀️ Dry Seasons (Best)</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Jan–Feb</strong> -- Hot, dry, calm seas</li>
+            <li><strong>Jun–Oct</strong> -- Cool, dry, kite season</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Sea temp: { areaData.climate.seaTempC.min }-{ areaData.climate.seaTempC.max }C year-round</p>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🌧️ Wet Seasons</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Mar–May</strong> -- Long rains (peak Apr)</li>
+            <li><strong>Nov–Dec</strong> -- Short rains</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Avg air temp: { areaData.climate.avgTempC.min }-{ areaData.climate.avgTempC.max }C</p>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🌊 Wind & Kite Season</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Jun–Sep:</strong> { areaData.climate.windKnots["Jun–Sep"] }</li>
+            <li><strong>Dec–Mar:</strong> { areaData.climate.windKnots["Dec–Mar"] }</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">{ areaData.climate.kiteSeason or "Consistent winds" }</p>
+        </div>
+      </div>
+
+      <div class="card reveal" style="padding:1.5rem;background:#f8fafc;border-left:4px solid #00667c;">
+        <h3 style="margin-top:0;">🎯 Best Time for You</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem;">
+          <div><strong>Swimming:</strong> { areaData.climate.bestSwimMonths }</div>
+          <div><strong>Diving/Snorkeling:</strong> Jan–Mar, Jun–Oct (best viz)</div>
+          <div><strong>Kite Surfing:</strong> Jun–Sep (15–25 knots)</div>
+          <div><strong>Budget:</strong> Mar–May, Nov (low season rates)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Who It's For</span>
+        <h2>Is Jambiani Right for You?</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="card reveal" style="padding:1.5rem;border-left:4px solid #28a745;">
+          <h3 style="margin-top:0;">✅ Perfect For</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            {% for item in areaData.demographics.bestFor %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;border-left:4px solid #dc3545;">
+          <h3 style="margin-top:0;">⚠️ Less Suited</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            {% for item in areaData.demographics.lessSuited %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;background:#f8fafc;">
+          <h3 style="margin-top:0;">🌟 Vibe Check</h3>
+          <p style="margin:0;color:#4e5d66;line-height:1.7;">{{ areaData.demographics.vibe }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Getting There & Around</span>
+        <h2>Transport to & Around Jambiani</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;">
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">✈️ From Airport (ZNZ)</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Private taxi:</strong> ${{ areaData.transport.fromAirport.taxiUsd }} ({{ areaData.transport.fromAirport.timeMin }}-{{ areaData.transport.fromAirport.timeMax }} min)</li>
+            <li><strong>Shared minibus:</strong> ${{ areaData.transport.fromAirport.sharedMinibusUsd }} pp (1.5-2 hrs)</li>
+            <li><strong>Hotel shuttle:</strong> Ask your hotel (often free for guests)</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🏙️ From Stone Town</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Private taxi:</strong> ${{ areaData.transport.fromStoneTown.taxiUsd }} ({{ areaData.transport.fromStoneTown.timeMin }}-{{ areaData.transport.fromStoneTown.timeMax }} min)</li>
+            <li><strong>Daladala {{ areaData.transport.fromStoneTown.daladalaRoute }}:</strong> ${{ areaData.transport.fromStoneTown.daladalaUsd }} pp (1.5-2 hrs)</li>
+            <li>Departs from Darajani terminal</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🚲 Local Transport</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Bicycle rental:</strong> ${{ areaData.transport.local.bikeRentalUsdDay }}/day</li>
+            <li><strong>Bajaj (tuk-tuk):</strong> ${{ areaData.transport.local.bajajUsdKm }}/km</li>
+            <li>{{ areaData.transport.local.walkable }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card reveal" style="padding:1.5rem;background:#f0f9ff;border-left:4px solid #00667c;">
+        <h3 style="margin-top:0;">💡 Pro Tip</h3>
+        <p style="margin:0;color:#4e5d66;line-height:1.7;">Pre-book your airport transfer with Spice & Sail for fixed price, flight tracking, and meet & greet. We'll sync it with your hotel check-in.</p>
       </div>
     </div>
   </section>
@@ -91,6 +213,80 @@ permalink: "/areas/jambiani/"
       </div>
     </div>
   </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Climate & When to Visit</span>
+        <h2>Jambiani Weather Guide</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;">
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">☀️ Dry Seasons (Best)</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Jan–Feb</strong> -- Hot, dry, calm seas</li>
+            <li><strong>Jun–Oct</strong> -- Cool, dry, kite season</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Sea temp: { areaData.climate.seaTempC.min }-{ areaData.climate.seaTempC.max }C year-round</p>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🌧️ Wet Seasons</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Mar–May</strong> -- Long rains (peak Apr)</li>
+            <li><strong>Nov–Dec</strong> -- Short rains</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Avg air temp: { areaData.climate.avgTempC.min }-{ areaData.climate.avgTempC.max }C</p>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🌊 Wind & Kite Season</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Jun–Sep:</strong> { areaData.climate.windKnots["Jun–Sep"] }</li>
+            <li><strong>Dec–Mar:</strong> { areaData.climate.windKnots["Dec–Mar"] }</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">{ areaData.climate.kiteSeason or "Consistent winds" }</p>
+        </div>
+      </div>
+
+      <div class="card reveal" style="padding:1.5rem;background:#f8fafc;border-left:4px solid #00667c;">
+        <h3 style="margin-top:0;">🎯 Best Time for You</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem;">
+          <div><strong>Swimming:</strong> { areaData.climate.bestSwimMonths }</div>
+          <div><strong>Diving/Snorkeling:</strong> Jan–Mar, Jun–Oct (best viz)</div>
+          <div><strong>Kite Surfing:</strong> Jun–Sep (15–25 knots)</div>
+          <div><strong>Budget:</strong> Mar–May, Nov (low season rates)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Who It's For</span>
+        <h2>Is Jambiani Right for You?</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="card reveal" style="padding:1.5rem;border-left:4px solid #28a745;">
+          <h3 style="margin-top:0;">✅ Perfect For</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            {% for item in areaData.demographics.bestFor %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;border-left:4px solid #dc3545;">
+          <h3 style="margin-top:0;">⚠️ Less Suited</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            {% for item in areaData.demographics.lessSuited %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;background:#f8fafc;">
+          <h3 style="margin-top:0;">🌟 Vibe Check</h3>
+          <p style="margin:0;color:#4e5d66;line-height:1.7;">{{ areaData.demographics.vibe }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container">
@@ -124,7 +320,7 @@ permalink: "/areas/jambiani/"
     <div class="container" style="text-align: center; max-width: 600px;">
       <div class="reveal">
         <h2 style="margin-bottom: 1rem;">Need an Airport Transfer?</h2>
-        <p style="color: var(--dct-text-muted); margin-bottom: 1.5rem;">Private transfer from ZNZ Airport to Jambiani — fixed price, flight tracking, meet & greet included.</p>
+        <p style="color: var(--dct-text-muted); margin-bottom: 1.5rem;">Private transfer from ZNZ Airport to Jambiani -- fixed price, flight tracking, meet & greet included.</p>
         <a href="/transfers/" class="btn btn-primary btn-lg">View Transfer Options</a>
       </div>
     </div>

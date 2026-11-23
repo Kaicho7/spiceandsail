@@ -1,8 +1,10 @@
 ---
 title: "Nungwi"
-description: "Northern tip of Zanzibar — famous for white-sand beaches, turquoise water, traditional dhow building, and vibrant nightlife."
+description: "Nungwi, Zanzibar's northern tip -- white-sand beaches, turquoise water, traditional dhow building, vibrant nightlife, turtle sanctuary. Climate, transport, hidden gems, best cafes. Direct booking."
 permalink: "/areas/nungwi/"
+areaDataKey: "Nungwi"
 ---
+{% set areaData = areaMicroContent.areas[areaDataKey] %}
 {% include "seo.njk" %}
 {% include "header.njk" %}
 
@@ -10,11 +12,13 @@ permalink: "/areas/nungwi/"
   <section class="area-hero" style="background: linear-gradient(rgba(0, 61, 92, 0.78), rgba(0, 38, 59, 0.88)), url('{{ title | zoneImg | cdnFile }}') center/cover no-repeat; color: #fff;">
     <div class="area-hero-content">
       <div class="area-tags">
-        <span class="area-tag">Unguja (Main Island)</span>
+        <span class="area-tag">{{ areaData.zone }}</span>
         <span class="area-tag">Nightlife</span>
+        <span class="area-tag">Diving</span>
+        <span class="area-tag">Turtles</span>
       </div>
       <h1>Nungwi</h1>
-      <p class="area-description">Northern tip of Zanzibar — famous for white-sand beaches, turquoise water, traditional dhow building, and vibrant nightlife. Turtles, diving, and sunset cruises.</p>
+      <p class="area-description">Northern tip of Zanzibar -- famous for white-sand beaches, turquoise water, traditional dhow building, vibrant nightlife, and the Mnarani turtle sanctuary. Year-round swimming, world-class diving, sunset dhow cruises.</p>
     </div>
   </section>
 
@@ -24,10 +28,195 @@ permalink: "/areas/nungwi/"
         <span class="section-tag">At a Glance</span>
         <h2>Nungwi Quick Stats</h2>
       </div>
-      <div class="stats-grid" style="max-width: 600px; margin: 0 auto;">
+      <div class="stats-grid" style="max-width: 800px; margin: 0 auto;">
         <div class="stat-item reveal"><span class="stat-number">{{ hotels.hotels | filterByZone(title) | length }}</span><span class="stat-label">Partner Hotels</span></div>
         <div class="stat-item reveal"><span class="stat-number">{{ attractions.attractions | filterByZone(title) | length }}</span><span class="stat-label">Attractions</span></div>
         <div class="stat-item reveal"><span class="stat-number">{{ tours | filterByZone(title) | length }}</span><span class="stat-label">Recommended Tours</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ areaData.climate.bestSwimMonths }}</span><span class="stat-label">Best Swim Months</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ areaData.transport.fromAirport.timeMin }}–{{ areaData.transport.fromAirport.timeMax }} min</span><span class="stat-label">From Airport</span></div>
+        <div class="stat-item reveal"><span class="stat-number">{{ areaData.practical.atms.split(' ')[0] }} ATMs</span><span class="stat-label">In Village</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Climate & When to Visit</span>
+        <h2>Nungwi Weather Guide</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;">
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">☀️ Dry Seasons (Best)</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Jan–Feb</strong> -- Hot, dry, calm seas</li>
+            <li><strong>Jun–Oct</strong> -- Cool, dry, kite season</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Sea temp: {{ areaData.climate.seaTempC.min }}–{{ areaData.climate.seaTempC.max }}°C year-round</p>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🌧️ Wet Seasons</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Mar–May</strong> -- Long rains (peak Apr)</li>
+            <li><strong>Nov–Dec</strong> -- Short rains</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Avg air temp: {{ areaData.climate.avgTempC.min }}–{{ areaData.climate.avgTempC.max }}°C</p>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🌊 Wind & Kite Season</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Jun–Sep:</strong> {{ areaData.climate.windKnots["Jun–Sep"] }}</li>
+            <li><strong>Dec–Mar:</strong> {{ areaData.climate.windKnots["Dec–Mar"] }}</li>
+          </ul>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">{{ areaData.climate.kiteSeason }}</p>
+        </div>
+      </div>
+
+      <div class="card reveal" style="padding:1.5rem;background:#f8fafc;border-left:4px solid #00667c;">
+        <h3 style="margin-top:0;">🎯 Best Time for You</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem;">
+          <div><strong>Swimming:</strong> {{ areaData.climate.bestSwimMonths }}</div>
+          <div><strong>Diving/Snorkeling:</strong> Jan–Mar, Jun–Oct (best viz)</div>
+          <div><strong>Kite Surfing:</strong> Jun–Sep (15–25 knots)</div>
+          <div><strong>Budget:</strong> Mar–May, Nov (low season rates)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Who It's For</span>
+        <h2>Is Nungwi Right for You?</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="card reveal" style="padding:1.5rem;border-left:4px solid #28a745;">
+          <h3 style="margin-top:0;">✅ Perfect For</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            {% for item in areaData.demographics.bestFor %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;border-left:4px solid #dc3545;">
+          <h3 style="margin-top:0;">⚠️ Less Suited</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            {% for item in areaData.demographics.lessSuited %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;background:#f8fafc;">
+          <h3 style="margin-top:0;">🌟 Vibe Check</h3>
+          <p style="margin:0;color:#4e5d66;line-height:1.7;">{{ areaData.demographics.vibe }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Getting There & Around</span>
+        <h2>Transport to & Around Nungwi</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;">
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">✈️ From Airport (ZNZ)</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Private taxi:</strong> ${{ areaData.transport.fromAirport.taxiUsd }} ({{ areaData.transport.fromAirport.timeMin }}–{{ areaData.transport.fromAirport.timeMax }} min)</li>
+            <li><strong>Shared minibus:</strong> ${{ areaData.transport.fromAirport.sharedMinibusUsd }} pp (1.5–2 hrs)</li>
+            <li><strong>Hotel shuttle:</strong> Ask your hotel (often free for guests)</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🏙️ From Stone Town</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Private taxi:</strong> ${{ areaData.transport.fromStoneTown.taxiUsd }} ({{ areaData.transport.fromStoneTown.timeMin }}–{{ areaData.transport.fromStoneTown.timeMax }} min)</li>
+            <li><strong>Daladala {{ areaData.transport.fromStoneTown.daladalaRoute }}:</strong> ${{ areaData.transport.fromStoneTown.daladalaUsd }} pp (1.5–2 hrs)</li>
+            <li>Departs from Darajani terminal</li>
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🚲 Local Transport</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            <li><strong>Bicycle rental:</strong> ${{ areaData.transport.local.bikeRentalUsdDay }}/day</li>
+            <li><strong>Bajaj (tuk-tuk):</strong> ${{ areaData.transport.local.bajajUsdKm }}/km</li>
+            <li>{{ areaData.transport.local.walkable }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card reveal" style="padding:1.5rem;background:#f0f9ff;border-left:4px solid #00667c;">
+        <h3 style="margin-top:0;">💡 Pro Tip</h3>
+        <p style="margin:0;color:#4e5d66;line-height:1.7;">Pre-book your airport transfer with Spice & Sail for fixed price, flight tracking, and meet & greet. We'll sync it with your hotel check-in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Hidden Gems</span>
+        <h2>Off the Beaten Path in Nungwi</h2>
+      </div>
+      <div class="cards-grid">
+        {% for gem in areaData.hiddenGems %}
+        <article class="card reveal" style="padding:1.5rem;transition:transform .2s;">
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <span style="font-size:1.5rem;">{{ gem.type | gemIcon }}</span>
+            <div>
+              <h3 style="margin:0 0 .5rem;">{{ gem.name }}</h3>
+              <p style="margin:0 0 .5rem;color:#4e5d66;line-height:1.6;">{{ gem.details }}</p>
+              <small style="color:#8898aa;">{{ gem.walkFromCenterMin }} from village center</small>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Sunset & Dining</span>
+        <h2>Best Sunset Spots & Local Eats</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">🌅 Sunset Spots</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            {% for spot in areaData.sunsetSpots %}
+            <li>{{ spot }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3 style="margin-top:0;">☕ Best Cafés & Restaurants</h3>
+          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
+            {% for cafe in areaData.bestCafes %}
+            <li>{{ cafe }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Practical Info</span>
+        <h2>Essential Practical Details</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;">
+        <div class="card reveal" style="padding:1.25rem;"><strong>💰 ATMs</strong><br>{{ areaData.practical.atms }}</div>
+        <div class="card reveal" style="padding:1.25rem;"><strong>🏥 Medical</strong><br>{{ areaData.practical.medical }}</div>
+        <div class="card reveal" style="padding:1.25rem;"><strong>🛒 Shopping</strong><br>{{ areaData.practical.supermarket }}</div>
+        <div class="card reveal" style="padding:1.25rem;"><strong>📶 Wi-Fi</strong><br>{{ areaData.practical.wifi }}</div>
+        <div class="card reveal" style="padding:1.25rem;"><strong>💵 Currency</strong><br>{{ areaData.practical.currency }}</div>
       </div>
     </div>
   </section>
@@ -40,32 +229,32 @@ permalink: "/areas/nungwi/"
         <p class="section-subtitle">Boutique hotels and resorts in Nungwi. Click through for direct booking or contact us for referral rates.</p>
       </div>
       <div class="cards-grid hotel-grid">
-{% for hotel in hotels.hotels | filterByZone(title) %}
-  <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
-    <div class="card-image" style="position:relative;">
-      {% set hImg = hotel | hotelPhoto %}
-      <img src="{{ hImg | cdnFile }}" alt="{{ hImg | canonicalAlt(hotel.name) }}" loading="lazy">
-      <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
-    </div>
-    <div class="card-content">
-      <h3 class="card-title"><a href="{{ hotel.website }}" target="_blank" rel="noopener">{{ hotel.name }}</a></h3>
-      <p class="card-meta">{{ hotel.zone }}{% if hotel.zone %}, {% endif %}{{ hotel.island }} • {{ hotel.star_rating or "Ungraded" }}</p>
-      {% if hotel.category %}<p class="card-description">{{ hotel.category }}</p>{% endif %}
-      <div class="card-footer">
-        <span class="card-price">{{ hotel.price_range or "Contact for rates" }}</span>
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          <a href="{{ hotel.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Website</a>
-          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20inquire%20about%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </article>
-{% endfor %}
+        {% for hotel in hotels.hotels | filterByZone(title) %}
+        <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
+          <div class="card-image" style="position:relative;">
+            {% set hImg = hotel | hotelPhoto %}
+            <img src="{{ hImg | cdnFile }}" alt="{{ hImg | canonicalAlt(hotel.name) }}" loading="lazy">
+            <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title"><a href="{{ hotel.website }}" target="_blank" rel="noopener">{{ hotel.name }}</a></h3>
+            <p class="card-meta">{{ hotel.zone }}{% if hotel.zone %}, {% endif %}{{ hotel.island }} • {{ hotel.star_rating or "Ungraded" }}</p>
+            {% if hotel.category %}<p class="card-description">{{ hotel.category }}</p>{% endif %}
+            <div class="card-footer">
+              <span class="card-price">{{ hotel.price_range or "Contact for rates" }}</span>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <a href="{{ hotel.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Website</a>
+                <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20inquire%20about%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
       </div>
     </div>
   </section>
 
-  <section class="section section-gradient">
+  <section class="section section-alt">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Attractions</span>
@@ -73,22 +262,22 @@ permalink: "/areas/nungwi/"
         <p class="section-subtitle">Local attractions, dive centers, and activity providers in Nungwi.</p>
       </div>
       <div class="cards-grid attraction-grid">
-{% for attraction in attractions.attractions | filterByZone(title) %}
-  <article class="card attraction-card reveal" data-type="{{ attraction.category }}">
-    <div class="card-image" style="position:relative;">
-      <img src="{{ (attraction.name | attractionImg(attraction.category)) | cdnFile }}" alt="{{ attraction.name }}" loading="lazy">
-    <div class="card-content">
-      <span class="card-badge badge-cultural">{{ attraction.type | attractionTypeLabel }}</span>
-      <h3 class="card-title">{{ attraction.name }}</h3>
-      <p class="card-meta">{{ attraction.zone }}{% if attraction.zone %}, {% endif %}{{ attraction.island }}</p>
-      {% if attraction.website %}
-        <a href="{{ attraction.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website</a>
-      {% else %}
-        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20please%20send%20prices%20and%20a%20bookable%20slot%20for%20{{ attraction.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book via WhatsApp</a>
-      {% endif %}
-    </div>
-  </article>
-{% endfor %}
+        {% for attraction in attractions.attractions | filterByZone(title) %}
+        <article class="card attraction-card reveal" data-type="{{ attraction.category }}">
+          <div class="card-image" style="position:relative;">
+            <img src="{{ (attraction.name | attractionImg(attraction.category)) | cdnFile }}" alt="{{ attraction.name }}" loading="lazy">
+          <div class="card-content">
+            <span class="card-badge badge-cultural">{{ attraction.type | attractionTypeLabel }}</span>
+            <h3 class="card-title">{{ attraction.name }}</h3>
+            <p class="card-meta">{{ attraction.zone }}{% if attraction.zone %}, {% endif %}{{ attraction.island }}</p>
+            {% if attraction.website %}
+              <a href="{{ attraction.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website</a>
+            {% else %}
+              <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20please%20send%20prices%20and%20a%20bookable%20slot%20for%20{{ attraction.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Book via WhatsApp</a>
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -101,22 +290,22 @@ permalink: "/areas/nungwi/"
         <p class="section-subtitle">The best day tours and experiences starting from Nungwi.</p>
       </div>
       <div class="cards-grid tour-grid">
-{% for tour in tours | filterByZone(title) %}
-  <article class="card tour-card reveal" data-category="{{ tour.category }}">
-    <div class="card-image" style="position:relative;">
-      <img src="{{ (__slugMap[tour.seo_slug] or __slugMap[tour.slug] or 'excursions.png') | cdnFile }}" alt="{{ tour.title }}" loading="lazy">
-    <div class="card-content">
-      <span class="card-badge badge-{{ tour.category | lower }}">{{ tour.category | attractionTypeLabel }}</span>
-      <h3 class="card-title"><a href="/tours/{{ tour.seo_slug }}/">{{ tour.title }}</a></h3>
-      <p class="card-meta">{{ tour.duration }} • {{ tour.location }}</p>
-      <p class="card-description">{{ tour.short_description }}</p>
-      <div class="card-footer">
-        <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
-        <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-primary btn-sm">Details & Booking</a>
-      </div>
-    </div>
-  </article>
-{% endfor %}
+        {% for tour in tours | filterByZone(title) %}
+        <article class="card tour-card reveal" data-category="{{ tour.category }}">
+          <div class="card-image" style="position:relative;">
+            <img src="{{ (__slugMap[tour.seo_slug] or __slugMap[tour.slug] or 'excursions.png') | cdnFile }}" alt="{{ tour.title }}" loading="lazy">
+          <div class="card-content">
+            <span class="card-badge badge-{{ tour.category | lower }}">{{ tour.category | attractionTypeLabel }}</span>
+            <h3 class="card-title"><a href="/tours/{{ tour.seo_slug }}/">{{ tour.title }}</a></h3>
+            <p class="card-meta">{{ tour.duration }} • {{ tour.location }}</p>
+            <p class="card-description">{{ tour.short_description }}</p>
+            <div class="card-footer">
+              <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
+              <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-primary btn-sm">Details & Booking</a>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -125,7 +314,7 @@ permalink: "/areas/nungwi/"
     <div class="container" style="text-align: center; max-width: 600px;">
       <div class="reveal">
         <h2 style="margin-bottom: 1rem;">Need an Airport Transfer?</h2>
-        <p style="color: var(--dct-text-muted); margin-bottom: 1.5rem;">Private transfer from ZNZ Airport to Nungwi — fixed price, flight tracking, meet & greet included.</p>
+        <p style="color: var(--dct-text-muted); margin-bottom: 1.5rem;">Private transfer from ZNZ Airport to Nungwi -- fixed price, flight tracking, meet & greet included.</p>
         <a href="/transfers/" class="btn btn-primary btn-lg">View Transfer Options</a>
       </div>
     </div>

@@ -83,8 +83,9 @@ test('P1-9: sitemap lastmod values are real ISO dates, not a blanket single date
 test('P1-9: every sitemap xhtml:link alternate resolves to a built page', () => {
   const sm = fs.readFileSync(path.join(DIST, 'sitemap.xml'), 'utf8');
   const hrefs = [...sm.matchAll(/<xhtml:link[^>]*href="([^"]+)"/g)].map(m => m[1]);
+  const siteUrl = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'data', 'site.json'), 'utf8')).url || 'https://spiceandsail.com';
   for (const h of hrefs) {
-    let p = new URL(h).pathname;
+    let p = new URL(h, siteUrl).pathname;
     if (p.endsWith('/')) p += 'index.html';
     assert.ok(fs.existsSync(path.join(DIST, p)), `dangling alternate: ${h}`);
   }

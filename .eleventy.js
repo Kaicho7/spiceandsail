@@ -264,6 +264,15 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     hotelPublicRates = { hotels: [] };
   }
 
+  // Area micro-content data for enhanced area pages
+  let areaMicroContent = { areas: {} };
+  try {
+    areaMicroContent = JSON.parse(fs.readFileSync(path.join("./src", "data", "areaMicroContent.json"), "utf8"));
+  } catch (e) {
+    areaMicroContent = { areas: {} };
+  }
+  eleventyConfig.addGlobalData("areaMicroContent", () => areaMicroContent);
+
   function rateFor(slug) {
     return (hotelPublicRates.hotels || []).find(h => h.slug === slug) || null;
   }
@@ -334,6 +343,13 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     };
   });
   eleventyConfig.addGlobalData("featuredPartnerHotels", () => featuredPartnerHotels);
+
+  // Build a set of all page URLs for quick lookup in sitemap
+  eleventyConfig.addGlobalData("pageUrlSet", function() {
+    const set = new Set();
+    // This will be populated during the build
+    return set;
+  });
 
   eleventyConfig.addGlobalData("conciergeCat", () => conciergeCatalogue);
   eleventyConfig.addGlobalData("hotelPublicRates", () => hotelPublicRates);
@@ -596,9 +612,40 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     return label;
   });
 
+  // Add filter for hidden gem type icons
+  eleventyConfig.addFilter("gemIcon", (type) => {
+    const icons = {
+      "Marine": "🐠",
+      "Natural": "🌿",
+      "Viewpoint": "🌅",
+      "Cultural": "🏛️",
+      "Event": "🎉",
+      "Nature": "🌳",
+      "Dining": "🍽️",
+      "Wildlife": "🦋",
+      "Activity": "🏄",
+      "Wellness": "🧘",
+      "History": "📜",
+      "default": "✨"
+    };
+    return icons[type] || icons["default"];
+});
+  
   // Add urlencode filter for WhatsApp message encoding
   eleventyConfig.addFilter("urlencode", (str) => {
     return encodeURIComponent(String(str || ""));
+  });
+
+  // Add filter to find a page by URL in collections
+  eleventyConfig.addFilter("findPage", function(url, collections) {
+    if (!url || !collections || !collections.all) return null;
+    return collections.all.find(page => page.url === url) || null;
+  });
+
+  // Add Nunjucks filter version for use in templates with collections context
+  eleventyConfig.addNunjucksFilter("pageExists", function(url, collections) {
+    if (!url || !collections || !collections.all) return false;
+    return collections.all.some(page => page.url === url);
   });
 
   // Deduplicate tour categories for area cards (fixes Cultural Cultural glitch)
