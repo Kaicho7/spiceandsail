@@ -10,25 +10,34 @@
 const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('../concierge/security');
 const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
 const { catalogue, CONFIG } = require('../concierge/catalogue');
-const crypto = require('node:crypto');
 
-function ensureStore() {
-  try { getGlobalStore(); } catch (e) {
-    setGlobalStore(createStore('memory'));
-  }
+// Use Web Crypto API (available in Cloudflare Workers) instead of node:crypto
+function randomHex(bytes = 8) {
+  const arr = new Uint8Array(bytes);
+  crypto.getRandomValues(arr);
+  return Array.from(arr, b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function sha256Hex(str) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(str);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
 function generateReviewId() {
-  return 'rev_' + crypto.randomBytes(8).toString('hex');
+  return 'rev_' + randomHex(8);
 }
 
-function payloadHash(body) {
+async function payloadHash(body) {
   const key = JSON.stringify({
     bookingRef: body.bookingRef,
     phone: body.phone,
     serviceSlug: body.serviceSlug,
   });
-  return crypto.createHash('sha256').update(key).digest('hex').slice(0, 16);
+  const hash = await sha256Hex(key);
+  return hash.slice(0, 16);
 }
 
 // Review request templates (multilingual)
@@ -188,7 +197,7 @@ exports.handler = async function (event) {
     }
 
     // Check if review already requested for this booking
-    const hash = payloadHash(body);
+    const hash = await payloadHash(body);
     const idempotencyKey = 'review_request:' + hash;
     try {
       const existing = await store.getJSON(idempotencyKey);
@@ -249,7 +258,7 @@ exports.handler = async function (event) {
     }
 
     // Idempotency check
-    const hash = payloadHash({ bookingRef, phone, serviceSlug });
+    const hash = await payloadHash({ bookingRef, phone, serviceSlug });
     const idempotencyKey = 'review_submit:' + hash;
     try {
       const existing = await store.getJSON(idempotencyKey);

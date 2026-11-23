@@ -5,7 +5,6 @@
  */
 'use strict';
 
-const crypto = require('node:crypto');
 const { corsHeaders, checkRateLimit, getClientIP, isAllowedOrigin } = require('../concierge/security');
 const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
 const { normalizeE164 } = require('../concierge/validate');
@@ -16,17 +15,22 @@ function ensureStore() {
   }
 }
 
-/** Constant-time string comparison */
+/** Constant-time string comparison (Web Crypto compatible) */
 function timingSafeEqual(a, b) {
   if (typeof a !== 'string' || typeof b !== 'string') return false;
-  const bufA = Buffer.from(a);
-  const bufB = Buffer.from(b);
-  if (bufA.length !== bufB.length) {
+  if (a.length !== b.length) {
     // Still do a comparison to avoid timing leaks on length
-    crypto.timingSafeEqual(bufA, Buffer.alloc(bufA.length));
+    let result = 0;
+    for (let i = 0; i < a.length; i++) {
+      result |= a.charCodeAt(i) ^ b.charCodeAt(i % b.length);
+    }
     return false;
   }
-  return crypto.timingSafeEqual(bufA, bufB);
+  let result = 0;
+  for (let i = 0; i < a.length; i++) {
+    result |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  }
+  return result === 0;
 }
 
 /** Build a WhatsApp-ready staff brief */

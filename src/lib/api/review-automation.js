@@ -8,7 +8,13 @@
 const { corsHeaders, isAllowedOrigin } = require('../concierge/security');
 const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
 const { catalogue, CONFIG } = require('../concierge/catalogue');
-const crypto = require('node:crypto');
+
+// Use Web Crypto API (available in Cloudflare Workers) instead of node:crypto
+function randomHex(bytes = 8) {
+  const arr = new Uint8Array(bytes);
+  crypto.getRandomValues(arr);
+  return Array.from(arr, b => b.toString(16).padStart(2, '0')).join('');
+}
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
@@ -85,7 +91,7 @@ function buildReviewMessage(template, data) {
 }
 
 function generateReviewToken() {
-  return 'rev_' + crypto.randomBytes(12).toString('hex');
+  return 'rev_' + randomHex(12);
 }
 
 /** Check if review already requested for this booking */

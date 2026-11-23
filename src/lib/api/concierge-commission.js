@@ -7,7 +7,13 @@
 const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('../concierge/security');
 const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
 const { catalogue, CONFIG } = require('../concierge/catalogue');
-const crypto = require('node:crypto');
+
+// Use Web Crypto API (available in Cloudflare Workers) instead of node:crypto
+function randomHex(bytes = 8) {
+  const arr = new Uint8Array(bytes);
+  crypto.getRandomValues(arr);
+  return Array.from(arr, b => b.toString(16).padStart(2, '0')).join('');
+}
 
 function ensureStore() {
   try { getGlobalStore(); } catch (e) {
@@ -33,7 +39,7 @@ const HOTEL_TIERS = {
 
 function generateReferralCode(hotelSlug) {
   const prefix = hotelSlug.substring(0, 3).toUpperCase();
-  const random = crypto.randomBytes(4).toString('hex').toUpperCase();
+  const random = randomHex(4).toUpperCase();
   return `REF-${prefix}-${random}`;
 }
 
@@ -301,7 +307,7 @@ exports.handler = async function (event) {
       reference,
       notes,
       paidAt: new Date().toISOString(),
-      id: 'payout_' + crypto.randomBytes(8).toString('hex'),
+      id: 'payout_' + randomHex(8),
     };
 
     // Update partner

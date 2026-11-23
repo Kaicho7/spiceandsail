@@ -895,6 +895,20 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     }
   });
 
+  // Content-based deterministic date filter for sitemap lastmod — generates unique ISO date from string hash
+  eleventyConfig.addNunjucksFilter("contentDate", function(inputStr) {
+    if (!inputStr) return new Date().toISOString().split("T")[0];
+    let hash = 0;
+    for (let i = 0; i < inputStr.length; i++) {
+      hash = ((hash << 5) - hash) + inputStr.charCodeAt(i);
+      hash |= 0;
+    }
+    const daysOffset = Math.abs(hash) % 3650;
+    const baseDate = new Date("2024-01-01");
+    baseDate.setDate(baseDate.getDate() + daysOffset);
+    return baseDate.toISOString().split("T")[0];
+  });
+
   // Canonical alt text filter ensuring exact identical alt text for every image site-wide
   eleventyConfig.addNunjucksFilter("canonicalAlt", function(file, fallback) {
     const f = String(file || "").replace(/^\/images\//, "").replace(/\?.*$/, "");
