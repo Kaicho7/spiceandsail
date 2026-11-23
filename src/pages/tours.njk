@@ -43,7 +43,7 @@ permalink: "/tours/index.html"
         </div>
         <div class="card-content">
           <span class="tour-category">{{ tour.category | attractionTypeLabel }}</span>
-          <h3><a href="/tours/{{ tour.seo_slug }}/">{{ tour.title }}</a></h3>
+          <h3><a href="{% if tour.category == 'PKG' %}/packages/{% else %}/tours/{% endif %}{{ tour.seo_slug }}/">{{ tour.title }}</a></h3>
           <p class="tour-meta">{{ tour.duration }} • {{ tour.location }}</p>
           <p class="tour-description">{{ tour.short_description }}</p>
           <div class="tour-card__price-row">
@@ -68,7 +68,7 @@ permalink: "/tours/index.html"
             {% endif %}
           </div>
           <div class="card-footer">
-            <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-sm">Details & Booking</a>
+            <a href="{% if tour.category == 'PKG' %}/packages/{% else %}/tours/{% endif %}{{ tour.seo_slug }}/" class="btn btn-sm">Details & Booking</a>
             <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20details%20and%20a%20quote%20for%20{{ tour.title | urlencode }}." target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ tour.title }}">Ask on WhatsApp</a>
           </div>
         </div>

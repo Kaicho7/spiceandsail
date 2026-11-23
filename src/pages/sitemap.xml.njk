@@ -11,7 +11,7 @@ eleventyExcludeFromCollections: true
 <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/"/>
 </url>
 {%- for page in collections.all %}
-{%- if page.url and page.url.indexOf("/404") == -1 and page.url.indexOf("/thank-you") == -1 and page.url.indexOf("/bookings") == -1 and not page.url.endsWith(".html") and page.url != "/sitemap.xml" and page.url != "/" and not page.url.startsWith("/hotels/") and not page.url.startsWith("/attractions/") %}
+{%- if page.url and page.url.indexOf("/404") == -1 and page.url.indexOf("/thank-you") == -1 and page.url.indexOf("/bookings") == -1 and not page.url.endsWith(".html") and page.url != "/sitemap.xml" and page.url != "/" and not page.url.startsWith("/hotels/") and not page.url.startsWith("/attractions/") and not page.url | startsWith("/blog/") %}
 <url><loc>{{ site.url }}{{ page.url }}</loc><lastmod>{{ page.inputPath | fileMtime }}</lastmod><changefreq>weekly</changefreq><priority>{% if page.url == "/about/" or page.url == "/contact/" %}0.8{% else %}0.6{% endif %}</priority>
 {%- set altEn = page.data.alternate_en %}
 {%- set altIt = page.data.alternate_it %}
@@ -27,6 +27,19 @@ eleventyExcludeFromCollections: true
 </url>
 {%- endif %}
 {%- endfor %}
+
+{%- for page in collections.all %}
+{%- if page.url and page.url | startsWith("/blog/") and not page.url.endsWith(".html") and page.url != "/blog/" %}
+<url><loc>{{ site.url }}{{ page.url }}</loc><lastmod>{{ page | blogDate }}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+{%- set altIt = page.data.alternate_it %}
+{%- set altDe = page.data.alternate_de %}
+{%- if altIt %}<xhtml:link rel="alternate" hreflang="it" href="{{ altIt }}"/>{% endif %}
+{%- if altDe %}<xhtml:link rel="alternate" hreflang="de" href="{{ altDe }}"/>{% endif %}
+</url>
+{%- endif %}
+{%- endfor %}
+
+<url><loc>{{ site.url }}/blog/</loc><lastmod>{{ "/src/pages/blog.njk" | fileMtime }}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
 <url><loc>{{ site.url }}/hotels/</loc><lastmod>{{ "/src/data/hotels.json" | fileMtime }}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 <url><loc>{{ site.url }}/attractions/</loc><lastmod>{{ "/src/data/attractions.json" | fileMtime }}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>

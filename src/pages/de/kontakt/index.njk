@@ -65,7 +65,7 @@ alternate_it: "https://spiceandsail.com/it/contatti/"
         <p class="section-subtitle">Formular ausfüllen und wir antworten per WhatsApp oder E-Mail innerhalb von 2 Stunden während der Geschäftszeiten.</p>
       </div>
       <div style="max-width: 700px; margin: 0 auto;">
-        <form class="contact-form" netlify name="booking-inquiry" method="POST" data-netlify="true">
+        <form class="contact-form" name="booking-inquiry" method="POST" action="/api/lead">
           <input type="hidden" name="form-name" value="booking-inquiry">
           <div class="form-row">
             <div class="form-group">
