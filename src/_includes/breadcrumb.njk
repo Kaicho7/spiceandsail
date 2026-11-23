@@ -1,0 +1,71 @@
+{% set breadcrumbs = [] %}
+{% set pageUrl = page.url or "/" %}
+{% if pageUrl == "/" %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }]) %}
+{% elif pageUrl | startsWith("/blog/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Blog", "url": site.url + "/blog/" }]) %}
+  {% if page.data.seo_slug %}
+    {% set breadcrumbs = breadcrumbs.concat([{ "name": page.data.seo_slug | slugToTitle, "url": site.url + pageUrl }]) %}
+  {% else %}
+    {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+  {% endif %}
+{% elif pageUrl | startsWith("/tours/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Tours", "url": site.url + "/tours/" }]) %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+{% elif pageUrl | startsWith("/attractions/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Attractions", "url": site.url + "/attractions/" }]) %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+{% elif pageUrl | startsWith("/hotels/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Hotels", "url": site.url + "/hotels/" }]) %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+{% elif pageUrl | startsWith("/areas/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Areas", "url": site.url + "/areas/" }]) %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+{% elif pageUrl | startsWith("/transfers/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Transfers", "url": site.url + "/transfers/" }]) %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+{% elif pageUrl | startsWith("/packages/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Packages", "url": site.url + "/packages/" }]) %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+{% elif pageUrl | startsWith("/safaris/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Safaris", "url": site.url + "/safaris/" }]) %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+{% elif pageUrl | startsWith("/blog/") %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": "Blog", "url": site.url + "/blog/" }]) %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": page.title, "url": site.url + pageUrl }]) %}
+{% else %}
+  {% set breadcrumbs = breadcrumbs.concat([{ "name": "Home", "url": site.url + "/" }, { "name": page.title, "url": site.url + pageUrl }]) %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {% for crumb in breadcrumbs %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": "{{ crumb.name | escape }}",
+      "item": "{{ crumb.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% if breadcrumbs.length > 1 %}
+<nav class="breadcrumb" aria-label="Breadcrumb" style="padding:1rem 0;font-size:.85rem;color:#4e5d66;">
+  <ol style="display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0;">
+    {% for crumb in breadcrumbs %}
+    <li>
+      {% if not loop.last %}
+      <a href="{{ crumb.url }}" style="color:#00667c;text-decoration:none;">{{ crumb.name }}</a>
+      <span aria-hidden="true" style="color:#8898aa;">/</span>
+      {% else %}
+      <span aria-current="page" style="color:#4e5d66;">{{ crumb.name }}</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}

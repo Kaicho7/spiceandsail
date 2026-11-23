@@ -1166,6 +1166,59 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     });
   });
 
+  // Convert slug to title case for breadcrumbs
+  eleventyConfig.addNunjucksFilter("slugToTitle", function(slug) {
+    if (!slug) return "";
+    return String(slug)
+      .split("-")
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ");
+  });
+
+  // String startsWith filter for Nunjucks
+  eleventyConfig.addNunjucksFilter("startsWith", function(str, prefix) {
+    if (!str || !prefix) return false;
+    return String(str).startsWith(String(prefix));
+  });
+
+  // Blog post date filter for sitemap
+  eleventyConfig.addNunjucksFilter("blogDate", function(page) {
+    if (!page || !page.data || !page.data.date) return new Date().toISOString().split("T")[0];
+    return new Date(page.data.date).toISOString().split("T")[0];
+  });
+
+  // Event schema filter for blog posts about events
+  eleventyConfig.addNunjucksFilter("eventSchema", function(page) {
+    if (!page || !page.data || !page.data.event) return "";
+    const e = page.data.event;
+    return JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": e.name || page.title,
+      "startDate": e.startDate,
+      "endDate": e.endDate || e.startDate,
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": e.location || "Zanzibar, Tanzania",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Zanzibar",
+          "addressRegion": "Zanzibar",
+          "addressCountry": "TZ"
+        }
+      },
+      "description": page.data.description || page.data.excerpt || "",
+      "url": "https://spiceandsail.com" + page.url,
+      "organizer": {
+        "@type": "Organization",
+        "name": "Spice and Sail Zanzibar",
+        "url": "https://spiceandsail.com"
+      }
+    }, null, 2);
+  });
+
   return {
     dir: {
       input: "src",
