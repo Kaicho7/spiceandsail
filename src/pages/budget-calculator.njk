@@ -1,0 +1,135 @@
+---
+title: "Zanzibar Trip Budget Calculator | Spice & Sail"
+description: "Calculate your Zanzibar trip budget: accommodation, meals, tours, transfers, and extras. Get a realistic daily cost estimate for your travel style."
+permalink: /budget-calculator/index.html
+---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
+<main class="" id="main-content">
+  <header class="page-header">
+    <h1>Zanzibar Trip Budget Calculator</h1>
+    <p class="page-meta">Estimate your daily and total trip costs based on your travel style, group size, and planned activities.</p>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <div style="background:#f8fafc;border-radius:12px;padding:2rem;margin-bottom:2rem;">
+        <h2 style="margin-top:0;">Trip Parameters</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem;">
+          <div>
+            <label for="travelers" style="display:block;font-weight:600;margin-bottom:0.25rem;">Travelers</label>
+            <input type="number" id="travelers" value="2" min="1" max="10" style="width:100%;padding:0.5rem;border:1px solid #cbd5e1;border-radius:6px;">
+          </div>
+          <div>
+            <label for="nights" style="display:block;font-weight:600;margin-bottom:0.25rem;">Nights</label>
+            <input type="number" id="nights" value="7" min="1" max="30" style="width:100%;padding:0.5rem;border:1px solid #cbd5e1;border-radius:6px;">
+          </div>
+          <div>
+            <label for="tier" style="display:block;font-weight:600;margin-bottom:0.25rem;">Travel Style</label>
+            <select id="tier" style="width:100%;padding:0.5rem;border:1px solid #cbd5e1;border-radius:6px;">
+              <option value="budget">Budget ($75-130/day)</option>
+              <option value="mid" selected>Mid-Range ($160-320/day)</option>
+              <option value="luxury">Luxury ($380-850+/day)</option>
+            </select>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom:0.75rem;">Activities (per person)</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.5rem;margin-bottom:1.5rem;">
+          <label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" class="activity" value="stonetown" checked> Stone Town Walk ($45-80)</label>
+          <label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" class="activity" value="spice" checked> Spice Farm ($35-80)</label>
+          <label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" class="activity" value="safariblue"> Safari Blue ($60-160)</label>
+          <label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" class="activity" value="mnemba"> Mnemba Snorkel ($70-150)</label>
+          <label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" class="activity" value="prison"> Prison Island ($75-145)</label>
+          <label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" class="activity" value="jozani"> Jozani Forest ($45-98)</label>
+          <label style="display:flex;align-items:center;gap:0.5rem;"><input type="checkbox" class="activity" value="sunset"> Sunset Dhow ($30-85)</label>
+        </div>
+
+        <button onclick="calculate()" style="background:#003853;color:#fff;border:none;padding:0.75rem 2rem;border-radius:8px;font-size:1rem;cursor:pointer;font-weight:600;">Calculate Budget</button>
+      </div>
+
+      <div id="results" style="display:none;background:#fff;border:2px solid #003853;border-radius:12px;padding:2rem;">
+        <h2 style="margin-top:0;">Your Estimated Budget</h2>
+        <table style="width:100%;border-collapse:collapse;">
+          <tbody id="breakdown"></tbody>
+          <tfoot>
+            <tr style="border-top:2px solid #003853;font-weight:700;font-size:1.1rem;">
+              <td style="padding:0.75rem;">Total Trip Cost</td>
+              <td style="padding:0.75rem;text-align:right;" id="total">$0</td>
+            </tr>
+            <tr style="font-weight:600;color:#64748b;">
+              <td style="padding:0.5rem;">Per Person</td>
+              <td style="padding:0.5rem;text-align:right;" id="perperson">$0</td>
+            </tr>
+            <tr style="font-weight:600;color:#64748b;">
+              <td style="padding:0.5rem;">Per Day (total)</td>
+              <td style="padding:0.5rem;text-align:right;" id="perday">$0</td>
+            </tr>
+          </tfoot>
+        </table>
+        <p style="margin-top:1.5rem;font-size:0.85rem;color:#64748b;">Estimates are indicative. Actual costs vary by season, availability, and group size. Contact us for a precise quote.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content reveal">
+      <h2>Want a Precise Quote?</h2>
+      <p>Send us your dates, group size, and preferences. We'll return a detailed itinerary with exact pricing within 24 hours.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I'd like a detailed quote for my Zanzibar trip" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Get Exact Quote on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+const tierCosts = {
+  budget: { accom: 50, food: 25, transport: 15, activities: 0 },
+  mid: { accom: 135, food: 50, transport: 47, activities: 0 },
+  luxury: { accom: 450, food: 105, transport: 95, activities: 0 }
+};
+
+const activityCosts = {
+  stonetown: 62, spice: 57, safariblue: 110, mnemba: 110, prison: 110, jozani: 71, sunset: 57
+};
+
+function calculate() {
+  const travelers = parseInt(document.getElementById('travelers').value) || 2;
+  const nights = parseInt(document.getElementById('nights').value) || 7;
+  const tier = document.getElementById('tier').value;
+  const t = tierCosts[tier];
+
+  const activities = document.querySelectorAll('.activity:checked');
+  let activityTotal = 0;
+  activities.forEach(a => { activityTotal += activityCosts[a.value] || 0; });
+
+  const accomTotal = t.accom * nights * travelers;
+  const foodTotal = t.food * (nights + 1) * travelers;
+  const transportTotal = t.transport * nights * travelers;
+  const actTotal = activityTotal * travelers;
+  const total = accomTotal + foodTotal + transportTotal + actTotal;
+  const perPerson = total / travelers;
+  const perDay = total / (nights + 1);
+
+  const rows = [
+    ['Accommodation (' + nights + ' nights)', accomTotal],
+    ['Meals & Drinks (' + (nights+1) + ' days)', foodTotal],
+    ['Local Transport', transportTotal],
+    ['Tours & Activities', actTotal],
+  ];
+
+  const tbody = document.getElementById('breakdown');
+  tbody.innerHTML = rows.map(([label, val]) =>
+    '<tr><td style="padding:0.5rem;border-bottom:1px solid #e2e8ed;">' + label + '</td><td style="padding:0.5rem;text-align:right;border-bottom:1px solid #e2e8ed;font-weight:600;">$' + val.toLocaleString() + '</td></tr>'
+  ).join('');
+
+  document.getElementById('total').textContent = '$' + total.toLocaleString();
+  document.getElementById('perperson').textContent = '$' + Math.round(perPerson).toLocaleString();
+  document.getElementById('perday').textContent = '$' + Math.round(perDay).toLocaleString();
+  document.getElementById('results').style.display = 'block';
+}
+</script>
+
+{% include "footer.njk" %}

@@ -1,0 +1,91 @@
+---
+title: "Compare Zanzibar Tours Side by Side | Spice & Sail"
+description: "Compare Zanzibar tours by price, duration, category, and what's included. Find the best tour for your budget and interests."
+permalink: /compare-tours/index.html
+---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
+<main class="" id="main-content">
+  <header class="page-header">
+    <h1>Compare Zanzibar Tours</h1>
+    <p class="page-meta">Side-by-side comparison of all Spice & Sail tours. Filter by category, price, and duration to find your perfect excursion.</p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="table-responsive" style="overflow-x:auto;">
+        <table class="comparison-table" style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+          <thead>
+            <tr style="background:#003853;color:#fff;">
+              <th style="padding:0.75rem;text-align:left;">Tour</th>
+              <th style="padding:0.75rem;text-align:left;">Category</th>
+              <th style="padding:0.75rem;text-align:left;">Duration</th>
+              <th style="padding:0.75rem;text-align:right;">Price (USD)</th>
+              <th style="padding:0.75rem;text-align:left;">Deposit</th>
+              <th style="padding:0.75rem;text-align:left;">Weather Policy</th>
+              <th style="padding:0.75rem;text-align:center;">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for svc in conciergeCat.services %}
+              {% if svc.type == "tour" %}
+              <tr style="border-bottom:1px solid #e2e8ed;{% if loop.index % 2 == 0 %}background:#f8fafc;{% endif %}">
+                <td style="padding:0.75rem;font-weight:600;">{{ svc.name }}</td>
+                <td style="padding:0.75rem;">{{ svc.category }}</td>
+                <td style="padding:0.75rem;">{{ svc.duration }}</td>
+                <td style="padding:0.75rem;text-align:right;font-weight:700;">${{ svc.pricing.min }}–${{ svc.pricing.max }}</td>
+                <td style="padding:0.75rem;">{% if svc.pricing.depositPercent > 0 %}{{ svc.pricing.depositPercent }}%{% else %}0%{% endif %}</td>
+                <td style="padding:0.75rem;font-size:0.8rem;">{{ svc.importantNotes[0] if svc.importantNotes else 'Standard' }}</td>
+                <td style="padding:0.75rem;text-align:center;">
+                  <a href="/tours/{{ svc.slug }}/" class="btn btn-sm btn-primary">View</a>
+                </td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Quick Guide</span>
+        <h2>Which Tour Is Right for You?</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card reveal" style="padding:1.5rem;">
+          <h3>💰 Budget-Friendly (Under $60)</h3>
+          <p>Stone Town walking tour, village community tour, sunset dhow cruise, Jozani Forest. Great for travelers watching costs without missing the highlights.</p>
+        </div>
+        <div class="card reveal delay-2" style="padding:1.5rem;">
+          <h3>🌊 Marine & Snorkeling</h3>
+          <p>Safari Blue, Mnemba snorkeling, Nakupenda sandbank, Prison Island combo. All include snorkel gear and marine park fees.</p>
+        </div>
+        <div class="card reveal delay-3" style="padding:1.5rem;">
+          <h3>Airport & Transfers</h3>
+          <p>Private airport transfers from $25 (Stone Town) to $55 (East Coast). 0% deposit — pay driver on arrival.</p>
+        </div>
+        <div class="card reveal delay-4" style="padding:1.5rem;">
+          <h3>Multi-Day Packages</h3>
+          <p>Zanzibar Essentials 3-Day Pass saves $65–305 vs booking separately. Includes all transfers, fees, and WhatsApp concierge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content reveal">
+      <h2>Not Sure Which Tour?</h2>
+      <p>Message us on WhatsApp with your dates, budget, and interests. We'll recommend the perfect combination within 24 hours.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I'd like help choosing tours" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Get Personalized Advice</a>
+        <a href="/tours/" class="btn btn-outline btn-lg">Browse All Tours</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include "footer.njk" %}
