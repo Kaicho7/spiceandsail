@@ -1918,6 +1918,852 @@
       "pl": "Wczytaj więcej hoteli",
       "ar": "حمل المزيد من الفنادق",
       "ru": "Загрузить ещё отели"
+    },
+    "hotels_badge": {
+      "en": "Curated Accommodation & Logistics Directory",
+      "it": "Directory Curato di Alloggi e Logistica",
+      "de": "Kuratiertes Unterkunfts- & Logistik-Verzeichnis",
+      "fr": "Annuaire Sélectionné Hébergement & Logistique",
+      "pl": "Skuratoryzowany Katalog Noclegów i Logistyki",
+      "ar": "دليل الإقامة واللوجستيات المنسق",
+      "ru": "Курируемый Каталог Размещения и Логистики"
+    },
+    "hotels_main_title": {
+      "en": "Where to Stay in Zanzibar — 198 Hotels in Our Directory",
+      "it": "Dove Soggiornare a Zanzibar — 198 Hotel nel Nostro Elenco",
+      "de": "Wo übernachten auf Sansibar — 198 Hotels in Unserem Verzeichnis",
+      "fr": "Où Séjourner à Zanzibar — 198 Hôtels dans Notre Répertoire",
+      "pl": "Gdzie Zostać na Zanzibarze — 198 Hoteli w Naszej Bibliotece",
+      "ar": "أين تقيمون في زنجبار — 198 فندقاً في دليلنا",
+      "ru": "Где Остаться на Занзибаре — 198 Отелей в Нашем Каталоге"
+    },
+    "hotels_main_desc": {
+      "en": "Explore Zanzibar's beachfront resorts, boutique villas, and historic Stone Town retreats across Unguja and Pemba. <strong>198 hotels in our directory</strong>, including <strong>5 partner hotels with verified rates & direct booking</strong>. Door-to-door airport transfers and excursion lobby pickups available for all.",
+      "it": "Esplora i resort fronte mare di Zanzibar, le ville boutique e i rifugi storici di Stone Town a Unguja e Pemba. <strong>198 hotel nel nostro elenco</strong>, inclusi <strong>5 hotel partner con tariffe verificate e prenotazione diretta</strong>. Trasferimenti aeroportuali porta a porta e pick-up in hall per le escursioni disponibili per tutti.",
+      "de": "Entdecken Sie Sansibars Strandresorts, Boutique-Villen und historische Stone-Town-Retreats auf Unguja und Pemba. <strong>198 Hotels in unserem Verzeichnis</strong>, darunter <strong>5 Partner-Hotels mit verifizierten Preisen & Direktbuchung</strong>. Tür-zu-Tür-Flughafentransfers und Ausflugs-Abholungen in der Lobby für alle verfügbar.",
+      "fr": "Explorez les complexes balnéaires de Zanzibar, les villas de charme et les retraites historiques de Stone Town à Unguja et Pemba. <strong>198 hôtels dans notre répertoire</strong>, dont <strong>5 hôtels partenaires avec tarifs vérifiés et réservation directe</strong>. Transferts aéroport porte-à-porte et prises en charge au hall pour les excursions disponibles pour tous.",
+      "pl": "Odkryj plażowe kurorty Zanzibaru, boutique owe wille i historyczne ucieczki do Stone Town na Unguja i Pemba. <strong>198 hoteli w naszej bibliotece</strong>, w tym <strong>5 hoteli partnerskich z zweryfikowanymi stawkami i bezpośrednią rezerwacją</strong>. Transfery lotniskowe drzwi w drzwi i odbior w recepcji dostępne dla wszystkich.",
+      "ar": "استكشف المنتجعات الشاطئية في زنجبار، فلل البوتيك، والمنتجعات التاريخية في ستون تاون عبر أنغوجا وبمبا. <strong>198 فندقاً في دليلنا</strong>، بما في ذلك <strong>5 فنادق شريكة بأسعار مؤكدة وحجز مباشر</strong>. نقل من المطار من الباب إلى الباب واستقبال في اللوبي للرحلات متاح للجميع.",
+      "ru": "Исследуйте пляжные курорты Занзибара, бутик-виллы и исторические уединенные уголки Стоун-Тауна на Унгудже и Пембе. <strong>198 отелей в нашем каталоге</strong>, включая <strong>5 партнерских отелей с проверенными тарифами и прямым бронированием</strong>. Трансферы от двери до двери из аэропорта и встреча в вестибюле для экскурсий доступны для всех."
+    },
+    "hotels_book_transfer": {
+      "en": "Book Airport Transfer (Standard Rates)",
+      "it": "Prenota Transfer Aeroportuale (Tariffe Standard)",
+      "de": "Flughafentransfer Buchen (Standardpreise)",
+      "fr": "Réserver Transfert Aéroport (Tarifs Standards)",
+      "pl": "Zarezerwuj Transfer Lotniskowy (Stawki Standardowe)",
+      "ar": "احجز توصيل المطار (أسعار قياسية)",
+      "ru": "Забронировать Аэропорт Трансфер (Стандартные Тарифы)"
+    },
+    "hotels_whatsapp_concierge": {
+      "en": "WhatsApp Hotel Concierge",
+      "it": "Concierge Hotel WhatsApp",
+      "de": "WhatsApp Hotel Concierge",
+      "fr": "Concierge Hôtel WhatsApp",
+      "pl": "Koncierż Hotelowy WhatsApp",
+      "ar": "كونسييرج فندق واتساب",
+      "ru": "WhatsApp Консьерж Отеля"
+    },
+    "hotels_book_direct": {
+      "en": "Book Direct",
+      "it": "Prenota Direttamente",
+      "de": "Direkt Buchen",
+      "fr": "Réserver Directement",
+      "pl": "Rezerwuj Bezpośrednio",
+      "ar": "احجز مباشرة",
+      "ru": "Бронировать Напрямую"
+    },
+    "hotels_our_contracted": {
+      "en": "Our 5 Contracted Hotels",
+      "it": "I Nostri 5 Hotel Contrattati",
+      "de": "Unsere 5 Vertragshotels",
+      "fr": "Nos 5 Hôtels Contractés",
+      "pl": "Nasze 5 Hoteli Kontraktowanych",
+      "ar": "فنادقنا الخمسة المتعاقد معها",
+      "ru": "Наши 5 Контрактных Отелей"
+    },
+    "hotels_contracted_desc": {
+      "en": "These are the properties we hold direct rates for. Compare the published from-rate, then send your dates for a confirmed quote — with the airport transfer and tours added in one reply.",
+      "it": "Queste sono le strutture per cui deteniamo tariffe dirette. Confronta la tariffa pubblicata, poi invia le tue date per un preventivo confermato — con il transfer aeroportuale e i tour aggiunti in un'unica risposta.",
+      "de": "Dies sind die Properties, für die wir Direktpreise halten. Vergleichen Sie den veröffentlichten Ab-Preis, senden Sie dann Ihre Termine für ein bestätigtes Angebot — mit Flughafentransfer und Touren in einer Antwort.",
+      "fr": "Ce sont les propriétés pour lesquelles nous détenons des tarifs directs. Comparez le tarif publié, puis envoyez vos dates pour un devis confirmé — avec le transfert aéroport et les excursions ajoutés en une seule réponse.",
+      "pl": "To obiekty, dla których posiadamy stawki bezpośrednie. Porównaj opublikowaną cenę od, a następnie wyślij swoje daty dla potwierdzonego cennika — z transferem lotniskowym i wycieczkami dodanymi w jednej odpowiedzi.",
+      "ar": "هذه هي المنشآت التي نحمل لها أسعاراً مباشرة. قارن السعر المنشور، ثم أرسل تواريخك لعرض سعر مؤكد — مع توصيل المطار والجولات مضافين في رد واحد.",
+      "ru": "Это объекты, для которых у нас есть прямые тарифы. Сравните опубликованную цену от, затем отправьте свои даты для подтвержденного предложения — с трансфером из аэропорта и турами в одном ответе."
+    },
+    "hotels_badge_luxury": {
+      "en": "Luxury",
+      "it": "Lusso",
+      "de": "Luxus",
+      "fr": "Luxe",
+      "pl": "Luksus",
+      "ar": "فاخر",
+      "ru": "Люкс"
+    },
+    "hotels_from_rate": {
+      "en": "From $",
+      "it": "Da $",
+      "de": "Ab $",
+      "fr": "À partir de $",
+      "pl": "Od $",
+      "ar": "من $",
+      "ru": "От $"
+    },
+    "hotels_rate_unit": {
+      "en": "per night",
+      "it": "a notte",
+      "de": "pro Nacht",
+      "fr": "par nuit",
+      "pl": "za noc",
+      "ar": "ليلاً",
+      "ru": "за ночь"
+    },
+    "hotels_seasonal_rates": {
+      "en": "Seasonal rates confirmed by team",
+      "it": "Tariffe stagionali confermate dal team",
+      "de": "Saisonale Preise durch Team bestätigt",
+      "fr": "Tarifs saisonniers confirmés par l'équipe",
+      "pl": "Stawki sezonowe potwierdzone przez zespół",
+      "ar": "أسعار موسمية مؤكدة من قبل الفريق",
+      "ru": "Сезонные тарифы подтверждены командой"
+    },
+    "hotels_check_availability": {
+      "en": "Check availability",
+      "it": "Verifica disponibilità",
+      "de": "Verfügbarkeit prüfen",
+      "fr": "Vérifier disponibilité",
+      "pl": "Sprawdź dostępność",
+      "ar": "تحقق من التوافر",
+      "ru": "Проверить доступность"
+    },
+    "hotels_view_rates": {
+      "en": "View rates",
+      "it": "Visualizza tariffe",
+      "de": "Preise anzeigen",
+      "fr": "Voir tarifs",
+      "pl": "Zobacz stawki",
+      "ar": "عرض الأسعار",
+      "ru": "Посмотреть тарифы"
+    },
+    "hotels_ask_whatsapp": {
+      "en": "Ask on WhatsApp",
+      "it": "Chiedi su WhatsApp",
+      "de": "Auf WhatsApp fragen",
+      "fr": "Demander sur WhatsApp",
+      "pl": "Zapytaj na WhatsApp",
+      "ar": "اسأل على واتساب",
+      "ru": "Спросить в WhatsApp"
+    },
+    "hotels_logistics_banner": {
+      "en": "Seamless Island Logistics",
+      "it": "Logistica dell'Isola Senza Intoppi",
+      "de": "Nahtlose Insel-Logistik",
+      "fr": "Logistique Insulaire Fluide",
+      "pl": "Bezproblemowa Logistyka Wyspowa",
+      "ar": "لوجستيات الجزيرة السلسة",
+      "ru": "Бесшовная Логистика Острова"
+    },
+    "hotels_already_booked": {
+      "en": "Already Booked Your Hotel? We Handle Your Transfers & Excursions.",
+      "it": "Hai Già Prenotato il Tuo Hotel? Gestiamo i Tuoi Trasferimenti & Escursioni.",
+      "de": "Hotel Bereits Gebucht? Wir Übernehmen Ihre Transfers & Ausflüge.",
+      "fr": "Déjà Réservé Votre Hôtel ? Nous Gérons Vos Transferts et Excursions.",
+      "pl": "Masz Już Zarezerwowany Hotel? Zajmiemy Się Twoimi Transferami i Wycieczkami.",
+      "ar": "هل حجزت فندقك بالفعل؟ نحن نتولى توصيلاتك ورحلاتك.",
+      "ru": "Уже Забронировали Отель? Мы Организуем Ваши Трансферы и Экскурсии."
+    },
+    "hotels_transfer_desc": {
+      "en": "We provide private air-conditioned terminal pickups to all {{ count }} Zanzibar accommodations with meet-and-greet, flight delay tracking, and direct lobby pickups for Mnemba, Safari Blue, and Stone Town tours.",
+      "it": "Forniamo prelievi privati con aria condizionata al terminale per tutte le {{ count }} sistemazioni di Zanzibar con accoglienza, tracciamento ritardi voli e prelievo diretto in hall per tour Mnemba, Safari Blue e Stone Town.",
+      "de": "Wir bieten private klimatisierte Terminalabholungen für alle {{ count }} Unterkünfte auf Sansibar mit Meet & Greet, Flugverspätungsverfolgung und direkter Lobbyabholung für Mnemba, Safari Blue und Stone Town Touren.",
+      "fr": "Nous fournissons des prises en charge privées climatisées au terminal pour tous les {{ count }} hébergements de Zanzibar avec accueil, suivi des retards de vol et prise en charge directe au hall pour les tours Mnemba, Safari Blue et Stone Town.",
+      "pl": "Zapewniamy prywatne przejazdy klimatyzowane z terminala do wszystkich {{ count }} zakwaterowań na Zanzibarze ze spotkaniem, śledzeniem opóźnień lotów i odbiorem w recepcji na wycieczki Mnemba, Safari Blue i Stone Town.",
+      "ar": "نحن نقدم خدمة استلام خاصة مكيفة من المبنى لجميع أماكن الإقامة الـ {{ count }} في زنجبار مع الاستقبال، تتبع تأخير الرحلات، والاستلام المباشر من اللوبي لجولات منيمبا،سفاري بلو، وستون تاون.",
+      "ru": "Мы предоставляем частные климатизированные трансферы из терминала ко всем {{ count }} размещениям Занзибара с встречей, отслеживанием задержек рейсов и прямым забором из вестибюля для туров Мнемба, Сафари Блю и Стоун-Таун."
+    },
+    "hotels_standard_rates": {
+      "en": "Standardized Transfer Rates",
+      "it": "Tariffe Transferts Standardizzate",
+      "de": "Standardisierte Transferpreise",
+      "fr": "Tarifs de Transfert Standardisés",
+      "pl": "Standaryzowane Stawki Transferów",
+      "ar": "أسعار التوصيل القياسية",
+      "ru": "Стандартизированные Тарифы Трансферов"
+    },
+    "hotels_calculator_link": {
+      "en": "Open Fare Calculator →",
+      "it": "Apri Calcolo Tariffe →",
+      "de": "Preisrechner Öffnen →",
+      "fr": "Ouvrir Calculateur de Tarifs →",
+      "pl": "Otwórz Kalkulator Cen →",
+      "ar": "افتح حاسبة الأسعار →",
+      "ru": "Открыть Калькулятор Цен →"
+    },
+    "hotels_search_placeholder": {
+      "en": "Search hotel name, zone, or beach...",
+      "it": "Cerca nome hotel, zona o spiaggia...",
+      "de": "Hotelname, Zone oder Strand suchen...",
+      "fr": "Rechercher nom d'hôtel, zone ou plage...",
+      "pl": "Szukaj nazwy hotelu, strefy lub plaży...",
+      "ar": "ابحث عن اسم الفندق، المنطقة، أو الشاطئ...",
+      "ru": "Поиск названия отеля, зоны или пляжа..."
+    },
+    "hotels_showing": {
+      "en": "Showing",
+      "it": "Visualizzati",
+      "de": "Anzeigen",
+      "fr": "Affichage",
+      "pl": "Wyświetlano",
+      "ar": "جاري العرض",
+      "ru": "Показано"
+    },
+    "hotels_of": {
+      "en": "of",
+      "it": "di",
+      "de": "von",
+      "fr": "de",
+      "pl": "z",
+      "ar": "من",
+      "ru": "из"
+    },
+    "hotels_curated_properties": {
+      "en": "curated properties",
+      "it": "proprietà curate",
+      "de": "kuratierte Properties",
+      "fr": "propriétés sélectionnées",
+      "pl": "skuratoryzowane obiekty",
+      "ar": "عقارات منسقة",
+      "ru": "курируемые объекты"
+    },
+    "hotels_zone_filter": {
+      "en": "Zone:",
+      "it": "Zona:",
+      "de": "Zone:",
+      "fr": "Zone :",
+      "pl": "Strefa:",
+      "ar": "المنطقة:",
+      "ru": "Зона:"
+    },
+    "hotels_all_zones": {
+      "en": "All Zones",
+      "it": "Tutte le Zone",
+      "de": "Alle Zonen",
+      "fr": "Toutes les Zones",
+      "pl": "Wszystkie Strefy",
+      "ar": "جميع المناطق",
+      "ru": "Все Зоны"
+    },
+    "hotels_tier_filter": {
+      "en": "Tier:",
+      "it": "Fascia:",
+      "de": "Kategorie:",
+      "fr": "Catégorie :",
+      "pl": "Klasa:",
+      "ar": "الفئة:",
+      "ru": "Категория:"
+    },
+    "hotels_all_tiers": {
+      "en": "All Tiers",
+      "it": "Tutte le Fasce",
+      "de": "Alle Kategorien",
+      "fr": "Toutes les Catégories",
+      "pl": "Wszystkie Klasy",
+      "ar": "جميع الفئات",
+      "ru": "Все Категории"
+    },
+    "hotels_all_loaded": {
+      "en": "All properties loaded",
+      "it": "Tutte le proprietà caricate",
+      "de": "Alle Properties geladen",
+      "fr": "Toutes les propriétés chargées",
+      "pl": "Wszystkie obiekty wczytane",
+      "ar": "تم تحميل جميع العقارات",
+      "ru": "Все объекты загружены"
+    },
+    "hotels_no_match": {
+      "en": "No properties matched your selected filters. Please reset your search.",
+      "it": "Nessuna proprietà corrisponde ai filtri selezionati. Reimposta la ricerca.",
+      "de": "Keine Properties entsprechen den gewählten Filtern. Bitte Suche zurücksetzen.",
+      "fr": "Aucune propriété ne correspond aux filtres sélectionnés. Veuillez réinitialiser votre recherche.",
+      "pl": "Żaden obiekt nie pasuje do wybranych filtrów. Zresetuj wyszukiwanie.",
+      "ar": "لا توجد عقارات مطابقة لفلاترك المحددة. يرجى إعادة تعيين البحث.",
+      "ru": "Нет объектов, соответствующих выбранным фильтрам. Сбросьте поиск."
+    },
+    "hotels_browse_all": {
+      "en": "Browse all {{ count }} Zanzibar properties",
+      "it": "Sfoglia tutti i {{ count }} immobili a Zanzibar",
+      "de": "Alle {{ count }} Zanzibar-Properties durchsuchen",
+      "fr": "Parcourir tous les {{ count }} établissements de Zanzibar",
+      "pl": "Przeglądaj wszystkie {{ count }} obiekty na Zanzibarze",
+      "ar": "تصفح جميع عقارات زنجبار الـ {{ count }}",
+      "ru": "Просмотр всех {{ count }} объектов Занзибара"
+    },
+    "hotels_listed_for_discovery": {
+      "en": "Every property is listed here for discovery. Select a name to open its full hotel card and enquiry options.",
+      "it": "Ogni proprietà è elencata qui per la scoperta. Seleziona un nome per aprire la scheda completa dell'hotel e le opzioni di richiesta.",
+      "de": "Jede Property ist hier zur Entdeckung gelistet. Wählen Sie einen Namen, um die vollständige Hotelkarte und Anfrageoptionen zu öffnen.",
+      "fr": "Chaque propriété est listée ici pour la découverte. Sélectionnez un nom pour ouvrir sa fiche hôtelière complète et les options de demande.",
+      "pl": "Każdy obiekt jest tutaj wymieniony do odkrywania. Wybierz nazwę, aby otworzyć pełną kartę hotelu i opcje zapytania.",
+      "ar": "كل عقار مدرج هنا للاكتشاف. اختر اسماً لفتح بطاقة الفندق الكاملة وخيارات الاستفسار.",
+      "ru": "Каждый объект перечислен здесь для обнаружения. Выберите название, чтобы открыть полную карточку отеля и варианты запроса."
+    },
+    "hotels_stay_tour_bundles": {
+      "en": "Stay + Tour Bundles",
+      "it": "Soggiorno + Pacchetti Tour",
+      "de": "Aufenthalt + Tour-Pakete",
+      "fr": "Séjour + Forfaits Excursions",
+      "pl": "Pobyt + Pakiety Wycieczek",
+      "ar": "إقامة + باقات جولات",
+      "ru": "Проживание + Турпакеты"
+    },
+    "hotels_custom_packages": {
+      "en": "Custom Hotel Packages — Room, Ride & Experience in One Booking",
+      "it": "Pacchetti Hotel Personalizzati — Camera, Trasferimento ed Esperienza in Un'Unica Prenotazione",
+      "de": "Individuelle Hotelpakete — Zimmer, Transfer & Erlebnis in Einer Buchung",
+      "fr": "Forfaits Hôtel Sur Mesure — Chambre, Transfert et Expérience en Une Réservation",
+      "pl": "Własne Pakiety Hotelowe — Pokój, Przejazd i Doświadczenie w Jednej Rezerwacji",
+      "ar": "باقات فنادق مخصصة — غرفة، نقل وتجربة في حجز واحد",
+      "ru": "Индивидуальные Отельные Пакеты — Номер, Трансфер и Впечатления вОдном Бронировании"
+    },
+    "hotels_package_desc": {
+      "en": "Built on our contracted partner hotels. One message books the room, the airport transfer and the tour — no OTA non-refundable traps, no hidden extras.",
+      "it": "Basati sui nostri hotel partner contrattati. Un messaggio prenota la camera, il transfer aeroportuale e il tour — niente trappole non rimborsabili OTA, niente extra nascosti.",
+      "de": "Aufbauend auf unseren vertraglich gebundenen Partner-Hotels. Eine Nachricht bucht das Zimmer, den Flughafentransfer und die Tour — keine nicht erstattungsfähigen OTA-Fallen, keine versteckten Extras.",
+      "fr": "Basés sur nos hôtels partenaires contractés. Un message réserve la chambre, le transfert aéroport et l'excursion — pas de pièges non remboursables OTA, pas de frais cachés.",
+      "pl": "Opierają się na naszych hoteliach partnerskich kontraktowanych. Jedna wiadomość rezerwuje pokój, transfer lotniskowy i wycieczkę — bez nieodwracalnych pułapek OTA, bez ukrytych dodatków.",
+      "ar": "مبنية على فنادقنا الشريكة المتعاقد معها. رسالة واحدة تحجز الغرفة، توصيل المطار، والجولة — لا فخاخ غير قابلة للاسترداد من وكالات السفر، لا إضافات مخفية.",
+      "ru": "Построены на наших партнерских отелях по контракту. Одно сообщение бронирует номер, трансфер из аэропорта и тур — никаких не возвращаемых ловушек OTA, никаких скрытых доплат."
+    },
+    "hotels_per_person": {
+      "en": "per person",
+      "it": "a persona",
+      "de": "pro Person",
+      "fr": "par personne",
+      "pl": "na osobę",
+      "ar": "لكل شخص",
+      "ru": "на человека"
+    },
+    "hotels_nights": {
+      "en": "nights",
+      "it": "notti",
+      "de": "Nächte",
+      "fr": "nuits",
+      "pl": "noce",
+      "ar": "ليالي",
+      "ru": "ночей"
+    },
+    "hotels_why_it_works": {
+      "en": "Why it works:",
+      "it": "Perché funziona:",
+      "de": "Warum es funktioniert:",
+      "fr": "Pourquoi ça marche :",
+      "pl": "Dlaczego to działa:",
+      "ar": "لماذا يعمل:",
+      "ru": "Почему это работает:"
+    },
+    "hotels_reserve_package": {
+      "en": "Reserve this package on WhatsApp",
+      "it": "Prenota questo pacchetto su WhatsApp",
+      "de": "Dieses Paket auf WhatsApp reservieren",
+      "fr": "Réserver ce forfait sur WhatsApp",
+      "pl": "Zarezerwuj ten pakiet na WhatsApp",
+      "ar": "احجز هذه الباقة على واتساب",
+      "ru": "Забронировать этот пакет в WhatsApp"
+    },
+    "hotels_indicative_rates": {
+      "en": "Indicative partner rates — our team confirms exact dates, availability and final total before any payment.",
+      "it": "Tariffe partner indicative — il nostro team conferma date esatte, disponibilità e totale finale prima di qualsiasi pagamento.",
+      "de": "Indikative Partnerpreise — unser Team bestätigt genaue Daten, Verfügbarkeit und endgültigen Gesamtbetrag vor jeder Zahlung.",
+      "fr": "Tarifs partenaires indicatifs — notre équipe confirme les dates exactes, la disponibilité et le total final avant tout paiement.",
+      "pl": "Stawki partnerskie orientacyjne — nasz zespół potwierdza dokładne daty, dostępność i ostateczną sumę przed jakąkolwiek płatnością.",
+      "ar": "أسعار شركاء إرشادية — فريقنا يؤكد التواريخ الدقيقة، التوفر، والمجموع النهائي قبل أي دفعة.",
+      "ru": "Ориентировочные тарифы партнеров — наша команда подтверждает точные даты, доступность и итоговую сумму перед любой оплатой."
+    },
+    "hotels_seasonal_rates_title": {
+      "en": "Season-by-Season Rates, Priced For You",
+      "it": "Tariffe Stagione per Stagione, Prezzi per Te",
+      "de": "Saison-für-Saison Preise, Für Sie Berechnet",
+      "fr": "Tarifs Saison par Saison, Tarifés Pour Vous",
+      "pl": "Stawki Sezon po Sezonie, Wycenione dla Ciebie",
+      "ar": "أسعار موسماً بموسم، مصممة لك",
+      "ru": "Тарифы Сезон за Сезоном, Расценены Для Вас"
+    },
+    "hotels_rack_sheet": {
+      "en": "Published Rack Sheet, Priced For You",
+      "it": "Foglio Tariffe Pubblicato, Prezzi per Te",
+      "de": "Veröffentlicht Rack-Rate, Für Sie Bepreist",
+      "fr": "Grille de Tarifs Publiée, Tarifiée Pour Vous",
+      "pl": "Opublikowana Tabela Stawek, Wyceniona dla Ciebie",
+      "ar": "ورقة الأسعار المنشورة، مصممة لك",
+      "ru": "Опубликованный Прайс-Лист, Расценен Для Вас"
+    },
+    "hotels_season_label": {
+      "en": "Season",
+      "it": "Stagione",
+      "de": "Saison",
+      "fr": "Saison",
+      "pl": "Sezon",
+      "ar": "الموسم",
+      "ru": "Сезон"
+    },
+    "hotels_current": {
+      "en": "CURRENT",
+      "it": "ATTUALE",
+      "de": "AKTUELL",
+      "fr": "ACTUEL",
+      "pl": "AKTUALNY",
+      "ar": "الحالي",
+      "ru": "ТЕКУЩИЙ"
+    },
+    "hotels_half_board": {
+      "en": "Half Board",
+      "it": "Mezza Pensione",
+      "de": "Halbpension",
+      "fr": "Demi-Pension",
+      "pl": "Półpansjon",
+      "ar": "نصف إقامة",
+      "ru": "Полупансион"
+    },
+    "hotels_all_inclusive": {
+      "en": "All Inclusive",
+      "it": "Tutto Incluso",
+      "de": "All Inclusive",
+      "fr": "Tout Compris",
+      "pl": "Wszystko Wliczone",
+      "ar": "شامل بالكامل",
+      "ru": "Всё Включено"
+    },
+    "hotels_rack_rate": {
+      "en": "rack",
+      "it": "listino",
+      "de": "Listenpreis",
+      "fr": "tarif public",
+      "pl": "cena katalogowa",
+      "ar": "السعر الرسمي",
+      "ru": "райный"
+    },
+    "hotels_our_rate": {
+      "en": "our rate",
+      "it": "nostro prezzo",
+      "de": "unser Preis",
+      "fr": "notre tarif",
+      "pl": "nasza cena",
+      "ar": "سعرنا",
+      "ru": "наш тариф"
+    },
+    "hotels_min_nights": {
+      "en": "Minimum 2 nights (4 nights in Festive Season 21 Dec – 07 Jan)",
+      "it": "Minimo 2 notti (4 notti in Stagione Festiva 21 Dic – 07 Gen)",
+      "de": "Mindestaufenthalt 2 Nächte (4 Nächte in der Festtagsaison 21. Dez – 07. Jan)",
+      "fr": "Minimum 2 nuits (4 nuits en Saison Festive 21 Déc – 07 Janv)",
+      "pl": "Minimum 2 noce (4 noce w sezonie świątecznym 21 gru – 07 sty)",
+      "ar": "حد أدنى ليلتان (4 ليالي في موسم الأعياد 21 كانون الأول – 7 كانون الثاني)",
+      "ru": "Минимум 2 ночи (4 ночи в праздничный сезон 21 дек – 07 янв)"
+    },
+    "hotels_extra_person": {
+      "en": "Extra person: +$60 Half Board · All Inclusive +$75 (17+) / +$50 (ages 4–16), under 4 free",
+      "it": "Persona extra: +$60 Mezza Pensione · Tutto Incluso +$75 (17+) / +$50 (età 4–16), sotto i 4 gratis",
+      "de": "Zusatzperson: +$60 Halbpension · All Inclusive +$75 (17+) / +$50 (Alter 4–16), unter 4 gratis",
+      "fr": "Personne supplémentaire : +$60 Demi-Pension · Tout Compris +$75 (17+) / +$50 (4–16 ans), moins de 4 gratuit",
+      "pl": "Osoba dodatkowa: +$60 Półpansjon · Wszystko Wliczone +$75 (17+) / +$50 (wiek 4–16), poniżej 4 gratis",
+      "ar": "شخص إضافي: +$60 نصف إقامة · شامل بالكامل +$75 (17+) / +$50 (أعمار 4–16)، تحت 4 مجاناً",
+      "ru": "Доп. человек: +$60 Полупансион · Всё Включено +$75 (17+) / +$50 (возраст 4–16), до 4 бесплатно"
+    },
+    "hotels_taxes_included": {
+      "en": "All taxes and fees included — Zanzibar infrastructure tax is not added on top",
+      "it": "Tutte le tasse e commissioni incluse — la tassa infrastrutturale di Zanzibar non viene aggiunta sopra",
+      "de": "Alle Steuern und Gebühren inklusive — Sansibars Infrastruktursteuer wird nicht oben drauf gerechnet",
+      "fr": "Toutes taxes et frais inclus — la taxe d'infrastructure de Zanzibar n'est pas ajoutée en plus",
+      "pl": "Wszystkie podatki i opłaty wliczone — podatek infrastrukturalny Zanzibaru nie jest dodawany na górze",
+      "ar": "جميع الضرائب والرسوم مشمولة — ضريبة البنية التحتية في زنجبار لا تُضاف فوق السعر",
+      "ru": "Все налоги и сборы включены — налог на инфраструктуру Занзибара не добавляется сверху"
+    },
+    "hotels_discount_below_rack": {
+      "en": "Our rate is {{ disc }}% below the hotel's published rack rate. Breakfast included.",
+      "it": "Il nostro prezzo è il {{ disc }}% sotto il listino pubblicato dell'hotel. Colazione inclusa.",
+      "de": "Unser Preis liegt {{ disc }}% unter dem veröffentlichten Rack-Preis des Hotels. Frühstück inklusive.",
+      "fr": "Notre tarif est {{ disc }}% en dessous du tarif rack publié de l'hôtel. Petit-déjeuner inclus.",
+      "pl": "Nasza cena to {{ disc }}% poniżej opublikowanej stawki katalogowej hotelu. Śniadanie wliczone.",
+      "ar": "سعرنا أقل بـ {{ disc }}% من السعر الرسمي المنشور للفندق. الإفطار مشمول.",
+      "ru": "Наш тариф на {{ disc }}% ниже опубликованного рейтового тарифа отеля. Завтрак включен."
+    },
+    "hotels_real_photos": {
+      "en": "Real Photos — No Stock Imagery",
+      "it": "Foto Reali — Niente Immagini Stock",
+      "de": "Echte Fotos — Keine Stock-Bilder",
+      "fr": "Vraies Photos — Pas d'Images Stock",
+      "pl": "Prawdziwe Zdjęcia — Bez Zdjęć Stockowych",
+      "ar": "صور حقيقية — لا صور مخزنة",
+      "ru": "Настоящие Фото — Никаких Стоковых Изображений"
+    },
+    "hotels_inside_partner": {
+      "en": "Inside Our Partner Hotels",
+      "it": "Dentro i Nostri Hotel Partner",
+      "de": "In Unseren Partner-Hotels",
+      "fr": "À l'Intérieur de Nos Hôtels Partenaires",
+      "pl": "Wewnątrz Naszych Hoteli Partnerskich",
+      "ar": "داخل فنادقنا الشريكة",
+      "ru": "Внутри Наших Партнерских Отелей"
+    },
+    "hotels_photos_desc": {
+      "en": "Photographed at the property itself — owner-supplied for Malindi and Kokoni, and the hotels' own official galleries for The One Resort and Le Paradis. What you see is what you get.",
+      "it": "Fotografate nella struttura stessa — fornite dai proprietari per Malindi e Kokoni, e dalle gallerie ufficiali degli hotel per The One Resort e Le Paradis. Quello che vedi è quello che ottieni.",
+      "de": "Fotografiert in der Unterkunft selbst — vom Eigentümer bereitgestellt für Malindi und Kokoni, und die offiziellen Galerien der Hotels für The One Resort und Le Paradis. Was Sie sehen, ist das, was Sie bekommen.",
+      "fr": "Photographiées sur la propriété même — fournies par les propriétaires pour Malindi et Kokoni, et les galeries officielles des hôtels pour The One Resort et Le Paradis. Ce que vous voyez est ce que vous obtenez.",
+      "pl": "Zfotografowane w samym obiekcie — dostarczone przez właścicieli dla Malindi i Kokoni, oraz oficjalne galerie hoteli dla The One Resort i Le Paradis. To, co widzisz, to to, co otrzymujesz.",
+      "ar": "تم تصويرها في العقار نفسه — مقدمة من المالكين لـ Malindi و Kokoni، ومعارض الفنادق الرسمية لـ The One Resort و Le Paradis. ما تراه هو ما تحصل عليه.",
+      "ru": "Сфотографировано в самом объекте — предоставлено владельцами для Malindi и Kokoni, и официальными galerie отелей для The One Resort и Le Paradis. То, что вы видите — это то, что вы получаете."
+    },
+    "hotels_room_types": {
+      "en": "Room types",
+      "it": "Tipologie di camere",
+      "de": "Zimmertypen",
+      "fr": "Types de chambres",
+      "pl": "Typy pokoi",
+      "ar": "أنواع الغرف",
+      "ru": "Типы номеров"
+    },
+    "hotels_facilities": {
+      "en": "Facilities & services",
+      "it": "Servizi e strutture",
+      "de": "Einrichtungen & Services",
+      "fr": "Installations et services",
+      "pl": "Udogodnienia i usługi",
+      "ar": "المرافق والخدمات",
+      "ru": "Удобства и сервисы"
+    },
+    "hotels_board_includes": {
+      "en": "What your board includes",
+      "it": "Cosa include la tua pensione",
+      "de": "Was Ihre Verpflegung beinhaltet",
+      "fr": "Ce que votre pension inclut",
+      "pl": "Co zawiera Twój pakiet",
+      "ar": "ما تشمله إقامتك",
+      "ru": "Что входит в ваш пансион"
+    },
+    "hotels_get_my_rate": {
+      "en": "Get my rate",
+      "it": "Ottieni il mio prezzo",
+      "de": "Meinen Preis erhalten",
+      "fr": "Obtenir mon tarif",
+      "pl": "Otrzymaj moją cenę",
+      "ar": "احصل على سعري",
+      "ru": "Получить мой тариф"
+    },
+    "hotels_statutory_regs": {
+      "en": "Mandatory Statutory Regulations",
+      "it": "Regolamenti Statutari Obbligatori",
+      "de": "Obligatorische Gesetzliche Vorschriften",
+      "fr": "Réglementations Légales Obligatoires",
+      "pl": "Obowiązkowe Przepisy Ustawowe",
+      "ar": "اللوائح القانونية الإلزامية",
+      "ru": "Обязательные Законодательные Регуляции"
+    },
+    "hotels_levies_notice": {
+      "en": "Zanzibar Accommodation Levies & Travel Notice",
+      "it": "Tasse di Soggiorno Zanzibar & Avviso di Viaggio",
+      "de": "Sansibar Beherbergungsabgaben & Reisehinweis",
+      "fr": "Taxes de Séjour Zanzibar & Avis de Voyage",
+      "pl": "Opłaty Za Pobyt na Zanzibarze i Komunikat Podróżny",
+      "ar": "رسوم الإقامة في زنجبار وإشعار السفر",
+      "ru": "Сборы за Размещение на Занзибаре и Уведомление для Путешественников"
+    },
+    "hotels_levies_desc": {
+      "en": "Important government regulations applicable to all visitors staying at licensed hotels, villas, and resorts across Unguja and Pemba.",
+      "it": "Importanti regolamenti governativi applicabili a tutti i visitatori che soggiornano in hotel, ville e resort autorizzati a Unguja e Pemba.",
+      "de": "Wichtige staatliche Vorschriften, die für alle Besucher gelten, die in lizenzierten Hotels, Villen und Resorts auf Unguja und Pemba übernachten.",
+      "fr": "Réglementations gouvernementales importantes applicables à tous les visiteurs séjournant dans des hôtels, villas et resorts agréés à Unguja et Pemba.",
+      "pl": "Ważne przepisy rządowe obowiązujące wszystkich gości przebywających в licencjonowanych hotelach, willach i kurortach na Unguja i Pemba.",
+      "ar": "لوائح حكومية هامة تنطبق على جميع الزوار المقيمين في فنادق وفيلات ومنتجعات مرخصة في أنغوجا وبمبا.",
+      "ru": "Важные государственные правила, применимые ко всем посетителям, размещающимся в лицензированных отелях, виллах и курортах на Унгудже и Пембе."
+    },
+    "hotels_infra_levy": {
+      "en": "Tiered Hotel Infrastructure Levy (ZRA)",
+      "it": "Tassa Infrastrutturale Alberghiera a Scaglioni (ZRA)",
+      "de": "Gestaffelte Hotel-Infrastrukturabgabe (ZRA)",
+      "fr": "Taxe d'Infrastructure Hôtelière par Tranches (ZRA)",
+      "pl": "Stopniowy Opłaty Infrastrukturalne Hoteli (ZRA)",
+      "ar": "ضريبة البنية التحتية الفندقية المتدرجة (ZRA)",
+      "ru": "Поступенчатый Сбор за Инфраструктуру Отелей (ZRA)"
+    },
+    "hotels_infra_levy_desc": {
+      "en": "The Zanzibar Revenue Authority (ZRA) levies a statutory accommodation fee per guest/night collected directly at check-in/out: <strong>$5.00</strong> (4–5 star), <strong>$4.00</strong> (2–3 star), <strong>$2.00</strong> (1 star/guesthouses), and <strong>$10.00</strong> for designated private island/underwater suites.",
+      "it": "L'Autorità delle Entrate di Zanzibar (ZRA) applica una tassa di soggiorno per ospite/notte riscossa direttamente al check-in/out: <strong>$5.00</strong> (4–5 stelle), <strong>$4.00</strong> (2–3 stelle), <strong>$2.00</strong> (1 stella/guesthouse), e <strong>$10.00</strong> per suite designate su isole private/subacquee.",
+      "de": "Die Zanzibar Revenue Authority (ZRA) erhebt eine gesetzliche Beherbergungsgebühr pro Gast/Nacht, die direkt beim Check-in/out erhoben wird: <strong>$5.00</strong> (4–5 Sterne), <strong>$4.00</strong> (2–3 Sterne), <strong>$2.00</strong> (1 Stern/Gästehäuser), und <strong>$10.00</strong> für ausgewiesene private Insel/Unterwasser-Suiten.",
+      "fr": "L'Autorité des Recettes de Zanzibar (ZRA) perçoit une taxe de séjour légale par invité/nuit collectée directement au check-in/out : <strong>$5.00</strong> (4–5 étoiles), <strong>$4.00</strong> (2–3 étoiles), <strong>$2.00</strong> (1 étoile/maisons d'hôtes), et <strong>$10.00</strong> pour les suites d'îles privées/sous-marines désignées.",
+      "pl": "Urząd Skarbowy Zanzibaru (ZRA) nalicza ustawową opłatę za pobyt na gościa/noc pobieraną bezpośrednio przy check-in/out: <strong>$5.00</strong> (4–5 gwiazdek), <strong>$4.00</strong> (2–3 gwiazdki), <strong>$2.00</strong> (1 gwiazdka/guesthouse), oraz <strong>$10.00</strong> dla wyznaczonych suit na prywatnych wyspach/podwodnych.",
+      "ar": "تفرض هيئة الإيرادات في زنجبار (ZRA) رسوم إقامة قانونية لكل ضيف/ليلة تُجمع مباشرة عند تسجيل الوصول/المغادرة: <strong>$5.00</strong> (4-5 نجوم)، <strong>$4.00</strong> (2-3 نجوم)، <strong>$2.00</strong> (نجمة واحدة/بيوت ضيافة)، و <strong>$10.00</strong> للأجنحة المحددة في الجزر الخاصة/تحت الماء.",
+      "ru": "Орган доходов Занзибара (ZRA) взимает обязательный сбор за размещение на гостя/ночь, взимаемый непосредственно при заезде/выезде: <strong>$5.00</strong> (4–5 звезд), <strong>$4.00</strong> (2–3 звезды), <strong>$2.00</strong> (1 звезда/гостевые дома), и <strong>$10.00</strong> для обозначенных частных островных/подводных люксов."
+    },
+    "hotels_official_tax": {
+      "en": "Official statutory municipal tax paid to hotel reception.",
+      "it": "Tassa comunale statutaria ufficiale pagata alla reception dell'hotel.",
+      "de": "Offizieller gesetzlicher Gemeindesteuer an der Hotelreception gezahlt.",
+      "fr": "Taxe municipale légale officielle payée à la réception de l'hôtel.",
+      "pl": "Oficjalny ustawowy podatek gminny płacony w recepcji hotelu.",
+      "ar": "ضريبة بلدية قانونية رسمية تدفع في استقبال الفندق.",
+      "ru": "Официальный обязательный муниципальный налог, оплачиваемый на ресепшене отеля."
+    },
+    "hotels_insurance": {
+      "en": "Mandatory Inbound Insurance (ZIC)",
+      "it": "Assicurazione Inbound Obbligatoria (ZIC)",
+      "de": "Obligatorische Einreiseversicherung (ZIC)",
+      "fr": "Assurance Entrante Obligatoire (ZIC)",
+      "pl": "Obowiązkowe Ubezpieczenie Przyjazdu (ZIC)",
+      "ar": "التأمين الإلزامي للوافدين (ZIC)",
+      "ru": "Обязательное Страхование Прибытия (ZIC)"
+    },
+    "hotels_insurance_desc": {
+      "en": "Foreign travelers entering via Zanzibar ports/airports must hold Zanzibar Inbound Travel Insurance from ZIC ($44 adult / $22 child, valid 92 days). For combined Tanzania trips entering via mainland first (e.g. DAR/JRO), follow your first point-of-entry statutory insurer.",
+      "it": "I viaggiatori stranieri che entrano via porti/aeroporti di Zanzibar devono avere l'Assicurazione Viaggio Inbound di Zanzibar da ZIC ($44 adulto / $22 bambino, validità 92 giorni). Per viaggi combinati in Tanzania entrando prima via terraferma (es. DAR/JRO), seguire l'assicuratore statutario del primo punto d'ingresso.",
+      "de": "Ausländische Reisende, die über Sansibars Häfen/Flughäfen einreisen, müssen eine Sansibaareise-Reiseversicherung von ZIC haben ($44 Erwachsener / $22 Kind, 92 Tage gültig). Für kombinierte Tansania-Reisen mit erstem Einreise über Festland (z.B. DAR/JRO), folgen Sie dem gesetzlichen Versicherer des ersten Einreisepunkts.",
+      "fr": "Les voyageurs étrangers entrant par les ports/aéroports de Zanzibar doivent détenir l'Assurance Voyage Entrante de Zanzibar de ZIC ($44 adulte / $22 enfant, validité 92 jours). Pour les voyages combinés en Tanzanie entrant d'abord par le continent (ex. DAR/JRO), suivez l'assureur légal de votre premier point d'entrée.",
+      "pl": "Podróżnicy zagraniczni wjeżdżający przez porty/porty lotnicze Zanzibaru muszą posiadać Zanzibarskie Ubezpieczenie Przyjazdu od ZIC ($44 dorosły / $22 dziecko, ważne 92 dni). Dla podróży łączonych z Tanzanią wjeżdżających najpierw przez ląd (np. DAR/JRO), postępuj zgodnie z ubezpieczycielem ustawowym pierwszego punktu wjazdu.",
+      "ar": "يجب على المسافرين الأجانب الذين يدخلون عبر موانئ/مطارات زنجبار امتلاك تأمين السفر الوافد من زنجبار من ZIC (44$ بالغ / 22$ طفل، صالح لـ 92 يوماً). للرحلات المشتركة إلى تنزانيا التي يدخل عبر البر الرئيسي أولاً (مثل DAR/JRO)، اتبع المؤمن القانوني لنقطة الدخول الأولى.",
+      "ru": "Иностранные путешественники, въезжающие через порты/аэропорты Занзибара, должны иметь Страховку Въезда в Занзибар от ZIC ($44 взрослый / $22 ребенок, 92 дня действия). Для комбинированных поездок в Танзанию с первым въездом через материк (напр. DAR/JRO) следуйте застраховщику первого пункта въезда."
+    },
+    "hotels_apply_portal": {
+      "en": "Apply on Official Government Portal (inbound.visitzanzibar.go.tz) →",
+      "it": "Richiedi sul Portale Governativo Ufficiale (inbound.visitzanzibar.go.tz) →",
+      "de": "Auf Offiziellem Regierungsportal Beantragen (inbound.visitzanzibar.go.tz) →",
+      "fr": "Demander sur le Portail Gouvernemental Officiel (inbound.visitzanzibar.go.tz) →",
+      "pl": "Złóż Wniosek na Urzędowym Porządzie Rządowym (inbound.visitzanzibar.go.tz) →",
+      "ar": "قدم الطلب على البوابة الحكومية الرسمية (inbound.visitzanzibar.go.tz) →",
+      "ru": "Подать Заявку на Официальном Правительственном Портале (inbound.visitzanzibar.go.tz) →"
+    },
+    "hotels_door_to_door": {
+      "en": "Door-to-Door Flat Airport Transfers",
+      "it": "Trasferimenti Aeroportuali Flat Porta a Porta",
+      "de": "Tür-zu-Tür Pauschale Flughafentransfers",
+      "fr": "Transferts Aéroport Porte-à-Porte Forfaitaires",
+      "pl": "Transfery Lotniskowe Drzwi w Drzwi Stała Stawka",
+      "ar": "توصيل المطار من الباب إلى الباب بسعر ثابت",
+      "ru": "Трансферы Аэропорт От Двери До Двери Фиксированная Цена"
+    },
+    "hotels_transfer_desc2": {
+      "en": "Skip unregulated touts outside the airport. Spice & Sail offers fixed private transfers with meet & greet: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} East Coast (Paje/Matemwe) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} North Coast (Nungwi/Kendwa)</strong>.",
+      "it": "Salta i procacciatori non regolamentati fuori dall'aeroporto. Spice & Sail offre transfer privati a tariffa fissa con accoglienza: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Costa Est (Paje/Matemwe) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Costa Nord (Nungwi/Kendwa)</strong>.",
+      "de": "Umgehen Sie unregulierte Anhalter vor dem Flughafen. Spice & Sail bietet feste private Transfers mit Meet & Greet: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Ostküste (Paje/Matemwe) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Nordküste (Nungwi/Kendwa)</strong>.",
+      "fr": "Évitez les rabatteurs non réglementés hors de l'aéroport. Spice & Sail propose des transferts privés à tarif fixe avec accueil : <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Côte Est (Paje/Matemwe) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Côte Nord (Nungwi/Kendwa)</strong>.",
+      "pl": "Omin nielegalnych szantalów przed lotniskiem. Spice & Sail oferuje prywatne przejazdy w cenie stałej ze spotkaniem: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Wschodni Brzeg (Paje/Matemwe) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Północny Brzeg (Nungwi/Kendwa)</strong>.",
+      "ar": "تجنب السماسرة غير المنظمين خارج المطار. سبايس آند سيل تقدم توصيلات خاصة بسعر ثابت مع الاستقبال: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} ستون تاون &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} الساحل الشرقي (باجي/ماتيموي) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} الساحل الشمالي (نونغوي/كيندوا)</strong>.",
+      "ru": "Обойдите нерегулируемых посредников у аэропорта. Spice & Sail предлагает фиксированные частные трансферы с встречей: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Стоун-Таун &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Восточное Побережье (Падже/Матемве) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Северное Побережье (Нунгви/Кендву)</strong>."
+    },
+    "hotels_flight_tracking": {
+      "en": "Real-time flight tracking & 60 min free waiting time.",
+      "it": "Tracciamento voli in tempo reale e 60 min di attesa gratuita.",
+      "de": "Echtzeit-Flugverfolgung & 60 Min kostenlose Wartezeit.",
+      "fr": "Suivi de vol en temps réel et 60 min d'attente gratuite.",
+      "pl": "Śledzenie lotów w czasie rzeczywistym i 60 min darmowego czekania.",
+      "ar": "تتبع الرحلات في الوقت الفعلي و 60 دقيقة انتظار مجاني.",
+      "ru": "Отслеживание рейсов в реальном времени и 60 мин бесплатного ожидания."
+    },
+    "hotels_travel_styles": {
+      "en": "Travel Styles",
+      "it": "Stili di Viaggio",
+      "de": "Reisestile",
+      "fr": "Styles de Voyage",
+      "pl": "Style Podróży",
+      "ar": "أساليب السفر",
+      "ru": "Стили Путешествий"
+    },
+    "hotels_find_beach": {
+      "en": "Find the Ideal Beach for Your Travel Vibe",
+      "it": "Trova la Spiaggia Ideale per la Tua Vibe di Viaggio",
+      "de": "Finden Sie den Ideal Strand für Ihre Reisestimmung",
+      "fr": "Trouvez la Plage Idéale pour Votre Ambiance de Voyage",
+      "pl": "Znajdź Idealną Plażę dla Twojego Klimatu Podróży",
+      "ar": "ابحث عن الشاطئ المثالي لأجواء سفرك",
+      "ru": "Найдите Идеальный Пляж для Вашего Настроения Путешествия"
+    },
+    "hotels_match_vacation": {
+      "en": "Each coast has a distinct personality. Match your vacation style to the right shoreline.",
+      "it": "Ogni costa ha una personalità distinta. Abbina il tuo stile di vacanza alla riva giusta.",
+      "de": "Jede Küste hat eine eigene Persönlichkeit. Passen Sie Ihren Urlaubsstil an die richtige Küste an.",
+      "fr": "Chaque côte a une personnalité distincte. Adaptez votre style de vacances au bon rivage.",
+      "pl": "Każdy wybrzeże ma swoją osobowość. Dopasuj styl wakacji do odpowiedniego brzegu.",
+      "ar": "كل ساحل لهPersona مميزة. طابق أسلوب عطلتك مع الشاطئ المناسب.",
+      "ru": "У каждого побережья своя индивидуальность. Подберите стиль отпуска под нужное побережье."
+    },
+    "hotels_nungwi_kendwa": {
+      "en": "Nungwi & Kendwa — Non-Tidal Swimming",
+      "it": "Nungwi e Kendwa — Nuoto Non Marea",
+      "de": "Nungwi & Kendwa — Schwimmen Ohne Gezeiten",
+      "fr": "Nungwi & Kendwa — Baignade Sans Marées",
+      "pl": "Nungwi & Kendwa — Pływanie Bez Pływów",
+      "ar": "نونغوي و كيندوا — سباحة بدون مد وجزر",
+      "ru": "Нунгви и Кендву — Плавание Без Приливов"
+    },
+    "hotels_nungwi_kendwa_desc": {
+      "en": "Full-moon parties, watersports, scuba diving, and all-day swimming without tidal retreat. Best for couples and social travelers.",
+      "it": "Feste di luna piena, sport acquatici, immersioni subacquee e nuoto tutto il giorno senza ritirata della marea. Migliori per coppie e viaggiatori sociali.",
+      "de": "Vollmondpartys, Wassersport, Tauchen und ganztägiges Schwimmen ohne Gezeitenrückzug. Am besten für Paare und gesellige Reisende.",
+      "fr": "Soirées de pleine lune, sports nautiques, plongée sous-marine et baignade toute la journée sans retrait des marées. Idéal pour les couples et voyageurs sociaux.",
+      "pl": "Imprezy napełnią, sporty wodne, nurkowanie i pływanie całą dobę bez odpływu. Najlepsze dla par i podróżujących społecznie.",
+      "ar": "حفلات اكتمال القمر، الرياضات المائية، الغوص، والسباحة طوال اليوم دون تراجع المد. الأفضل للأزواج والمسافرين الاجتماعيين.",
+      "ru": "Полнолуние вечеринки, водные виды спорта, дайвинг и плавание весь день без отлива. Лучше для пар и общительных путешественников."
+    },
+    "hotels_paje_jambiani": {
+      "en": "Paje & Jambiani — Kitesurfing & Bohemian",
+      "it": "Paje e Jambiani — Kitesurf & Bohemien",
+      "de": "Paje & Jambiani — Kitesurfen & Bohemien",
+      "fr": "Paje & Jambiani — Kitesurf et Bohémien",
+      "pl": "Paje & Jambiani — Kitesurfing i Boho",
+      "ar": "باجي وجامبياني — ركوب الأمواج والبوهيمي",
+      "ru": "Падже и Джамбиани — Кайтсерфинг и Богема"
+    },
+    "hotels_paje_jambiani_desc": {
+      "en": "World-class kitesurfing lagoon, Kuza Cave, seaweed farming, and laid-back beach cafes. Ideal for digital nomads and adventure seekers.",
+      "it": "Laguna kitesurf di livello mondiale, Grotta Kuza, allevamento di alghe e caffè da spiaggia rilassati. Ideali per nomadi digitali e cercatori d'avventura.",
+      "de": "Weltklasse-Kitesurf-Lagune, Kuza-Höhle, Seetangzucht und entspannte Strandcafés. Ideal für digitale Nomaden und Abenteuersuchende.",
+      "fr": "Lagon de kitesurf de niveau mondial, Grotte Kuza, culture d'algues et cafés de plage décontractés. Idéal pour les nomades numériques et les chercheurs d'aventure.",
+      "pl": "Światowa laguna do kitesurfingu, Jaskinia Kuza, uprawa wodorostów i luźne kawiarnie plażowe. Idealne dla cyfrowых nomadów i poszukiwaczy przygód.",
+      "ar": "لاغون ركوب أمواج عالمي، كهف كوزا، زراعة الأعشاب البحرية، ومقاهي شاطئية مريحة. مثالية للرحالة الرقميين والباحثين عن المغامرة.",
+      "ru": "Мировой кайтсерфинг лагуна, пещера Куза, разведение водорослей и расслабленные пляжные кафе. Идеально для цифровых кочевников и искателей приключений."
+    },
+    "hotels_stone_town": {
+      "en": "Stone Town — UNESCO Culture & Cuisine",
+      "it": "Stone Town — Cultura & Cucina UNESCO",
+      "de": "Stone Town — UNESCO Kultur & Küche",
+      "fr": "Stone Town — Culture & Cuisine UNESCO",
+      "pl": "Stone Town — Kultura i Kuchnia UNESCO",
+      "ar": "ستون تاون — ثقافة ومطبخ اليونسكو",
+      "ru": "Стоун-Таун — Культура и Кухня ЮНЕСКО"
+    },
+    "hotels_stone_town_desc": {
+      "en": "Boutique hotels in restored Sultan-era palaces. Steps to Forodhani food market, museums, and spice trading alleys.",
+      "it": "Hotel boutique in palazzi dell'epoca del Sultano restaurati. A pochi passi dal mercato alimentare Forodhani, musei e vicoli del commercio delle spezie.",
+      "de": "Boutique-Hotels in restaurierten Palästen der Sultan-Ära. Schritte zum Forodhani-Food-Markt, Museen und Gewürzhandelsgassen.",
+      "fr": "Hôtels de charme dans des palais de l'ère du Sultan restaurés. À quelques pas du marché alimentaire Forodhani, musées et ruelles du commerce des épices.",
+      "pl": "Boutikowe hotele w odrestaurowanych pałacach z epoki sultana. Blisko targu jedzenia Forodhani, muzeów i alej handlu przyprawami.",
+      "ar": "فنادق بوتيك في قصور عصر السلطان المعاد ترميمها. خطوات من سوق الطعام فورودهاني، المتاحف، وأزقة تجارة التوابل.",
+      "ru": "Бутик-отели в восстановленных дворцах эпохи султана. В шагах от фуд-маркета Форохани, музеев и переулков специй."
+    },
+    "hotels_michamvi_bwejuu": {
+      "en": "Michamvi & Bwejuu — Luxury & Seclusion",
+      "it": "Michamvi & Bwejuu — Lusso & Isolamento",
+      "de": "Michamvi & Bwejuu — Luxus & Abgeschiedenheit",
+      "fr": "Michamvi & Bwejuu — Luxe et Isolement",
+      "pl": "Michamvi & Bwejuu — Luksus i Izolacja",
+      "ar": "ميتشامفي و بويجو — فخامة وعزلة",
+      "ru": "Мичамви и Бведжу — Люкс и Уединение"
+    },
+    "hotels_michamvi_bwejuu_desc": {
+      "en": "Private beach villas, calm coral lagoons, and sunset drinks at Kae Funk and The Rock Restaurant. Perfect for honeymooners.",
+      "it": "Ville fronte mare private, lagune coralline calme, e drink al tramonto da Kae Funk e The Rock Restaurant. Perfetti per viaggi di nozze.",
+      "de": "Private Strandvillen, ruhige Korallenlagunen und Sundowner-Drinks bei Kae Funk und The Rock Restaurant. Perfekt für Flitterwochen.",
+      "fr": "Villas de plage privées, lagons coralliens calmes, et verres au coucher du soleil chez Kae Funk et The Rock Restaurant. Parfait pour les lunes de miel.",
+      "pl": "Prywatne wille plażowe, spokojne laguny koralowe, i drinki o zachodzie słońca w Kae Funk i The Rock Restaurant. Idealne dla par w podróży poślubnej.",
+      "ar": "فيلات شاطئية خاصة، لاغونات مرجانية هادئة، ومشروبات غروب الشمس في كاي فانك ومطعم ذا روك. مثالية لقضاء شهر العسل.",
+      "ru": "Частные пляжные виллы, спокойные коралловые лагуны и закатные напитки в Kae Funk и The Rock Restaurant. Идеально для медовых недель."
+    },
+    "hotels_zone_kizimkazi": {
+      "en": "Kizimkazi",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_zone_pemba": {
+      "en": "Pemba",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_tier_luxury": {
+      "en": "Luxury",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_tier_upper_mid": {
+      "en": "Upper Mid",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_tier_mid": {
+      "en": "Mid",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_tier_standard": {
+      "en": "Standard",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_every_property_listed": {
+      "en": "Every property is listed",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_zone_stone_town": {
+      "en": "Stone Town",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_zone_nungwi": {
+      "en": "Nungwi",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_zone_paje": {
+      "en": "Paje",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_zone_matemwe": {
+      "en": "Matemwe",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
+    },
+    "hotels_zone_michamvi": {
+      "en": "Michamvi",
+      "it": "",
+      "de": "",
+      "fr": "",
+      "pl": "",
+      "ar": "",
+      "ru": ""
     }
   }
 }

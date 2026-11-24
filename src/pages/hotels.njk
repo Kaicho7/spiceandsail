@@ -1,6 +1,6 @@
 ---
 title: "Where to Stay in Zanzibar: Best Hotels by Area | Spice & Sail"
-description: "Curated Zanzibar partner hotels across Nungwi, Kendwa, Stone Town, Paje, and Matemwe. Verified rates, airport transfers, and hotel tour pickups."
+description: "Curated Zanzibar partner hotels across Nungwi, Kendwa, {{ 'hotels_zone_stone_town' | t }}, Paje, and Matemwe. Verified rates, airport transfers, and hotel tour pickups."
 permalink: "/hotels/index.html"
 ---
 {% include "seo.njk" %}
@@ -12,17 +12,17 @@ permalink: "/hotels/index.html"
     <img class="page-header-bg-image" src="{{ 'beach-front-hotel-palm-trees-people.jpg' | cdnFile }}" alt="" width="1600" height="900" sizes="100vw" loading="eager" fetchpriority="high" decoding="async" style="position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover;">
     <span aria-hidden="true" style="position: absolute; inset: 0; z-index: -1; background: linear-gradient(135deg, rgba(12,26,36,0.95), rgba(0,56,83,0.92));"></span>
     <div class="container" style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto;">
-      <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Curated Accommodation &amp; Logistics Directory</span>
-      <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 1rem; color: #ffffff;">Where to Stay in Zanzibar — 198 Hotels in Our Directory</h1>
+      <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">{{ 'hotels_badge' | t }}</span>
+      <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 1rem; color: #ffffff;">{{ 'hotels_main_title' | t }}</h1>
       <p style="font-size: 1.15rem; line-height: 1.6; color: #e0e8ec; margin-bottom: 2rem;">
-        Explore Zanzibar's beachfront resorts, boutique villas, and historic Stone Town retreats across Unguja and Pemba. <strong>198 hotels in our directory</strong>, including <strong>5 partner hotels with verified rates & direct booking</strong>. Door-to-door airport transfers and excursion lobby pickups available for all.
+        Explore Zanzibar's beachfront resorts, boutique villas, and historic {{ 'hotels_zone_stone_town' | t }} retreats across Unguja and Pemba. <strong>{{ 'hotels_main_desc' | t }}</strong>
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="/transfers/" class="btn btn-primary btn-lg" style="background: var(--dct-gold, #D4AF37); border-color: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700;">
-          🚖 Book Airport Transfer (Standard Rates)
+          {{ 'hotels_book_transfer' | t }}
         </a>
         <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20I%20am%20planning%20my%20Zanzibar%20trip%20and%20would%20like%20hotel%20and%20tour%20package%20recommendations." target="_blank" rel="noopener" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4);">
-          💬 WhatsApp Hotel Concierge ({{ site.contact.whatsapp_display }})
+          {{ 'hotels_whatsapp_concierge' | t }} ({{ site.contact.whatsapp_display }})
         </a>
       </div>
     </div>
@@ -32,9 +32,9 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 2.5rem 1rem; background: #fff;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div class="section-header" style="text-align: center; margin-bottom: 1.75rem;">
-        <span class="section-tag">Book Direct</span>
-        <h2 style="margin: 0.4rem 0;">Our 5 Contracted Hotels</h2>
-        <p class="section-subtitle" style="max-width: 760px; margin: 0 auto;">These are the properties we hold direct rates for. Compare the published from-rate, then send your dates for a confirmed quote — with the airport transfer and tours added in one reply.</p>
+        <span class="section-tag">{{ 'hotels_book_direct' | t }}</span>
+        <h2 style="margin: 0.4rem 0;">{{ 'hotels_our_contracted' | t }}</h2>
+        <p class="section-subtitle" style="max-width: 760px; margin: 0 auto;">{{ 'hotels_contracted_desc' | t }}</p>
       </div>
       <div class="cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
         {% for hotel in featuredPartnerHotels %}
@@ -50,17 +50,17 @@ permalink: "/hotels/index.html"
               <p class="card-description">{{ hotel.summary | truncate(120) }}</p>
               <div class="card-footer">
                 {% if hotel.fromRate > 0 %}
-                  <span class="card-price">From ${{ hotel.fromRate }} <span class="price-basis">{{ hotel.rateUnit }}</span></span>
+                  <span class="card-price">{{ 'hotels_from_rate' | t }} \${{ hotel.fromRate }} <span class="price-basis">{{ 'hotels_rate_unit' | t }}</span></span>
                 {% else %}
-                  <span class="card-price">Seasonal rates <span class="price-basis">confirmed by team</span></span>
+                  <span class="card-price">{{ 'hotels_seasonal_rates' | t }} <span class="price-basis">{{ 'hotels_confirmed_by_team' | t }}</span></span>
                 {% endif %}
                 <div class="card-actions">
                   {% if hotel.packageSlug %}
-                    <button type="button" class="btn btn-primary btn-sm" data-sns-booking-open data-service-slug="{{ hotel.packageSlug }}" data-hotel-slug="{{ hotel.slug }}" data-hotel-name="{{ hotel.name }}">Check availability</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-sns-booking-open data-service-slug="{{ hotel.packageSlug }}" data-hotel-slug="{{ hotel.slug }}" data-hotel-name="{{ hotel.name }}">{{ 'hotels_check_availability' | t }}</button>
                   {% else %}
-                    <a href="/hotels/{{ hotel.pageSlug }}/" class="btn btn-primary btn-sm">View rates</a>
+                    <a href="/hotels/{{ hotel.pageSlug }}/" class="btn btn-primary btn-sm">{{ 'hotels_view_rates' | t }}</a>
                   {% endif %}
-                  <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20details%20and%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ hotel.name }}">Ask on WhatsApp</a>
+                  <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20details%20and%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="{{ 'hotels_ask_whatsapp' | t }} {{ hotel.name }}">{{ 'hotels_ask_whatsapp' | t }}</a>
                 </div>
               </div>
             </div>
@@ -74,16 +74,16 @@ permalink: "/hotels/index.html"
   <section style="background: #FBF9F5; border-bottom: 1px solid #e2e8ed; padding: 2rem 1rem;">
     <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
       <div style="max-width: 700px;">
-        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold-dark, #b89325); font-weight: 700; display: block; margin-bottom: 0.25rem;">Seamless Island Logistics</span>
-        <h2 style="font-size: 1.45rem; color: #003853; margin: 0 0 0.4rem 0;">Already Booked Your Hotel? We Handle Your Transfers & Excursions.</h2>
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold-dark, #b89325); font-weight: 700; display: block; margin-bottom: 0.25rem;">{{ 'hotels_logistics_banner' | t }}</span>
+        <h2 style="font-size: 1.45rem; color: #003853; margin: 0 0 0.4rem 0;">{{ 'hotels_already_booked' | t }}</h2>
         <p style="margin: 0; font-size: 0.92rem; color: #4e5d66; line-height: 1.5;">
-          We provide private air-conditioned terminal pickups to all {{ hotels.hotels | length }} Zanzibar accommodations with meet-and-greet, flight delay tracking, and direct lobby pickups for Mnemba, Safari Blue, and Stone Town tours.
+          We provide private air-conditioned terminal pickups to all {{ hotels.hotels | length }} Zanzibar accommodations with meet-and-greet, flight delay tracking, and direct lobby pickups for Mnemba, Safari Blue, and {{ 'hotels_zone_stone_town' | t }} tours.
         </p>
       </div>
       <div style="background: #003853; color: #fff; padding: 1rem 1.5rem; border-radius: 10px; text-align: center; min-width: 240px;">
-        <span style="font-size: 0.78rem; color: var(--dct-gold, #D4AF37); text-transform: uppercase; letter-spacing: 1px; display: block;">Standardized Transfer Rates</span>
-        <div style="font-size: 1.05rem; font-weight: 700; margin: 0.35rem 0;">Stone Town {% catPrice "airport-transfer-znz-to-stone-town" %} &bull; East Coast {% catPrice "airport-transfer-znz-to-pajejambiani" %} &bull; North Coast {% catPrice "airport-transfer-znz-to-nungwikendwa" %}</div>
-        <a href="/transfers/" style="color: #fff; text-decoration: underline; font-size: 0.82rem; font-weight: 600;">Open Fare Calculator →</a>
+        <span style="font-size: 0.78rem; color: var(--dct-gold, #D4AF37); text-transform: uppercase; letter-spacing: 1px; display: block;">{{ 'hotels_standard_rates' | t }}</span>
+        <div style="font-size: 1.05rem; font-weight: 700; margin: 0.35rem 0;">{{ 'hotels_zone_stone_town' | t }} {% catPrice "airport-transfer-znz-to-stone-town" %} &bull; East Coast {% catPrice "airport-transfer-znz-to-pajejambiani" %} &bull; North Coast {% catPrice "airport-transfer-znz-to-nungwikendwa" %}</div>
+        <a href="/transfers/" style="color: #fff; text-decoration: underline; font-size: 0.82rem; font-weight: 600;">{{ 'hotels_calculator_link' | t }}</a>
       </div>
     </div>
   </section>
@@ -94,35 +94,35 @@ permalink: "/hotels/index.html"
       <!-- Search Input -->
       <div style="margin-bottom: 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div style="position: relative; flex: 1; min-width: 260px; max-width: 480px;">
-          <input type="text" id="hotel-search-input" aria-label="Search hotels by name, zone, or beach" placeholder="🔍 Search hotel name, zone, or beach..." style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.92rem; color: #1e293b; background: #FBF9F5;">
+          <input type="text" id="hotel-search-input" aria-label="{{ 'hotels_search_label' | t }}" placeholder="{{ 'hotels_search_placeholder' | t }}" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.92rem; color: #1e293b; background: #FBF9F5;">
           <span aria-hidden="true" style="position: absolute; left: 0.85rem; top: 0.8rem; font-size: 1rem; opacity: 0.5;">🏨</span>
         </div>
         <div id="hotel-count-indicator" style="font-size: 0.88rem; font-weight: 600; color: #003853; background: #e8f1f5; padding: 0.5rem 1rem; border-radius: 50px;">
-          Showing 16 of {{ hotels.hotels | length }} properties
+          {{ 'hotels_showing' | t }} 16 {{ 'hotels_of' | t }} {{ hotels.hotels | length }} {{ 'hotels_curated_properties' | t }}
         </div>
       </div>
 
       <!-- Zone Filter Tabs -->
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.85rem; align-items: center;">
-        <span style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-right: 0.25rem;">Zone:</span>
-        <button class="filter-btn active" data-filter-type="zone" data-filter-val="all">All Zones</button>
-        <button class="filter-btn" data-filter-type="zone" data-filter-val="nungwi">Nungwi & Kendwa</button>
-        <button class="filter-btn" data-filter-type="zone" data-filter-val="stone town">Stone Town</button>
-        <button class="filter-btn" data-filter-type="zone" data-filter-val="paje">Paje & Jambiani</button>
-        <button class="filter-btn" data-filter-type="zone" data-filter-val="matemwe">Matemwe & Kiwengwa</button>
-        <button class="filter-btn" data-filter-type="zone" data-filter-val="michamvi">Michamvi & Bwejuu</button>
-        <button class="filter-btn" data-filter-type="zone" data-filter-val="kizimkazi">Kizimkazi & Fumba</button>
-        <button class="filter-btn" data-filter-type="zone" data-filter-val="pemba">Pemba Island</button>
+        <span style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-right: 0.25rem;">{{ 'hotels_zone_filter' | t }}</span>
+        <button class="filter-btn active" data-filter-type="zone" data-filter-val="all">{{ 'hotels_all_zones' | t }}</button>
+        <button class="filter-btn" data-filter-type="zone" data-filter-val="nungwi">{{ 'hotels_zone_nungwi' | t }}</button>
+        <button class="filter-btn" data-filter-type="zone" data-filter-val="stone town">{{ 'hotels_zone_stone_town' | t }}</button>
+        <button class="filter-btn" data-filter-type="zone" data-filter-val="paje">{{ 'hotels_zone_paje' | t }}</button>
+        <button class="filter-btn" data-filter-type="zone" data-filter-val="matemwe">{{ 'hotels_zone_matemwe' | t }}</button>
+        <button class="filter-btn" data-filter-type="zone" data-filter-val="michamvi">{{ 'hotels_zone_michamvi' | t }}</button>
+        <button class="filter-btn" data-filter-type="zone" data-filter-val="kizimkazi">{{ 'hotels_zone_kizimkazi' | t }}</button>
+        <button class="filter-btn" data-filter-type="zone" data-filter-val="pemba">{{ 'hotels_zone_pemba' | t }}</button>
       </div>
 
       <!-- Star Tier Filter Tabs -->
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-        <span style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-right: 0.25rem;">Tier:</span>
-        <button class="filter-btn active" data-filter-type="tier" data-filter-val="all">All Tiers</button>
-        <button class="filter-btn" data-filter-type="tier" data-filter-val="luxury">Luxury (5-Star)</button>
-        <button class="filter-btn" data-filter-type="tier" data-filter-val="upper-mid">Upper Mid-Range (4-Star)</button>
-        <button class="filter-btn" data-filter-type="tier" data-filter-val="mid">Mid-Range (3-Star)</button>
-        <button class="filter-btn" data-filter-type="tier" data-filter-val="standard">Guest Houses & Budget</button>
+        <span style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-right: 0.25rem;">{{ 'hotels_tier_filter' | t }}</span>
+        <button class="filter-btn active" data-filter-type="tier" data-filter-val="all">{{ 'hotels_all_tiers' | t }}</button>
+        <button class="filter-btn" data-filter-type="tier" data-filter-val="luxury">{{ 'hotels_tier_luxury' | t }}</button>
+        <button class="filter-btn" data-filter-type="tier" data-filter-val="upper-mid">{{ 'hotels_tier_upper_mid' | t }}</button>
+        <button class="filter-btn" data-filter-type="tier" data-filter-val="mid">{{ 'hotels_tier_mid' | t }}</button>
+        <button class="filter-btn" data-filter-type="tier" data-filter-val="standard">{{ 'hotels_tier_standard' | t }}</button>
       </div>
     </div>
   </section>
@@ -249,7 +249,7 @@ permalink: "/hotels/index.html"
         appendBatch(remainingCards.length);
         allLoaded = true;
         filterHotels();
-        if (loadStatus) loadStatus.textContent = 'All ' + totalHotels + ' curated properties are available to filter.';
+        if (loadStatus) loadStatus.textContent = '{{ 'hotels_all_loaded' | t }} ' + totalHotels + ' curated properties are available to filter.';
         return true;
       }).catch(function () {
         if (loadStatus) loadStatus.textContent = 'The full directory could not be loaded. The first 16 properties remain available.';
@@ -361,7 +361,7 @@ permalink: "/hotels/index.html"
         <span id="hotels-load-status" class="visually-hidden" aria-live="polite"></span>
       </div>
       <p id="no-hotels-msg" style="display: none; text-align: center; padding: 3rem 1rem; color: #64748b; font-size: 1.1rem;">
-        No properties matched your selected filters. Please reset your search.
+        {{ 'hotels_no_match' | t }}
       </p>
     </div>
   </section>
@@ -369,8 +369,8 @@ permalink: "/hotels/index.html"
   <!-- Lightweight, server-rendered index keeps every hotel discoverable without shipping 198 full card DOM trees. -->
   <section aria-labelledby="all-properties-heading" style="padding: 1.5rem 1rem; background: #fff; border-bottom: 1px solid #edf2f7;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
-      <h2 id="all-properties-heading" style="margin: 0 0 .4rem; color: #003853; font-size: 1.35rem;">Browse all {{ hotels.hotels | length }} Zanzibar properties</h2>
-      <p style="margin: 0 0 1rem; color: #64748b; font-size: .9rem;">Every property is listed here for discovery. Select a name to open its full hotel card and enquiry options.</p>
+      <h2 id="all-properties-heading" style="margin: 0 0 .4rem; color: #003853; font-size: 1.35rem;">{{ 'hotels_browse_all' | t }} {{ hotels.hotels | length }} {{ 'hotels_listed_for_discovery' | t }}</h2>
+      <p style="margin: 0 0 1rem; color: #64748b; font-size: .9rem;">{{ 'hotels_every_property_listed' | t }}</p>
       <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .25rem .85rem; list-style: none; margin: 0; padding: 0;">
         {% for hotel in hotels.hotels %}
         <li>
@@ -394,10 +394,10 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 4rem 1.5rem; background: #fff;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 2.5rem;">
-        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Stay + Tour Bundles</span>
+        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">{{ 'hotels_stay_tour_bundles' | t }}</span>
         <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Custom Hotel Packages — Room, Ride &amp; Experience in One Booking</h2>
         <p style="color: #4e5d66; max-width: 720px; margin: 0.5rem auto 0; font-size: 0.98rem;">
-          Built on our contracted partner hotels. One message books the room, the airport transfer and the tour — no OTA non-refundable traps, no hidden extras.
+          {{ 'hotels_why_it_works' | t }}
         </p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
@@ -413,7 +413,7 @@ permalink: "/hotels/index.html"
         </article>
         {% endfor %}
       </div>
-      <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #64748b;">Indicative partner rates — our team confirms exact dates, availability and final total before any payment.</p>
+      <p style="text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #64748b;">{{ 'hotels_indicative_rates' | t }}</p>
     </div>
   </section>
 
@@ -428,8 +428,8 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 3.5rem 1rem; background: #FBF9F5; border-top: 1px solid #f0e8dc;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 2.5rem;">
-        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Published Rack Sheet, Priced For You</span>
-        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Season-by-Season Rates, Priced For You</h2>
+        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">{{ 'hotels_seasonal_rates_title' | t }}</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">{{ 'hotels_season_label' | t }}</h2>
         <p style="color: #4e5d66; max-width: 760px; margin: 0.5rem auto 0; font-size: 0.98rem;">
           Each partner hotel's own published rack rate and the rate you get through us, side by side — per room per night. No OTA markup, no surge surprises.
         </p>
@@ -526,8 +526,8 @@ permalink: "/hotels/index.html"
   <section class="section" style="padding: 4rem 1.5rem; background: #FBF9F5;">
     <div class="container" style="max-width: 1240px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 2.5rem;">
-        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Real Photos — No Stock Imagery</span>
-        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">Inside Our Partner Hotels</h2>
+        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">{{ 'hotels_real_photos' | t }}</span>
+        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #003853;">{{ 'hotels_inside_partner' | t }}</h2>
         <p style="color: #4e5d66; max-width: 700px; margin: 0.5rem auto 0; font-size: 0.98rem;">Photographed at the property itself — owner-supplied for Malindi and Kokoni, and the hotels' own official galleries for The One Resort and Le Paradis. What you see is what you get.</p>
       </div>
       {% for hotel in partnerWithGallery %}
@@ -569,7 +569,7 @@ permalink: "/hotels/index.html"
             {% endif %}
             {% if research.amenities %}
             <div>
-              <h4 style="margin: 0 0 0.5rem; font-size: 0.95rem; color: #003853;">Facilities &amp; services</h4>
+              <h4 style="margin: 0 0 0.5rem; font-size: 0.95rem; color: #003853;">{{ 'hotels_facilities' | t }}</h4>
               <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: #4e5d66; line-height: 1.65;">
                 {% for a in research.amenities %}<li>✓ {{ a }}</li>{% endfor %}
               </ul>
@@ -625,7 +625,7 @@ permalink: "/hotels/index.html"
   <section style="background: #0C1A24; color: #fff; padding: 4rem 1.5rem;">
     <div class="container" style="max-width: 1050px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 2.5rem;">
-        <span style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Mandatory Statutory Regulations</span>
+        <span style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">{{ 'hotels_statutory_regs' | t }}</span>
         <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: #fff;">Zanzibar Accommodation Levies & Travel Notice</h2>
         <p style="color: #94a3b8; max-width: 700px; margin: 0.5rem auto 0; font-size: 0.95rem;">
           Important government regulations applicable to all visitors staying at licensed hotels, villas, and resorts across Unguja and Pemba.
@@ -635,7 +635,7 @@ permalink: "/hotels/index.html"
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem;">
         <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
           <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🏨</div>
-          <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Tiered Hotel Infrastructure Levy (ZRA)</h3>
+          <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">{{ 'hotels_levies_notice' | t }}</h3>
           <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
             The Zanzibar Revenue Authority (ZRA) levies a statutory accommodation fee per guest/night collected directly at check-in/out: <strong>$5.00</strong> (4–5 star), <strong>$4.00</strong> (2–3 star), <strong>$2.00</strong> (1 star/guesthouses), and <strong>$10.00</strong> for designated private island/underwater suites.
           </p>
@@ -646,9 +646,9 @@ permalink: "/hotels/index.html"
 
         <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
           <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🛡️</div>
-          <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Mandatory Inbound Insurance (ZIC)</h3>
+          <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">{{ 'hotels_insurance' | t }}</h3>
           <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
-            Foreign travelers entering via Zanzibar ports/airports must hold Zanzibar Inbound Travel Insurance from ZIC ($44 adult / $22 child, valid 92 days). For combined Tanzania trips entering via mainland first (e.g. DAR/JRO), follow your first point-of-entry statutory insurer.
+            {{ 'hotels_insurance_desc' | t }}
           </p>
           <a href="https://inbound.visitzanzibar.go.tz" target="_blank" rel="noopener" style="display: inline-block; margin-top: 0.75rem; color: var(--dct-gold, #D4AF37); font-weight: 600; font-size: 0.85rem; text-decoration: underline;">
             Apply on Official Government Portal (inbound.visitzanzibar.go.tz) →
@@ -657,9 +657,9 @@ permalink: "/hotels/index.html"
 
         <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
           <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">🚖</div>
-          <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">Door-to-Door Flat Airport Transfers</h3>
+          <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem;">{{ 'hotels_door_to_door' | t }}</h3>
           <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
-            Skip unregulated touts outside the airport. Spice & Sail offers fixed private transfers with meet & greet: <strong>{% catPrice "airport-transfer-znz-to-stone-town" %} Stone Town &bull; {% catPrice "airport-transfer-znz-to-pajejambiani" %} East Coast (Paje/Matemwe) &bull; {% catPrice "airport-transfer-znz-to-nungwikendwa" %} North Coast (Nungwi/Kendwa)</strong>.
+            Skip unregulated touts outside the airport. Spice & Sail offers fixed private transfers with meet & greet: <strong>{% catPrice "airport-transfer-znz-to-stone-town" %} {{ 'hotels_zone_stone_town' | t }} &bull; {% catPrice "airport-transfer-znz-to-pajejambiani" %} East Coast (Paje/Matemwe) &bull; {% catPrice "airport-transfer-znz-to-nungwikendwa" %} North Coast (Nungwi/Kendwa)</strong>.
           </p>
           <div style="margin-top: 0.75rem; font-size: 0.82rem; color: #34d399;">
             ✓ Real-time flight tracking & 60 min free waiting time.
@@ -673,9 +673,9 @@ permalink: "/hotels/index.html"
   <section class="section section-alt" style="padding: 4rem 1rem; background: #fff;">
     <div class="container" style="max-width: 1200px; margin: 0 auto;">
       <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
-        <span class="section-tag" style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Travel Styles</span>
-        <h2 style="font-size: 2.2rem; color: #003853;">Find the Ideal Beach for Your Travel Vibe</h2>
-        <p class="section-subtitle" style="color: #5c727f; max-width: 700px; margin: 0.5rem auto 0;">Each coast has a distinct personality. Match your vacation style to the right shoreline.</p>
+        <span class="section-tag" style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">{{ 'hotels_travel_styles' | t }}</span>
+        <h2 style="font-size: 2.2rem; color: #003853;">{{ 'hotels_find_beach' | t }}</h2>
+        <p class="section-subtitle" style="color: #5c727f; max-width: 700px; margin: 0.5rem auto 0;">{{ 'hotels_match_vacation' | t }}</p>
       </div>
       <div class="area-quick-picks" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
         <article class="quick-pick reveal" style="background: #FBF9F5; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8ed;">
@@ -683,7 +683,7 @@ permalink: "/hotels/index.html"
             <img src="{{ 'kendwa-beach-zanzibar-non-tidal-swimming-jetty.jpg' | cdnFile }}" alt="{{ 'kendwa-beach-zanzibar-non-tidal-swimming-jetty.jpg' | canonicalAlt }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="quick-pick-content" style="padding: 1.25rem;">
-            <h3 style="font-size: 1.15rem; color: #003853; margin-bottom: 0.4rem;">Nungwi & Kendwa — Non-Tidal Swimming</h3>
+            <h3 style="font-size: 1.15rem; color: #003853; margin-bottom: 0.4rem;">{{ 'hotels_zone_nungwi' | t }} — Non-Tidal Swimming</h3>
             <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.45; margin: 0;">Full-moon parties, watersports, scuba diving, and all-day swimming without tidal retreat. Best for couples and social travelers.</p>
           </div>
         </article>
@@ -692,7 +692,7 @@ permalink: "/hotels/index.html"
             <img src="{{ 'women-walking-beach-zanzibar-palm-trees.jpg' | cdnFile }}" alt="{{ 'women-walking-beach-zanzibar-palm-trees.jpg' | canonicalAlt }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="quick-pick-content" style="padding: 1.25rem;">
-            <h3 style="font-size: 1.15rem; color: #003853; margin-bottom: 0.4rem;">Paje & Jambiani — Kitesurfing & Bohemian</h3>
+            <h3 style="font-size: 1.15rem; color: #003853; margin-bottom: 0.4rem;">{{ 'hotels_zone_paje' | t }} — Kitesurfing & Bohemian</h3>
             <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.45; margin: 0;">World-class kitesurfing lagoon, Kuza Cave, seaweed farming, and laid-back beach cafes. Ideal for digital nomads and adventure seekers.</p>
           </div>
         </article>
@@ -701,7 +701,7 @@ permalink: "/hotels/index.html"
             <img src="{{ 'stone-town-ornate-carved-door-arch.jpg' | cdnFile }}" alt="{{ 'stone-town-ornate-carved-door-arch.jpg' | canonicalAlt }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="quick-pick-content" style="padding: 1.25rem;">
-            <h3 style="font-size: 1.15rem; color: #003853; margin-bottom: 0.4rem;">Stone Town — UNESCO Culture & Cuisine</h3>
+            <h3 style="font-size: 1.15rem; color: #003853; margin-bottom: 0.4rem;">{{ 'hotels_zone_stone_town' | t }} — UNESCO Culture & Cuisine</h3>
             <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.45; margin: 0;">Boutique hotels in restored Sultan-era palaces. Steps to Forodhani food market, museums, and spice trading alleys.</p>
           </div>
         </article>
@@ -710,7 +710,7 @@ permalink: "/hotels/index.html"
             <img src="{{ 'zanzibar-rock-house-with-tourists.jpg' | cdnFile }}" alt="{{ 'zanzibar-rock-house-with-tourists.jpg' | canonicalAlt }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="quick-pick-content" style="padding: 1.25rem;">
-            <h3 style="font-size: 1.15rem; color: #003853; margin-bottom: 0.4rem;">Michamvi & Bwejuu — Luxury & Seclusion</h3>
+            <h3 style="font-size: 1.15rem; color: #003853; margin-bottom: 0.4rem;">{{ 'hotels_zone_michamvi' | t }} — Luxury & Seclusion</h3>
             <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.45; margin: 0;">Private beach villas, calm coral lagoons, and sunset drinks at Kae Funk and The Rock Restaurant. Perfect for honeymooners.</p>
           </div>
         </article>
