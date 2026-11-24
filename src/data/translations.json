@@ -125,8 +125,8 @@
       "de": "Safaris & Reisepakete",
       "fr": "Safaris & Forfaits",
       "pl": "Safari i Pakiety",
-      "ar": "رحلات السفاري والباقات",
-      "ru": "Сафари и турпакеты"
+      "ar": "Safaris & Packages",
+      "ru": "Safaris & Packages"
     },
     "nav_packages": {
       "en": "Packages",
@@ -152,8 +152,8 @@
       "de": "Festland-Safaris",
       "fr": "Safaris en Tanzanie",
       "pl": "Safari w Tanzanii",
-      "ar": "سفاري تنزانيا القارية",
-      "ru": "Сафари на материке"
+      "ar": "Mainland Safaris",
+      "ru": "Mainland Safaris"
     },
     "nav_mikumi": {
       "en": "Mikumi 1-Day Fly-in Safari",
@@ -215,8 +215,8 @@
       "de": "Safari Blue Dhow-Tag",
       "fr": "Safari Blue - Journée en Dhow",
       "pl": "Safari Blue - Dzień na Dhow",
-      "ar": "رحلة سفاري بلو بالمركب التقليدي",
-      "ru": "Сафари Блю — день на традиционном доу"
+      "ar": "Safari Blue",
+      "ru": "Safari Blue"
     },
     "nav_mnemba_snorkeling": {
       "en": "Mnemba Atoll Snorkeling",
@@ -224,8 +224,8 @@
       "de": "Schnorcheln am Mnemba-Atoll",
       "fr": "Snorkeling à l'Atoll Mnemba",
       "pl": "Nurkowanie na Atolu Mnemba",
-      "ar": "سنوركلينج في جزيرة منيمبا",
-      "ru": "Снорклинг у атолла Мнемба"
+      "ar": "Mnemba Atoll",
+      "ru": "Mnemba Atoll"
     },
     "nav_stone_town_walking_tour": {
       "en": "Stone Town Walking Tour",
@@ -233,8 +233,8 @@
       "de": "Stone Town zu Fuß",
       "fr": "Visite à Pied de Stone Town",
       "pl": "Spacer po Stone Town",
-      "ar": "جولة مدينة ستون تاون التاريخية",
-      "ru": "Пешеходный тур по Стоун-Тауну"
+      "ar": "Stone Town",
+      "ru": "Stone Town"
     },
     "nav_areas": {
       "en": "Areas",
@@ -251,8 +251,8 @@
       "de": "Stone Town",
       "fr": "Stone Town",
       "pl": "Stone Town",
-      "ar": "مدينة ستون تاون",
-      "ru": "Стоун-Таун"
+      "ar": "Stone Town",
+      "ru": "Stone Town"
     },
     "nav_nungwi_kendwa": {
       "en": "Nungwi & Kendwa",
@@ -486,7 +486,7 @@
       "fr": "Transferts 0% Acompte",
       "pl": "Transfery 0% Zaliczka",
       "ar": "0% دفعة مقدمة للتوصيل",
-      "ru": "Трансферы без предоплаты (0%)"
+      "ru": "Трансферы 0% предоплата"
     },
     "footer_marine_fees": {
       "en": "Marine Fees Included",
@@ -498,11 +498,11 @@
       "ru": "Морские сборы включены"
     },
     "footer_weather_guarantee": {
-      "en": "Weather Guarantee",
-      "it": "Garanzia Meteo",
-      "de": "Wettergarantie",
-      "fr": "Garantie Météo",
-      "pl": "Gwarancja Pogodowa",
+      "en": "Weather Guarantee (100% refund or free reschedule)",
+      "it": "Garanzia Meteo (rimborso 100% o riprogrammazione gratuita)",
+      "de": "Wettergarantie (100% Erstattung oder kostenlose Umbuchung)",
+      "fr": "Garantie Météo (remboursement 100% ou report gratuit)",
+      "pl": "Gwarancja Pogodowa (100% zwrot lub bezpłatna zmiana terminu)",
       "ar": "استرداد كامل بنسبة 100% أو تغيير الموعد مجاناً - ضمان الأحوال الجوية",
       "ru": "100% возврат средств или бесплатный перенос даты - гарантия хорошей погоды"
     },
@@ -512,8 +512,8 @@
       "de": "Mehrsprachige Guides (Aufpreis)",
       "fr": "Guides Multilingues (supplément)",
       "pl": "Wielojęzyczni Przewodnicy (dodatkowa opłata)",
-      "ar": "مرشدون متعددو اللغات",
-      "ru": "Многоязычные гиды"
+      "ar": "مرشدون متعددو اللغات (رسوم إضافية)",
+      "ru": "Многоязычные гиды (дополнительная оплата)"
     },
     "footer_viator_less": {
       "en": "Direct Local Rates — No OTA Commission",
