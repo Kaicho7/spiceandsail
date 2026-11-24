@@ -1,14 +1,222 @@
 ---
-title: "Связь Spice and Sail Zanzibar"
-description: "Связь Spice and Sail Zanzibar через WhatsApp для получения предложений туров Zanzibar, трансферов из аэропорта и индивидуальных маршрутов. Мы отвечаем в течение 2 часов в рабочее время."
+title: "Контакты Spice and Sail Zanzibar"
+description: "Свяжитесь со Spice and Sail Zanzibar через WhatsApp для получения предложений по турам на Занзибаре, трансферам из аэропорта и индивидуальным маршрутам. Мы отвечаем в течение 2 часов в рабочее время."
 permalink: "/ru/contact/index.html"
 lang: ru
 alternate_en: "https://spiceandsail.com/contact/"
-alternate_de: "https://spiceandsail.com/de/contact/"
-alternate_it: "https://spiceandsail.com/it/contact/"
+alternate_it: "https://spiceandsail.com/it/contatti/"
+alternate_de: "https://spiceandsail.com/de/kontakt/"
+alternate_fr: "https://spiceandsail.com/fr/contact/"
 alternate_pl: "https://spiceandsail.com/pl/contact/"
 alternate_ar: "https://spiceandsail.com/ar/contact/"
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
-<p>Страница контакта на русском</p>
+
+<main class="" id="main-content">
+  <header class="page-header">
+    <h1>{{ "contact_title" | t(lang) }}</h1>
+    <p>{{ "contact_subtitle" | t(lang) }}</p>
+  </header>
+
+  <section class="section section-gradient">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">{{ "section_get_in_touch" | t(lang) }}</span>
+        <h2>{{ "section_fastest_way" | t(lang) }}</h2>
+        <p class="section-subtitle">{{ "section_fastest_way_subtitle" | t(lang) }}</p>
+      </div>
+      <div class="area-quick-picks" style="max-width: 900px; margin: 0 auto;">
+        <article class="quick-pick reveal">
+          <div class="quick-pick-image" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+            <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M56 8C59.3137 8 62 10.6863 62 14V50C62 53.3137 59.3137 56 56 56H8C4.68629 56 2 53.3137 2 50V14C2 10.6863 4.68629 8 8 8H16V6C16 2.68629 18.6863 0 22 0H42C45.3137 0 48 2.68629 48 6V8H56ZM18 6H42V8H18V6ZM56 14V50H8V14H16L22 20H42L48 14H56ZM32 40C36.4183 40 40 36.4183 40 32C40 27.5817 36.4183 24 32 24C27.5817 24 24 27.5817 24 32C24 36.4183 27.5817 40 32 40ZM32 26C29.2386 26 27 28.2386 27 31C27 33.7614 29.2386 36 32 36C34.7614 36 37 33.7614 37 31C37 28.2386 34.7614 26 32 26Z"/></svg>
+          </div>
+          <div class="quick-pick-content">
+            <h3>{{ "whatsapp_fastest" | t(lang) }}</h3>
+            <p>{{ "whatsapp_fastest_desc" | t(lang) }}</p>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I'd%20like%20to%20book%20a%20Zanzibar%20tour" target="_blank" rel="noopener" class="btn btn-accent">{{ "btn_open_whatsapp" | t(lang) }}</a>
+          </div>
+        </article>
+        <article class="quick-pick reveal">
+          <div class="quick-pick-image" style="background: linear-gradient(135deg, var(--dct-ocean) 0%, var(--dct-palm) 100%);">
+            <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8 22C8 18.6863 10.6863 16 14 16H50C53.3137 16 56 18.6863 56 22V42C56 45.3137 53.3137 48 50 48H14C10.6863 48 8 45.3137 8 42V22ZM8 24V42H14L24 32H40L50 42H56V24H8Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="quick-pick-content">
+            <h3>{{ "whatsapp_docs" | t(lang) }}</h3>
+            <p>{{ "whatsapp_docs_desc" | t(lang) }}</p>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hello%20Spice%20and%20Sail%2C%20I%20have%20a%20booking%20enquiry" target="_blank" rel="noopener" class="btn btn-primary">{{ "btn_message_whatsapp" | t(lang) }}</a>
+          </div>
+        </article>
+        <article class="quick-pick reveal">
+          <div class="quick-pick-image" style="background: linear-gradient(135deg, #b8860b 0%, var(--dct-spice) 100%);">
+            <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="20" stroke="white" stroke-width="2.5"/></svg>
+          </div>
+          <div class="quick-pick-content">
+            <h3>{{ "phone_sms" | t(lang) }}</h3>
+            <p>{{ "phone_sms_desc" | t(lang) }}</p>
+            <a href="tel:{{ site.contact.phone }}" class="btn btn-secondary">{{ site.contact.phone_display }}</a>
+          </div>
+        </article>
+        <article class="quick-pick reveal">
+          <div class="quick-pick-image" style="background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);">
+            <svg viewBox="0 0 64 64" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20 40v-8h4v8h8v-4h-8v-8h-4v8H20zm0-12v8h8v-4h-8v-4h4v-8h-4v8H12v4h8zm-8 12v8h8v-4H12v-4h4v-8H8v8h4zm8-20v8h8v-4h-8v-4H12v8h4zm16 12v8h4v-8h-4zm4-4v8h4v-4h-4v-4h-4v8h4z"/></svg>
+          </div>
+          <div class="quick-pick-content">
+            <h3>{{ "email_contact" | t(lang) }}</h3>
+            <p>{{ "email_contact_desc" | t(lang) }}</p>
+            <a href="mailto:{{ site.contact.email }}" class="btn btn-secondary">{{ site.contact.email }}</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">{{ "section_form" | t(lang) }}</span>
+        <h2>{{ "section_send_message" | t(lang) }}</h2>
+        <p class="section-subtitle">{{ "section_send_message_subtitle" | t(lang) }}</p>
+      </div>
+      <div style="max-width: 700px; margin: 0 auto;">
+        <form class="contact-form" name="booking-inquiry" method="POST" action="/api/lead">
+          <input type="hidden" name="form-name" value="booking-inquiry">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">{{ "form_name_label" | t(lang) }}</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">{{ "form_email_label" | t(lang) }} <small style="font-weight: 400; color: #64748b;">{{ "form_email_note" | t(lang) }}</small></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">{{ "form_phone_label" | t(lang) }} <small style="font-weight: 400; color: #64748b;">(optional — speeds up our reply)</small></label>
+              <input type="tel" id="phone" name="phone" placeholder="{{ "form_phone_placeholder" | t(lang) }}">
+            </div>
+            <div class="form-group">
+              <label for="travel-dates">{{ "form_travel_dates_label" | t(lang) }}</label>
+              <input type="text" id="travel-dates" name="travel_dates" placeholder="{{ "form_travel_dates_placeholder" | t(lang) }}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="interests">{{ "form_interests_label" | t(lang) }}</label>
+            <select id="interests" name="interests" required>
+              <option value="">{{ "form_select_option" | t(lang) }}</option>
+              <option value="tours">Day Tours (Stone Town, Spice, Marine, Nature)</option>
+              <option value="transfers">Airport Transfers</option>
+              <option value="packages">Multi-Day Packages</option>
+              <option value="safaris">Mainland Safaris (Serengeti, Ngorongoro, etc.)</option>
+              <option value="custom">Custom Itinerary</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="group-size">{{ "form_group_size_label" | t(lang) }}</label>
+            <select id="group-size" name="group_size">
+              <option value="1">1 (Solo)</option>
+              <option value="2">2 (Couple)</option>
+              <option value="3-4">3–4 (Family / Small Group)</option>
+              <option value="5-8">5–8 (Large Group)</option>
+              <option value="9+">9+ (Event / Corporate)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">{{ "form_message_label" | t(lang) }}</label>
+            <textarea id="message" name="message" rows="5" placeholder="{{ "form_message_placeholder" | t(lang) }}"></textarea>
+          </div>
+          <div class="form-group consent-group" style="margin: 1.25rem 0;">
+            <label class="checkbox-label" style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: #4e5d66; cursor: pointer;">
+              <input type="checkbox" name="consent_contact" id="consent_contact" required style="margin-top: 0.2rem;">
+              <span>{{ "form_consent_label" | t(lang) }}</span>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">{{ "btn_send_inquiry" | t(lang) }}</button>
+          <p class="form-note" style="text-align: center;">{{ "form_note" | t(lang) }}</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">{{ "section_operations" | t(lang) }}</span>
+        <h2>{{ "section_our_location" | t(lang) }}</h2>
+      </div>
+      <div class="area-quick-picks" style="max-width: 900px; margin: 0 auto;">
+        <article class="quick-pick reveal">
+          <div class="quick-pick-image">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" fill="currentColor" opacity="0.1"/><path d="M32 8C28.6863 8 26 10.6863 26 14V24H18V14C18 8.9706 21.9706 5 26 5C30.0294 5 34 8.9706 34 14V24H38V14C38 10.6863 35.3137 8 32 8ZM26 26V38H38V26H26ZM18 38H46V42H18V38Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="quick-pick-content">
+            <h3>{{ "hub_main" | t(lang) }}</h3>
+            <p>Main Operations &amp; Depot: {{ site.address.display }}.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--dct-text-muted);">{{ "hub_serving_areas" | t(lang) }}</p>
+            <p style="margin-top: 0.5rem;">
+              <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" style="color: var(--dct-ocean); font-weight: 500;">{{ "hub_whatsapp_label" | t(lang) }}{{ site.contact.whatsapp_display }}</a><br>
+              <span style="color: var(--dct-ocean); font-weight: 500;">{{ "hub_whatsapp_note" | t(lang) }}</span>
+            </p>
+          </div>
+        </article>
+        <article class="quick-pick reveal">
+          <div class="quick-pick-image">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" fill="currentColor" opacity="0.1"/><circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2.5"/><path d="M32 12V28M20 32H44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="quick-pick-content">
+            <h3>{{ "section_find_us" | t(lang) }}</h3>
+            <p>{{ "section_find_us_desc" | t(lang) }}</p>
+            <a href="https://www.google.com/maps/place/Spice+%26+Sail+Zanzibar/data=!4m2!3m1!1s0x0:0xaa066bcd6a73b31b" target="_blank" rel="noopener" class="btn btn-primary">{{ "btn_google_maps" | t(lang) }}</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Interactive Hub Map -->
+      <div style="max-width: 900px; margin: 2rem auto 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md); border: 1.5px solid #d9e5ec;">
+        <div style="background: #003853; color: #fff; padding: 0.85rem 1.25rem; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+          <span>📍 Spice and Sail Operations Hub (Mbuzini Transit Corridor)</span>
+          <a href="https://www.google.com/maps/place/Spice+%26+Sail+Zanzibar/data=!4m2!3m1!1s0x0:0xaa066bcd6a73b31b" target="_blank" rel="noopener" style="color: var(--dct-gold, #D4AF37); font-size: 0.85rem; text-decoration: underline;">Open in Full Google Maps ↗</a>
+        </div>
+        <div class="sns-map-click-to-load" data-map-embed
+             data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.4622095857626!2d39.2494669747277!3d-6.068232259548552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd5002caea00d%3A0xaa066bcd6a73b31b!2sSpice%20%26%20Sail%20Zanzibar!5e0!3m2!1sen!2stz!4v1794380234279!5m2!1sen!2stz">
+          <p class="sns-map-prompt">The interactive map loads only when you choose to view it.</p>
+          <button type="button" class="sns-map-load-button">Load Google Map</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content reveal">
+      <h2>{{ "cta_quick_links" | t(lang) }}</h2>
+      <div class="quick-link-grid">
+        <a href="/tours/" class="quick-link">{{ "link_browse_tours" | t(lang) }}</a>
+        <a href="/transfers/" class="quick-link">{{ "link_airport_transfers" | t(lang) }}</a>
+        <a href="/packages/" class="quick-link">{{ "link_multi_day_packages" | t(lang) }}</a>
+        <a href="/hotels/" class="quick-link">{{ "link_where_to_stay" | t(lang) }}</a>
+        <a href="/areas/" class="quick-link">{{ "link_explore_by_zone" | t(lang) }}</a>
+        <a href="/about/" class="quick-link">{{ "link_about_us" | t(lang) }}</a>
+      </div>
+    </div>
+  </section>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form[name="booking-inquiry"]');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        var emailVal = (document.getElementById('email') ? document.getElementById('email').value : '').trim();
+        var phoneVal = (document.getElementById('phone') ? document.getElementById('phone').value : '').trim();
+        if (!emailVal) {
+          e.preventDefault();
+          alert('Please enter an email address so our team can reply.');
+          if (document.getElementById('email')) document.getElementById('email').focus();
+        }
+      });
+    }
+  });
+  </script>
+</main>
+
+{% include "footer.njk" %}
