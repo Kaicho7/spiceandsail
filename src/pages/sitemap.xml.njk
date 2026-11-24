@@ -63,11 +63,11 @@ eleventyExcludeFromCollections: true
 <url><loc>{{ site.url }}/attractions/</loc><lastmod>{{ "/src/data/attractions.json" | fileMtime }}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
 {%- for hotel in hotelsToBuild %}{% if hotel.indexable %}
-<url><loc>{{ site.url }}/hotels/{{ hotel.slug }}/</loc><lastmod>{{ hotel.slug | contentDate }}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>{{ site.url }}/hotels/{{ hotel.slug }}/</loc><lastmod>{{ hotel.lastmod }}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 {%- endif %}{% endfor %}
 
 {%- for attraction in attractionsToBuild %}
-<url><loc>{{ site.url }}/attractions/{{ attraction.slug }}/</loc><lastmod>{{ attraction.slug | contentDate }}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>{{ site.url }}/attractions/{{ attraction.slug }}/</loc><lastmod>{{ attraction.lastmod }}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 {%- endfor %}
 
 </urlset>

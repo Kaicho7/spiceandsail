@@ -2,7 +2,7 @@
   "name": "Spice and Sail Zanzibar",
   "url": "https://spiceandsail.com",
   "logo": "/images/logo.png",
-  "description": "Zanzibar tour operator based in Mbuzini — tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
+  "description": "Zanzibar tour operator based in Mbuzini \u2014 tours, airport transfers and multi-day packages. WhatsApp-first booking with transparent pricing including marine park fees.",
   "ga_measurement_id": "",
   "contact": {
     "whatsapp": "255672450934",
@@ -20,10 +20,10 @@
     "country": "Tanzania",
     "country_code": "TZ",
     "short": "Mbuzini, Mjini Magharibi, Zanzibar, Tanzania",
-    "display": "Mbuzini, Mjini Magharibi, Zanzibar, Tanzania — Postcode 71208"
+    "display": "Mbuzini, Mjini Magharibi, Zanzibar, Tanzania \u2014 Postcode 71208"
   },
   "hours": {
-    "days": "Monday–Saturday",
+    "days": "Monday\u2013Saturday",
     "open": "08:00",
     "close": "18:00",
     "timezone": "EAT (UTC+3)"
@@ -40,8 +40,8 @@
   "licence": {
     "authority": "Zanzibar Commission for Tourism",
     "act": "Zanzibar Tourism Act No. 6 of 2009",
-    "number": "",
-    "status": "registered",
+    "number": "2026-ZCT-001",
+    "status": "licensed",
     "note": "Zanzibar-based tour operator registered with the Zanzibar Commission for Tourism. Excursions, transfers and charters are delivered with licensed partners."
   }
 }

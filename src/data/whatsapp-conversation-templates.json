@@ -60,14 +60,13 @@
   "feedback_loop": {
     "mechanism": "After each WhatsApp conversation, categorize the top 3 questions asked by the traveler",
     "integration": "Feed top question into next week's new page topic auto-generation",
-    "example": "If 15 travelers ask 'kid-friendly snorkeling' → next week's page covers 'snorkeling with children in Zanzibar'. If 10 travelers ask 'vegetarian food options' → next week's page covers 'vegetarian dining in Zanzibar'",
-    "flywheel": "more pages → more search visibility → more WhatsApp conversations → more insight → more pages"
+    "example": "If 15 travelers ask 'kid-friendly snorkeling' \u2192 next week's page covers 'snorkeling with children in Zanzibar'. If 10 travelers ask 'vegetarian food options' \u2192 next week's page covers 'vegetarian dining in Zanzibar'",
+    "flywheel": "more pages \u2192 more search visibility \u2192 more WhatsApp conversations \u2192 more insight \u2192 more pages"
   },
   "content_expansion_schedule": {
     "weekly_topic": "1 new problem-solution page per week using ZANZIABR CSV research data",
     "research_sources": [
       "content_ideas_for_zanzibar.csv (NYT '36 Hours in Zanzibar', 2271 est. visits, 17 backlinks)",
-      "top_pages_for_africanbudgetsafaris.com.csv (tribes/culture: 1,691 visits potential, 19 backlinks)",
       " competitor analysis for content gaps: safety, packing, timing, family, romance, self-drive, cultural"
     ],
     "auto_generation_template": "cp existing-template.njk new-page-name.njk + edit with problem-specific content + add WhatsApp CTA with intent data + git commit + Netlify auto-deploy"
