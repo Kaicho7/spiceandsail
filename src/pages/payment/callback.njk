@@ -1,0 +1,63 @@
+---
+title: Payment Status — Spice and Sail Zanzibar
+permalink: "/payment/callback/index.html"
+metaRobots: "noindex,nofollow"
+---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
+<main class="" id="main-content">
+  <section class="section-thank-you">
+    <div class="container-center">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎉</div>
+      <h1>Payment Received & Processing</h1>
+      <p>Thank you for your payment to Spice &amp; Sail Zanzibar. Our team is verifying your transaction and updating your booking confirmation.</p>
+
+      <div class="confirmation-details">
+        <p id="ref-box" style="display:none; font-size: 1.15rem; background: #e8f4f8; padding: 0.85rem 1rem; border-radius: 8px; border: 1.5px solid #005f8a; color: #003853; margin-bottom: 1rem;">
+          <strong>Booking Reference:</strong> <span id="booking-ref" style="font-family: monospace; font-weight: 800; color: #005f8a;"></span>
+        </p>
+        <p id="provider-box" style="display:none;">
+          <strong>Payment Gateway:</strong> <span id="provider-name" style="text-transform: capitalize; font-weight: 600;"></span>
+        </p>
+        <p><strong>Official Confirmation:</strong> Your verified receipt, itinerary details, and driver/guide contacts will be confirmed directly on WhatsApp.</p>
+        <p><strong>Processed:</strong> <span id="payment-time"></span></p>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <a id="wa-confirm-btn" href="https://wa.me/{{ site.contact.whatsapp }}" class="btn btn-accent btn-block" target="_blank" rel="noopener">
+          💬 Confirm on WhatsApp
+        </a>
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="/" class="btn btn-secondary btn-block">Return to Homepage</a>
+      </div>
+
+      <script>
+        document.getElementById('payment-time').textContent =
+          new Date().toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' });
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var ref = params.get('ref') || params.get('OrderTrackingId') || params.get('reference');
+          var provider = params.get('provider');
+          if (ref) {
+            var refEl = document.getElementById('booking-ref');
+            var refBox = document.getElementById('ref-box');
+            var waBtn = document.getElementById('wa-confirm-btn');
+            if (refEl) refEl.textContent = ref;
+            if (refBox) refBox.style.display = 'block';
+            if (waBtn) waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent('Hello Spice & Sail! I have completed payment for booking reference: ' + ref + (provider ? ' via ' + provider : '') + '. Please confirm my receipt.');
+          }
+          if (provider) {
+            var provEl = document.getElementById('provider-name');
+            var provBox = document.getElementById('provider-box');
+            if (provEl) provEl.textContent = provider;
+            if (provBox) provBox.style.display = 'block';
+          }
+        } catch (e) {}
+      </script>
+    </div>
+  </section>
+</main>
+
+{% include "footer.njk" %}

@@ -4,7 +4,7 @@
 {# First pass: count and sum #}
 {% set reviewCount = 0 %}
 {% set ratingSum = 0 %}
-{% for r in (data.reviews | default([])) %}
+{% for r in (reviews | default(data.reviews) | default([])) %}
   {% if r.approved == true %}
     {% if serviceSlug == "" or r.service == serviceSlug %}
       {% set reviewCount = reviewCount + 1 %}
@@ -38,7 +38,7 @@
     </div>
 
     <div class="reviews-grid reveal">
-      {% for r in (data.reviews | default([])) %}
+      {% for r in (reviews | default(data.reviews) | default([])) %}
         {% if r.approved == true %}
           {% if serviceSlug == "" or r.service == serviceSlug %}
       <article class="review-card">

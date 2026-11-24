@@ -1,1 +1,3 @@
-{# Tour reviews section: kept empty until live verified external reviews (TripAdvisor / Google) are connected #}
+{# Tour reviews section: loads verified reviews from reviews.json / reviews-list #}
+{% set serviceSlug = tour_slug %}
+{% include "reviews-list.njk" %}

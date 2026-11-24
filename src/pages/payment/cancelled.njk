@@ -1,0 +1,50 @@
+---
+title: Payment Cancelled — Spice and Sail Zanzibar
+permalink: "/payment/cancelled/index.html"
+metaRobots: "noindex,nofollow"
+---
+{% include "seo.njk" %}
+{% include "header.njk" %}
+
+<main class="" id="main-content">
+  <section class="section-thank-you">
+    <div class="container-center">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">ℹ️</div>
+      <h1>Payment Cancelled or Incomplete</h1>
+      <p>Your payment session was cancelled or could not be completed. Don't worry—no charges were incurred, and your tentative booking request is still held in our system.</p>
+
+      <div class="confirmation-details">
+        <p id="ref-box" style="display:none; font-size: 1.15rem; background: #fff8e8; padding: 0.85rem 1rem; border-radius: 8px; border: 1.5px solid #d4af37; color: #5a4200; margin-bottom: 1rem;">
+          <strong>Booking Reference:</strong> <span id="booking-ref" style="font-family: monospace; font-weight: 800; color: #003853;"></span>
+        </p>
+        <p>Need help with alternative payment options? We accept Visa, Mastercard, Pesapal, ClickPesa, Selcom, AzamPay, or payment upon arrival for select services.</p>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <a id="wa-help-btn" href="https://wa.me/{{ site.contact.whatsapp }}" class="btn btn-accent btn-block" target="_blank" rel="noopener">
+          💬 Chat with us on WhatsApp
+        </a>
+      </div>
+      <div style="margin-top: 1rem;">
+        <a href="/" class="btn btn-secondary btn-block">Return to Homepage</a>
+      </div>
+
+      <script>
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var ref = params.get('ref') || params.get('reference');
+          if (ref) {
+            var refEl = document.getElementById('booking-ref');
+            var refBox = document.getElementById('ref-box');
+            var waBtn = document.getElementById('wa-help-btn');
+            if (refEl) refEl.textContent = ref;
+            if (refBox) refBox.style.display = 'block';
+            if (waBtn) waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent('Hello Spice & Sail! My payment for reference ' + ref + ' did not go through. Can you assist me?');
+          }
+        } catch (e) {}
+      </script>
+    </div>
+  </section>
+</main>
+
+{% include "footer.njk" %}

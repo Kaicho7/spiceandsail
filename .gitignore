@@ -40,3 +40,4 @@ _archive/
 *.bak-*
 .firecrawl/
 
+.wrangler/

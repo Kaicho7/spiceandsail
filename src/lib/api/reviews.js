@@ -11,6 +11,12 @@ const { corsHeaders, isAllowedOrigin, checkRateLimit, getClientIP } = require('.
 const { getGlobalStore, createStore, setGlobalStore } = require('../concierge/store');
 const { catalogue, CONFIG } = require('../concierge/catalogue');
 
+function ensureStore() {
+  try { getGlobalStore(); } catch (e) {
+    setGlobalStore(createStore('memory'));
+  }
+}
+
 // Use Web Crypto API (available in Cloudflare Workers) instead of node:crypto
 function randomHex(bytes = 8) {
   const arr = new Uint8Array(bytes);

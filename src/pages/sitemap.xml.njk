@@ -11,7 +11,7 @@ eleventyExcludeFromCollections: true
 <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/"/>
 </url>
 {%- for page in collections.all %}
-{%- if page.url and page.url.indexOf("/404") == -1 and page.url.indexOf("/thank-you") == -1 and page.url.indexOf("/bookings") == -1 and not page.url.endsWith(".html") and page.url != "/sitemap.xml" and page.url != "/" and not page.url.startsWith("/hotels/") and not page.url.startsWith("/attractions/") and not page.url | startsWith("/blog/") %}
+{%- if page.url and page.url.indexOf("/404") == -1 and page.url.indexOf("/thank-you") == -1 and page.url.indexOf("/bookings") == -1 and page.url != "/tours/mikumi-nyerere-day-safari/" and not page.url.endsWith(".html") and page.url != "/sitemap.xml" and page.url != "/" and not page.url.startsWith("/hotels/") and not page.url.startsWith("/attractions/") and not page.url | startsWith("/blog/") %}
 <url><loc>{{ site.url }}{{ page.url }}</loc><lastmod>{{ page.inputPath | fileMtime }}</lastmod><changefreq>weekly</changefreq><priority>{% if page.url == "/about/" or page.url == "/contact/" %}0.8{% else %}0.6{% endif %}</priority>
 {%- set altEn = page.data.alternate_en %}
 {%- set altIt = page.data.alternate_it %}

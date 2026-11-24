@@ -356,7 +356,7 @@
         "min": 30,
         "max": 50,
         "display": "$30–$50",
-        "basisNote": "per person; floor priced from partner rate (Animation team partner rate: $41 total small group)",
+        "basisNote": "per person (small group)",
         "sourceQuality": "Historical price list + 2026 market range",
         "sourceFiles": "zanzibar things to do.docx (50 USD); 2026 market guides",
         "verified": true,

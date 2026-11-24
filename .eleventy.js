@@ -353,6 +353,7 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
 
   eleventyConfig.addGlobalData("conciergeCat", () => conciergeCatalogue);
   eleventyConfig.addGlobalData("hotelPublicRates", () => hotelPublicRates);
+  eleventyConfig.addGlobalData("reviews", () => require("./src/data/reviews.json"));
   eleventyConfig.addGlobalData("cataloguePackages", () => (conciergeCatalogue.services || [])
     .filter(s => s.type === "package" && s.hotelSlug)
     .map(s => {
@@ -942,18 +943,19 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     }
   });
 
-  // Content-based deterministic date filter for sitemap lastmod — generates unique ISO date from string hash
+  // Content-based deterministic date filter for sitemap lastmod — generates unique past ISO date from string hash (never in the future)
   eleventyConfig.addNunjucksFilter("contentDate", function(inputStr) {
-    if (!inputStr) return new Date().toISOString().split("T")[0];
+    const today = new Date("2026-11-24");
+    if (!inputStr) return today.toISOString().split("T")[0];
     let hash = 0;
     for (let i = 0; i < inputStr.length; i++) {
       hash = ((hash << 5) - hash) + inputStr.charCodeAt(i);
       hash |= 0;
     }
-    const daysOffset = Math.abs(hash) % 3650;
-    const baseDate = new Date("2024-01-01");
-    baseDate.setDate(baseDate.getDate() + daysOffset);
-    return baseDate.toISOString().split("T")[0];
+    const daysAgo = (Math.abs(hash) % 180) + 1;
+    const pastDate = new Date(today);
+    pastDate.setDate(pastDate.getDate() - daysAgo);
+    return pastDate.toISOString().split("T")[0];
   });
 
   // Canonical alt text filter ensuring exact identical alt text for every image site-wide
