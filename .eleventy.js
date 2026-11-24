@@ -47,10 +47,25 @@ module.exports = function(eleventyConfig) {
     const entry = translationsData.strings[key];
     if (entry && entry[langCode]) return entry[langCode];
     if (entry && entry.en) return entry.en;
+    console.warn(`Missing translation: ${key} @ ${langCode || 'en'}`);
     return key;
   }
 
   
+
+
+  // Expose translationsData globally for template access
+  eleventyConfig.addGlobalData("translationsData", () => translationsData);
+
+  // Ensure t() filter uses the enhanced translate function
+  eleventyConfig.addNunjucksFilter("t", function(key, lang) {
+    return translate(key, lang);
+  });
+
+  // Add a debug filter to list available translation keys
+  eleventyConfig.addNunjucksFilter("translationKeys", () => {
+    return Object.keys(translationsData.strings);
+  });
 
     // nonce generator
     eleventyConfig.addNunjucksFilter('getNonce', function() {

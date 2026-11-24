@@ -361,7 +361,7 @@
     window.googleTranslateElementInit = function() {
       new window.google.translate.TranslateElement({
         pageLanguage: pageLang,
-        includedLanguages: 'en,it,de,fr,pl',
+        includedLanguages: 'en,it,de,fr,pl,ar,ru',
         autoDisplay: false
       }, 'google_translate_element');
 

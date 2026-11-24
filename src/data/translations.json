@@ -418,8 +418,8 @@
     },
     "whatsapp_greeting": {
       "en": "Hi Spice and Sail, I would like to inquire about",
-      "it": "Ciao Spice and Sail, vorrei richiedere informazioni e un preventivo per",
-      "de": "Hallo Spice and Sail, ich interessiere mich für",
+      "it": "Ciao Spice and Sail, vorrei prenotare un transfer o tour a Zanzibar.",
+      "de": "Hallo Spice and Sail, ich möchte einen Transfer oder eine Tour in Sansibar buchen.",
       "fr": "Bonjour Spice and Sail, je souhaite demander des informations et un devis pour",
       "pl": "Dzień dobry Spice and Sail, chciałbym zapytać o wycenę i szczegóły dotyczące",
       "ar": "مرحباً Spice and Sail، أود الاستفسار عن",
@@ -473,7 +473,7 @@
     "footer_talk_with_team": {
       "en": "Talk with our team",
       "it": "Parla con il nostro team",
-      "de": "Sprich mit unserem Team",
+      "de": "Sprechen Sie mit unserem Team",
       "fr": "Parlez à notre équipe",
       "pl": "Porozmawiaj z naszym zespołem",
       "ar": "تحدث مع فريقنا",
@@ -503,8 +503,8 @@
       "de": "Wettergarantie",
       "fr": "Garantie Météo",
       "pl": "Gwarancja Pogodowa",
-      "ar": "ضمان الأحوال الجوية",
-      "ru": "Гарантия хорошей погоды"
+      "ar": "استرداد كامل بنسبة 100% أو تغيير الموعد مجاناً - ضمان الأحوال الجوية",
+      "ru": "100% возврат средств или бесплатный перенос даты - гарантия хорошей погоды"
     },
     "footer_multilingual_guides": {
       "en": "Multilingual Guides (extra fee)",
