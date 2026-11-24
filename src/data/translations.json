@@ -162,7 +162,7 @@
       "fr": "Safari Mikumi 1 Jour en Vol",
       "pl": "1-Dniowe Safari Mikumi (Lot)",
       "ar": "سفاري ميكومي ليوم واحد بالطيران",
-      "ru": "Сафари в Микуми на 1 день (перелет)"
+      "ru": "Safari в Микуми на 1 день (перелет)"
     },
     "nav_honeymoon": {
       "en": "Honeymoon Packages",
@@ -797,7 +797,7 @@
     "contact_title": {
       "en": "Contact Spice and Sail Zanzibar",
       "it": "Contatta Spice and Sail Zanzibar",
-      "de": "Kontaktieren Sie Spice and Sail Sansibar",
+      "de": "Kontaktieren Sie Spice and Sail Zanzibar",
       "fr": "Contactez Spice and Sail Zanzibar",
       "pl": "Skontaktuj się z Spice and Sail Zanzibar",
       "ar": "اتصل بـ سبايس آند سيل زنجبار",
@@ -903,13 +903,13 @@
       "ru": "Телефон / SMS"
     },
     "phone_sms_desc": {
-      "en": "Call or text during business hours (9 AM – 5 PM EAT).",
-      "it": "Chiama o invia un SMS durante l'orario lavorativo (9:00–17:00 EAT).",
+      "en": "Call or text during business hours (Mon–Sat, 08:00–18:00 EAT).",
+      "it": "Chiama o invia un SMS durante l'orario lavorativo (Mon–Sat, 08:00–18:00 EAT).",
       "de": "Ruf an oder schreibe eine SMS während der Geschäftszeiten (9–17 Uhr EAT).",
       "fr": "Appelez ou envoyez un SMS pendant les heures ouvrées (9h–17h EAT).",
-      "pl": "Zadzwoń lub wyślij SMS w godzinach pracy (9:00–17:00 EAT).",
+      "pl": "Zadzwoń lub wyślij SMS w godzinach pracy (Mon–Sat, 08:00–18:00 EAT).",
       "ar": "اتصل أو أرسل رسالة نصية خلال ساعات العمل (9 صباحاً - 5 مساءً EAT).",
-      "ru": "Звоните или пишите SMS в рабочее время (9:00–17:00 EAT)."
+      "ru": "Звоните или пишите SMS в рабочее время (Mon–Sat, 08:00–18:00 EAT)."
     },
     "email_contact": {
       "en": "Email",
@@ -1133,8 +1133,8 @@
       "de": "Wir bedienen alle Insel-Abholungen in Stone Town, Flughafen, Nungwi, Kendwa, Paje, Jambiani und Matemwe.",
       "fr": "Desservant tous les ramassages sur l'île à Stone Town, Aéroport, Nungwi, Kendwa, Paje, Jambiani et Matemwe.",
       "pl": "Obsługujemy wszystkie odbior na wyspie w Stone Town, Lotnisko, Nungwi, Kendwa, Paje, Jambiani i Matemwe.",
-      "ar": "نخدم جميع عمليات الاستلام في الجزيرة عبر ستون تاون، المطار، نونغوي، كيندوا، باجي، جامبياني، ومatemwe.",
-      "ru": "Обслуживаем все подборы на острове в Стоун-Тауне, Аэропорту, Нунгви, Кендва, Падже, Джамбиани и Матемве."
+      "ar": "نخدم جميع عمليات الاستلام في الجزيرة عبر Stone Town، المطار، نونغوي، كيندوا، باجي، جامبياني، ومatemwe.",
+      "ru": "Обслуживаем все подборы на острове в Stone Townе, Аэропорту, Нунгви, Кендва, Падже, Джамбиани и Матемве."
     },
     "hub_whatsapp_label": {
       "en": "WhatsApp: ",
@@ -1247,7 +1247,7 @@
     "hero_local_operator": {
       "en": "Local Tour Operator — Zanzibar",
       "it": "Tour Operator Locale — Zanzibar",
-      "de": "Lokaler Reiseveranstalter — Sansibar",
+      "de": "Lokaler Reiseveranstalter — Zanzibar",
       "fr": "Opérateur Local — Zanzibar",
       "pl": "Lokalny Operator Turystyczny — Zanzibar",
       "ar": "منظم رحلات محلي — زنجبار",
@@ -1259,7 +1259,7 @@
       "de": "Ihr vertrauenswürdiger Partner für Flughafentransfers, Safari Blue, Gewürztouren, Mnemba-Sch norcheln und maßgeschneiderte Pakete. Transparente Preise, WhatsApp-Beratung, keine Überraschungen.",
       "fr": "Votre partenaire de confiance pour les transferts aéroport, Safari Blue, visites d'épices, snorkeling à Mnemba et forfaits sur mesure. Prix transparents, assistance WhatsApp, aucune surprise.",
       "pl": "Wasz zaufany partner do transferów lotniskowych, Safari Blue, wycieczek po farmach przypraw, snorkeling na Mnemba i pakietów na miarę. Przejrzyste ceny, wsparcie WhatsApp, zero niespodzianek.",
-      "ar": "شريككم الموثوق للنقل من المطار، سفاري بلو، جولات التوابل، الغطس في منيمبا، والباقات المخصصة. أسعار شفافة، إرشاد واتساب، لا مفاجآت.",
+      "ar": "شريككم الموثوق للنقل من المطار، Safari Blue، جولات التوابل، الغطس في منيمبا، والباقات المخصصة. أسعار شفافة، إرشاد واتساب، لا مفاجآت.",
       "ru": "Ваш надежный партнер для трансферов из аэропорта, Safari Blue, туров по фермам специй, сноркелинга в Мнемба и индивидуальных пакетов. Прозрачные цены, поддержка WhatsApp, никаких сюрпризов."
     },
     "btn_book_whatsapp": {
@@ -1328,7 +1328,7 @@
     "section_discover": {
       "en": "Discover Zanzibar with Us",
       "it": "Scopri Zanzibar con Noi",
-      "de": "Entdecken Sie Sansibar mit Uns",
+      "de": "Entdecken Sie Zanzibar mit Uns",
       "fr": "Découvrez Zanzibar avec Nous",
       "pl": "Odkryj Zanzibar z Nami",
       "ar": "اكتشف زنجبار معنا",
@@ -1358,8 +1358,8 @@
       "de": "ZNZ → Stone Town, Nungwi, Kendwa, Paje, Jambiani, Matemwe, Kiwengwa. Preis pro Fahrzeug, Flughafenbegrüßung, Flugverfolgung.",
       "fr": "ZNZ → Stone Town, Nungwi, Kendwa, Paje, Jambiani, Matemwe, Kiwengwa. Prix par véhicule, accueil à l'aéroport, suivi de vol.",
       "pl": "ZNZ → Stone Town, Nungwi, Kendwa, Paje, Jambiani, Matemwe, Kiwengwa. Ceny za pojazd, spotkanie na lotnisku, śledzenie lotów.",
-      "ar": "ZNZ → ستون تاون، نونغوي، كيندوا، باجي، جامبياني، ماتيموي، كيوينجوا. أسعار لكل مركبة، استقبال في المطار، تتبع الرحلات.",
-      "ru": "ZNZ → Стоун-Таун, Нунгви, Кендва, Падже, Джамбиани, Матемве, Кивенгва. Цена за автомобиль, встреча в аэропорту, отслеживание рейсов."
+      "ar": "ZNZ → Stone Town، نونغوي، كيندوا، باجي، جامبياني، ماتيموي، كيوينجوا. أسعار لكل مركبة، استقبال في المطار، تتبع الرحلات.",
+      "ru": "ZNZ → Stone Town, Нунгви, Кендва, Падже, Джамбиани, Матемве, Кивенгва. Цена за автомобиль, встреча в аэропорту, отслеживание рейсов."
     },
     "card_safari_blue": {
       "en": "Safari Blue — Menai Bay",
@@ -1367,7 +1367,7 @@
       "de": "Safari Blue — Menai Bay",
       "fr": "Safari Blue — Baie de Menai",
       "pl": "Safari Blue — Zatoka Menai",
-      "ar": "سفاري بلو — خليج ميناي",
+      "ar": "Safari Blue — خليج ميناي",
       "ru": "Safari Blue — Бухта Менаи"
     },
     "card_safari_blue_desc": {
@@ -1376,8 +1376,8 @@
       "de": "Ganzer Tag auf traditionellem Dhow, Schnorcheln, Sandbank, frisches Fisch-BBQ, Menai Bay-Gebühren inklusive. Das originale Safari Blue.",
       "fr": "Journée complète sur un dhow traditionnel, snorkeling, banc de sable, BBQ de poisson frais, frais de Menai Bay inclus. Le Safari Blue original.",
       "pl": "Cały dzień na tradycyjnym dhow, snorkeling, wydma piaskowa, BBQ ze świeżą rybą, opłaty Zatoki Menai wliczone. Oryginalny Safari Blue.",
-      "ar": "يوم كامل على داو تقليدي، الغطس، بنك رملي، شواء سمك طازج، رسوم خليج ميناي مشمولة. سفاري بلو الأصلي.",
-      "ru": "Полный день на традиционном дау, сноркелинг, песчаная коса, BBQ из свежей рыбы, сборы Бухты Менаи включены. Оригинальный Safari Blue."
+      "ar": "يوم كامل على Dhow تقليدي، الغطس، بنك رملي، شواء سمك طازج، رسوم خليج ميناي مشمولة. Safari Blue الأصلي.",
+      "ru": "Полный день на традиционном Dhow, сноркелинг, песчаная коса, BBQ из свежей рыбы, сборы Бухты Менаи включены. Оригинальный Safari Blue."
     },
     "card_mnemba": {
       "en": "Mnemba Atoll Snorkeling",
@@ -1385,8 +1385,8 @@
       "de": "Schnorcheln Mnemba Atoll",
       "fr": "Snorkeling Atoll Mnemba",
       "pl": "Snorkeling Atol Mnemba",
-      "ar": "الغطس في أتول منيمبا",
-      "ru": "Сноркелинг Атолл Мнемба"
+      "ar": "الغطس في Mnemba Atoll",
+      "ru": "Сноркелинг Mnemba Atoll"
     },
     "card_mnemba_desc": {
       "en": "Pristine coral reef, resident green turtles, 5 conservation fee included. Departs from Matemwe, Nungwi, Kiwengwa.",
@@ -1443,13 +1443,13 @@
       "ru": "WhatsApp Консьерж"
     },
     "card_concierge_desc": {
-      "en": "Book, ask info, modify itineraries. Reply in minutes (09:00–17:00 EAT, Mon–Sat).",
-      "it": "Prenota, chiedi info, modifica itinerari. Risposta in pochi minuti (09:00–17:00 EAT, Lun–Sab).",
-      "de": "Buchen, Infos anfordern, Reiserouten ändern. Antwort in Minuten (09:00–17:00 EAT, Mo–Sa).",
-      "fr": "Réservez, demandez des infos, modifiez les itinéraires. Réponse en quelques minutes (09:00–17:00 EAT, Lun–Sam).",
-      "pl": "Rezerwuj, pytaj o info, modyfikuj trasy. Odpowiedź w kilka minut (09:00–17:00 EAT, Pon–Sob).",
-      "ar": "احجز، استفسر، عدل البرامج. رد في دقائق (09:00–17:00 EAT، الإثنين–السبت).",
-      "ru": "Бронируйте, спрашивайте информацию, меняйте маршруты. Ответ за минуты (09:00–17:00 EAT, Пн–Сб)."
+      "en": "Book, ask info, modify itineraries. Reply in minutes (08:00–18:00 EAT, Mon–Sat).",
+      "it": "Prenota, chiedi info, modifica itinerari. Risposta in pochi minuti (08:00–18:00 EAT, Lun–Sab).",
+      "de": "Buchen, Infos anfordern, Reiserouten ändern. Antwort in Minuten (08:00–18:00 EAT, Mo–Sa).",
+      "fr": "Réservez, demandez des infos, modifiez les itinéraires. Réponse en quelques minutes (08:00–18:00 EAT, Lun–Sam).",
+      "pl": "Rezerwuj, pytaj o info, modyfikuj trasy. Odpowiedź w kilka minut (08:00–18:00 EAT, Pon–Sob).",
+      "ar": "احجز، استفسر، عدل البرامج. رد في دقائق (08:00–18:00 EAT، الإثنين–السبت).",
+      "ru": "Бронируйте, спрашивайте информацию, меняйте маршруты. Ответ за минуты (08:00–18:00 EAT, Пн–Сб)."
     },
     "btn_open_whatsapp_card": {
       "en": "Open WhatsApp",
@@ -1463,7 +1463,7 @@
     "cta_ready": {
       "en": "Ready for Your Zanzibar Trip?",
       "it": "Pronto per il Tuo Viaggio a Zanzibar?",
-      "de": "Bereit für Ihre Sansibar-Reise?",
+      "de": "Bereit für Ihre Zanzibar-Reise?",
       "fr": "Prêt pour Votre Voyage à Zanzibar?",
       "pl": "Gotowy na Wycieczkę na Zanzibar?",
       "ar": "مستعد لرحلتك إلى زنجبار؟",
@@ -1493,7 +1493,7 @@
       "de": "Ihr vertrauenswürdiger Partner für Flughafentransfers, Safari Blue, Gewürz-Touren, Mnemba-Sch norcheln und maßgeschneiderte Pakete. Transparente Preise, WhatsApp-Beratung, keine Überraschungen.",
       "fr": "Votre partenaire de confiance pour les transferts aéroport, Safari Blue, visites d'épices, snorkeling à Mnemba et forfaits sur mesure. Prix transparents, assistance WhatsApp, aucune surprise.",
       "pl": "Wasz zaufany partner do transferów lotniskowych, Safari Blue, wycieczki po farmach przypraw, snorkeling na Mnemba i pakietów na miarę. Przejrzyste ceny, wsparcie WhatsApp, zero niespodzianek.",
-      "ar": "شريككم الموثوق للنقل من المطار، سفاري بلو، جولات التوابل، الغطس في منيمبا، والباقات المخصصة. أسعار شفافة، إرشاد واتساب، لا مفاجآت.",
+      "ar": "شريككم الموثوق للنقل من المطار، Safari Blue، جولات التوابل، الغطس في منيمبا، والباقات المخصصة. أسعار شفافة، إرشاد واتساب، لا مفاجآت.",
       "ru": "Ваш надежный партнер для трансферов из аэропорта, Safari Blue, туров по фермам специй, сноркелинга в Мнемба и индивидуальных пакетов. Прозрачные цены, поддержка WhatsApp, никаких сюрпризов."
     },
     "hero_tagline_fr": {
@@ -1502,7 +1502,7 @@
       "de": "Ihr vertrauenswürdiger Partner für Flughafentransfers, Safari Blue, Gewürz-Touren, Mnemba-Sch norcheln und maßgeschneiderte Pakete. Transparente Preise, WhatsApp-Beratung, keine Überraschungen.",
       "fr": "Votre partenaire local de confiance pour les transferts aéroport, Safari Blue, la visite des fermes aux épices, le snorkeling à Mnemba et vos séjours sur mesure à Zanzibar. Tarifs transparents, sans commission d'intermédiaire, confirmation rapide par WhatsApp.",
       "pl": "Wasz zaufany partner do transferów lotniskowych, Safari Blue, wycieczki po farmach przypraw, snorkeling na Mnemba i pakietów na miarę. Przejrzyste ceny, wsparcie WhatsApp, zero niespodzianek.",
-      "ar": "شريككم الموثوق للنقل من المطار، سفاري بلو، جولات التوابل، الغطس في منيمبا، والباقات المخصصة. أسعار شفافة، إرشاد واتساب، لا مفاجآت.",
+      "ar": "شريككم الموثوق للنقل من المطار، Safari Blue، جولات التوابل، الغطس في منيمبا، والباقات المخصصة. أسعار شفافة، إرشاد واتساب، لا مفاجآت.",
       "ru": "Ваш надежный партнер для трансферов из аэропорта, Safari Blue, туров по фермам специй, сноркелинга в Мнемба и индивидуальных пакетов. Прозрачные цены, поддержка WhatsApp, никаких сюрпризов."
     },
     "hero_tagline_pl": {
@@ -1511,7 +1511,7 @@
       "de": "Ihr vertrauenswürdiger Partner für Flughafentransfers, Safari Blue, Gewürz-Touren, Mnemba-Sch norcheln und maßgeschneiderte Pakete. Transparente Preise, WhatsApp-Beratung, keine Überraschungen.",
       "fr": "Votre partenaire local de confiance pour les transferts aéroport, Safari Blue, la visite des fermes aux épices, le snorkeling à Mnemba et vos séjours sur mesure à Zanzibar. Tarifs transparents, sans commission d'intermédiaire, confirmation rapide par WhatsApp.",
       "pl": "Państwa sprawdzony lokalny partner na Zanzibarze. Prywatne transfery lotniskowe, rejsy Safari Blue tradycyjną łodzią dhow, snorkeling przy atolu Mnemba, plantacje przypraw i pakiety safari. Uczciwe ceny bez pośredników i bezpośredni kontakt przez WhatsApp.",
-      "ar": "شريككم الموثوق للنقل من المطار، سفاري بلو، جولات التوابل، الغطس في منيمبا، والباقات المخصصة. أسعار شفافة، إرشاد واتساب، لا مفاجآت.",
+      "ar": "شريككم الموثوق للنقل من المطار، Safari Blue، جولات التوابل، الغطس في منيمبا، والباقات المخصصة. أسعار شفافة، إرشاد واتساب، لا مفاجآت.",
       "ru": "Ваш надежный партнер для трансферов из аэропорта, Safari Blue, туров по фермам специй, сноркелинга в Мнемба и индивидуальных пакетов. Прозрачные цены, поддержка WhatsApp, никаких сюрпризов."
     },
     "hero_tagline_ar": {
@@ -1520,7 +1520,7 @@
       "de": "Ihr vertrauenswürdiger Partner für Flughafentransfers, Safari Blue, Gewürz-Touren, Mnemba-Sch norcheln und maßgeschneiderte Pakete. Transparente Preise, WhatsApp-Beratung, keine Überraschungen.",
       "fr": "Votre partenaire local de confiance pour les transferts aéroport, Safari Blue, la visite des fermes aux épices, le snorkeling à Mnemba et vos séjours sur mesure à Zanzibar. Tarifs transparents, sans commission d'intermédiaire, confirmation rapide par WhatsApp.",
       "pl": "Państwa sprawdzony lokalny partner na Zanzibarze. Prywatne transfery lotniskowe, rejsy Safari Blue tradycyjną łodzią dhow, snorkeling przy atolu Mnemba, plantacje przypraw i pakiety safari. Uczciwe ceny bez pośredników i bezpośredni kontakt przez WhatsApp.",
-      "ar": "شريكك المحلي الموثوق لتوصيل المطار، رحلات سفاري بلو بالمركب التقليدي، سنوركلينج جزيرة منيمبا، مزارع التوابل العضوية وباقات الإقامة المخصصة. أسعار شفافة ومباشرة بدون عمولات وسطاء وحجز فوري عبر واتساب.",
+      "ar": "شريكك المحلي الموثوق لتوصيل المطار، رحلات Safari Blue بالمركب التقليدي، سنوركلينج Mnemba، مزارع التوابل العضوية وباقات الإقامة المخصصة. أسعار شفافة ومباشرة بدون عمولات وسطاء وحجز فوري عبر واتساب.",
       "ru": "Ваш надежный партнер для трансферов из аэропорта, Safari Blue, туров по фермам специй, сноркелинга в Мнемба и индивидуальных пакетов. Прозрачные цены, поддержка WhatsApp, никаких сюрпризов."
     },
     "hero_tagline_ru": {
@@ -1529,13 +1529,13 @@
       "de": "Ihr vertrauenswürdiger Partner für Flughafentransfers, Safari Blue, Gewürz-Touren, Mnemba-Sch norcheln und maßgeschneiderte Pakete. Transparente Preise, WhatsApp-Beratung, keine Überraschungen.",
       "fr": "Votre partenaire local de confiance pour les transferts aéroport, Safari Blue, la visite des fermes aux épices, le snorkeling à Mnemba et vos séjours sur mesure à Zanzibar. Tarifs transparents, sans commission d'intermédiaire, confirmation rapide par WhatsApp.",
       "pl": "Państwa sprawdzony lokalny partner na Zanzibarze. Prywatne transfery lotniskowe, rejsy Safari Blue tradycyjną łodzią dhow, snorkeling przy atolu Mnemba, plantacje przypraw i pakiety safari. Uczciwe ceny bez pośredników i bezpośredni kontakt przez WhatsApp.",
-      "ar": "شريكك المحلي الموثوق لتوصيل المطار، رحلات سفاري بلو بالمركب التقليدي، سنوركلينج جزيرة منيمبا، مزارع التوابل العضوية وباقات الإقامة المخصصة. أسعار شفافة ومباشرة بدون عمولات وسطاء وحجز فوري عبر واتساب.",
+      "ar": "شريكك المحلي الموثوق لتوصيل المطار، رحلات Safari Blue بالمركب التقليدي، سنوركلينج Mnemba، مزارع التوابل العضوية وباقات الإقامة المخصصة. أسعار شفافة ومباشرة بدون عمولات وسطاء وحجز فوري عبر واتساب.",
       "ru": "Ваш надежный партнер для трансферов из аэропорта, Safari Blue, туров по фермам специй, сноркелинга в Мнемба и индивидуальных пакетов. Прозрачные цены, поддержка WhatsApp, никаких сюрпризов."
     },
     "footer_tagline": {
       "en": "Your trusted local partner for unforgettable Zanzibar experiences since 2019.",
       "it": "Il Vostro partner locale di fiducia per esperienze indimenticabili a Zanzibar dal 2019.",
-      "de": "Ihr vertrauenswürdiger lokaler Partner für unvergessliche Sansibar-Erlebnisse seit 2019.",
+      "de": "Ihr vertrauenswürdiger lokaler Partner für unvergessliche Zanzibar-Erlebnisse seit 2019.",
       "fr": "Votre partenaire local de confiance pour des expériences inoubliables à Zanzibar depuis 2019.",
       "pl": "Wasz zaufany lokalny partner do niezapomnianych wrażeń na Zanzibarze od 2019 roku.",
       "ar": "شريككم المحلي الموثوق لتجارب زنجبار لا تُنسى منذ 2019.",
@@ -1544,7 +1544,7 @@
     "footer_zanzibar_tours": {
       "en": "Zanzibar Tours",
       "it": "Tour a Zanzibar",
-      "de": "Sansibar Touren",
+      "de": "Zanzibar Touren",
       "fr": "Circuits à Zanzibar",
       "pl": "Wycieczki na Zanzibarze",
       "ar": "جولات زنجبار",
@@ -1566,7 +1566,7 @@
       "fr": "Safaris Continentaux",
       "pl": "Safari Lądowe",
       "ar": "سفاري البر الرئيسي",
-      "ru": "Сафари на Материке"
+      "ru": "Safari на Материке"
     },
     "footer_holiday_packages": {
       "en": "Holiday Packages",
@@ -1589,7 +1589,7 @@
     "footer_getting_around": {
       "en": "Getting Around Zanzibar",
       "it": "Spostarsi a Zanzibar",
-      "de": "Fortbewegung auf Sansibar",
+      "de": "Fortbewegung auf Zanzibar",
       "fr": "Se Déplacer à Zanzibar",
       "pl": "Poruszanie Się po Zanzibarze",
       "ar": "التنقل في زنجبار",
@@ -1625,7 +1625,7 @@
     "footer_travel_guide": {
       "en": "Zanzibar Travel Guide",
       "it": "Guida di Viaggio Zanzibar",
-      "de": "Sansibar Reiseführer",
+      "de": "Zanzibar Reiseführer",
       "fr": "Guide de Voyage Zanzibar",
       "pl": "Przewodnik po Zanzibarze",
       "ar": "دليل سفر زنجبار",
@@ -1634,7 +1634,7 @@
     "areas_title": {
       "en": "Where to Stay in Zanzibar — Areas & Beaches Guide",
       "it": "Dove Soggiornare a Zanzibar — Guida Aree & Spiagge",
-      "de": "Wo übernachten auf Sansibar — Reiseführer Gebiete & Strände",
+      "de": "Wo übernachten auf Zanzibar — Reiseführer Gebiete & Strände",
       "fr": "Où Séjourner à Zanzibar — Guide Zones & Plages",
       "pl": "Gdzie Zostać na Zanzibarze — Przewodnik Rejonów & Plaż",
       "ar": "أين تقيمون في زنجبار — دليل المناطق والشواطئ",
@@ -1646,8 +1646,8 @@
       "de": "Jede Zone hat ihren eigenen Charakter. Wählen Sie nach Reisestil: Nachtleben & Tauchen (Nungwi/Kendwa), Kitesurfen & Abenteuer (Paje), Kultur & Geschichte (Stone Town), Luxus & Entspannung (Bwejuu/Michamvi) oder authentisches Dorfleben (Jambiani/Kizimkazi).",
       "fr": "Chaque zone a un caractère distinct. Choisissez selon votre style de voyage : vie nocturne et plongée (Nungwi/Kendwa), kitesurf et aventure (Paje), culture et histoire (Stone Town), luxe et détente (Bwejuu/Michamvi) ou vie de village authentique (Jambiani/Kizimkazi).",
       "pl": "Każdy rejon ma swój unikalny charakter. Wybierz według stylu podróży: życie nocne i nurkowanie (Nungwi/Kendwa), kitesurfing i przygoda (Paje), kultura i historia (Stone Town), luksus i relaks (Bwejuu/Michamwi) lub autentyczne życie wioskowe (Jambiani/Kizimkazi).",
-      "ar": "لكل منطقة طابعها الخاص. اختر حسب أسلوب سفرك: الحياة الليلية والغوص (نونغوي/كيندوا)، ركوب الأمواج والمغامرة (باجي)، الثقافة والتاريخ (ستون تاون)، الفخامة والاسترخاء (بويجو/ميتشامفي)، أو الحياة الريفية الأصيلة (جامبياني/كيزيمكازي).",
-      "ru": "У каждого района свой характер. Выбирайте по стилю путешествия: ночная жизнь и дайвинг (Нунгви/Кендву), кайтсерфинг и приключения (Падже), культура и история (Стоун-Таун), люкс и релакс (Бведжу/Мичамви) или аутентичная деревенская жизнь (Джамбиани/Кизимкази)."
+      "ar": "لكل منطقة طابعها الخاص. اختر حسب أسلوب سفرك: الحياة الليلية والغوص (نونغوي/كيندوا)، ركوب الأمواج والمغامرة (باجي)، الثقافة والتاريخ (Stone Town)، الفخامة والاسترخاء (بويجو/ميتشامفي)، أو الحياة الريفية الأصيلة (جامبياني/كيزيمكازي).",
+      "ru": "У каждого района свой характер. Выбирайте по стилю путешествия: ночная жизнь и дайвинг (Нунгви/Кендву), кайтсерфинг и приключения (Падже), культура и история (Stone Town), люкс и релакс (Бведжу/Мичамви) или аутентичная деревенская жизнь (Джамбиани/Кизимкази)."
     },
     "areas_quick_picks": {
       "en": "Quick Picks",
@@ -1832,7 +1832,7 @@
     "areas_unguja": {
       "en": "Unguja (Main Island — Zanzibar)",
       "it": "Unguja (Isola Principale — Zanzibar)",
-      "de": "Unguja (Hauptinsel — Sansibar)",
+      "de": "Unguja (Hauptinsel — Zanzibar)",
       "fr": "Unguja (Île Principale — Zanzibar)",
       "pl": "Unguja (Wyspa Główna — Zanzibar)",
       "ar": "أونغوجا (الجزيرة الرئيسية — زنجبار)",
@@ -1868,7 +1868,7 @@
     "hotels_title": {
       "en": "Zanzibar Hotels & Resorts",
       "it": "Hotel e Resort a Zanzibar",
-      "de": "Hotels und Resorts auf Sansibar",
+      "de": "Hotels und Resorts auf Zanzibar",
       "fr": "Hôtels et Résorts à Zanzibar",
       "pl": "Hotele i Resorty na Zanzibarze",
       "ar": "فنادق ومنتجعات زنجبار",
@@ -1877,7 +1877,7 @@
     "hotels_subtitle": {
       "en": "Compare luxury resorts, boutique hotels, and beachfront properties across all Zanzibar areas. Filter by location, price range, and experience type.",
       "it": "Confronta resort di lusso, hotel boutique e strutture fronte mare in tutte le aree di Zanzibar. Filtra per posizione, fascia di prezzo e tipo di esperienza.",
-      "de": "Vergleichen Sie Luxus-Resorts, Boutique-Hotels und strandnahen Properties über alle Sansibareichen Gebiete. Filtern Sie nach Lage, Preisbereich und Erlebnistyp.",
+      "de": "Vergleichen Sie Luxus-Resorts, Boutique-Hotels und strandnahen Properties über alle Zanzibareichen Gebiete. Filtern Sie nach Lage, Preisbereich und Erlebnistyp.",
       "fr": "Comparez les hôtels de luxe, les hôtels de charme et les propriétés front de mer à travers toutes les zones de Zanzibar. Filtrez selon l'emplacement, la fourchette de prix et le type d'expérience.",
       "pl": "Porównaj luksusowe resorty, hotelowe boutiki i obiektach plażowych we wszystkich rejonach Zanzibaru. Filtruj według lokalizacji, przedziału cenowego i typu doświadczenia.",
       "ar": "قارن المنتجعات الفاخرة، فنادق البوتيك، والمنشآت المطلة على البحر في جميع مناطق زنجبار. جهّز حسب الموقع، النطاق السعري، ونوع التجربة.",
@@ -1931,7 +1931,7 @@
     "hotels_main_title": {
       "en": "Where to Stay in Zanzibar — 198 Hotels in Our Directory",
       "it": "Dove Soggiornare a Zanzibar — 198 Hotel nel Nostro Elenco",
-      "de": "Wo übernachten auf Sansibar — 198 Hotels in Unserem Verzeichnis",
+      "de": "Wo übernachten auf Zanzibar — 198 Hotels in Unserem Verzeichnis",
       "fr": "Où Séjourner à Zanzibar — 198 Hôtels dans Notre Répertoire",
       "pl": "Gdzie Zostać na Zanzibarze — 198 Hoteli w Naszej Bibliotece",
       "ar": "أين تقيمون في زنجبار — 198 فندقاً في دليلنا",
@@ -1940,11 +1940,11 @@
     "hotels_main_desc": {
       "en": "Explore Zanzibar's beachfront resorts, boutique villas, and historic Stone Town retreats across Unguja and Pemba. <strong>198 hotels in our directory</strong>, including <strong>5 partner hotels with verified rates & direct booking</strong>. Door-to-door airport transfers and excursion lobby pickups available for all.",
       "it": "Esplora i resort fronte mare di Zanzibar, le ville boutique e i rifugi storici di Stone Town a Unguja e Pemba. <strong>198 hotel nel nostro elenco</strong>, inclusi <strong>5 hotel partner con tariffe verificate e prenotazione diretta</strong>. Trasferimenti aeroportuali porta a porta e pick-up in hall per le escursioni disponibili per tutti.",
-      "de": "Entdecken Sie Sansibars Strandresorts, Boutique-Villen und historische Stone-Town-Retreats auf Unguja und Pemba. <strong>198 Hotels in unserem Verzeichnis</strong>, darunter <strong>5 Partner-Hotels mit verifizierten Preisen & Direktbuchung</strong>. Tür-zu-Tür-Flughafentransfers und Ausflugs-Abholungen in der Lobby für alle verfügbar.",
+      "de": "Entdecken Sie Zanzibars Strandresorts, Boutique-Villen und historische Stone-Town-Retreats auf Unguja und Pemba. <strong>198 Hotels in unserem Verzeichnis</strong>, darunter <strong>5 Partner-Hotels mit verifizierten Preisen & Direktbuchung</strong>. Tür-zu-Tür-Flughafentransfers und Ausflugs-Abholungen in der Lobby für alle verfügbar.",
       "fr": "Explorez les complexes balnéaires de Zanzibar, les villas de charme et les retraites historiques de Stone Town à Unguja et Pemba. <strong>198 hôtels dans notre répertoire</strong>, dont <strong>5 hôtels partenaires avec tarifs vérifiés et réservation directe</strong>. Transferts aéroport porte-à-porte et prises en charge au hall pour les excursions disponibles pour tous.",
       "pl": "Odkryj plażowe kurorty Zanzibaru, boutique owe wille i historyczne ucieczki do Stone Town na Unguja i Pemba. <strong>198 hoteli w naszej bibliotece</strong>, w tym <strong>5 hoteli partnerskich z zweryfikowanymi stawkami i bezpośrednią rezerwacją</strong>. Transfery lotniskowe drzwi w drzwi i odbior w recepcji dostępne dla wszystkich.",
-      "ar": "استكشف المنتجعات الشاطئية في زنجبار، فلل البوتيك، والمنتجعات التاريخية في ستون تاون عبر أنغوجا وبمبا. <strong>198 فندقاً في دليلنا</strong>، بما في ذلك <strong>5 فنادق شريكة بأسعار مؤكدة وحجز مباشر</strong>. نقل من المطار من الباب إلى الباب واستقبال في اللوبي للرحلات متاح للجميع.",
-      "ru": "Исследуйте пляжные курорты Занзибара, бутик-виллы и исторические уединенные уголки Стоун-Тауна на Унгудже и Пембе. <strong>198 отелей в нашем каталоге</strong>, включая <strong>5 партнерских отелей с проверенными тарифами и прямым бронированием</strong>. Трансферы от двери до двери из аэропорта и встреча в вестибюле для экскурсий доступны для всех."
+      "ar": "استكشف المنتجعات الشاطئية في زنجبار، فلل البوتيك، والمنتجعات التاريخية في Stone Town عبر أنغوجا وبمبا. <strong>198 فندقاً في دليلنا</strong>، بما في ذلك <strong>5 فنادق شريكة بأسعار مؤكدة وحجز مباشر</strong>. نقل من المطار من الباب إلى الباب واستقبال في اللوبي للرحلات متاح للجميع.",
+      "ru": "Исследуйте пляжные курорты Занзибара, бутик-виллы и исторические уединенные уголки Stone Townа на Унгудже и Пембе. <strong>198 отелей в нашем каталоге</strong>, включая <strong>5 партнерских отелей с проверенными тарифами и прямым бронированием</strong>. Трансферы от двери до двери из аэропорта и встреча в вестибюле для экскурсий доступны для всех."
     },
     "hotels_book_transfer": {
       "en": "Book Airport Transfer (Standard Rates)",
@@ -2075,11 +2075,11 @@
     "hotels_transfer_desc": {
       "en": "We provide private air-conditioned terminal pickups to all {{ count }} Zanzibar accommodations with meet-and-greet, flight delay tracking, and direct lobby pickups for Mnemba, Safari Blue, and Stone Town tours.",
       "it": "Forniamo prelievi privati con aria condizionata al terminale per tutte le {{ count }} sistemazioni di Zanzibar con accoglienza, tracciamento ritardi voli e prelievo diretto in hall per tour Mnemba, Safari Blue e Stone Town.",
-      "de": "Wir bieten private klimatisierte Terminalabholungen für alle {{ count }} Unterkünfte auf Sansibar mit Meet & Greet, Flugverspätungsverfolgung und direkter Lobbyabholung für Mnemba, Safari Blue und Stone Town Touren.",
+      "de": "Wir bieten private klimatisierte Terminalabholungen für alle {{ count }} Unterkünfte auf Zanzibar mit Meet & Greet, Flugverspätungsverfolgung und direkter Lobbyabholung für Mnemba, Safari Blue und Stone Town Touren.",
       "fr": "Nous fournissons des prises en charge privées climatisées au terminal pour tous les {{ count }} hébergements de Zanzibar avec accueil, suivi des retards de vol et prise en charge directe au hall pour les tours Mnemba, Safari Blue et Stone Town.",
       "pl": "Zapewniamy prywatne przejazdy klimatyzowane z terminala do wszystkich {{ count }} zakwaterowań na Zanzibarze ze spotkaniem, śledzeniem opóźnień lotów i odbiorem w recepcji na wycieczki Mnemba, Safari Blue i Stone Town.",
-      "ar": "نحن نقدم خدمة استلام خاصة مكيفة من المبنى لجميع أماكن الإقامة الـ {{ count }} في زنجبار مع الاستقبال، تتبع تأخير الرحلات، والاستلام المباشر من اللوبي لجولات منيمبا،سفاري بلو، وستون تاون.",
-      "ru": "Мы предоставляем частные климатизированные трансферы из терминала ко всем {{ count }} размещениям Занзибара с встречей, отслеживанием задержек рейсов и прямым забором из вестибюля для туров Мнемба, Сафари Блю и Стоун-Таун."
+      "ar": "نحن نقدم خدمة استلام خاصة مكيفة من المبنى لجميع أماكن الإقامة الـ {{ count }} في زنجبار مع الاستقبال، تتبع تأخير الرحلات، والاستلام المباشر من اللوبي لجولات منيمبا،Safari Blue، وStone Town.",
+      "ru": "Мы предоставляем частные климатизированные трансферы из терминала ко всем {{ count }} размещениям Занзибара с встречей, отслеживанием задержек рейсов и прямым забором из вестибюля для туров Мнемба, Safari Blue и Stone Town."
     },
     "hotels_standard_rates": {
       "en": "Standardized Transfer Rates",
@@ -2372,7 +2372,7 @@
     "hotels_taxes_included": {
       "en": "All taxes and fees included — Zanzibar infrastructure tax is not added on top",
       "it": "Tutte le tasse e commissioni incluse — la tassa infrastrutturale di Zanzibar non viene aggiunta sopra",
-      "de": "Alle Steuern und Gebühren inklusive — Sansibars Infrastruktursteuer wird nicht oben drauf gerechnet",
+      "de": "Alle Steuern und Gebühren inklusive — Zanzibars Infrastruktursteuer wird nicht oben drauf gerechnet",
       "fr": "Toutes taxes et frais inclus — la taxe d'infrastructure de Zanzibar n'est pas ajoutée en plus",
       "pl": "Wszystkie podatki i opłaty wliczone — podatek infrastrukturalny Zanzibaru nie jest dodawany na górze",
       "ar": "جميع الضرائب والرسوم مشمولة — ضريبة البنية التحتية في زنجبار لا تُضاف فوق السعر",
@@ -2462,7 +2462,7 @@
     "hotels_levies_notice": {
       "en": "Zanzibar Accommodation Levies & Travel Notice",
       "it": "Tasse di Soggiorno Zanzibar & Avviso di Viaggio",
-      "de": "Sansibar Beherbergungsabgaben & Reisehinweis",
+      "de": "Zanzibar Beherbergungsabgaben & Reisehinweis",
       "fr": "Taxes de Séjour Zanzibar & Avis de Voyage",
       "pl": "Opłaty Za Pobyt na Zanzibarze i Komunikat Podróżny",
       "ar": "رسوم الإقامة في زنجبار وإشعار السفر",
@@ -2516,7 +2516,7 @@
     "hotels_insurance_desc": {
       "en": "Foreign travelers entering via Zanzibar ports/airports must hold Zanzibar Inbound Travel Insurance from ZIC ($44 adult / $22 child, valid 92 days). For combined Tanzania trips entering via mainland first (e.g. DAR/JRO), follow your first point-of-entry statutory insurer.",
       "it": "I viaggiatori stranieri che entrano via porti/aeroporti di Zanzibar devono avere l'Assicurazione Viaggio Inbound di Zanzibar da ZIC ($44 adulto / $22 bambino, validità 92 giorni). Per viaggi combinati in Tanzania entrando prima via terraferma (es. DAR/JRO), seguire l'assicuratore statutario del primo punto d'ingresso.",
-      "de": "Ausländische Reisende, die über Sansibars Häfen/Flughäfen einreisen, müssen eine Sansibaareise-Reiseversicherung von ZIC haben ($44 Erwachsener / $22 Kind, 92 Tage gültig). Für kombinierte Tansania-Reisen mit erstem Einreise über Festland (z.B. DAR/JRO), folgen Sie dem gesetzlichen Versicherer des ersten Einreisepunkts.",
+      "de": "Ausländische Reisende, die über Zanzibars Häfen/Flughäfen einreisen, müssen eine Sansibaareise-Reiseversicherung von ZIC haben ($44 Erwachsener / $22 Kind, 92 Tage gültig). Für kombinierte Tansania-Reisen mit erstem Einreise über Festland (z.B. DAR/JRO), folgen Sie dem gesetzlichen Versicherer des ersten Einreisepunkts.",
       "fr": "Les voyageurs étrangers entrant par les ports/aéroports de Zanzibar doivent détenir l'Assurance Voyage Entrante de Zanzibar de ZIC ($44 adulte / $22 enfant, validité 92 jours). Pour les voyages combinés en Tanzanie entrant d'abord par le continent (ex. DAR/JRO), suivez l'assureur légal de votre premier point d'entrée.",
       "pl": "Podróżnicy zagraniczni wjeżdżający przez porty/porty lotnicze Zanzibaru muszą posiadać Zanzibarskie Ubezpieczenie Przyjazdu od ZIC ($44 dorosły / $22 dziecko, ważne 92 dni). Dla podróży łączonych z Tanzanią wjeżdżających najpierw przez ląd (np. DAR/JRO), postępuj zgodnie z ubezpieczycielem ustawowym pierwszego punktu wjazdu.",
       "ar": "يجب على المسافرين الأجانب الذين يدخلون عبر موانئ/مطارات زنجبار امتلاك تأمين السفر الوافد من زنجبار من ZIC (44$ بالغ / 22$ طفل، صالح لـ 92 يوماً). للرحلات المشتركة إلى تنزانيا التي يدخل عبر البر الرئيسي أولاً (مثل DAR/JRO)، اتبع المؤمن القانوني لنقطة الدخول الأولى.",
@@ -2546,8 +2546,8 @@
       "de": "Umgehen Sie unregulierte Anhalter vor dem Flughafen. Spice & Sail bietet feste private Transfers mit Meet & Greet: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Ostküste (Paje/Matemwe) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Nordküste (Nungwi/Kendwa)</strong>.",
       "fr": "Évitez les rabatteurs non réglementés hors de l'aéroport. Spice & Sail propose des transferts privés à tarif fixe avec accueil : <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Côte Est (Paje/Matemwe) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Côte Nord (Nungwi/Kendwa)</strong>.",
       "pl": "Omin nielegalnych szantalów przed lotniskiem. Spice & Sail oferuje prywatne przejazdy w cenie stałej ze spotkaniem: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Wschodni Brzeg (Paje/Matemwe) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Północny Brzeg (Nungwi/Kendwa)</strong>.",
-      "ar": "تجنب السماسرة غير المنظمين خارج المطار. سبايس آند سيل تقدم توصيلات خاصة بسعر ثابت مع الاستقبال: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} ستون تاون &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} الساحل الشرقي (باجي/ماتيموي) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} الساحل الشمالي (نونغوي/كيندوا)</strong>.",
-      "ru": "Обойдите нерегулируемых посредников у аэропорта. Spice & Sail предлагает фиксированные частные трансферы с встречей: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Стоун-Таун &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Восточное Побережье (Падже/Матемве) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Северное Побережье (Нунгви/Кендву)</strong>."
+      "ar": "تجنب السماسرة غير المنظمين خارج المطار. سبايس آند سيل تقدم توصيلات خاصة بسعر ثابت مع الاستقبال: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} الساحل الشرقي (باجي/ماتيموي) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} الساحل الشمالي (نونغوي/كيندوا)</strong>.",
+      "ru": "Обойдите нерегулируемых посредников у аэропорта. Spice & Sail предлагает фиксированные частные трансферы с встречей: <strong>{% catPrice \"airport-transfer-znz-to-stone-town\" %} Stone Town &bull; {% catPrice \"airport-transfer-znz-to-pajejambiani\" %} Восточное Побережье (Падже/Матемве) &bull; {% catPrice \"airport-transfer-znz-to-nungwikendwa\" %} Северное Побережье (Нунгви/Кендву)</strong>."
     },
     "hotels_flight_tracking": {
       "en": "Real-time flight tracking & 60 min free waiting time.",
@@ -2627,8 +2627,8 @@
       "de": "Stone Town — UNESCO Kultur & Küche",
       "fr": "Stone Town — Culture & Cuisine UNESCO",
       "pl": "Stone Town — Kultura i Kuchnia UNESCO",
-      "ar": "ستون تاون — ثقافة ومطبخ اليونسكو",
-      "ru": "Стоун-Таун — Культура и Кухня ЮНЕСКО"
+      "ar": "Stone Town — ثقافة ومطبخ اليونسكو",
+      "ru": "Stone Town — Культура и Кухня ЮНЕСКО"
     },
     "hotels_stone_town_desc": {
       "en": "Boutique hotels in restored Sultan-era palaces. Steps to Forodhani food market, museums, and spice trading alleys.",
@@ -2726,8 +2726,8 @@
       "de": "",
       "fr": "",
       "pl": "",
-      "ar": "",
-      "ru": ""
+      "ar": "Stone Town",
+      "ru": "Stone Town"
     },
     "hotels_zone_nungwi": {
       "en": "Nungwi",
