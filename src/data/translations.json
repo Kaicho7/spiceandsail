@@ -183,22 +183,22 @@
       "ru": "Семейный отдых"
     },
     "nav_hotels_areas": {
-      "en": "Hotels & Areas",
-      "it": "Hotel & Località",
-      "de": "Hotels & Regionen",
-      "fr": "Hôtels & Régions",
-      "pl": "Hotele i Regiony",
-      "ar": "الفنادق والمناطق",
-      "ru": "Отели и регионы"
+      "en": "Where to Stay",
+      "it": "Dove Soggiornare",
+      "de": "Wo übernachten",
+      "fr": "Où Séjourner",
+      "pl": "Gdzie Nocować",
+      "ar": "أين تقيم",
+      "ru": "Где остановиться"
     },
     "nav_hotels": {
-      "en": "Hotels",
-      "it": "Hotel & Resort",
+      "en": "Hotels & Resorts",
+      "it": "Hotel e Resort",
       "de": "Hotels & Resorts",
       "fr": "Hôtels & Resorts",
       "pl": "Hotele i Resorty",
-      "ar": "فنادق ومنتجعات زنجبار",
-      "ru": "Отели и курорты Занзибара"
+      "ar": "الفنادق والمنتجعات",
+      "ru": "Отели и курорты"
     },
     "nav_attractions": {
       "en": "Attractions",
@@ -327,13 +327,13 @@
       "ru": "Что взять с собой"
     },
     "btn_whatsapp_book": {
-      "en": "Book on WhatsApp",
-      "it": "Prenota su WhatsApp",
-      "de": "Über WhatsApp buchen",
-      "fr": "Réserver par WhatsApp",
-      "pl": "Zarezerwuj przez WhatsApp",
-      "ar": "احجز عبر واتساب",
-      "ru": "Забронировать в WhatsApp"
+      "en": "Chat on WhatsApp",
+      "it": "Chatta su WhatsApp",
+      "de": "Auf WhatsApp chatten",
+      "fr": "Discuter sur WhatsApp",
+      "pl": "Czat na WhatsApp",
+      "ar": "دردشة على واتساب",
+      "ru": "Чат в WhatsApp"
     },
     "nav_about": {
       "en": "About Us",
@@ -419,7 +419,7 @@
     "whatsapp_greeting": {
       "en": "Hi Spice and Sail, I would like to inquire about",
       "it": "Ciao Spice and Sail, vorrei prenotare un transfer o tour a Zanzibar.",
-      "de": "Hallo Spice and Sail, ich möchte einen Transfer oder eine Tour in Sansibar buchen.",
+      "de": "Hallo Spice and Sail, ich möchte einen Transfer oder eine Tour in Zanzibar buchen.",
       "fr": "Bonjour Spice and Sail, je souhaite demander des informations et un devis pour",
       "pl": "Dzień dobry Spice and Sail, chciałbym zapytać o wycenę i szczegóły dotyczące",
       "ar": "مرحباً Spice and Sail، أود الاستفسار عن",
@@ -577,6 +577,672 @@
       "pl": "Anulowanie",
       "ar": "سياسة الإلغاء",
       "ru": "Правила отмены"
+    },
+    "hero_tagline": {
+      "en": "We sail, we farm, we guide.",
+      "it": "Navighiamo, coltiviamo, guidiamo.",
+      "de": "Wir segeln, wir bauen an, wir führen.",
+      "fr": "Nous naviguons, nous cultivons, nous guidons.",
+      "pl": "Żeglujemy, uprawiamy, prowadzimy.",
+      "ar": "نبحر، نزرع، نرشد.",
+      "ru": "Мы плаваем, выращиваем, ведём."
+    },
+    "hero_subtitle": {
+      "en": "Curated tours, seamless transfers, and multi-day packages. Marine fees included. Mbuzini based.",
+      "it": "Tour curati, trasferimenti senza intoppi e pacchetti multi-giorno. Fee marine incluse. Sede a Mbuzini.",
+      "de": "Kuratierte Touren, nahtlose Transfers und Mehrtagestouren. Marinegebühren inklusive. In Mbuzini ansässig.",
+      "fr": "Excursions sélectionnées, transferts fluides et séjours multi-jours. Frais marins inclus. Basés à Mbuzini.",
+      "pl": "Sprawdzane wycieczki, bezwzględne transfery i pakiety wielodniowe. Opłaty morskie wliczone. Siedziba w Mbuzini.",
+      "ar": "جولات مختارة، نقل سلس، وباقات متعددة الأيام. الرسوم البحرية مشمولة. مقرنا في مبوزيني.",
+      "ru": "Куратированные туры, беспрерывные трансферы и многодневные пакеты. Морские сборы включены. Офис в Мбузини."
+    },
+    "section_destinations": {
+      "en": "Destinations",
+      "it": "Destinazioni",
+      "de": "Reiseziele",
+      "fr": "Destinations",
+      "pl": "Miejsca",
+      "ar": "الوجهات",
+      "ru": "Направления"
+    },
+    "section_best_beaches": {
+      "en": "Best Beaches & Areas in Zanzibar",
+      "it": "Migliori Spiagge e Zone a Zanzibar",
+      "de": "Beste Strände & Gebiete in Zanzibar",
+      "fr": "Meilleures Plages & Zones à Zanzibar",
+      "pl": "Najlepsze Plaże i Regiony na Zanzibarze",
+      "ar": "أفضل الشواطئ والمناطق في زنجبار",
+      "ru": "Лучшие пляжи и районы на Занзибаре"
+    },
+    "section_subtitle_areas": {
+      "en": "Each zone offers a distinct vibe — choose by your travel style: nightlife, kitesurfing, relaxation, or culture.",
+      "it": "Ogni zona offre un’atmosfera unica — scegli in base al tuo stile di viaggio: vita notturna, kitesurf, relax o cultura.",
+      "de": "Jedes Gebiet hat seinen eigenen Charakter — wähle nach deinem Reisestil: Nachtleben, Kitesurfen, Entspannung oder Kultur.",
+      "fr": "Chaque zone a sa propre ambiance — choisissez selon votre style de vie : vie nocturne, kitesurf, détente ou culture.",
+      "pl": "Każda strefa ma unikalny klimat — wybór zależy od stylu podróży: życie nocne, kitesurfing, relaks lub kultura.",
+      "ar": "كل منطقة تمتاز بجو خاص — اختر بحسب أسلوب سفرك: الحياة الليلية، الكايت سيرفينغ، الاسترخاء، أو الثقافة.",
+      "ru": "Каждая зона имеет свой характер — выбирайте по стилю путешествия: ночная жизнь, кайтсёрфинг, отдых или культура."
+    },
+    "footer_contact": {
+      "en": "Contact",
+      "it": "Contatto",
+      "de": "Kontakt",
+      "fr": "Contact",
+      "pl": "Kontakt",
+      "ar": "اتصل بنا",
+      "ru": "Контакты"
+    },
+    "footer_subscribe": {
+      "en": "Subscribe",
+      "it": "Iscriviti",
+      "de": "Abonnieren",
+      "fr": "S'abonner",
+      "pl": "Zapisz się",
+      "ar": "اشترك",
+      "ru": "Подпишитесь"
+    },
+    "btn_view_rates": {
+      "en": "View Rates",
+      "it": "Vedi Tariffe",
+      "de": "Preise anzeigen",
+      "fr": "Voir les tarifs",
+      "pl": "Zobacz Ceny",
+      "ar": "عرض الأسعار",
+      "ru": "Посмотреть цены"
+    },
+    "btn_book_now": {
+      "en": "Book Now",
+      "it": "Prenota Ora",
+      "de": "Jetzt buchen",
+      "fr": "Réserver maintenant",
+      "pl": "Zarezerwuj Teraz",
+      "ar": "احجز الآن",
+      "ru": "Забронировать сейчас"
+    },
+    "btn_whatsapp_inquiry": {
+      "en": "WhatsApp Inquiry",
+      "it": "Richiesta WhatsApp",
+      "de": "WhatsApp Anfrage",
+      "fr": "Demande WhatsApp",
+      "pl": "Zapytanie WhatsApp",
+      "ar": "استفسار واتساب",
+      "ru": "Запрос в WhatsApp"
+    },
+    "section_why_choose": {
+      "en": "Why Choose Spice & Sail",
+      "it": "Perché Scegliere Spice & Sail",
+      "de": "Warum Spice & Sail wählen",
+      "fr": "Pourquoi Choisir Spice & Sail",
+      "pl": "Dlaczego Wybrać Spice & Sail",
+      "ar": "لماذا تختار سبايس آند سيل",
+      "ru": "Почему стоит выбрать Spice & Sail"
+    },
+    "feature_local_expertise": {
+      "en": "Local Expertise",
+      "it": "Competenza Locale",
+      "de": "Lokale Expertise",
+      "fr": "Expertise Locale",
+      "pl": "Lokalna Ekspertyza",
+      "ar": "خبرة محلية",
+      "ru": "Местная экспертиза"
+    },
+    "feature_local_expertise_desc": {
+      "en": "Born and raised in Zanzibar. We know every beach, tide, and hidden gem.",
+      "it": "Nati e cresciuti a Zanzibar. Conosciamo ogni spiaggia, marea e angolo nascosto.",
+      "de": "In Zanzibar geboren und aufgewachsen. Wir kennen jeden Strand, jede Gezeiten und jeden verborgenen Schatz.",
+      "fr": "Nés et élevés à Zanzibar. Nous connaissons chaque plage, marée et joyau caché.",
+      "pl": "Urodzeni i wychowani na Zanzibarze. Znamy każdą plażę, przepływ i ukryty skarb.",
+      "ar": "مولودون ونشأوا في زنجبار. نعرف كل شاطئ ومد وجزر وجوهرة مخفية.",
+      "ru": "Рожденные и выросшие на Занзибаре. Мы знаем каждый пляж, прилив и скрытую жемчужину."
+    },
+    "feature_verified_rates": {
+      "en": "Verified Partner Rates",
+      "it": "Tariffe Partner Verificate",
+      "de": "Verifizierte Partnertarife",
+      "fr": "Tarifs Partenaires Vérifiés",
+      "pl": "Zweryfikowane Stawki Partnerów",
+      "ar": "أسعار الشركاء المعتمدة",
+      "ru": "Проверенные тарифы партнеров"
+    },
+    "feature_verified_rates_desc": {
+      "en": "No hidden fees. Marine park fees included. Transparent pricing from contracted partners.",
+      "it": "Nessuna spesa nascosta. Fee parchi marini inclusi. Prezzi trasparenti da partner contrattuali.",
+      "de": "Keine versteckten Gebühren. Meeresparkgebühren inklusive. Transparente Preise von Vertragspartnern.",
+      "fr": "Aucuns frais cachés. Frais des parcs marins inclus. Tarifs transparents de partenaires contractuels.",
+      "pl": "Brak ukrytych opłat. Opłaty parków morskich wliczone. Przejrzyste ceny od partnerów kontraktowych.",
+      "ar": "لا توجد رسوم مخفية. رسوم المتنزهات البحرية مشمولة. أسعار شفافة من شركاء متعاقدين.",
+      "ru": "Нет скрытых комиссий. Плата за морские парки включена. Прозрачные цены от контрактных партнеров."
+    },
+    "feature_whatsapp_support": {
+      "en": "WhatsApp Support",
+      "it": "Supporto WhatsApp",
+      "de": "WhatsApp Support",
+      "fr": "Support WhatsApp",
+      "pl": "Wsparcie WhatsApp",
+      "ar": "دعم واتساب",
+      "ru": "Поддержка WhatsApp"
+    },
+    "feature_whatsapp_support_desc": {
+      "en": "Direct chat with our team. Fast replies, no bots. Available 7 days a week.",
+      "it": "Chat diretto con il nostro team. Risposte veloci, niente bot. Disponibili 7 giorni su 7.",
+      "de": "Direkter Chat mit unserem Team. Schnelle Antworten, keine Bots. 7 Tage die Woche verfügbar.",
+      "fr": "Chat direct avec notre équipe. Réponses rapides, pas de bots. Disponible 7j/7.",
+      "pl": "Bezpośredni czat z naszym zespołem. Szybkie odpowiedzi, bez botów. Dostępne 7 dni w tygodniu.",
+      "ar": "دردشة مباشرة مع فريقنا. ردود سريعة، بدون روبوتات. متاح 7 أيام في الأسبوع.",
+      "ru": "Прямой чат с нашей командой. Быстрые ответы, никаких ботов. Доступно 7 дней в неделю."
+    },
+    "section_tours_experiences": {
+      "en": "Tours & Experiences",
+      "it": "Tour ed Esperienze",
+      "de": "Touren & Erlebnisse",
+      "fr": "Excursions & Expériences",
+      "pl": "Wycieczki i Doświadczenia",
+      "ar": "الجولات والتجارب",
+      "ru": "Туры и впечатления"
+    },
+    "section_all_tours_link": {
+      "en": "View All Tours",
+      "it": "Vedi Tutti i Tour",
+      "de": "Alle Touren anzeigen",
+      "fr": "Voir toutes les excursions",
+      "pl": "Zobacz Wszystkie Wycieczki",
+      "ar": "عرض جميع الجولات",
+      "ru": "Посмотреть все туры"
+    },
+    "footer_instagram": {
+      "en": "Instagram",
+      "it": "Instagram",
+      "de": "Instagram",
+      "fr": "Instagram",
+      "pl": "Instagram",
+      "ar": "إنستغرام",
+      "ru": "Instagram"
+    },
+    "footer_tiktok": {
+      "en": "TikTok",
+      "it": "TikTok",
+      "de": "TikTok",
+      "fr": "TikTok",
+      "pl": "TikTok",
+      "ar": "تيك توك",
+      "ru": "ТикТок"
+    },
+    "footer_youtube": {
+      "en": "YouTube",
+      "it": "YouTube",
+      "de": "YouTube",
+      "fr": "YouTube",
+      "pl": "YouTube",
+      "ar": "يوتيوب",
+      "ru": "YouTube"
+    },
+    "footer_facebook": {
+      "en": "Facebook",
+      "it": "Facebook",
+      "de": "Facebook",
+      "fr": "Facebook",
+      "pl": "Facebook",
+      "ar": "فيسبوك",
+      "ru": "Фейсбук"
+    },
+    "footer_tripadvisor": {
+      "en": "Tripadvisor",
+      "it": "Tripadvisor",
+      "de": "Tripadvisor",
+      "fr": "Tripadvisor",
+      "pl": "Tripadvisor",
+      "ar": "تريب أدفايزور",
+      "ru": "Трипадвайзер"
+    },
+    "contact_title": {
+      "en": "Contact Spice and Sail Zanzibar",
+      "it": "Contatta Spice and Sail Zanzibar",
+      "de": "Kontaktieren Sie Spice and Sail Sansibar",
+      "fr": "Contactez Spice and Sail Zanzibar",
+      "pl": "Skontaktuj się z Spice and Sail Zanzibar",
+      "ar": "اتصل بـ سبايس آند سيل زنجبار",
+      "ru": "Свяжитесь с Spice and Sail Занзибар"
+    },
+    "contact_subtitle": {
+      "en": "WhatsApp-first booking. We respond within 2 hours during business hours (EAT, UTC+3).",
+      "it": "Prenotazione via WhatsApp. Rispondiamo entro 2 ore durante l'orario lavorativo (EAT, UTC+3).",
+      "de": "WhatsApp-Buchung vorrangig. Wir antworten innerhalb von 2 Stunden während der Geschäftszeiten (EAT, UTC+3).",
+      "fr": "Réservation prioritaire via WhatsApp. Nous répondons sous 2 heures pendant les heures ouvrées (EAT, UTC+3).",
+      "pl": "Rezerwacja przez WhatsApp. Odpowiadamy w ciągu 2 godzin w godzinach pracy (EAT, UTC+3).",
+      "ar": "الحجز عبر واتساب أولاً. نرد خلال ساعتين خلال ساعات العمل (EAT، UTC+3).",
+      "ru": "Бронирование через WhatsApp. Отвечаем в течение 2 часов в рабочее время (EAT, UTC+3)."
+    },
+    "section_get_in_touch": {
+      "en": "Get in Touch",
+      "it": "Contattaci",
+      "de": "Kontakt aufnehmen",
+      "fr": "Nous contacter",
+      "pl": "Skontaktuj się",
+      "ar": "تواصل معنا",
+      "ru": "Связаться с нами"
+    },
+    "section_fastest_way": {
+      "en": "Fastest Way to Reach Us",
+      "it": "Il modo più veloce per contattarci",
+      "de": "Schnellster Weg, uns zu erreichen",
+      "fr": "Le moyen le plus rapide de nous joindre",
+      "pl": "Najszybszy sposób na kontakt z nami",
+      "ar": "أسرع طريقة للوصول إلينا",
+      "ru": "Самый быстрый способ связаться с нами"
+    },
+    "section_fastest_way_subtitle": {
+      "en": "Choose your preferred channel — we'll get back to you within 2 hours during business hours.",
+      "it": "Scegli il tuo canale preferito — ti risponderemo entro 2 ore durante l'orario lavorativo.",
+      "de": "Wähle deinen bevorzugten Kanal — wir melden uns innerhalb von 2 Stunden während der Geschäftszeiten.",
+      "fr": "Choisissez votre canal préféré — nous vous répondrons sous 2 heures pendant les heures ouvrées.",
+      "pl": "Wybierz preferowany kanał — odpowiemy w ciągu 2 godzin w godzinach pracy.",
+      "ar": "اختر قناتك المفضلة — سنرد عليك خلال ساعتين خلال ساعات العمل.",
+      "ru": "Выберите предпочтительный канал — мы ответим в течение 2 часов в рабочее время."
+    },
+    "whatsapp_fastest": {
+      "en": "WhatsApp (Fastest)",
+      "it": "WhatsApp (Più veloce)",
+      "de": "WhatsApp (Am schnellsten)",
+      "fr": "WhatsApp (Le plus rapide)",
+      "pl": "WhatsApp (Najszybciej)",
+      "ar": "واتساب (الأسرع)",
+      "ru": "WhatsApp (Самый быстрый)"
+    },
+    "whatsapp_fastest_desc": {
+      "en": "Message us directly for quotes, bookings, and questions. Pre-filled message ready.",
+      "it": "Scrivici direttamente per preventivi, prenotazioni e domande. Messaggio precompilato pronto.",
+      "de": "Schreibe uns direkt für Angebote, Buchungen und Fragen. Vorgefertigte Nachricht bereit.",
+      "fr": "Envoyez-nous un message directement pour les devis, réservations et questions. Message pré-rempli prêt.",
+      "pl": "Napisz do nas bezpośrednio po wyceny, rezerwacje i pytania. Gotowa wiadomość wstępnie wypełniona.",
+      "ar": "راسلنا مباشرة للحصول على عروض أسعار وحجوزات واستفسارات. رسالة معدة مسبقاً جاهزة.",
+      "ru": "Напишите нам напрямую для котировок, бронирований и вопросов. Готовое предварительно заполненное сообщение."
+    },
+    "btn_open_whatsapp": {
+      "en": "Open WhatsApp Chat",
+      "it": "Apri Chat WhatsApp",
+      "de": "WhatsApp Chat öffnen",
+      "fr": "Ouvrir le chat WhatsApp",
+      "pl": "Otwórz Czat WhatsApp",
+      "ar": "افتح دردشة واتساب",
+      "ru": "Открыть чат WhatsApp"
+    },
+    "whatsapp_docs": {
+      "en": "WhatsApp for Documents",
+      "it": "WhatsApp per Documenti",
+      "de": "WhatsApp für Dokumente",
+      "fr": "WhatsApp pour documents",
+      "pl": "WhatsApp do Dokumentów",
+      "ar": "واتساب للوثائق",
+      "ru": "WhatsApp для документов"
+    },
+    "whatsapp_docs_desc": {
+      "en": "For formal inquiries, group bookings, or documentation requests, send them over WhatsApp — we reply in minutes.",
+      "it": "Per richieste formali, prenotazioni di gruppo o richieste di documentazione, inviale via WhatsApp — rispondiamo in minuti.",
+      "de": "Für formelle Anfragen, Gruppenbuchungen oder Dokumentenanfragen senden Sie diese über WhatsApp — wir antworten in Minuten.",
+      "fr": "Pour les demandes formelles, les réservations de groupe ou les demandes de documentation, envoyez-les via WhatsApp — nous répondons en quelques minutes.",
+      "pl": "W przypadku oficjalnych zapytań, rezerwacji grupowych lub wniosków o dokumentację, wyślij je przez WhatsApp — odpowiemy w kilka minut.",
+      "ar": "للاستفسارات الرسمية، الحجوزات الجماعية، أو طلبات الوثائق، أرسلها عبر واتساب — نرد في دقائق.",
+      "ru": "Для официальных запросов, групповых бронирований или запросов документации отправляйте их через WhatsApp — мы отвечаем за минуты."
+    },
+    "btn_message_whatsapp": {
+      "en": "Message us on WhatsApp",
+      "it": "Scrivici su WhatsApp",
+      "de": "Schreib uns auf WhatsApp",
+      "fr": "Envoyez-nous un message sur WhatsApp",
+      "pl": "Napisz do nas na WhatsApp",
+      "ar": "راسلنا على واتساب",
+      "ru": "Напишите нам в WhatsApp"
+    },
+    "phone_sms": {
+      "en": "Phone / SMS",
+      "it": "Telefono / SMS",
+      "de": "Telefon / SMS",
+      "fr": "Téléphone / SMS",
+      "pl": "Telefon / SMS",
+      "ar": "الهاتف / الرسائل النصية",
+      "ru": "Телефон / SMS"
+    },
+    "phone_sms_desc": {
+      "en": "Call or text during business hours (9 AM – 5 PM EAT).",
+      "it": "Chiama o invia un SMS durante l'orario lavorativo (9:00–17:00 EAT).",
+      "de": "Ruf an oder schreibe eine SMS während der Geschäftszeiten (9–17 Uhr EAT).",
+      "fr": "Appelez ou envoyez un SMS pendant les heures ouvrées (9h–17h EAT).",
+      "pl": "Zadzwoń lub wyślij SMS w godzinach pracy (9:00–17:00 EAT).",
+      "ar": "اتصل أو أرسل رسالة نصية خلال ساعات العمل (9 صباحاً - 5 مساءً EAT).",
+      "ru": "Звоните или пишите SMS в рабочее время (9:00–17:00 EAT)."
+    },
+    "email_contact": {
+      "en": "Email",
+      "it": "Email",
+      "de": "E-Mail",
+      "fr": "E-mail",
+      "pl": "E-mail",
+      "ar": "البريد الإلكتروني",
+      "ru": "Электронная почта"
+    },
+    "email_contact_desc": {
+      "en": "For formal inquiries and documentation, email us directly. We reply within 2 hours during business hours.",
+      "it": "Per richieste formali e documentazione, scrivici direttamente via email. Rispondiamo entro 2 ore durante l'orario lavorativo.",
+      "de": "Für formelle Anfragen und Dokumentation senden Sie uns direkt eine E-Mail. Wir antworten innerhalb von 2 Stunden während der Geschäftszeiten.",
+      "fr": "Pour les demandes formelles et la documentation, envoyez-nous un e-mail directement. Nous répondons sous 2 heures pendant les heures ouvrées.",
+      "pl": "W przypadku oficjalnych zapytań i dokumentacji, napisz do nas bezpośrednio na e-mail. Odpowiemy w ciągu 2 godzin w godzinach pracy.",
+      "ar": "للاستفسارات الرسمية والوثائق، راسلنا مباشرة عبر البريد الإلكتروني. نرد خلال ساعتين خلال ساعات العمل.",
+      "ru": "Для официальных запросов и документации напишите нам напрямую на e-mail. Мы отвечаем в течение 2 часов в рабочее время."
+    },
+    "section_form": {
+      "en": "Or Use This Form",
+      "it": "O Usa Questo Modulo",
+      "de": "Oder nutzen Sie dieses Formular",
+      "fr": "Ou utilisez ce formulaire",
+      "pl": "Lub skorzystaj z tego formularza",
+      "ar": "أو استخدم هذا النموذج",
+      "ru": "Или используйте эту форму"
+    },
+    "section_send_message": {
+      "en": "Send a Message Here",
+      "it": "Invia un Messaggio Qui",
+      "de": "Hier eine Nachricht senden",
+      "fr": "Envoyez un message ici",
+      "pl": "Wyślij wiadomość tutaj",
+      "ar": "أرسل رسالة هنا",
+      "ru": "Отправьте сообщение здесь"
+    },
+    "section_send_message_subtitle": {
+      "en": "Fill out the form and we'll reply via WhatsApp or email within 2 hours during business hours.",
+      "it": "Compila il modulo e ti risponderemo via WhatsApp o email entro 2 ore durante l'orario lavorativo.",
+      "de": "Füllen Sie das Formular aus und wir antworten per WhatsApp oder E-Mail innerhalb von 2 Stunden während der Geschäftszeiten.",
+      "fr": "Remplissez le formulaire et nous vous répondrons par WhatsApp ou e-mail sous 2 heures pendant les heures ouvrées.",
+      "pl": "Wypełnij formularz, a odpowiemy przez WhatsApp lub e-mail w ciągu 2 godzin w godzinach pracy.",
+      "ar": "املأ النموذج وسنرد عليك عبر واتساب أو البريد الإلكتروني خلال ساعتين خلال ساعات العمل.",
+      "ru": "Заполните форму, и мы ответим через WhatsApp или e-mail в течение 2 часов в рабочее время."
+    },
+    "form_name_label": {
+      "en": "Your Name *",
+      "it": "Il tuo nome *",
+      "de": "Ihr Name *",
+      "fr": "Votre nom *",
+      "pl": "Twoje imię *",
+      "ar": "اسمك *",
+      "ru": "Ваше имя *"
+    },
+    "form_email_label": {
+      "en": "Email Address",
+      "it": "Indirizzo email",
+      "de": "E-Mail-Adresse",
+      "fr": "Adresse e-mail",
+      "pl": "Adres e-mail",
+      "ar": "عنوان البريد الإلكتروني",
+      "ru": "Адрес электронной почты"
+    },
+    "form_email_note": {
+      "en": "(required — we'll also message you on WhatsApp if you provide a number below)",
+      "it": "(richiesto — ti scriveremo anche su WhatsApp se fornisci un numero qui sotto)",
+      "de": "(erforderlich — wir schreiben Ihnen auch auf WhatsApp, wenn Sie unten eine Nummer angeben)",
+      "fr": "(requis — nous vous enverrons aussi un message sur WhatsApp si vous fournissez un numéro ci-dessous)",
+      "pl": "(wymagane — napiszemy też na WhatsApp, jeśli podasz numer poniżej)",
+      "ar": "(مطلوب — سنراسلك أيضاً على واتساب إذا قدمت رقمًا أدناه)",
+      "ru": "(обязательно — мы также напишем вам в WhatsApp, если вы укажете номер ниже)"
+    },
+    "form_phone_label": {
+      "en": "WhatsApp / Mobile Number",
+      "it": "Numero WhatsApp / Mobile",
+      "de": "WhatsApp / Mobilnummer",
+      "fr": "Numéro WhatsApp / Mobile",
+      "pl": "Numer WhatsApp / Mobilny",
+      "ar": "رقم واتساب / الجوال",
+      "ru": "Номер WhatsApp / Мобильный"
+    },
+    "form_phone_placeholder": {
+      "en": "e.g. +44 7700 900077, +1 555 123 4567, +255...",
+      "it": "es. +39 3XX XXXXXXX, +44 7700 900077...",
+      "de": "z. B. +49 1XX XXXXXXX, +44 7700 900077...",
+      "fr": "ex. +33 6 XX XX XX XX, +44 7700 900077...",
+      "pl": "np. +48 5XX XXX XXX, +44 7700 900077...",
+      "ar": "مثال: +966 5X XXX XXXX, +44 7700 900077...",
+      "ru": "напр. +7 9XX XXX XXXX, +44 7700 900077..."
+    },
+    "form_travel_dates_label": {
+      "en": "Travel Dates",
+      "it": "Date di viaggio",
+      "de": "Reisedaten",
+      "fr": "Dates de voyage",
+      "pl": "Daty podróży",
+      "ar": "تواريخ السفر",
+      "ru": "Даты путешествия"
+    },
+    "form_travel_dates_placeholder": {
+      "en": "e.g., 15–22 July 2026",
+      "it": "es., 15–22 luglio 2026",
+      "de": "z. B., 15.–22. Juli 2026",
+      "fr": "ex., 15–22 juillet 2026",
+      "pl": "np., 15–22 lipiec 2026",
+      "ar": "مثال: 15–22 يوليو 2026",
+      "ru": "напр., 15–22 июля 2026"
+    },
+    "form_interests_label": {
+      "en": "What Interests You? *",
+      "it": "Cosa ti interessa? *",
+      "de": "Was interessiert Sie? *",
+      "fr": "Qu'est-ce qui vous intéresse ? *",
+      "pl": "Co Cię interesuje? *",
+      "ar": "ما الذي يهمك؟ *",
+      "ru": "Что вас интересует? *"
+    },
+    "form_select_option": {
+      "en": "Select...",
+      "it": "Seleziona...",
+      "de": "Auswählen...",
+      "fr": "Sélectionner...",
+      "pl": "Wybierz...",
+      "ar": "اختر...",
+      "ru": "Выбрать..."
+    },
+    "form_group_size_label": {
+      "en": "Group Size",
+      "it": "Dimensione del gruppo",
+      "de": "Gruppengröße",
+      "fr": "Taille du groupe",
+      "pl": "Wielkość grupy",
+      "ar": "حجم المجموعة",
+      "ru": "Размер группы"
+    },
+    "form_message_label": {
+      "en": "Details, Special Requests, Questions",
+      "it": "Dettagli, richieste speciali, domande",
+      "de": "Details, Sonderwünsche, Fragen",
+      "fr": "Détails, demandes spéciales, questions",
+      "pl": "Szczegóły, prośby specjalne, pytania",
+      "ar": "التفاصيل، الطلبات الخاصة، الأسئلة",
+      "ru": "Детали, особые запросы, вопросы"
+    },
+    "form_message_placeholder": {
+      "en": "Any special occasions, dietary needs, accessibility requirements, specific hotels or activities...",
+      "it": "Occasioni speciali, esigenze dietetiche, requisiti di accessibilità, hotel o attività specifiche...",
+      "de": "Besondere Anlässe, Ernährungsbedürfnisse, Barrierefreiheit, bestimmte Hotels oder Aktivitäten...",
+      "fr": "Toutes occasions spéciales, besoins alimentaires, exigences d'accessibilité, hôtels ou activités spécifiques...",
+      "pl": "Specjalne okazje, potrzeby dietetyczne, wymagania dostępności, konkretne hotele lub atrakcje...",
+      "ar": "أي مناسبات خاصة، احتياجات غذائية، متطلبات الوصول، فنادق أو أنشطة محددة...",
+      "ru": "Любые специальные случаи, диетические потребности, требования доступности, конкретные отели или мероприятия..."
+    },
+    "form_consent_label": {
+      "en": "I agree to be contacted via WhatsApp/email regarding my travel inquiry in accordance with the Privacy Notice. *",
+      "it": "Accetto di essere contattato via WhatsApp/email per la mia richiesta di viaggio in conformità con l'Informativa sulla Privacy. *",
+      "de": "Ich stimme zu, per WhatsApp/E-Mail bezüglich meiner Reiseanfrage kontaktiert zu werden, gemäß der Datenschutzerklärung. *",
+      "fr": "J'accepte d'être contacté via WhatsApp/e-mail concernant ma demande de voyage conformément à la Politique de Confidentialité. *",
+      "pl": "Zgadzam się na kontakt przez WhatsApp/e-mail w sprawie mojej zapytania o podróż zgodnie z Polityką Prywatności. *",
+      "ar": "أوافق على التواصل معي عبر واتساب/البريد الإلكتروني بخصوص استفسار سفري وفقاً لإشعار الخصوصية. *",
+      "ru": "Я соглашаюсь на связь через WhatsApp/e-mail по поводу моего запроса о путешествии в соответствии с Политикой конфиденциальности. *"
+    },
+    "btn_send_inquiry": {
+      "en": "Send Inquiry",
+      "it": "Invia Richiesta",
+      "de": "Anfrage senden",
+      "fr": "Envoyer la demande",
+      "pl": "Wyślij Zapytanie",
+      "ar": "إرسال الاستفسار",
+      "ru": "Отправить запрос"
+    },
+    "form_note": {
+      "en": "We'll reply via WhatsApp or email within 2 hours during business hours.",
+      "it": "Ti risponderemo via WhatsApp o email entro 2 ore durante l'orario lavorativo.",
+      "de": "Wir antworten per WhatsApp oder E-Mail innerhalb von 2 Stunden während der Geschäftszeiten.",
+      "fr": "Nous vous répondrons par WhatsApp ou e-mail sous 2 heures pendant les heures ouvrées.",
+      "pl": "Odpowiemy przez WhatsApp lub e-mail w ciągu 2 godzin w godzinach pracy.",
+      "ar": "سنرد عليك عبر واتساب أو البريد الإلكتروني خلال ساعتين خلال ساعات العمل.",
+      "ru": "Мы ответим через WhatsApp или e-mail в течение 2 часов в рабочее время."
+    },
+    "section_operations": {
+      "en": "Operations & Office",
+      "it": "Operazioni e Ufficio",
+      "de": "Betrieb & Büro",
+      "fr": "Opérations & Bureau",
+      "pl": "Operacje i Biuro",
+      "ar": "العمليات والمكتب",
+      "ru": "Операции и офис"
+    },
+    "section_our_location": {
+      "en": "Our Location & Dispatch Hub",
+      "it": "La Nostra Sede e Hub Operativo",
+      "de": "Unser Standort & Dispatch-Hub",
+      "fr": "Notre Localisation & Hub d'Expédition",
+      "pl": "Nasza Lokalizacja i Centrum Dystrybucji",
+      "ar": "موقعنا ومركز الإرسال",
+      "ru": "Наше местоположение и диспетчерский хаб"
+    },
+    "hub_main": {
+      "en": "Spice and Sail Zanzibar Hub",
+      "it": "Hub Spice and Sail Zanzibar",
+      "de": "Spice and Sail Zanzibar Hub",
+      "fr": "Hub Spice and Sail Zanzibar",
+      "pl": "Hub Spice and Sail Zanzibar",
+      "ar": "مركز سبايس آند سيل زنجبار",
+      "ru": "Хаб Spice and Sail Занзибар"
+    },
+    "hub_location_desc": {
+      "en": "Main Operations & Depot: {{ site.address.display }}.",
+      "it": "Operazioni Principali e Deposito: {{ site.address.display }}.",
+      "de": "Hauptbetrieb & Depot: {{ site.address.display }}.",
+      "fr": "Opérations Principales & Dépôt: {{ site.address.display }}.",
+      "pl": "Główne Operacje i Magazyn: {{ site.address.display }}.",
+      "ar": "العمليات الرئيسية والمستودع: {{ site.address.display }}.",
+      "ru": "Основные операции и депо: {{ site.address.display }}."
+    },
+    "hub_serving_areas": {
+      "en": "Serving all island pickups across Stone Town, Airport, Nungwi, Kendwa, Paje, Jambiani, and Matemwe.",
+      "it": "Serviamo tutti i pickup sull'isola tra Stone Town, Aeroporto, Nungwi, Kendwa, Paje, Jambiani e Matemwe.",
+      "de": "Wir bedienen alle Insel-Abholungen in Stone Town, Flughafen, Nungwi, Kendwa, Paje, Jambiani und Matemwe.",
+      "fr": "Desservant tous les ramassages sur l'île à Stone Town, Aéroport, Nungwi, Kendwa, Paje, Jambiani et Matemwe.",
+      "pl": "Obsługujemy wszystkie odbior na wyspie w Stone Town, Lotnisko, Nungwi, Kendwa, Paje, Jambiani i Matemwe.",
+      "ar": "نخدم جميع عمليات الاستلام في الجزيرة عبر ستون تاون، المطار، نونغوي، كيندوا، باجي، جامبياني، ومatemwe.",
+      "ru": "Обслуживаем все подборы на острове в Стоун-Тауне, Аэропорту, Нунгви, Кендва, Падже, Джамбиани и Матемве."
+    },
+    "hub_whatsapp_label": {
+      "en": "WhatsApp: ",
+      "it": "WhatsApp: ",
+      "de": "WhatsApp: ",
+      "fr": "WhatsApp: ",
+      "pl": "WhatsApp: ",
+      "ar": "واتساب: ",
+      "ru": "WhatsApp: "
+    },
+    "hub_whatsapp_note": {
+      "en": "WhatsApp-first — replies within 2 hours during business hours",
+      "it": "WhatsApp prima — risposte entro 2 ore durante l'orario lavorativo",
+      "de": "WhatsApp vorrangig — Antworten innerhalb von 2 Stunden während der Geschäftszeiten",
+      "fr": "WhatsApp prioritaire — réponses sous 2 heures pendant les heures ouvrées",
+      "pl": "WhatsApp priorytetowo — odpowiedzi w ciągu 2 godzin w godzinach pracy",
+      "ar": "واتساب أولاً — ردود خلال ساعتين خلال ساعات العمل",
+      "ru": "WhatsApp приоритет — ответы в течение 2 часов в рабочее время"
+    },
+    "section_find_us": {
+      "en": "Find Us on Google Maps",
+      "it": "Trova Ci su Google Maps",
+      "de": "Finden Sie uns auf Google Maps",
+      "fr": "Trouvez-nous sur Google Maps",
+      "pl": "Znajdź nas na Mapach Google",
+      "ar": "اعثر علينا على خرائط جوجل",
+      "ru": "Найдите нас на Google Maps"
+    },
+    "section_find_us_desc": {
+      "en": "Located in {{ site.address.short }}, on the corridor between Zanzibar Town and the spice plantation belt.",
+      "it": "Situato a {{ site.address.short }}, sul corridoio tra Zanzibar Town e la fascia delle piantagioni di spezie.",
+      "de": "Gelegen in {{ site.address.short }}, im Korridor zwischen Zanzibar Town und dem Gewürzplantagen-Gürtel.",
+      "fr": "Situé à {{ site.address.short }}, sur le corridor entre Zanzibar Town et la ceinture des plantations d'épices.",
+      "pl": "Znajduje się w {{ site.address.short }}, na korytarzu między Zanzibar Town a pasmem plantacji przypraw.",
+      "ar": "يقع في {{ site.address.short }}، على الممر بين مدينة زنجبار وحزام مزارع التوابل.",
+      "ru": "Расположен в {{ site.address.short }}, в коридоре между Занзибар Таун и поясом специй."
+    },
+    "btn_google_maps": {
+      "en": "Open in Google Maps",
+      "it": "Apri in Google Maps",
+      "de": "In Google Maps öffnen",
+      "fr": "Ouvrir dans Google Maps",
+      "pl": "Otwórz w Mapach Google",
+      "ar": "افتح في خرائط جوجل",
+      "ru": "Открыть в Google Maps"
+    },
+    "cta_quick_links": {
+      "en": "Quick Links to Popular Pages",
+      "it": "Link Veloci alle Pagine Popolari",
+      "de": "Schnelllinks zu beliebten Seiten",
+      "fr": "Liens rapides vers les pages populaires",
+      "pl": "Szybkie linki do popularnych stron",
+      "ar": "روابط سريعة للصفحات الشائعة",
+      "ru": "Быстрые ссылки на популярные страницы"
+    },
+    "link_browse_tours": {
+      "en": "Browse All Tours",
+      "it": "Sfoglia Tutti i Tour",
+      "de": "Alle Touren durchsuchen",
+      "fr": "Parcourir tous les tours",
+      "pl": "Przeglądaj Wszystkie Wycieczki",
+      "ar": "استعرض جميع الجولات",
+      "ru": "Просмотреть все туры"
+    },
+    "link_airport_transfers": {
+      "en": "Airport Transfers",
+      "it": "Trasferimenti Aeroporto",
+      "de": "Flughafentransfers",
+      "fr": "Transferts Aéroport",
+      "pl": "Transfery Lotniskowe",
+      "ar": "توصيل المطار",
+      "ru": "Трансферы из аэропорта"
+    },
+    "link_multi_day_packages": {
+      "en": "Multi-Day Packages",
+      "it": "Pacchetti Multi-Giorno",
+      "de": "Mehrtagespakete",
+      "fr": "Forfaits Multi-Jours",
+      "pl": "Pakiety Wielodniowe",
+      "ar": "باقات متعددة الأيام",
+      "ru": "Многодневные пакеты"
+    },
+    "link_where_to_stay": {
+      "en": "Where to Stay",
+      "it": "Dove Soggiornare",
+      "de": "Wo übernachten",
+      "fr": "Où Séjourner",
+      "pl": "Gdzie Nocować",
+      "ar": "أين تقيم",
+      "ru": "Где остановиться"
+    },
+    "link_explore_by_zone": {
+      "en": "Explore by Zone",
+      "it": "Esplora per Zona",
+      "de": "Nach Zone erkunden",
+      "fr": "Explorer par Zone",
+      "pl": "Eksploruj według Strefy",
+      "ar": "استكشف حسب المنطقة",
+      "ru": "Исследовать по зоне"
+    },
+    "link_about_us": {
+      "en": "About Us",
+      "it": "Chi Siamo",
+      "de": "Über uns",
+      "fr": "À propos de nous",
+      "pl": "O Nas",
+      "ar": "من نحن",
+      "ru": "О нас"
     }
   }
 }

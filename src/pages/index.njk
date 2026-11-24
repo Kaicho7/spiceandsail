@@ -16,12 +16,12 @@ alternate_ru: "https://spiceandsail.com/ru/"
 <main class="home" id="main-content">
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-tagline reveal delay-1">We sail, we farm, we guide.</div>
+      <div class="hero-tagline reveal delay-1">{{ "hero_tagline" | t(lang) }}</div>
       <h1 class="reveal delay-2">Zanzibar Tours, Transfers &amp; <span class="highlight">Island Experiences</span></h1>
-      <p class="hero-subtitle reveal delay-3">Curated tours, seamless transfers, and multi-day packages. Marine fees included. Mbuzini based. <strong>{{ stats.total_tours }} tours, {{ stats.total_hotels }} curated hotels, {{ stats.total_attractions }} attractions.</strong></p>
+      <p class="hero-subtitle reveal delay-3">{{ "nav_tours" | t(lang) }} & {{ "nav_transfers" | t(lang) }} Marine fees included. Mbuzini based. <strong>{{ stats.total_tours }} tours, {{ stats.total_hotels }} curated hotels, {{ stats.total_attractions }} attractions.</strong></p>
       <div class="hero-cta reveal delay-4">
-        <a href="/tours/" class="btn btn-primary btn-lg">Browse All Zanzibar Tours</a>
-        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Chat on WhatsApp</a>
+        <a href="/tours/" class="btn btn-primary btn-lg">{{ "nav_all_tours" | t(lang) }}</a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">{{ "btn_whatsapp_book" | t(lang) }}</a>
       </div>
       <div class="hero-trust reveal delay-5">
         <div class="trust-item"><span class="trust-icon">✓</span>Small-Group &amp; Private Options</div>
@@ -45,7 +45,7 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8C28.6863 8 26 10.6863 26 14V24H18V14C18 8.9706 21.9706 5 26 5C30.0294 5 34 8.9706 34 14V24H38V14C38 10.6863 35.3137 8 32 8ZM26 26V38H38V26H26ZM18 38H46V42H18V38Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <span class="swahili-kicker"><strong>Bahari</strong><span>Sea &amp; island experiences</span></span>
-      <h2>Top Tours & Excursions</h2>
+      <h2>{{ "nav_tours" | t(lang) }}</h2>
       <p>Spice tours, Stone Town walks, snorkeling, dolphin trips, Safari Blue, Jozani Forest & more.</p>
       <a href="/tours/" class="btn btn-primary btn-sm">Browse Tours</a>
     </div>
@@ -54,7 +54,7 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8L14 30V50H50V30L32 8Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="22" r="6" stroke="currentColor" stroke-width="2"/><path d="M22 42H42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </div>
       <span class="swahili-kicker"><strong>Usafiri</strong><span>Getting around the island</span></span>
-      <h2>Airport Transfers ZNZ</h2>
+      <h2>{{ "nav_transfers" | t(lang) }}</h2>
       <p>Private transfers from Abeid Amani Karume Airport to Nungwi, Kendwa, Paje, Jambiani, Stone Town & all zones.</p>
       <a href="/transfers/" class="btn btn-primary btn-sm">View Transfers</a>
     </div>
@@ -63,7 +63,7 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 22L32 8L48 22V54H16V22Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 34H48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M32 22V34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
       </div>
       <span class="swahili-kicker"><strong>Safari</strong><span>Multi-day itineraries</span></span>
-      <h2>Multi-Day Packages</h2>
+      <h2>{{ "nav_packages" | t(lang) }}</h2>
       <p>3–7 day Zanzibar itineraries combining culture, marine, and nature. Including safari extensions to mainland Tanzania.</p>
       <a href="/packages/" class="btn btn-primary btn-sm">View Packages</a>
     </div>
@@ -72,7 +72,7 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="18" width="48" height="38" rx="4" stroke="currentColor" stroke-width="2.5"/><path d="M24 26H40M24 34H40M24 42H40M24 50H40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </div>
       <span class="swahili-kicker"><strong>Maliza</strong><span>Hotels &amp; areas</span></span>
-      <h2>Where to Stay in Zanzibar</h2>
+      <h2>{{ "nav_hotels_areas" | t(lang) }}</h2>
       <p>{{ stats.total_hotels }} curated hotels and resorts across Nungwi, Kendwa, Paje, Jambiani, Stone Town, Kiwengwa, Matemwe & more.</p>
       <a href="/hotels/" class="btn btn-primary btn-sm">View Hotels</a>
     </div>
@@ -340,7 +340,7 @@ alternate_ru: "https://spiceandsail.com/ru/"
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Destinations</span>
-        <h2>Best Beaches & Areas in Zanzibar</h2>
+        <h2>{{ "section_best_beaches" | t(lang) }}</h2>
         <p class="section-subtitle">Each zone offers a distinct vibe — choose by your travel style: nightlife, kitesurfing, relaxation, or culture.</p>
       </div>
       <div class="area-quick-picks">
@@ -413,8 +413,8 @@ alternate_ru: "https://spiceandsail.com/ru/"
   <section class="section section-alt">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Where to Stay</span>
-        <h2>Hand-Picked Zanzibar Hotels &amp; Resorts</h2>
+        <span class="section-tag">{{ "nav_hotels_areas" | t(lang) }}</span>
+        <h2>{{ "nav_hotels" | t(lang) }}</h2>
         <p class="section-subtitle">{{ stats.total_hotels }} curated properties across Nungwi, Kendwa, Paje, Jambiani, Stone Town, Kiwengwa, Matemwe &amp; more — starting with our contracted partner stays with verified public rates.</p>
       </div>
       <div class="cards-grid cards-grid--4">
