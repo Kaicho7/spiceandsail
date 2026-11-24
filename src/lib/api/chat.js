@@ -703,7 +703,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
 
   if (intent === 'language') {
     return {
-      message: 'All standard Spice & Sail tours and private transfers are guided in fluent English and Swahili.\n\nWe also offer certified multilingual Zanzibari drivers and tour guides fluent in **Italian, German, French, and Polish** upon advance request for an additional fee.\n\nPlease let our team know your language preference when requesting your quote so we can reserve your dedicated guide in advance.' + hoursNote,
+      message: 'All standard Spice & Sail tours and private transfers are guided in fluent English and Swahili.\n\nWe also offer certified multilingual Zanzibari drivers and tour guides fluent in **Italian, German, French, Polish, Arabic, and Russian** upon advance request for an additional fee.\n\nPlease let our team know your language preference when requesting your quote so we can reserve your dedicated guide in advance.' + hoursNote,
       quickReplies: ['Book on WhatsApp', 'Request a transfer', 'Recommend tours'],
       requestContact: false,
     };
