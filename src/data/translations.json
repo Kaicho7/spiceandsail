@@ -41,9 +41,9 @@
     "nav_home": {
       "en": "Home",
       "it": "Home",
-      "de": "Startseite",
+      "de": "Start",
       "fr": "Accueil",
-      "pl": "Strona główna",
+      "pl": "Główna",
       "ar": "الرئيسية",
       "ru": "Главная"
     },
@@ -85,10 +85,10 @@
     },
     "nav_transfers": {
       "en": "Transfers",
-      "it": "Transfer Aeroporto",
+      "it": "Transfer",
       "de": "Flughafentransfers",
-      "fr": "Transferts Aéroport",
-      "pl": "Transfery Lotniskowe",
+      "fr": "Transferts",
+      "pl": "Transfery",
       "ar": "خدمات التوصيل",
       "ru": "Трансферы"
     },
@@ -130,12 +130,12 @@
     },
     "nav_packages": {
       "en": "Packages",
-      "it": "Pacchetti Vacanza",
+      "it": "Pacchetti",
       "de": "Reisepakete",
       "fr": "Forfaits Séjour",
-      "pl": "Pakiety Pobytowe",
-      "ar": "باقات الإقامة المتعددة",
-      "ru": "Многодневные пакеты"
+      "pl": "Pakiety",
+      "ar": "الباقات",
+      "ru": "Пакеты"
     },
     "nav_zanzibar_essentials": {
       "en": "Zanzibar Essentials 3-Day",
@@ -242,8 +242,8 @@
       "de": "Regionen",
       "fr": "Régions",
       "pl": "Regiony",
-      "ar": "المناطق والشواطئ",
-      "ru": "Побережья и курорты"
+      "ar": "المناطق",
+      "ru": "Районы"
     },
     "nav_stone_town": {
       "en": "Stone Town",
@@ -457,9 +457,9 @@
       "it": "Chiamare",
       "de": "Anrufen",
       "fr": "Appeler",
-      "pl": "Zadzwonić",
+      "pl": "Zadzwoń",
       "ar": "اتصال",
-      "ru": "Позвонить"
+      "ru": "Звонок"
     },
     "mobile_enquire": {
       "en": "Enquire",
@@ -558,7 +558,7 @@
       "fr": "Confidentialité",
       "pl": "Prywatność",
       "ar": "سياسة الخصوصية",
-      "ru": "Конфиденциальность"
+      "ru": "Конфиденц."
     },
     "footer_terms": {
       "en": "Terms",
@@ -566,8 +566,8 @@
       "de": "AGB",
       "fr": "Conditions",
       "pl": "Warunki",
-      "ar": "الشروط والأحكام",
-      "ru": "Условия и правила"
+      "ar": "الشروط",
+      "ru": "Условия"
     },
     "footer_cancellation": {
       "en": "Cancellation",
@@ -654,10 +654,10 @@
       "en": "Book Now",
       "it": "Prenota Ora",
       "de": "Jetzt buchen",
-      "fr": "Réserver maintenant",
+      "fr": "Réserver",
       "pl": "Zarezerwuj Teraz",
       "ar": "احجز الآن",
-      "ru": "Забронировать сейчас"
+      "ru": "Забронировать"
     },
     "btn_whatsapp_inquiry": {
       "en": "WhatsApp Inquiry",
@@ -917,8 +917,8 @@
       "de": "E-Mail",
       "fr": "E-mail",
       "pl": "E-mail",
-      "ar": "البريد الإلكتروني",
-      "ru": "Электронная почта"
+      "ar": "البريد",
+      "ru": "Email"
     },
     "email_contact_desc": {
       "en": "For formal inquiries and documentation, email us directly. We reply within 2 hours during business hours.",
