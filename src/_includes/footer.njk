@@ -2,34 +2,34 @@
   <div class="footer-shell">
     <div class="footer-brand">
       <a href="/" class="footer-wordmark">Spice <em>&amp;</em> Sail</a>
-      <p>Local Zanzibar tours, transfers and travel planning. WhatsApp-first enquiries, with details and final quotes confirmed by our team.</p>
+      <p>{{ "footer_tagline" | t(lang) }}</p>
       <p class="footer-location">{{ site.address.short }}</p>
       {% if site.social and (site.social.instagram or site.social.tiktok or site.social.youtube or site.social.facebook or site.social.tripadvisor) %}
       <div class="footer-social" aria-label="Social media channels">
-        {% if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer">Instagram</a>{% endif %}
-        {% if site.social.tiktok %}<a href="{{ site.social.tiktok }}" target="_blank" rel="noopener noreferrer">TikTok</a>{% endif %}
-        {% if site.social.youtube %}<a href="{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer">YouTube</a>{% endif %}
-        {% if site.social.facebook %}<a href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer">Facebook</a>{% endif %}
-        {% if site.social.tripadvisor %}<a href="{{ site.social.tripadvisor }}" target="_blank" rel="noopener noreferrer">Tripadvisor</a>{% endif %}
+        {% if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer">{{ "footer_instagram" | t(lang) }}</a>{% endif %}
+        {% if site.social.tiktok %}<a href="{{ site.social.tiktok }}" target="_blank" rel="noopener noreferrer">{{ "footer_tiktok" | t(lang) }}</a>{% endif %}
+        {% if site.social.youtube %}<a href="{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer">{{ "footer_youtube" | t(lang) }}</a>{% endif %}
+        {% if site.social.facebook %}<a href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer">{{ "footer_facebook" | t(lang) }}</a>{% endif %}
+        {% if site.social.tripadvisor %}<a href="{{ site.social.tripadvisor }}" target="_blank" rel="noopener noreferrer">{{ "footer_tripadvisor" | t(lang) }}</a>{% endif %}
       </div>
       {% endif %}
     </div>
     <div class="footer-col">
       <h2 class="footer-col-title">Bahari <span>Sea &amp; experiences</span></h2>
       <ul>
-        <li><a href="/tours/">Zanzibar tours</a></li>
-        <li><a href="/experiences/">Island experiences</a></li>
-        <li><a href="/safaris/">Mainland safaris</a></li>
-        <li><a href="/packages/">Holiday packages</a></li>
+        <li><a href="/tours/">{{ "footer_zanzibar_tours" | t(lang) }}</a></li>
+        <li><a href="/experiences/">{{ "footer_island_experiences" | t(lang) }}</a></li>
+        <li><a href="/safaris/">{{ "footer_mainland_safaris" | t(lang) }}</a></li>
+        <li><a href="/packages/">{{ "footer_holiday_packages" | t(lang) }}</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h2 class="footer-col-title">Usafiri <span>Getting around</span></h2>
+      <h2 class="footer-col-title">{{ "footer_usafiri" | t(lang) }} <span>{{ "footer_getting_around" | t(lang) }}</span></h2>
       <ul>
-        <li><a href="/transfers/">Airport transfers</a></li>
-        <li><a href="/transfers/airport-to-nungwi/">Airport to Nungwi</a></li>
-        <li><a href="/areas/">Explore Zanzibar areas</a></li>
-        <li><a href="/travel-guide/">Travel guide</a></li>
+        <li><a href="/transfers/">{{ "footer_airport_transfers" | t(lang) }}</a></li>
+        <li><a href="/transfers/airport-to-nungwi/">{{ "footer_airport_to_nungwi" | t(lang) }}</a></li>
+        <li><a href="/areas/">{{ "footer_explore_areas" | t(lang) }}</a></li>
+        <li><a href="/travel-guide/">{{ "footer_travel_guide" | t(lang) }}</a></li>
       </ul>
     </div>
     <div class="footer-col footer-contact">

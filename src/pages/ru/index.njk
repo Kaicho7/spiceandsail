@@ -17,17 +17,17 @@ alternate_ar: "https://spiceandsail.com/ar/"
   <!-- Hero Section -->
   <header class="page-header" style="background: linear-gradient(135deg, rgba(12,26,36,0.95), rgba(0,56,83,0.92)), url('{{ 'sunset-dhow-cruise-zanzibar-stone-town.jpg' | cdnFile }}') center/cover; padding: 5rem 1.5rem; color: #fff; text-align: center;">
     <div class="container" style="max-width: 900px; margin: 0 auto;">
-      <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">Лицензированный местный туроператор — Занзибар</span>
+      <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">{{ "hero_local_operator" | t(lang) }}</span>
       <h1 style="font-size: 3rem; line-height: 1.15; margin-bottom: 1.5rem; color: #ffffff;">Spice & Sail Zanzibar</h1>
       <p style="font-size: 1.25rem; line-height: 1.7; color: #e0e8ec; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-        Ваш надежный местный партнер на Занзибаре. Индивидуальные трансферы из аэропорта, круизы Сафари Блю на традиционном доу, снорклинг у атолла Мнемба, экскурсии на фермы специй и сафари-туры по Танзании. Прозрачные цены без посредников и мгновенная связь в WhatsApp.
+        {{ "hero_tagline_ru" | t(lang) }}
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="https://wa.me/{{ site.contact.whatsapp }}?text={{ 'whatsapp_greeting' | t('ru') | urlencode }}%20Zanzibar" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="background: #25D366; border-color: #25D366; color: #0C1A24; font-weight: 700; padding: 1rem 2rem; font-size: 1.1rem;">
-          💬 Забронировать в WhatsApp
+          💬 {{ "btn_book_whatsapp" | t(lang) }}
         </a>
         <a href="/ru/transfers/" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4); padding: 1rem 2rem; font-size: 1.1rem;">
-          🚐 Тарифы на трансферы
+          🚐 {{ "btn_calc_transfer" | t(lang) }}
         </a>
       </div>
     </div>
@@ -36,10 +36,10 @@ alternate_ar: "https://spiceandsail.com/ar/"
   <!-- Trust Bar -->
   <section style="background: #0C1A24; color: #fff; padding: 1.5rem 1rem; text-align: center;">
     <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem;">
-      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">0%</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">Предоплата за трансфер</div></div>
-      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">60 мин</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">Бесплатное ожидание</div></div>
-      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">✓</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">Морские сборы включены</div></div>
-      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">Live</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">Отслеживание рейсов</div></div>
+      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">0%</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">{{ "trust_deposit" | t(lang) }}</div></div>
+      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">60 мин</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">{{ "trust_wait" | t(lang) }}</div></div>
+      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">✓</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">{{ "trust_marine" | t(lang) }}</div></div>
+      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">Live</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">{{ "trust_flight" | t(lang) }}</div></div>
     </div>
   </section>
 
@@ -47,17 +47,17 @@ alternate_ar: "https://spiceandsail.com/ar/"
   <section class="section" style="padding: 5rem 1.5rem; background: #fff;">
     <div class="container" style="max-width: 1100px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 3rem;">
-        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Наши услуги</span>
-        <h2 style="font-size: 2.5rem; color: #0C1A24; margin-top: 0.5rem;">Откройте Занзибар с местными жителями</h2>
-        <p style="color: #5c727f; max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem;">Трансферы, морские экскурсии, сафари и культурные туры — бронируйте напрямую через WhatsApp с быстрым подтверждением.</p>
+        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">{{ "section_our_services" | t(lang) }}</span>
+        <h2 style="font-size: 2.5rem; color: #0C1A24; margin-top: 0.5rem;">{{ "section_discover" | t(lang) }}</h2>
+        <p style="color: #5c727f; max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem;">{{ "section_discover_subtitle" | t(lang) }}</p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
         <a href="/ru/transfers/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🚐</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">Трансферы из аэропорта и в отели</h3>
-            <p style="color: #5c727f; line-height: 1.6;">Аэропорт ZNZ в Стоун-Таун, Нунгви, Кендву, Падже, Джамбиани и Матемве. Комфортные минивэны с кондиционером и встреча с табличкой.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_transfer" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.6;">{{ "card_transfer_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">От {% catPrice "airport-transfer-znz-to-stone-town" %}</div>
           </div>
         </a>
@@ -65,8 +65,8 @@ alternate_ar: "https://spiceandsail.com/ar/"
         <a href="/ru/tours/safari-blue/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🏝️</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">Сафари Блю — залив Менай</h3>
-            <p style="color: #5c727f; line-height: 1.6;">Целый день на парусном доу, исчезающая песчаная коса, снорклинг на рифе, обед из свежих морепродуктов и включенные сборы заповедника.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_safari_blue" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.6;">{{ "card_safari_blue_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">{% catPrice "safari-blue" %}</div>
           </div>
         </a>
@@ -74,8 +74,8 @@ alternate_ar: "https://spiceandsail.com/ar/"
         <a href="/ru/tours/mnemba-snorkeling/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🐢</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">Снорклинг у атолла Мнемба</h3>
-            <p style="color: #5c727f; line-height: 1.6;">Кристально чистые бирюзовые воды, коралловые сады, дикие дельфины и морские черепахи. Экологический сбор $25 включен в стоимость.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_mnemba" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.6;">{{ "card_mnemba_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">{% catPrice "mnemba-snorkeling" %}</div>
           </div>
         </a>
@@ -83,8 +83,8 @@ alternate_ar: "https://spiceandsail.com/ar/"
         <a href="/ru/tours/spice-farm/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🌿</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">Органическая ферма специй</h3>
-            <p style="color: #5c727f; line-height: 1.6;">Интерактивная экскурсия по плантациям Кизимбани: гвоздика, ваниль, корица, кардамон, дегустация тропических фруктов и традиционный обед суахили.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_spice_farm" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.6;">{{ "card_spice_farm_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">{% catPrice "spice-farm" %}</div>
           </div>
         </a>
@@ -92,8 +92,8 @@ alternate_ar: "https://spiceandsail.com/ar/"
         <a href="/ru/packages/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">Многодневные турпакеты</h3>
-            <p style="color: #5c727f; line-height: 1.6;">Готовые программы «Классика Занзибара 3 дня», «Скрытые жемчужины 4 дня» или комбинированные сафари на материке Танзании с перелетом.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_packages" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.6;">{{ "card_packages_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">От {% catPrice "zanzibar-essentials-3day" %}</div>
           </div>
         </a>
@@ -101,9 +101,9 @@ alternate_ar: "https://spiceandsail.com/ar/"
         <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">Консьерж в WhatsApp</h3>
-            <p style="color: #5c727f; line-height: 1.6;">Консультации, составление персональных маршрутов и точный расчет стоимости. Отвечаем за несколько минут (09:00–17:00 EAT, Пн–Сб).</p>
-            <span style="display: inline-block; margin-top: 1rem; background: #25D366; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 700;">Написать в WhatsApp</span>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_concierge" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.6;">{{ "card_concierge_desc" | t(lang) }}</p>
+            <span style="display: inline-block; margin-top: 1rem; background: #25D366; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 700;">{{ "btn_open_whatsapp_card" | t(lang) }}</span>
           </div>
         </a>
       </div>
@@ -113,9 +113,9 @@ alternate_ar: "https://spiceandsail.com/ar/"
   <!-- CTA -->
   <section style="background: linear-gradient(135deg, #005f8a 0%, #003d5c 100%); color: #fff; padding: 5rem 1.5rem; text-align: center;">
     <div class="container" style="max-width: 800px; margin: 0 auto;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Готовы к незабываемому путешествию?</h2>
-      <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">Напишите нам в WhatsApp — мы подтвердим водителя, автомобиль и фиксированную цену без предоплаты за трансфер из аэропорта.</p>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text={{ 'whatsapp_greeting' | t('ru') | urlencode }}%20Zanzibar" target="_blank" rel="noopener" style="display: inline-block; background: #25D366; color: #fff; font-weight: 700; padding: 1.25rem 3rem; border-radius: 8px; font-size: 1.2rem; text-decoration: none;">💬 Чат в WhatsApp ({{ site.contact.whatsapp_display }})</a>
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">{{ "cta_ready" | t(lang) }}</h2>
+      <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">{{ "cta_ready_desc" | t(lang) }}</p>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text={{ 'whatsapp_greeting' | t('ru') | urlencode }}%20Zanzibar" target="_blank" rel="noopener" style="display: inline-block; background: #25D366; color: #fff; font-weight: 700; padding: 1.25rem 3rem; border-radius: 8px; font-size: 1.2rem; text-decoration: none;">💬 {{ "cta_start_whatsapp" | t(lang) }} ({{ site.contact.whatsapp_display }})</a>
     </div>
   </section>
 </main>

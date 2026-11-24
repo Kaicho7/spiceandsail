@@ -17,17 +17,17 @@ alternate_ru: "https://spiceandsail.com/ru/"
   <!-- Hero Section -->
   <header class="page-header" style="background: linear-gradient(135deg, rgba(12,26,36,0.95), rgba(0,56,83,0.92)), url('{{ 'sunset-dhow-cruise-zanzibar-stone-town.jpg' | cdnFile }}') center/cover; padding: 5rem 1.5rem; color: #fff; text-align: center;">
     <div class="container" style="max-width: 900px; margin: 0 auto;">
-      <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">منظم رحلات محلي مرخص — زنجبار</span>
+      <span style="display: inline-block; background: var(--dct-gold, #D4AF37); color: #0C1A24; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1rem;">{{ "hero_local_operator" | t(lang) }}</span>
       <h1 style="font-size: 3rem; line-height: 1.25; margin-bottom: 1.5rem; color: #ffffff;">Spice & Sail زنجبار</h1>
       <p style="font-size: 1.25rem; line-height: 1.8; color: #e0e8ec; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-        شريكك المحلي الموثوق لتوصيل المطار، رحلات سفاري بلو بالمركب التقليدي، سنوركلينج جزيرة منيمبا، مزارع التوابل العضوية وباقات الإقامة المخصصة. أسعار شفافة ومباشرة بدون عمولات وسطاء وحجز فوري عبر واتساب.
+        {{ "hero_tagline_ar" | t(lang) }}
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="https://wa.me/{{ site.contact.whatsapp }}?text={{ 'whatsapp_greeting' | t('ar') | urlencode }}%20Zanzibar" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="background: #25D366; border-color: #25D366; color: #0C1A24; font-weight: 700; padding: 1rem 2rem; font-size: 1.1rem;">
-          💬 احجز عبر واتساب
+          💬 {{ "btn_book_whatsapp" | t(lang) }}
         </a>
         <a href="/ar/transfers/" class="btn btn-secondary btn-lg" style="color: #fff; border-color: rgba(255,255,255,0.4); padding: 1rem 2rem; font-size: 1.1rem;">
-          🚐 أسعار التوصيل
+          🚐 {{ "btn_calc_transfer" | t(lang) }}
         </a>
       </div>
     </div>
@@ -36,10 +36,10 @@ alternate_ru: "https://spiceandsail.com/ru/"
   <!-- Trust Bar -->
   <section style="background: #0C1A24; color: #fff; padding: 1.5rem 1rem; text-align: center;">
     <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem;">
-      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">0%</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">دفعة مقدمة للتوصيل</div></div>
-      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">60 دقيقة</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">انتظار مجاني بالمطار</div></div>
-      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">✓</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">شامل الرسوم البحرية</div></div>
-      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">مباشر</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">متابعة الرحلات الجوية</div></div>
+      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">0%</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">{{ "trust_deposit" | t(lang) }}</div></div>
+      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">60 دقيقة</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">{{ "trust_wait" | t(lang) }}</div></div>
+      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">✓</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">{{ "trust_marine" | t(lang) }}</div></div>
+      <div><div style="font-size: 1.8rem; font-weight: 800; color: #D4AF37;">مباشر</div><div style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase;">{{ "trust_flight" | t(lang) }}</div></div>
     </div>
   </section>
 
@@ -47,17 +47,17 @@ alternate_ru: "https://spiceandsail.com/ru/"
   <section class="section" style="padding: 5rem 1.5rem; background: #fff;">
     <div class="container" style="max-width: 1100px; margin: 0 auto;">
       <div style="text-align: center; margin-bottom: 3rem;">
-        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">خدماتنا في زنجبار</span>
-        <h2 style="font-size: 2.5rem; color: #0C1A24; margin-top: 0.5rem;">استكشف زنجبار مع مرشدين محليين</h2>
-        <p style="color: #5c727f; max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem;">توصيل آمن وسريع، جولات بحرية وتجارب ثقافية فريدة — حجز مباشر عبر واتساب.</p>
+        <span style="color: var(--clay-text, #9a391c); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">{{ "section_our_services" | t(lang) }}</span>
+        <h2 style="font-size: 2.5rem; color: #0C1A24; margin-top: 0.5rem;">{{ "section_discover" | t(lang) }}</h2>
+        <p style="color: #5c727f; max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem;">{{ "section_discover_subtitle" | t(lang) }}</p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
         <a href="/ar/transfers/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🚐</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">توصيل المطار والفنادق</h3>
-            <p style="color: #5c727f; line-height: 1.8;">من مطار زنجبار إلى ستون تاون، نونغوي، كيندوا، باجي وجامبياني. سيارات حديثة مكيفة وسائق خاص يحمل لوحة باسمك.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_transfer" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.8;">{{ "card_transfer_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">من {% catPrice "airport-transfer-znz-to-stone-town" %}</div>
           </div>
         </a>
@@ -65,8 +65,8 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <a href="/ar/tours/safari-blue/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🏝️</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">سفاري بلو — خليج ميناي</h3>
-            <p style="color: #5c727f; line-height: 1.8;">يوم كامل على متن مركب شراعي تقليدي، جزيرة رملية خلابة، سباحة وسنوركلينج، غداء مأكولات بحرية طازجة ورسوم المحمية مشمولة.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_safari_blue" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.8;">{{ "card_safari_blue_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">{% catPrice "safari-blue" %}</div>
           </div>
         </a>
@@ -74,8 +74,8 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <a href="/ar/tours/mnemba-snorkeling/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🐢</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">سنوركلينج جزيرة منيمبا</h3>
-            <p style="color: #5c727f; line-height: 1.8;">مياه فيروزية شفافة، شعاب مرجانية غنية، مشاهدة الدلافين والسلاحف البحرية. رسوم المحمية البحرية (<bdi dir="ltr">$25</bdi>) مشمولة بالكامل.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_mnemba" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.8;">{{ "card_mnemba_desc" | t(lang) | safe }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">{% catPrice "mnemba-snorkeling" %}</div>
           </div>
         </a>
@@ -83,8 +83,8 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <a href="/ar/tours/spice-farm/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">🌿</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">مزرعة التوابل العضوية</h3>
-            <p style="color: #5c727f; line-height: 1.8;">جولة استكشافية ممتعة في مزارع كيزيمباني: القرفة، الفانيليا، الهيل والقرنفل، مع تذوق الفواكه الاستوائية وغداء سواحيلي أصيل.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_spice_farm" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.8;">{{ "card_spice_farm_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">{% catPrice "spice-farm" %}</div>
           </div>
         </a>
@@ -92,8 +92,8 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <a href="/ar/packages/" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">باقات سياحية متكاملة</h3>
-            <p style="color: #5c727f; line-height: 1.8;">باقة أساسيات زنجبار (3 أيام)، جواهر الجزيرة المخفية (4 أيام)، أو دمج شواطئ زنجبار مع رحلات سفاري تنزانيا بالطيران.</p>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_packages" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.8;">{{ "card_packages_desc" | t(lang) }}</p>
             <div style="margin-top: 1.5rem; font-weight: 700; color: #005f8a;">من {% catPrice "zanzibar-essentials-3day" %}</div>
           </div>
         </a>
@@ -101,9 +101,9 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
           <div class="card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s;">
             <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
-            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">كونسيرج واتساب المباشر</h3>
-            <p style="color: #5c727f; line-height: 1.8;">تعديل البرامج، الإجابة عن كل الاستفسارات والحصول على أسعار دقيقة وفورية خلال دقائق (09:00–17:00 توقيت شرق إفريقيا).</p>
-            <span style="display: inline-block; margin-top: 1rem; background: #25D366; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 700;">تواصل معنا عبر واتساب</span>
+            <h3 style="font-size: 1.5rem; color: #0C1A24; margin-bottom: 0.75rem;">{{ "card_concierge" | t(lang) }}</h3>
+            <p style="color: #5c727f; line-height: 1.8;">{{ "card_concierge_desc" | t(lang) }}</p>
+            <span style="display: inline-block; margin-top: 1rem; background: #25D366; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 700;">{{ "btn_open_whatsapp_card" | t(lang) }}</span>
           </div>
         </a>
       </div>
@@ -113,9 +113,9 @@ alternate_ru: "https://spiceandsail.com/ru/"
   <!-- CTA -->
   <section style="background: linear-gradient(135deg, #005f8a 0%, #003d5c 100%); color: #fff; padding: 5rem 1.5rem; text-align: center;">
     <div class="container" style="max-width: 800px; margin: 0 auto;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">جاهز لرحلتك المميزة إلى زنجبار؟</h2>
-      <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">تواصل معنا عبر واتساب — سنؤكد لك تفاصيل السائق، المواعيد والأسعار بدون أي دفعة مسبقة لخدمات توصيل المطار.</p>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text={{ 'whatsapp_greeting' | t('ar') | urlencode }}%20Zanzibar" target="_blank" rel="noopener" style="display: inline-block; background: #25D366; color: #fff; font-weight: 700; padding: 1.25rem 3rem; border-radius: 8px; font-size: 1.2rem; text-decoration: none;">💬 ابدأ المحادثة على واتساب (<bdi dir="ltr">{{ site.contact.whatsapp_display }}</bdi>)</a>
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">{{ "cta_ready" | t(lang) }}</h2>
+      <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">{{ "btn_open_whatsapp_card" | t(lang) }} — سنؤكد لك تفاصيل السائق، المواعيد والأسعار بدون أي دفعة مسبقة لخدمات توصيل المطار.</p>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text={{ 'whatsapp_greeting' | t('ar') | urlencode }}%20Zanzibar" target="_blank" rel="noopener" style="display: inline-block; background: #25D366; color: #fff; font-weight: 700; padding: 1.25rem 3rem; border-radius: 8px; font-size: 1.2rem; text-decoration: none;">💬 {{ "cta_start_whatsapp" | t(lang) }} (<bdi dir="ltr">{{ site.contact.whatsapp_display }}</bdi>)</a>
     </div>
   </section>
 </main>

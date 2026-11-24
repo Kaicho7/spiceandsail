@@ -8,16 +8,16 @@ permalink: "/areas/index.html"
 
 <main class="" id="main-content">
   <header class="page-header">
-    <h1>Where to Stay in Zanzibar — Areas & Beaches Guide</h1>
-    <p class="page-meta">Each zone has a distinct character. Choose by your travel style: nightlife & diving (Nungwi/Kendwa), kitesurfing & adventure (Paje), culture & history (Stone Town), luxury & relaxation (Bwejuu/Michamvi), or authentic village life (Jambiani/Kizimkazi).</p>
+    <h1>{{ "areas_title" | t(lang) }}</h1>
+    <p class="page-meta">{{ "areas_subtitle" | t(lang) }}</p>
   </header>
 
   <section class="section section-gradient">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">Quick Picks</span>
-        <h2>Quick Picks by Travel Style</h2>
-        <p class="section-subtitle">Match your vibe to the perfect zone — from party beaches to secluded hideaways.</p>
+        <span class="section-tag">{{ "areas_quick_picks" | t(lang) }}</span>
+        <h2>{{ "areas_quick_picks_title" | t(lang) }}</h2>
+        <p class="section-subtitle">{{ "areas_quick_picks_subtitle" | t(lang) }}</p>
       </div>
       <div class="area-quick-picks">
         <article class="quick-pick reveal">
@@ -25,8 +25,8 @@ permalink: "/areas/index.html"
             <img src="{{ 'zanzibar-beach-sunset-walk-group.jpg' | cdnFile }}" alt="Nungwi and Kendwa — sunset on the north-coast beach, Zanzibar nightlife hub" loading="lazy">
           </div>
           <div class="quick-pick-content">
-            <h3><a href="/areas/nungwi/">Best Nightlife & Sunsets</a></h3>
-            <p><strong>Nungwi & Kendwa</strong> — Full-moon parties, beach bars, sunset cruises, Mnemba diving</p>
+            <h3><a href="/areas/nungwi/">{{ "areas_nungwi_kendwa" | t(lang) }}</a></h3>
+            <p><strong>Nungwi & Kendwa</strong> — {{ "areas_nungwi_kendwa_desc" | t(lang) }}</p>
           </div>
         </article>
         <article class="quick-pick reveal">
@@ -34,8 +34,8 @@ permalink: "/areas/index.html"
             <img src="{{ 'kitesurfing-turquoise-ocean-zanzibar.jpg' | cdnFile }}" alt="Paje and Jambiani — kitesurfing over the turquoise southeast lagoon" loading="lazy">
           </div>
           <div class="quick-pick-content">
-            <h3><a href="/areas/paje/">Best for Kitesurfing & Adventure</a></h3>
-            <p><strong>Paje & Jambiani</strong> — World-class kitesurfing, shallow lagoon, Kuza Cave, Jozani Forest access</p>
+            <h3><a href="/areas/paje/">{{ "areas_paje_jambiani" | t(lang) }}</a></h3>
+            <p><strong>Paje & Jambiani</strong> — {{ "areas_paje_jambiani_desc" | t(lang) }}</p>
           </div>
         </article>
         <article class="quick-pick reveal">
@@ -43,8 +43,8 @@ permalink: "/areas/index.html"
             <img src="{{ 'stone-town-guided-walking-tour-zanzibar.jpg' | cdnFile }}" alt="Stone Town — winding alleys and carved doors, UNESCO World Heritage" loading="lazy">
           </div>
           <div class="quick-pick-content">
-            <h3><a href="/areas/stone-town/">Best for Culture & History</a></h3>
-            <p><strong>Stone Town</strong> — UNESCO heritage, carved doors, spice markets, Freddie Mercury, slave trade history</p>
+            <h3><a href="/areas/stone-town/">{{ "areas_stone_town" | t(lang) }}</a></h3>
+            <p><strong>Stone Town</strong> — {{ "areas_stone_town_desc" | t(lang) }}</p>
           </div>
         </article>
         <article class="quick-pick reveal">
@@ -52,8 +52,8 @@ permalink: "/areas/index.html"
             <img src="{{ 'zanzibar-rock-house-with-tourists.jpg' | cdnFile }}" alt="Bwejuu, Dongwe, Michamvi and Pongwe — The Rock Restaurant on the southeast coast" loading="lazy">
           </div>
           <div class="quick-pick-content">
-            <h3><a href="/areas/bwejuu/">Best Luxury & Seclusion</a></h3>
-            <p><strong>Bwejuu, Dongwe, Michamvi, Pongwe</strong> — Boutique resorts, private beaches, The Rock Restaurant</p>
+            <h3><a href="/areas/bwejuu/">{{ "areas_bwejuu" | t(lang) }}</a></h3>
+            <p><strong>Bwejuu, Dongwe, Michamvi, Pongwe</strong> — {{ "areas_bwejuu_desc" | t(lang) }}</p>
           </div>
         </article>
         <article class="quick-pick reveal">
@@ -61,8 +61,8 @@ permalink: "/areas/index.html"
             <img src="{{ 'dolphins-leaping-ocean-zanzibar.jpg' | cdnFile }}" alt="Kizimkazi — dolphins jumping in the Indian Ocean" loading="lazy">
           </div>
           <div class="quick-pick-content">
-            <h3><a href="/areas/kizimkazi/">Best for Dolphin Watching & Village Life</a></h3>
-            <p><strong>Kizimkazi</strong> — Ethical dolphin tours, 12th-century mosque, Menai Bay access, quiet beaches</p>
+            <h3><a href="/areas/kizimkazi/">{{ "areas_kizimkazi" | t(lang) }}</a></h3>
+            <p><strong>Kizimkazi</strong> — {{ "areas_kizimkazi_desc" | t(lang) }}</p>
           </div>
         </article>
       </div>
@@ -72,9 +72,9 @@ permalink: "/areas/index.html"
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">All Zones</span>
-        <h2>Explore All Areas</h2>
-        <p class="section-subtitle">14 distinct zones across Unguja and Pemba — each with its own character, hotels, and attractions.</p>
+        <span class="section-tag">{{ "areas_all_zones" | t(lang) }}</span>
+        <h2>{{ "areas_explore_all" | t(lang) }}</h2>
+        <p class="section-subtitle">{{ "areas_explore_all_subtitle" | t(lang) }}</p>
       </div>
       <div class="cards-grid area-grid">
         {% for zone in areas.zones %}
@@ -95,7 +95,7 @@ permalink: "/areas/index.html"
               </div>
               <p class="card-meta" style="margin-top: 0.75rem; font-size: 0.8rem;">{{ zone.hotel_count }}{% if zone.hotel_count == 1 %} hotel{% else %} hotels{% endif %} · {{ zone.attraction_count }}{% if zone.attraction_count == 1 %} attraction{% else %} attractions{% endif %} · {{ zone.tours | length }}{% if zone.tours | length == 1 %} recommended tour{% else %} recommended tours{% endif %}</p>
               <div class="card-footer" style="justify-content: flex-start; border-top: none; padding-top: 0;">
-                <a href="/areas/{{ zone.slug }}/" class="btn btn-primary btn-sm">Explore {{ zone.name }} →</a>
+                <a href="/areas/{{ zone.slug }}/" class="btn btn-primary btn-sm">{{ "areas_explore_zone" | t(lang, {zone: zone.name}) }} →</a>
               </div>
             </div>
           </article>
@@ -107,9 +107,9 @@ permalink: "/areas/index.html"
   <section class="section section-alt">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">By Island</span>
-        <h2>By Island</h2>
-        <p class="section-subtitle">Two islands, countless experiences.</p>
+        <span class="section-tag">{{ "areas_by_island" | t(lang) }}</span>
+        <h2>{{ "areas_by_island_title" | t(lang) }}</h2>
+        <p class="section-subtitle">{{ "areas_by_island_subtitle" | t(lang) }}</p>
       </div>
       <div class="area-quick-picks">
         <article class="quick-pick reveal">
@@ -117,8 +117,8 @@ permalink: "/areas/index.html"
             <img src="{{ 'ocean-view-with-coastal-buildings.jpg' | cdnFile }}" alt="{{ 'ocean-view-with-coastal-buildings.jpg' | canonicalAlt }}" loading="lazy">
           </div>
           <div class="quick-pick-content">
-            <h3>Unguja (Main Island — Zanzibar)</h3>
-            <p>{{ areas.stats.unguja_hotels }} partner hotels across {{ areas.stats.unguja_zones }} zones</p>
+            <h3>{{ "areas_unguja" | t(lang) }}</h3>
+            <p>{{ "areas_unguja_desc" | t(lang, {count: areas.stats.unguja_hotels, zones: areas.stats.unguja_zones}) }}</p>
             <p style="margin-top: 0.5rem; color: var(--dct-text-muted);">Stone Town, Nungwi, Kendwa, Paje, Jambiani, Kiwengwa, Pongwe, Bwejuu, Michamvi, Kizimkazi, Fumba, Matemwe</p>
           </div>
         </article>
@@ -127,8 +127,8 @@ permalink: "/areas/index.html"
             <img src="{{ 'pemba-misali-island-reef.jpg' | cdnFile }}" alt="{{ 'pemba-misali-island-reef.jpg' | canonicalAlt }}" loading="lazy">
           </div>
           <div class="quick-pick-content">
-            <h3>Pemba Island</h3>
-            <p>{{ areas.stats.pemba_hotels }} partner hotels across {{ areas.stats.pemba_zones }} zones</p>
+            <h3>{{ "areas_pemba" | t(lang) }}</h3>
+            <p>{{ "areas_pemba_desc" | t(lang, {count: areas.stats.pemba_hotels, zones: areas.stats.pemba_zones}) }}</p>
             <p style="margin-top: 0.5rem; color: var(--dct-text-muted);">Wambaa Gulf, Makangale, Chake Chake, North Pemba — world-class diving, clove plantations, Fundu Lagoon</p>
           </div>
         </article>

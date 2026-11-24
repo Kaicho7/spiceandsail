@@ -23,13 +23,15 @@ test('redesign: language menu and runtime expose all five supported languages', 
   const header = read('src/_includes/header.njk');
   const i18n = read('public/js/i18n-currency.js');
   const langs = (i18n.match(/var\s+LANGS\s*=\s*\{([\s\S]*?)\n  \};/) || [])[1] || '';
-  for (const lang of ['en', 'it', 'de', 'fr', 'pl']) {
+  for (const lang of ['en', 'it', 'de', 'fr', 'pl', 'ar', 'ru']) {
     assert.ok(header.includes('value="' + lang + '"'), 'header must offer ' + lang);
     assert.ok(new RegExp('\\b' + lang + ':').test(langs), 'LANGS must include ' + lang);
   }
-  assert.ok(i18n.includes("includedLanguages: 'en,it,de,fr,pl'"), 'Google Translate must include all five languages');
+  assert.ok(i18n.includes("includedLanguages: 'en,it,de,fr,pl,ar,ru'"), 'Google Translate must include all seven languages');
   assert.ok(i18n.includes('fr: "Bonjour Spice and Sail'), 'French WhatsApp greeting must be restored');
   assert.ok(i18n.includes('pl: "Dzień dobry Spice and Sail'), 'Polish WhatsApp greeting must be restored');
+  assert.ok(i18n.includes('ar: "مرحباً Spice and Sail'), 'Arabic WhatsApp greeting must be restored');
+  assert.ok(i18n.includes('ru: "Здравствуйте'), 'Russian WhatsApp greeting must be restored');
   assert.ok(!/window\.googleTranslateElementInit\s*&&\s*lang\s*!==\s*'en'/.test(i18n), 'translator must load on the first non-English selection');
 });
 
