@@ -20,7 +20,7 @@
       }
     },
     "largeGroupThreshold": 8,
-    "replyWindow": "within a few hours during business hours (Mon\u2013Sat, 09:00\u201317:00 EAT)",
+    "replyWindow": "within a few hours during business hours (Mon\u2013Sat, 08:00\u201320:00 EAT)",
     "businessHours": {
       "days": [
         1,
