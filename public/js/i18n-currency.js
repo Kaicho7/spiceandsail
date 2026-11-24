@@ -196,6 +196,7 @@
 
         var span = document.createElement('span');
         span.className = 'sns-price-tag';
+        span.setAttribute('dir', 'ltr');
         if (isRange) {
           span.setAttribute('data-usd-min', min);
           span.setAttribute('data-usd-max', max);
