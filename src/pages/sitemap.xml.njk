@@ -8,6 +8,10 @@ eleventyExcludeFromCollections: true
 <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/"/>
 <xhtml:link rel="alternate" hreflang="it" href="{{ site.url }}/it/"/>
 <xhtml:link rel="alternate" hreflang="de" href="{{ site.url }}/de/"/>
+<xhtml:link rel="alternate" hreflang="fr" href="{{ site.url }}/fr/"/>
+<xhtml:link rel="alternate" hreflang="pl" href="{{ site.url }}/pl/"/>
+<xhtml:link rel="alternate" hreflang="ar" href="{{ site.url }}/ar/"/>
+<xhtml:link rel="alternate" hreflang="ru" href="{{ site.url }}/ru/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/"/>
 </url>
 {%- for page in collections.all %}
@@ -16,12 +20,26 @@ eleventyExcludeFromCollections: true
 {%- set altEn = page.data.alternate_en %}
 {%- set altIt = page.data.alternate_it %}
 {%- set altDe = page.data.alternate_de %}
+{%- set altFr = page.data.alternate_fr %}
+{%- set altPl = page.data.alternate_pl %}
+{%- set altAr = page.data.alternate_ar %}
+{%- set altRu = page.data.alternate_ru %}
 {%- set selfUrl = site.url + page.url %}
-{%- if altEn or altIt or altDe %}
-{%- if page.data.lang == "it" %}{% set altIt = selfUrl %}{% elif page.data.lang == "de" %}{% set altDe = selfUrl %}{% else %}{% set altEn = selfUrl %}{% endif %}
+{%- if altEn or altIt or altDe or altFr or altPl or altAr or altRu %}
+{%- if page.data.lang == "it" %}{% set altIt = selfUrl %}
+{%- elif page.data.lang == "de" %}{% set altDe = selfUrl %}
+{%- elif page.data.lang == "fr" %}{% set altFr = selfUrl %}
+{%- elif page.data.lang == "pl" %}{% set altPl = selfUrl %}
+{%- elif page.data.lang == "ar" %}{% set altAr = selfUrl %}
+{%- elif page.data.lang == "ru" %}{% set altRu = selfUrl %}
+{%- else %}{% set altEn = selfUrl %}{% endif %}
 {%- if altEn %}<xhtml:link rel="alternate" hreflang="en" href="{{ altEn }}"/>{% endif %}
 {%- if altIt %}<xhtml:link rel="alternate" hreflang="it" href="{{ altIt }}"/>{% endif %}
 {%- if altDe %}<xhtml:link rel="alternate" hreflang="de" href="{{ altDe }}"/>{% endif %}
+{%- if altFr %}<xhtml:link rel="alternate" hreflang="fr" href="{{ altFr }}"/>{% endif %}
+{%- if altPl %}<xhtml:link rel="alternate" hreflang="pl" href="{{ altPl }}"/>{% endif %}
+{%- if altAr %}<xhtml:link rel="alternate" hreflang="ar" href="{{ altAr }}"/>{% endif %}
+{%- if altRu %}<xhtml:link rel="alternate" hreflang="ru" href="{{ altRu }}"/>{% endif %}
 <xhtml:link rel="alternate" hreflang="x-default" href="{{ altEn or selfUrl }}"/>
 {%- endif %}
 </url>

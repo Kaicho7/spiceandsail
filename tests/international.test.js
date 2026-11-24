@@ -19,11 +19,11 @@ test('international: currencies.json contains valid configuration for USD, EUR, 
   assert.ok(data.rates.TZS && data.rates.TZS.rate > 1000);
 });
 
-test('international: translations.json covers all 5 requested languages', () => {
+test('international: translations.json covers all 7 supported languages', () => {
   const p = path.join(ROOT, 'src', 'data', 'translations.json');
   assert.ok(fs.existsSync(p), 'translations.json must exist');
   const data = JSON.parse(fs.readFileSync(p, 'utf8'));
-  const langs = ['en', 'it', 'de', 'fr', 'pl'];
+  const langs = ['en', 'it', 'de', 'fr', 'pl', 'ar', 'ru'];
   for (const l of langs) {
     assert.ok(data.languages[l], 'Language ' + l + ' must be defined in translations.json');
   }
@@ -42,7 +42,8 @@ test('international: header template includes language and currency selectors an
   const html = fs.readFileSync(p, 'utf8');
   assert.ok(html.includes('id="langSelect"'), 'header must contain #langSelect');
   assert.ok(html.includes('id="currencySelect"'), 'header must contain #currencySelect');
-  assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"') && html.includes('value="fr"') && html.includes('value="pl"'), 'All five languages must appear in the language menu');
+  assert.ok(html.includes('value="en"') && html.includes('value="it"') && html.includes('value="de"') && html.includes('value="fr"') && html.includes('value="pl"'), 'All five original languages must appear in the language menu');
+  assert.ok(html.includes('value="ar"') && html.includes('value="ru"'), 'Arabic and Russian must appear in the language menu');
   assert.ok(html.includes('value="USD"') && html.includes('value="EUR"') && html.includes('value="GBP"') && html.includes('value="PLN"') && html.includes('value="TZS"'));
   
   // Luxury nav structure & brand translate protection
@@ -59,7 +60,7 @@ test('international: i18n-currency.js exists and is syntactically valid', () => 
   const langsStart = code.indexOf('var LANGS = {');
   const langsEnd = code.indexOf('var DICT =', langsStart);
   const langs = langsStart >= 0 && langsEnd > langsStart ? code.slice(langsStart, langsEnd) : '';
-  assert.ok(langs.includes('en:') && langs.includes('it:') && langs.includes('de:') && langs.includes('fr:') && langs.includes('pl:'), 'All five languages must be configured');
+  assert.ok(langs.includes('en:') && langs.includes('it:') && langs.includes('de:') && langs.includes('fr:') && langs.includes('pl:') && langs.includes('ar:') && langs.includes('ru:'), 'All seven languages must be configured');
   // Syntax check
   assert.doesNotThrow(() => new Function(code), 'i18n-currency.js must be syntactically valid');
 });

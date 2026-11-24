@@ -31,22 +31,17 @@
 <link rel="icon" type="image/svg+xml" sizes="16x16" href="/images/favicon-16x16.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-{% if alternate_it or alternate_de or alternate_en %}
+{% if alternate_it or alternate_de or alternate_en or alternate_fr or alternate_pl or alternate_ar or alternate_ru %}
 {% set langCode = lang or 'en' %}
 {% set currentUrl = SITE_URL + page.url %}
-{% if langCode == 'en' %}
-<link rel="alternate" hreflang="en" href="{{ currentUrl }}">
-{% if alternate_it %}<link rel="alternate" hreflang="it" href="{{ alternate_it }}">{% endif %}
-{% if alternate_de %}<link rel="alternate" hreflang="de" href="{{ alternate_de }}">{% endif %}
-{% elif langCode == 'it' %}
-<link rel="alternate" hreflang="it" href="{{ currentUrl }}">
-{% if alternate_en %}<link rel="alternate" hreflang="en" href="{{ alternate_en }}">{% endif %}
-{% if alternate_de %}<link rel="alternate" hreflang="de" href="{{ alternate_de }}">{% endif %}
-{% elif langCode == 'de' %}
-<link rel="alternate" hreflang="de" href="{{ currentUrl }}">
-{% if alternate_en %}<link rel="alternate" hreflang="en" href="{{ alternate_en }}">{% endif %}
-{% if alternate_it %}<link rel="alternate" hreflang="it" href="{{ alternate_it }}">{% endif %}
-{% endif %}
+<link rel="alternate" hreflang="{{ langCode }}" href="{{ currentUrl }}">
+{% if alternate_en and langCode != 'en' %}<link rel="alternate" hreflang="en" href="{{ alternate_en }}">{% endif %}
+{% if alternate_it and langCode != 'it' %}<link rel="alternate" hreflang="it" href="{{ alternate_it }}">{% endif %}
+{% if alternate_de and langCode != 'de' %}<link rel="alternate" hreflang="de" href="{{ alternate_de }}">{% endif %}
+{% if alternate_fr and langCode != 'fr' %}<link rel="alternate" hreflang="fr" href="{{ alternate_fr }}">{% endif %}
+{% if alternate_pl and langCode != 'pl' %}<link rel="alternate" hreflang="pl" href="{{ alternate_pl }}">{% endif %}
+{% if alternate_ar and langCode != 'ar' %}<link rel="alternate" hreflang="ar" href="{{ alternate_ar }}">{% endif %}
+{% if alternate_ru and langCode != 'ru' %}<link rel="alternate" hreflang="ru" href="{{ alternate_ru }}">{% endif %}
 {% set defaultEnUrl = alternate_en or (currentUrl if langCode == 'en' else SITE_URL + '/') %}
 <link rel="alternate" hreflang="x-default" href="{{ defaultEnUrl }}">
 {% endif %}    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; font-src 'self' data:; img-src 'self' data: https://*.google-analytics.com https://www.google-analytics.com https://www.googletagmanager.com https://translate.google.com https://*.gstatic.com https://maps.gstatic.com https://maps.googleapis.com https://www.google.com; style-src 'self' 'unsafe-inline' https://translate.googleapis.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://translate.google.com https://translate.googleapis.com https://static.cloudflareinsights.com; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://translate.googleapis.com https://cloudflareinsights.com; frame-src 'self' https://maps.google.com https://www.google.com;">

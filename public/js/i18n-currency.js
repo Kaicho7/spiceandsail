@@ -19,38 +19,72 @@
     it: { code: 'it', name: 'Italiano', flag: '🇮🇹' },
     de: { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
     fr: { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    pl: { code: 'pl', name: 'Polski', flag: '🇵🇱' }
+    pl: { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+    ar: { code: 'ar', name: 'العربية', flag: '🇦🇪', dir: 'rtl' },
+    ru: { code: 'ru', name: 'Русский', flag: '🇷🇺' }
   };
 
   var DICT = {
-    nav_home: { en: 'Home', it: 'Home', de: 'Startseite', fr: 'Accueil', pl: 'Strona główna' },
-    nav_tours: { en: 'Tours & Experiences', it: 'Tour & Escursioni', de: 'Touren & Ausflüge', fr: 'Excursions & Visites', pl: 'Wycieczki i Atrakcje' },
-    nav_all_tours: { en: 'All Tours & Day Trips', it: 'Tutti i Tour Giornalieri', de: 'Alle Tagestouren', fr: 'Toutes les Excursions', pl: 'Wszystkie Wycieczki' },
-    nav_rare_experiences: { en: 'Rare Hidden Gems', it: 'Esperienze Esclusive', de: 'Exklusive Erlebnisse', fr: 'Expériences Uniques', pl: 'Wyjątkowe Doświadczenia' },
-    nav_spice_farm: { en: 'Spice Farm Tour', it: 'Tour delle Spezie', de: 'Gewürzfarm-Tour', fr: 'Visite Ferme aux Épices', pl: 'Farma Przypraw' },
-    nav_attractions: { en: 'Island Attractions', it: 'Attrazioni dell’Isola', de: 'Insel-Attraktionen', fr: 'Attractions de l’Île', pl: 'Atrakcje Wyspy' },
-    nav_transfers: { en: 'Transfers', it: 'Transfer', de: 'Transfers', fr: 'Transferts', pl: 'Transfery' },
-    nav_airport_transfers: { en: 'Airport & Hotel Transfers', it: 'Transfer Aeroporto & Hotel', de: 'Flughafen & Hotel Transfers', fr: 'Transferts Aéroport & Hôtel', pl: 'Transfery Lotniskowe i Hotelowe' },
-    nav_nungwi_transfer: { en: 'Airport to Nungwi & Kendwa', it: 'Aeroporto a Nungwi & Kendwa', de: 'Flughafen nach Nungwi & Kendwa', fr: 'Aéroport vers Nungwi & Kendwa', pl: 'Lotnisko do Nungwi i Kendwa' },
-    nav_self_drive: { en: 'Self-Drive & 4x4 Rental', it: 'Noleggio Auto & Fuoristrada', de: 'Mietwagen & 4x4', fr: 'Location de Voiture & 4x4', pl: 'Wynajem Samochodów 4x4' },
-    nav_safaris_packages: { en: 'Safaris & Packages', it: 'Safari & Pacchetti', de: 'Safaris & Pauschalen', fr: 'Safaris & Forfaits', pl: 'Safari i Pakiety' },
-    nav_safaris: { en: 'Mainland Safaris', it: 'Safari Tanzania', de: 'Tansania Safaris', fr: 'Safaris Tanzanie', pl: 'Safari w Tanzanii' },
-    nav_mikumi: { en: 'Mikumi 1-Day Fly-in Safari', it: 'Mikumi Safari in Volo (1 Giorno)', de: 'Mikumi Flugsafari (1 Tag)', fr: 'Safari Mikumi en Avion (1 Jour)', pl: '1-Dniowe Safari Lotnicze Mikumi' },
-    nav_packages: { en: 'Multi-Day Packages', it: 'Pacchetti Multi-Giorno', de: 'Mehrtages-Pauschalen', fr: 'Forfaits Multi-Jours', pl: 'Pakiety Wielodniowe' },
-    nav_honeymoon: { en: 'Honeymoon Packages', it: 'Viaggi di Nozze', de: 'Flitterwochen-Pakete', fr: 'Lune de Miel', pl: 'Pakiety dla Nowożeńców' },
-    nav_family: { en: 'Family Travel', it: 'Viaggi per Famiglie', de: 'Familienreisen', fr: 'Voyages en Famille', pl: 'Podróże Rodzinne' },
-    nav_hotels_areas: { en: 'Hotels & Areas', it: 'Hotel & Zone', de: 'Hotels & Regionen', fr: 'Hôtels & Régions', pl: 'Hotele i Regiony' },
-    nav_hotels: { en: 'Zanzibar Hotels & Resorts', it: 'Hotel & Resort', de: 'Hotels & Strandresorts', fr: 'Hôtels & Complexes Hôteliers', pl: 'Hotele i Ośrodki' },
-    nav_areas: { en: 'Coastlines & Areas', it: 'Zone & Spiagge', de: 'Küstengebiete & Strände', fr: 'Côtes & Régions', pl: 'Regiony i Plaże' },
-    nav_travel_guide: { en: 'Travel Guide', it: 'Guida di Viaggio', de: 'Reiseführer', fr: 'Guide de Voyage', pl: 'Przewodnik' },
-    nav_visas_levies: { en: 'Visas & Travel Info', it: 'Visti & Info Viaggio', de: 'Visa & Reiseinfos', fr: 'Visas & Infos Voyage', pl: 'Wizy i Informacje' },
-    nav_health_safety: { en: 'Health & Safety Guide', it: 'Salute & Sicurezza', de: 'Gesundheit & Sicherheit', fr: 'Santé & Sécurité', pl: 'Zdrowie i Bezpieczeństwo' },
-    nav_migration: { en: 'Migration Calendar', it: 'Calendario Migrazione', de: 'Migrationskalender', fr: 'Calendrier de la Migration', pl: 'Kalendarz Migracji' },
-    nav_about: { en: 'About', it: 'Chi Siamo', de: 'Über Uns', fr: 'À Propos', pl: 'O Nas' },
-    nav_contact: { en: 'Contact', it: 'Contatti', de: 'Kontakt', fr: 'Contact', pl: 'Kontakt' },
-    btn_whatsapp_book: { en: 'Book on WhatsApp', it: 'Prenota su WhatsApp', de: 'Auf WhatsApp buchen', fr: 'Réserver sur WhatsApp', pl: 'Rezerwuj przez WhatsApp' },
-    btn_check_rates: { en: 'Check Rates', it: 'Verifica Tariffe', de: 'Preise prüfen', fr: 'Voir les tarifs', pl: 'Sprawdź ceny' },
-    btn_book_transfer: { en: 'Book Transfer', it: 'Prenota Transfer', de: 'Transfer buchen', fr: 'Réserver transfert', pl: 'Zarezerwuj transfer' }
+    nav_home: { en: 'Home', it: 'Home', de: 'Startseite', fr: 'Accueil', pl: 'Strona główna', ar: 'الرئيسية', ru: 'Главная' },
+    nav_tours: { en: 'Tours & Experiences', it: 'Tour & Esperienze', de: 'Touren & Erlebnisse', fr: 'Excursions & Expériences', pl: 'Wycieczki i Atrakcje', ar: 'الجولات والأنشطة', ru: 'Экскурсии и впечатления' },
+    nav_all_tours: { en: 'All Tours & Day Trips', it: 'Tutti i Tour & Escursioni', de: 'Alle Touren & Tagesausflüge', fr: 'Toutes les Excursions', pl: 'Wszystkie Wycieczki', ar: 'جميع الجولات والرحلات اليومية', ru: 'Все экскурсии и дневные туры' },
+    nav_rare_experiences: { en: 'Rare Experiences', it: 'Esperienze Esclusive', de: 'Exklusive Erlebnisse', fr: 'Expériences Uniques', pl: 'Wyjątkowe Doświadczenia', ar: 'تجارب نادرة وحصرية', ru: 'Уникальные впечатления' },
+    nav_spice_farm: { en: 'Organic Spice Farm Tour', it: 'Tour Fattoria delle Spezie', de: 'Gewürzfarm-Tour', fr: 'Visite de Ferme aux Épices', pl: 'Farma Przypraw', ar: 'جولة مزرعة التوابل العضوية', ru: 'Тур на ферму специй' },
+    nav_transfers: { en: 'Transfers', it: 'Transfer Aeroporto', de: 'Flughafentransfers', fr: 'Transferts Aéroport', pl: 'Transfery Lotniskowe', ar: 'خدمات التوصيل', ru: 'Трансферы' },
+    nav_airport_transfers: { en: 'Airport & Inter-Hotel Transfers', it: 'Transfer Aeroporto & Hotel', de: 'Flughafen & Hotel Transfers', fr: 'Transferts Aéroport & Hôtels', pl: 'Transfery Lotniskowe i Hotelowe', ar: 'توصيل المطار والفنادق', ru: 'Трансферы из аэропорта и между отелями' },
+    nav_nungwi_transfer: { en: 'Airport to Nungwi & Kendwa', it: 'Aeroporto a Nungwi & Kendwa', de: 'Flughafen nach Nungwi & Kendwa', fr: 'Aéroport vers Nungwi & Kendwa', pl: 'Lotnisko do Nungwi i Kendwa', ar: 'من المطار إلى نونغوي وكيندوا', ru: 'Аэропорт — Нунгви и Кендва' },
+    nav_self_drive: { en: 'Self-Drive & 4x4 Rental', it: 'Noleggio Auto & 4x4', de: 'Mietwagen & 4x4', fr: 'Location Voiture & 4x4', pl: 'Wynajem Samochodów i 4x4', ar: 'تأجير سيارات والدفع الرباعي', ru: 'Аренда авто и 4x4' },
+    nav_safaris_packages: { en: 'Safaris & Packages', it: 'Safari & Pacchetti', de: 'Safaris & Reisepakete', fr: 'Safaris & Forfaits', pl: 'Safari i Pakiety', ar: 'رحلات السفاري والباقات', ru: 'Сафари и турпакеты' },
+    nav_packages: { en: 'Packages', it: 'Pacchetti Vacanza', de: 'Reisepakete', fr: 'Forfaits Séjour', pl: 'Pakiety Pobytowe', ar: 'باقات الإقامة المتعددة', ru: 'Многодневные пакеты' },
+    nav_zanzibar_essentials: { en: 'Zanzibar Essentials 3-Day', it: 'Zanzibar Essentials 3 Giorni', de: 'Zanzibar Essentials 3 Tage', fr: 'Zanzibar Essentials 3 Jours', pl: 'Zanzibar Essentials 3 Dni', ar: 'أساسيات زنجبار (3 أيام)', ru: 'Занзибар: классика (3 дня)' },
+    nav_safaris: { en: 'Mainland Safaris', it: 'Safari in Tanzania', de: 'Festland-Safaris', fr: 'Safaris en Tanzanie', pl: 'Safari w Tanzanii', ar: 'سفاري تنزانيا القارية', ru: 'Сафари на материке' },
+    nav_mikumi: { en: 'Mikumi 1-Day Fly-in Safari', it: 'Safari 1 Giorno Mikumi (Volo)', de: 'Mikumi 1-Tag Flugsafari', fr: 'Safari Mikumi 1 Jour en Vol', pl: '1-Dniowe Safari Mikumi (Lot)', ar: 'سفاري ميكومي ليوم واحد بالطيران', ru: 'Сафари в Микуми на 1 день (перелет)' },
+    nav_honeymoon: { en: 'Honeymoon Packages', it: 'Pacchetti Luna di Miele', de: 'Flitterwochen-Pakete', fr: 'Voyages de Noces', pl: 'Pakiety dla Nowożeńców', ar: 'باقات شهر العسل', ru: 'Медовый месяц' },
+    nav_family: { en: 'Family Travel', it: 'Viaggi in Famiglia', de: 'Familienreisen', fr: 'Voyages en Famille', pl: 'Podróże Rodzinne', ar: 'رحلات العائلات', ru: 'Семейный отдых' },
+    nav_hotels_areas: { en: 'Hotels & Areas', it: 'Hotel & Località', de: 'Hotels & Regionen', fr: 'Hôtels & Régions', pl: 'Hotele i Regiony', ar: 'الفنادق والمناطق', ru: 'Отели и регионы' },
+    nav_hotels: { en: 'Hotels', it: 'Hotel & Resort', de: 'Hotels & Resorts', fr: 'Hôtels & Resorts', pl: 'Hotele i Resorty', ar: 'فنادق ومنتجعات زنجبار', ru: 'Отели и курорты Занзибара' },
+    nav_attractions: { en: 'Attractions', it: 'Attrazioni', de: 'Sehenswürdigkeiten', fr: 'Attractions', pl: 'Atrakcje', ar: 'معالم الجزيرة', ru: 'Достопримечательности' },
+    nav_safari_blue: { en: 'Safari Blue Dhow Day', it: 'Safari Blue - Giornata in Dhow', de: 'Safari Blue Dhow-Tag', fr: 'Safari Blue - Journée en Dhow', pl: 'Safari Blue - Dzień na Dhow', ar: 'رحلة سفاري بلو بالمركب التقليدي', ru: 'Сафари Блю — день на традиционном доу' },
+    nav_mnemba_snorkeling: { en: 'Mnemba Atoll Snorkeling', it: 'Schnorcheln am Mnemba-Atoll', de: 'Schnorcheln am Mnemba-Atoll', fr: 'Snorkeling à l\'Atoll Mnemba', pl: 'Nurkowanie na Atolu Mnemba', ar: 'سنوركلينج في جزيرة منيمبا', ru: 'Снорклинг у атолла Мнемба' },
+    nav_stone_town_walking_tour: { en: 'Stone Town Walking Tour', it: 'Tour a Piedi di Stone Town', de: 'Stone Town zu Fuß', fr: 'Visite à Pied de Stone Town', pl: 'Spacer po Stone Town', ar: 'جولة مدينة ستون تاون التاريخية', ru: 'Пешеходный тур по Стоун-Тауну' },
+    nav_areas: { en: 'Areas', it: 'Località', de: 'Regionen', fr: 'Régions', pl: 'Regiony', ar: 'المناطق والشواطئ', ru: 'Побережья и курорты' },
+    nav_stone_town: { en: 'Stone Town', it: 'Stone Town', de: 'Stone Town', fr: 'Stone Town', pl: 'Stone Town', ar: 'مدينة ستون تاون', ru: 'Стоун-Таун' },
+    nav_nungwi_kendwa: { en: 'Nungwi & Kendwa', it: 'Nungwi e Kendwa', de: 'Nungwi & Kendwa', fr: 'Nungwi & Kendwa', pl: 'Nungwi i Kendwa', ar: 'نونغوي وكيندوا', ru: 'Нунгви и Кендва' },
+    nav_paje_jambiani: { en: 'Paje & Jambiani', it: 'Paje e Jambiani', de: 'Paje & Jambiani', fr: 'Paje & Jambiani', pl: 'Paje i Jambiani', ar: 'باجي وجامبياني', ru: 'Падже и Джамбиани' },
+    nav_travel_guide: { en: 'Travel Guide', it: 'Guida di Viaggio', de: 'Reiseführer', fr: 'Guide de Voyage', pl: 'Przewodnik', ar: 'دليل السفر إلى زنجبار', ru: 'Гид по Занзибару' },
+    nav_blog: { en: 'Travel Blog', it: 'Blog di Viaggio', de: 'Reiseblog', fr: 'Blog de Voyage', pl: 'Blog Podróży', ar: 'المدونة', ru: 'Блог' },
+    nav_visas_levies: { en: 'Cancellation & Weather Policy', it: 'Cancellazione & Meteo', de: 'Stornierungs- & Wetterrichtlinie', fr: 'Politique d\'Annulation & Météo', pl: 'Polityka Odwołań i Pogody', ar: 'التأشيرات والرسوم السياحية', ru: 'Визы и туристические сборы' },
+    nav_health_safety: { en: 'Health & Safety Guide', it: 'Guida Salute & Sicurezza', de: 'Gesundheits- & Sicherheitsleitfaden', fr: 'Guide Santé & Sécurité', pl: 'Zdrowie i Bezpieczeństwo', ar: 'الصحة والسلامة', ru: 'Здоровье и безопасность' },
+    nav_migration: { en: 'Migration Calendar', it: 'Calendario Migrazione', de: 'Migrationskalender', fr: 'Calendrier de Migration', pl: 'Kalendarz Migracji', ar: 'تقويم هجرة الحيوانات', ru: 'Календарь миграции' },
+    nav_packing_guide: { en: 'Packing Guide', it: 'Guida Bagagli', de: 'Packliste', fr: 'Guide Bagages', pl: 'Przewodnik Pakowania', ar: 'دليل تجهيز الحقائب', ru: 'Что взять с собой' },
+    btn_whatsapp_book: { en: 'Book on WhatsApp', it: 'Prenota su WhatsApp', de: 'Über WhatsApp buchen', fr: 'Réserver par WhatsApp', pl: 'Zarezerwuj przez WhatsApp', ar: 'احجز عبر واتساب', ru: 'Забронировать в WhatsApp' },
+    nav_about: { en: 'About Us', it: 'Chi Siamo', de: 'Über Uns', fr: 'À Propos', pl: 'O Nas', ar: 'من نحن', ru: 'О нас' },
+    nav_contact: { en: 'Contact', it: 'Contatti', de: 'Kontakt', fr: 'Contact', pl: 'Kontakt', ar: 'اتصل بنا', ru: 'Контакты' },
+    btn_check_rates: { en: 'Check Rates', it: 'Verifica Tariffe', de: 'Preise prüfen', fr: 'Voir les tarifs', pl: 'Sprawdź ceny', ar: 'تحقق من الأسعار', ru: 'Узнать цены' },
+    btn_book_transfer: { en: 'Book Transfer', it: 'Prenota Transfer', de: 'Transfer buchen', fr: 'Réserver transfert', pl: 'Zarezerwuj transfer', ar: 'احجز وسيلة التوصيل', ru: 'Заказать трансфер' },
+    btn_open_calculator: { en: 'Open Fare Calculator →', it: 'Calcolatore Tariffe →', de: 'Tarifrechner öffnen →', fr: 'Calculateur de tarif →', pl: 'Kalkulator opłat →', ar: 'افتح حاسبة التوصيل', ru: 'Калькулятор трансфера' },
+    btn_whatsapp_concierge: { en: 'WhatsApp Concierge', it: 'Concierge WhatsApp', de: 'WhatsApp Concierge', fr: 'Concierge WhatsApp', pl: 'Concierge WhatsApp', ar: 'كونسيرج واتساب', ru: 'Консьерж в WhatsApp' },
+    label_planning_range: { en: 'Published rate — our team confirms final rate', it: 'Fascia indicativa — il nostro team confermerà la tariffa finale', de: 'Planungsbereich — unser Team bestätigt den Endpreis', fr: 'Fourchette indicative — notre équipe confirme le tarif final', pl: 'Szacunkowy przedział — nasz zespół potwierdzi ostateczną cenę', ar: 'نطاق سعري استرشادي — سيؤكد فريقنا السعر النهائي', ru: 'Ориентировочная цена — команда подтвердит точную стоимость' },
+    label_per_vehicle: { en: 'per vehicle (up to 4 guests)', it: 'per veicolo (fino a 4 persone)', de: 'pro Fahrzeug (bis zu 4 Personen)', fr: 'par véhicule (jusqu\'à 4 personnes)', pl: 'za pojazd (do 4 osób)', ar: 'لكل سيارة (حتى 4 ركاب)', ru: 'за автомобиль (до 4 человек)' },
+    label_per_person: { en: 'per person', it: 'a persona', de: 'pro Person', fr: 'par personne', pl: 'za osobę', ar: 'للشخص الواحد', ru: 'за человека' },
+    whatsapp_greeting: { en: 'Hi Spice and Sail, I would like to inquire about', it: 'Ciao Spice and Sail, vorrei richiedere informazioni e un preventivo per', de: 'Hallo Spice and Sail, ich interessiere mich für', fr: 'Bonjour Spice and Sail, je souhaite demander des informations et un devis pour', pl: 'Dzień dobry Spice and Sail, chciałbym zapytać o wycenę i szczegóły dotyczące', ar: 'مرحباً Spice and Sail، أود الاستفسار عن', ru: 'Здравствуйте, Spice and Sail! Хочу узнать подробнее о' },
+    whatsapp_hotel_text: { en: 'stay and tour packages for', it: 'soggiorno e tour per', de: 'Unterkunft und Ausflugspakete für', fr: 'séjour et forfaits d\'excursion pour', pl: 'pobyt oraz pakiety wycieczek dla', ar: 'باقات الإقامة والجولات لـ', ru: 'проживании и экскурсионных пакетах для' },
+    whatsapp_transfer_text: { en: 'private airport transfer to', it: 'transfer privato dall\'aeroporto a', de: 'privaten Flughafentransfer nach', fr: 'transfert privé depuis l\'aéroport vers', pl: 'prywatny transfer z lotniska do', ar: 'توصيل خاص من المطار إلى', ru: 'индивидуальном трансфере из аэропорта в' },
+    mobile_whatsapp: { en: 'WhatsApp', it: 'WhatsApp', de: 'WhatsApp', fr: 'WhatsApp', pl: 'WhatsApp', ar: 'واتساب', ru: 'WhatsApp' },
+    mobile_call: { en: 'Call', it: 'Chiamare', de: 'Anrufen', fr: 'Appeler', pl: 'Zadzwonić', ar: 'اتصال', ru: 'Позвонить' },
+    mobile_enquire: { en: 'Enquire', it: 'Richiedi Info', de: 'Anfragen', fr: 'Demander Info', pl: 'Zapytaj', ar: 'استفسار', ru: 'Запрос' },
+    footer_talk_with_team: { en: 'Talk with our team', it: 'Parla con il nostro team', de: 'Sprich mit unserem Team', fr: 'Parlez à notre équipe', pl: 'Porozmawiaj z naszym zespołem', ar: 'تحدث مع فريقنا', ru: 'Связаться с нашей командой' },
+    footer_0_deposit: { en: '0% Deposit Transfers', it: 'Transfer 0% Deposito', de: 'Transfers 0% Anzahlung', fr: 'Transferts 0% Acompte', pl: 'Transfery 0% Zaliczka', ar: '0% دفعة مقدمة للتوصيل', ru: 'Трансферы без предоплаты (0%)' },
+    footer_marine_fees: { en: 'Marine Fees Included', it: 'Tasse Marine Incluse', de: 'Marinegebühren Inklusive', fr: 'Frais Marins Inclus', pl: 'Opłaty Morskie Wliczone', ar: 'شامل الرسوم البحرية', ru: 'Морские сборы включены' },
+    footer_weather_guarantee: { en: 'Weather Guarantee', it: 'Garanzia Meteo', de: 'Wettergarantie', fr: 'Garantie Météo', pl: 'Gwarancja Pogodowa', ar: 'ضمان الأحوال الجوية', ru: 'Гарантия хорошей погоды' },
+    footer_multilingual_guides: { en: 'Multilingual Guides (extra fee)', it: 'Guide Multilingue (supplemento)', de: 'Mehrsprachige Guides (Aufpreis)', fr: 'Guides Multilingues (supplément)', pl: 'Wielojęzyczni Przewodnicy (dodatkowa opłata)', ar: 'مرشدون متعددو اللغات', ru: 'Многоязычные гиды' },
+    footer_viator_less: { en: 'Direct Local Rates — No OTA Commission', it: 'Tariffe Dirette Locali — Nessuna Commissione OTA', de: 'Direkte Lokalpreise — Keine OTA-Provision', fr: 'Tarifs Locaux Directs — Pas de Commission OTA', pl: 'Bezpośrednie Stawki Lokalne — Brak Prowizji OTA', ar: 'أسعار محلية مباشرة — بدون عمولات وسيط', ru: 'Прямые местные цены без комиссий' },
+    footer_chat_whatsapp: { en: 'Chat WhatsApp', it: 'Chatta su WhatsApp', de: 'WhatsApp Chat', fr: 'WhatsApp Chat', pl: 'Czat WhatsApp', ar: 'محادثة واتساب', ru: 'Чат в WhatsApp' },
+    footer_browse_tours: { en: 'Browse Tours', it: 'Sfoglia Tour', de: 'Touren Durchsuchen', fr: 'Parcourir Excursions', pl: 'Przeglądaj Wycieczki', ar: 'استعرض الجولات', ru: 'Смотреть туры' },
+    footer_find_google_maps: { en: 'Find us on Google Maps ↗', it: 'Trova su Google Maps ↗', de: 'Bei Google Maps finden ↗', fr: 'Trouver sur Google Maps ↗', pl: 'Znajdź na Google Maps ↗', ar: 'موقعنا على خرائط جوجل ↗', ru: 'Мы на Google Maps ↗' },
+    footer_privacy: { en: 'Privacy', it: 'Privacy', de: 'Datenschutz', fr: 'Confidentialité', pl: 'Prywatność', ar: 'سياسة الخصوصية', ru: 'Конфиденциальность' },
+    footer_terms: { en: 'Terms', it: 'Termini', de: 'AGB', fr: 'Conditions', pl: 'Warunki', ar: 'الشروط والأحكام', ru: 'Условия и правила' },
+    footer_cancellation: { en: 'Cancellation', it: 'Cancellazione', de: 'Stornierung', fr: 'Annulation', pl: 'Anulowanie', ar: 'سياسة الإلغاء', ru: 'Правила отмены' }
   };
 
   var WA_GREETINGS = {
@@ -58,7 +92,9 @@
     it: "Ciao Spice and Sail, vorrei richiedere informazioni e preventivo per",
     de: "Hallo Spice and Sail, ich interessiere mich für ein Angebot für",
     fr: "Bonjour Spice and Sail, je souhaite demander des informations et un devis pour",
-    pl: "Dzień dobry Spice and Sail, chciałbym zapytać o wycenę i rezerwację dla"
+    pl: "Dzień dobry Spice and Sail, chciałbym zapytać o wycenę i rezerwację dla",
+    ar: "مرحباً Spice and Sail، أود الاستفسار عن",
+    ru: "Здравствуйте Spice and Sail, меня интересует"
   };
 
   // State
@@ -238,6 +274,11 @@
     // Real localized pages keep their document language; machine-translated
     // pages keep the source language and record the target in data-sns-lang.
     if (!usesGoogleTranslate(lang)) document.documentElement.lang = lang;
+    if (lang === 'ar') {
+      document.documentElement.setAttribute('dir', 'rtl');
+    } else {
+      document.documentElement.removeAttribute('dir');
+    }
 
     // Update dictionary-bound elements
     var transEls = document.querySelectorAll('[data-i18n]');

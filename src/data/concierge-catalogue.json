@@ -20,7 +20,7 @@
       }
     },
     "largeGroupThreshold": 8,
-    "replyWindow": "within a few hours during business hours (Mon–Sat, 09:00–17:00 EAT)",
+    "replyWindow": "within a few hours during business hours (Mon\u2013Sat, 09:00\u201317:00 EAT)",
     "businessHours": {
       "days": [
         1,
@@ -55,7 +55,7 @@
         "safariDiscount": 0.1
       }
     ],
-    "childPolicy": "Ages 6–14 at the published child rate on excursions; under 6 free except marine park fees.",
+    "childPolicy": "Ages 6\u201314 at the published child rate on excursions; under 6 free except marine park fees.",
     "sharedMinGuests": 6
   },
   "hotels": [
@@ -117,7 +117,7 @@
       "island": "Unguja",
       "area": "west",
       "hotelCount": 50,
-      "description": "UNESCO World Heritage site — the historic heart of Zanzibar with winding alleys, carved doors, bustling markets, and centuries of Swahili, Arab, Indian, and European heritage."
+      "description": "UNESCO World Heritage site \u2014 the historic heart of Zanzibar with winding alleys, carved doors, bustling markets, and centuries of Swahili, Arab, Indian, and European heritage."
     },
     {
       "slug": "nungwi",
@@ -125,7 +125,7 @@
       "island": "Unguja",
       "area": "north",
       "hotelCount": 26,
-      "description": "Northern tip of Zanzibar — famous for white-sand beaches, turquoise water, traditional dhow building, and vibrant nightlife. Turtles, diving, and sunset cruises."
+      "description": "Northern tip of Zanzibar \u2014 famous for white-sand beaches, turquoise water, traditional dhow building, and vibrant nightlife. Turtles, diving, and sunset cruises."
     },
     {
       "slug": "kendwa",
@@ -133,7 +133,7 @@
       "island": "Unguja",
       "area": "north",
       "hotelCount": 6,
-      "description": "Northwest coast — wide beaches with no tide restrictions, famous for full-moon parties, diving, and easy swimming all day."
+      "description": "Northwest coast \u2014 wide beaches with no tide restrictions, famous for full-moon parties, diving, and easy swimming all day."
     },
     {
       "slug": "paje",
@@ -141,7 +141,7 @@
       "island": "Unguja",
       "area": "southeast",
       "hotelCount": 21,
-      "description": "Southeast coast — world-class kite-surfing, shallow turquoise lagoon, laid-back vibe, and easy access to Jozani Forest and Kuza Cave."
+      "description": "Southeast coast \u2014 world-class kite-surfing, shallow turquoise lagoon, laid-back vibe, and easy access to Jozani Forest and Kuza Cave."
     },
     {
       "slug": "jambiani",
@@ -149,7 +149,7 @@
       "island": "Unguja",
       "area": "southeast",
       "hotelCount": 20,
-      "description": "Southeast fishing village — authentic Swahili culture, seaweed farming, tide pools, and access to Kuza Cave and Chumbe Island."
+      "description": "Southeast fishing village \u2014 authentic Swahili culture, seaweed farming, tide pools, and access to Kuza Cave and Chumbe Island."
     },
     {
       "slug": "kiwengwa",
@@ -157,7 +157,7 @@
       "island": "Unguja",
       "area": "northeast",
       "hotelCount": 8,
-      "description": "Northeast coast — long white-sand beach, all-inclusive resorts, calm waters protected by reef, and easy access to Mnemba Atoll."
+      "description": "Northeast coast \u2014 long white-sand beach, all-inclusive resorts, calm waters protected by reef, and easy access to Mnemba Atoll."
     },
     {
       "slug": "pongwe",
@@ -165,7 +165,7 @@
       "island": "Unguja",
       "area": "east",
       "hotelCount": 6,
-      "description": "East-central coast — quiet beaches, mangrove channels, The Rock Restaurant nearby, and Isaraya overwater villas."
+      "description": "East-central coast \u2014 quiet beaches, mangrove channels, The Rock Restaurant nearby, and Isaraya overwater villas."
     },
     {
       "slug": "bwejuu",
@@ -173,7 +173,7 @@
       "island": "Unguja",
       "area": "southeast",
       "hotelCount": 8,
-      "description": "Southeast coast — tranquil beaches, luxury boutique resorts, seaweed farming, and access to Chumbe Island marine park."
+      "description": "Southeast coast \u2014 tranquil beaches, luxury boutique resorts, seaweed farming, and access to Chumbe Island marine park."
     },
     {
       "slug": "michamvi",
@@ -181,7 +181,7 @@
       "island": "Unguja",
       "area": "southeast",
       "hotelCount": 10,
-      "description": "East coast — The Rock Restaurant on a coral outcrop, calm lagoon waters, and boutique luxury resorts."
+      "description": "East coast \u2014 The Rock Restaurant on a coral outcrop, calm lagoon waters, and boutique luxury resorts."
     },
     {
       "slug": "kizimkazi",
@@ -189,7 +189,7 @@
       "island": "Unguja",
       "area": "south",
       "hotelCount": 7,
-      "description": "South coast — dolphin watching capital, ancient mosque (12th century), and access to Menai Bay Conservation Area."
+      "description": "South coast \u2014 dolphin watching capital, ancient mosque (12th century), and access to Menai Bay Conservation Area."
     },
     {
       "slug": "fumba",
@@ -197,7 +197,7 @@
       "island": "Unguja",
       "area": "southwest",
       "hotelCount": 4,
-      "description": "Southwest peninsula — departure point for Safari Blue, marine conservation area access, and quiet residential beaches."
+      "description": "Southwest peninsula \u2014 departure point for Safari Blue, marine conservation area access, and quiet residential beaches."
     },
     {
       "slug": "matemwe",
@@ -205,7 +205,7 @@
       "island": "Unguja",
       "area": "northeast",
       "hotelCount": 31,
-      "description": "Northeast coast — pristine beaches, Mnemba Atoll access, turtle nesting sites, and quiet boutique properties."
+      "description": "Northeast coast \u2014 pristine beaches, Mnemba Atoll access, turtle nesting sites, and quiet boutique properties."
     },
     {
       "slug": "chake-chake",
@@ -213,7 +213,7 @@
       "island": "Pemba",
       "area": "pemba",
       "hotelCount": 2,
-      "description": "Main town of Pemba Island — authentic Swahili culture, clove plantations, and access to Pemba's pristine dive sites."
+      "description": "Main town of Pemba Island \u2014 authentic Swahili culture, clove plantations, and access to Pemba's pristine dive sites."
     },
     {
       "slug": "wambaa-gulf",
@@ -221,7 +221,7 @@
       "island": "Pemba",
       "area": "pemba",
       "hotelCount": 6,
-      "description": "Pemba's luxury lodge area — Fundu Lagoon, world-class diving, and untouched coral reefs."
+      "description": "Pemba's luxury lodge area \u2014 Fundu Lagoon, world-class diving, and untouched coral reefs."
     }
   ],
   "services": [
@@ -235,13 +235,13 @@
       "zones": [
         "stone-town"
       ],
-      "duration": "2–4 hours",
+      "duration": "2\u20134 hours",
       "pricing": {
         "basis": "per_person",
         "min": 35,
         "max": 90,
-        "display": "$35–$90",
-        "tieredDisplay": "Group walking tour: $35 pp • Private 2 guests (no transfer): $60 pp • Private 2 guests (with transfer): $90 pp",
+        "display": "$35\u2013$90",
+        "tieredDisplay": "Group walking tour: $35 pp \u2022 Private 2 guests (no transfer): $60 pp \u2022 Private 2 guests (with transfer): $90 pp",
         "basisNote": "per person; group tour meets at Forodhani; private includes guide only (add transfer supplement if needed); anchored at AAA/TripCanvas $29 group, $60-100 private (Tulia Zanzibar); market scan: zanzibarguides group $20-30, JoyTrekking $45, Navin $25",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "AAA/TripCanvas, Tulia Zanzibar, zanzibarguides.com, JoyTrekking, Navin Tours",
@@ -260,19 +260,19 @@
         "Flexible walking pace tailored to your group or family"
       ],
       "importantNotes": [
-        "Entry fees to museums are not included — budget $5–10 extra",
+        "Entry fees to museums are not included \u2014 budget $5\u201310 extra",
         "Wear comfortable walking shoes; Stone Town has uneven surfaces",
         "Bring a hat and water; midday sun is intense",
-        "Licensed guides charge per group, not per person — perfect for families"
+        "Licensed guides charge per group, not per person \u2014 perfect for families"
       ],
       "whatToExpect": [
-        "2–4 hour guided walk led by a Zanzibar-licensed guide",
+        "2\u20134 hour guided walk led by a Zanzibar-licensed guide",
         "Visit Forodhani Gardens night market (if evening)",
         "Explore the Old Fort, House of Wonders, and Sultan's Palace Museum",
         "Browse the Darajani and Forodhani markets",
         "Stroll the seafront promenade and the Old City gates"
       ],
-      "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House",
+      "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history \u2014 from the Sultan's palace to the bustling Darajani market scene, the House",
       "meetingPoint": "Forodhani Gardens, Stone Town waterfront",
       "interests": [
         "culture",
@@ -291,13 +291,13 @@
       "zones": [
         "stone-town"
       ],
-      "duration": "3–4 hours",
+      "duration": "3\u20134 hours",
       "pricing": {
         "basis": "per_person",
         "min": 40,
         "max": 75,
-        "display": "$40–$75",
-        "tieredDisplay": "Walking tour (no transfer): $40 pp • Private 2 guests (with transfer): $75 pp",
+        "display": "$40\u2013$75",
+        "tieredDisplay": "Walking tour (no transfer): $40 pp \u2022 Private 2 guests (with transfer): $75 pp",
         "basisNote": "per person; walking tour meets at farm; private includes guide, transport, tasting; anchored at Expedia ($32 pp walking) and Tulia Zanzibar ($100 pp private with transfer)",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Expedia, Tulia Zanzibar, Trip.com entry-only rate",
@@ -312,21 +312,21 @@
       },
       "includes": [
         "Farm walk, spice/fruit tasting, guide",
-        "Optional traditional Swahili farm lunch available on-site ($5–$10 cash)"
+        "Optional traditional Swahili farm lunch available on-site ($5\u2013$10 cash)"
       ],
       "importantNotes": [
-        "Tipping pressure: some guides take visitors to craft shops — we only work with transparent operators",
-        "Bring cash for optional lunch ($5–10)",
+        "Tipping pressure: some guides take visitors to craft shops \u2014 we only work with transparent operators",
+        "Bring cash for optional lunch ($5\u201310)",
         "Wear long sleeves if you have sensitive skin (spice contact)"
       ],
       "whatToExpect": [
-        "3–4 hour farm tour with a local expert guide",
+        "3\u20134 hour farm tour with a local expert guide",
         "Hands-on tasting of 8+ tropical spices and fruits",
         "History of Zanzibar's clove trade and colonial plantations",
         "Traditional hand-grinding demonstration",
         "Optional lunch featuring local ingredients"
       ],
-      "description": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade — how Zanzibar became the \"Spice Island\" — while you taste fresh nutmeg, cloves, c",
+      "description": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade \u2014 how Zanzibar became the \"Spice Island\" \u2014 while you taste fresh nutmeg, cloves, c",
       "meetingPoint": "Kidichi, Kizimbani, or island interior (pickup from Stone Town available)",
       "interests": [
         "culture",
@@ -350,12 +350,12 @@
         "jambiani",
         "stone-town"
       ],
-      "duration": "2–4 hours",
+      "duration": "2\u20134 hours",
       "pricing": {
         "basis": "per_person",
         "min": 30,
         "max": 50,
-        "display": "$30–$50",
+        "display": "$30\u2013$50",
         "basisNote": "per person (small group)",
         "sourceQuality": "Historical price list + 2026 market range",
         "sourceFiles": "zanzibar things to do.docx (50 USD); 2026 market guides",
@@ -371,12 +371,12 @@
         "donation varies"
       ],
       "importantNotes": [
-        "This is a community experience — respectful dress (shoulders and knees covered) is required",
+        "This is a community experience \u2014 respectful dress (shoulders and knees covered) is required",
         "Donation goes directly to the village development fund",
-        "Not a staged performance — real community interaction"
+        "Not a staged performance \u2014 real community interaction"
       ],
       "whatToExpect": [
-        "2–4 hour guided village visit",
+        "2\u20134 hour guided village visit",
         "Seaweed farm demonstration and hands-on participation",
         "Traditional craft workshop (basket weaving, pottery)",
         "Home-cooked local lunch in a family setting",
@@ -401,13 +401,13 @@
       "zones": [
         "stone-town"
       ],
-      "duration": "5–8 hours",
+      "duration": "5\u20138 hours",
       "pricing": {
         "basis": "per_person",
         "min": 75,
         "max": 165,
-        "display": "$75–$165",
-        "basisNote": "per person; floor priced from partner rate (Madebe partner rate: $60pp for 2 guests (3-in-1))",
+        "display": "$75\u2013$165",
+        "basisNote": "per person (2 guests minimum); licensed guide, all entrance fees and private boat transfer included",
         "sourceQuality": "Existing strategy + 2026 market range",
         "sourceFiles": "Zanzibar_Master_Venture_Plan.md; GetYourGuide 2026 listing",
         "verified": true,
@@ -421,14 +421,14 @@
         "Guide, transport, entry fees vary by package"
       ],
       "importantNotes": [
-        "This is a high-intent bundle — book early, especially June–October and December–January",
+        "This is a high-intent bundle \u2014 book early, especially June\u2013October and December\u2013January",
         "Lunch at spice farm is typically a set Zanzibar menu",
         "Bring swimwear for the Prison Island snorkeling portion"
       ],
       "whatToExpect": [
         "Morning: Stone Town walking tour with licensed guide (2 hours)",
         "Midday: Spice farm tour with tasting and lunch (2 hours)",
-        "Afternoon: Boat to Prison Island — visit tortoise sanctuary and snorkel at Nakupenda (2–3 hours)",
+        "Afternoon: Boat to Prison Island \u2014 visit tortoise sanctuary and snorkel at Nakupenda (2\u20133 hours)",
         "All transport included in air-conditioned vehicle",
         "Entry fees to all sites included"
       ],
@@ -447,17 +447,17 @@
       "name": "Safari Blue / Menai Bay dhow day",
       "type": "tour",
       "category": "MAR",
-      "location": "Fumba → Menai Bay → Kwale Island",
+      "location": "Fumba \u2192 Menai Bay \u2192 Kwale Island",
       "zones": [
         "fumba"
       ],
-      "duration": "7–9 hours",
+      "duration": "7\u20139 hours",
       "pricing": {
         "basis": "per_person",
         "min": 85,
         "max": 150,
-        "display": "$85–$150",
-        "tieredDisplay": "1 guest: $150 pp • 2 guests: $95 pp • 3–6 guests: $85 pp (all-in: fees, lunch, gear)",
+        "display": "$85\u2013$150",
+        "tieredDisplay": "1 guest: $150 pp \u2022 2 guests: $95 pp \u2022 3\u20136 guests: $85 pp (all-in: fees, lunch, gear)",
         "basisNote": "per person; includes $25 marine fee; group-size tiered; Stone Town pickup vs beach-hotel pickup differential; anchored at Cotis Safaris published rates",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Cotis Safaris rate card, Easy Travel group-size tiers",
@@ -476,18 +476,18 @@
       "importantNotes": [
         "Marine conservation fee: $10 for non-EAC adults (included in our price)",
         "Bring a towel, hat, sunscreen (reef-safe), and swimwear",
-        "Limited daily capacity — booking essential",
-        "Copycat products and overcrowding are key risks — we only recommend the licensed Safari Blue"
+        "Limited daily capacity \u2014 booking essential",
+        "Copycat products and overcrowding are key risks \u2014 we only recommend the licensed Safari Blue"
       ],
       "whatToExpect": [
-        "Full-day dhow sailing trip (7–9 hours)",
+        "Full-day dhow sailing trip (7\u20139 hours)",
         "Snorkeling over coral reefs with mask, snorkel, and life jacket provided",
         "Seafood barbecue lunch (grilled fish, prawns, calamari) on a sandbank",
         "Fresh fruit, water, and soft drinks throughout",
         "Menai Bay conservation fee included in package price"
       ],
       "description": "Zanzibar's most famous dhow excursion: cruise to the Menai Bay Conservation Area, snorkel over vibrant coral reefs, feast on a seafood barbecue on a private sandbank, and visit Kwale Island. Operated",
-      "meetingPoint": "Fumba Peninsula — pickup from Stone Town hotels available",
+      "meetingPoint": "Fumba Peninsula \u2014 pickup from Stone Town hotels available",
       "interests": [
         "ocean",
         "snorkeling",
@@ -507,20 +507,20 @@
       "name": "Mnemba Atoll snorkeling / dolphin trip",
       "type": "tour",
       "category": "MAR",
-      "location": "Matemwe / Nungwi / Kendwa → Mnemba Atoll",
+      "location": "Matemwe / Nungwi / Kendwa \u2192 Mnemba Atoll",
       "zones": [
         "matemwe",
         "nungwi",
         "kiwengwa"
       ],
-      "duration": "3–6 hours",
+      "duration": "3\u20136 hours",
       "pricing": {
         "basis": "per_person",
         "min": 45,
         "max": 115,
-        "display": "$45–$115",
-        "tieredDisplay": "Shared small-group (max 8): $45 pp + $25 marine fee • Kendwa departure: $55 pp incl fees • Private 2 guests: $85–95 pp (includes $25 marine fee) • Premium private: $105–115 pp",
-        "basisNote": "per person; shared $45 pp + $25 marine fee, private 2 guests $85–95 pp incl $25 marine fee; benchmark: shared typical $55, fee $25 since 1 Nov 2026",
+        "display": "$45\u2013$115",
+        "tieredDisplay": "Shared small-group (max 8): $45 pp + $25 marine fee \u2022 Kendwa departure: $55 pp incl fees \u2022 Private 2 guests: $85\u201395 pp (includes $25 marine fee) \u2022 Premium private: $105\u2013115 pp",
+        "basisNote": "per person; shared $45 pp + $25 marine fee, private 2 guests $85\u201395 pp incl $25 marine fee; benchmark: shared typical $55, fee $25 since 1 Nov 2026",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Zanzibar Star Tours, Mnemba Island Tours, Tulia Zanzibar, Azur Zanzibar Tours, snorkelingzanzibar.com",
         "verified": true,
@@ -541,19 +541,19 @@
       ],
       "importantNotes": [
         "Marine conservation fee: $10 for non-EAC adults (included in our price)",
-        "Best condition: June–October and December–March",
-        "Avoid \"guaranteed dolphin\" claims — these are unethical and often illegal",
+        "Best condition: June\u2013October and December\u2013March",
+        "Avoid \"guaranteed dolphin\" claims \u2014 these are unethical and often illegal",
         "Weather dependent; trips may be rescheduled in rough seas"
       ],
       "whatToExpect": [
-        "3–6 hour boat trip to Mnemba Atoll marine reserve",
+        "3\u20136 hour boat trip to Mnemba Atoll marine reserve",
         "Two snorkeling spots over vibrant coral reefs",
         "Sea turtle sightings common (resident population)",
         "Fresh fruit, water, and soft drinks on board",
         "Snorkel gear provided (mask, snorkel, life jacket)"
       ],
       "description": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area. Spot green sea turtles, observe colorful fish over healthy coral reefs, and enjoy fruit and water on a traditi",
-      "meetingPoint": "Matemwe, Nungwi, or Kendwa — pickup from nearby hotels included",
+      "meetingPoint": "Matemwe, Nungwi, or Kendwa \u2014 pickup from nearby hotels included",
       "interests": [
         "ocean",
         "snorkeling",
@@ -570,7 +570,7 @@
       "name": "Prison Island + Nakupenda sandbank",
       "type": "tour",
       "category": "MAR",
-      "location": "Stone Town → Changuu → Nakupenda",
+      "location": "Stone Town \u2192 Changuu \u2192 Nakupenda",
       "zones": [
         "stone-town"
       ],
@@ -579,9 +579,9 @@
         "basis": "per_person",
         "min": 85,
         "max": 95,
-        "display": "$85–$95",
-        "tieredDisplay": "2 guests: $95 pp (includes $23 entrance, boat, lunch) • 3–6 guests: $85 pp (all-in)",
-        "basisNote": "per person all-in; 2 guests $95 pp, 3–6 guests $85 pp; includes $23 Changuu entrance and $10 Nakupenda sandbank fee; benchmark typical $88",
+        "display": "$85\u2013$95",
+        "tieredDisplay": "2 guests: $95 pp (includes $23 entrance, boat, lunch) \u2022 3\u20136 guests: $85 pp (all-in)",
+        "basisNote": "per person all-in; 2 guests $95 pp, 3\u20136 guests $85 pp; includes $23 Changuu entrance and $10 Nakupenda sandbank fee; benchmark typical $88",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Tulia Zanzibar, Tripadvisor operator listing, Viator/GetYourGuide shared options",
         "verified": true,
@@ -598,20 +598,20 @@
         "Fresh seafood & seasonal fruit lunch on sandbank included"
       ],
       "importantNotes": [
-        "Peak season (June–October) gets crowded — book early morning for fewer people",
+        "Peak season (June\u2013October) gets crowded \u2014 book early morning for fewer people",
         "Bring reef-safe sunscreen and a hat",
-        "Lunch at Nakupenda is typically a simple seafood grill — add $10–15 if desired",
+        "Lunch at Nakupenda is typically a simple seafood grill \u2014 add $10\u201315 if desired",
         "Prison Island entry $23 and Nakupenda sandbank fee $10 are included in the quoted all-in rate."
       ],
       "whatToExpect": [
         "Boat transfer from Stone Town (20 minutes)",
-        "Prison Island visit — feed and photograph giant tortoises (aged 70–190)",
-        "Nakupenda sandbank — wade in shallow turquoise waters",
+        "Prison Island visit \u2014 feed and photograph giant tortoises (aged 70\u2013190)",
+        "Nakupenda sandbank \u2014 wade in shallow turquoise waters",
         "Snorkeling at the coral reef (gear provided)",
         "Island entry fee included"
       ],
       "description": "A classic Zanzibar half-day or full-day excursion: take a short boat ride to Changuu (Prison Island) to meet the resident giant Aldabra tortoises, then cruise to Nakupenda sandbank for snorkeling over",
-      "meetingPoint": "Stone Town waterfront — Forodhani Gardens pier",
+      "meetingPoint": "Stone Town waterfront \u2014 Forodhani Gardens pier",
       "interests": [
         "ocean",
         "beach",
@@ -636,9 +636,9 @@
         "basis": "per_person",
         "min": 115,
         "max": 185,
-        "display": "$115–$185",
-        "tieredDisplay": "2 guests: $145 pp • 3 guests: $125 pp • 4–6 guests: $115 pp",
-        "basisNote": "per person; group-size tiered; anchored at Easy Travel published rates (2 guests $145, 3 guests $125, 4–6 guests $115)",
+        "display": "$115\u2013$185",
+        "tieredDisplay": "2 guests: $145 pp \u2022 3 guests: $125 pp \u2022 4\u20136 guests: $115 pp",
+        "basisNote": "per person; group-size tiered; anchored at Easy Travel published rates (2 guests $145, 3 guests $125, 4\u20136 guests $115)",
         "sourceQuality": "Easy Travel official published group-size tiers + top-operator benchmark",
         "sourceFiles": "Easy Travel & Tours rate card",
         "verified": true,
@@ -652,19 +652,19 @@
         "Fresh seafood & seasonal fruit lunch on sandbank included"
       ],
       "importantNotes": [
-        "Best at low tide — timing depends on tides, not departure time",
+        "Best at low tide \u2014 timing depends on tides, not departure time",
         "Bring your own towel or rent one on-site ($3)",
-        "Very popular with cruise ship passengers — book early morning for quiet"
+        "Very popular with cruise ship passengers \u2014 book early morning for quiet"
       ],
       "whatToExpect": [
         "Boat transfer from Stone Town (30 minutes)",
-        "Time on Nakupenda sandbank — swim, sunbathe, relax",
+        "Time on Nakupenda sandbank \u2014 swim, sunbathe, relax",
         "Snorkeling directly from the beach over healthy coral",
         "Seafood lunch on the sand (optional upgrade)",
         "Fresh fruit, water, and soft drinks included"
       ],
-      "description": "A relaxed half-day trip to Nakupenda sandbank — Zanzibar's most famous white-sand strip that emerges at low tide. Perfect for swimming, sunbathing, and snorkeling right off the beach.",
-      "meetingPoint": "Stone Town waterfront — Forodhani Gardens pier",
+      "description": "A relaxed half-day trip to Nakupenda sandbank \u2014 Zanzibar's most famous white-sand strip that emerges at low tide. Perfect for swimming, sunbathing, and snorkeling right off the beach.",
+      "meetingPoint": "Stone Town waterfront \u2014 Forodhani Gardens pier",
       "interests": [
         "ocean",
         "beach",
@@ -679,7 +679,7 @@
       "name": "Chumbe Island coral park day",
       "type": "tour",
       "category": "MAR",
-      "location": "Mbweni → Chumbe Island",
+      "location": "Mbweni \u2192 Chumbe Island",
       "zones": [
         "fumba"
       ],
@@ -688,8 +688,8 @@
         "basis": "per_person",
         "min": 115,
         "max": 135,
-        "display": "$115–$135",
-        "basisNote": "per person; floor priced from partner rate (Masoud Amran partner rate: $90pp)",
+        "display": "$115\u2013$135",
+        "basisNote": "per person; marine sanctuary day pass, boat transfer, guided snorkel and lunch included",
         "sourceQuality": "Historical price list + 2026 market range",
         "sourceFiles": "zanzibar things to do.docx; 2026 market guides",
         "verified": true,
@@ -703,7 +703,7 @@
         "Boat, marine-biology guide, snorkeling, lunch, day room"
       ],
       "importantNotes": [
-        "Advance booking essential — strictly limited to 14 visitors per day",
+        "Advance booking essential \u2014 strictly limited to 14 visitors per day",
         "All profits support the Chumbe Conservation Fund",
         "Bring your own snorkel mask if you have one",
         "No single supplement for solo travelers"
@@ -737,13 +737,13 @@
         "kendwa",
         "stone-town"
       ],
-      "duration": "2–3 hours",
+      "duration": "2\u20133 hours",
       "pricing": {
         "basis": "per_person",
         "min": 30,
         "max": 95,
-        "display": "$30–$95",
-        "tieredDisplay": "1 guest: $95 pp • Private 2 guests: $75 pp • 3 guests: $60 pp • 4–6 guests: $45 pp • Budget shared: from $30 pp",
+        "display": "$30\u2013$95",
+        "tieredDisplay": "1 guest: $95 pp \u2022 Private 2 guests: $75 pp \u2022 3 guests: $60 pp \u2022 4\u20136 guests: $45 pp \u2022 Budget shared: from $30 pp",
         "basisNote": "per person; group-size tiered for private dhow; budget shared option; anchored at Easy Travel published group-size tiers",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Easy Travel & Tours rate card",
@@ -762,20 +762,20 @@
         "Experienced Zanzibari dhow captain & crew"
       ],
       "importantNotes": [
-        "Weather dependent — trips may be rescheduled if seas are rough",
+        "Weather dependent \u2014 trips may be rescheduled if seas are rough",
         "Bring a light jacket; evenings can get cool on the water",
         "Perfect as a romantic experience or group activity",
         "Private charters available at higher end of price range"
       ],
       "whatToExpect": [
-        "2–3 hour sunset cruise on a traditional wooden dhow",
+        "2\u20133 hour sunset cruise on a traditional wooden dhow",
         "Departure from Nungwi, Kendwa, or Stone Town (your choice)",
         "Soft drinks, fresh fruit, and light snacks on board",
         "Life jackets provided; safety briefing included",
-        "Photography-friendly — golden hour lighting"
+        "Photography-friendly \u2014 golden hour lighting"
       ],
       "description": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and",
-      "meetingPoint": "Nungwi Beach, Kendwa Beach, or Stone Town waterfront — choose at booking",
+      "meetingPoint": "Nungwi Beach, Kendwa Beach, or Stone Town waterfront \u2014 choose at booking",
       "interests": [
         "romance",
         "sunset",
@@ -797,13 +797,13 @@
       "zones": [
         "kizimkazi"
       ],
-      "duration": "3–4 hours",
+      "duration": "3\u20134 hours",
       "pricing": {
         "basis": "per_person",
         "min": 60,
         "max": 140,
-        "display": "$60–$140",
-        "tieredDisplay": "1 guest: $140 pp (Stone Town) / $120 pp (North beach) • 2 guests: $95 pp • 3–6 guests: $75 pp • Budget shared: from $60 pp",
+        "display": "$60\u2013$140",
+        "tieredDisplay": "1 guest: $140 pp (Stone Town) / $120 pp (North beach) \u2022 2 guests: $95 pp \u2022 3\u20136 guests: $75 pp \u2022 Budget shared: from $60 pp",
         "basisNote": "per person; zone differential (Stone Town vs North beach); group-size tiered; anchored at Cotis Safaris published rates",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "Cotis Safaris rate card",
@@ -822,14 +822,14 @@
         "Certified local marine guide (ethical viewing protocols)"
       ],
       "importantNotes": [
-        "ETHICAL WARNING: Many operators use illegal methods — feeding, chasing, herding. We only book with certified ethical operators.",
-        "Dolphin sightings are NOT guaranteed — it's wildlife, not a show",
+        "ETHICAL WARNING: Many operators use illegal methods \u2014 feeding, chasing, herding. We only book with certified ethical operators.",
+        "Dolphin sightings are NOT guaranteed \u2014 it's wildlife, not a show",
         "Bring your own snorkel gear if possible",
-        "Best period: June–October and December–March"
+        "Best period: June\u2013October and December\u2013March"
       ],
       "whatToExpect": [
-        "Early morning departure (dolphins most active at dawn, 6–9 AM)",
-        "3–4 hour boat trip to the dolphin hotspot",
+        "Early morning departure (dolphins most active at dawn, 6\u20139 AM)",
+        "3\u20134 hour boat trip to the dolphin hotspot",
         "Ethical dolphin watching (no feeding, no chasing, minimal engine noise)",
         "Snorkeling in the lagoon after dolphin viewing",
         "Fresh fruit and water included"
@@ -857,13 +857,13 @@
         "jambiani",
         "stone-town"
       ],
-      "duration": "2–4 hours",
+      "duration": "2\u20134 hours",
       "pricing": {
         "basis": "per_person",
         "min": 50,
         "max": 95,
-        "display": "$50–$95",
-        "tieredDisplay": "Group (entry + guide, no transfer): $50 pp • Private incl transfers (2–4 guests): $65 pp • Premium private (entry + guide + hotel pickup, 2 guests): $95 pp",
+        "display": "$50\u2013$95",
+        "tieredDisplay": "Group (entry + guide, no transfer): $50 pp \u2022 Private incl transfers (2\u20134 guests): $65 pp \u2022 Premium private (entry + guide + hotel pickup, 2 guests): $95 pp",
         "basisNote": "per person; anchored at GoSmart Zanzibar tiers ($50/$40/$35 by group size, entry+fees incl, transfer excl), Red Banana private incl transfers ($65/$60/$50/$40), premium private+transfer $100-135 (Expedia/Tulia)",
         "sourceQuality": "Published 2025-26 operator benchmark (market study); legacy partner rate lists (2026 re-typed)",
         "sourceFiles": "GoSmart Zanzibar Tours, Red Banana Tours, Expedia, Tulia Zanzibar",
@@ -882,14 +882,14 @@
         "Mangrove forest boardwalk entry & nature conservation fee"
       ],
       "importantNotes": [
-        "Park entry fee: varies by nationality — included in our package price",
+        "Park entry fee: varies by nationality \u2014 included in our package price",
         "Best visited early morning or late afternoon for wildlife activity",
         "Wear long pants and closed shoes; the forest is humid and buggy",
         "Combine with a south-coast day including Kuza Cave, The Rock, and lunch at a beach club"
       ],
       "whatToExpect": [
-        "2–4 hour guided walk through mangrove and coastal forest",
-        "Red colobus monkey sighting — Zanzibar's endemic primate",
+        "2\u20134 hour guided walk through mangrove and coastal forest",
+        "Red colobus monkey sighting \u2014 Zanzibar's endemic primate",
         "Blue Sykes monkey, lesser bushbaby, and birdwatching opportunities",
         "Visit the visitor center and turtle sanctuary at the park entrance",
         "Can combine with Kuza Cave to the south or The Rock Restaurant"
@@ -919,13 +919,13 @@
         "jambiani",
         "paje"
       ],
-      "duration": "3–5 hours",
+      "duration": "3\u20135 hours",
       "pricing": {
         "basis": "per_person",
         "min": 25,
         "max": 130,
-        "display": "$25–$130",
-        "basisNote": "per person ($25 entry & local guide; $65–$85 with private island transfer)",
+        "display": "$25\u2013$130",
+        "basisNote": "per person ($25 entry & local guide; $65\u2013$85 with private island transfer)",
         "sourceQuality": "2026 market range",
         "sourceFiles": "2026 market guides",
         "verified": true,
@@ -939,19 +939,19 @@
         "Cave swim, village/seaweed visit (optional Swahili lunch available locally)"
       ],
       "importantNotes": [
-        "Tide-dependent — cave access varies with water levels",
+        "Tide-dependent \u2014 cave access varies with water levels",
         "Bring a towel and change of clothes",
         "Flashlights provided for the cave portion",
         "Community-run; part of the fee supports local cooperatives"
       ],
       "whatToExpect": [
-        "3–5 hour experience combining cave exploration and farm visit",
+        "3\u20135 hour experience combining cave exploration and farm visit",
         "Swim in natural freshwater pools inside the limestone cave system",
-        "Seaweed farm demonstration — learn about cultivation and processing",
+        "Seaweed farm demonstration \u2014 learn about cultivation and processing",
         "Hands-on participation: harvest seaweed or try traditional dyeing",
         "Traditional lunch with local family"
       ],
-      "description": "Descend into Kuza Cave — a series of freshwater caverns near Jambiani — then visit a working seaweed farm to learn about Zanzibar's second-largest export crop.",
+      "description": "Descend into Kuza Cave \u2014 a series of freshwater caverns near Jambiani \u2014 then visit a working seaweed farm to learn about Zanzibar's second-largest export crop.",
       "meetingPoint": "Jambiani or Paje area (pickup from nearby hotels included)",
       "interests": [
         "culture",
@@ -967,14 +967,14 @@
       "name": "Mikumi or Nyerere fly-in day safari",
       "type": "tour",
       "category": "SAF",
-      "location": "Zanzibar → mainland Tanzania → Zanzibar",
+      "location": "Zanzibar \u2192 mainland Tanzania \u2192 Zanzibar",
       "zones": [],
-      "duration": "8–10 hours",
+      "duration": "8\u201310 hours",
       "pricing": {
         "basis": "per_person",
         "min": 400,
         "max": 800,
-        "display": "$400–$800",
+        "display": "$400\u2013$800",
         "basisNote": "per person",
         "sourceQuality": "Existing strategy + 2026 market range",
         "sourceFiles": "Zanzibar_Master_Venture_Plan.md; 2026 market guides",
@@ -1002,19 +1002,19 @@
             "minPax": 4,
             "maxPax": 6,
             "perPerson": 450,
-            "label": "4–6 guests"
+            "label": "4\u20136 guests"
           },
           {
             "minPax": 7,
             "maxPax": 10,
             "perPerson": 450,
-            "label": "7–10 guests"
+            "label": "7\u201310 guests"
           },
           {
             "minPax": 11,
             "maxPax": 20,
             "perPerson": 450,
-            "label": "11–20 guests"
+            "label": "11\u201320 guests"
           }
         ],
         "ladderSource": "Corrected from legacy partner ladder ($520 single) and published Mikumi fly-in benchmark $450 pp",
@@ -1028,10 +1028,10 @@
         "Flights, game drive, park fees, lunch"
       ],
       "importantNotes": [
-        "Flight-dependent — weather permitting only",
+        "Flight-dependent \u2014 weather permitting only",
         "Must use a licensed mainland operator (we handle this)",
-        "Minimum 2 passengers for charter flights — single supplement applies",
-        "Best months: June–October and December–March (dry seasons)"
+        "Minimum 2 passengers for charter flights \u2014 single supplement applies",
+        "Best months: June\u2013October and December\u2013March (dry seasons)"
       ],
       "whatToExpect": [
         "Morning flight from Zanzibar to Mwanza or Dar es Salaam (chartered, 1.5 hours)",
@@ -1041,7 +1041,7 @@
         "Spot elephants, lions, hippos, crocodiles, giraffes, and over 400 bird species"
       ],
       "description": "Escape to mainland Tanzania for a thrilling day safari. Fly from Zanzibar to either Mikumi National Park (famous for the \"S\" curve of the river) or Nyerere National Park (formerly Selous Game Reserve,",
-      "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) — transfer from your hotel included",
+      "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) \u2014 transfer from your hotel included",
       "interests": [
         "safari",
         "wildlife",
@@ -1055,21 +1055,21 @@
       "name": "Serengeti 3-day fly-in safari",
       "type": "tour",
       "category": "SAF",
-      "location": "Zanzibar → Serengeti → Zanzibar",
+      "location": "Zanzibar \u2192 Serengeti \u2192 Zanzibar",
       "zones": [],
       "duration": "3 days / 2 nights",
       "pricing": {
         "basis": "per_person",
         "min": 900,
         "max": 2500,
-        "display": "$900–$2500",
-        "basisNote": "per person ($900–$1,200 tented camp; $1,800–$2,500 luxury lodge with return flights & game drives)",
+        "display": "$900\u2013$2500",
+        "basisNote": "per person ($900\u2013$1,200 tented camp; $1,800\u2013$2,500 luxury lodge with return flights & game drives)",
         "sourceQuality": "Existing demo package + 2026 market range",
         "sourceFiles": "zanzibar-tours/packages/core/src/seed.ts; 2026 market guides",
         "verified": true,
         "parkFeePerPersonPerDay": 82.6,
         "parkDays": 3,
-        "parkFeeSource": "TANAPA Serengeti adult day tariff incl. 18% VAT (market study §6)",
+        "parkFeeSource": "TANAPA Serengeti adult day tariff incl. 18% VAT (market study \u00a76)",
         "viatorAnchor": 1350,
         "depositPercent": 30,
         "depositAmount": 270,
@@ -1080,13 +1080,13 @@
         "Flights, park fees, 4x4, guide, full board"
       ],
       "importantNotes": [
-        "Requires a licensed mainland tour operator — we handle all logistics",
-        "Best for Great Migration (July–October: Mara River crossings; December–March: Ndutu calving season)",
+        "Requires a licensed mainland tour operator \u2014 we handle all logistics",
+        "Best for Great Migration (July\u2013October: Mara River crossings; December\u2013March: Ndutu calving season)",
         "Single supplement: add ~25% for solo travelers",
-        "Weather-dependent flights — flexible date policy"
+        "Weather-dependent flights \u2014 flexible date policy"
       ],
       "whatToExpect": [
-        "Day 1: Flight Zanzibar → Seronera, transfer to luxury tented camp, afternoon game drive",
+        "Day 1: Flight Zanzibar \u2192 Seronera, transfer to luxury tented camp, afternoon game drive",
         "Day 2: Full-day game drives in the Seronera valley (prime wildlife viewing area)",
         "Day 3: Morning game drive, flight back to Zanzibar",
         "All park fees, flights, accommodation, meals, and game drives included",
@@ -1115,7 +1115,7 @@
         "basis": "per_person",
         "min": 185,
         "max": 260,
-        "display": "$185–$260",
+        "display": "$185\u2013$260",
         "basisNote": "per person",
         "sourceQuality": "Existing strategy model",
         "sourceFiles": "Zanzibar_Master_Venture_Plan.md",
@@ -1133,17 +1133,17 @@
         "All marine reserve conservation fees & government taxes"
       ],
       "importantNotes": [
-        "Hotels not included — we can arrange partner accommodation at wholesale rates",
+        "Hotels not included \u2014 we can arrange partner accommodation at wholesale rates",
         "Marine conservation fees included: Menai Bay $10, Mnemba $25",
-        "Price assumes 2+ travelers — single supplement applies",
-        "Book 3+ days in advance during peak season (July–August, December–January)"
+        "Price assumes 2+ travelers \u2014 single supplement applies",
+        "Book 3+ days in advance during peak season (July\u2013August, December\u2013January)"
       ],
       "whatToExpect": [
         "Day 1: Private airport pickup, Stone Town heritage walking tour, spice farm harvest lunch",
         "Day 2: Full-day Safari Blue Menai Bay dhow cruise with seafood BBQ on Mango Sandbank",
         "Day 3: Leisure morning + private airport drop-off"
       ],
-      "description": "Our signature introduction to Zanzibar — private airport transfers, authentic Stone Town heritage walking tour, organic spice farm harvest lunch, and the legendary Safari Blue Menai Bay dhow sailing with seafood BBQ.",
+      "description": "Our signature introduction to Zanzibar \u2014 private airport transfers, authentic Stone Town heritage walking tour, organic spice farm harvest lunch, and the legendary Safari Blue Menai Bay dhow sailing with seafood BBQ.",
       "meetingPoint": "Abeid Amani Karume International Airport (ZNZ)",
       "interests": [
         "culture",
@@ -1167,7 +1167,7 @@
         "basis": "per_person",
         "min": 320,
         "max": 420,
-        "display": "$320–$420",
+        "display": "$320\u2013$420",
         "basisNote": "per person",
         "sourceQuality": "Curated direct partner access",
         "sourceFiles": "Spice and Sail Operations",
@@ -1207,7 +1207,7 @@
         "basis": "per_person",
         "min": 285,
         "max": 375,
-        "display": "$285–$375",
+        "display": "$285\u2013$375",
         "basisNote": "per person",
         "sourceQuality": "Curated direct partner access",
         "sourceFiles": "Spice and Sail Operations",
@@ -1246,7 +1246,7 @@
         "basis": "per_person",
         "min": 890,
         "max": 1250,
-        "display": "$890–$1,250",
+        "display": "$890\u2013$1,250",
         "basisNote": "per person",
         "sourceQuality": "Direct air charter & licensed operator",
         "sourceFiles": "Spice and Sail Operations",
@@ -1258,7 +1258,7 @@
         "savingsPercent": 19
       },
       "includes": [
-        "Same-day or overnight fly-in return flights Zanzibar ⇄ Mikumi airstrip",
+        "Same-day or overnight fly-in return flights Zanzibar \u21c4 Mikumi airstrip",
         "4x4 open-sided pop-up safari game drive with certified naturalist",
         "All TANAPA national park entry fees & conservation levies ($35.40/day included)",
         "Private 40ft Catamaran yacht day charter with seafood lunch & sunset wine",
@@ -1281,13 +1281,13 @@
       "category": "EXP",
       "location": "Nungwi / Kiwengwa",
       "zones": [],
-      "duration": "1.5–2 hours",
+      "duration": "1.5\u20132 hours",
       "pricing": {
         "basis": "per_person",
         "min": 150,
         "max": 200,
-        "display": "$150–$200",
-        "tieredDisplay": "Shared small-group (max 4): $150 pp • Private session (1–2 riders): $200 pp • Includes transfer from Nungwi/Kiwengwa area hotels",
+        "display": "$150\u2013$200",
+        "tieredDisplay": "Shared small-group (max 4): $150 pp \u2022 Private session (1\u20132 riders): $200 pp \u2022 Includes transfer from Nungwi/Kiwengwa area hotels",
         "basisNote": "per person; high tide dependent; anchored at Tulia Zanzibar & Nungwi Dreams published rates",
         "sourceQuality": "Tulia Zanzibar + Nungwi Dreams + top-operator benchmark",
         "sourceFiles": "Tulia Zanzibar rate card, Nungwi Dreams",
@@ -1326,8 +1326,8 @@
         "basis": "per_quad",
         "min": 120,
         "max": 120,
-        "display": "$120–$120",
-        "tieredDisplay": "$120 per quad (1–2 riders, 4 hours, transfer included)",
+        "display": "$120\u2013$120",
+        "tieredDisplay": "$120 per quad (1\u20132 riders, 4 hours, transfer included)",
         "basisNote": "per quad (not per person); 1 or 2 riders; 4 hours; transfer included; anchored at Tulia Zanzibar published rate",
         "sourceQuality": "Tulia Zanzibar published rate + top-operator benchmark",
         "sourceFiles": "Tulia Zanzibar",
@@ -1360,13 +1360,13 @@
       "category": "EXP",
       "location": "Kizimbani / Jambiani",
       "zones": [],
-      "duration": "2–3 hours",
+      "duration": "2\u20133 hours",
       "pricing": {
         "basis": "per_person",
         "min": 80,
         "max": 120,
-        "display": "$80–$120",
-        "tieredDisplay": "Shared small-group (max 6): $80 pp • Private (1–4 guests): $120 pp • Includes guide, transfer from Paje/Jambiani area hotels, chemical-free preservation fee",
+        "display": "$80\u2013$120",
+        "tieredDisplay": "Shared small-group (max 6): $80 pp \u2022 Private (1\u20134 guests): $120 pp \u2022 Includes guide, transfer from Paje/Jambiani area hotels, chemical-free preservation fee",
         "basisNote": "per person; limited daily slots; chemical-free preservation; anchored at Kuza Cave official + Paje operator benchmark",
         "sourceQuality": "Kuza Cave official + Paje operator rates + top-operator benchmark",
         "sourceFiles": "Kuza Cave website, Paje operator rates",
@@ -1400,13 +1400,13 @@
       "category": "EXP",
       "location": "Uzi Island",
       "zones": [],
-      "duration": "4–5 hours",
+      "duration": "4\u20135 hours",
       "pricing": {
         "basis": "per_person",
         "min": 100,
         "max": 150,
-        "display": "$100–$150",
-        "tieredDisplay": "Shared boat + guide (max 8): $100 pp • Private charter (1–6 guests): $150 pp • Includes boat transfer, guide, tidal timing coordination, village visit",
+        "display": "$100\u2013$150",
+        "tieredDisplay": "Shared boat + guide (max 8): $100 pp \u2022 Private charter (1\u20136 guests): $150 pp \u2022 Includes boat transfer, guide, tidal timing coordination, village visit",
         "basisNote": "per person; tidal window dependent (low tide only); anchored at Uzi Island operators + Jambiani benchmark",
         "sourceQuality": "Uzi Island operator rates + Jambiani benchmark + top-operator benchmark",
         "sourceFiles": "Uzi Island operator, Jambiani tour operators",
@@ -1439,13 +1439,13 @@
       "category": "EXP",
       "location": "Kama (West Coast)",
       "zones": [],
-      "duration": "3–5 hours",
+      "duration": "3\u20135 hours",
       "pricing": {
         "basis": "per_person",
         "min": 150,
         "max": 300,
-        "display": "$150–$300",
-        "tieredDisplay": "VIP Otter Experience: $150 pp • Great Wildlife Tour: $180 pp • Combined Tour (Otters + Wildlife): $300 pp",
+        "display": "$150\u2013$300",
+        "tieredDisplay": "VIP Otter Experience: $150 pp \u2022 Great Wildlife Tour: $180 pp \u2022 Combined Tour (Otters + Wildlife): $300 pp",
         "basisNote": "per person; 15+ age requirement strictly enforced; includes roundtrip transfer; anchored at official cheetahsrock.org rates",
         "sourceQuality": "Official Cheetah's Rock published rates (cheetahsrock.org)",
         "sourceFiles": "cheetahsrock.org official tour pricing",
@@ -1463,7 +1463,7 @@
       ],
       "importantNotes": [
         "Strict age requirement: Guests must be 15 years or older (passport verification required at entry)",
-        "Advance reservation mandatory — strictly limited daily guest capacity to protect animal welfare",
+        "Advance reservation mandatory \u2014 strictly limited daily guest capacity to protect animal welfare",
         "Transfer included from major zones; remote southern hotels may incur a modest car surcharge"
       ],
       "whatToExpect": [
@@ -1491,13 +1491,13 @@
       "category": "EXP",
       "location": "Nungwi / north-west coast",
       "zones": [],
-      "duration": "4–6 hours",
+      "duration": "4\u20136 hours",
       "pricing": {
         "basis": "per_boat",
         "min": 850,
         "max": 1950,
-        "display": "$850–$1,950",
-        "tieredDisplay": "Half day (4 hrs): $850 per boat • Full day (6 hrs): $1,400 per boat • Sunset sail (2 hrs): $1,950 per boat",
+        "display": "$850\u2013$1,950",
+        "tieredDisplay": "Half day (4 hrs): $850 per boat \u2022 Full day (6 hrs): $1,400 per boat \u2022 Sunset sail (2 hrs): $1,950 per boat",
         "basisNote": "per boat (up to 6 passengers); includes captain, crew, snorkel gear, seafood lunch, beverages, and fuel; anchored at Tulia Zanzibar published rates",
         "sourceQuality": "Tulia Zanzibar published rates + top-operator benchmark",
         "sourceFiles": "Tulia Zanzibar rate card",
@@ -1516,13 +1516,13 @@
         "Hotel pickup & drop-off (Nungwi/Kiwengwa area)"
       ],
       "importantNotes": [
-        "Weather dependent — trips may be rescheduled if seas are rough",
+        "Weather dependent \u2014 trips may be rescheduled if seas are rough",
         "Bring reef-safe sunscreen, hat, and camera",
         "Private charters available at higher end of price range",
         "Minimum 2 passengers; maximum 6 per catamaran"
       ],
       "whatToExpect": [
-        "4–6 hour private catamaran sailing cruise",
+        "4\u20136 hour private catamaran sailing cruise",
         "Departure from Nungwi or Kiwengwa beach",
         "Snorkeling over pristine coral reefs",
         "Seafood lunch and refreshments on board",
@@ -1546,15 +1546,15 @@
       "name": "Saadani National Park safari from Zanzibar",
       "type": "tour",
       "category": "SAF",
-      "location": "Zanzibar → Saadani National Park → Zanzibar",
+      "location": "Zanzibar \u2192 Saadani National Park \u2192 Zanzibar",
       "zones": [],
       "duration": "Full day or 2 days / 1 night",
       "pricing": {
         "basis": "per_person",
         "min": 390,
         "max": 750,
-        "display": "$390–$750",
-        "basisNote": "per person ($390–$550 boat / shared flight; $650–$750 overnight beach lodge package)",
+        "display": "$390\u2013$750",
+        "basisNote": "per person ($390\u2013$550 boat / shared flight; $650\u2013$750 overnight beach lodge package)",
         "sourceQuality": "Authentic coastal safari package + 2026 market range",
         "sourceFiles": "TANAPA Saadani National Park guides; 2026 market rates",
         "verified": true,
@@ -1568,10 +1568,10 @@
         "Return flights or speedboat, 4x4 game drive, Wami River boat safari, park fees, lunch"
       ],
       "importantNotes": [
-        "Only 15 minutes flying time from Zanzibar — the closest mainland wildlife safari to the islands",
+        "Only 15 minutes flying time from Zanzibar \u2014 the closest mainland wildlife safari to the islands",
         "Speedboat transfers operate weather-permitting in calm sea conditions",
         "Overnight lodge options available at luxury tented camps along the Saadani coast",
-        "Year-round wildlife viewing with best dry seasons from June–October and December–March"
+        "Year-round wildlife viewing with best dry seasons from June\u2013October and December\u2013March"
       ],
       "whatToExpect": [
         "Convenient 15-minute flight from Zanzibar Airport or scenic 1-hour coastal speedboat transfer",
@@ -1580,7 +1580,7 @@
         "Bush lunch overlooking the river or Indian Ocean coastline",
         "TANAPA conservation entry fees, licensed safari guide, and all logistics handled seamlessly"
       ],
-      "description": "Experience East Africa’s only coastal national park where the bush meets the beach. Fly in 15 minutes or cross by speedboat directly from Zanzibar to Saadani for big game drives and river safaris.",
+      "description": "Experience East Africa\u2019s only coastal national park where the bush meets the beach. Fly in 15 minutes or cross by speedboat directly from Zanzibar to Saadani for big game drives and river safaris.",
       "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) or hotel pickup for speedboat transfer",
       "interests": [
         "safari",
@@ -1599,15 +1599,15 @@
       "name": "Selous (Nyerere) 2-day fly-in safari from Zanzibar",
       "type": "tour",
       "category": "SAF",
-      "location": "Zanzibar → Selous / Nyerere National Park → Zanzibar",
+      "location": "Zanzibar \u2192 Selous / Nyerere National Park \u2192 Zanzibar",
       "zones": [],
       "duration": "2 days / 1 night",
       "pricing": {
         "basis": "per_person",
         "min": 750,
         "max": 1100,
-        "display": "$750–$1,100",
-        "basisNote": "per person ($750–$850 shared flight & tented camp; $950–$1,100 luxury river lodge with private 4x4)",
+        "display": "$750\u2013$1,100",
+        "basisNote": "per person ($750\u2013$850 shared flight & tented camp; $950\u2013$1,100 luxury river lodge with private 4x4)",
         "sourceQuality": "Authentic 2026 Selous fly-in package verified with licensed Tanzanian operators",
         "sourceFiles": "Zanzibar_Master_Venture_Plan.md; TANAPA Nyerere National Park rates",
         "verified": true,
@@ -1622,7 +1622,7 @@
       ],
       "importantNotes": [
         "Soft luggage only (maximum 15 kg / 33 lbs per person due to bush plane cargo limitations)",
-        "All TANAPA park conservation and concession fees are included — zero hidden on-site costs",
+        "All TANAPA park conservation and concession fees are included \u2014 zero hidden on-site costs",
         "Professional licensed Tanzanian driver-guide in open-sided 4x4 safari cruiser",
         "Best travel months: June to October (peak dry season) and December to March"
       ],
@@ -1634,7 +1634,7 @@
         "Early morning sunrise game drive during peak predator hunting hours before your return flight to Zanzibar"
       ],
       "description": "Fly directly from Zanzibar to Selous (Nyerere) for a 2-day safari: 4x4 game drives, sunset Rufiji River boat cruise, and luxury tented camp accommodation.",
-      "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) — hotel transfer included",
+      "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) \u2014 hotel transfer included",
       "interests": [
         "safari",
         "wildlife",
@@ -1658,7 +1658,7 @@
         "basis": "per_person",
         "min": 95,
         "max": 140,
-        "display": "$95–$140",
+        "display": "$95\u2013$140",
         "basisNote": "per person, 2 adults sharing (children confirmed by team)",
         "viatorAnchor": 125,
         "depositPercent": 30,
@@ -1673,7 +1673,7 @@
         "Stone Town walking tour with licensed historian guide"
       ],
       "importantNotes": [
-        "Indicative bundle rate — exact room type and dates are confirmed by the team before any payment",
+        "Indicative bundle rate \u2014 exact room type and dates are confirmed by the team before any payment",
         "Hotel room + transfers + tours billed as one package; hotel tax and insurance levies are paid separately on arrival"
       ],
       "duration": "2 nights / 3 days"
@@ -1690,7 +1690,7 @@
         "basis": "per_person",
         "min": 95,
         "max": 120,
-        "display": "$95–$120",
+        "display": "$95\u2013$120",
         "basisNote": "per person, 2 adults sharing (children confirmed by team)",
         "viatorAnchor": 115,
         "depositPercent": 30,
@@ -1705,7 +1705,7 @@
         "Spice farm tour with lunch"
       ],
       "importantNotes": [
-        "Indicative bundle rate — exact room type and dates are confirmed by the team before any payment",
+        "Indicative bundle rate \u2014 exact room type and dates are confirmed by the team before any payment",
         "Hotel room + transfers + tours billed as one package; hotel tax and insurance levies are paid separately on arrival"
       ],
       "duration": "2 nights / 3 days"
@@ -1722,7 +1722,7 @@
         "basis": "per_person",
         "min": 220,
         "max": 290,
-        "display": "$220–$290",
+        "display": "$220\u2013$290",
         "basisNote": "per person, 2 adults sharing (children confirmed by team)",
         "viatorAnchor": 270,
         "depositPercent": 30,
@@ -1737,7 +1737,7 @@
         "Sunset dhow cruise for two"
       ],
       "importantNotes": [
-        "Indicative bundle rate — exact room type and dates are confirmed by the team before any payment",
+        "Indicative bundle rate \u2014 exact room type and dates are confirmed by the team before any payment",
         "Hotel room + transfers + tours billed as one package; hotel tax and insurance levies are paid separately on arrival"
       ],
       "duration": "3 nights / 4 days"
@@ -1754,7 +1754,7 @@
         "basis": "per_person",
         "min": 360,
         "max": 460,
-        "display": "$360–$460",
+        "display": "$360\u2013$460",
         "basisNote": "per person, 2 adults sharing (children confirmed by team)",
         "viatorAnchor": 420,
         "depositPercent": 30,
@@ -1769,7 +1769,7 @@
         "Safari Blue full-day dhow, snorkel & seafood lunch"
       ],
       "importantNotes": [
-        "Indicative bundle rate — exact room type and dates are confirmed by the team before any payment",
+        "Indicative bundle rate \u2014 exact room type and dates are confirmed by the team before any payment",
         "Hotel room + transfers + tours billed as one package; hotel tax and insurance levies are paid separately on arrival"
       ],
       "duration": "3 nights / 4 days"
@@ -1786,7 +1786,7 @@
         "basis": "per_person",
         "min": 165,
         "max": 280,
-        "display": "$165–$280",
+        "display": "$165\u2013$280",
         "basisNote": "per person, 2 adults sharing (children confirmed by team)",
         "viatorAnchor": 210,
         "depositPercent": 30,
@@ -1801,7 +1801,7 @@
         "Prison Island & Nakupenda sandbank snorkel trip"
       ],
       "importantNotes": [
-        "Indicative bundle rate — exact room type and dates are confirmed by the team before any payment",
+        "Indicative bundle rate \u2014 exact room type and dates are confirmed by the team before any payment",
         "Hotel room + transfers + tours billed as one package; hotel tax and insurance levies are paid separately on arrival"
       ],
       "duration": "2 nights / 3 days"
@@ -1809,29 +1809,29 @@
     {
       "id": "TRF-01",
       "slug": "airport-transfer-znz-to-stone-town",
-      "name": "Zanzibar Airport Transfer — ZNZ to Stone Town hotel",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Stone Town hotel",
       "type": "transfer",
       "category": "TRF",
-      "location": "Abeid Amani Karume International Airport → Stone Town",
+      "location": "Abeid Amani Karume International Airport \u2192 Stone Town",
       "zones": [],
-      "duration": "10–20 minutes",
+      "duration": "10\u201320 minutes",
       "pricing": {
         "basis": "per_vehicle",
         "min": 18,
         "max": 18,
         "display": "$18 sedan / $35 van",
-        "tieredDisplay": "$18 sedan (1–3 pax) • $35 van (4–6 pax)",
+        "tieredDisplay": "$18 sedan (1\u20133 pax) \u2022 $35 van (4\u20136 pax)",
         "basisNote": "per private vehicle, fuel and driver included; market benchmark: Taxi Trip Zanzibar $15; launch card v2 $20",
         "vehicleCapacity": 3,
         "vehicles": [
           {
-            "label": "Sedan (1–3 guests)",
+            "label": "Sedan (1\u20133 guests)",
             "maxPax": 3,
             "min": 18,
             "max": 18
           },
           {
-            "label": "Van (4–6 guests)",
+            "label": "Van (4\u20136 guests)",
             "maxPax": 6,
             "min": 35,
             "max": 35
@@ -1848,11 +1848,11 @@
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
-        "Fuel and driver included — no night surcharge"
+        "Fuel and driver included \u2014 no night surcharge"
       ],
       "importantNotes": [],
       "whatToExpect": [],
-      "description": "Abeid Amani Karume International Airport → Stone Town — private transfer, sedan or van by party size.",
+      "description": "Abeid Amani Karume International Airport \u2192 Stone Town \u2014 private transfer, sedan or van by party size.",
       "meetingPoint": "",
       "interests": [
         "transfer",
@@ -1863,29 +1863,29 @@
     {
       "id": "TRF-04",
       "slug": "airport-transfer-znz-to-fumba",
-      "name": "Zanzibar Airport Transfer — ZNZ to Fumba",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Fumba",
       "type": "transfer",
       "category": "TRF",
-      "location": "ZNZ → Fumba (Safari Blue departure)",
+      "location": "ZNZ \u2192 Fumba (Safari Blue departure)",
       "zones": [],
-      "duration": "25–35 minutes",
+      "duration": "25\u201335 minutes",
       "pricing": {
         "basis": "per_vehicle",
         "min": 30,
         "max": 30,
         "display": "$30 sedan / $45 van",
-        "tieredDisplay": "$30 sedan (1–3 pax) • $45 van (4–6 pax)",
+        "tieredDisplay": "$30 sedan (1\u20133 pax) \u2022 $45 van (4\u20136 pax)",
         "basisNote": "per private vehicle, fuel and driver included; market benchmark: Launch card v2 $30; transfer listings ~$27",
         "vehicleCapacity": 3,
         "vehicles": [
           {
-            "label": "Sedan (1–3 guests)",
+            "label": "Sedan (1\u20133 guests)",
             "maxPax": 3,
             "min": 30,
             "max": 30
           },
           {
-            "label": "Van (4–6 guests)",
+            "label": "Van (4\u20136 guests)",
             "maxPax": 6,
             "min": 45,
             "max": 45
@@ -1902,11 +1902,11 @@
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
-        "Fuel and driver included — no night surcharge"
+        "Fuel and driver included \u2014 no night surcharge"
       ],
       "importantNotes": [],
       "whatToExpect": [],
-      "description": "ZNZ → Fumba (Safari Blue departure) — private transfer, sedan or van by party size.",
+      "description": "ZNZ \u2192 Fumba (Safari Blue departure) \u2014 private transfer, sedan or van by party size.",
       "meetingPoint": "",
       "interests": [
         "transfer",
@@ -1917,29 +1917,29 @@
     {
       "id": "TRF-03",
       "slug": "airport-transfer-znz-to-nungwikendwa",
-      "name": "Zanzibar Airport Transfer — ZNZ to Nungwi & Kendwa hotels",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Nungwi & Kendwa hotels",
       "type": "transfer",
       "category": "TRF",
-      "location": "ZNZ → Nungwi/Kendwa",
+      "location": "ZNZ \u2192 Nungwi/Kendwa",
       "zones": [],
-      "duration": "70–90 minutes",
+      "duration": "70\u201390 minutes",
       "pricing": {
         "basis": "per_vehicle",
         "min": 45,
         "max": 45,
         "display": "$45 sedan / $50 van",
-        "tieredDisplay": "$45 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "tieredDisplay": "$45 sedan (1\u20133 pax) \u2022 $50 van (4\u20136 pax)",
         "basisNote": "per private vehicle, fuel and driver included; market benchmark: Taxi Trip $40 sedan / partner van $50; launch card v2 $50/$50",
         "vehicleCapacity": 3,
         "vehicles": [
           {
-            "label": "Sedan (1–3 guests)",
+            "label": "Sedan (1\u20133 guests)",
             "maxPax": 3,
             "min": 45,
             "max": 45
           },
           {
-            "label": "Van (4–6 guests)",
+            "label": "Van (4\u20136 guests)",
             "maxPax": 6,
             "min": 50,
             "max": 50
@@ -1956,11 +1956,11 @@
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
-        "Fuel and driver included — no night surcharge"
+        "Fuel and driver included \u2014 no night surcharge"
       ],
       "importantNotes": [],
       "whatToExpect": [],
-      "description": "ZNZ → Nungwi/Kendwa — private transfer, sedan or van by party size.",
+      "description": "ZNZ \u2192 Nungwi/Kendwa \u2014 private transfer, sedan or van by party size.",
       "meetingPoint": "",
       "interests": [
         "transfer",
@@ -1971,29 +1971,29 @@
     {
       "id": "TRF-02",
       "slug": "airport-transfer-znz-to-pajejambiani",
-      "name": "Zanzibar Airport Transfer — ZNZ to Paje & Jambiani hotels",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Paje & Jambiani hotels",
       "type": "transfer",
       "category": "TRF",
-      "location": "ZNZ → Paje/Jambiani/Bwejuu",
+      "location": "ZNZ \u2192 Paje/Jambiani/Bwejuu",
       "zones": [],
-      "duration": "55–70 minutes",
+      "duration": "55\u201370 minutes",
       "pricing": {
         "basis": "per_vehicle",
         "min": 45,
         "max": 45,
         "display": "$45 sedan / $50 van",
-        "tieredDisplay": "$45 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "tieredDisplay": "$45 sedan (1\u20133 pax) \u2022 $50 van (4\u20136 pax)",
         "basisNote": "per private vehicle, fuel and driver included; market benchmark: Taxi Trip $40 / partner van $50; launch card v2 $50/$50",
         "vehicleCapacity": 3,
         "vehicles": [
           {
-            "label": "Sedan (1–3 guests)",
+            "label": "Sedan (1\u20133 guests)",
             "maxPax": 3,
             "min": 45,
             "max": 45
           },
           {
-            "label": "Van (4–6 guests)",
+            "label": "Van (4\u20136 guests)",
             "maxPax": 6,
             "min": 50,
             "max": 50
@@ -2010,11 +2010,11 @@
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
-        "Fuel and driver included — no night surcharge"
+        "Fuel and driver included \u2014 no night surcharge"
       ],
       "importantNotes": [],
       "whatToExpect": [],
-      "description": "ZNZ → Paje/Jambiani/Bwejuu — private transfer, sedan or van by party size.",
+      "description": "ZNZ \u2192 Paje/Jambiani/Bwejuu \u2014 private transfer, sedan or van by party size.",
       "meetingPoint": "",
       "interests": [
         "transfer",
@@ -2025,29 +2025,29 @@
     {
       "id": "TRF-05",
       "slug": "airport-transfer-znz-to-matemwe",
-      "name": "Zanzibar Airport Transfer — ZNZ to Matemwe",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Matemwe",
       "type": "transfer",
       "category": "TRF",
-      "location": "ZNZ → Matemwe / Uroa / Kiwengwa / Pongwe",
+      "location": "ZNZ \u2192 Matemwe / Uroa / Kiwengwa / Pongwe",
       "zones": [],
-      "duration": "50–70 minutes",
+      "duration": "50\u201370 minutes",
       "pricing": {
         "basis": "per_vehicle",
         "min": 40,
         "max": 40,
         "display": "$40 sedan / $50 van",
-        "tieredDisplay": "$40 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "tieredDisplay": "$40 sedan (1\u20133 pax) \u2022 $50 van (4\u20136 pax)",
         "basisNote": "per private vehicle, fuel and driver included; market benchmark: ReiseTaxi $29.9 anchor; launch card v2 $45/$65",
         "vehicleCapacity": 3,
         "vehicles": [
           {
-            "label": "Sedan (1–3 guests)",
+            "label": "Sedan (1\u20133 guests)",
             "maxPax": 3,
             "min": 40,
             "max": 40
           },
           {
-            "label": "Van (4–6 guests)",
+            "label": "Van (4\u20136 guests)",
             "maxPax": 6,
             "min": 50,
             "max": 50
@@ -2064,11 +2064,11 @@
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
-        "Fuel and driver included — no night surcharge"
+        "Fuel and driver included \u2014 no night surcharge"
       ],
       "importantNotes": [],
       "whatToExpect": [],
-      "description": "ZNZ → Matemwe / Uroa / Kiwengwa / Pongwe — private transfer, sedan or van by party size.",
+      "description": "ZNZ \u2192 Matemwe / Uroa / Kiwengwa / Pongwe \u2014 private transfer, sedan or van by party size.",
       "meetingPoint": "",
       "interests": [
         "transfer",
@@ -2079,29 +2079,29 @@
     {
       "id": "TRF-06",
       "slug": "airport-transfer-znz-to-kizimkazi",
-      "name": "Zanzibar Airport Transfer — ZNZ to Kizimkazi, Makunduchi & Michamvi",
+      "name": "Zanzibar Airport Transfer \u2014 ZNZ to Kizimkazi, Makunduchi & Michamvi",
       "type": "transfer",
       "category": "TRF",
-      "location": "ZNZ → Kizimkazi / Makunduchi / Michamvi",
+      "location": "ZNZ \u2192 Kizimkazi / Makunduchi / Michamvi",
       "zones": [],
-      "duration": "70–100 minutes",
+      "duration": "70\u2013100 minutes",
       "pricing": {
         "basis": "per_vehicle",
         "min": 50,
         "max": 50,
         "display": "$50 sedan / $50 van",
-        "tieredDisplay": "$50 sedan (1–3 pax) • $50 van (4–6 pax)",
+        "tieredDisplay": "$50 sedan (1\u20133 pax) \u2022 $50 van (4\u20136 pax)",
         "basisNote": "per private vehicle, fuel and driver included; market benchmark: Taxi Trip $50; launch card v2 $55/$75",
         "vehicleCapacity": 3,
         "vehicles": [
           {
-            "label": "Sedan (1–3 guests)",
+            "label": "Sedan (1\u20133 guests)",
             "maxPax": 3,
             "min": 50,
             "max": 50
           },
           {
-            "label": "Van (4–6 guests)",
+            "label": "Van (4\u20136 guests)",
             "maxPax": 6,
             "min": 50,
             "max": 50
@@ -2118,11 +2118,11 @@
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
-        "Fuel and driver included — no night surcharge"
+        "Fuel and driver included \u2014 no night surcharge"
       ],
       "importantNotes": [],
       "whatToExpect": [],
-      "description": "ZNZ → Kizimkazi / Makunduchi / Michamvi — private transfer, sedan or van by party size.",
+      "description": "ZNZ \u2192 Kizimkazi / Makunduchi / Michamvi \u2014 private transfer, sedan or van by party size.",
       "meetingPoint": "",
       "interests": [
         "transfer",
@@ -2133,36 +2133,36 @@
     {
       "id": "TRF-07",
       "slug": "stone-town-to-nungwi",
-      "name": "Point-to-Point Transfer — Stone Town to Nungwi",
+      "name": "Point-to-Point Transfer \u2014 Stone Town to Nungwi",
       "type": "transfer",
       "category": "TRF",
-      "location": "Stone Town → Nungwi/Kendwa",
+      "location": "Stone Town \u2192 Nungwi/Kendwa",
       "zones": [],
-      "duration": "75–95 minutes",
+      "duration": "75\u201395 minutes",
       "pricing": {
         "basis": "per_vehicle",
         "min": 50,
         "max": 50,
         "display": "$50 sedan / $50 van",
-        "tieredDisplay": "$50 sedan (1–3 pax) • $50 van (4–6 pax)",
-        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Transfer benchmark $45–60; launch card v2 $50/$50",
+        "tieredDisplay": "$50 sedan (1\u20133 pax) \u2022 $50 van (4\u20136 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Transfer benchmark $45\u201360; launch card v2 $50/$50",
         "vehicleCapacity": 3,
         "vehicles": [
           {
-            "label": "Sedan (1–3 guests)",
+            "label": "Sedan (1\u20133 guests)",
             "maxPax": 3,
             "min": 50,
             "max": 50
           },
           {
-            "label": "Van (4–6 guests)",
+            "label": "Van (4\u20136 guests)",
             "maxPax": 6,
             "min": 50,
             "max": 50
           }
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
-        "sourceFiles": "Transfer benchmark $45–60; launch card v2 $50/$50",
+        "sourceFiles": "Transfer benchmark $45\u201360; launch card v2 $50/$50",
         "verified": true,
         "viatorAnchor": 70,
         "depositPercent": 0,
@@ -2172,11 +2172,11 @@
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
-        "Fuel and driver included — no night surcharge"
+        "Fuel and driver included \u2014 no night surcharge"
       ],
       "importantNotes": [],
       "whatToExpect": [],
-      "description": "Stone Town → Nungwi/Kendwa — private transfer, sedan or van by party size.",
+      "description": "Stone Town \u2192 Nungwi/Kendwa \u2014 private transfer, sedan or van by party size.",
       "meetingPoint": "",
       "interests": [
         "transfer",
@@ -2187,7 +2187,7 @@
     {
       "id": "TRF-08",
       "slug": "full-day-island-hire",
-      "name": "Full-Day Island Hire — 8 hours / 150 km",
+      "name": "Full-Day Island Hire \u2014 8 hours / 150 km",
       "type": "transfer",
       "category": "TRF",
       "location": "Zanzibar island-wide, 8 hours incl. 150 km",
@@ -2198,25 +2198,25 @@
         "min": 100,
         "max": 100,
         "display": "$100 sedan / $150 van",
-        "tieredDisplay": "$100 sedan (1–3 pax) • $150 van (4–6 pax)",
-        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Market $50–150; launch card v2 $110/$160",
+        "tieredDisplay": "$100 sedan (1\u20133 pax) \u2022 $150 van (4\u20136 pax)",
+        "basisNote": "per private vehicle, fuel and driver included; market benchmark: Market $50\u2013150; launch card v2 $110/$160",
         "vehicleCapacity": 3,
         "vehicles": [
           {
-            "label": "Sedan (1–3 guests)",
+            "label": "Sedan (1\u20133 guests)",
             "maxPax": 3,
             "min": 100,
             "max": 100
           },
           {
-            "label": "Van (4–6 guests)",
+            "label": "Van (4\u20136 guests)",
             "maxPax": 6,
             "min": 150,
             "max": 150
           }
         ],
         "sourceQuality": "Published operator rate cards + Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026)",
-        "sourceFiles": "Market $50–150; launch card v2 $110/$160",
+        "sourceFiles": "Market $50\u2013150; launch card v2 $110/$160",
         "verified": true,
         "viatorAnchor": 180,
         "depositPercent": 0,
@@ -2226,11 +2226,11 @@
       },
       "includes": [
         "Meet & greet, flight tracking, waiting, water, luggage help",
-        "Fuel and driver included — no night surcharge"
+        "Fuel and driver included \u2014 no night surcharge"
       ],
       "importantNotes": [],
       "whatToExpect": [],
-      "description": "Zanzibar island-wide, 8 hours incl. 150 km — private transfer, sedan or van by party size.",
+      "description": "Zanzibar island-wide, 8 hours incl. 150 km \u2014 private transfer, sedan or van by party size.",
       "meetingPoint": "",
       "interests": [
         "transfer",
