@@ -51,7 +51,7 @@
     "spice": {
       "problem": "zanzibar spice trade history cloves vanilla cinnamon nutmeg farm experiences sensory walk",
       "opening": "Hello! I'm interested in a Zanzibar spice farm tour. I'd like to experience: [cloves/vanilla/cinnamon/nutmeg sensory walk/local knowledge/fresh products/cultural connection]. Which farms do you recommend?",
-      "value_delivery": "Based on your spice farm interests: [recommended farms (Kidwaju, Kizimkazi, Paje Village) + tour experience + sensory details + cultural connection]. [Specific farm] offers the best [experience] for [your interest].",
+      "value_delivery": "Based on your spice farm interests: [recommended farms (Kidichi, Kizimkazi, Paje Village) + tour experience + sensory details + cultural connection]. [Specific farm] offers the best [experience] for [your interest].",
       "payment_trigger": "Excellent! Based on your spice farm interests, I'd arrange [specific farm]. To book, we'd need... [payment discussion after value demonstrated]",
       "whatsapp_start": "farm visit arrangement",
       "cta_deep_link": "https://wa.me/255672450934?text=Hello%21%20I'm%20interested%20in%20a%20Zanzibar%20spice%20farm%20tour.%20I'd%20like%20to%20experience%20%5Bcloves%2Fvanilla%5D%20sensory%20walk.%20Which%20farms%20do%20you%20recommend%3F"

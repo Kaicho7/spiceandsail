@@ -12,5 +12,6 @@ module.exports = () => {
     total_hotels: hotelList.length,
     total_attractions: attractionList.length,
     total_tours: tourList.length,
+    zones_covered: new Set(hotelList.filter(h => h.zone).map(h => h.zone)).size,
   };
 };

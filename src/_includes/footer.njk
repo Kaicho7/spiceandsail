@@ -15,7 +15,7 @@
       {% endif %}
     </div>
     <div class="footer-col">
-      <h2 class="footer-col-title">Bahari <span>Sea &amp; experiences</span></h2>
+      <h2 class="footer-col-title">{{ "footer_bahari" | t(lang) }} <span>{{ "footer_sea_experiences" | t(lang) }}</span></h2>
       <ul>
         <li><a href="/tours/">{{ "footer_zanzibar_tours" | t(lang) }}</a></li>
         <li><a href="/experiences/">{{ "footer_island_experiences" | t(lang) }}</a></li>
@@ -34,15 +34,15 @@
     </div>
     <div class="footer-col footer-contact">
       <h2 class="footer-col-title">{{ "footer_talk_with_team" | t(lang) }}</h2>
-      <a href="tel:{{ site.contact.phone }}">Call {{ site.contact.phone_display }}</a>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" onclick="window.dataLayer.push({'event': 'whatsapp_click', 'page_path': '{{ page.path }}', 'label': 'Footer WhatsApp'});">WhatsApp {{ site.contact.whatsapp_display }}</a>
+      <a href="tel:{{ site.contact.phone }}">{{ "footer_call" | t(lang) }} {{ site.contact.phone_display }}</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" onclick="window.dataLayer.push({'event': 'whatsapp_click', 'page_path': '{{ page.path }}', 'label': 'Footer WhatsApp'});">{{ "footer_whatsapp_label" | t(lang) }} {{ site.contact.whatsapp_display }}</a>
       {% if site.contact and site.contact.email %}{{ site.contact.email }}{% endif %}
-      <p>{{ site.hours.days }} · {{ site.hours.open }}–{{ site.hours.close }} EAT</p>
+      <p>{{ "footer_days_monday_saturday" | t(lang) }} · {{ site.hours.open }}–{{ site.hours.close }} EAT</p>
       {% if site.social and site.social.google_maps %}<a href="{{ site.social.google_maps }}" target="_blank" rel="noopener noreferrer">{{ "footer_find_google_maps" | t(lang) }}</a>{% endif %}
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Spice &amp; Sail Zanzibar. All rights reserved.</p>
+    <p>{{ "footer_all_rights_reserved" | t(lang) }}</p>
     <nav aria-label="Legal">
       <a href="/privacy/">{{ "footer_privacy" | t(lang) }}</a>
       <a href="/terms/">{{ "footer_terms" | t(lang) }}</a>

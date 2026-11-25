@@ -479,6 +479,42 @@
       "ar": "تحدث مع فريقنا",
       "ru": "Связаться с нашей командой"
     },
+    "footer_bahari": {
+      "en": "Bahari",
+      "it": "Bahari",
+      "de": "Bahari",
+      "fr": "Bahari",
+      "pl": "Bahari",
+      "ar": "بهاري",
+      "ru": "Бахари"
+    },
+    "footer_sea_experiences": {
+      "en": "Sea & experiences",
+      "it": "Mare & esperienze",
+      "de": "Meer & Erlebnisse",
+      "fr": "Mer & expériences",
+      "pl": "Morze & doświadczenia",
+      "ar": "البحر والتجارب",
+      "ru": "Море и впечатления"
+    },
+    "footer_days_monday_saturday": {
+      "en": "Monday–Saturday",
+      "it": "Lunedì–Sabato",
+      "de": "Montag–Samstag",
+      "fr": "Lundi–Samedi",
+      "pl": "Poniedziałek–Sobota",
+      "ar": "الاثنين–السبت",
+      "ru": "Понедельник–Суббота"
+    },
+    "footer_all_rights_reserved": {
+      "en": "All rights reserved.",
+      "it": "Tutti i diritti riservati.",
+      "de": "Alle Rechte vorbehalten.",
+      "fr": "Tous droits réservés.",
+      "pl": "Wszystkie prawa zastrzeżone.",
+      "ar": "جميع الحقوق محفوظة.",
+      "ru": "Все права защищены."
+    },
     "footer_0_deposit": {
       "en": "0% Deposit Transfers",
       "it": "Transfer 0% Deposito",
@@ -550,6 +586,24 @@
       "pl": "Znajdź na Google Maps ↗",
       "ar": "موقعنا على خرائط جوجل ↗",
       "ru": "Мы на Google Maps ↗"
+    },
+    "footer_call": {
+      "en": "Call",
+      "it": "Chiamare",
+      "de": "Anrufen",
+      "fr": "Appeler",
+      "pl": "Zadzwoń",
+      "ar": "اتصل",
+      "ru": "Позвонить"
+    },
+    "footer_whatsapp_label": {
+      "en": "WhatsApp",
+      "it": "WhatsApp",
+      "de": "WhatsApp",
+      "fr": "WhatsApp",
+      "pl": "WhatsApp",
+      "ar": "واتساب",
+      "ru": "WhatsApp"
     },
     "footer_privacy": {
       "en": "Privacy",
