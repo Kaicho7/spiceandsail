@@ -182,7 +182,7 @@ exports.handler = async function (event) {
     };
     
     const whatsappMessage = buildReviewMessage(template, messageData);
-    const whatsappUrl = `https://wa.me/255672450934?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/255707939265?text=${encodeURIComponent(whatsappMessage)}`;
     const emailSubject = template.subject.replace('{serviceName}', svc.name || serviceName);
     const emailBody = whatsappMessage.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
     
@@ -276,7 +276,7 @@ exports.handler = async function (event) {
           bookingRef: booking.bookingRef, 
           status: 'sent',
           whatsappMessage,
-          whatsappUrl: `https://wa.me/255672450934?text=${encodeURIComponent(whatsappMessage)}`,
+          whatsappUrl: `https://wa.me/255707939265?text=${encodeURIComponent(whatsappMessage)}`,
         });
       } catch (e) {
         results.push({ bookingRef: booking.bookingRef, status: 'error', error: e.message });

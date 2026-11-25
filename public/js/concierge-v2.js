@@ -777,7 +777,7 @@
     }
 
     if (waLink) {
-      waLink.href = 'https://wa.me/255672450934?text=' + encodeURIComponent('Jambo Spice & Sail! Please send me the payment link for my ' + data.serviceName + ' booking (Ref: ' + data.bookingRef + ').');
+      waLink.href = 'https://wa.me/255707939265?text=' + encodeURIComponent('Jambo Spice & Sail! Please send me the payment link for my ' + data.serviceName + ' booking (Ref: ' + data.bookingRef + ').');
     }
 
     modal.hidden = false;
@@ -819,7 +819,7 @@
       if (locationVal) parts.push('Pickup Location: ' + locationVal + '.');
       if (guestName) parts.push('Name: ' + guestName + '.');
       if (state.lastQuoteDisplay) parts.push('Estimated catalogue range: ' + state.lastQuoteDisplay + ' USD.');
-      var url = 'https://wa.me/255672450934?text=' + encodeURIComponent(parts.join(' '));
+      var url = 'https://wa.me/255707939265?text=' + encodeURIComponent(parts.join(' '));
       window.open(url, '_blank', 'noopener,noreferrer');
     }
 

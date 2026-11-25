@@ -291,7 +291,7 @@
     });
 
     // Update WhatsApp links to use the visitor's preferred language and currency
-    var waLinks = document.querySelectorAll('a[href*="wa.me/255672450934"]');
+    var waLinks = document.querySelectorAll('a[href*="wa.me/255707939265"]');
     waLinks.forEach(function(a) {
       var href = a.getAttribute('href');
       var greeting = WA_GREETINGS[lang] || WA_GREETINGS.en;

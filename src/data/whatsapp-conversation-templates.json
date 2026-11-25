@@ -6,7 +6,7 @@
       "value_delivery": "Based on your safety questions: [antimalarial info + safe beach guidelines + turtle nesting times + dolphin season + spice farm safety + cultural etiquette + emergency contacts]. Would you like help with accommodation options or itinerary planning?",
       "payment_trigger": "Great! Based on your safety questions, I'd recommend [specific itinerary/accommodation]. To secure this, we'd need to discuss investment details... [payment discussion follows value demonstration]",
       "whatsapp_start": "safety questions",
-      "cta_deep_link": "https://wa.me/255672450934?text=Hello%21%20I'm%20planning%20a%20Zanzibar%20trip%20and%20have%20safety%20questions.%20I'm%20interested%20in%20%5Bantimalarials%2Fbeach%20safety%2Fturtle%20nesting%5D.%20Can%20you%20help%20me%20plan%20a%20safe%20trip%3F"
+      "cta_deep_link": "https://wa.me/255707939265?text=Hello%21%20I'm%20planning%20a%20Zanzibar%20trip%20and%20have%20safety%20questions.%20I'm%20interested%20in%20%5Bantimalarials%2Fbeach%20safety%2Fturtle%20nesting%5D.%20Can%20you%20help%20me%20plan%20a%20safe%20trip%3F"
     },
     "romance": {
       "problem": "honeymoon romantic sunset dhow cruise private beach dinner spas",
@@ -14,7 +14,7 @@
       "value_delivery": "Based on your honeymoon preferences: [3 itinerary options at different price points]. The [specific itinerary] seems perfect for [your budget/timeframe]. Would you like me to secure this for you?",
       "payment_trigger": "Perfect! Based on your honeymoon preferences, I'd recommend [specific itinerary]. To secure this, I'd need [deposit details]... [payment discussion after value demonstrated]",
       "whatsapp_start": "itinerary planning",
-      "cta_deep_link": "https://wa.me/255672450934?text=Hello%21%20My%20partner%20and%20I%20are%20planning%20our%20honeymoon%20in%20Zanzibar.%20We're%20interested%20in%20%5Bsunset%20dhow%20cruise%2Fprivate%20beach%20dinner%5D.%20What%20do%20you%20recommend%20for%20a%20%5Bbudget%5D%20honeymoon%3F"
+      "cta_deep_link": "https://wa.me/255707939265?text=Hello%21%20My%20partner%20and%20I%20are%20planning%20our%20honeymoon%20in%20Zanzibar.%20We're%20interested%20in%20%5Bsunset%20dhow%20cruise%2Fprivate%20beach%20dinner%5D.%20What%20do%20you%20recommend%20for%20a%20%5Bbudget%5D%20honeymoon%3F"
     },
     "transport": {
       "problem": "self-drive 4x4 rental vehicle guidelines insurance fuel age requirements",
@@ -22,7 +22,7 @@
       "value_delivery": "Based on your needs: [vehicle options] + [rental guidelines: license, insurance, fuel policy, age requirements] + [route recommendations]. The [specific vehicle] seems ideal for [your needs].",
       "payment_trigger": "Great! Based on your needs, I'd recommend [specific vehicle]. To reserve this, I'd need [deposit details]... [payment discussion after value demonstrated]",
       "whatsapp_start": "vehicle inquiry",
-      "cta_deep_link": "https://wa.me/255672450934?text=Hello%21%20I'm%20interested%20in%20self-drive%20car%20rental%20in%20Zanzibar.%20I%20need%20%5Bcompact%20car%2FSUV%2F4x4%5D%20for%20%5Bdates%5D%20pickup%20in%5BStone%20Town%5D.%20What%20are%20the%20requirements%3F"
+      "cta_deep_link": "https://wa.me/255707939265?text=Hello%21%20I'm%20interested%20in%20self-drive%20car%20rental%20in%20Zanzibar.%20I%20need%20%5Bcompact%20car%2FSUV%2F4x4%5D%20for%20%5Bdates%5D%20pickup%20in%5BStone%20Town%5D.%20What%20are%20the%20requirements%3F"
     },
     "timing": {
       "problem": "zanzibar migration calendar turtle nesting dolphin season whale watching bird migration",
@@ -30,7 +30,7 @@
       "value_delivery": "Based on your timing preferences: [monthly calendar + best months for each event + combination recommendations (safari-first vs Zanzibar-first)]. For [your interest], I'd recommend [specific months].",
       "payment_trigger": "Excellent! Based on your timing preferences, I'd recommend [specific months]. For booking, we'd need... [payment discussion after value demonstrated]",
       "whatsapp_start": "timed adventure planning",
-      "cta_deep_link": "https://wa.me/255672450934?text=Hello%21%20I'm%20planning%20my%20Zanzibar%20trip%20and%20want%20to%20time%20it%20with%20the%20migration%2Fseasonal%20events.%20I'm%20interested%20in%20%5Bturtle%20nesting%5D.%20What%20are%20the%20best%20months%3F"
+      "cta_deep_link": "https://wa.me/255707939265?text=Hello%21%20I'm%20planning%20my%20Zanzibar%20trip%20and%20want%20to%20time%20it%20with%20the%20migration%2Fseasonal%20events.%20I'm%20interested%20in%20%5Bturtle%20nesting%5D.%20What%20are%20the%20best%20months%3F"
     },
     "cultural": {
       "problem": "zanzibar swahili traditions local tribes authentic experiences cultural village visits",
@@ -38,7 +38,7 @@
       "value_delivery": "Based on your cultural interests: [specific cultural experiences + local etiquette + community benefits + respect guidelines]. [Specific experience] would give you an authentic [cultural connection].",
       "payment_trigger": "Wonderful! Based on your cultural interests, I'd recommend [specific experience]. For arrangements, we'd need... [payment discussion after value demonstrated]",
       "whatsapp_start": "custom itinerary",
-      "cta_deep_link": "https://wa.me/255672450934?text=Hello%21%20I'm%20interested%20in%20Zanzibar's%20local%20cultures%20and%20traditions.%20I'd%20like%20to%20experience%20%5Btribal%20visits%5D.%20What%20authentic%20experiences%20do%20you%20recommend%3F"
+      "cta_deep_link": "https://wa.me/255707939265?text=Hello%21%20I'm%20interested%20in%20Zanzibar's%20local%20cultures%20and%20traditions.%20I'd%20like%20to%20experience%20%5Btribal%20visits%5D.%20What%20authentic%20experiences%20do%20you%20recommend%3F"
     },
     "packing": {
       "problem": "zanzibar packing list essential items seasonal what NOT to bring",
@@ -46,7 +46,7 @@
       "value_delivery": "Based on your packing needs: [essential packing list + seasonal considerations + what NOT to bring + personalized additions based on activities]. [Personalized list] would cover [specific needs].",
       "payment_trigger": "Perfect! Based on your packing needs, I'd recommend [specific items]. For the full personalized list, we'd discuss... [payment discussion for detailed guide]",
       "whatsapp_start": "personalized list",
-      "cta_deep_link": "https://wa.me/255672450934?text=Hello%21%20I'm%20planning%20my%20Zanzibar%20trip%20in%20%5Bmonth%5D%20with%20%5Bchildren%2Fadults%5D.%20I'm%20concerned%20about%20%5Bessentials%5D.%20Can%20you%20help%3F"
+      "cta_deep_link": "https://wa.me/255707939265?text=Hello%21%20I'm%20planning%20my%20Zanzibar%20trip%20in%20%5Bmonth%5D%20with%20%5Bchildren%2Fadults%5D.%20I'm%20concerned%20about%20%5Bessentials%5D.%20Can%20you%20help%3F"
     },
     "spice": {
       "problem": "zanzibar spice trade history cloves vanilla cinnamon nutmeg farm experiences sensory walk",
@@ -54,7 +54,7 @@
       "value_delivery": "Based on your spice farm interests: [recommended farms (Kidichi, Kizimkazi, Paje Village) + tour experience + sensory details + cultural connection]. [Specific farm] offers the best [experience] for [your interest].",
       "payment_trigger": "Excellent! Based on your spice farm interests, I'd arrange [specific farm]. To book, we'd need... [payment discussion after value demonstrated]",
       "whatsapp_start": "farm visit arrangement",
-      "cta_deep_link": "https://wa.me/255672450934?text=Hello%21%20I'm%20interested%20in%20a%20Zanzibar%20spice%20farm%20tour.%20I'd%20like%20to%20experience%20%5Bcloves%2Fvanilla%5D%20sensory%20walk.%20Which%20farms%20do%20you%20recommend%3F"
+      "cta_deep_link": "https://wa.me/255707939265?text=Hello%21%20I'm%20interested%20in%20a%20Zanzibar%20spice%20farm%20tour.%20I'd%20like%20to%20experience%20%5Bcloves%2Fvanilla%5D%20sensory%20walk.%20Which%20farms%20do%20you%20recommend%3F"
     }
   },
   "feedback_loop": {

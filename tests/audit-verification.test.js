@@ -46,8 +46,8 @@ test('audit fix A04: lead.js reply_link must target Spice & Sail (255672450934),
   
   // CRITICAL: reply_link must target the business desk 255672450934, NOT the guest's 14155552671
   assert.ok(
-    resBody.reply_link.startsWith('https://wa.me/255672450934'),
-    'reply_link must point to wa.me/255672450934 but got: ' + resBody.reply_link
+    resBody.reply_link.startsWith('https://wa.me/255707939265'),
+    'reply_link must point to wa.me/255707939265 but got: ' + resBody.reply_link
   );
   assert.ok(
     !resBody.reply_link.includes('14155552671'),

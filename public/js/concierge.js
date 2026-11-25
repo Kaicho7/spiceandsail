@@ -9,7 +9,7 @@
 (function () {
   'use strict';
 
-  var WHATSAPP_URL = 'https://wa.me/255672450934';
+  var WHATSAPP_URL = 'https://wa.me/255707939265';
   var FALLBACK_MSG = 'Something went wrong sending your request. ';
 
   var state = {
@@ -61,7 +61,7 @@
 /* Allowed hrefs for links rendered in chat/status.
      - relative paths starting with single / (not //, not containing backslash or encoded backslash)
      - https://spiceandsail.com, https://www.spiceandsail.com
-     - https://wa.me/255672450934 (business WhatsApp)
+     - https://wa.me/255707939265 (business WhatsApp)
      - mailto: with percent-encoded address (validated in appendRichText) */
   function isAllowedHref(href) {
     if (!href) return false;
@@ -1222,7 +1222,7 @@
           '<p class="sns-payment-service">' + paymentData.serviceName + '</p>' +
           '<div class="sns-payment-options">' + linksHtml + '</div>' +
           '<p class="sns-payment-note">You will be redirected to the provider\'s secure payment page. All payments are in USD. Mobile money payments are converted at current rates.</p>' +
-          '<p class="sns-payment-whatsapp-fallback">Prefer WhatsApp? <a href="https://wa.me/255672450934?text=' + encodeURIComponent('Jambo Spice & Sail! Please send me the payment link for my ' + paymentData.serviceName + ' booking (Ref: ' + paymentData.bookingRef + ').') + '" target="_blank" rel="noopener">💬 Message our team on WhatsApp</a> for a direct payment link.</p>' +
+          '<p class="sns-payment-whatsapp-fallback">Prefer WhatsApp? <a href="https://wa.me/255707939265?text=' + encodeURIComponent('Jambo Spice & Sail! Please send me the payment link for my ' + paymentData.serviceName + ' booking (Ref: ' + paymentData.bookingRef + ').') + '" target="_blank" rel="noopener">💬 Message our team on WhatsApp</a> for a direct payment link.</p>' +
         '</div>' +
       '</div>';
     

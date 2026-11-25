@@ -435,7 +435,7 @@ permalink: "/tours/{slug}/index.html"
         <span class="price-amount">${int(price_min)}–${int(price_max)}</span>
         <span class="price-note">per person</span>
       </div>
-      <a href="https://wa.me/255672450934?text=I%27d%20like%20to%20book%20{slug.replace("-", "%20")}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
+      <a href="https://wa.me/255707939265?text=I%27d%20like%20to%20book%20{slug.replace("-", "%20")}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
     </div>
   </section>
 
@@ -496,7 +496,7 @@ permalink: "/tours/{slug}/index.html"
         <div class="booking-card">
           <h3>Ready to Book?</h3>
           <p style="opacity: 0.8; margin-bottom: 1.5rem;">Send us your preferred date and group size on WhatsApp. We\'ll confirm with a fixed price including all fees.</p>
-          <a href="https://wa.me/255672450934" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: +255 7XX XXX XXX</a>
+          <a href="https://wa.me/255707939265" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: +255 7XX XXX XXX</a>
         </div>
       </div>
     </aside>

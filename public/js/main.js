@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
           'Group size: ' + field('group_size'),
           'Message: ' + field('message')
         ].join('\n');
-        window.open('https://wa.me/255672450934?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+        window.open('https://wa.me/255707939265?text=' + encodeURIComponent(msg), '_blank', 'noopener');
         window.location.href = '/thank-you/?ref=' + encodeURIComponent(res.data.reference || '');
       })
       .catch(function(err) {

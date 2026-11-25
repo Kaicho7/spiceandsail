@@ -86,7 +86,7 @@ Ready to book? Click the WhatsApp button below to send your request directly to 
 }
 ```
 
-**WhatsApp URL:** `https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%204%20travellers.%20Pickup%3A%20Nungwi.`
+**WhatsApp URL:** `https://wa.me/255707939265?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%204%20travellers.%20Pickup%3A%20Nungwi.`
 
 **Quick replies:** Plan my Zanzibar trip | Get a quote | Book an experience | Visas & travel info
 
@@ -121,7 +121,7 @@ Ready to book? Click the WhatsApp button below to send your request directly to 
 }
 ```
 
-**WhatsApp URL:** `https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%204%20travellers.%20Pickup%3A%20Nungwi.`
+**WhatsApp URL:** `https://wa.me/255707939265?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%204%20travellers.%20Pickup%3A%20Nungwi.`
 
 **Quick replies:** Mnemba Atoll snorkeling / dolphin trip | Prison Island + Nakupenda sandbank | Sunset dhow cruise | Something else
 
@@ -155,7 +155,7 @@ Ready to book? Click the WhatsApp button below to send your request directly to 
 }
 ```
 
-**WhatsApp URL:** `https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
+**WhatsApp URL:** `https://wa.me/255707939265?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
 
 **Quick replies:** Plan my Zanzibar trip | Get a quote | Book an experience | Visas & travel info
 
@@ -190,7 +190,7 @@ Ready to book? Click the WhatsApp button below to send your request directly to 
 }
 ```
 
-**WhatsApp URL:** `https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
+**WhatsApp URL:** `https://wa.me/255707939265?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
 
 **Quick replies:** Nakupenda sandbank only | Sunset dhow cruise | Serengeti 3-day fly-in safari | Plan a honeymoon trip
 
@@ -227,7 +227,7 @@ Ready to book? Click the WhatsApp button below to send your request directly to 
 }
 ```
 
-**WhatsApp URL:** `https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
+**WhatsApp URL:** `https://wa.me/255707939265?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20a%20Zanzibar%20experience.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
 
 **Quick replies:** Spice farm tour | Village / community tour | Safari Blue / Menai Bay dhow day | Plan a family trip
 
@@ -267,7 +267,7 @@ Ready to book? Click the WhatsApp button below to send your request directly to 
 }
 ```
 
-**WhatsApp URL:** `https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20Safari%20Blue%20%2F%20Menai%20Bay%20dhow%20day.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
+**WhatsApp URL:** `https://wa.me/255707939265?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20Safari%20Blue%20%2F%20Menai%20Bay%20dhow%20day.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
 
 **Quick replies:** Get a quote for this | See other options | Book this
 
@@ -304,7 +304,7 @@ All prices are quoted in USD. No online payment processing on the website — ou
 }
 ```
 
-**WhatsApp URL:** `https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20Safari%20Blue%20%2F%20Menai%20Bay%20dhow%20day.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
+**WhatsApp URL:** `https://wa.me/255707939265?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20Safari%20Blue%20%2F%20Menai%20Bay%20dhow%20day.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
 
 **Quick replies:** Plan my trip | Get a quote | Book an experience
 
@@ -338,7 +338,7 @@ Ready to book? Click the WhatsApp button below to send your request directly to 
 }
 ```
 
-**WhatsApp URL:** `https://wa.me/255672450934?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20Safari%20Blue%20%2F%20Menai%20Bay%20dhow%20day%2C%20Mnemba%20Atoll%20snorkeling%20%2F%20dolphin%20trip.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
+**WhatsApp URL:** `https://wa.me/255707939265?text=Hi%20Spice%20%26%20Sail!%20I'd%20like%20to%20book%3A%20Safari%20Blue%20%2F%20Menai%20Bay%20dhow%20day%2C%20Mnemba%20Atoll%20snorkeling%20%2F%20dolphin%20trip.%20Dates%3A%2012%20december.%20Group%3A%206%20travellers.%20Pickup%3A%20Nungwi.`
 
 ---
 

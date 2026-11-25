@@ -226,7 +226,7 @@ exports.handler = async function (event) {
     };
     
     const whatsappMessage = buildReviewMessage(template, messageData);
-    const whatsappUrl = `https://wa.me/255672450934?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/255707939265?text=${encodeURIComponent(whatsappMessage)}`;
     
     // Store idempotency record
     await store.setJSON(idempotencyKey, { 

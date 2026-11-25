@@ -149,10 +149,10 @@ test('chat bubble: allowed HTTPS (spiceandsail.com) becomes a link', () => {
 
 test('chat bubble: wa.me business link becomes a link', () => {
   const c = loadWidget();
-  const b = c._bubbleNodes('book [here](https://wa.me/255672450934?text=hi)', 'bot');
+  const b = c._bubbleNodes('book [here](https://wa.me/255707939265?text=hi)', 'bot');
   const a = b.children.find((n) => n.tag === 'A');
   assert.ok(a, 'business wa.me anchor must be created');
-  assert.strictEqual(a.attrs.href, 'https://wa.me/255672450934?text=hi');
+  assert.strictEqual(a.attrs.href, 'https://wa.me/255707939265?text=hi');
 });
 
 test('chat bubble: internal path link becomes a link', () => {
