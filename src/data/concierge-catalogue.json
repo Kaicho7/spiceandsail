@@ -272,7 +272,7 @@
         "Browse the Darajani and Forodhani markets",
         "Stroll the seafront promenade and the Old City gates"
       ],
-      "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling Darajani market scene, the House",
+      "description": "Walk through the heart of Zanzibar's UNESCO World Heritage site with a licensed local guide. Discover 200 years of history — from the Sultan's palace to the bustling-forbidden market scene, the House of Wonders, and the Old Fort.",
       "meetingPoint": "Forodhani Gardens, Stone Town waterfront",
       "interests": [
         "culture",
@@ -326,7 +326,7 @@
         "Traditional hand-grinding demonstration",
         "Optional lunch featuring local ingredients"
       ],
-      "description": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade — how Zanzibar became the \"Spice Island\" — while you taste fresh nutmeg, cloves, c",
+      "description": "Journey into Zanzibar's lush interior to a working spice farm. Your guide will explain the history of the spice trade — how Zanzibar became the \"Spice Island\" — while you taste fresh nutmeg, cloves, cinnamon, and cardamom straight from the source.",
       "meetingPoint": "Kidichi, Kizimbani, or island interior (pickup from Stone Town available)",
       "interests": [
         "culture",
@@ -432,7 +432,7 @@
         "All transport included in air-conditioned vehicle",
         "Entry fees to all sites included"
       ],
-      "description": "Maximize your day with the most popular Zanzibar combination tour. Start with a Stone Town walking tour, then head to a spice farm for lunch, and finish with a boat trip to Prison Island for giant tor",
+      "description": "Maximize your day with the most popular Zanzibar combination tour. Start with a Stone Town walking tour, then head to a spice farm for lunch, and finish with a boat trip to Prison Island for giant tortoises and snorkeling.",
       "meetingPoint": "Stone Town hotel pickup or Forodhani Gardens",
       "interests": [
         "culture",
@@ -486,7 +486,7 @@
         "Fresh fruit, water, and soft drinks throughout",
         "Menai Bay conservation fee included in package price"
       ],
-      "description": "Zanzibar's most famous dhow excursion: cruise to the Menai Bay Conservation Area, snorkel over vibrant coral reefs, feast on a seafood barbecue on a private sandbank, and visit Kwale Island. Operated",
+      "description": "Zanzibar's most famous dhow excursion: cruise to the Menai Bay Conservation Area, snorkel over vibrant coral reefs, feast on a seafood barbecue on a private sandbank, and visit Kwale Island. Operated by the original Safari Blue since 1990.",
       "meetingPoint": "Fumba Peninsula — pickup from Stone Town hotels available",
       "interests": [
         "ocean",
@@ -552,7 +552,7 @@
         "Fresh fruit, water, and soft drinks on board",
         "Snorkel gear provided (mask, snorkel, life jacket)"
       ],
-      "description": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area. Spot green sea turtles, observe colorful fish over healthy coral reefs, and enjoy fruit and water on a traditi",
+      "description": "Snorkel the pristine waters of Mnemba Atoll, Zanzibar's premier marine conservation area. Spot green sea turtles, observe colorful fish over healthy coral reefs, and enjoy fruit and water on a traditional dhow.",
       "meetingPoint": "Matemwe, Nungwi, or Kendwa — pickup from nearby hotels included",
       "interests": [
         "ocean",
@@ -610,7 +610,7 @@
         "Snorkeling at the coral reef (gear provided)",
         "Island entry fee included"
       ],
-      "description": "A classic Zanzibar half-day or full-day excursion: take a short boat ride to Changuu (Prison Island) to meet the resident giant Aldabra tortoises, then cruise to Nakupenda sandbank for snorkeling over",
+      "description": "A classic Zanzibar half-day or full-day excursion: take a short boat ride to Changuu (Prison Island) to meet the resident giant Aldabra tortoises, then cruise to Nakupenda sandbank for snorkeling over coral gardens.",
       "meetingPoint": "Stone Town waterfront — Forodhani Gardens pier",
       "interests": [
         "ocean",
@@ -715,7 +715,7 @@
         "Snorkel over pristine, protected coral walls",
         "Organic lunch and refreshments included"
       ],
-      "description": "Visit the world's first private marine conservation park. Chumbe Island limits visitors to just 14 per day to protect its fragile coral ecosystem. Snorkel guided by a marine biologist, learn about cor",
+      "description": "Visit the world's first private marine conservation park. Chumbe Island limits visitors to just 14 per day to protect its fragile coral ecosystem. Snorkel guided by a marine biologist, learn about coral restoration, and support conservation.",
       "meetingPoint": "Mbweni Beach (pickup from central hotels by arrangement)",
       "interests": [
         "ocean",
@@ -774,7 +774,7 @@
         "Life jackets provided; safety briefing included",
         "Photography-friendly — golden hour lighting"
       ],
-      "description": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and",
+      "description": "End your day with a traditional dhow sailing cruise along Zanzibar's coastline. Watch the sun dip into the Indian Ocean, sip refreshing drinks, and enjoy fresh fruit on deck as the sky turns gold and purple.",
       "meetingPoint": "Nungwi Beach, Kendwa Beach, or Stone Town waterfront — choose at booking",
       "interests": [
         "romance",
@@ -834,7 +834,7 @@
         "Snorkeling in the lagoon after dolphin viewing",
         "Fresh fruit and water included"
       ],
-      "description": "Kizimkazi on Zanzibar's southeast coast is the only place in East Africa where you can see wild bottlenose dolphins in their natural habitat. We only work with operators certified by the Zanzibar Mari",
+      "description": "Kizimkazi on Zanzibar's southeast coast is the only place in East Africa where you can see wild bottlenose dolphins in their natural habitat. We only work with operators certified by the Zanzibar Marine Conservation Society.",
       "meetingPoint": "Kizimkazi fishing village, southeast coast (pickup from nearby hotels included)",
       "interests": [
         "ocean",
@@ -894,7 +894,7 @@
         "Visit the visitor center and turtle sanctuary at the park entrance",
         "Can combine with Kuza Cave to the south or The Rock Restaurant"
       ],
-      "description": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabie",
+      "description": "Venture into Jozani Chwaka Bay National Park, Zanzibar's only national park. Walk guided forest trails to see the endangered rare red colobus monkey (endemic to Zanzibar), plus blue monkeys, bushbabies, and over 200 bird species.",
       "meetingPoint": "Jozani Chwaka Bay National Park entrance (pickup from south coast hotels available)",
       "interests": [
         "nature",
@@ -1040,7 +1040,7 @@
         "Evening return flight to Zanzibar",
         "Spot elephants, lions, hippos, crocodiles, giraffes, and over 400 bird species"
       ],
-      "description": "Escape to mainland Tanzania for a thrilling day safari. Fly from Zanzibar to either Mikumi National Park (famous for the \"S\" curve of the river) or Nyerere National Park (formerly Selous Game Reserve,",
+      "description": "Escape to mainland Tanzania for a thrilling day safari. Fly from Zanzibar to either Mikumi National Park (famous for the \"S\" curve of the river) or Nyerere National Park (formerly Selous Game Reserve, vast wetlands and wildlife). Return the same evening.",
       "meetingPoint": "Abeid Amani Karume International Airport (ZNZ) — transfer from your hotel included",
       "interests": [
         "safari",
@@ -1092,7 +1092,7 @@
         "All park fees, flights, accommodation, meals, and game drives included",
         "Professional guide and 4x4 safari vehicle"
       ],
-      "description": "Experience the legendary Serengeti on a 3-day fly-in safari. Stay at a luxury tented camp inside the park, enjoy full-board dining, and witness the Great Migration (seasonal) or resident wildlife year",
+      "description": "Experience the legendary Serengeti on a 3-day fly-in safari. Stay at a luxury tented camp inside the park, enjoy full-board dining, and witness the Great Migration (seasonal) or resident wildlife year-round.",
       "meetingPoint": "Transferred from your Zanzibar hotel to ZNZ airport for flights",
       "interests": [
         "safari",
@@ -1143,7 +1143,7 @@
         "Day 2: Full-day Safari Blue Menai Bay dhow cruise with seafood BBQ on Mango Sandbank",
         "Day 3: Leisure morning + private airport drop-off"
       ],
-      "description": "Our signature introduction to Zanzibar — private airport transfers, authentic Stone Town heritage walking tour, organic spice farm harvest lunch, and the legendary Safari Blue Menai Bay dhow sailing with seafood BBQ.",
+      "description": "Our signature introduction to Zanzibar. This 3-day package covers the island's must-see highlights: the spice heritage, the marine wonderland of Menai Bay, and the cultural treasures of Stone Town — all in one seamless itinerary.",
       "meetingPoint": "Abeid Amani Karume International Airport (ZNZ)",
       "interests": [
         "culture",

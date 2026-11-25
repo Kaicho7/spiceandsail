@@ -917,6 +917,7 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
       "pages/it/tour/mnemba-snorkeling.njk": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
       "pages/de/tour/mnemba-snorkeling.njk": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
       "pages/de/tour/safari-blue.njk": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg",
+      "pages/de/tour/spice-farm.njk": "zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg",
       "pages/fr/tour/mnemba-snorkeling.njk": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
       "pages/it/tour/safari-blue.njk": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg",
       "pages/about.njk": "aerial-coastal-town-beach-turquoise-water.jpg",
