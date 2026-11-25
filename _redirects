@@ -65,3 +65,17 @@
 # German contact page consolidation (deleted /de/contact/ -> /de/kontakt/)
 /de/contact   /de/kontakt/  301
 /de/contact/  /de/kontakt/  301
+
+# Safety-net redirects for localized tour/transfer/package paths (PL/AR/RU/FR)
+/pl/transfers/   /transfers/   302
+/pl/packages/    /packages/    302
+/pl/tours/*      /tours/:splat 302
+/ar/transfers/   /transfers/   302
+/ar/packages/    /packages/    302
+/ar/tours/*      /tours/:splat 302
+/ru/transfers/   /transfers/   302
+/ru/packages/    /packages/    302
+/ru/tours/*      /tours/:splat 302
+/fr/transfers/   /transfers/   302
+/fr/packages/    /packages/    302
+/fr/tours/*      /tours/:splat 302
