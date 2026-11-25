@@ -27,6 +27,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"public/site.webmanifest": "site.webmanifest"});
   // Client-side review capture lives under src/js; copy it into the served js dir.
   eleventyConfig.addPassthroughCopy({"src/js/review-capture.js": "js/review-capture.js"});
+  eleventyConfig.addPassthroughCopy({"src/js/language-switcher.js": "js/language-switcher.js"});
   // Copy _headers into the publish dir (Netlify applies custom headers from dist)
   eleventyConfig.addPassthroughCopy({"_headers": "_headers"});
   // Copy _redirects into the publish dir (Cloudflare Pages applies redirects from dist)
