@@ -90,6 +90,16 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
   let conciergeCatalogue = { services: [] };
   try {
     conciergeCatalogue = JSON.parse(fs.readFileSync(path.join("./src", "data", "concierge-catalogue.json"), "utf8"));
+    // Strip internal fields from services before they reach templates or public HTML
+    const _strip = function(s) {
+      const { sourceFiles, sourceQuality, basisNote, childSource, ladderSource, parkFeeSource, viatorAnchor, ...pub } = s;
+      if (pub.pricing) {
+        const { sourceFiles: _a, sourceQuality: _b, basisNote: _c, childSource: _d, ladderSource: _e, parkFeeSource: _f, viatorAnchor: _g, ...p } = pub.pricing;
+        pub.pricing = p;
+      }
+      return pub;
+    };
+    if (conciergeCatalogue.services) conciergeCatalogue.services = conciergeCatalogue.services.map(_strip);
   } catch (e) { conciergeCatalogue = { services: [] }; }
 
   function catService(slug) {
@@ -153,6 +163,14 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     }
     
     return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle") + " (published rate — our team confirms your tier and pickup)";
+  });
+  // Sanitize internal fields from services JSON for public rendering
+  eleventyConfig.addFilter("sanitizeServices", (services) => {
+    if (!services) return services;
+    return services.map(s => {
+      const { sourceFiles, sourceQuality, basisNote, childSource, ladderSource, parkFeeSource, viatorAnchor, ...pub } = s;
+      return { ...pub, pricing: pub.pricing ? { ...pub.pricing, basisNote: undefined } : null };
+    });
   });
 
 // Short version for cards - just "From $X" with tiered tooltip

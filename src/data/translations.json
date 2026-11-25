@@ -957,13 +957,13 @@
       "ru": "Телефон / SMS"
     },
     "phone_sms_desc": {
-      "en": "Call or text during business hours (Mon–Sat, 08:00–18:00 EAT).",
-      "it": "Chiama o invia un SMS durante l'orario lavorativo (Mon–Sat, 08:00–18:00 EAT).",
+      "en": "Call or text during business hours (Mon–Sat, 09:00–17:00 EAT).",
+      "it": "Chiama o invia un SMS durante l'orario lavorativo (Mon–Sat, 09:00–17:00 EAT).",
       "de": "Ruf an oder schreibe eine SMS während der Geschäftszeiten (9–17 Uhr EAT).",
       "fr": "Appelez ou envoyez un SMS pendant les heures ouvrées (9h–17h EAT).",
-      "pl": "Zadzwoń lub wyślij SMS w godzinach pracy (Mon–Sat, 08:00–18:00 EAT).",
+      "pl": "Zadzwoń lub wyślij SMS w godzinach pracy (Mon–Sat, 09:00–17:00 EAT).",
       "ar": "اتصل أو أرسل رسالة نصية خلال ساعات العمل (9 صباحاً - 5 مساءً EAT).",
-      "ru": "Звоните или пишите SMS в рабочее время (Mon–Sat, 08:00–18:00 EAT)."
+      "ru": "Звоните или пишите SMS в рабочее время (Mon–Sat, 09:00–17:00 EAT)."
     },
     "email_contact": {
       "en": "Email",
@@ -1497,13 +1497,13 @@
       "ru": "WhatsApp Консьерж"
     },
     "card_concierge_desc": {
-      "en": "Book, ask info, modify itineraries. Reply in minutes (08:00–18:00 EAT, Mon–Sat).",
-      "it": "Prenota, chiedi info, modifica itinerari. Risposta in pochi minuti (08:00–18:00 EAT, Lun–Sab).",
-      "de": "Buchen, Infos anfordern, Reiserouten ändern. Antwort in Minuten (08:00–18:00 EAT, Mo–Sa).",
-      "fr": "Réservez, demandez des infos, modifiez les itinéraires. Réponse en quelques minutes (08:00–18:00 EAT, Lun–Sam).",
-      "pl": "Rezerwuj, pytaj o info, modyfikuj trasy. Odpowiedź w kilka minut (08:00–18:00 EAT, Pon–Sob).",
-      "ar": "احجز، استفسر، عدل البرامج. رد في دقائق (08:00–18:00 EAT، الإثنين–السبت).",
-      "ru": "Бронируйте, спрашивайте информацию, меняйте маршруты. Ответ за минуты (08:00–18:00 EAT, Пн–Сб)."
+      "en": "Book, ask info, modify itineraries. Reply in minutes (09:00–17:00 EAT, Mon–Sat).",
+      "it": "Prenota, chiedi info, modifica itinerari. Risposta in pochi minuti (09:00–17:00 EAT, Lun–Sab).",
+      "de": "Buchen, Infos anfordern, Reiserouten ändern. Antwort in Minuten (09:00–17:00 EAT, Mo–Sa).",
+      "fr": "Réservez, demandez des infos, modifiez les itinéraires. Réponse en quelques minutes (09:00–17:00 EAT, Lun–Sam).",
+      "pl": "Rezerwuj, pytaj o info, modyfikuj trasy. Odpowiedź w kilka minut (09:00–17:00 EAT, Pon–Sob).",
+      "ar": "احجز، استفسر، عدل البرامج. رد في دقائق (09:00–17:00 EAT، الإثنين–السبت).",
+      "ru": "Бронируйте, спрашивайте информацию, меняйте маршруты. Ответ за минуты (09:00–17:00 EAT, Пн–Сб)."
     },
     "btn_open_whatsapp_card": {
       "en": "Open WhatsApp",

@@ -45,7 +45,7 @@ description: What we collect, why, who sees it, retention, and how to request de
     <h2 style="font-size: 1.5rem; color: var(--dct-ocean); margin-bottom: 1rem;">Who We Share Data With</h2>
     <ul style="color: var(--dct-text-muted); line-height: 1.8; margin: 0;">
       <li>Cloudflare KV (production) — encrypted at-rest, used as the persistent store for leads and references. Access limited to server-side functions. Data may be stored in Cloudflare's EU/US data centre region.</li>
-      <li>Configured webhook endpoints — only if you have explicitly set WHATSAPP_OPS_WEBHOOK_URL, OPS_WEBHOOK_URL, DISCORD_WEBHOOK_URL, or SLACK_WEBHOOK_URL in the environment. No data is sent to webhooks that are not configured.</li>
+      <li>Internal operations alert channels used by our reservations desk (WhatsApp, email, Discord, or Slack). No data is sent to channels that are not configured.</li>
       <li>Law enforcement or regulatory authorities — only where required by applicable law or court order.</li>
       <li>With your consent (if you tick "Send me marketing information") — only to send you promotional emails about Zanzibar travel offers, if an email address is provided.</li>
     </ul>
