@@ -79,3 +79,7 @@
 /fr/transfers/   /transfers/   302
 /fr/packages/    /packages/    302
 /fr/tours/*      /tours/:splat 302
+
+# Italian contact page consolidation (deleted /it/contact/ -> /it/contatti/)
+/it/contact   /it/contatti/  301
+/it/contact/  /it/contatti/  301
