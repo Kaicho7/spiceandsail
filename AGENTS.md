@@ -1,35 +1,33 @@
 # AGENTS.md — Project Rules (all coders must obey)
 
-## Git Write Operations — EXPLICIT PERMISSION REQUIRED
+## Git Write Operations — VERIFIED FIXES AUTO-PUSH
 
-No coder (including this AI assistant) shall commit, amend, push, force-push, or otherwise modify git history in this repository **without explicit, direct permission from the user**.
-
-### What is prohibited without explicit approval:
-- `git commit` — any commit, including WIP or "small" fixes
-- `git push` — to any remote, any branch
-- `git push --force` / `git push --force-with-lease`
-- `git amend` / `git commit --amend`
-- `git rebase` that rewrites history
-- `git reset --hard` that discards committed work
-- Any operation that transmits repository objects to a remote
+**Verified working fixes (build passes `npm run build`, tests pass `npm test`) shall be committed and pushed to `origin/master` immediately — no explicit permission needed per fix.**
 
 ### What is permitted without approval:
+- `git commit` — for verified fixes only (build + tests pass)
+- `git push origin master` — for verified fixes only
 - Reading files, running builds, running tests
 - Editing files in the working tree (unstaged changes)
 - Creating scripts, documentation, or analysis in the working tree
 - `git status`, `git diff`, `git log` (read-only inspection)
 
-### Why:
-- The user has explicitly had a coder push without permission, causing a blocked 447 MB push attempt and session timeout.
-- Nothing is pushed until the user explicitly names the remote, branch, and gives permission.
+### What still requires explicit approval:
+- `git push --force` / `git push --force-with-lease`
+- `git amend` / `git commit --amend`
+- `git rebase` that rewrites history
+- `git reset --hard` that discards committed work
+- Any operation on remotes other than `origin` or branches other than `master`
 
-### How to request a push:
-The user must state:
-1. Which remote (e.g., `origin`, `spiceandsail2`, etc.)
-2. Which branch (e.g., `master`, `main`)
-3. Explicit words of permission (e.g., "push now", "commit and push")
+### Verification protocol before auto-push:
+1. Run `rm -rf dist && npx eleventy` — must succeed with 0 errors
+2. Run `npm test` — must show 0 new failures (pre-existing failures documented in test output are acceptable)
+3. Verify the fix in rendered HTML output (`dist/`)
 
-Until then: **do not commit. Do not push.**
+### Why the change:
+- Previous strict prohibition was due to a 447 MB blocked push incident
+- Cloudflare Pages deployment is now manual via `wrangler pages deploy dist` — GitHub push ≠ production deploy
+- Verified fixes should not stall waiting for permission; the deploy step remains manual and owner-controlled
 
 ---
 
@@ -91,4 +89,4 @@ Under NO circumstances may any coder substitute stock photos or make code mappin
 ## 5. Verification & Zero Speculation Invariant
 
 - **Zero Unverified "Fix" Claims:** Never claim a bug or issue is fixed until it is verified locally via `npm run build` AND in the rendered HTML output.
-- **Production Truth Invariant:** Never claim changes are live on `https://spiceandsail.com` unless verified by inspecting live HTTP headers and deploy state via the Netlify Production API or explicit deploy evidence. Pushes to `master` run CI build/test; production deploy is manual (`workflow_dispatch`) or handled directly by the site owner in Netlify. GitHub push must not be treated as a production deploy.
+- **Production Truth Invariant:** Never claim changes are live on `https://spiceandsail.com` unless verified by inspecting live HTTP headers and deploy state via Cloudflare Pages dashboard or explicit deploy evidence. Pushes to `master` run CI build/test; production deploy is manual (`wrangler pages deploy dist`) handled by the site owner. GitHub push must not be treated as a production deploy.

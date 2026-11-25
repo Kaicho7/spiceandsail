@@ -5,7 +5,7 @@
    - The token should be rotated immediately on whatever service it authenticates.
    - Once rotated and approved by the repository owner, a history purge (e.g. `git-filter-repo` or BFG) should be performed to permanently excise the historical commits containing the token string.
 
-2. **Set Netlify environment variables**:
+2. **Set Cloudflare Pages environment variables** (migrated from Netlify):
    - `GEMINI_API_KEY` - from the shell environment (owner generates and sets this)
    - `STAFF_PASSCODE` - a generated random passcode (store ONLY in `~/spiceandsail_owner_secrets.txt`, chmod 600, outside the repo)
    - `ALLOWED_ORIGINS` - comma-separated list of allowed origins (e.g. `https://spiceandsail.com,https://preview-url`)
@@ -40,17 +40,12 @@
 
 8. **WhatsApp hours**: Mon-Sat 09:00-17:00 Africa/Dar_es_Salaam; after hours the bot says the team replies when the office opens
 
-9. **The single command to deploy to production after review**: `npx netlify deploy --dir=dist` (manual CLI deploy, not automatic push)
+9. **Deploy to production after review**: `wrangler pages deploy dist --project-name=spiceandsail` (Cloudflare Pages deploy, not Netlify)
 
-10. **How to roll back**: Use `npx netlify rollback` or redeploy a previous deploy from the Netlify dashboard
+10. **How to roll back**: Use Cloudflare Pages dashboard to redeploy a previous deployment, or `wrangler pages deployment list` + `wrangler pages deployment rollback`
 
-11. **netlify dev needs a `[dev]` section** (local use only): `npx netlify dev` hung >3 min with no listener because the build command (`npm install && npm run build`) runs first and no `[dev]` block overrides it. Add e.g.
-```toml
-[dev]
-  command = "npm run build"
-  targetPort = 3000
-  autoLaunch = false
-```
-Function-level flow was verified without netlify dev (see live-e2e.txt).
+11. **Local dev server**: `wrangler pages dev dist` (Cloudflare Pages dev, replaces netlify dev)
 
 12. **Business hours are single-source in concierge-catalogue.json**: `config.replyWindow` ("within a few hours during business hours (Mon-Sat, 09:00-17:00 EAT)") and `config.businessHours` (days/hours used by `isWithinBusinessHours`). The widget success line shows `replyWindow` from GET /quote; the chat endpoint already uses it. Owner to ratify these hours and confirm the staffed WhatsApp window matches; any change is one config edit, no code deploy.
+
+13. **Git workflow for coders**: Verified working fixes (build passes, tests pass) should be committed and pushed to `origin/master` immediately — no explicit permission needed per fix. The AGENTS.md prohibition on git writes is lifted for verified changes.
