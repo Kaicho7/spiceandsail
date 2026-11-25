@@ -40,7 +40,7 @@
 
 8. **WhatsApp hours**: Mon-Sat 09:00-17:00 Africa/Dar_es_Salaam; after hours the bot says the team replies when the office opens
 
-9. **Deploy to production after review**: `wrangler pages deploy dist --project-name=spiceandsail` (Cloudflare Pages deploy, not Netlify)
+9. **Deploy to production**: Automatic on push to `master` (Cloudflare Pages connected to GitHub repo). No manual deploy command needed.
 
 10. **How to roll back**: Use Cloudflare Pages dashboard to redeploy a previous deployment, or `wrangler pages deployment list` + `wrangler pages deployment rollback`
 

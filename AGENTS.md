@@ -23,11 +23,12 @@
 1. Run `rm -rf dist && npx eleventy` — must succeed with 0 errors
 2. Run `npm test` — must show 0 new failures (pre-existing failures documented in test output are acceptable)
 3. Verify the fix in rendered HTML output (`dist/`)
+4. **Remember: `git push origin master` deploys to production automatically**
 
 ### Why the change:
 - Previous strict prohibition was due to a 447 MB blocked push incident
-- Cloudflare Pages deployment is now manual via `wrangler pages deploy dist` — GitHub push ≠ production deploy
-- Verified fixes should not stall waiting for permission; the deploy step remains manual and owner-controlled
+- **Cloudflare Pages is connected to GitHub: push to `master` = automatic production deploy**
+- Verified fixes should not stall waiting for permission; the deploy is automatic on merge
 
 ---
 
@@ -89,4 +90,4 @@ Under NO circumstances may any coder substitute stock photos or make code mappin
 ## 5. Verification & Zero Speculation Invariant
 
 - **Zero Unverified "Fix" Claims:** Never claim a bug or issue is fixed until it is verified locally via `npm run build` AND in the rendered HTML output.
-- **Production Truth Invariant:** Never claim changes are live on `https://spiceandsail.com` unless verified by inspecting live HTTP headers and deploy state via Cloudflare Pages dashboard or explicit deploy evidence. Pushes to `master` run CI build/test; production deploy is manual (`wrangler pages deploy dist`) handled by the site owner. GitHub push must not be treated as a production deploy.
+- **Production Truth Invariant:** Never claim changes are live on `https://spiceandsail.com` unless verified by inspecting live HTTP headers and deploy state via Cloudflare Pages dashboard. **Push to `master` = automatic production deploy via Cloudflare Pages.** Treat every push as a potential production deploy.
