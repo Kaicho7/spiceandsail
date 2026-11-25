@@ -176,6 +176,19 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     return p.display + " " + (p.basis === "per_person" ? "per person" : "per vehicle");
   });
 
+  // Return raw tieredDisplay string for custom rendering (e.g., pricing tables)
+  eleventyConfig.addFilter("catTieredDisplay", (slug) => {
+    const svc = catService(slug);
+    if (!svc) return "";
+    const p = svc.pricing || {};
+    return p.tieredDisplay || "";
+  });
+
+  eleventyConfig.addFilter("split", (str, delimiter) => {
+    if (!str) return [];
+    return str.split(delimiter);
+  });
+
   // Premium pricing display filters for hybrid+premium UX
   eleventyConfig.addFilter("catViatorAnchor", (slug) => {
     const svc = catService(slug);

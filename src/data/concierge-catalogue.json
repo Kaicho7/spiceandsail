@@ -2237,6 +2237,200 @@
         "airport"
       ],
       "timeOfDay": []
+    },
+    {
+      "id": "SDR-01",
+      "slug": "self-drive-compact",
+      "name": "Compact Car Self-Drive Rental",
+      "type": "rental",
+      "category": "SDR",
+      "location": "Zanzibar island-wide",
+      "zones": [],
+      "duration": "Daily / weekly / monthly",
+      "pricing": {
+        "basis": "per_vehicle_per_day",
+        "min": 30,
+        "max": 35,
+        "display": "$30\u2013$35 / day",
+        "tieredDisplay": "1\u20133 days: $35/day \u2022 4\u20136 days: $32/day \u2022 7\u201313 days: $30/day \u2022 14+ days: $28/day \u2022 Monthly (28+ days): $750/month",
+        "basisNote": "per vehicle per day; includes full A/C, unlimited mileage, basic insurance, temporary Zanzibar driving permit ($10\u201315); examples: Toyota IST, Vios, Passo, Yaris; fuel not included",
+        "sourceQuality": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026); published operator rate cards (Taxi Trip, ReiseTaxi, local rental agencies)",
+        "sourceFiles": "Launch card v2; Taxi Trip Zanzibar; local rental partner rate sheets 2026",
+        "verified": true,
+        "viatorAnchor": 50,
+        "depositPercent": 20,
+        "depositAmount": 7,
+        "savingsVsViator": 15,
+        "savingsPercent": 30,
+        "weeklyRate": 210,
+        "monthlyRate": 750,
+        "permitFee": 15,
+        "insuranceIncluded": "basic",
+        "fuelPolicy": "full-to-full"
+      },
+      "includes": [
+        "Air-conditioned compact sedan/hatchback",
+        "Unlimited mileage",
+        "Basic insurance (third-party liability)",
+        "Temporary Zanzibar driving permit processing",
+        "Airport/hotel delivery & collection",
+        "24/7 roadside assistance contact"
+      ],
+      "importantNotes": [
+        "Minimum age 23, maximum 70; young driver surcharge may apply under 25",
+        "Driving is on the left (UK/Japan style); valid national license or IDP required",
+        "Fuel policy: full tank on collection, return full; stations sparse on south/east coasts",
+        "Off-road driving not permitted in compact category \u2014 use SUV/4x4 for unpaved tracks",
+        "Comprehensive insurance upgrade available on request"
+      ],
+      "whatToExpect": [
+        "Vehicle delivered to ZNZ Airport, Stone Town ferry terminal, or your hotel",
+        "Brief orientation on local driving conditions and permit handover",
+        "Full flexibility to explore at your own pace",
+        "WhatsApp support throughout rental period"
+      ],
+      "description": "Rent a compact air-conditioned car for city driving and paved highways across Zanzibar. Ideal for couples and solo travelers exploring Stone Town, Nungwi, Kendwa, and the main coastal roads. Includes temporary driving permit and basic insurance.",
+      "meetingPoint": "ZNZ Airport / Stone Town Ferry Terminal / Your hotel",
+      "interests": [
+        "self-drive",
+        "car-rental",
+        "independent",
+        "couples"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "SDR-02",
+      "slug": "self-drive-suv-4x4",
+      "name": "SUV & 4x4 Self-Drive Rental",
+      "type": "rental",
+      "category": "SDR",
+      "location": "Zanzibar island-wide",
+      "zones": [],
+      "duration": "Daily / weekly / monthly",
+      "pricing": {
+        "basis": "per_vehicle_per_day",
+        "min": 40,
+        "max": 55,
+        "display": "$40\u2013$55 / day",
+        "tieredDisplay": "1\u20133 days: $55/day \u2022 4\u20136 days: $50/day \u2022 7\u201313 days: $45/day \u2022 14+ days: $40/day \u2022 Monthly (28+ days): $1,050/month",
+        "basisNote": "per vehicle per day; includes 4WD, high ground clearance, full A/C, unlimited mileage, basic insurance, temporary Zanzibar driving permit ($10\u201315); examples: Suzuki Escudo 4WD, Toyota RAV4, Land Cruiser Prado; fuel not included",
+        "sourceQuality": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026); published operator rate cards (Taxi Trip, ReiseTaxi, local rental agencies)",
+        "sourceFiles": "Launch card v2; Taxi Trip Zanzibar; local rental partner rate sheets 2026",
+        "verified": true,
+        "viatorAnchor": 85,
+        "depositPercent": 20,
+        "depositAmount": 9,
+        "savingsVsViator": 30,
+        "savingsPercent": 35,
+        "weeklyRate": 315,
+        "monthlyRate": 1050,
+        "permitFee": 15,
+        "insuranceIncluded": "basic",
+        "fuelPolicy": "full-to-full"
+      },
+      "includes": [
+        "4x4 SUV with high ground clearance",
+        "4-wheel drive engaged for sand/dirt tracks",
+        "Unlimited mileage",
+        "Basic insurance (third-party liability)",
+        "Temporary Zanzibar driving permit processing",
+        "Airport/hotel delivery & collection",
+        "24/7 roadside assistance contact"
+      ],
+      "importantNotes": [
+        "Minimum age 23, maximum 70; young driver surcharge may apply under 25",
+        "Driving is on the left (UK/Japan style); valid national license or IDP required",
+        "Fuel policy: full tank on collection, return full; stations sparse on south/east coasts",
+        "Essential for secluded beaches, Kuza Cave access, south/east coast dirt tracks",
+        "Comprehensive insurance upgrade available on request"
+      ],
+      "whatToExpect": [
+        "Vehicle delivered to ZNZ Airport, Stone Town ferry terminal, or your hotel",
+        "Brief orientation on 4WD operation and local driving conditions",
+        "Full flexibility to reach remote beaches and villages",
+        "WhatsApp support throughout rental period"
+      ],
+      "description": "Rent a 4x4 SUV for full island exploration including remote beaches, dirt tracks, and secluded coves. High ground clearance and 4WD essential for south/east coast tracks, Kuza Cave, and off-the-beaten-path villages. Includes temporary driving permit and basic insurance.",
+      "meetingPoint": "ZNZ Airport / Stone Town Ferry Terminal / Your hotel",
+      "interests": [
+        "self-drive",
+        "car-rental",
+        "4x4",
+        "adventure",
+        "exploration"
+      ],
+      "timeOfDay": []
+    },
+    {
+      "id": "SDR-03",
+      "slug": "scooter-moped-rental",
+      "name": "Scooter & Moped Rental",
+      "type": "rental",
+      "category": "SDR",
+      "location": "Paje / Jambiani / Bwejuu / Nungwi / Kiwengwa / Stone Town",
+      "zones": [
+        "paje",
+        "jambiani",
+        "bwejuu",
+        "nungwi",
+        "kiwengwa",
+        "stone-town"
+      ],
+      "duration": "Daily / weekly",
+      "pricing": {
+        "basis": "per_scooter_per_day",
+        "min": 20,
+        "max": 25,
+        "display": "$20\u2013$25 / day",
+        "tieredDisplay": "1\u20132 days: $25/day \u2022 3\u20136 days: $22/day \u2022 7+ days: $20/day \u2022 Weekly (7 days): $130 \u2022 Monthly (28+ days): $450",
+        "basisNote": "per scooter per day; includes helmet, basic insurance, temporary Zanzibar driving permit ($10\u201315); 125cc automatic scooters (Honda PCX, Yamaha NMAX, Vespa-style); fuel not included",
+        "sourceQuality": "Zanzibar Launch Operating Model & Rate Card v2 (18 Nov 2026); published operator rate cards (local beach rental operators in Paje, Jambiani, Nungwi)",
+        "sourceFiles": "Launch card v2; Paje/Jambiani beach operator rates 2026; Nungwi rental listings",
+        "verified": true,
+        "viatorAnchor": 35,
+        "depositPercent": 20,
+        "depositAmount": 5,
+        "savingsVsViator": 10,
+        "savingsPercent": 29,
+        "weeklyRate": 130,
+        "monthlyRate": 450,
+        "permitFee": 15,
+        "insuranceIncluded": "basic",
+        "fuelPolicy": "full-to-full"
+      },
+      "includes": [
+        "125cc automatic scooter (Honda PCX, Yamaha NMAX, or Vespa-style)",
+        "Helmet included (rider + passenger)",
+        "Basic insurance (third-party liability)",
+        "Temporary Zanzibar driving permit processing",
+        "Hotel/beach delivery & collection",
+        "24/7 roadside assistance contact"
+      ],
+      "importantNotes": [
+        "Minimum age 18 (scooter); maximum 70; valid national license or IDP with motorcycle endorsement required",
+        "Driving is on the left; helmet mandatory by law \u2014 provided with rental",
+        "Ideal for Paje\u2192Jambiani\u2192Bwejuu beach hopping at low tide, Nungwi village exploring",
+        "Fuel policy: full tank on collection, return full; fuel stations in main towns",
+        "Not suitable for long-distance highway travel (Stone Town \u2194 Nungwi) \u2014 use car rental instead"
+      ],
+      "whatToExpect": [
+        "Scooter delivered to your hotel/beach location",
+        "Brief orientation on controls and local traffic",
+        "Helmet fitting for rider and passenger",
+        "Full flexibility for beach-hopping and short-distance exploration",
+        "WhatsApp support throughout rental period"
+      ],
+      "description": "Rent a 125cc automatic scooter or Vespa-style moped for fun, breezy island exploration. Perfect for beach-hopping between Paje, Jambiani, and Bwejuu at low tide, or cruising Nungwi/Kiwengwa village lanes. Includes helmet, temporary driving permit, and basic insurance.",
+      "meetingPoint": "Your hotel/beach location in Paje, Jambiani, Bwejuu, Nungwi, Kiwengwa, or Stone Town",
+      "interests": [
+        "scooter",
+        "moped",
+        "beach-hopping",
+        "independent",
+        "fun"
+      ],
+      "timeOfDay": []
     }
   ]
 }
