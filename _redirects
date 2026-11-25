@@ -61,3 +61,7 @@
 
 # Legacy .html URLs
 /about.html /about/ 301
+
+# German contact page consolidation (deleted /de/contact/ -> /de/kontakt/)
+/de/contact   /de/kontakt/  301
+/de/contact/  /de/kontakt/  301
