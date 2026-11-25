@@ -368,7 +368,6 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
 
   eleventyConfig.addGlobalData("conciergeCat", () => conciergeCatalogue);
   eleventyConfig.addGlobalData("hotelPublicRates", () => hotelPublicRates);
-  eleventyConfig.addGlobalData("reviews", () => require("./src/data/reviews.json"));
   eleventyConfig.addGlobalData("cataloguePackages", () => (conciergeCatalogue.services || [])
     .filter(s => s.type === "package" && s.hotelSlug)
     .map(s => {
@@ -884,6 +883,8 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
       "pages/packages.njk": "aerial-beach-boat-turquoise-water.jpg",
       "pages/safaris.njk": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
       "pages/experiences.njk": "horse-riding-beach-zanzibar-sunset.jpg",
+      "pages/it/tour/mnemba-snorkeling.njk": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
+      "pages/de/tour/mnemba-snorkeling.njk": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
       "pages/about.njk": "aerial-coastal-town-beach-turquoise-water.jpg",
       "pages/contact.njk": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
       "pages/travel-guide.njk": "aerial-beach-zanzibar-turquoise-water.jpg",
