@@ -11,23 +11,28 @@ lang: "en"
 <main class="" id="main-content">
   <section class="package-hero">
     <div class="tour-hero-content">
-      <span class="card-badge badge-package" style="background: linear-gradient(135deg, var(--dct-spice), var(--dct-coral));">PKG — 3-Day Package</span>
-      <h1>Zanzibar Essentials 3-Day Package</h1>
-      <p class="tour-meta">5 Days / 4 Nights</p>
+      <span class="card-badge badge-package" style="background: linear-gradient(135deg, var(--dct-spice), var(--dct-coral));">PKG — 5-Day VIP Bush &amp; Yacht</span>
+      <h1>Bush to Beach VIP: Mikumi Fly-In &amp; Private Yacht (5 Days)</h1>
+      <p class="tour-meta">5 Days / 4 Nights • Zanzibar ⇄ Mikumi National Park + Private Catamaran</p>
       <div class="tour-price-box">
         <span class="price-label">From</span>
         <span class="price-amount">$890–$1,250</span>
-        <span class="price-note"></span>
+        <span class="price-note">per person • Charter flights, park fees &amp; private yacht included</span>
       </div>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20the%20Zanzibar%20Essentials%203-day%20package" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+        <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check availability &amp; book</button>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%27d%20like%20to%20book%20the%20Bush%20to%20Beach%20VIP%20Mikumi%20%26%20Private%20Yacht%20package." target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Book via WhatsApp</a>
+      </div>
     </div>
   </section>
+
+  {% include "tour-booking-panel.njk" %}
 
   <div class="tour-grid">
     <div class="tour-main">
       <section class="tour-section">
         <h2>Overview</h2>
-        <p>Our signature introduction to Zanzibar. This 3-day package covers the island's must-see highlights: the spice heritage, the marine wonderland of Menai Bay, and the cultural treasures of Stone Town — all in one seamless itinerary.</p>
+        <p>Experience Tanzania's finest bush and ocean contrast in 5 seamless days: executive airport transfers on arrival, a charter fly-in safari from Zanzibar directly into Mikumi National Park in open 4x4 game cruisers, and a private 40ft sailing catamaran charter paired with Mnemba Atoll snorkeling.</p>
       </section>
 
       <section class="tour-section">
@@ -35,40 +40,40 @@ lang: "en"
         <div style="display: grid; gap: 1.5rem; margin-top: 1.25rem;">
           <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8ed; background: #fff;">
             <div style="height: 180px; overflow: hidden;">
-              <img src="{{ 'stone-town-guided-walking-tour-zanzibar.jpg' | cdnFile }}" alt="{{ 'stone-town-guided-walking-tour-zanzibar.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+              <img src="{{ 'mikumi-day-trip-safari-from-zanzibar.jpg' | cdnFile }}" alt="{{ 'mikumi-day-trip-safari-from-zanzibar.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             </div>
             <div style="padding: 1.25rem;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="background: var(--dct-ocean); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">1</span>
-                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Day 1 — Stone Town Culture &amp; Night Market</h3>
+                <span style="background: var(--dct-ocean); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">1–2</span>
+                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">VIP Arrival &amp; Fly-In Mikumi Big Game Safari</h3>
               </div>
-              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Private airport arrival transfer from ZNZ (all terminals) + guided UNESCO Stone Town historical walking tour with licensed guide + evening seafood tasting walk at Forodhani Gardens waterfront.</p>
+              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">VIP airport meet-and-greet plus direct domestic charter flights from ZNZ to Mikumi airstrip for full-day 4x4 pop-up roof game drives across the Mkata Floodplain spotting lions, elephants, giraffes, and hippos.</p>
             </div>
           </div>
 
           <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8ed; background: #fff;">
             <div style="height: 180px; overflow: hidden;">
-              <img src="{{ 'safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg' | cdnFile }}" alt="{{ 'safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+              <img src="{{ 'dhow-boat-turquoise-water-zanzibar.jpg' | cdnFile }}" alt="{{ 'dhow-boat-turquoise-water-zanzibar.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             </div>
             <div style="padding: 1.25rem;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="background: var(--dct-gold, #D4AF37); color: #0C1A24; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">2</span>
-                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Day 2 — Safari Blue &amp; Menai Bay Dhow Day</h3>
+                <span style="background: var(--dct-gold, #D4AF37); color: #0C1A24; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">3–4</span>
+                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Private 40ft Catamaran Charter &amp; Mnemba Reef</h3>
               </div>
-              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Full-day traditional handcrafted wooden dhow sailing through Menai Bay Conservation Area. Snorkeling over coral gardens, dolphin watching, sandbank swim, and a grilled seafood feast with tropical fruit on a private sandbank.</p>
+              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Spend a full day aboard a private luxury 40ft sailing catamaran with fresh seafood chef BBQ, chilled sunset wine, and guided reef snorkeling around Mnemba Atoll Marine Reserve.</p>
             </div>
           </div>
 
           <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8ed; background: #fff;">
             <div style="height: 180px; overflow: hidden;">
-              <img src="{{ 'zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg' | cdnFile }}" alt="{{ 'zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+              <img src="{{ 'white-minivan-zanzibar-transfer-vehicle.jpg' | cdnFile }}" alt="{{ 'white-minivan-zanzibar-transfer-vehicle.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             </div>
             <div style="padding: 1.25rem;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="background: #059669; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">3</span>
-                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Day 3 — Spice Plantation &amp; Departure Transfer</h3>
+                <span style="background: #059669; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">5</span>
+                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Coastal Leisure &amp; VIP Airport Transfer</h3>
               </div>
-              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Interactive sensory spice walk through cloves, cinnamon, and vanilla, complete with palm leaf crowning and traditional Swahili farm lunch, followed by private departure transfer to ZNZ Airport.</p>
+              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Unhurried final beach morning followed by private executive minivan transfer from your hotel to Abeid Amani Karume International Airport (ZNZ).</p>
             </div>
           </div>
         </div>
@@ -77,25 +82,21 @@ lang: "en"
       <section class="tour-section">
         <h2>Inclusions</h2>
         <ul class="includes-list">
-          <li>Licensed English-speaking guide throughout</li>
-          <li>All airport transfers (any arrival/departure zone)</li>
-          <li>All entry fees: Stone Town museums, Menai Bay marine conservation ($10), spice farm</li>
-          <li>Snorkel gear, towels, and beach essentials provided</li>
-          <li>Dhow boat, crew, and fuel for Safari Blue</li>
-          <li>Seafood barbecue lunch on sandbank (Day 2)</li>
-          <li>Spice farm lunch with local dishes (Day 3)</li>
-          <li>WhatsApp support throughout your trip</li>
+          <li>Return charter flights Zanzibar ⇄ Mikumi airstrip</li>
+          <li>4x4 open-sided pop-up safari game drive with certified TANAPA naturalist</li>
+          <li>All TANAPA national park entry passes &amp; marine conservation levies</li>
+          <li>Private 40ft Catamaran yacht charter with seafood BBQ &amp; sunset wine</li>
+          <li>VIP private airport &amp; inter-hotel transfers in Zanzibar</li>
         </ul>
       </section>
 
       <section class="tour-section">
         <h2>Important Notes</h2>
         <ul class="notes-list">
-          <li>Hotels not included — we can arrange partner accommodation at wholesale rates</li>
-          <li>Marine conservation fees included: Menai Bay $10 per non-EAC adult</li>
-          <li>Price assumes 2+ travelers — single supplement applies</li>
-          <li>Book 3+ days in advance during peak season (July–August, December–January)</li>
-          <li>Bring swimwear, hat, reef-safe sunscreen, and a light jacket for evenings</li>
+          <li>Hotels not included — pair with <a href="/hotels/the-one-resort-zanzibar/">The One Resort Zanzibar</a> or <a href="/hotels/le-paradis-boutique-hotel-zanzibar/">Le Paradis Boutique</a> at contracted partner rates</li>
+          <li>Soft luggage limit: 15 kg pp on domestic bush charter aircraft</li>
+          <li>30% deposit required upon confirmation to issue domestic safari flight tickets</li>
+          <li>Zero-pressure 100% weather refund guarantee on flights and private charters</li>
         </ul>
       </section>
       {% include "tour-reviews.njk" %}
@@ -106,9 +107,10 @@ lang: "en"
       <div class="booking-card">
         <div class="price">$890–$1,250 <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ person</span></div>
         <h3>Ready to Book?</h3>
-        <p style="opacity: 0.8; margin-bottom: 1.25rem;">Send us your dates and group size on WhatsApp. We'll confirm availability and send the final price including all fees.</p>
-        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20the%20Zanzibar%20Essentials%203-day%20package" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
-        <p class="note">✓ Verified published rate • Marine conservation fees included • Zero booking deposit</p>
+        <p style="opacity: 0.8; margin-bottom: 1.25rem;">Send your dates and group size. We verify Mikumi charter seat availability and catamaran dates immediately.</p>
+        <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 0.75rem;">Check availability</button>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20Bush%20to%20Beach%20VIP%20(5%20Days)." target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
+        <p class="note">✓ Verified published rate • TANAPA &amp; marine fees included</p>
       </div>
     </aside>
   </div>

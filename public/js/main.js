@@ -274,25 +274,45 @@ document.addEventListener('DOMContentLoaded', function () {
     lazyImages.forEach(function(img) { imageObserver.observe(img); });
   }
 
-  // GA4 / Analytics Custom Event Tracking Helper
-  function trackEvent(eventName, eventParams) {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', eventName, eventParams);
-    } else if (window.dataLayer && Array.isArray(window.dataLayer)) {
-      window.dataLayer.push(Object.assign({ event: eventName }, eventParams));
-    }
+  // GA4 / Analytics Custom Event Tracking Helper (gtag.js direct)
+  function inferFunnelStage(pathOrHref) {
+    var s = String(pathOrHref || '').toLowerCase();
+    if (s.includes('/transfers') || s.includes('transfer') || s.includes('taxi') || s.includes('ferry')) return 'transfers';
+    if (s.includes('/hotels') || s.includes('hotel') || s.includes('lodge') || s.includes('resort') || s.includes('stay')) return 'hotels';
+    if (s.includes('/safaris') || s.includes('safari') || s.includes('mikumi') || s.includes('serengeti') || s.includes('selous') || s.includes('saadani')) return 'safaris';
+    if (s.includes('/packages') || s.includes('package')) return 'packages';
+    if (s.includes('/tours') || s.includes('tour') || s.includes('blue') || s.includes('mnemba')) return 'tours';
+    return 'general';
   }
 
-  // Track all WhatsApp Outbound Click CTAs site-wide
+  function trackEvent(eventName, eventParams) {
+    if (!eventName || typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, eventParams || {});
+  }
+  window.snsTrack = trackEvent;
+
+  // Track all explicit [data-sns-event] UI actions + WhatsApp outbound links via gtag()
   document.addEventListener('click', function(e) {
+    if (!e.target || !e.target.closest) return;
+    var tracked = e.target.closest('[data-sns-event]');
+    if (tracked) {
+      var evName = tracked.getAttribute('data-sns-event');
+      trackEvent(evName, {
+        funnel_stage: tracked.getAttribute('data-sns-funnel') || inferFunnelStage(tracked.getAttribute('href') || window.location.pathname),
+        event_label: tracked.getAttribute('data-sns-label') || tracked.getAttribute('data-sns-hotel') || tracked.getAttribute('data-sns-tour') || (tracked.innerText || '').trim().slice(0, 80),
+        page_location: window.location.pathname
+      });
+    }
+
     var link = e.target.closest('a');
     if (!link) return;
     var href = link.getAttribute('href') || '';
     if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
-      var ctaContext = link.getAttribute('title') || link.innerText.trim() || 'WhatsApp CTA';
+      var ctaContext = link.getAttribute('data-sns-hotel') || link.getAttribute('data-sns-tour') || link.getAttribute('title') || link.innerText.trim() || 'WhatsApp CTA';
       trackEvent('whatsapp_conversion_click', {
         event_category: 'Engagement',
-        event_label: ctaContext,
+        funnel_stage: inferFunnelStage(href + ' ' + window.location.pathname),
+        event_label: ctaContext.slice(0, 100),
         page_location: window.location.pathname,
         link_url: href
       });

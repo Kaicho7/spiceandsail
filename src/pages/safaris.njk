@@ -41,9 +41,10 @@ permalink: "/safaris/index.html"
               </div>
             </div>
             <div class="card-footer">
-              <span class="card-price">From $440 <span class="price-basis">per person</span></span>
+              <span class="card-price">From {% catPrice "mikumi-nyerere-day-safari" %} <span class="price-basis">per person</span></span>
               <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <a href="/safaris/mikumi-day-trip/" class="btn btn-primary btn-sm">Mikumi Day Guide</a>
+                <button type="button" data-sns-booking-open data-service-slug="mikumi-nyerere-day-safari" class="btn btn-primary btn-sm">Check Availability</button>
+                <a href="/safaris/mikumi-day-trip/" class="btn btn-secondary btn-sm">Day Guide</a>
                 <a href="/tours/mikumi-nyerere-day-safari/" class="btn btn-secondary btn-sm">Overview</a>
               </div>
             </div>
@@ -71,8 +72,65 @@ permalink: "/safaris/index.html"
               </div>
             </div>
             <div class="card-footer">
-              <span class="card-price">From $900 <span class="price-basis">per person</span></span>
-              <a href="/tours/serengeti-3day-flyin/" class="btn btn-primary btn-sm">Details & Booking</a>
+              <span class="card-price">From {% catPrice "serengeti-3day-flyin" %} <span class="price-basis">per person</span></span>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" data-sns-booking-open data-service-slug="serengeti-3day-flyin" class="btn btn-primary btn-sm">Check Availability</button>
+                <a href="/tours/serengeti-3day-flyin/" class="btn btn-secondary btn-sm">Details &amp; Booking</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card safari-card reveal" data-category="SAF">
+          <div class="card-image" style="position:relative;">
+            <img src="{{ 'saadani-wami-river-boat-safari.jpg' | cdnFile }}" alt="{{ 'saadani-wami-river-boat-safari.jpg' | canonicalAlt }}" loading="lazy">
+            <span class="card-badge badge-safari" style="position: absolute; top: 1rem; left: 1rem; right: auto;">15-Min Flight / Boat</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Saadani Bush &amp; Beach Safari</h3>
+            <p class="card-meta">Full day or 2 Days • Coast across Zanzibar Channel</p>
+            <p class="card-description">East Africa's only coastal national park where elephants, giraffes, and lions roam steps from the Indian Ocean, paired with a Wami River hippo &amp; crocodile boat cruise.</p>
+            <div class="safari-includes" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--dct-gray-light);">
+              <div class="safari-include-item" style="padding: 0.75rem; background: var(--dct-ocean-light); border-radius: var(--border-radius);">
+                <strong style="color: var(--dct-ocean);">15-min Flight or Boat</strong> — fastest access from Zanzibar
+              </div>
+              <div class="safari-include-item" style="padding: 0.75rem; background: var(--dct-palm-light); border-radius: var(--border-radius);">
+                <strong style="color: var(--dct-palm);">Wami River Safari</strong> — hippos, crocs &amp; fish eagles
+              </div>
+            </div>
+            <div class="card-footer">
+              <span class="card-price">From {% catPrice "saadani-national-park-safari" %} <span class="price-basis">per person</span></span>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" data-sns-booking-open data-service-slug="saadani-national-park-safari" class="btn btn-primary btn-sm">Check Availability</button>
+                <a href="/tours/saadani-national-park-safari/" class="btn btn-secondary btn-sm">Details</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card safari-card reveal" data-category="SAF">
+          <div class="card-image" style="position:relative;">
+            <img src="{{ 'selous-rufiji-river-boat-safari.jpg' | cdnFile }}" alt="{{ 'selous-rufiji-river-boat-safari.jpg' | canonicalAlt }}" loading="lazy">
+            <span class="card-badge badge-safari" style="position: absolute; top: 1rem; left: 1rem; right: auto;">2 Days / 1 Night</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Selous (Nyerere) 2-Day Fly-In Safari</h3>
+            <p class="card-meta">2 days / 1 night • Rufiji River &amp; Tented Camp</p>
+            <p class="card-description">Fly 45 minutes from Zanzibar to Africa's largest game reserve for 4x4 big game drives, sunset Rufiji River boat cruise, and riverside tented camp stay.</p>
+            <div class="safari-includes" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--dct-gray-light);">
+              <div class="safari-include-item" style="padding: 0.75rem; background: var(--dct-ocean-light); border-radius: var(--border-radius);">
+                <strong style="color: var(--dct-ocean);">Sunset Boat Safari</strong> — Rufiji River hippos &amp; crocodiles
+              </div>
+              <div class="safari-include-item" style="padding: 0.75rem; background: var(--dct-spice-light); border-radius: var(--border-radius);">
+                <strong style="color: var(--dct-spice-dark);">Full-board riverside tented camp + return flights</strong>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span class="card-price">From {% catPrice "selous-nyerere-fly-in-safari" %} <span class="price-basis">per person</span></span>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" data-sns-booking-open data-service-slug="selous-nyerere-fly-in-safari" class="btn btn-primary btn-sm">Check Availability</button>
+                <a href="/tours/selous-nyerere-fly-in-safari/" class="btn btn-secondary btn-sm">Details</a>
+              </div>
             </div>
           </div>
         </article>
@@ -457,8 +515,12 @@ permalink: "/safaris/index.html"
   <section class="cta-section">
     <div class="cta-content reveal">
       <h2>Ready for Your Safari?</h2>
-      <p>Message us on WhatsApp with your dates, group size, and preferred parks. We'll send a detailed itinerary and transparent quote.</p>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20a%20safari%20from%20Zanzibar" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Get a Safari Quote</a>
+      <p>Message us on WhatsApp with your dates, group size, and preferred parks. We'll send a detailed itinerary and transparent quote including ZNZ airport transfers and partner stays.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20a%20safari%20from%20Zanzibar" target="_blank" rel="noopener" class="btn btn-accent btn-lg">Get a Safari Quote</a>
+        <a href="/hotels/" class="btn btn-outline btn-lg">Pair With Contracted Zanzibar Hotels</a>
+        <a href="/transfers/" class="btn btn-outline btn-lg">Airport Transfers</a>
+      </div>
     </div>
   </section>
 </main>

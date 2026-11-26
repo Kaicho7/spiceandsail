@@ -51,7 +51,7 @@ areaDataKey: "Fumba"
             <li><strong>Jan–Feb</strong> -- Hot, dry, calm seas</li>
             <li><strong>Jun–Oct</strong> -- Cool, dry, kite season</li>
           </ul>
-          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Sea temp: { areaData.climate.seaTempC.min }-{ areaData.climate.seaTempC.max }C year-round</p>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Sea temp: {{ areaData.climate.seaTempC.min }}-{{ areaData.climate.seaTempC.max }}C year-round</p>
         </div>
         <div class="card reveal" style="padding:1.5rem;">
           <h3 style="margin-top:0;">🌧️ Wet Seasons</h3>
@@ -59,22 +59,22 @@ areaDataKey: "Fumba"
             <li><strong>Mar–May</strong> -- Long rains (peak Apr)</li>
             <li><strong>Nov–Dec</strong> -- Short rains</li>
           </ul>
-          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Avg air temp: { areaData.climate.avgTempC.min }-{ areaData.climate.avgTempC.max }C</p>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Avg air temp: {{ areaData.climate.avgTempC.min }}-{{ areaData.climate.avgTempC.max }}C</p>
         </div>
         <div class="card reveal" style="padding:1.5rem;">
           <h3 style="margin-top:0;">🌊 Wind & Kite Season</h3>
           <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
-            <li><strong>Jun–Sep:</strong> { areaData.climate.windKnots["Jun–Sep"] }</li>
-            <li><strong>Dec–Mar:</strong> { areaData.climate.windKnots["Dec–Mar"] }</li>
+            <li><strong>Jun–Sep:</strong> {{ areaData.climate.windKnots["Jun–Sep"] }}</li>
+            <li><strong>Dec–Mar:</strong> {{ areaData.climate.windKnots["Dec–Mar"] }}</li>
           </ul>
-          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">{ areaData.climate.kiteSeason or "Consistent winds" }</p>
+          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">{{ areaData.climate.kiteSeason or "Consistent winds" }}</p>
         </div>
       </div>
 
       <div class="card reveal" style="padding:1.5rem;background:#f8fafc;border-left:4px solid #00667c;">
         <h3 style="margin-top:0;">🎯 Best Time for You</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem;">
-          <div><strong>Swimming:</strong> { areaData.climate.bestSwimMonths }</div>
+          <div><strong>Swimming:</strong> {{ areaData.climate.bestSwimMonths }}</div>
           <div><strong>Diving/Snorkeling:</strong> Jan–Mar, Jun–Oct (best viz)</div>
           <div><strong>Kite Surfing:</strong> Jun–Sep (15–25 knots)</div>
           <div><strong>Budget:</strong> Mar–May, Nov (low season rates)</div>
@@ -160,6 +160,17 @@ areaDataKey: "Fumba"
         <h2>Where to Stay in Fumba / Mbweni</h2>
         <p class="section-subtitle">Boutique hotels and resorts in Fumba / Mbweni. Click through for direct booking or contact us for referral rates.</p>
       </div>
+      <div class="card reveal" style="padding:1.25rem;margin-bottom:1.5rem;border-left:4px solid #D4AF37;background:#fff;">
+        <h3 style="margin-top:0;color:#003853;">Contracted Partner Stays Across Zanzibar</h3>
+        <p style="margin:0 0 0.75rem;color:#4e5d66;font-size:0.92rem;">Book direct contracted rates with instant ZNZ airport transfer pairing:</p>
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+          <a href="/hotels/the-one-resort-zanzibar/" class="btn btn-primary btn-sm">The One Resort Zanzibar</a>
+          <a href="/hotels/le-paradis-boutique-hotel-zanzibar/" class="btn btn-secondary btn-sm">Le Paradis Boutique (Paje/Jambiani)</a>
+          <a href="/hotels/mkeka-spice-lodge/" class="btn btn-secondary btn-sm">Mkeka Spice Lodge (Jambiani)</a>
+          <a href="/hotels/the-island-stonetown/" class="btn btn-secondary btn-sm">The Island Stonetown</a>
+          <a href="/hotels/stone-town-view-hotel/" class="btn btn-secondary btn-sm">Stonetown View Hotel</a>
+        </div>
+      </div>
       <div class="cards-grid hotel-grid">
 {% for hotel in hotels.hotels | filterByZone(title) %}
   <article class="card hotel-card reveal" data-tier="{{ hotel.tier }}" data-zone="{{ hotel.zone }}" data-island="{{ hotel.island }}">
@@ -169,14 +180,15 @@ areaDataKey: "Fumba"
       <span class="card-badge badge-{{ hotel.tier | lower | replace('upper-', '') }}">{{ hotel.tier | capitalize }}</span>
     </div>
     <div class="card-content">
-      <h3 class="card-title"><a href="{{ hotel.website }}" target="_blank" rel="noopener">{{ hotel.name }}</a></h3>
+      {% set targetHotelSlug = "stone-town-view-hotel" if hotel.slug == "stonetown-view-hotel" else hotel.slug %}
+      <h3 class="card-title"><a href="/hotels/{{ targetHotelSlug }}/">{{ hotel.name }}</a></h3>
       <p class="card-meta">{{ hotel.zone }}{% if hotel.zone %}, {% endif %}{{ hotel.island }} • {{ hotel.star_rating or "Ungraded" }}</p>
       {% if hotel.category %}<p class="card-description">{{ hotel.category }}</p>{% endif %}
       <div class="card-footer">
         <span class="card-price">{{ hotel.price_range or "Contact for rates" }}</span>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          <a href="{{ hotel.website }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Website</a>
-          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20inquire%20about%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
+          <a href="/hotels/{{ targetHotelSlug }}/" class="btn btn-primary btn-sm">View Hotel &amp; Rates</a>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Hi%20Spice%20and%20Sail%2C%20I%20would%20like%20to%20inquire%20about%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" data-sns-event="area_hotel_whatsapp" data-sns-funnel="hotels" data-sns-hotel="{{ hotel.name }}">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -198,6 +210,7 @@ areaDataKey: "Fumba"
   <article class="card attraction-card reveal" data-type="{{ attraction.category }}">
     <div class="card-image" style="position:relative;">
       <img src="{{ (attraction.name | attractionImg(attraction.category)) | cdnFile }}" alt="{{ attraction.name }}" loading="lazy">
+    </div>
     <div class="card-content">
       <span class="card-badge badge-cultural">{{ attraction.type | attractionTypeLabel }}</span>
       <h3 class="card-title">{{ attraction.name }}</h3>
@@ -213,80 +226,6 @@ areaDataKey: "Fumba"
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Climate & When to Visit</span>
-        <h2>Fumba Weather Guide</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;">
-        <div class="card reveal" style="padding:1.5rem;">
-          <h3 style="margin-top:0;">☀️ Dry Seasons (Best)</h3>
-          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
-            <li><strong>Jan–Feb</strong> -- Hot, dry, calm seas</li>
-            <li><strong>Jun–Oct</strong> -- Cool, dry, kite season</li>
-          </ul>
-          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Sea temp: { areaData.climate.seaTempC.min }-{ areaData.climate.seaTempC.max }C year-round</p>
-        </div>
-        <div class="card reveal" style="padding:1.5rem;">
-          <h3 style="margin-top:0;">🌧️ Wet Seasons</h3>
-          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
-            <li><strong>Mar–May</strong> -- Long rains (peak Apr)</li>
-            <li><strong>Nov–Dec</strong> -- Short rains</li>
-          </ul>
-          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">Avg air temp: { areaData.climate.avgTempC.min }-{ areaData.climate.avgTempC.max }C</p>
-        </div>
-        <div class="card reveal" style="padding:1.5rem;">
-          <h3 style="margin-top:0;">🌊 Wind & Kite Season</h3>
-          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
-            <li><strong>Jun–Sep:</strong> { areaData.climate.windKnots["Jun–Sep"] }</li>
-            <li><strong>Dec–Mar:</strong> { areaData.climate.windKnots["Dec–Mar"] }</li>
-          </ul>
-          <p style="margin:1rem 0 0;font-size:.9rem;color:#4e5d66;">{ areaData.climate.kiteSeason or "Consistent winds" }</p>
-        </div>
-      </div>
-
-      <div class="card reveal" style="padding:1.5rem;background:#f8fafc;border-left:4px solid #00667c;">
-        <h3 style="margin-top:0;">🎯 Best Time for You</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem;">
-          <div><strong>Swimming:</strong> { areaData.climate.bestSwimMonths }</div>
-          <div><strong>Diving/Snorkeling:</strong> Jan–Mar, Jun–Oct (best viz)</div>
-          <div><strong>Kite Surfing:</strong> Jun–Sep (15–25 knots)</div>
-          <div><strong>Budget:</strong> Mar–May, Nov (low season rates)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Who It's For</span>
-        <h2>Is Fumba Right for You?</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
-        <div class="card reveal" style="padding:1.5rem;border-left:4px solid #28a745;">
-          <h3 style="margin-top:0;">✅ Perfect For</h3>
-          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
-            {% for item in areaData.demographics.bestFor %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="card reveal" style="padding:1.5rem;border-left:4px solid #dc3545;">
-          <h3 style="margin-top:0;">⚠️ Less Suited</h3>
-          <ul style="margin:0;padding-left:1.25rem;line-height:1.8;">
-            {% for item in areaData.demographics.lessSuited %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="card reveal" style="padding:1.5rem;background:#f8fafc;">
-          <h3 style="margin-top:0;">🌟 Vibe Check</h3>
-          <p style="margin:0;color:#4e5d66;line-height:1.7;">{{ areaData.demographics.vibe }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section">
     <div class="container">
@@ -299,7 +238,8 @@ areaDataKey: "Fumba"
 {% for tour in tours | filterByZone(title) %}
   <article class="card tour-card reveal" data-category="{{ tour.category }}">
     <div class="card-image" style="position:relative;">
-      <img src="{{ (__slugMap[tour.seo_slug] or __slugMap[tour.slug] or 'excursions.png') | cdnFile }}" alt="{{ tour.title }}" loading="lazy">
+      <img src="{{ (__slugMap[tour.seo_slug] or __slugMap[tour.slug] or 'default-tour-hero.jpg') | cdnFile }}" alt="{{ tour.title }}" loading="lazy">
+    </div>
     <div class="card-content">
       <span class="card-badge badge-{{ tour.category | lower }}">{{ tour.category | attractionTypeLabel }}</span>
       <h3 class="card-title"><a href="/tours/{{ tour.seo_slug }}/">{{ tour.title }}</a></h3>
@@ -307,7 +247,7 @@ areaDataKey: "Fumba"
       <p class="card-description">{{ tour.short_description }}</p>
       <div class="card-footer">
         <span class="card-price">{% catPrice tour.slug %} <span class="price-basis">per person</span></span>
-        <a href="/tours/{{ tour.seo_slug }}/" class="btn btn-primary btn-sm">Details & Booking</a>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;"><a href="/tours/{{ tour.seo_slug }}/" class="btn btn-secondary btn-sm">Details</a><button type="button" data-sns-booking-open data-service-slug="{{ tour.slug }}" class="btn btn-primary btn-sm">Book Now</button></div>
       </div>
     </div>
   </article>
@@ -321,7 +261,7 @@ areaDataKey: "Fumba"
       <div class="reveal">
         <h2 style="margin-bottom: 1rem;">Need an Airport Transfer?</h2>
         <p style="color: var(--dct-text-muted); margin-bottom: 1.5rem;">Private transfer from ZNZ Airport to Fumba / Mbweni -- fixed price, flight tracking, meet & greet included.</p>
-        <a href="/transfers/" class="btn btn-primary btn-lg">View Transfer Options</a>
+        <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;"><a href="/transfers/#transfer-calculator" class="btn btn-primary btn-lg">ZNZ → Fumba Transfer ($30–$45)</a><a href="/transfers/#transfer-calculator" class="btn btn-secondary btn-lg">Transfer Calculator</a></div>
       </div>
     </div>
   </section>

@@ -30,6 +30,21 @@ tours_all = tours_raw if isinstance(tours_raw, list) else tours_raw.get("tours",
 
 PARTNER = {"le-paradis-boutique-hotel-zanzibar", "mkeka-spice-lodge", "stone-town-view-hotel",
            "stonetown-view-hotel", "the-island-stonetown", "the-one-resort-zanzibar"}
+PARTNER_TRANSFER_URLS = {
+    "the-one-resort-zanzibar": "/transfers/hotel-the-one-resort/",
+    "le-paradis-boutique-hotel-zanzibar": "/transfers/hotel-le-paradis-boutique/",
+    "mkeka-spice-lodge": "/transfers/hotel-mkeka-spice-lodge/",
+    "the-island-stonetown": "/transfers/hotel-island-stone-town/",
+    "stone-town-view-hotel": "/transfers/hotel-stone-town-view/",
+    "stonetown-view-hotel": "/transfers/hotel-stone-town-view/",
+}
+PARTNER_CROSS_LINKS = [
+    ("The One Resort Zanzibar", "/hotels/the-one-resort-zanzibar/", "Makunduchi · From $136"),
+    ("Le Paradis Boutique Hotel", "/hotels/le-paradis-boutique-hotel-zanzibar/", "Jambiani / Paje"),
+    ("Mkeka Spice Lodge", "/hotels/mkeka-spice-lodge/", "Jambiani"),
+    ("The Island Stonetown", "/hotels/the-island-stonetown/", "Stone Town"),
+    ("Stonetown View Hotel", "/hotels/stone-town-view-hotel/", "Stone Town · From $29"),
+]
 ALIAS = {"stonetown-view-hotel": "stone-town-view-hotel"}
 BOILER = re.compile(r"^Located in .+\. A popular .+ for visitors to Zanzibar\.$")
 MIN = 50
@@ -313,9 +328,19 @@ def good_to_know(research, h):
             items.append(f"Views: {research['viewTypes']}")
         if research.get("boards"):
             boards = research["boards"]
-            if isinstance(boards, (list, tuple)):
-                boards = ", ".join(str(b) for b in boards)
-            items.append(f"Boards: {boards}")
+            if isinstance(boards, dict):
+                label_map = {
+                    "halfBoard": "Half Board",
+                    "fullBoard": "Full Board",
+                    "allInclusive": "All Inclusive",
+                    "bedAndBreakfast": "Bed & Breakfast",
+                }
+                board_parts = [f"{label_map.get(str(k), str(k))}: {clean_text(v)}" for k, v in boards.items() if v]
+                boards = " | ".join(board_parts)
+            elif isinstance(boards, (list, tuple)):
+                boards = ", ".join(clean_text(str(b)) for b in boards)
+            if boards:
+                items.append(f"Boards: {esc(str(boards))}")
         if research.get("officialSite"):
             items.append(f"Official site: <a href=\"{esc(research['officialSite'])}\" rel=\"nofollow noopener\">{esc(research['officialSite'])}</a>")
     else:
@@ -541,6 +566,23 @@ for h in hotels_build:
         "confirmed": "Confirmed direct rate",
         "contracted": "Contracted partner rate",
     }.get(rate_status, "Direct quote")
+    is_partner = h.get("slug") in PARTNER or slug in PARTNER
+    transfer_url = PARTNER_TRANSFER_URLS.get(slug) or PARTNER_TRANSFER_URLS.get(rate_slug) or "/transfers/#transfer-calculator"
+    transfer_label = f"Book ZNZ Airport Transfer to {name}" if (slug in PARTNER_TRANSFER_URLS or rate_slug in PARTNER_TRANSFER_URLS) else "See airport transfer rates"
+    partner_cross_sell = ""
+    if not is_partner:
+        links_html = "".join(
+            f'<li><a href="{esc(u)}"><strong>{esc(lbl)}</strong></a> ({esc(meta)})</li>'
+            for lbl, u, meta in PARTNER_CROSS_LINKS
+        )
+        partner_cross_sell = (
+            '<div class="card" style="padding:1.25rem;margin-top:1.5rem;border-left:4px solid #D4AF37;">'
+            '<h3 style="margin-top:0;">Compare Official Contracted Partner Hotels</h3>'
+            '<p style="margin:0 0 0.75rem;">Looking for instant direct-contracted rates bundled with ZNZ airport transfers?</p>'
+            f'<ul style="margin:0 0 0.75rem;padding-left:1.25rem;line-height:1.7;">{links_html}</ul>'
+            '<p style="margin:0;"><a href="/transfers/#transfer-calculator"><strong>Calculate Airport Transfer to Your Hotel →</strong></a></p>'
+            '</div>'
+        )
     faq_html, faq_items = hotel_faq(name, research, h, from_rate)
     data = {
         "hotelNameHtml": esc(name),
@@ -555,6 +597,9 @@ for h in hotels_build:
         "roomTypesSection": room_types_section(research),
         "rateSection": rate_section,
         "goodToKnow": good_to_know(research, h),
+        "transferUrl": esc(transfer_url),
+        "transferLabel": esc(transfer_label),
+        "partnerCrossSell": partner_cross_sell,
         "faqHtml": faq_html,
         "bookingButton": booking_button,
         "priceLine": price_line,
@@ -564,7 +609,7 @@ for h in hotels_build:
         "schemaJson": hotel_schema(name, slug, photo, research, h, from_rate, faq_items),
     }
     content = render(hotel_tpl, data)
-    robots = "index,follow" if (h.get("slug") in PARTNER or slug in PARTNER) else "noindex,follow"
+    robots = "index,follow" if is_partner else "noindex,follow"
     front = (
         "---\n"
         "layout: layouts/base.njk\n"

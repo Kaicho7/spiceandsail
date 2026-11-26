@@ -11,23 +11,28 @@ lang: "en"
 <main class="" id="main-content">
   <section class="package-hero">
     <div class="tour-hero-content">
-      <span class="card-badge badge-package" style="background: linear-gradient(135deg, var(--dct-spice), var(--dct-coral));">PKG — 3-Day Package</span>
-      <h1>Zanzibar Essentials 3-Day Package</h1>
-      <p class="tour-meta">4 Days / 3 Nights</p>
+      <span class="card-badge badge-package" style="background: linear-gradient(135deg, var(--dct-spice), var(--dct-coral));">PKG — 4-Day Hidden Gems</span>
+      <h1>Zanzibar Hidden Gems &amp; Sacred Caves (4 Days)</h1>
+      <p class="tour-meta">4 Days / 3 Nights • Maalum Cenote, Kuza Cave, Uzi Island &amp; Salaam Cave</p>
       <div class="tour-price-box">
         <span class="price-label">From</span>
         <span class="price-amount">$320–$420</span>
-        <span class="price-note"></span>
+        <span class="price-note">per person • Private guide &amp; transfers included</span>
       </div>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20the%20Zanzibar%20Essentials%203-day%20package" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+        <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check availability &amp; book</button>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%27d%20like%20to%20book%20Zanzibar%20Hidden%20Gems%20%26%20Sacred%20Caves%20(4%20Days)." target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Book via WhatsApp</a>
+      </div>
     </div>
   </section>
+
+  {% include "tour-booking-panel.njk" %}
 
   <div class="tour-grid">
     <div class="tour-main">
       <section class="tour-section">
         <h2>Overview</h2>
-        <p>Our signature introduction to Zanzibar. This 3-day package covers the island's must-see highlights: the spice heritage, the marine wonderland of Menai Bay, and the cultural treasures of Stone Town — all in one seamless itinerary.</p>
+        <p>Step completely off the crowded tourist loop on a 4-day curated exploration of south-coast Zanzibar: reserved swim slots at Maalum Natural Cenote, traditional Swahili drumming at Kuza Cave, a 4x4 low-tide crossing along the submerged "Moses Road" causeway to untouched Uzi Island, and rescued sea turtles at Kizimkazi's Salaam Cave.</p>
       </section>
 
       <section class="tour-section">
@@ -35,40 +40,40 @@ lang: "en"
         <div style="display: grid; gap: 1.5rem; margin-top: 1.25rem;">
           <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8ed; background: #fff;">
             <div style="height: 180px; overflow: hidden;">
-              <img src="{{ 'stone-town-guided-walking-tour-zanzibar.jpg' | cdnFile }}" alt="{{ 'stone-town-guided-walking-tour-zanzibar.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+              <img src="{{ 'people-swimming-turquoise-water-steps.jpg' | cdnFile }}" alt="{{ 'people-swimming-turquoise-water-steps.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             </div>
             <div style="padding: 1.25rem;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="background: var(--dct-ocean); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">1</span>
-                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Day 1 — Stone Town Culture &amp; Night Market</h3>
+                <span style="background: var(--dct-ocean); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">1–2</span>
+                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Maalum Secret Cenote &amp; Kuza Cave Drumming</h3>
               </div>
-              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Private airport arrival transfer from ZNZ (all terminals) + guided UNESCO Stone Town historical walking tour with licensed guide + evening seafood tasting walk at Forodhani Gardens waterfront.</p>
+              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Private ZNZ arrival transfer plus pre-reserved timed entry to Maalum chemical-free freshwater cenote and a cultural drumming, cooking, and cave swim visit in Jambiani.</p>
             </div>
           </div>
 
           <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8ed; background: #fff;">
             <div style="height: 180px; overflow: hidden;">
-              <img src="{{ 'safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg' | cdnFile }}" alt="{{ 'safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+              <img src="{{ 'dhow-boat-mangroves-turquoise-water.jpg' | cdnFile }}" alt="{{ 'dhow-boat-mangroves-turquoise-water.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             </div>
             <div style="padding: 1.25rem;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="background: var(--dct-gold, #D4AF37); color: #0C1A24; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">2</span>
-                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Day 2 — Safari Blue &amp; Menai Bay Dhow Day</h3>
+                <span style="background: var(--dct-gold, #D4AF37); color: #0C1A24; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">3</span>
+                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Uzi Island 'Moses Road' Tidal Expedition</h3>
               </div>
-              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Full-day traditional handcrafted wooden dhow sailing through Menai Bay Conservation Area. Snorkeling over coral gardens, dolphin watching, sandbank swim, and a grilled seafood feast with tropical fruit on a private sandbank.</p>
+              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Cross the exposed low-tide coral causeway by 4x4 into Uzi Island's quiet Swahili fishing communities and ancient mangrove channels with traditional village lunch.</p>
             </div>
           </div>
 
           <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8ed; background: #fff;">
             <div style="height: 180px; overflow: hidden;">
-              <img src="{{ 'zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg' | cdnFile }}" alt="{{ 'zanzibar-spice-farm-tour-fresh-nutmeg-cloves.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+              <img src="{{ 'salaam-cave-turtle-aquarium-kizimkazi.jpg' | cdnFile }}" alt="{{ 'salaam-cave-turtle-aquarium-kizimkazi.jpg' | canonicalAlt }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             </div>
             <div style="padding: 1.25rem;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="background: #059669; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">3</span>
-                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Day 3 — Spice Plantation &amp; Departure Transfer</h3>
+                <span style="background: #059669; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">4</span>
+                <h3 style="margin: 0; color: #003853; font-size: 1.15rem;">Salaam Cave Turtle Sanctuary &amp; Departure Transfer</h3>
               </div>
-              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Interactive sensory spice walk through cloves, cinnamon, and vanilla, complete with palm leaf crowning and traditional Swahili farm lunch, followed by private departure transfer to ZNZ Airport.</p>
+              <p style="font-size: 0.88rem; color: #4e5d66; line-height: 1.5; margin: 0;">Ethical marine turtle sanctuary swim in Kizimkazi before your scheduled private airport drop-off at ZNZ.</p>
             </div>
           </div>
         </div>
@@ -77,25 +82,20 @@ lang: "en"
       <section class="tour-section">
         <h2>Inclusions</h2>
         <ul class="includes-list">
-          <li>Licensed English-speaking guide throughout</li>
-          <li>All airport transfers (any arrival/departure zone)</li>
-          <li>All entry fees: Stone Town museums, Menai Bay marine conservation ($10), spice farm</li>
-          <li>Snorkel gear, towels, and beach essentials provided</li>
-          <li>Dhow boat, crew, and fuel for Safari Blue</li>
-          <li>Seafood barbecue lunch on sandbank (Day 2)</li>
-          <li>Spice farm lunch with local dishes (Day 3)</li>
-          <li>WhatsApp support throughout your trip</li>
+          <li>Private vehicle and dedicated Swahili guide throughout</li>
+          <li>Maalum Cave private timed swim slot &amp; Kuza Cave cultural workshop</li>
+          <li>Uzi Island 4x4 low-tide mangrove causeway expedition &amp; Swahili lunch</li>
+          <li>Salaam Cave Kizimkazi turtle sanctuary admission &amp; conservation fees</li>
+          <li>Roundtrip airport or ferry port private transfers</li>
         </ul>
       </section>
 
       <section class="tour-section">
         <h2>Important Notes</h2>
         <ul class="notes-list">
-          <li>Hotels not included — we can arrange partner accommodation at wholesale rates</li>
-          <li>Marine conservation fees included: Menai Bay $10 per non-EAC adult</li>
-          <li>Price assumes 2+ travelers — single supplement applies</li>
-          <li>Book 3+ days in advance during peak season (July–August, December–January)</li>
-          <li>Bring swimwear, hat, reef-safe sunscreen, and a light jacket for evenings</li>
+          <li>Hotels not included — ideal paired with <a href="/hotels/mkeka-spice-lodge/">Mkeka Spice Lodge</a>, <a href="/hotels/le-paradis-boutique-hotel-zanzibar/">Le Paradis Boutique</a>, or <a href="/hotels/the-one-resort-zanzibar/">The One Resort</a></li>
+          <li>Day 3 causeway crossing timing follows daily low-tide tables</li>
+          <li>Reef-safe swimwear recommended (avoid sunscreens inside Maalum Cenote)</li>
         </ul>
       </section>
       {% include "tour-reviews.njk" %}
@@ -106,9 +106,10 @@ lang: "en"
       <div class="booking-card">
         <div class="price">$320–$420 <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ person</span></div>
         <h3>Ready to Book?</h3>
-        <p style="opacity: 0.8; margin-bottom: 1.25rem;">Send us your dates and group size on WhatsApp. We'll confirm availability and send the final price including all fees.</p>
-        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20the%20Zanzibar%20Essentials%203-day%20package" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
-        <p class="note">✓ Verified published rate • Marine conservation fees included • Zero booking deposit</p>
+        <p style="opacity: 0.8; margin-bottom: 1.25rem;">Send your dates and group size. We align Maalum Cenote timed passes and Uzi Island low-tide crossing windows for you.</p>
+        <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 0.75rem;">Check availability</button>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20to%20book%20Zanzibar%20Hidden%20Gems%20%26%20Sacred%20Caves%20(4%20Days)." target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
+        <p class="note">✓ Verified published rate • All cave &amp; sanctuary entries included</p>
       </div>
     </aside>
   </div>

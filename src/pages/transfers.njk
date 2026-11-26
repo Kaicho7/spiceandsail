@@ -424,6 +424,29 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
           </article>
         {% endfor %}
       </div>
+
+      <div style="margin-top: 3rem; background: #fff; border: 1px solid #e2e8ed; border-radius: 14px; padding: 2rem; box-shadow: 0 4px 15px rgba(12,26,36,0.04);">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <h3 style="color: #003853; font-size: 1.35rem; margin: 0 0 0.4rem;">Direct Airport &amp; Partner Hotel Route Guides</h3>
+          <p style="color: #5c727f; font-size: 0.9rem; margin: 0;">Explore detailed travel times, luggage capacities, and zero-deposit pickup instructions for your exact destination or contracted stay.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
+          <a href="/transfers/airport-to-stone-town/" class="btn btn-outline btn-sm">ZNZ → Stone Town ($18–$35)</a>
+          <a href="/transfers/airport-to-nungwi/" class="btn btn-outline btn-sm">ZNZ → Nungwi ($45–$50)</a>
+          <a href="/transfers/airport-to-kendwa/" class="btn btn-outline btn-sm">ZNZ → Kendwa ($45–$50)</a>
+          <a href="/transfers/airport-to-paje/" class="btn btn-outline btn-sm">ZNZ → Paje &amp; Jambiani ($45–$50)</a>
+          <a href="/transfers/airport-to-bwejuu/" class="btn btn-outline btn-sm">ZNZ → Bwejuu &amp; Dongwe ($45–$50)</a>
+          <a href="/transfers/airport-to-matemwe/" class="btn btn-outline btn-sm">ZNZ → Matemwe ($40–$50)</a>
+          <a href="/transfers/airport-to-kiwengwa/" class="btn btn-outline btn-sm">ZNZ → Kiwengwa &amp; Pongwe ($40–$50)</a>
+          <a href="/transfers/airport-to-michamvi/" class="btn btn-outline btn-sm">ZNZ → Michamvi &amp; The Rock ($50)</a>
+          <a href="/transfers/ferry-to-hotel/" class="btn btn-outline btn-sm">Stone Town Ferry → Any Hotel</a>
+          <a href="/transfers/hotel-the-one-resort/" class="btn btn-primary btn-sm">ZNZ → The One Resort Zanzibar</a>
+          <a href="/transfers/hotel-le-paradis-boutique/" class="btn btn-primary btn-sm">ZNZ → Le Paradis Boutique</a>
+          <a href="/transfers/hotel-mkeka-spice-lodge/" class="btn btn-primary btn-sm">ZNZ → Mkeka Spice Lodge</a>
+          <a href="/transfers/hotel-island-stone-town/" class="btn btn-primary btn-sm">ZNZ → The Island Stonetown</a>
+          <a href="/transfers/hotel-stone-town-view/" class="btn btn-primary btn-sm">ZNZ → Stone Town View Hotel</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -519,7 +542,8 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
     function currentRoute() {
       const option = destEl && destEl.options[destEl.selectedIndex];
       const pickup = pickupEl ? pickupEl.value : 'ZNZ Airport';
-      const slug = option ? (option.getAttribute('data-slug') || '') : '';
+      const destVal = destEl ? destEl.value : '';
+      let slug = option ? (option.getAttribute('data-slug') || '') : '';
       const zone = option ? (option.getAttribute('data-zone') || 'Destination') : 'Destination';
       const passengers = paxEl ? Math.max(1, Math.min(50, parseInt(paxEl.value, 10) || 1)) : 2;
       const date = dateEl ? dateEl.value : '';
@@ -527,6 +551,10 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
       const driverLanguage = document.getElementById('calc-driver-lang');
       const language = driverLanguage ? driverLanguage.value : 'English';
       const isAirportOrFerry = pickup.includes('Airport') || pickup.includes('Ferry');
+      const isStoneTownHotel = pickup.includes('Stone Town Hotel');
+      if (isStoneTownHotel && destVal === 'nungwi-kendwa') {
+        slug = 'stone-town-to-nungwi';
+      }
       return {
         pickup: pickup,
         slug: slug,
@@ -535,7 +563,7 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         date: date,
         flight: flight,
         language: language,
-        supported: Boolean(slug && isAirportOrFerry)
+        supported: Boolean(slug && (isAirportOrFerry || (isStoneTownHotel && destVal === 'nungwi-kendwa')))
       };
     }
 
@@ -682,6 +710,9 @@ alternate_de: "https://spiceandsail.com/de/transfers/"
         const originalText = waBtn.textContent;
         waBtn.textContent = 'Opening Island Concierge…';
         waBtn.setAttribute('aria-busy', 'true');
+        if (typeof window.snsTrack === 'function') {
+          window.snsTrack('concierge_booking_opened', { service_slug: route.slug, funnel_stage: 'transfers', source: 'transfer_calculator' });
+        }
         Promise.resolve(window.snsConcierge.openBooking(options)).then(function (opened) {
           if (!opened) {
             waBtn.setAttribute('aria-label', 'Concierge could not open; use the WhatsApp fallback link');

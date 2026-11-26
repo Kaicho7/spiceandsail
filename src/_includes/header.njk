@@ -129,7 +129,7 @@
           <li class="nav-item"><a href="{{ 'about' | navUrl(lang) }}" class="nav-link">{{ "nav_about" | t(lang) }}</a></li>
           <li class="nav-item"><a href="{{ 'contact' | navUrl(lang) }}" class="nav-link">{{ "nav_contact" | t(lang) }}</a></li>
         </ul>
-        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="nav-cta" onclick="window.dataLayer.push({'event': 'whatsapp_click', 'page_path': '{{ page.path }}', 'label': 'Header WhatsApp'});">{{ "btn_whatsapp_book" | t(lang) }} <span aria-hidden="true">↗</span></a>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="nav-cta" data-sns-event="whatsapp_header_click" data-sns-funnel="general" data-sns-label="Header WhatsApp">{{ "btn_whatsapp_book" | t(lang) }} <span aria-hidden="true">↗</span></a>
       </div>
     </nav>
   </div>

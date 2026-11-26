@@ -23,9 +23,14 @@ lang: "en"
         <span class="price-amount">$185–$260</span>
         <span class="price-note">per person (2+ travelers) • 30% deposit to secure booking, payable on arrival</span>
       </div>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20the%20Zanzibar%20Essentials%203-day%20package" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book via WhatsApp</a>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;">
+        <button type="button" data-sns-booking-open data-service-slug="{{ tour_slug }}" class="btn btn-primary btn-lg">Check availability &amp; book</button>
+        <a href="https://wa.me/{{ site.contact.whatsapp }}?text=I%27d%20like%20to%20book%20the%20Zanzibar%20Essentials%203-day%20package" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Book via WhatsApp</a>
+      </div>
     </div>
   </section>
+
+  {% include "tour-booking-panel.njk" %}
 
   <div class="tour-grid">
     <div class="tour-main">

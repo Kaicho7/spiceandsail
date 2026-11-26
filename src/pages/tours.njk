@@ -68,7 +68,10 @@ permalink: "/tours/index.html"
             {% endif %}
           </div>
           <div class="card-footer">
-            <a href="{% if tour.category == 'PKG' %}/packages/{% else %}/tours/{% endif %}{{ tour.seo_slug }}/" class="btn btn-sm">Details & Booking</a>
+            <a href="{% if tour.category == 'PKG' %}/packages/{% else %}/tours/{% endif %}{{ tour.seo_slug }}/" class="btn btn-sm">Details &amp; Booking</a>
+            {% if svc %}
+              <button type="button" class="btn btn-primary btn-sm" data-sns-booking-open data-service-slug="{{ tour.slug }}">Book Now</button>
+            {% endif %}
             <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20details%20and%20a%20quote%20for%20{{ tour.title | urlencode }}." target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ tour.title }}">Ask on WhatsApp</a>
           </div>
         </div>
@@ -77,9 +80,13 @@ permalink: "/tours/index.html"
   </section>
 
   <section class="transfer-link">
-    <h2>Need Airport Transfers?</h2>
-    <p>Private transfers from Abeid Amani Karume Airport (ZNZ) to Stone Town, Nungwi, Kendwa, Paje, Jambiani, and all zones.</p>
-    <a href="/transfers/" class="btn primary">View Transfer Options</a>
+    <h2>Complete Your Zanzibar Trip</h2>
+    <p>Pair your excursions with zero-deposit ZNZ airport transfers, contracted partner hotels, or fly-in mainland safaris.</p>
+    <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+      <a href="/transfers/#transfer-calculator" class="btn primary">Airport Transfer Calculator</a>
+      <a href="/hotels/" class="btn btn-secondary">Contracted Partner Hotels</a>
+      <a href="/safaris/" class="btn btn-secondary">Mainland Fly-In Safaris</a>
+    </div>
   </section>
 
   <section class="tour-faq">

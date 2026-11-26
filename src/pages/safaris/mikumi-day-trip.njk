@@ -16,10 +16,16 @@ permalink: "/safaris/mikumi-day-trip/index.html"
       
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%21%20I%20am%20interested%20in%20the%20Mikumi%20Day%20Trip%20Safari%20from%20Zanzibar." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25d366; border-color: #25d366; font-size: 1.05rem; padding: 12px 26px;">💬 Check Safari Dates on WhatsApp</a>
-        <button onclick="window.snsConcierge && window.snsConcierge.open()" class="btn btn-secondary" style="border: 2px solid #e8a817; color: #fff; background: rgba(0,0,0,0.3); font-size: 1rem; padding: 12px 22px;">🛎️ Trip Concierge</button>
+        <button type="button" data-sns-booking-open data-service-slug="mikumi-nyerere-day-safari" class="btn btn-secondary" style="border: 2px solid #e8a817; color: #fff; background: rgba(0,0,0,0.3); font-size: 1rem; padding: 12px 22px;">🛎️ Check Seats &amp; Book Now</button>
       </div>
     </div>
   </header>
+
+  {% set booking_slug = "mikumi-nyerere-day-safari" %}
+  {% set booking_kind = "safari" %}
+  {% set booking_heading = "Check Mikumi Fly-In Safari Availability" %}
+  {% set booking_intro = "Enter your preferred date and guest count for live bush flight + 4x4 game drive confirmation." %}
+  {% include "whatsapp-booking-panel.njk" %}
 
   <!-- Key Fast Facts Banner -->
   <section style="background: #003d5c; color: #fff; padding: 1.25rem 0; border-bottom: 2px solid #e8a817;">

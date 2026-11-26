@@ -76,7 +76,7 @@ module.exports = function(eleventyConfig) {
     mnemba_snorkeling: { en: "/tours/mnemba-snorkeling/", it: "/it/tour/mnemba-snorkeling/", de: "/de/tour/mnemba-snorkeling/", fr: "/fr/tour/mnemba-snorkeling/" },
     stone_town_walking_tour: { en: "/tours/stone-town-walking-tour/" },
     experiences: { en: "/experiences/" },
-    spice_farm: { en: "/spice-farm-cultural/", it: "/it/tour/spice-farm/", de: "/de/tour/spice-farm/" },
+    spice_farm: { en: "/tours/spice-farm/", it: "/it/tour/spice-farm/", de: "/de/tour/spice-farm/" },
     attractions: { en: "/attractions/" },
     transfers: { en: "/transfers/", it: "/it/trasferimenti/", de: "/de/transfers/" },
     nungwi_transfer: { en: "/transfers/airport-to-nungwi/", it: "/it/trasferimenti/aeroporto-nungwi/", de: "/de/transfers/airport-to-nungwi/" },

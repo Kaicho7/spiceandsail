@@ -133,14 +133,7 @@ permalink: "/hotels/index.html"
       <div id="hotels-container" class="cards-grid hotel-grid" data-total-hotels="{{ hotels.hotels | length }}" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem;">
         {% for hotel in hotels.hotels.slice(0, 16) %}
           {% set hotelIndex = loop.index0 %}
-          {% set detailSlug = hotelsToBuild | findBySlug(hotel.slug) %}
-          {% if detailSlug %}
-            <a href="/hotels/{{ hotel.slug }}/" style="text-decoration: none; color: inherit;">
-              {% include "hotel-card.njk" %}
-            </a>
-          {% else %}
-            {% include "hotel-card.njk" %}
-          {% endif %}
+          {% include "hotel-card.njk" %}
         {% endfor %}
       </div>
   <script>

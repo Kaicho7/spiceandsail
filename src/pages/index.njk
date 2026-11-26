@@ -221,7 +221,7 @@ alternate_ru: "https://spiceandsail.com/ru/"
       </div>
 
       <div class="transfer-strip-footer reveal">
-        <a href="/transfers/#transfer-calculator" class="btn btn-secondary" onclick="window.dataLayer.push({'event': 'fare_calculator_open', 'page_path': '{{ page.path }}', 'zone': 'all_zones'});">Open Interactive Fare Calculator (All Zanzibar Zones) →</a>
+        <a href="/transfers/#transfer-calculator" class="btn btn-secondary" data-sns-event="fare_calculator_open" data-sns-funnel="transfers" data-sns-label="Home Transfer Calculator">Open Interactive Fare Calculator (All Zanzibar Zones) →</a>
       </div>
     </div>
   </section>
@@ -417,8 +417,8 @@ alternate_ru: "https://spiceandsail.com/ru/"
         <h2>{{ "nav_hotels" | t(lang) }}</h2>
         <p class="section-subtitle">{{ stats.total_hotels }} curated properties across Nungwi, Kendwa, Paje, Jambiani, Stone Town, Kiwengwa, Matemwe &amp; more — starting with our contracted partner stays with verified public rates.</p>
       </div>
-      <div class="cards-grid cards-grid--4">
-        {% for hotel in featuredPartnerHotels | limit(4) %}
+      <div class="cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+        {% for hotel in featuredPartnerHotels %}
           <article class="card reveal" data-category="HTL">
             <div class="card-image">
               <img src="{{ hotel.photo | cdnFile }}" alt="{{ hotel.name }} in {{ hotel.area }}, Zanzibar" loading="lazy">
@@ -436,7 +436,12 @@ alternate_ru: "https://spiceandsail.com/ru/"
                   <span class="card-price">Seasonal Rates <span class="price-basis">confirmed by team</span></span>
                 {% endif %}
                 <div class="card-actions">
-                  <a href="/hotels/{{ hotel.pageSlug }}/" class="btn btn-primary btn-sm">View Rates</a>
+                  {% if hotel.packageSlug %}
+                    <button type="button" class="btn btn-primary btn-sm" data-sns-booking-open data-service-slug="{{ hotel.packageSlug }}" data-hotel-slug="{{ hotel.slug }}" data-hotel-name="{{ hotel.name }}">Check availability</button>
+                  {% else %}
+                    <a href="/hotels/{{ hotel.pageSlug }}/" class="btn btn-primary btn-sm">View Rates</a>
+                  {% endif %}
+                  <a href="/hotels/{{ hotel.pageSlug }}/" class="btn btn-secondary btn-sm">Details</a>
                   <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail!%20I%20would%20like%20details%20and%20rates%20for%20{{ hotel.name | urlencode }}" target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ hotel.name }}">Ask on WhatsApp</a>
                 </div>
               </div>

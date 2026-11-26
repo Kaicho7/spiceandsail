@@ -40,11 +40,11 @@ alternate_it: "https://spiceandsail.com/it/trasferimenti/"
         <span style="font-size: 1.8rem;">🛡️</span>
         <div>
           <strong style="color: #003853; font-size: 1.05rem;">Direktbuchung mit Unserem Fahrer vs. Airport-Touts</strong>
-          <p style="margin: 0; font-size: 0.88rem; color: #4e5d66;">Katalog-Planungspreise pro Privatfahrzeug (bis 4 Gäste): <strong>{% catPrice "airport-transfer-znz-to-stone-town" %} Stone Town &bull; {% catPrice "airport-transfer-znz-to-pajejambiani" %} Paje/Jambiani &bull; {% catPrice "airport-transfer-znz-to-nungwikendwa" %} Nungwi/Kendwa</strong>. Unser Team bestätigt Ihren Preis bevor Sie etwas zahlen.</p>
+          <p style="margin: 0; font-size: 0.88rem; color: #4e5d66;">Veröffentlichte Katalogpreise pro Privatfahrzeug (Limousine 1–3 / Van 4–6 Gäste): <strong>{% catPrice "airport-transfer-znz-to-stone-town" %} Stone Town &bull; {% catPrice "airport-transfer-znz-to-matemwe" %} Matemwe/Kiwengwa &bull; {% catPrice "airport-transfer-znz-to-pajejambiani" %} Paje/Jambiani &bull; {% catPrice "airport-transfer-znz-to-nungwikendwa" %} Nungwi/Kendwa &bull; {% catPrice "airport-transfer-znz-to-kizimkazi" %} Süd/Michamvi</strong>. Unser Team bestätigt Ihren Preis bevor Sie etwas zahlen.</p>
         </div>
       </div>
       <div style="background: #fff; padding: 0.6rem 1.1rem; border-radius: 8px; border: 1px solid #cbdde6; font-size: 0.85rem; font-weight: 600; color: #0d6b5c;">
-        ✓ Bis 4 Pers. + Gepäck Inkl. &bull; Kostenloses Flugverspätungs-Tracking
+        ✓ Bis 6 Pers. + Gepäck Inkl. &bull; Kostenloses Flugverspätungs-Tracking
       </div>
     </div>
   </section>
@@ -54,13 +54,13 @@ alternate_it: "https://spiceandsail.com/it/trasferimenti/"
       <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
         <span class="section-tag" style="color: var(--dct-gold, #D4AF37); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem;">Interaktiver Tarifrechner</span>
         <h2 style="font-size: 2.2rem; color: #003853; margin-top: 0.4rem;">Sansibar Transfer Tarifrechner</h2>
-        <p class="section-subtitle" style="color: #5c727f; max-width: 650px; margin: 0.5rem auto 0;">Wählen Sie Ihre Route und Personenzahl, um den Planungsbereich aus unserem verifizierten Katalog zu sehen. Unser Team bestätigt den endgültigen Preis vor jeder Buchung.</p>
+        <p class="section-subtitle" style="color: #5c727f; max-width: 650px; margin: 0.5rem auto 0;">Wählen Sie Ihre Route und Personenzahl, um den veröffentlichten Tarif aus unserem verifizierten Katalog zu sehen. Unser Team bestätigt den endgültigen Preis vor jeder Buchung.</p>
       </div>
 
       <div class="calc-card" style="background: #FBF9F5; border: 1.5px solid #e2e8ed; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 30px rgba(12,26,36,0.06);">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📍 Abholort</label>
+            <label for="calc-pickup" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📍 Abholort</label>
             <select id="calc-pickup" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
               <option value="Abeid Amani Karume International Airport (ZNZ)" selected>✈️ ZNZ Flughafen (Alle Terminals)</option>
               <option value="Stone Town Ferry Terminal">⛴️ Stone Town Fährterminal</option>
@@ -72,49 +72,40 @@ alternate_it: "https://spiceandsail.com/it/trasferimenti/"
           </div>
 
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🏁 Zielhotel / Zone</label>
+            <label for="calc-dest" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🏁 Zielhotel / Zone</label>
             <select id="calc-dest" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
               <option value="stone-town" data-slug="airport-transfer-znz-to-stone-town" data-fare="{% catPrice "airport-transfer-znz-to-stone-town" %}" data-zone="Stone Town">Stone Town Hotels — {% catPrice "airport-transfer-znz-to-stone-town" %}/Fahrzeug</option>
-              <option value="paje-jambiani" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Paje / Jambiani">Paje & Jambiani Hotels — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/Fahrzeug</option>
-              <option value="matemwe" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Matemwe">Matemwe Strandresorts — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/Fahrzeug</option>
-              <option value="kiwengwa-pongwe" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Kiwengwa / Pongwe">Kiwengwa & Pongwe — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/Fahrzeug</option>
-              <option value="nungwi-kendwa" data-slug="airport-transfer-znz-to-nungwikendwa" data-fare="{% catPrice "airport-transfer-znz-to-nungwikendwa" %}" data-zone="Nungwi / Kendwa" selected>Nungwi & Kendwa Resorts — {% catPrice "airport-transfer-znz-to-nungwikendwa" %}/Fahrzeug</option>
-              <option value="michamvi" data-slug="" data-fare="auf Anfrage" data-zone="Michamvi / The Rock">Michamvi & The Rock Restaurant — Preis auf Anfrage</option>
-              <option value="kizimkazi" data-slug="" data-fare="auf Anfrage" data-zone="Kizimkazi">Kizimkazi Delfinküste — Preis auf Anfrage</option>
+              <option value="paje-jambiani" data-slug="airport-transfer-znz-to-pajejambiani" data-fare="{% catPrice "airport-transfer-znz-to-pajejambiani" %}" data-zone="Paje / Jambiani">Paje &amp; Jambiani Hotels — {% catPrice "airport-transfer-znz-to-pajejambiani" %}/Fahrzeug</option>
+              <option value="matemwe" data-slug="airport-transfer-znz-to-matemwe" data-fare="{% catPrice "airport-transfer-znz-to-matemwe" %}" data-zone="Matemwe">Matemwe Strandresorts — {% catPrice "airport-transfer-znz-to-matemwe" %}/Fahrzeug</option>
+              <option value="kiwengwa-pongwe" data-slug="airport-transfer-znz-to-matemwe" data-fare="{% catPrice "airport-transfer-znz-to-matemwe" %}" data-zone="Kiwengwa / Pongwe">Kiwengwa &amp; Pongwe — {% catPrice "airport-transfer-znz-to-matemwe" %}/Fahrzeug</option>
+              <option value="nungwi-kendwa" data-slug="airport-transfer-znz-to-nungwikendwa" data-fare="{% catPrice "airport-transfer-znz-to-nungwikendwa" %}" data-zone="Nungwi / Kendwa" selected>Nungwi &amp; Kendwa Resorts — {% catPrice "airport-transfer-znz-to-nungwikendwa" %}/Fahrzeug</option>
+              <option value="michamvi" data-slug="airport-transfer-znz-to-kizimkazi" data-fare="{% catPrice "airport-transfer-znz-to-kizimkazi" %}" data-zone="Michamvi / The Rock">Michamvi &amp; The Rock — {% catPrice "airport-transfer-znz-to-kizimkazi" %}/Fahrzeug</option>
+              <option value="kizimkazi" data-slug="airport-transfer-znz-to-kizimkazi" data-fare="{% catPrice "airport-transfer-znz-to-kizimkazi" %}" data-zone="Kizimkazi">Kizimkazi Delfinküste — {% catPrice "airport-transfer-znz-to-kizimkazi" %}/Fahrzeug</option>
             </select>
           </div>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">👥 Passagiere</label>
-            <select id="calc-pax" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
-              <option value="1">1 Passagier (Privater Minivan)</option>
-              <option value="2" selected>2 Passagiere (Privater Minivan)</option>
-              <option value="3">3 Passagiere (Privater Minivan)</option>
-              <option value="4">4 Passagiere (Privater Minivan)</option>
-              <option value="5">5 Passagiere (größeres Fahrzeug — Team bestätigt)</option>
-              <option value="6">6 Passagiere (größeres Fahrzeug — Team bestätigt)</option>
-              <option value="7">7 Passagiere (größeres Fahrzeug — Team bestätigt)</option>
-              <option value="8">8 Passagiere (größeres Fahrzeug — Team bestätigt)</option>
-              <option value="9">9–14 Passagiere (Coaster — Team bestätigt)</option>
-            </select>
+            <label for="calc-pax" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">👥 Passagiere</label>
+            <input type="number" id="calc-pax" min="1" max="50" step="1" value="2" inputmode="numeric" required style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
+            <small style="display:block;color:#4a3326;font-size:.78rem;margin-top:.4rem;">Limousine 1–3 Gäste, Van 4–6 Gäste; größere Gruppen bestätigt unser Team.</small>
           </div>
 
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📅 Reisedatum</label>
-            <input type="date" id="calc-date" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
+            <label for="calc-date" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">📅 Reisedatum</label>
+            <input type="date" id="calc-date" required style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
           </div>
 
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">✈️ Flugnummer (Optional)</label>
+            <label for="calc-flight" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">✈️ Flugnummer (Optional)</label>
             <input type="text" id="calc-flight" placeholder="z.B. ET815, QR1487" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
           </div>
 
           <div>
-            <label style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🗣️ Sprachpräferenz Fahrer/Guide</label>
+            <label for="calc-driver-lang" style="display: block; font-weight: 700; font-size: 0.9rem; color: #0C1A24; margin-bottom: 0.5rem;">🗣️ Sprachpräferenz Fahrer/Guide</label>
             <select id="calc-driver-lang" style="width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #fff; font-size: 0.95rem; color: #1e293b;">
-              <option value="English" selected>Englisch & Swahili (Standard inklusive)</option>
+              <option value="English" selected>Englisch &amp; Swahili (Standard inklusive)</option>
               <option value="Italian">🇮🇹 Italienisch sprechender Fahrer (Vorab-Anfrage, Extrakosten)</option>
               <option value="German">🇩🇪 Deutsch sprechender Fahrer (Vorab-Anfrage, Extrakosten)</option>
               <option value="French">🇫🇷 Französisch sprechender Fahrer (Vorab-Anfrage, Extrakosten)</option>
@@ -124,28 +115,28 @@ alternate_it: "https://spiceandsail.com/it/trasferimenti/"
         </div>
 
         <div style="background: rgba(0, 56, 83, 0.05); border-left: 3px solid #003853; padding: 0.85rem 1.15rem; border-radius: 0 8px 8px 0; font-size: 0.88rem; color: #1e293b; margin-bottom: 1.75rem; line-height: 1.5;">
-          🗣️ <strong>Mehrsprachige Fahrer & Guides Verfügbar:</strong> Standard-Fahrer und Guides sprechen Suaheli und Englisch. Dedizierte italienisch, deutsch, französisch oder polnisch sprechende zanzibarische Fahrer und zertifizierte Guides sind auf Vorab-Anfrage gegen Aufpreis verfügbar.
+          🗣️ <strong>Mehrsprachige Fahrer &amp; Guides Verfügbar:</strong> Standard-Fahrer und Guides sprechen Suaheli und Englisch. Dedizierte italienisch, deutsch, französisch oder polnisch sprechende zanzibarische Fahrer und zertifizierte Guides sind auf Vorab-Anfrage gegen Aufpreis verfügbar.
         </div>
 
         <div style="background: #0C1A24; color: #fff; border-radius: 12px; padding: 1.75rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
           <div>
-            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold, #D4AF37); font-weight: 700; display: block; margin-bottom: 0.25rem;">Katalog-Planungsbereich</span>
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--dct-gold, #D4AF37); font-weight: 700; display: block; margin-bottom: 0.25rem;">Veröffentlichter Tarif</span>
             <div style="display: flex; align-items: baseline; gap: 0.75rem;">
               <span id="calc-fare-display" style="font-size: 2.5rem; font-weight: 800; color: #ffffff; line-height: 1;">{% catPrice "airport-transfer-znz-to-nungwikendwa" %}</span>
-              <span style="color: #94a3b8; font-size: 0.95rem;">(<span id="calc-curr-code">USD</span> pro Privatfahrzeug, bis 4 Gäste)</span>
+              <span style="color: #94a3b8; font-size: 0.95rem;">(<span id="calc-curr-code">USD</span> pro Privatfahrzeug, Limousine 1–3 / Van 4–6 Gäste)</span>
             </div>
-            <p id="calc-route-summary" style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: #cbd5e1;">ZNZ Flughafen → Nungwi / Kendwa • 2 Passagiere • {% catPrice "airport-transfer-znz-to-nungwikendwa" %} Planungsbereich — unser Team bestätigt den endgültigen Preis.</p>
+            <p id="calc-route-summary" style="margin: 0.5rem 0 0 0; font-size: 0.88rem; color: #cbd5e1;">ZNZ Flughafen → Nungwi / Kendwa • 2 Passagiere • {% catPrice "airport-transfer-znz-to-nungwikendwa" %} — unser Team bestätigt den endgültigen Preis.</p>
             <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #34d399;">
-              ✓ Nur Planungsbereich — unser Team bestätigt den endgültigen Preis, Daten und Abholzeitfenster.
+              ✓ Veröffentlichter Katalogtarif — keine Vorauszahlung auf Flughafentransfers.
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px;">
-            <a id="calc-whatsapp-btn" href="https://wa.me/{{ site.contact.whatsapp }}?text=Hallo%20Spice%20%26%20Sail%2C%20ich%20m%C3%B6chte%20einen%20privaten%20Flughafentransfer%20nach%20Nungwi%20%26%20Kendwa%20buchen." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700; padding: 0.85rem 1.25rem; font-size: 0.98rem; text-align: center; border-radius: 8px;">
-              💬 Jetzt auf WhatsApp Buchen
+            <a id="calc-whatsapp-btn" href="https://wa.me/{{ site.contact.whatsapp }}?text=Hallo%20Spice%20%26%20Sail%2C%20ich%20m%C3%B6chte%20einen%20privaten%20Flughafentransfer%20anfragen." target="_blank" rel="noopener" class="btn btn-primary" style="background: #25D366; border-color: #25D366; color: #fff; font-weight: 700; padding: 0.85rem 1.25rem; font-size: 0.98rem; text-align: center; border-radius: 8px;">
+              Preis &amp; Verfügbarkeit prüfen
             </a>
-            <button type="button" class="btn btn-secondary" onclick="window.snsConcierge ? window.snsConcierge.open('airport-transfer-znz-to-nungwikendwa') : null" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.85rem; padding: 0.6rem; border-radius: 8px;">
-              🛎️ Über Reise-Concierge Vormerken
+            <button type="button" id="calc-concierge-btn" class="btn btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.85rem; padding: 0.6rem; border-radius: 8px;">
+              🛎️ Island Concierge öffnen
             </button>
           </div>
         </div>
@@ -247,6 +238,11 @@ alternate_it: "https://spiceandsail.com/it/trasferimenti/"
         </article>
         {% endfor %}
       </div>
+      <div style="margin-top: 2.5rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/de/transfers/airport-to-stone-town/" class="btn btn-outline btn-sm">ZNZ → Stone Town</a>
+        <a href="/de/transfers/airport-to-paje/" class="btn btn-outline btn-sm">ZNZ → Paje &amp; Jambiani</a>
+        <a href="/de/transfers/airport-to-nungwi/" class="btn btn-outline btn-sm">ZNZ → Nungwi &amp; Kendwa</a>
+      </div>
     </div>
   </section>
 
@@ -306,146 +302,161 @@ alternate_it: "https://spiceandsail.com/it/trasferimenti/"
     const routeSummaryEl = document.getElementById('calc-route-summary');
     const waBtn = document.getElementById('calc-whatsapp-btn');
 
-    const tmrw = new Date();
-    tmrw.setDate(tmrw.getDate() + 1);
-    if (dateEl) dateEl.value = tmrw.toISOString().split('T')[0];
+    let quoteRequestId = 0;
+    let lastQuoteKey = '';
+    let lastFareLabel = 'Preis auf Anfrage';
+    let lastQuoteReasons = [];
+    let lastQuote = null;
 
-    function getFareNumbers(origin, destKey) {
-      const isAirportOrFerry = origin.includes('Airport') || origin.includes('Ferry');
-      const isStoneTownHotel = origin.includes('Stone Town Hotel');
-      const isNungwi = origin.includes('Nungwi') || origin.includes('Kendwa');
-      const isPaje = origin.includes('Paje') || origin.includes('Jambiani');
-      const isMatemwe = origin.includes('Matemwe') || origin.includes('Kiwengwa');
-
-      if (isAirportOrFerry || isStoneTownHotel) {
-        if (destKey === 'stone-town') return isStoneTownHotel ? [20, 25] : [35, 40];
-        if (destKey === 'paje-jambiani') return [45, 55];
-        if (destKey === 'matemwe') return [45, 55];
-        if (destKey === 'kiwengwa-pongwe') return [45, 55];
-        if (destKey === 'nungwi-kendwa') return [50, 60];
-        if (destKey === 'michamvi') return [45, 55];
-        if (destKey === 'kizimkazi') return [45, 55];
-      } else if (isNungwi) {
-        if (destKey === 'nungwi-kendwa') return [20, 25];
-        if (destKey === 'stone-town') return [50, 60];
-        if (destKey === 'matemwe') return [40, 50];
-        if (destKey === 'kiwengwa-pongwe') return [45, 55];
-        if (destKey === 'paje-jambiani') return [60, 75];
-        if (destKey === 'michamvi') return [65, 80];
-        if (destKey === 'kizimkazi') return [70, 85];
-      } else if (isPaje) {
-        if (destKey === 'paje-jambiani') return [20, 25];
-        if (destKey === 'stone-town') return [45, 55];
-        if (destKey === 'michamvi') return [25, 35];
-        if (destKey === 'kizimkazi') return [35, 45];
-        if (destKey === 'nungwi-kendwa') return [60, 75];
-        if (destKey === 'matemwe') return [45, 55];
-        if (destKey === 'kiwengwa-pongwe') return [45, 55];
-      } else if (isMatemwe) {
-        if (destKey === 'matemwe' || destKey === 'kiwengwa-pongwe') return [20, 25];
-        if (destKey === 'nungwi-kendwa') return [40, 50];
-        if (destKey === 'stone-town') return [45, 55];
-        if (destKey === 'paje-jambiani') return [45, 55];
-        if (destKey === 'michamvi') return [50, 60];
-        if (destKey === 'kizimkazi') return [55, 65];
+    function formatQuoteDisplay(quote) {
+      if (quote && quote.status === 'quoted' && quote.totalLow != null && quote.totalHigh != null && window.SpiceInternational) {
+        return window.SpiceInternational.formatRangeConverted(
+          quote.totalLow, quote.totalHigh, window.SpiceInternational.getCurrency()
+        );
       }
-      return [45, 55];
+      return quote && quote.totalDisplay ? quote.totalDisplay : 'Preis auf Anfrage';
     }
 
-    function calculateFare(origin, destKey) {
-      const nums = getFareNumbers(origin, destKey);
-      if (window.SpiceInternational) {
-        return window.SpiceInternational.formatRangeConverted(nums[0], nums[1], window.SpiceInternational.getCurrency());
+    function localDateString(date) {
+      return date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+    }
+
+    const today = localDateString(new Date());
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    if (dateEl) {
+      dateEl.min = today;
+      dateEl.value = localDateString(tomorrow);
+    }
+
+    function currentRoute() {
+      const option = destEl && destEl.options[destEl.selectedIndex];
+      const pickup = pickupEl ? pickupEl.value : 'ZNZ Flughafen';
+      const destVal = destEl ? destEl.value : '';
+      let slug = option ? (option.getAttribute('data-slug') || '') : '';
+      const zone = option ? (option.getAttribute('data-zone') || 'Ziel') : 'Ziel';
+      const passengers = paxEl ? Math.max(1, Math.min(50, parseInt(paxEl.value, 10) || 1)) : 2;
+      const date = dateEl ? dateEl.value : '';
+      const flight = flightEl ? flightEl.value.trim().slice(0, 80) : '';
+      const driverLanguage = document.getElementById('calc-driver-lang');
+      const language = driverLanguage ? driverLanguage.value : 'English';
+      const isAirportOrFerry = pickup.includes('Airport') || pickup.includes('Ferry');
+      const isStoneTownHotel = pickup.includes('Stone Town Hotel');
+      if (isStoneTownHotel && destVal === 'nungwi-kendwa') slug = 'stone-town-to-nungwi';
+      return {
+        pickup, slug, zone, passengers, date, flight, language,
+        supported: Boolean(slug && (isAirportOrFerry || (isStoneTownHotel && destVal === 'nungwi-kendwa')))
+      };
+    }
+
+    function updateSummary(route, fareLabel, reasons, quote) {
+      if (fareDisplayEl) {
+        fareDisplayEl.textContent = fareLabel;
+        fareDisplayEl.removeAttribute('data-usd-min');
+        fareDisplayEl.removeAttribute('data-usd-max');
+        if (quote && quote.status === 'quoted' && quote.totalLow != null && quote.totalHigh != null) {
+          fareDisplayEl.setAttribute('data-usd-min', quote.totalLow);
+          fareDisplayEl.setAttribute('data-usd-max', quote.totalHigh);
+        }
       }
-      return '$' + nums[0] + '–$' + nums[1];
+      const currCodeEl = document.getElementById('calc-curr-code');
+      if (currCodeEl && window.SpiceInternational) currCodeEl.textContent = window.SpiceInternational.getCurrency();
+      if (routeSummaryEl) {
+        const note = reasons && reasons.length ? ' — ' + reasons.join(' ') : '';
+        routeSummaryEl.textContent = route.pickup + ' → ' + route.zone + ' • ' + route.passengers + ' Gast/Gäste • ' + (route.date || 'Datum offen') + ' • ' + fareLabel + note + ' Unser Team bestätigt den endgültigen Preis.';
+      }
+      if (waBtn) {
+        const langNote = route.language !== 'English' ? '\n• Gewünschte Fahrersprache: ' + route.language : '';
+        const msg = 'Hallo Spice & Sail! Ich möchte einen privaten Transfer anfragen:\n• Abholung: ' + route.pickup + (route.flight ? ' (Flug: ' + route.flight + ')' : '') + '\n• Ziel: ' + route.zone + '\n• Datum: ' + (route.date || 'Offen') + '\n• Personen: ' + route.passengers + '\n• Katalogtarif: ' + fareLabel + langNote + '\nBitte Verfügbarkeit und Endpreis bestätigen.';
+        waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent(msg);
+      }
     }
 
     function updateCalculator() {
       if (!destEl || !paxEl) return;
-      const selectedOption = destEl.options[destEl.selectedIndex];
-      const slug = selectedOption.getAttribute('data-slug') || '';
-      const destZone = selectedOption.getAttribute('data-zone') || 'Ziel';
-      const destKey = destEl.value;
-      const paxCount = paxEl.value;
-
-      const pickup = pickupEl ? pickupEl.value : 'ZNZ Flughafen';
-      const dateVal = dateEl && dateEl.value ? dateEl.value : 'Kommendes Datum';
-      const flightVal = flightEl && flightEl.value.trim() ? ' (' + flightEl.value.trim() + ')' : '';
-
-      const nums = getFareNumbers(pickup, destKey);
-      const currCode = window.SpiceInternational ? window.SpiceInternational.getCurrency() : 'USD';
-      const baseFare = window.SpiceInternational
-        ? window.SpiceInternational.formatRangeConverted(nums[0], nums[1], currCode)
-        : '$' + nums[0] + '–$' + nums[1];
-
-      fareDisplayEl.textContent = baseFare;
-      fareDisplayEl.setAttribute('data-usd-min', nums[0]);
-      fareDisplayEl.setAttribute('data-usd-max', nums[1]);
-
-      const currCodeEl = document.getElementById('calc-curr-code');
-      if (currCodeEl) currCodeEl.textContent = currCode;
-
-      routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' Passagiere • ' + baseFare + ' Planungsbereich — unser Team bestätigt den endgültigen Preis.';
-
-      var lang = window.SpiceInternational ? window.SpiceInternational.getLanguage() : 'de';
-      var greetings = {
-        de: 'Hallo Spice & Sail! Ich möchte einen privaten Transfer reservieren:',
-        en: 'Jambo Spice & Sail! I would like to reserve a Private Transfer:',
-        it: 'Ciao Spice & Sail! Vorrei prenotare un Transfer Privato:',
-        fr: 'Bonjour Spice & Sail ! Je souhaite réserver un transfert privé :',
-        pl: 'Dzień dobry Spice & Sail! Chciałbym zarezerwować prywatny transfer:'
-      };
-      var greeting = greetings[lang] || greetings.de;
-
-      const driverLangEl = document.getElementById('calc-driver-lang');
-      const driverLang = driverLangEl ? driverLangEl.value : 'Englisch';
-      const langNote = driverLang !== 'Englisch' ? '\n• Mehrsprachiger Fahrer Gewünscht: ' + driverLang + ' (Vorab-Anfrage — Team bestätigt Extrakosten)' : '';
-
-      const waMessage = greeting + '\n' +
-        '• Abholung: ' + pickup + flightVal + '\n' +
-        '• Ziel: ' + destZone + '\n' +
-        '• Datum: ' + dateVal + '\n' +
-        '• Passagiere: ' + paxCount + ' Pers.\n' +
-        '• Planungs-Preis: ' + baseFare + langNote + '\n' +
-        'Bitte Fahrer-Verfügbarkeit und Preis bestätigen.';
-      if (waBtn) waBtn.href = 'https://wa.me/{{ site.contact.whatsapp }}?text=' + encodeURIComponent(waMessage);
-
-      const isAirportOrFerry = pickup.includes('Airport') || pickup.includes('Ferry');
-      if (!slug || !isAirportOrFerry) return;
+      const route = currentRoute();
+      const quoteKey = [route.slug, route.pickup, route.passengers, route.date].join('|');
+      if (!route.supported) {
+        quoteRequestId++;
+        lastQuoteKey = quoteKey;
+        lastQuote = null;
+        lastFareLabel = 'Preis auf Anfrage';
+        lastQuoteReasons = ['Individuelle Punkt-zu-Punkt-Strecke — unser Team bestätigt das Fahrzeug und den Preis direkt.'];
+        updateSummary(route, lastFareLabel, lastQuoteReasons);
+        return;
+      }
+      if (quoteKey === lastQuoteKey) {
+        if (lastQuote) {
+          lastFareLabel = formatQuoteDisplay(lastQuote);
+          updateSummary(route, lastFareLabel, lastQuoteReasons, lastQuote);
+        }
+        return;
+      }
+      lastQuoteKey = quoteKey;
+      const requestId = ++quoteRequestId;
+      lastQuote = null;
+      lastFareLabel = 'Katalogtarif wird geladen…';
+      lastQuoteReasons = [];
+      updateSummary(route, lastFareLabel, lastQuoteReasons);
 
       fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ serviceSlug: slug, adults: parseInt(paxCount, 10) || 1, children: 0, date: dateVal && dateVal !== 'Kommendes Datum' ? dateVal : null })
-      }).then(function (r) { return r.json(); }).then(function (q) {
-        if (q && q.status === 'quoted') {
-          const currentCurr = window.SpiceInternational ? window.SpiceInternational.getCurrency() : 'USD';
-          let displayFare = q.totalDisplay;
-          if (window.SpiceInternational && q.totalLow != null && q.totalHigh != null) {
-            displayFare = window.SpiceInternational.formatRangeConverted(q.totalLow, q.totalHigh, currentCurr);
-            fareDisplayEl.setAttribute('data-usd-min', q.totalLow);
-            fareDisplayEl.setAttribute('data-usd-max', q.totalHigh);
-          }
-          fareDisplayEl.textContent = displayFare;
-          routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' Passagiere • ' + displayFare + ' Planungsbereich — unser Team bestätigt den endgültigen Preis.';
-        } else if (q && q.reasons && q.reasons.length) {
-          fareDisplayEl.textContent = baseFare;
-          routeSummaryEl.textContent = pickup + ' → ' + destZone + ' • ' + paxCount + ' Passagiere • ' + q.reasons.join(' ');
+        body: JSON.stringify({ serviceSlug: route.slug, adults: route.passengers, children: 0, date: route.date || null })
+      }).then(function (r) { if (!r.ok) throw new Error('Quote failed'); return r.json(); }).then(function (quote) {
+        if (requestId !== quoteRequestId || !quote || !quote.status) return;
+        lastQuote = quote;
+        lastFareLabel = formatQuoteDisplay(quote);
+        lastQuoteReasons = Array.isArray(quote.reasons) ? quote.reasons : [];
+        updateSummary(route, lastFareLabel, lastQuoteReasons, lastQuote);
+      }).catch(function () {
+        if (requestId !== quoteRequestId) return;
+        lastQuote = null;
+        lastFareLabel = 'Preis auf Anfrage';
+        lastQuoteReasons = ['Unser Team bestätigt diese Strecke direkt.'];
+        updateSummary(route, lastFareLabel, lastQuoteReasons);
+      });
+    }
+
+    const conciergeButton = document.getElementById('calc-concierge-btn');
+    if (conciergeButton) {
+      conciergeButton.addEventListener('click', function () {
+        if (window.snsConcierge && typeof window.snsConcierge.open === 'function') window.snsConcierge.open();
+      });
+    }
+
+    if (waBtn) {
+      waBtn.addEventListener('click', function (event) {
+        if (paxEl && !paxEl.reportValidity()) { event.preventDefault(); return; }
+        if (dateEl && !dateEl.reportValidity()) { event.preventDefault(); return; }
+        const route = currentRoute();
+        if (!route.supported || !window.snsConcierge || typeof window.snsConcierge.openBooking !== 'function') return;
+        event.preventDefault();
+        const notes = ['Ziel: ' + route.zone, route.flight ? 'Flugnummer: ' + route.flight : '', route.language !== 'English' ? 'Gewünschte Fahrersprache: ' + route.language : ''].filter(Boolean).join('\n');
+        const originalText = waBtn.textContent;
+        waBtn.textContent = 'Island Concierge wird geöffnet…';
+        if (typeof window.snsTrack === 'function') {
+          window.snsTrack('concierge_booking_opened', { service_slug: route.slug, funnel_stage: 'transfers', source: 'transfer_calculator_de' });
         }
-      }).catch(function () {});
+        Promise.resolve(window.snsConcierge.openBooking({
+          serviceSlug: route.slug,
+          date: route.date,
+          guests: route.passengers,
+          pickup: route.pickup + (route.flight ? ' — Flug: ' + route.flight : ''),
+          notes: notes
+        })).finally(function () { waBtn.textContent = originalText; });
+      });
     }
 
     const driverLangEl = document.getElementById('calc-driver-lang');
     if (pickupEl) pickupEl.addEventListener('change', updateCalculator);
     if (destEl) destEl.addEventListener('change', updateCalculator);
-    if (paxEl) paxEl.addEventListener('change', updateCalculator);
+    if (paxEl) paxEl.addEventListener('input', updateCalculator);
     if (dateEl) dateEl.addEventListener('change', updateCalculator);
     if (flightEl) flightEl.addEventListener('input', updateCalculator);
     if (driverLangEl) driverLangEl.addEventListener('change', updateCalculator);
-
     window.addEventListener('spice:currency-changed', updateCalculator);
     window.addEventListener('spice:language-changed', updateCalculator);
-
     updateCalculator();
   });
   </script>
