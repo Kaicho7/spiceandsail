@@ -11,6 +11,7 @@ delete process.env.OPENAI_COMPAT_API_KEY;
 
 const ROOT = path.resolve(__dirname, '..');
 const { handler: chatHandler } = require('../src/lib/api/chat');
+const { handler: quoteHandler } = require('../src/lib/api/quote');
 const { getQuote } = require('../src/lib/concierge/pricing');
 const { recommend } = require('../src/lib/concierge/recommend');
 const { InMemoryStore, setGlobalStore } = require('../src/lib/concierge/store');
@@ -95,6 +96,7 @@ test('concierge Zanzibar & Tanzania knowledge: seasons/tides, areas, ferry/fligh
 
   const areas = await ask('Where should I stay in Zanzibar — Stone Town vs Nungwi vs Paje?');
   assert.strictEqual(areas.intent, 'area_guide');
+  assert.deepStrictEqual(areas.matchedSlugs, []);
   assert.match(areas.message, /Stone Town/);
   assert.match(areas.message, /Mkeka Spice Lodge/);
 
@@ -148,4 +150,16 @@ test('concierge frontend & widget: valid JS syntax, XSS link guards, no broken S
   assert.ok(chatJs.includes('r.json.hotels'), 'sns-chat.js must load partner hotels');
   assert.ok(chatJs.includes('showBundleQuote'), 'sns-chat.js must support multi-service bundle quotes');
   assert.ok(ecoJs.includes('data-hotel-slug'), 'eco-swahili.js must pass hotel context into openBooking');
+});
+
+test('concierge quote API: single-service rental forwards nights/days properly', async () => {
+  const res = await quoteHandler({
+    httpMethod: 'POST',
+    headers: { origin: 'https://spiceandsail.com' },
+    body: JSON.stringify({ serviceSlug: 'self-drive-compact', adults: 4, nights: 5 }),
+  });
+  assert.strictEqual(res.statusCode, 200);
+  const body = JSON.parse(res.body);
+  assert.strictEqual(body.totalLow, 160);
+  assert.strictEqual(body.totalHigh, 160);
 });

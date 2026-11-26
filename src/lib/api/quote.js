@@ -135,6 +135,8 @@ exports.handler = async function (event) {
     children: body.children || 0,
     date: body.date || null,
     pickupZone: body.pickupZone || null,
+    nights: body.nights || null,
+    days: body.days || null,
   });
 
   return { statusCode: 200, headers: headers, body: JSON.stringify(result) };

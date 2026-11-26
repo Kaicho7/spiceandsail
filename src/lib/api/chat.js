@@ -933,7 +933,9 @@ exports.handler = async function (event) {
   // Track matched services across conversation:
   // - discussed_services: records all unique services touched in conversation
   // - activeSlug / serviceSlugs: focused target service for the current turn (prevents stale accumulation)
-  const matchedSlugs = matchServices(userMessage);
+  const intent = detectIntent(userMessage, mergedProfile);
+  const serviceScopedIntent = ['quote', 'book', 'availability', 'inclusions'].includes(intent);
+  const matchedSlugs = serviceScopedIntent ? matchServices(userMessage) : [];
   const existingDiscussed = Array.isArray(profile.discussed_services)
     ? profile.discussed_services
     : (Array.isArray(profile.serviceSlugs) ? profile.serviceSlugs : []);
@@ -956,8 +958,6 @@ exports.handler = async function (event) {
   // Count conversation turns from history
   const turnCount = Math.floor(history.length / 2) + 1;
   const lang = String(body.lang || profile.lang || 'en').slice(0, 2).toLowerCase();
-
-  const intent = detectIntent(userMessage, mergedProfile);
 
   // 1. Deterministic engine produces the base reply and data
   const deterministicResult = buildDeterministicReply(intent, userMessage, mergedProfile, turnCount);
