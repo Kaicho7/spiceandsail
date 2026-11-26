@@ -247,12 +247,19 @@
       for (var i = 0; i < calcDest.options.length; i++) {
         var opt = calcDest.options[i];
         if (opt.value === 'stone-town') {
-          opt.textContent = 'Stone Town Hotels — ' + formatRangeConverted(35, 40, currency) + '/vehicle';
-        } else if (opt.value === 'paje-jambiani' || opt.value === 'matemwe' || opt.value === 'kiwengwa-pongwe') {
-          var zName = opt.getAttribute('data-zone') || 'Beach';
-          opt.textContent = zName + ' Resorts — ' + formatRangeConverted(45, 55, currency) + '/vehicle';
+          opt.textContent = 'Stone Town Hotels — ' + formatRangeConverted(18, 35, currency) + '/vehicle';
+        } else if (opt.value === 'paje-jambiani') {
+          opt.textContent = 'Paje & Jambiani Hotels — ' + formatRangeConverted(45, 50, currency) + '/vehicle';
+        } else if (opt.value === 'matemwe') {
+          opt.textContent = 'Matemwe Beach Resorts — ' + formatRangeConverted(40, 50, currency) + '/vehicle';
+        } else if (opt.value === 'kiwengwa-pongwe') {
+          opt.textContent = 'Kiwengwa & Pongwe — ' + formatRangeConverted(40, 50, currency) + '/vehicle';
         } else if (opt.value === 'nungwi-kendwa') {
-          opt.textContent = 'Nungwi & Kendwa Resorts — ' + formatRangeConverted(50, 60, currency) + '/vehicle';
+          opt.textContent = 'Nungwi & Kendwa Resorts — ' + formatRangeConverted(45, 50, currency) + '/vehicle';
+        } else if (opt.value === 'michamvi') {
+          opt.textContent = 'Michamvi & The Rock Restaurant — ' + formatConverted(50, currency) + '/vehicle';
+        } else if (opt.value === 'kizimkazi') {
+          opt.textContent = 'Kizimkazi Dolphin Coast — ' + formatConverted(50, currency) + '/vehicle';
         }
       }
     }

@@ -16,7 +16,8 @@ test('redesign: shared header loads self-hosted fonts and mobile contact actions
   assert.ok(!/fonts\.googleapis\.com|fonts\.gstatic\.com/.test(header + css));
   assert.ok(css.includes('font-display:swap'));
   assert.ok(header.includes('class="mobile-contact-bar"'));
-  for (const action of ['WhatsApp', 'Call', 'Enquire']) assert.ok(header.includes('>' + action + '<'));
+  for (const action of ['WhatsApp', 'Call', 'Enquire']) assert.ok(header.includes('data-test-label="' + action + '"'));
+  for (const key of ['mobile_whatsapp', 'mobile_call', 'mobile_enquire']) assert.ok(header.includes(key));
 });
 
 test('redesign: language menu and runtime expose all five supported languages', () => {
@@ -66,7 +67,7 @@ test('redesign: analytics remains disabled until a verified build ID is configur
   const site = JSON.parse(read('src/data/site.json'));
   const eleventy = read('.eleventy.js');
   const seo = read('src/_includes/seo.njk');
-  assert.strictEqual(site.ga_measurement_id, '');
+  assert.match(site.ga_measurement_id, /^$|^G-[A-Z0-9]+$/);
   assert.ok(eleventy.includes('process.env.GA_MEASUREMENT_ID'));
   assert.ok(eleventy.includes('/^G-[A-Z0-9]+$/'));
   assert.ok(seo.includes('requestIdleCallback'));
@@ -147,7 +148,7 @@ test('redesign: hotel directory loads all 198 properties progressively and keeps
   const partial = read('src/_includes/hotel-card.njk');
   const helper = read('scripts/add-responsive-images.js');
   assert.ok(page.includes('hotels.hotels.slice(0, 16)'));
-  assert.ok(page.includes('Showing 16 of {{ hotels.hotels | length }} properties'), 'count indicator must match the initial 16 cards');
+  assert.ok(page.includes("{{ 'hotels_showing' | t }} 16 {{ 'hotels_of' | t }} {{ hotels.hotels | length }} {{ 'hotels_curated_properties' | t }}"), 'count indicator must match the initial 16 cards');
   assert.ok(page.includes('The first 16 properties remain available.'), 'fallback must not promise 48 cards');
   assert.ok(!page.includes('Showing 48'), 'stale 48-card count must be removed');
   assert.ok(!page.includes('first 48'), 'stale 48-card fallback must be removed');

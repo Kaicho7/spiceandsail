@@ -22,7 +22,7 @@
 <header class="site-header" id="siteHeader">
   <div class="header-shell">
     <div class="top-bar">
-      <a href="/" class="logo notranslate" translate="no" aria-label="S&amp;S Spice &amp; Sail Zanzibar home">
+      <a href="{{ 'home' | navUrl(lang) }}" class="logo notranslate" translate="no" aria-label="S&amp;S Spice &amp; Sail Zanzibar home">
         <span class="logo-mark" aria-hidden="true">S&amp;S</span>
         <span class="logo-name">Spice <em>&amp;</em> Sail</span>
       </a>
@@ -75,59 +75,59 @@
       <div class="nav-menu" id="navMenu">
         <ul class="nav-list">
           <li class="nav-item has-dropdown">
-            <a href="/tours/" class="nav-link dropdown-toggle">{{ "nav_tours" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
+            <a href="{{ 'tours' | navUrl(lang) }}" class="nav-link dropdown-toggle">{{ "nav_tours" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
             <ul class="dropdown-menu">
-              <li><a href="/tours/">{{ "nav_all_tours" | t(lang) }}</a></li>
-              <li><a href="/tours/safari-blue/">{{ "nav_safari_blue" | t(lang) }}</a></li>
-              <li><a href="/tours/mnemba-snorkeling/">{{ "nav_mnemba_snorkeling" | t(lang) }}</a></li>
-              <li><a href="/tours/stone-town-walking-tour/">{{ "nav_stone_town_walking_tour" | t(lang) }}</a></li>
-              <li><a href="/experiences/">{{ "nav_rare_experiences" | t(lang) }}</a></li>
-              <li><a href="/spice-farm-cultural/">{{ "nav_spice_farm" | t(lang) }}</a></li>
-              <li><a href="/attractions/">{{ "nav_attractions" | t(lang) }}</a></li>
+              <li><a href="{{ 'tours' | navUrl(lang) }}">{{ "nav_all_tours" | t(lang) }}</a></li>
+              <li><a href="{{ 'safari_blue' | navUrl(lang) }}">{{ "nav_safari_blue" | t(lang) }}</a></li>
+              <li><a href="{{ 'mnemba_snorkeling' | navUrl(lang) }}">{{ "nav_mnemba_snorkeling" | t(lang) }}</a></li>
+              <li><a href="{{ 'stone_town_walking_tour' | navUrl(lang) }}">{{ "nav_stone_town_walking_tour" | t(lang) }}</a></li>
+              <li><a href="{{ 'experiences' | navUrl(lang) }}">{{ "nav_rare_experiences" | t(lang) }}</a></li>
+              <li><a href="{{ 'spice_farm' | navUrl(lang) }}">{{ "nav_spice_farm" | t(lang) }}</a></li>
+              <li><a href="{{ 'attractions' | navUrl(lang) }}">{{ "nav_attractions" | t(lang) }}</a></li>
             </ul>
           </li>
           <li class="nav-item has-dropdown">
-            <a href="/transfers/" class="nav-link dropdown-toggle">{{ "nav_transfers" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
+            <a href="{{ 'transfers' | navUrl(lang) }}" class="nav-link dropdown-toggle">{{ "nav_transfers" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
             <ul class="dropdown-menu">
-              <li><a href="/transfers/">{{ "nav_airport_transfers" | t(lang) }}</a></li>
-              <li><a href="/transfers/airport-to-nungwi/">{{ "nav_nungwi_transfer" | t(lang) }}</a></li>
-              <li><a href="/self-drive/">{{ "nav_self_drive" | t(lang) }}</a></li>
+              <li><a href="{{ 'transfers' | navUrl(lang) }}">{{ "nav_airport_transfers" | t(lang) }}</a></li>
+              <li><a href="{{ 'nungwi_transfer' | navUrl(lang) }}">{{ "nav_nungwi_transfer" | t(lang) }}</a></li>
+              <li><a href="{{ 'self_drive' | navUrl(lang) }}">{{ "nav_self_drive" | t(lang) }}</a></li>
             </ul>
           </li>
           <li class="nav-item has-dropdown">
-            <a href="/safaris/" class="nav-link dropdown-toggle">{{ "nav_safaris_packages" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
+            <a href="{{ 'safaris' | navUrl(lang) }}" class="nav-link dropdown-toggle">{{ "nav_safaris_packages" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
             <ul class="dropdown-menu">
-              <li><a href="/safaris/">{{ "nav_safaris" | t(lang) }}</a></li>
-              <li><a href="/safaris/mikumi-day-trip/">{{ "nav_mikumi" | t(lang) }}</a></li>
-              <li><a href="/packages/">{{ "nav_packages" | t(lang) }}</a></li>
-              <li><a href="/packages/zanzibar-essentials-3day/">{{ "nav_zanzibar_essentials" | t(lang) }}</a></li>
-              <li><a href="/honeymoon-packages/">{{ "nav_honeymoon" | t(lang) }}</a></li>
-              <li><a href="/family-travel/">{{ "nav_family" | t(lang) }}</a></li>
+              <li><a href="{{ 'safaris' | navUrl(lang) }}">{{ "nav_safaris" | t(lang) }}</a></li>
+              <li><a href="{{ 'mikumi' | navUrl(lang) }}">{{ "nav_mikumi" | t(lang) }}</a></li>
+              <li><a href="{{ 'packages' | navUrl(lang) }}">{{ "nav_packages" | t(lang) }}</a></li>
+              <li><a href="{{ 'essentials_3day' | navUrl(lang) }}">{{ "nav_zanzibar_essentials" | t(lang) }}</a></li>
+              <li><a href="{{ 'honeymoon' | navUrl(lang) }}">{{ "nav_honeymoon" | t(lang) }}</a></li>
+              <li><a href="{{ 'family' | navUrl(lang) }}">{{ "nav_family" | t(lang) }}</a></li>
             </ul>
           </li>
           <li class="nav-item has-dropdown">
-            <a href="/hotels/" class="nav-link dropdown-toggle">{{ "nav_hotels_areas" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
+            <a href="{{ 'hotels' | navUrl(lang) }}" class="nav-link dropdown-toggle">{{ "nav_hotels_areas" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
             <ul class="dropdown-menu">
-              <li><a href="/hotels/">{{ "nav_hotels" | t(lang) }}</a></li>
-              <li><a href="/areas/">{{ "nav_areas" | t(lang) }}</a></li>
-              <li><a href="/areas/stone-town/">{{ "nav_stone_town" | t(lang) }}</a></li>
-              <li><a href="/areas/nungwi/">{{ "nav_nungwi_kendwa" | t(lang) }}</a></li>
-              <li><a href="/areas/paje/">{{ "nav_paje_jambiani" | t(lang) }}</a></li>
+              <li><a href="{{ 'hotels' | navUrl(lang) }}">{{ "nav_hotels" | t(lang) }}</a></li>
+              <li><a href="{{ 'areas' | navUrl(lang) }}">{{ "nav_areas" | t(lang) }}</a></li>
+              <li><a href="{{ 'stone_town' | navUrl(lang) }}">{{ "nav_stone_town" | t(lang) }}</a></li>
+              <li><a href="{{ 'nungwi_kendwa' | navUrl(lang) }}">{{ "nav_nungwi_kendwa" | t(lang) }}</a></li>
+              <li><a href="{{ 'paje_jambiani' | navUrl(lang) }}">{{ "nav_paje_jambiani" | t(lang) }}</a></li>
             </ul>
           </li>
           <li class="nav-item has-dropdown">
-            <a href="/travel-guide/" class="nav-link dropdown-toggle">{{ "nav_travel_guide" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
+            <a href="{{ 'travel_guide' | navUrl(lang) }}" class="nav-link dropdown-toggle">{{ "nav_travel_guide" | t(lang) }} <span class="dropdown-arrow" aria-hidden="true">⌄</span></a>
             <ul class="dropdown-menu">
-              <li><a href="/travel-guide/">{{ "nav_travel_guide" | t(lang) }}</a></li>
-              <li><a href="/blog/">{{ "nav_blog" | t(lang) }}</a></li>
-              <li><a href="/cancellation/">{{ "nav_visas_levies" | t(lang) }}</a></li>
-              <li><a href="/health-safety/">{{ "nav_health_safety" | t(lang) }}</a></li>
-              <li><a href="/migration-calendar/">{{ "nav_migration" | t(lang) }}</a></li>
-              <li><a href="/packing-guide/">{{ "nav_packing_guide" | t(lang) }}</a></li>
+              <li><a href="{{ 'travel_guide' | navUrl(lang) }}">{{ "nav_travel_guide" | t(lang) }}</a></li>
+              <li><a href="{{ 'blog' | navUrl(lang) }}">{{ "nav_blog" | t(lang) }}</a></li>
+              <li><a href="{{ 'cancellation' | navUrl(lang) }}">{{ "nav_visas_levies" | t(lang) }}</a></li>
+              <li><a href="{{ 'health_safety' | navUrl(lang) }}">{{ "nav_health_safety" | t(lang) }}</a></li>
+              <li><a href="{{ 'migration' | navUrl(lang) }}">{{ "nav_migration" | t(lang) }}</a></li>
+              <li><a href="{{ 'packing_guide' | navUrl(lang) }}">{{ "nav_packing_guide" | t(lang) }}</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a href="/about/" class="nav-link">{{ "nav_about" | t(lang) }}</a></li>
-          <li class="nav-item"><a href="/contact/" class="nav-link">{{ "nav_contact" | t(lang) }}</a></li>
+          <li class="nav-item"><a href="{{ 'about' | navUrl(lang) }}" class="nav-link">{{ "nav_about" | t(lang) }}</a></li>
+          <li class="nav-item"><a href="{{ 'contact' | navUrl(lang) }}" class="nav-link">{{ "nav_contact" | t(lang) }}</a></li>
         </ul>
         <a href="https://wa.me/{{ site.contact.whatsapp }}" target="_blank" rel="noopener noreferrer" class="nav-cta" onclick="window.dataLayer.push({'event': 'whatsapp_click', 'page_path': '{{ page.path }}', 'label': 'Header WhatsApp'});">{{ "btn_whatsapp_book" | t(lang) }} <span aria-hidden="true">↗</span></a>
       </div>
@@ -139,14 +139,11 @@
 <nav class="mobile-contact-bar" id="sns-mobile-actions" aria-label="Quick contact">
   <a class="mobile-contact-action is-whatsapp" href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%27d%20like%20help%20planning%20my%20Zanzibar%20trip." target="_blank" rel="noopener noreferrer" data-test-label="WhatsApp">
     <span aria-hidden="true">◉</span><span>{{ "mobile_whatsapp" | t(lang) }}</span>
-    <span class="visually-hidden">WhatsApp</span>
   </a>
   <a class="mobile-contact-action" href="tel:{{ site.contact.phone }}" data-test-label="Call">
     <span aria-hidden="true">☎</span><span>{{ "mobile_call" | t(lang) }}</span>
-    <span class="visually-hidden">Call</span>
   </a>
-  <a class="mobile-contact-action is-enquire" href="/contact/" data-sns-open data-test-label="Enquire">
+  <a class="mobile-contact-action is-enquire" href="{{ 'contact' | navUrl(lang) }}" data-sns-open data-test-label="Enquire">
     <span aria-hidden="true">✉</span><span>{{ "mobile_enquire" | t(lang) }}</span>
-    <span class="visually-hidden">Enquire</span>
   </a>
 </nav>

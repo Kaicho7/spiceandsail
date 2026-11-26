@@ -16,8 +16,17 @@
   },
   "safety": {
     "overall": "Generally safe for tourists, including solo female travelers",
-    "common_issues": ["petty theft", "persistent beach vendors", "tourist hassle in busy areas"],
-    "tips": ["Keep valuables secure", "Avoid walking alone late at night", "Use registered taxis or trusted drivers", "Watch for strong tides, sea urchins at low tide"]
+    "common_issues": [
+      "petty theft",
+      "persistent beach vendors",
+      "tourist hassle in busy areas"
+    ],
+    "tips": [
+      "Keep valuables secure",
+      "Avoid walking alone late at night",
+      "Use registered taxis or trusted drivers",
+      "Watch for strong tides, sea urchins at low tide"
+    ]
   },
   "budget_tiers": {
     "budget": {
@@ -152,7 +161,7 @@
     },
     {
       "question": "How do I get around Zanzibar?",
-      "answer": "In Stone Town, walking is the best option for short distances. For longer distances, use Zanzibus shuttles ($5-8), shared taxis (dala dalas at $1), or private taxis ($20-25/hour). Car rental is possible but driving is chaotic. Arrange airport transfers in advance using our fixed-rate transfer service ($35 sedan / $50 van) or your accommodation.."
+      "answer": "In Stone Town, walking is the best option for short distances. For longer distances, use Zanzibus shuttles ($5-8), shared taxis (dala dalas at $1), or private taxis ($20-25/hour). Car rental is possible but driving is chaotic. Arrange airport transfers in advance using our published private-vehicle rates: $18 sedan Stone Town, $45 sedan Paje/Jambiani/Nungwi, $50 van (4-6 guests), or your accommodation. Our published rates are per private vehicle. See the transfers page for full rate details."
     }
   ],
   "booking_advice": [

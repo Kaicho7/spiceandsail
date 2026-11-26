@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="footer-shell">
     <div class="footer-brand">
-      <a href="/" class="footer-wordmark">Spice <em>&amp;</em> Sail</a>
+      <a href="{{ 'home' | navUrl(lang) }}" class="footer-wordmark">Spice <em>&amp;</em> Sail</a>
       <p>{{ "footer_tagline" | t(lang) }}</p>
       <p class="footer-location">{{ site.address.short }}</p>
       {% if site.social and (site.social.instagram or site.social.tiktok or site.social.youtube or site.social.facebook or site.social.tripadvisor) %}
@@ -17,19 +17,19 @@
     <div class="footer-col">
       <h2 class="footer-col-title">{{ "footer_bahari" | t(lang) }} <span>{{ "footer_sea_experiences" | t(lang) }}</span></h2>
       <ul>
-        <li><a href="/tours/">{{ "footer_zanzibar_tours" | t(lang) }}</a></li>
-        <li><a href="/experiences/">{{ "footer_island_experiences" | t(lang) }}</a></li>
-        <li><a href="/safaris/">{{ "footer_mainland_safaris" | t(lang) }}</a></li>
-        <li><a href="/packages/">{{ "footer_holiday_packages" | t(lang) }}</a></li>
+        <li><a href="{{ 'tours' | navUrl(lang) }}">{{ "footer_zanzibar_tours" | t(lang) }}</a></li>
+        <li><a href="{{ 'experiences' | navUrl(lang) }}">{{ "footer_island_experiences" | t(lang) }}</a></li>
+        <li><a href="{{ 'safaris' | navUrl(lang) }}">{{ "footer_mainland_safaris" | t(lang) }}</a></li>
+        <li><a href="{{ 'packages' | navUrl(lang) }}">{{ "footer_holiday_packages" | t(lang) }}</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h2 class="footer-col-title">{{ "footer_usafiri" | t(lang) }} <span>{{ "footer_getting_around" | t(lang) }}</span></h2>
       <ul>
-        <li><a href="/transfers/">{{ "footer_airport_transfers" | t(lang) }}</a></li>
-        <li><a href="/transfers/airport-to-nungwi/">{{ "footer_airport_to_nungwi" | t(lang) }}</a></li>
-        <li><a href="/areas/">{{ "footer_explore_areas" | t(lang) }}</a></li>
-        <li><a href="/travel-guide/">{{ "footer_travel_guide" | t(lang) }}</a></li>
+        <li><a href="{{ 'transfers' | navUrl(lang) }}">{{ "footer_airport_transfers" | t(lang) }}</a></li>
+        <li><a href="{{ 'nungwi_transfer' | navUrl(lang) }}">{{ "footer_airport_to_nungwi" | t(lang) }}</a></li>
+        <li><a href="{{ 'areas' | navUrl(lang) }}">{{ "footer_explore_areas" | t(lang) }}</a></li>
+        <li><a href="{{ 'travel_guide' | navUrl(lang) }}">{{ "footer_travel_guide" | t(lang) }}</a></li>
       </ul>
     </div>
     <div class="footer-col footer-contact">
@@ -44,9 +44,9 @@
   <div class="footer-bottom">
     <p>{{ "footer_all_rights_reserved" | t(lang) }}</p>
     <nav aria-label="Legal">
-      <a href="/privacy/">{{ "footer_privacy" | t(lang) }}</a>
-      <a href="/terms/">{{ "footer_terms" | t(lang) }}</a>
-      <a href="/cancellation/">{{ "footer_cancellation" | t(lang) }}</a>
+      <a href="{{ 'privacy' | navUrl(lang) }}">{{ "footer_privacy" | t(lang) }}</a>
+      <a href="{{ 'terms' | navUrl(lang) }}">{{ "footer_terms" | t(lang) }}</a>
+      <a href="{{ 'cancellation' | navUrl(lang) }}">{{ "footer_cancellation" | t(lang) }}</a>
     </nav>
   </div>
 </footer>
@@ -64,7 +64,7 @@
     </div>
     <div class="sns-trust-bar__cta">
       <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%27d%20like%20to%20book%20a%20Zanzibar%20tour" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">{{ "footer_chat_whatsapp" | t(lang) }}</a>
-      <a href="/tours/" class="btn btn-outline btn-sm">{{ "footer_browse_tours" | t(lang) }}</a>
+      <a href="{{ 'tours' | navUrl(lang) }}" class="btn btn-outline btn-sm">{{ "footer_browse_tours" | t(lang) }}</a>
     </div>
   </div>
 </div>

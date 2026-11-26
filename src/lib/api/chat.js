@@ -18,7 +18,7 @@ const hotelContracts = require('../concierge/hotel-contracts');
 
 const BUSINESS_WHATSAPP = (CONFIG && /^\d{8,15}$/.test(CONFIG.whatsappNumber || ''))
   ? CONFIG.whatsappNumber
-  : '255672450934';
+  : '255707939265';
 const BUSINESS_WHATSAPP_DISPLAY = '+' + BUSINESS_WHATSAPP;
 
 function ensureStore() {

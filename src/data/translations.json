@@ -125,8 +125,8 @@
       "de": "Safaris & Reisepakete",
       "fr": "Safaris & Forfaits",
       "pl": "Safari i Pakiety",
-      "ar": "Safaris & Packages",
-      "ru": "Safaris & Packages"
+      "ar": "رحلات السفاري والباقات",
+      "ru": "Сафари и Пакеты"
     },
     "nav_packages": {
       "en": "Packages",
@@ -152,8 +152,8 @@
       "de": "Festland-Safaris",
       "fr": "Safaris en Tanzanie",
       "pl": "Safari w Tanzanii",
-      "ar": "Mainland Safaris",
-      "ru": "Mainland Safaris"
+      "ar": "رحلات السفاري البرية",
+      "ru": "Сафари на Материке"
     },
     "nav_mikumi": {
       "en": "Mikumi 1-Day Fly-in Safari",
@@ -215,8 +215,8 @@
       "de": "Safari Blue Dhow-Tag",
       "fr": "Safari Blue - Journée en Dhow",
       "pl": "Safari Blue - Dzień na Dhow",
-      "ar": "Safari Blue",
-      "ru": "Safari Blue"
+      "ar": "يوم سافاري بلو بالقارب الشراعي",
+      "ru": "Сафари Блю (Доу-круиз)"
     },
     "nav_mnemba_snorkeling": {
       "en": "Mnemba Atoll Snorkeling",
@@ -224,8 +224,8 @@
       "de": "Schnorcheln am Mnemba-Atoll",
       "fr": "Snorkeling à l'Atoll Mnemba",
       "pl": "Nurkowanie na Atolu Mnemba",
-      "ar": "Mnemba Atoll",
-      "ru": "Mnemba Atoll"
+      "ar": "السنوركلينج في جزيرة منيمبا",
+      "ru": "Снорклинг у Атолла Мнемба"
     },
     "nav_stone_town_walking_tour": {
       "en": "Stone Town Walking Tour",
@@ -233,8 +233,8 @@
       "de": "Stone Town zu Fuß",
       "fr": "Visite à Pied de Stone Town",
       "pl": "Spacer po Stone Town",
-      "ar": "Stone Town",
-      "ru": "Stone Town"
+      "ar": "جولة المشي في ستون تاون",
+      "ru": "Пешая Прогулка по Стоун-Тауну"
     },
     "nav_areas": {
       "en": "Areas",
@@ -1443,7 +1443,7 @@
       "ru": "Сноркелинг Mnemba Atoll"
     },
     "card_mnemba_desc": {
-      "en": "Pristine coral reef, resident green turtles, 5 conservation fee included. Departs from Matemwe, Nungwi, Kiwengwa.",
+      "en": "Pristine coral reef, resident green turtles, $25 conservation fee included. Departs from Matemwe, Nungwi, Kiwengwa.",
       "it": "Barriera corallina intatta, tartarughe verdi residenti, fee conservazione $25 inclusi. Partenza da Matemwe, Nungwi, Kiwengwa.",
       "de": "Unberührtes Korallenriff, ansässige Grüne Meeresschildkröten, $25 Naturschutzgebühr inklusive. Abfahrt von Matemwe, Nungwi, Kiwengwa.",
       "fr": "Récif corallien intact, tortues vertes résidentes, frais de conservation $25 inclus. Départ de Matemwe, Nungwi, Kiwengwa.",
@@ -2818,70 +2818,78 @@
       "pl": "",
       "ar": "",
       "ru": ""
+    },
+    "hotels_logistics_pemba": {
+      "en": "Pemba Island Logistics:",
+      "it": "Logistica Isola Pemba:",
+      "de": "Insel-Logistik Pemba:",
+      "fr": "Logistique Île Pemba:",
+      "pl": "Logistyka Wyspy Pemba:",
+      "ar": "لوجستيات جزيرة بيمبا:",
+      "ru": "Логистика острова Пемба:"
+    },
+    "hotels_logistics_offshore": {
+      "en": "Offshore Island Logistics:",
+      "it": "Logistica Isola Offshore:",
+      "de": "Insel-Logistik Offshore:",
+      "fr": "Logistique Île Offshore:",
+      "pl": "Logistyka Wysp Przybrzeżnych:",
+      "ar": "لوجستيات الجزر القريبة:",
+      "ru": "Логистика прибрежных островов:"
+    },
+    "hotels_logistics_unguja": {
+      "en": "Unguja Hotel Lobby Pickup:",
+      "it": "Raccolta in Hall Hotel Unguja:",
+      "de": "Hotellobby-Abholung Unguja:",
+      "fr": "Prise en charge hôtelier Unguja:",
+      "pl": "Odbiór z recepcji hotelu Unguja:",
+      "ar": "الاستلام من ردهة الفندق في أنغوجا:",
+      "ru": "Трансфер из отеля на Унгудже:"
+    },
+    "hotels_partner_stay": {
+      "en": "Contracted Partner Hotel:",
+      "it": "Hotel Partner Contrattato:",
+      "de": "Partnerhotel:",
+      "fr": "Hôtel Partenaire:",
+      "pl": "Hotel Partnerski:",
+      "ar": "فندق شريك متعاقد:",
+      "ru": "Партнерский отель:"
+    },
+    "hotels_check_rates": {
+      "en": "Check Rates",
+      "it": "Verifica Tariffe",
+      "de": "Preise Prüfen",
+      "fr": "Vérifier les Tarifs",
+      "pl": "Sprawdź Ceny",
+      "ar": "تحقق من الأسعار",
+      "ru": "Посмотреть тарифы"
+    },
+    "hotels_official_site": {
+      "en": "Official Site",
+      "it": "Sito Ufficiale",
+      "de": "Offizielle Website",
+      "fr": "Site Officiel",
+      "pl": "Oficjalna Strona",
+      "ar": "الموقع الرسمي",
+      "ru": "Официальный сайт"
+    },
+    "hotels_transfer": {
+      "en": "Transfer",
+      "it": "Transfer",
+      "de": "Transfer",
+      "fr": "Transfert",
+      "pl": "Przejazd",
+      "ar": "نقل",
+      "ru": "Трансфер"
+    },
+    "hotels_confirmed_by_team": {
+      "en": "Confirmed by our team",
+      "it": "Confermato dal nostro team",
+      "de": "Von unserem Team bestätigt",
+      "fr": "Confirmé par notre équipe",
+      "pl": "Potwierdzone przez nasz zespół",
+      "ar": "مؤكد من فريقنا",
+      "ru": "Подтверждается нашей командой"
     }
-  },
-  "hotels_logistics_pemba": {
-    "en": "Pemba Island Logistics:",
-    "it": "Logistica Isola Pemba:",
-    "de": "Insel-Logistik Pemba:",
-    "fr": "Logistique Île Pemba:",
-    "pl": "Logistyka Wyspy Pemba:",
-    "ar": "لوجستيات جزيرة Pemba:",
-    "ru": "Логистика острова Pemba:"
-  },
-  "hotels_logistics_offshore": {
-    "en": "Offshore Island Logistics:",
-    "it": "Logistica Isola Offshore:",
-    "de": "Insel-Logistik Offshore:",
-    "fr": "Logistique Île Offshore:",
-    "pl": "Logistyka Wyspy Offshore:",
-    "ar": "لوجستيات島 Offshore:",
-    "ru": "Логистика острова Offshore:"
-  },
-  "hotels_logistics_unguja": {
-    "en": "Unguja Hotel Lobby Pickup:",
-    "it": "Raccolta in Hall Hotel Unguja:",
-    "de": "Hotellobby-Abholung Unguja:",
-    "fr": "Prise en charge hôtelier Unguja:",
-    "pl": "Odbiór w receberunku hotelu Unguja:",
-    "ar": "استلام فندق Unguja:",
-    "ru": "Заборт из отеля Unguja:"
-  },
-  "hotels_partner_stay": {
-    "en": "Contracted Partner Hotel:",
-    "it": "Hotel Partner Contrattato:",
-    "de": "Partnerhotel:",
-    "fr": "Hôtel Partenaire:",
-    "pl": "Hotel Partnerski:",
-    "ar": "فندق partner:",
-    "ru": "Отель-партнер:"
-  },
-  "hotels_check_rates": {
-    "en": "Check Rates",
-    "it": "Verifica Tariffe",
-    "de": "Preise Prüfen",
-    "fr": "Vérifier les Tarifs",
-    "pl": "Sprawdź Ceny",
-    "ar": "تحقق من الأسعار",
-    "ru": "Посмотреть тарифы"
-  },
-  "hotels_official_site": {
-    "en": "Official Site",
-    "it": "Sito Ufficiale",
-    "sito": "Sito Ufficiale",
-    "de": "Offizielle Website",
-    "fr": "Site Officiel",
-    "pl": "Oficjalna Strona",
-    "ar": "موقع رسمي",
-    "ru": "Офи сайт"
-  },
-  "hotels_transfer": {
-    "en": "Transfer",
-    "it": "Transfer",
-    "de": "Transfer",
-    "fr": "Transfert",
-    "pl": "Przejazd",
-    "ar": "نقل",
-    "ru": "Перевод"
   }
 }

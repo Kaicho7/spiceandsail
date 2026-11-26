@@ -68,12 +68,59 @@ module.exports = function(eleventyConfig) {
     return Object.keys(translationsData.strings);
   });
 
-    // nonce generator
-    eleventyConfig.addNunjucksFilter('getNonce', function() {
-      return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    });
-eleventyConfig.addNunjucksFilter("t", function(key, lang) {
-    return translate(key, lang);
+  // Explicit per-language URL mapping (falls back to English root when no localized page exists)
+  const NAV_URL_MAP = {
+    home: { en: "/", it: "/it/", de: "/de/", fr: "/fr/", pl: "/pl/", ar: "/ar/", ru: "/ru/" },
+    tours: { en: "/tours/" },
+    safari_blue: { en: "/tours/safari-blue/", it: "/it/tour/safari-blue/", de: "/de/tour/safari-blue/" },
+    mnemba_snorkeling: { en: "/tours/mnemba-snorkeling/", it: "/it/tour/mnemba-snorkeling/", de: "/de/tour/mnemba-snorkeling/", fr: "/fr/tour/mnemba-snorkeling/" },
+    stone_town_walking_tour: { en: "/tours/stone-town-walking-tour/" },
+    experiences: { en: "/experiences/" },
+    spice_farm: { en: "/spice-farm-cultural/", it: "/it/tour/spice-farm/", de: "/de/tour/spice-farm/" },
+    attractions: { en: "/attractions/" },
+    transfers: { en: "/transfers/", it: "/it/trasferimenti/", de: "/de/transfers/" },
+    nungwi_transfer: { en: "/transfers/airport-to-nungwi/", it: "/it/trasferimenti/aeroporto-nungwi/", de: "/de/transfers/airport-to-nungwi/" },
+    self_drive: { en: "/self-drive/" },
+    safaris: { en: "/safaris/" },
+    mikumi: { en: "/safaris/mikumi-day-trip/" },
+    packages: { en: "/packages/", it: "/it/pacchetti/", de: "/de/pakete/" },
+    essentials_3day: { en: "/packages/zanzibar-essentials-3day/" },
+    honeymoon: { en: "/honeymoon-packages/" },
+    family: { en: "/family-travel/" },
+    hotels: { en: "/hotels/" },
+    areas: { en: "/areas/" },
+    stone_town: { en: "/areas/stone-town/" },
+    nungwi_kendwa: { en: "/areas/nungwi/" },
+    paje_jambiani: { en: "/areas/paje/" },
+    travel_guide: { en: "/travel-guide/" },
+    blog: { en: "/blog/" },
+    cancellation: { en: "/cancellation/" },
+    health_safety: { en: "/health-safety/", de: "/de/gesundheit-sicherheit/" },
+    migration: { en: "/migration-calendar/" },
+    packing_guide: { en: "/packing-guide/" },
+    about: { en: "/about/" },
+    contact: { en: "/contact/", it: "/it/contatti/", de: "/de/kontakt/", fr: "/fr/contact/", pl: "/pl/contact/", ar: "/ar/contact/", ru: "/ru/contact/" },
+    privacy: { en: "/privacy/" },
+    terms: { en: "/terms/" }
+  };
+
+  eleventyConfig.addNunjucksFilter("navUrl", (key, lang) => {
+    const entry = NAV_URL_MAP[key];
+    if (!entry) return "/";
+    const l = lang || "en";
+    return entry[l] || entry.en || "/";
+  });
+
+  eleventyConfig.addNunjucksFilter("cleanTourName", (str) => {
+    return String(str || "")
+      .split("|")[0]
+      .replace(/\s+\$[\d,]+(?:\s*[–-]\s*\$?[\d,]+)?/g, "")
+      .trim();
+  });
+
+  // nonce generator
+  eleventyConfig.addNunjucksFilter('getNonce', function() {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   });
 
   function findBySlug(arr, slug) {
@@ -448,20 +495,26 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
   // Map blog slug → existing image filename for blog post hero images
   const blogSlugMap = {
     "best-time-to-visit-zanzibar": "aerial-beach-zanzibar-turquoise-water.jpg",
+    "best-time-to-visit-zanzibar-2025": "aerial-beach-zanzibar-turquoise-water.jpg",
     "nungwi-vs-kendwa": "nungwi-beach-aerial-resort-turquoise-water.jpg",
     "packing-guide-zanzibar": "beach-walk-person-colorful-dress.jpg",
     "responsible-tourism-zanzibar": "women-walking-beach-zanzibar-village.jpg",
     "safari-blue-vs-mnemba-snorkeling": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg",
     "safari-from-zanzibar-guide": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
     "stone-town-walking-tour-guide": "stone-town-walking-tour-people-photograph.jpg",
+    "swahili-phrasebook-zanzibar": "zanzibar-tea-vendor-stone-town.jpg",
     "zanzibar-airport-transfer-cost-2026": "white-minivan-zanzibar-transfer-vehicle.jpg",
     "zanzibar-airport-transfer-guide": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
     "zanzibar-in-december": "dhow-sail-sunset-zanzibar-water.jpg",
     "zanzibar-itinerary-3-days": "aerial-coastal-town-beach-turquoise-water.jpg",
     "zanzibar-itinerary-5-days": "aerial-beach-boat-turquoise-water.jpg",
     "zanzibar-itinerary-7-days": "zanzibar-beach-palm-trees-thatched-huts.jpg",
+    "zanzibar-malaria-health-guide-2025": "beach-walk-person-colorful-dress.jpg",
     "zanzibar-mandatory-insurance": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
-    "zanzibar-marine-fees-explained": "underwater-fish-coral-reef-zanzibar.jpg"
+    "zanzibar-marine-fees-explained": "underwater-fish-coral-reef-zanzibar.jpg",
+    "zanzibar-marine-park-fees-2025": "underwater-fish-coral-reef-zanzibar.jpg",
+    "zanzibar-packing-list-2025": "zanzibar-beach-palm-trees-thatched-huts.jpg",
+    "zanzibar-visa-guide-2025": "zanzibar-airport-transfer-private-minivan-taxi.jpg"
   };
 
   // Map area zone name → existing image filename (for /areas/ cards and zone pages)
@@ -653,9 +706,24 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
     return "default-tour-hero.jpg";
   });
 
-  // Add filter to get descriptive attraction type label (fixes CUL CUL CUL)
-  eleventyConfig.addFilter("attractionTypeLabel", (type) => {
-    const label = attractionTypeLabels[type.toLowerCase()] || attractionTypeLabels[type] || type || "Attraction";
+  // Add filter to get descriptive attraction type label (localized when lang provided)
+  const localizedAttractionLabels = {
+    en: { CUL: "Cultural", MAR: "Ocean & Adventure", NAT: "Nature", SAF: "Safari", PKG: "Package" },
+    it: { CUL: "Culturale", MAR: "Mare & Avventura", NAT: "Natura", SAF: "Safari", PKG: "Pacchetto" },
+    de: { CUL: "Kultur", MAR: "Meer & Abenteuer", NAT: "Natur", SAF: "Safari", PKG: "Paket" },
+    fr: { CUL: "Culturel", MAR: "Mer & Aventure", NAT: "Nature", SAF: "Safari", PKG: "Forfait" },
+    pl: { CUL: "Kultura", MAR: "Morze i Przygoda", NAT: "Natura", SAF: "Safari", PKG: "Pakiet" },
+    ar: { CUL: "ثقافي", MAR: "البحر والمغامرة", NAT: "الطبيعة", SAF: "سفاري", PKG: "باقة" },
+    ru: { CUL: "Культура", MAR: "Море и приключения", NAT: "Природа", SAF: "Сафари", PKG: "Пакет" }
+  };
+  eleventyConfig.addFilter("attractionTypeLabel", (type, lang) => {
+    const raw = String(type || "");
+    const upper = raw.toUpperCase();
+    const l = lang || "en";
+    if (localizedAttractionLabels[l] && localizedAttractionLabels[l][upper]) {
+      return localizedAttractionLabels[l][upper];
+    }
+    const label = attractionTypeLabels[raw.toLowerCase()] || attractionTypeLabels[raw] || raw || "Attraction";
     return label;
   });
 
@@ -914,7 +982,7 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
       "pages/transfers.njk": "zanzibar-airport-transfer-private-minivan-taxi.jpg",
       "pages/packages.njk": "aerial-beach-boat-turquoise-water.jpg",
       "pages/safaris.njk": "serengeti-3-day-fly-in-safari-from-zanzibar.jpg",
-      "pages/experiences.njk": "horse-riding-beach-zanzibar-sunset.jpg",
+      "pages/experiences.njk": "women-horse-riding-ocean-water-zanzibar.jpg",
       "pages/it/tour/mnemba-snorkeling.njk": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
       "pages/de/tour/mnemba-snorkeling.njk": "mnemba-atoll-snorkeling-tour-zanzibar.jpg",
       "pages/de/tour/safari-blue.njk": "safari-blue-zanzibar-menai-bay-sandbank-dhow.jpg",
@@ -926,11 +994,12 @@ eleventyConfig.addNunjucksFilter("t", function(key, lang) {
       "pages/travel-guide.njk": "aerial-beach-zanzibar-turquoise-water.jpg",
       "pages/cancellation.njk": "dhow-boat-turquoise-water-zanzibar.jpg",
       "pages/health-safety.njk": "beach-walk-person-colorful-dress.jpg",
-      "pages/migration-calendar.njk": "turtle-hatching-zanzibar-beach.jpg",
+      "pages/de/gesundheit-sicherheit/index.njk": "beach-walk-person-colorful-dress.jpg",
+      "pages/migration-calendar.njk": "sea-turtles-swimming-zanzibar-water.jpg",
       "pages/packing-guide.njk": "beach-walk-person-colorful-dress.jpg",
-      "pages/self-drive.njk": "toyota-land-cruiser-prado-zanzibar.jpg",
-      "pages/fourty-activities/index.njk": "aerial-beach-boat-turquoise-water.jpg",
-      "pages/marketplace.njk": "marketplace-zanzibar-handicrafts.jpg",
+      "pages/self-drive.njk": "suzuki-grand-vitara-4x4-rental-zanzibar.jpg",
+      "pages/forty-activities/index.njk": "aerial-beach-boat-turquoise-water.jpg",
+      "pages/marketplace.njk": "zanzibar-stone-town-market-bags-textiles.jpg",
     };
     if (!featuredImage && pageHeroMap[tourPath]) {
       featuredImage = pageHeroMap[tourPath];

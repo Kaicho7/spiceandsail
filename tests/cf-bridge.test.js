@@ -11,14 +11,15 @@ class FakeKV {
   async list(o) { const keys = [...this.m.keys()].filter(k => k.startsWith((o && o.prefix) || '')).map(name => ({ name })); return { keys, list_complete: true }; }
 }
 
-async function call(name, method, body, kv, headers) {
+async function call(name, method, body, kv, headers, extraEnv) {
   const mod = await import('../functions/api/' + name + '.js');
   const req = new Request('https://spiceandsail.com/api/' + name, {
     method,
     headers: Object.assign({ 'content-type': 'application/json', origin: 'https://spiceandsail.com', 'cf-connecting-ip': '203.0.113.7' }, headers || {}),
     body: method === 'GET' ? undefined : JSON.stringify(body),
   });
-  return mod.onRequest({ request: req, env: kv === null ? {} : { SNS_KV: kv } });
+  const env = kv === null ? Object.assign({}, extraEnv || {}) : Object.assign({ SNS_KV: kv }, extraEnv || {});
+  return mod.onRequest({ request: req, env });
 }
 
 const lead = (o) => Object.assign({
@@ -72,4 +73,66 @@ test('POST /api/chat answers a greeting from the catalogue', async () => {
 test('CORS preflight returns 204', async () => {
   const res = await call('chat', 'OPTIONS', null, new FakeKV());
   assert.strictEqual(res.status, 204);
+});
+
+test('reviews: moderate requires STAFF_PASSCODE (503/401/200) and GET aggregates without serviceSlug', async () => {
+  const kv = new FakeKV();
+  const prevPass = process.env.STAFF_PASSCODE;
+  try {
+    const subRes = await call('reviews', 'POST', {
+      action: 'submit',
+      bookingRef: 'SP-2026-000123',
+      phone: '+255707939265',
+      serviceSlug: 'safari-blue',
+      rating: 5,
+      text: 'Wonderful day on the sandbank',
+      authorName: 'Test Reviewer'
+    }, kv);
+    assert.strictEqual(subRes.status, 201);
+    const { reviewId } = await subRes.json();
+    assert.ok(reviewId);
+
+    delete process.env.STAFF_PASSCODE;
+    const unconf = await call('reviews', 'POST', {
+      action: 'moderate',
+      reviewId,
+      serviceSlug: 'safari-blue',
+      status: 'approved'
+    }, kv);
+    assert.strictEqual(unconf.status, 503);
+
+    const noAuth = await call('reviews', 'POST', {
+      action: 'moderate',
+      reviewId,
+      serviceSlug: 'safari-blue',
+      status: 'approved'
+    }, kv, null, { STAFF_PASSCODE: 'secret-staff-key' });
+    assert.strictEqual(noAuth.status, 401);
+
+    const badAuth = await call('reviews', 'POST', {
+      action: 'moderate',
+      reviewId,
+      serviceSlug: 'safari-blue',
+      status: 'approved'
+    }, kv, { authorization: 'Bearer wrong-key' }, { STAFF_PASSCODE: 'secret-staff-key' });
+    assert.strictEqual(badAuth.status, 401);
+
+    const okAuth = await call('reviews', 'POST', {
+      action: 'moderate',
+      reviewId,
+      serviceSlug: 'safari-blue',
+      status: 'approved'
+    }, kv, { authorization: 'Bearer secret-staff-key' }, { STAFF_PASSCODE: 'secret-staff-key' });
+    assert.strictEqual(okAuth.status, 200);
+
+    const getAll = await call('reviews', 'GET', null, kv);
+    assert.strictEqual(getAll.status, 200);
+    const listData = await getAll.json();
+    assert.strictEqual(listData.approved, 1);
+    assert.strictEqual(listData.avgRating, '5.0');
+    assert.strictEqual(listData.reviews[0].id, reviewId);
+  } finally {
+    if (prevPass === undefined) delete process.env.STAFF_PASSCODE;
+    else process.env.STAFF_PASSCODE = prevPass;
+  }
 });

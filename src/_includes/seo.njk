@@ -118,28 +118,11 @@
         "Pemba Island"
       ],
       "hasMap": "{{ site.social.google_maps }}"
-    }{% if tour_slug %},
-
-# Count approved reviews for this specific tour
-{% set tour_review_count = 0 %}
-{% set tour_rating_sum = 0 %}
-{% for r in (reviews | default(data.reviews) | default([])) %}
-  {% if r.approved == true and r.service == tour_slug %}
-    {% set tour_review_count = tour_review_count + 1 %}
-    {% set tour_rating_sum = tour_rating_sum + r.rating %}
-  {% endif %}
-{% endfor %}
-{% set tour_avg_rating = 0 %}
-{% if tour_review_count > 0 %}
-  {% set tour_avg_rating = tour_rating_sum / tour_review_count %}
-{% endif %}
-
-    {
-{% if tour_review_count > 0 %}
+    }{% if tour_slug %}{% set tour_review_count = 0 %}{% set tour_rating_sum = 0 %}{% for r in (reviews | default(data.reviews) | default([])) %}{% if r.approved == true and r.service == tour_slug %}{% set tour_review_count = tour_review_count + 1 %}{% set tour_rating_sum = tour_rating_sum + r.rating %}{% endif %}{% endfor %}{% set tour_avg_rating = 0 %}{% if tour_review_count > 0 %}{% set tour_avg_rating = tour_rating_sum / tour_review_count %}{% endif %}{% set tour_min = tour_slug | catMin %}{% set tour_max = tour_slug | catMax %}{% set cleanTourTitle = (tour_name or computedTitle) | cleanTourName %}{% if tour_review_count > 0 %},
     {
       "@type": "Product",
       "@id": "{{ SITE_URL | safe }}{{ page.url }}#product",
-      "name": "{{ pageTitle }}",
+      "name": "{{ cleanTourTitle }}",
       "description": "{{ pageDesc }}",
       "image": "{{ SITE_URL | safe }}{{ ogImage }}",
       "brand": {
@@ -152,48 +135,20 @@
         "reviewCount": {{ tour_review_count }},
         "bestRating": "5",
         "worstRating": "1"
-      },
+      }{% if tour_min != null and tour_max != null %},
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "USD",
-        "lowPrice": {{ tour_slug | catMin }},
-        "highPrice": {{ tour_slug | catMax }},
+        "lowPrice": {{ tour_min }},
+        "highPrice": {{ tour_max }},
         "offerCount": "1",
         "url": "{{ SITE_URL | safe }}{{ page.url }}"
-      }
-    },
-  {% endif %}
-  {
-    "@type": "TouristTrip",
-    "@id": "{{ SITE_URL | safe }}{{ page.url }}#touristtrip",
-    "name": "{{ pageTitle }}",
-    "description": "{{ pageDesc }}",
-    "image": "{{ SITE_URL | safe }}{{ ogImage }}",
-    "touristType": "Leisure",
-    "itinerary": {
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "TouristAttraction",
-            "name": "{{ pageTitle }}",
-            "description": "{{ pageDesc }}"
-          }
-        }
-      ]
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "USD",
-      "lowPrice": {{ tour_slug | catMin }},
-      "highPrice": {{ tour_slug | catMax }},
-      "url": "{{ SITE_URL | safe }}{{ page.url }}"
-    }
-  }
+      }{% endif %}
+    }{% endif %},
+    {
+      "@type": "TouristTrip",
       "@id": "{{ SITE_URL | safe }}{{ page.url }}#touristtrip",
-      "name": "{{ pageTitle }}",
+      "name": "{{ cleanTourTitle }}",
       "description": "{{ pageDesc }}",
       "image": "{{ SITE_URL | safe }}{{ ogImage }}",
       "touristType": "Leisure",
@@ -205,19 +160,19 @@
             "position": 1,
             "item": {
               "@type": "TouristAttraction",
-              "name": "{{ pageTitle }}",
+              "name": "{{ cleanTourTitle }}",
               "description": "{{ pageDesc }}"
             }
           }
         ]
-      },
+      }{% if tour_min != null and tour_max != null %},
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "USD",
-        "lowPrice": {{ tour_slug | catMin }},
-        "highPrice": {{ tour_slug | catMax }},
+        "lowPrice": {{ tour_min }},
+        "highPrice": {{ tour_max }},
         "url": "{{ SITE_URL | safe }}{{ page.url }}"
-      }
+      }{% endif %}
     }{% endif %}{% if page.url != '/' and not tour_slug %},
     {
       "@type": "BreadcrumbList",
@@ -242,17 +197,17 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is included in the {{ pageTitle }} price?",
+          "name": "What is included in the {{ cleanTourTitle }} price?",
           "acceptedAnswer": { "@type": "Answer", "text": "{{ pageDesc }} All marine park fees, guide fees, and transfers where applicable are included. Our team confirms the final quote with exact inclusions before booking." }
         },
         {
           "@type": "Question",
-          "name": "Can I customize the {{ pageTitle }} duration or itinerary?",
+          "name": "Can I customize the {{ cleanTourTitle }} duration or itinerary?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes — most tours are flexible. Morning or afternoon departures, add visits, extend to full-day. WhatsApp us to discuss your preferences." }
         },
         {
           "@type": "Question",
-          "name": "What is the deposit policy for {{ pageTitle }}?",
+          "name": "What is the deposit policy for {{ cleanTourTitle }}?",
           "acceptedAnswer": { "@type": "Answer", "text": "{% set depositPct = tour_slug | catDepositPercent %}{% if depositPct > 0 %}{{ depositPct }}% deposit secures your booking (boat captain, fuel, fresh seafood for marine tours; flights & park permits for safaris). Balance due before departure.{% else %}Zero advance deposit — pay on arrival (transfers) or on the day (land tours).{% endif %}" }
         },
         {

@@ -1,11 +1,12 @@
 ---
 tour_slug: "mnemba-snorkeling"
-title: "Snorkeling at Mnemba Atoll"
-description: "Snorkel in the crystal-clear waters of Mnemba Atoll, Zanzibar's main marine conservation area, with sea turtles, reef fish and dolphin boat trips."
+title: "Snorkeling à l'Atoll de Mnemba"
+description: "Faites du snorkeling dans les eaux cristallines de l'atoll de Mnemba, la principale réserve marine de Zanzibar, avec tortues vertes, poissons tropicaux et sortie en bateau."
 permalink: "/fr/tour/mnemba-snorkeling/index.html"
 lang: fr
 alternate_en: "https://spiceandsail.com/tours/mnemba-snorkeling/"
 alternate_de: "https://spiceandsail.com/de/tour/mnemba-snorkeling/"
+alternate_it: "https://spiceandsail.com/it/tour/mnemba-snorkeling/"
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
@@ -14,99 +15,114 @@ alternate_de: "https://spiceandsail.com/de/tour/mnemba-snorkeling/"
   <section class="tour-hero" style="background: linear-gradient(135deg, var(--dct-ocean) 0%, var(--dct-palm) 100%);">
     <div class="tour-hero-content">
       {% set featured = page.inputPath | featuredImage %}
-{% set cdnSrc = page.inputPath | cdnImage %}
-<img src="{{ cdnSrc }}" alt="{{ featured.featuredAlt or page.title }}" class="tour-hero-image" loading="lazy">
+      {% set cdnSrc = page.inputPath | cdnImage %}
+      <img src="{{ cdnSrc }}" alt="{{ featured.featuredAlt or page.title }}" class="tour-hero-image" loading="lazy">
 
       <span class="card-badge badge-marine">Excursion marine</span>
-      <h1>Snorkeling at Mnemba Atoll / Dolphin Trip</h1>
-      <p class="tour-meta">3–6 hours → Matemwe / Nungwi / Kendwa → Mnemba Atoll</p>
+      <h1>Snorkeling à l'Atoll de Mnemba &amp; Dauphins</h1>
+      <p class="tour-meta">3–6 heures · Matemwe / Nungwi / Kendwa → Atoll de Mnemba</p>
       <div class="tour-price-box">
-        <span class="price-label">From</span>
+        <span class="price-label">À partir de</span>
         <span class="price-amount">{% catPrice "mnemba-snorkeling" %}</span>
-        <span class="price-note">per person</span>
+        <span class="price-note">par personne</span>
       </div>
-      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Bonjour%20Spice%20and%20Sail%2C%20je%20souhaite%20faire%20du%20snorkeling%20à%20Mnemba" target="_blank" rel="noopener" class="btn btn-primary btn-lg">{{ 'btn_whatsapp_book' | t('fr') }}</a>
+      <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Bonjour%20Spice%20and%20Sail%2C%20je%20souhaite%20r%C3%A9server%20le%20snorkeling%20%C3%A0%20Mnemba" target="_blank" rel="noopener" class="btn btn-primary btn-lg">{{ 'btn_whatsapp_book' | t('fr') }}</a>
     </div>
   </section>
 
   <div class="tour-grid">
     <div class="tour-main">
       <section class="tour-section">
-        <h2>Overview</h2>
-        <p>Snorkel in Zanzibar's main marine conservation area at Mnemba Atoll. Spot green sea turtles, observe colorful reef fish on healthy coral reefs and enjoy fruit and water on a traditional dhow.</p>
+        <h2>Aperçu</h2>
+        <p>Explorez les eaux turquoise de l'atoll de Mnemba, la plus célèbre réserve marine protégée de Zanzibar. Observez les tortues vertes résidentes, nagez au-dessus de récifs coralliens colorés et savourez des fruits tropicaux frais à bord d'un bateau traditionnel.</p>
       </section>
       <section class="tour-section">
-        <h2>What to Expect</h2>
+        <h2>Ce qui vous attend</h2>
         <ul class="expect-list">
-          <li>3–6 hour boat trip to the protected marine area at Mnemba Atoll</li>
-          <li>Two snorkeling spots on vibrant coral reefs</li>
-          <li> sighting of common green sea turtles</li>
-          <li>Fresh fruit, water and drinks on board</li>
-          <li>Snorkeling equipment provided (mask, snorkel, life jacket)</li>
-          <li>Marine park fee included</li>
+          <li>Excursion en bateau de 3 à 6 heures vers la réserve marine de l'atoll de Mnemba</li>
+          <li>Deux arrêts de snorkeling sur des récifs coralliens préservés</li>
+          <li>Observation fréquente des tortues vertes et des poissons tropicaux</li>
+          <li>Fruits tropicaux frais, eau et boissons non alcoolisées à bord</li>
+          <li>Équipement de snorkeling fourni (masque, tuba, gilet de sauvetage)</li>
+          <li>Droit d'entrée au parc marin inclus</li>
         </ul>
       </section>
 
       <section class="tour-section">
-        <h2>Highlights</h2>
+        <h2>Tarifs par personne — Snorkeling à l'Atoll de Mnemba</h2>
+        <div class="pricing-tiers" style="display: grid; gap: 0.75rem;">
+          {% set tiers = "mnemba-snorkeling" | catTieredDisplay | split("•") %}
+          {% for tier in tiers %}
+            {% set tierClean = tier | trim %}
+            {% if tierClean %}
+            <div class="pricing-tier" style="background: #fdfaf5; border: 1px solid #f0e8dc; border-radius: 8px; padding: 1rem;">
+              <div style="font-weight: 600; color: #003853;">{{ tierClean }}</div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <p class="table-note" style="margin-top: 1rem; font-size: 0.85rem; color: #4e5d66;">Tarifs issus de notre catalogue vérifié. Les formules privées incluent le bateau, le matériel de snorkeling, les fruits et l'eau, le guide et les frais de conservation marine de 25 $. Meilleures conditions : juin–octobre et décembre–mars.</p>
+      </section>
+
+      <section class="tour-section">
+        <h2>Points forts en images</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
           <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
             <img src="{{ 'underwater-fish-coral-reef-zanzibar.jpg' | cdnFile }}" alt="{{ 'underwater-fish-coral-reef-zanzibar.jpg' | canonicalAlt }}" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
-            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Vibrant Coral Gardens</span>
+            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Jardins de corail colorés</span>
           </div>
           <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
             <img src="{{ 'dolphins-swimming-near-boat-tour.jpg' | cdnFile }}" alt="{{ 'dolphins-swimming-near-boat-tour.jpg' | canonicalAlt }}" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
-            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Wild Dolphins</span>
+            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Dauphins sauvages</span>
           </div>
           <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
             <img src="{{ 'girl-snorkel-mask-beach-sand.jpg' | cdnFile }}" alt="{{ 'girl-snorkel-mask-beach-sand.jpg' | canonicalAlt }}" style="width: 100%; height: 160px; object-fit: cover;" loading="lazy">
-            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Crystal Clear Shallow Reefs</span>
+            <span style="display: block; padding: 0.5rem; font-size: 0.8rem; color: #4e5d66; background: #fdfaf5; text-align: center;">Récifs cristallins peu profonds</span>
           </div>
         </div>
       </section>
 
       <section class="tour-section">
-        <h2>Duration & Meeting Point</h2>
-        <p><strong>Duration:</strong> 3–6 hours (recommended morning departure)</p>
-        <p><strong>Meeting point:</strong> Matemwe, Nungwi or Kendwa — hotel pickup included</p>
+        <h2>Durée &amp; Point de rendez-vous</h2>
+        <p><strong>Durée :</strong> 3 à 6 heures (départ matinal recommandé)</p>
+        <p><strong>Point de rendez-vous :</strong> Matemwe, Nungwi ou Kendwa — transfert depuis votre hôtel inclus</p>
       </section>
       <section class="tour-section">
-        <h2>Important Notes</h2>
+        <h2>Informations importantes</h2>
         <ul class="notes-list">
-          <li>Marine conservation fee: $25 per non-EAC adult (included in our price)</li>
-          <li>Best conditions: June–October and December–March</li>
-          <li>Avoid "dolphins guaranteed" promises — they are unethical and often illegal</li>
-          <li>Weather dependent; trips may be rescheduled if seas are rough</li>
+          <li>Taxe de conservation marine : 25 $ par adulte non-EAC (incluse dans nos tarifs privés)</li>
+          <li>Meilleures périodes : juin–octobre et décembre–mars</li>
+          <li>Évitez les promesses de « dauphins garantis » — ces pratiques perturbent la faune et ne sont pas éthiques</li>
+          <li>Soumis aux conditions météo ; report ou remboursement intégral à 100 % en cas de mer agitée</li>
         </ul>
       </section>
       <section class="tour-section">
         <h2>Inclusions</h2>
         <ul class="includes-list">
-          <li>Boat, snorkeling equipment, fruit/water, guide</li>
-          <li>Marine park fee</li>
+          <li>Bateau, équipement de snorkeling, fruits frais et eau, guide local agréé</li>
+          <li>Droit de conservation marine de l'atoll de Mnemba (25 $)</li>
         </ul>
-      </section>
       </section>
     </div>
 
     <aside class="tour-sidebar">
       <div class="info-card">
-        <h3>📍 Tour Details</h3>
+        <h3>📍 Détails de l'excursion</h3>
         <ul>
-          <li><span class="label">Duration:</span><span class="value">3–6 hours (recommended morning departure)</span></li>
-          <li><span class="label">Location:</span><span class="value">Matemwe / Nungwi / Kendwa → Mnemba Atoll</span></li>
-          <li><span class="label">Category:</span><span class="value">{{ 'MAR' | attractionTypeLabel }}</span></li>
+          <li><span class="label">Durée :</span><span class="value">3–6 heures (départ matinal recommandé)</span></li>
+          <li><span class="label">Lieu :</span><span class="value">Matemwe / Nungwi / Kendwa → Atoll de Mnemba</span></li>
+          <li><span class="label">Catégorie :</span><span class="value">{{ 'MAR' | attractionTypeLabel(lang) }}</span></li>
         </ul>
         <div class="booking-card">
-          <div class="price">{% catPrice tour_slug %} <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ person</span></div>
-          <h3>Ready to Book?</h3>
-          <p style="opacity: 0.8; margin-bottom: 1.25rem;">Send us your preferred date and group size via WhatsApp. We'll confirm with a fixed price including all taxes.</p>
-          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Bonjour%20Spice%20and%20Sail%2C%20je%20souhaite%20faire%20du%20snorkeling%20à%20Mnemba" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp: {{ site.contact.whatsapp_display }}</a>
-          <p class="note">✓ Marine conservation fees included • 20% deposit secures boat & equipment • Weather Guarantee</p>
+          <div class="price">{% catPrice tour_slug %} <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ personne</span></div>
+          <h3>Prêt à réserver ?</h3>
+          <p style="opacity: 0.8; margin-bottom: 1.25rem;">Envoyez-nous votre date souhaitée et la taille de votre groupe sur WhatsApp. Notre équipe vous confirmera le tarif fixe toutes taxes comprises.</p>
+          <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Bonjour%20Spice%20and%20Sail%2C%20je%20souhaite%20r%C3%A9server%20le%20snorkeling%20%C3%A0%20Mnemba" target="_blank" rel="noopener" class="btn btn-accent btn-lg">WhatsApp : {{ site.contact.whatsapp_display }}</a>
+          <p class="note">✓ Frais de parc marin inclus • Acompte de 20 % pour réserver le bateau • Garantie Météo 100 %</p>
         </div>
       </div>
     </aside>
-</div>
+  </div>
 </main>
 
 {% include "footer.njk" %}

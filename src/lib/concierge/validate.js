@@ -65,7 +65,7 @@ function validateLead(body) {
   }
 
   if (hasWhatsApp && !isValidE164(body.whatsapp)) {
-    errors.push('WhatsApp number must be in international format (e.g. +255672450934)');
+    errors.push('WhatsApp number must be in international format (e.g. +255707939265)');
   }
 
   if (hasEmail && !isValidEmail(body.email)) {

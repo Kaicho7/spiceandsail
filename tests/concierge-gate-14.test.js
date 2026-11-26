@@ -37,7 +37,13 @@ test('gate 14: sitemap.xml and robots.txt are served intact', () => {
 test('gate 14: key pages render valid JSON-LD', () => {
   const pages = [
     path.join(DIST, 'transfers', 'airport-to-nungwi', 'index.html'),
-    path.join(DIST, 'experiences', 'index.html')
+    path.join(DIST, 'experiences', 'index.html'),
+    path.join(DIST, 'tours', 'safari-blue', 'index.html'),
+    path.join(DIST, 'packages', 'zanzibar-essentials-3day', 'index.html'),
+    path.join(DIST, 'de', 'tour', 'spice-farm', 'index.html'),
+    path.join(DIST, 'it', 'tour', 'safari-blue', 'index.html'),
+    path.join(DIST, 'fr', 'tour', 'mnemba-snorkeling', 'index.html'),
+    path.join(DIST, 'safaris', 'mikumi-day-trip', 'index.html')
   ];
   for (const p of pages) {
     assert.ok(exists(p), 'page must exist after build: ' + p);

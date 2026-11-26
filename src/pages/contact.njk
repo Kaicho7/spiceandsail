@@ -191,12 +191,12 @@ alternate_ru: "https://spiceandsail.com/ru/contact/"
     <div class="cta-content reveal">
       <h2>{{ "cta_quick_links" | t(lang) }}</h2>
       <div class="quick-link-grid">
-        <a href="/tours/" class="quick-link">{{ "link_browse_tours" | t(lang) }}</a>
-        <a href="/transfers/" class="quick-link">{{ "link_airport_transfers" | t(lang) }}</a>
-        <a href="/packages/" class="quick-link">{{ "link_multi_day_packages" | t(lang) }}</a>
-        <a href="/hotels/" class="quick-link">{{ "link_where_to_stay" | t(lang) }}</a>
-        <a href="/areas/" class="quick-link">{{ "link_explore_by_zone" | t(lang) }}</a>
-        <a href="/about/" class="quick-link">{{ "link_about_us" | t(lang) }}</a>
+        <a href="{{ 'tours' | navUrl(lang) }}" class="quick-link">{{ "link_browse_tours" | t(lang) }}</a>
+        <a href="{{ 'transfers' | navUrl(lang) }}" class="quick-link">{{ "link_airport_transfers" | t(lang) }}</a>
+        <a href="{{ 'packages' | navUrl(lang) }}" class="quick-link">{{ "link_multi_day_packages" | t(lang) }}</a>
+        <a href="{{ 'hotels' | navUrl(lang) }}" class="quick-link">{{ "link_where_to_stay" | t(lang) }}</a>
+        <a href="{{ 'areas' | navUrl(lang) }}" class="quick-link">{{ "link_explore_by_zone" | t(lang) }}</a>
+        <a href="{{ 'about' | navUrl(lang) }}" class="quick-link">{{ "link_about_us" | t(lang) }}</a>
       </div>
     </div>
   </section>

@@ -105,7 +105,7 @@ function createItineraryItem(type, itemData) {
 
 // WhatsApp integration configuration
 const WHATSAPP_CONFIG = {
-  phoneNumber: '+255 672 450 934',
+  phoneNumber: '+255 707 939 265',
   messages: {
     itineraryInquiry: 'Hello! I need help planning my Zanzibar itinerary for {dates}.',
     bookingInquiry: 'Hi! I would like to book {package_type} for my trip on {dates}.'

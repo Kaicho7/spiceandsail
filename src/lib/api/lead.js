@@ -88,8 +88,8 @@ function normalizeLeadBody(raw) {
 
 /** Build reply link server-side: always targets Spice & Sail business channels */
 function buildReplyLink(ref, whatsapp, email) {
-  const businessNumber = (CONFIG && CONFIG.whatsappNumber) ? CONFIG.whatsappNumber : '255672450934';
-  const businessEmail = (CONFIG && CONFIG.businessEmail) ? CONFIG.businessEmail : 'info@spiceandsail.com';
+  const businessNumber = (CONFIG && CONFIG.whatsappNumber) ? CONFIG.whatsappNumber : '255707939265';
+  const businessEmail = (CONFIG && CONFIG.businessEmail) ? CONFIG.businessEmail : 'philip.jumbe@spiceandsail.com';
   if (whatsapp) {
     const msg = encodeURIComponent('Hi Spice & Sail! My reference is ' + ref + '. I would like to follow up on my enquiry.');
     return 'https://wa.me/' + businessNumber + '?text=' + msg;

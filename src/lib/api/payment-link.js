@@ -175,7 +175,7 @@ function buildPaymentLinks(quote, svc, depositConfig, adults, children, bookingR
       icon: '💬',
       primary: true,
       generateUrl: async () => {
-        return `https://wa.me/${CONFIG.whatsappNumber || '255672450934'}?text=${encodeURIComponent(`Jambo Spice & Sail! Please send me the payment link for my ${svc.name} booking (Ref: ${bookingRef}). I'm ready to pay the ${depositConfig.percent}% deposit.`)}`;
+        return `https://wa.me/${CONFIG.whatsappNumber || '255707939265'}?text=${encodeURIComponent(`Jambo Spice & Sail! Please send me the payment link for my ${svc.name} booking (Ref: ${bookingRef}). I'm ready to pay the ${depositConfig.percent}% deposit.`)}`;
       },
       supports: ['M-Pesa', 'Airtel Money', 'Tigo Pesa', 'Halotel', 'HaloPesa', 'AzamPesa', 'Visa', 'Mastercard', 'Cash (USD/TZS)', 'Bank Transfer'],
       manual: true,
@@ -239,7 +239,7 @@ exports.handler = async function (event) {
   if (quote.status !== 'quoted' || quote.totalLow == null) {
     return { statusCode: 400, headers: headers, body: JSON.stringify({ 
       error: 'Service price not available for instant payment. Our team will send a payment link via WhatsApp.',
-      whatsapp_url: `https://wa.me/${CONFIG.whatsappNumber || '255672450934'}?text=${encodeURIComponent('Jambo Spice & Sail! I would like to book ' + svc.name + ' for ' + (body.adults || 2) + ' guests.')}`
+      whatsapp_url: `https://wa.me/${CONFIG.whatsappNumber || '255707939265'}?text=${encodeURIComponent('Jambo Spice & Sail! I would like to book ' + svc.name + ' for ' + (body.adults || 2) + ' guests.')}`
     }) };
   }
 
@@ -349,7 +349,7 @@ exports.handler = async function (event) {
       headers: headers, 
       body: JSON.stringify({ 
         error: 'Unable to generate payment links. Our team will send a secure link via WhatsApp.',
-        whatsapp_url: `https://wa.me/${CONFIG.whatsappNumber || '255672450934'}?text=${encodeURIComponent('Jambo Spice & Sail! I would like to book ' + svc.name + ' for ' + (body.adults || 2) + ' guests.')}`,
+        whatsapp_url: `https://wa.me/${CONFIG.whatsappNumber || '255707939265'}?text=${encodeURIComponent('Jambo Spice & Sail! I would like to book ' + svc.name + ' for ' + (body.adults || 2) + ' guests.')}`,
         bookingRef,
       }) 
     };

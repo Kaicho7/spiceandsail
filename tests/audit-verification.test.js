@@ -19,7 +19,7 @@ function mockEvent(path, body, ip) {
   };
 }
 
-test('audit fix A04: lead.js reply_link must target Spice & Sail (255672450934), never the guest number', async () => {
+test('audit fix A04: lead.js reply_link must target Spice & Sail (255707939265), never the guest number', async () => {
   setGlobalStore(new InMemoryStore());
   const guestPhone = '+14155552671'; // guest US number
   const guestEmail = 'guest.traveler@example.com';
@@ -44,7 +44,7 @@ test('audit fix A04: lead.js reply_link must target Spice & Sail (255672450934),
   assert.ok(resBody.reference, 'must return a reference');
   assert.ok(resBody.reply_link, 'must return a reply_link');
   
-  // CRITICAL: reply_link must target the business desk 255672450934, NOT the guest's 14155552671
+  // CRITICAL: reply_link must target the business desk 255707939265, NOT the guest's 14155552671
   assert.ok(
     resBody.reply_link.startsWith('https://wa.me/255707939265'),
     'reply_link must point to wa.me/255707939265 but got: ' + resBody.reply_link

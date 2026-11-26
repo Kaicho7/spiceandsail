@@ -248,7 +248,7 @@ export default {
     shareWhatsApp() {
       const message = this.formatForWhatsApp();
       const encoded = encodeURIComponent(message);
-      const phone = '+255672450934';
+      const phone = '255707939265';
       window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
     },
 
@@ -266,7 +266,7 @@ export default {
         }
       }
       message += `Total Cost: $${this.totalCost}\n`;
-      message += '\nPlease contact me to book! 📞 +255 672 450 934';
+      message += '\nPlease contact me to book! 📞 +255 707 939 265';
       return message;
     },
 

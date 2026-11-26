@@ -38,7 +38,7 @@ exports.handler = async (event) => {
     // Review links are owner-configured; never substitute placeholder URLs.
     const gbpLink = (process.env.GBP_REVIEW_LINK || '').trim();
     const tripadvisorLink = (process.env.TRIPADVISOR_REVIEW_LINK || '').trim();
-    const whatsappNumber = '255672450934'; // Spice & Sail WhatsApp
+    const whatsappNumber = '255707939265'; // Spice & Sail Business WhatsApp
 
     if (!gbpLink && !tripadvisorLink) {
       return {

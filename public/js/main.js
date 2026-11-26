@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
         whatsapp: field('phone'),
         email: field('email') || undefined,
         travellers: travellersCount,
-        services: field('interests') ? [field('interests')] : undefined,
+        services: field('interests') || undefined,
         notes: [
           field('travel_dates') ? 'Dates: ' + field('travel_dates') : '',
           groupSizeRaw ? 'Group: ' + groupSizeRaw : '',

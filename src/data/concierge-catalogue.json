@@ -3,7 +3,8 @@
   "sourceRepo": "github.com/Kaicho7/spiceandsail @ 550a5b3 (read-only)",
   "currency": "USD",
   "config": {
-    "whatsappNumber": "255672450934",
+    "whatsappNumber": "255707939265",
+    "businessEmail": "philip.jumbe@spiceandsail.com",
     "depositPercent": 0,
     "seaTourDepositPercent": 20,
     "safariDepositPercent": 30,
@@ -2274,7 +2275,7 @@
         "Basic insurance (third-party liability)",
         "Temporary Zanzibar driving permit processing",
         "Airport/hotel delivery & collection",
-        "24/7 roadside assistance contact"
+        "Emergency roadside assistance contact during rental"
       ],
       "importantNotes": [
         "Minimum age 23, maximum 70; young driver surcharge may apply under 25",
@@ -2336,7 +2337,7 @@
         "Basic insurance (third-party liability)",
         "Temporary Zanzibar driving permit processing",
         "Airport/hotel delivery & collection",
-        "24/7 roadside assistance contact"
+        "Emergency roadside assistance contact during rental"
       ],
       "importantNotes": [
         "Minimum age 23, maximum 70; young driver surcharge may apply under 25",
@@ -2405,7 +2406,7 @@
         "Basic insurance (third-party liability)",
         "Temporary Zanzibar driving permit processing",
         "Hotel/beach delivery & collection",
-        "24/7 roadside assistance contact"
+        "Emergency roadside assistance contact during rental"
       ],
       "importantNotes": [
         "Minimum age 18 (scooter); maximum 70; valid national license or IDP with motorcycle endorsement required",

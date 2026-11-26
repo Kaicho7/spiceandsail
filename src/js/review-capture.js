@@ -6,7 +6,7 @@
   'use strict';
 
   const REVIEW_ENDPOINT = '/api/review-capture';
-  const WHATSAPP_NUMBER = '255672450934';
+  const WHATSAPP_NUMBER = '255707939265';
   const LABELS = {
     en: 'Leave a Review',
     it: 'Lascia una recensione',

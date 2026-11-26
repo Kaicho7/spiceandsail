@@ -6,6 +6,7 @@ lang: de
 alternate_en: "https://spiceandsail.com/tours/mnemba-snorkeling/"
 tour_slug: "mnemba-snorkeling"
 alternate_it: "https://spiceandsail.com/it/tour/mnemba-snorkeling/"
+alternate_fr: "https://spiceandsail.com/fr/tour/mnemba-snorkeling/"
 ---
 {% include "seo.njk" %}
 {% include "header.njk" %}
@@ -103,7 +104,6 @@ alternate_it: "https://spiceandsail.com/it/tour/mnemba-snorkeling/"
       <li>Meeresgebühr variiert</li>
         </ul>
       </section>
-      </section>
     </div>
 
     <aside class="tour-sidebar">
@@ -112,7 +112,7 @@ alternate_it: "https://spiceandsail.com/it/tour/mnemba-snorkeling/"
         <ul>
           <li><span class="label">Dauer:</span><span class="value">3–6 Stunden (morgendliche Abfahrt empfohlen)</span></li>
           <li><span class="label">Ort:</span><span class="value">Matemwe / Nungwi / Kendwa → Mnemba-Atoll</span></li>
-          <li><span class="label">Kategorie:</span><span class="value">{{ 'MAR' | attractionTypeLabel }}</span></li>
+          <li><span class="label">Kategorie:</span><span class="value">{{ 'MAR' | attractionTypeLabel(lang) }}</span></li>
         </ul>
         <div class="booking-card">
           <div class="price">{% catPrice tour_slug %} <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.85;">/ Person</span></div>

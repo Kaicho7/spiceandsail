@@ -83,3 +83,10 @@
 # Italian contact page consolidation (deleted /it/contact/ -> /it/contatti/)
 /it/contact   /it/contatti/  301
 /it/contact/  /it/contatti/  301
+
+# Hotel slug alias redirect
+/hotels/stonetown-view-hotel   /hotels/stone-town-view-hotel/  301
+/hotels/stonetown-view-hotel/  /hotels/stone-town-view-hotel/  301
+
+# Mikumi tour slug redirect with trailing slash
+/tours/mikumi-nyerere-day-safari/  /safaris/mikumi-day-trip/  301

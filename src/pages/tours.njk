@@ -21,3 +21,86 @@ permalink: "/tours/index.html"
     </nav>
   </header>
 
+  {% set serviceSlug = "" %}
+  {% include "reviews-list.njk" %}
+
+  <section class="cards tour-grid">
+    <h2 class="visually-hidden">All Tours &amp; Excursions</h2>
+    {% for tour in tours %}
+      {% set svc = (conciergeCat.services | selectattr('slug', 'equalto', tour.slug) | first) %}
+      {% set viatorAnchor = tour.slug | catViatorAnchor %}
+      {% set depositPercent = tour.slug | catDepositPercent %}
+      {% set depositAmount = tour.slug | catDepositAmount %}
+      {% set isMarine = tour.slug | catIsMarine %}
+      {% set isTransfer = tour.slug | catIsTransfer %}
+      <article class="card tour-card reveal" data-category="{{ tour.category }}">
+        <div class="card-image">
+          {% set imgFile = __slugMap[tour.slug] or __slugMap[tour.seo_slug] or "default-tour-hero.jpg" %}
+          <img src="{{ imgFile | cdnFile }}" alt="{{ imgFile | canonicalAlt(tour.title) }}" class="tour-card-image" width="800" height="500" sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 380px" decoding="async" loading="{% if loop.index <= 2 %}eager{% else %}lazy{% endif %}"{% if loop.first %} fetchpriority="high"{% endif %}>
+          {% if isMarine %}
+          <span class="sns-weather-badge" aria-label="100% Weather Guarantee"><span class="sns-weather-badge__icon" aria-hidden="true">🌤️</span>Weather Guarantee</span>
+          {% endif %}
+        </div>
+        <div class="card-content">
+          <span class="tour-category">{{ tour.category | attractionTypeLabel }}</span>
+          <h3><a href="{% if tour.category == 'PKG' %}/packages/{% else %}/tours/{% endif %}{{ tour.seo_slug }}/">{{ tour.title }}</a></h3>
+          <p class="tour-meta">{{ tour.duration }} • {{ tour.location }}</p>
+          <p class="tour-description">{{ tour.short_description }}</p>
+          <div class="tour-card__price-row">
+            <div class="tour-card__price-main">
+              <span class="tour-card__price-amount">{{ tour.slug | catPriceShort | safe }}</span>
+{% if viatorAnchor %}
+            <span class="tour-card__price-anchor" title="Typical third-party OTA price">Typical OTA ~${{ viatorAnchor }}</span>
+            {% endif %}
+            </div>
+            {% if depositPercent > 0 %}
+            <span class="tour-card__deposit">
+              <span aria-hidden="true">💳</span>{{ depositPercent }}% deposit (${{ depositAmount }}) to secure
+            </span>
+            {% elif isTransfer %}
+            <span class="tour-card__deposit tour-card__deposit--zero">
+              <span aria-hidden="true">🛡️</span>0% deposit — pay driver on arrival
+            </span>
+            {% else %}
+            <span class="tour-card__deposit tour-card__deposit--zero">
+              <span aria-hidden="true">🛡️</span>0% deposit — pay on arrival
+            </span>
+            {% endif %}
+          </div>
+          <div class="card-footer">
+            <a href="{% if tour.category == 'PKG' %}/packages/{% else %}/tours/{% endif %}{{ tour.seo_slug }}/" class="btn btn-sm">Details & Booking</a>
+            <a href="https://wa.me/{{ site.contact.whatsapp }}?text=Jambo%20Spice%20%26%20Sail%2C%20I%20would%20like%20details%20and%20a%20quote%20for%20{{ tour.title | urlencode }}." target="_blank" rel="noopener noreferrer" class="sns-card-whatsapp" data-trip-whatsapp aria-label="Ask on WhatsApp about {{ tour.title }}">Ask on WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+
+  <section class="transfer-link">
+    <h2>Need Airport Transfers?</h2>
+    <p>Private transfers from Abeid Amani Karume Airport (ZNZ) to Stone Town, Nungwi, Kendwa, Paje, Jambiani, and all zones.</p>
+    <a href="/transfers/" class="btn primary">View Transfer Options</a>
+  </section>
+
+  <section class="tour-faq">
+    <h2>Frequently Asked Questions about Zanzibar Tours</h2>
+    <details class="faq-item">
+      <summary>Do I need to book tours in advance?</summary>
+      <p>For popular activities (Safari Blue, Mnemba snorkeling, Jozani Forest), book 1–3 days ahead in peak season. Stone Town walks and spice tours can often be arranged same-day.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I customize tour durations?</summary>
+      <p>Yes — most tours are flexible. Morning or afternoon departures, add visits, extend to full-day. WhatsApp us to discuss.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Are marine park fees included?</summary>
+      <p>Yes — Menai Bay ($10) and Mnemba ($25) conservation fees are included in our tour prices. Other entry fees (museums, Jozani park) are noted where not included.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if the weather is bad?</summary>
+      <p>Marine tours may be rescheduled for safety. We offer flexible rebooking or full refunds if conditions prevent departure.</p>
+    </details>
+  </section>
+</main>
+
+{% include "footer.njk" %}

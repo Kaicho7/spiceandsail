@@ -75,7 +75,7 @@ exports.handler = async function (event) {
       body: JSON.stringify({
         version: CATALOGUE_VERSION,
         currency: 'USD',
-        whatsappNumber: CONFIG.whatsappNumber || '255672450934',
+        whatsappNumber: CONFIG.whatsappNumber || '255707939265',
         privacyNoticeVersion: CONFIG.privacyNoticeVersion || '1.0',
         replyWindow: CONFIG.replyWindow || 'within business hours',
         services: services,

@@ -23,7 +23,7 @@ function walk(dir, cb) {
 
 function resolveSrc(src) {
   // Decode HTML entities first (raw HTML has &amp; not &)
-  let s = src.replace(/&amp;/g, "&").replace(/^\/+/, "");
+  let s = src.replace(/&amp;/g, "&").replace(/^https?:\/\/(?:www\.)?spiceandsail\.com/i, "").replace(/^\/+/, "");
   // Unwrap Netlify Image CDN: /.netlify/images?url=<encoded-path>&...
   const cdn = s.match(/^\.netlify\/images\?url=([^&]+)/);
   if (cdn) s = decodeURIComponent(cdn[1]).replace(/^\/+/, "");   // ← THE FIX: strip leading / after decode
@@ -34,19 +34,40 @@ function resolveSrc(src) {
   return s;
 }
 
+function checkLocalImageRef(errors, file, rawUrl, label) {
+  if (!rawUrl || /^(data:)/i.test(rawUrl)) return;
+  if (/^https?:/i.test(rawUrl) && !/^https?:\/\/(?:www\.)?spiceandsail\.com\/images\//i.test(rawUrl)) return;
+  const rel = resolveSrc(rawUrl);
+  const onDisk = path.join(DIST, "images", rel);
+  if (!fs.existsSync(onDisk)) {
+    errors.push(`${path.relative(ROOT, file)} (${label}) -> ${rawUrl}`);
+  }
+}
+
 walk(DIST, (file) => {
   if (!/\.html$/i.test(file)) return;
   const html = fs.readFileSync(file, "utf8");
-  const re = /<img\b[^>]*?\ssrc\s*=\s*["']([^"']+)["']/gi;
+  const imgRe = /<img\b[^>]*?\ssrc\s*=\s*["']([^"']+)["']/gi;
   let m;
-  while ((m = re.exec(html))) {
-    const src = m[1];
-    if (/^(data:|https?:)/i.test(src)) continue;
-    const rel = resolveSrc(src);
-    const onDisk = path.join(DIST, "images", rel);
-    if (!fs.existsSync(onDisk)) {
-      errors.push(`${path.relative(ROOT, file)} -> ${src}`);
-    }
+  while ((m = imgRe.exec(html))) {
+    checkLocalImageRef(errors, file, m[1], "img");
+  }
+
+  const linkRe = /<link\b[^>]*>/gi;
+  while ((m = linkRe.exec(html))) {
+    const tag = m[0];
+    if (!/\brel\s*=\s*["']preload["']/i.test(tag)) continue;
+    if (!/\bas\s*=\s*["']image["']/i.test(tag)) continue;
+    const hrefMatch = tag.match(/\bhref\s*=\s*["']([^"']+)["']/i);
+    if (hrefMatch) checkLocalImageRef(errors, file, hrefMatch[1], "preload");
+  }
+
+  const metaRe = /<meta\b[^>]*>/gi;
+  while ((m = metaRe.exec(html))) {
+    const tag = m[0];
+    if (!/\b(?:property|name)\s*=\s*["'](?:og:image|twitter:image)["']/i.test(tag)) continue;
+    const contentMatch = tag.match(/\bcontent\s*=\s*["']([^"']+)["']/i);
+    if (contentMatch) checkLocalImageRef(errors, file, contentMatch[1], "social-meta");
   }
 });
 

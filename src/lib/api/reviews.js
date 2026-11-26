@@ -100,6 +100,18 @@ const REVIEW_TEMPLATES = {
   }
 };
 
+function timingSafeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') return false;
+  if (a.length !== b.length) {
+    let result = 0;
+    for (let i = 0; i < a.length; i++) result |= a.charCodeAt(i) ^ b.charCodeAt(i % (b.length || 1));
+    return false;
+  }
+  let result = 0;
+  for (let i = 0; i < a.length; i++) result |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return result === 0;
+}
+
 function getTemplate(lang) {
   return REVIEW_TEMPLATES[lang] || REVIEW_TEMPLATES.en;
 }
@@ -136,11 +148,17 @@ exports.handler = async function (event) {
       if (serviceSlug) {
         const key = 'reviews:' + serviceSlug;
         const stored = await store.getJSON(key);
-        reviews = stored?.reviews || [];
+        reviews = (stored && stored.reviews) || [];
       } else {
-        // Get all reviews for aggregate stats
-        // This is a simplified version - in production you'd want an index
-        reviews = [];
+        const keys = await store.list('reviews:');
+        for (const item of keys || []) {
+          const k = typeof item === 'string' ? item : item && (item.key || item.name);
+          if (!k) continue;
+          const stored = await store.getJSON(k);
+          if (stored && Array.isArray(stored.reviews)) {
+            reviews = reviews.concat(stored.reviews);
+          }
+        }
       }
       
       const approved = reviews.filter(r => r.status === 'approved');
@@ -293,8 +311,9 @@ exports.handler = async function (event) {
     const key = 'reviews:' + serviceSlug;
     let stored = { reviews: [] };
     try {
-      stored = await store.getJSON(key);
+      stored = (await store.getJSON(key)) || { reviews: [] };
     } catch (e) { /* new */ }
+    if (!stored || typeof stored !== 'object') stored = { reviews: [] };
     stored.reviews = stored.reviews || [];
     stored.reviews.unshift(review); // newest first
     await store.setJSON(key, stored);
@@ -325,7 +344,19 @@ exports.handler = async function (event) {
   }
 
   if (action === 'moderate') {
-    // Moderate a review (admin only - would need auth in production)
+    const staffPasscode = process.env.STAFF_PASSCODE;
+    if (!staffPasscode) {
+      return { statusCode: 503, headers: headers, body: JSON.stringify({ error: 'Staff access not configured' }) };
+    }
+    const authHeader = event.headers && (event.headers.authorization || event.headers.Authorization);
+    if (!authHeader) {
+      return { statusCode: 401, headers: headers, body: JSON.stringify({ error: 'Authorization required' }) };
+    }
+    const providedCode = authHeader.replace(/^Bearer\s+/i, '');
+    if (!timingSafeEqual(providedCode, staffPasscode)) {
+      return { statusCode: 401, headers: headers, body: JSON.stringify({ error: 'Invalid passcode' }) };
+    }
+
     const { reviewId, serviceSlug, status } = body;
     
     if (!reviewId || !serviceSlug || !status) {
