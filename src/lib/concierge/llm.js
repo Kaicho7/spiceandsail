@@ -21,7 +21,7 @@ function stripPII(text) {
 }
 
 /** Call Gemini API */
-async function callGemini(systemPrompt, userMessage, toolResults) {
+async function callGemini(systemPrompt, userMessage, toolResults, history) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return null;
 
@@ -32,6 +32,16 @@ async function callGemini(systemPrompt, userMessage, toolResults) {
     { role: 'user', parts: [{ text: systemPrompt }] },
     { role: 'model', parts: [{ text: 'Understood. I will follow the concierge rules.' }] },
   ];
+
+  if (Array.isArray(history) && history.length > 0) {
+    history.slice(-6).forEach(function (h) {
+      if (!h || !h.content) return;
+      contents.push({
+        role: h.role === 'assistant' ? 'model' : 'user',
+        parts: [{ text: stripPII(String(h.content).slice(0, 600)) }],
+      });
+    });
+  }
 
   if (toolResults && toolResults.length > 0) {
     contents.push({ role: 'user', parts: [{ text: '[TOOL_RESULTS]\n' + JSON.stringify(toolResults) }] });
@@ -78,7 +88,7 @@ async function callGemini(systemPrompt, userMessage, toolResults) {
 }
 
 /** Call OpenAI-compatible endpoint (Groq, OpenRouter free models) */
-async function callOpenAICompat(systemPrompt, userMessage, toolResults) {
+async function callOpenAICompat(systemPrompt, userMessage, toolResults, history) {
   const baseUrl = process.env.OPENAI_COMPAT_BASE_URL;
   const apiKey = process.env.OPENAI_COMPAT_API_KEY;
   if (!baseUrl || !apiKey) return null;
@@ -86,6 +96,16 @@ async function callOpenAICompat(systemPrompt, userMessage, toolResults) {
   const messages = [
     { role: 'system', content: systemPrompt },
   ];
+
+  if (Array.isArray(history) && history.length > 0) {
+    history.slice(-6).forEach(function (h) {
+      if (!h || !h.content) return;
+      messages.push({
+        role: h.role === 'assistant' ? 'assistant' : 'user',
+        content: stripPII(String(h.content).slice(0, 600)),
+      });
+    });
+  }
 
   if (toolResults && toolResults.length > 0) {
     messages.push({ role: 'assistant', content: JSON.stringify({ action: 'tool_results', data: toolResults }) });
@@ -126,12 +146,12 @@ async function callOpenAICompat(systemPrompt, userMessage, toolResults) {
  * Try LLM providers in order. Returns parsed JSON or null.
  * On any failure, returns null (caller falls back to deterministic).
  */
-async function tryLLM(systemPrompt, userMessage, toolResults) {
+async function tryLLM(systemPrompt, userMessage, toolResults, history) {
   // Try Gemini first
-  let raw = await callGemini(systemPrompt, userMessage, toolResults);
+  let raw = await callGemini(systemPrompt, userMessage, toolResults, history);
   if (!raw) {
     // Try OpenAI-compatible as fallback
-    raw = await callOpenAICompat(systemPrompt, userMessage, toolResults);
+    raw = await callOpenAICompat(systemPrompt, userMessage, toolResults, history);
   }
   if (!raw) return null;
 

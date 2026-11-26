@@ -15,6 +15,7 @@ const { checkReply } = require('../concierge/guardrail');
 const { tryLLM } = require('../concierge/llm');
 const { catalogue, CONFIG, isWithinBusinessHours, getService, getBusinessHoursLabel } = require('../concierge/catalogue');
 const hotelContracts = require('../concierge/hotel-contracts');
+const knowledge = require('../concierge/knowledge');
 
 const BUSINESS_WHATSAPP = (CONFIG && /^\d{8,15}$/.test(CONFIG.whatsappNumber || ''))
   ? CONFIG.whatsappNumber
@@ -27,42 +28,73 @@ function ensureStore() {
   }
 }
 
-/** Deterministic intent detection */
-function detectIntent(text) {
+/** Deterministic intent detection (EN + IT/DE/FR signals + conversation context) */
+function detectIntent(text, profile) {
   const lower = (text || '').toLowerCase();
-  if (/\b(how long to|how long does it take|travel time|drive time|distance to|how far)\b/i.test(lower)) return 'travel_time';
-  if (/\b(larger group|large group|big group|more than 4|minivan|coaster|luggage)\b/i.test(lower)) return 'group_luggage';
-  if (/\b(what('?s| is) included|what to bring|inclusions?|what do i bring|bring along|what is in it)\b/i.test(lower)) return 'inclusions';
-  if (/\b(cancel|cancellation|refund|reschedule|weather policy|bad weather)\b/i.test(lower)) return 'cancellation';
-  if (/\b(how do i pay|payment|pay for|payment method|pay by|mpesa|m-pesa|cash|card|deposit|prepayment|down.?payment)\b/i.test(lower)) return 'payments';
-  if (/\b(honeymoon|romantic|anniversary|couples?\s+trip)\b/i.test(lower)) return 'honeymoon';
-  if (/\b(availab(?:le|ility)|spots? left|seats? left|sold out|booked out|open on)\b/i.test(lower)) return 'availability';
-  if (/\b(private|shared|join (?:a )?group|group tours?|small group|semi.?private)\b/i.test(lower) && /\b(tours?|trips?|excursions?|dhow|safari|boat|snorkel)\b/i.test(lower)) return 'tour_type';
-  const hotelMentions = hotelContracts.matchHotelContracts(text);
-  if (hotelMentions.length > 0 && hotelContracts.isStayRateQuestion(text) && !/\b(transfer|transfers|airport|pickup|drop.?off|taxi|cab|drive|ride|tour|tours|safari|excursion|snorkel|dhow|cruise)\b/i.test(lower)) return 'hotel_stay';
-  if (hotelMentions.length > 0 && hotelContracts.isPropertyFactQuestion(text) && !/\b(transfer|transfers|airport|pickup|drop.?off|taxi|cab|drive|ride|tour|tours|safari|excursion|snorkel|dhow|cruise)\b/i.test(lower)) return 'hotel_facts';
-  if (/\b(get a quote|price|cost|how much|quote|rate)\b/i.test(lower)) return 'quote';
-  if (/\b(family|kids|children|child|toddler|teenager)\b/i.test(lower)) return 'family';
+  const prof = profile || {};
 
-  // Check for specific service mentions BEFORE generic book/reserve intent
-  // So "I want to book Safari Blue" -> quote intent (service-specific response)
+  if (/\b(how long to|how long does it take|travel time|drive time|distance to|how far|quanto tempo|wie lange|combien de temps)\b/i.test(lower)) return 'travel_time';
+  if (/\b(larger group|large group|big group|more than 4|minivan|coaster|luggage|valigie|gepäck)\b/i.test(lower)) return 'group_luggage';
+  if (/\b(what('?s| is) included|what to bring|inclusions?|what do i bring|bring along|what is in it|cosa include|was ist inklusive|que comprend)\b/i.test(lower)) return 'inclusions';
+  if (/\b(cancel|cancellation|refund|reschedule|weather policy|bad weather|cancellazione|stornierung|annulation)\b/i.test(lower)) return 'cancellation';
+  if (/\b(how do i pay|payment|pay for|payment method|pay by|mpesa|m-pesa|cash|card|deposit|prepayment|down.?payment|pagamento|anzahlung|acompte)\b/i.test(lower)) return 'payments';
+  if (/\b(honeymoon|romantic|anniversary|couples?\s+trip|luna di miele|flitterwochen|lune de miel)\b/i.test(lower)) return 'honeymoon';
+  if (/\b(availab(?:le|ility)|spots? left|seats? left|sold out|booked out|open on|disponibilit[àa]|verfügbarkeit|disponibilit[ée])\b/i.test(lower)) return 'availability';
+  if (/\b(private|shared|join (?:a )?group|group tours?|small group|semi.?private|privato|condiviso|privat|geteilt)\b/i.test(lower) && /\b(tours?|trips?|excursions?|dhow|safari|boat|snorkel|escursion|ausflug)\b/i.test(lower)) return 'tour_type';
+
+  const hasMoveWords = /\b(transfer|transfers|airport|pickup|drop.?off|taxi|cab|drive|ride|trasferiment|flughafen|transfert)\b/i.test(lower);
+  const hasTourWords = /\b(tour|tours|safari|excursion|snorkel|dhow|cruise)\b/i.test(lower);
+  const hotelMentions = hotelContracts.matchHotelContracts(text);
+  if (hotelMentions.length > 0 && !hasMoveWords && !hasTourWords) {
+    if (hotelContracts.isStayRateQuestion(text)) return 'hotel_stay';
+    if (hotelContracts.isPropertyFactQuestion(text)) return 'hotel_facts';
+    if (!/\b(book|reserve|confirm|whatsapp)\b/i.test(lower)) return 'hotel_mention';
+  }
+
+  // Area / weather / ferry logistics take precedence over accidental town-name service matches
+  if (/\b(where should i stay|where to stay|which beach|which area|best beach|compare.*beach|stone town vs|nungwi vs|paje vs|tell me about (?:nungwi|kendwa|paje|jambiani|stone town|matemwe|kiwengwa|kizimkazi|michamvi|bwejuu|fumba|pemba))\b/i.test(lower) && !hasMoveWords) return 'area_guide';
+  if (/\b(best time|weather|rain|rainy|season|seasons|tides?|low tide|high tide|climate|temperature|monsoon|when to visit|when should i go|stagione|wetter|meteo)\b/i.test(lower) && !/\b(price|cost|quote|how much|book)\b/i.test(lower)) return 'weather_seasons';
+  if (/\b(ferry|azam|dar es salaam|kilimanjaro|jro|arusha|domestic flight|how do i get to zanzibar|arriving by boat|traghetto|fähre)\b/i.test(lower)) return 'ferry_flights';
+
+  // Specific service mentions take priority over generic price/book/family intents
   const matched = matchServices(text);
   if (matched.length === 1) return 'quote';
-  if (matched.length > 1 && !/^\s*(transfers?|airport transfers?)\s*$/i.test(lower.trim())) return 'quote';
+  if (matched.length > 1 && !/^\s*(transfers?|airport transfers?|trasferimenti|flughafentransfers?)\s*$/i.test(lower.trim())) return 'quote';
 
-  if (/\b(book|reserve|confirm|hold|how do i book|book an experience|book this)\b/i.test(lower)) return 'book';
-  if (/\b(show all tours|view all tours|all tours|list tours|see all tours|browse tours)\b/i.test(lower)) return 'all_tours';
-  if (/\b(recommend|suggest|what should|best|popular|must.?do|plan my (zanzibar )?trip|help me plan|itinerary)\b/i.test(lower)) return 'recommend';
+  if (/\b(partner hotels?|contracted hotels?|which hotels?|recommend.*hotels?|hotel options?|accommodation options?|list hotels?|do you have hotels?|alberghi|unterkünfte)\b/i.test(lower)) return 'hotels_list';
+  if (/\b(packages?|multi.?day|itineraries|pacchetti|pakete|forfaits?)\b/i.test(lower)) return 'packages_list';
+  if (/\b(safaris?|mainland|great migration|tanapa|national parks?)\b/i.test(lower)) return 'safaris_list';
+  if (/\b(self.?drive|rent a car|car rental|car hire|scooter|moped|motorbike|noleggio|mietwagen)\b/i.test(lower)) return 'rentals_list';
+  if (/\b(marine (?:park )?fees?|conservation fees?|infrastructure tax|tourist tax|park fees?|hidden fees?|levy|tasse marine)\b/i.test(lower)) return 'fees_overview';
 
-  if (/\b(transfer|transfers|airport|pickup|drop.?off)\b/i.test(lower)) return 'transfer';
-  if (/\b(visas?|insurance|health|safety|malaria|yellow.?fever|travel info|travel advice|entry requirements|dress code)\b/i.test(lower)) return 'info';
-  if (/\b(hours|open|close|when|contact)\b/i.test(lower)) return 'hours';
-  if (/\b(languages?|italian|italiano|german|deutsch|french|fran[cç]ais|polish|polski|driver language|guide language|multilingual|speak english|speak italian|speak german|speak french|speak polish)\b/i.test(lower)) return 'language';
+  if (/\b(get a quote|price|cost|how much|quote|rate|quanto costa|prezzo|preventivo|was kostet|preis|combien|prix|tarif)\b/i.test(lower)) {
+    if (prof.activeSlug && prof.activeSlug !== 'general') return 'quote';
+    return 'quote';
+  }
+  if (/\b(family|kids|children|child|toddler|teenager|famiglia|kinder|famille)\b/i.test(lower)) {
+    // Follow-up guest/child update on an already-active service recalculates the quote
+    if (prof.activeSlug && prof.activeSlug !== 'general' && /\b(\d+|actually|also|plus|with)\b/i.test(lower)) return 'quote';
+    return 'family';
+  }
+
+  // Context-aware follow-up for party size / date / duration updates on active service
+  if (prof.activeSlug && prof.activeSlug !== 'general' && /\b(\d+\s*(?:adults?|guests?|people|persons?|pax|days?|nights?)|actually\b|instead\b|what about\b)\b/i.test(lower) && !/\b(book|reserve|confirm|hold)\b/i.test(lower)) {
+    return 'quote';
+  }
+
+  if (/\b(book|reserve|confirm|hold|how do i book|book an experience|book this|prenotare|buchen|réserver)\b/i.test(lower)) return 'book';
+  if (/\b(show all tours|view all tours|all tours|list tours|see all tours|browse tours|tutti i tour|alle touren)\b/i.test(lower)) return 'all_tours';
+  if (/\b(recommend|suggest|what should|best|popular|must.?do|plan my (zanzibar )?trip|help me plan|itinerary|consigli|empfehlen|recommander)\b/i.test(lower)) return 'recommend';
+
+  if (/\b(transfer|transfers|airport|pickup|drop.?off|trasferiment|flughafen|aeroporto|transfert)\b/i.test(lower)) return 'transfer';
+  if (/\b(visas?|insurance|health|safety|malaria|yellow.?fever|travel info|travel advice|entry requirements|dress code|currency|cash|atm|tzs|sim|esim|airalo|ramadan|tipping|visto|assicurazione|versicherung|visum)\b/i.test(lower)) return 'info';
+  if (/\b(hours|open|close|when|contact|orari|öffnungszeiten)\b/i.test(lower)) return 'hours';
+  if (/\b(languages?|italian|italiano|german|deutsch|french|fran[cç]ais|polish|polski|arabic|russian|driver language|guide language|multilingual|speak english|speak italian|speak german|speak french|speak polish)\b/i.test(lower)) return 'language';
   if (matched.length > 0) return 'quote';
   return 'general';
 }
 
-/** Match service slugs from text with scoring & route disambiguation */
+/** Match service slugs from text with scoring & route disambiguation across all 43 catalogue services */
 function matchServices(text) {
   const raw = (text || '').trim();
   if (!raw) return [];
@@ -70,8 +102,9 @@ function matchServices(text) {
 
   const STOP_WORDS = new Set(['zanzibar', 'hotel', 'hotels', 'trip', 'day', 'the', 'and', 'with', 'from', 'per', 'vehicle', 'person', 'tour', 'tours']);
 
-  const isAskingTransfer = /\b(transfer|airport|drive|ride|taxi|cab|pickup|drop.?off)\b/i.test(lower);
-  const isAskingTour = /\b(tour|trip|excursion|walk|safari|cruise|snorkel)\b/i.test(lower);
+  const isAskingTransfer = /\b(transfer|airport|drive|ride|taxi|cab|pickup|drop.?off|trasferiment|aeroporto|flughafen|transfert|znz)\b/i.test(lower);
+  const isAskingTour = /\b(tour|trip|excursion|walk|safari|cruise|snorkel|escursion|ausflug)\b/i.test(lower);
+  const hasAirportWord = /\b(airport|znz|aeroporto|flughafen|aéroport|ferry|port)\b/i.test(lower);
 
   const scores = [];
 
@@ -86,44 +119,79 @@ function matchServices(text) {
       score += 600;
     }
 
-    // Type affinity bonuses
     if (svc.type === 'transfer' && isAskingTransfer) score += 50;
     if (svc.type === 'tour' && isAskingTour) score += 50;
 
-    // Specific destination / route keywords
-    if (svc.slug === 'airport-transfer-znz-to-pajejambiani' && (lower.includes('paje') || lower.includes('jambiani'))) {
-      score += 400;
+    // All 8 transfer routes
+    if (svc.slug === 'stone-town-to-nungwi' && isAskingTransfer && !hasAirportWord && lower.includes('stone town') && (lower.includes('nungwi') || lower.includes('kendwa'))) {
+      score += 550;
     }
-    if (svc.slug === 'airport-transfer-znz-to-nungwikendwa' && (lower.includes('nungwi') || lower.includes('kendwa'))) {
-      score += 400;
+    if (svc.slug === 'airport-transfer-znz-to-stone-town' && isAskingTransfer && (lower.includes('stone town') || lower.includes('ferry')) && !lower.includes('nungwi') && !lower.includes('kendwa')) {
+      score += 450;
     }
-    if (svc.slug === 'airport-transfer-znz-to-stone-town' && (lower.includes('stone town') || lower.includes('ferry')) && isAskingTransfer) {
-      score += 400;
+    if (svc.slug === 'airport-transfer-znz-to-fumba' && isAskingTransfer && (lower.includes('fumba') || lower.includes('mbweni'))) {
+      score += 450;
     }
-    if (svc.slug === 'safari-blue' && (lower.includes('safari blue') || lower.includes('menai'))) {
+    if (svc.slug === 'airport-transfer-znz-to-nungwikendwa' && isAskingTransfer && (lower.includes('nungwi') || lower.includes('kendwa')) && (hasAirportWord || !lower.includes('stone town'))) {
+      score += 450;
+    }
+    if (svc.slug === 'airport-transfer-znz-to-pajejambiani' && isAskingTransfer && (lower.includes('paje') || lower.includes('jambiani') || lower.includes('bwejuu') || lower.includes('dongwe'))) {
+      score += 450;
+    }
+    if (svc.slug === 'airport-transfer-znz-to-matemwe' && isAskingTransfer && (lower.includes('matemwe') || lower.includes('kiwengwa') || lower.includes('pongwe'))) {
+      score += 450;
+    }
+    if (svc.slug === 'airport-transfer-znz-to-kizimkazi' && isAskingTransfer && (lower.includes('kizimkazi') || lower.includes('makunduchi') || lower.includes('michamvi') || lower.includes('pingwe'))) {
+      score += 450;
+    }
+    if (svc.slug === 'full-day-island-hire' && (/\bfull.?day.*(hire|car|driver|taxi|van)\b/i.test(lower) || /\b(hire a driver|private driver for the day|8\s*hours?)\b/i.test(lower))) {
       score += 500;
     }
-    if (svc.slug === 'mnemba-snorkeling' && (lower.includes('mnemba') || lower.includes('atoll'))) {
-      score += 500;
-    }
-    if (svc.slug === 'stone-town-walking-tour' && (lower.includes('stone town') || lower.includes('walking')) && isAskingTour) {
-      score += 400;
-    }
-    if (svc.slug === 'prison-island-nakupenda' && (lower.includes('prison island') || lower.includes('nakupenda') || lower.includes('tortoise'))) {
-      score += 400;
-    }
-    if (svc.slug === 'spice-farm' && (lower.includes('spice farm') || lower.includes('spices') || lower.includes('vanilla'))) {
-      score += 400;
-    }
-    if (svc.slug === 'jozani-forest' && (lower.includes('jozani') || lower.includes('colobus') || lower.includes('monkeys'))) {
-      score += 400;
-    }
-    if (svc.slug === 'sunset-dhow-cruise' && (lower.includes('sunset') || lower.includes('dhow cruise'))) {
-      score += 400;
-    }
-    if (svc.slug === 'mikumi-day-trip' && (lower.includes('mikumi') || lower.includes('day safari'))) {
-      score += 400;
-    }
+
+    // Core tours & marine excursions
+    if (svc.slug === 'safari-blue' && (lower.includes('safari blue') || lower.includes('menai'))) score += 520;
+    if (svc.slug === 'mnemba-snorkeling' && (lower.includes('mnemba') || lower.includes('atoll'))) score += 520;
+    if (svc.slug === 'stone-town-walking-tour' && (lower.includes('stone town') || lower.includes('walking')) && !isAskingTransfer && !lower.includes('combo')) score += 450;
+    if (svc.slug === 'stone-town-spice-prison-combo' && (lower.includes('combo') || (lower.includes('stone town') && lower.includes('spice') && lower.includes('prison')))) score += 550;
+    if (svc.slug === 'prison-island-nakupenda' && (lower.includes('prison island') || lower.includes('changuu') || lower.includes('tortoise'))) score += 480;
+    if (svc.slug === 'nakupenda-sandbank' && lower.includes('nakupenda') && !lower.includes('prison')) score += 480;
+    if (svc.slug === 'chumbe-island' && lower.includes('chumbe')) score += 500;
+    if (svc.slug === 'kizimkazi-dolphin-tour' && (lower.includes('kizimkazi') || (lower.includes('dolphin') && !lower.includes('mnemba')))) score += 450;
+    if (svc.slug === 'spice-farm' && (lower.includes('spice farm') || lower.includes('spice tour') || lower.includes('spices') || lower.includes('vanilla') || lower.includes('gewürz') || lower.includes('spezie')) && !lower.includes('combo')) score += 450;
+    if (svc.slug === 'jozani-forest' && (lower.includes('jozani') || lower.includes('colobus') || lower.includes('monkeys'))) score += 480;
+    if (svc.slug === 'kuza-cave-seaweed' && ((lower.includes('kuza') && !lower.includes('maalum')) || lower.includes('seaweed'))) score += 480;
+    if (svc.slug === 'village-community-tour' && (lower.includes('village tour') || lower.includes('community tour') || lower.includes('jambiani village'))) score += 450;
+    if (svc.slug === 'sunset-dhow-cruise' && (lower.includes('sunset') || lower.includes('dhow cruise'))) score += 480;
+
+    // Mainland Safaris (fixed slug: mikumi-nyerere-day-safari!)
+    if (svc.slug === 'mikumi-nyerere-day-safari' && (lower.includes('mikumi') || lower.includes('day safari')) && !lower.includes('bush to beach')) score += 500;
+    if (svc.slug === 'serengeti-3day-flyin' && (lower.includes('serengeti') || lower.includes('ngorongoro'))) score += 500;
+    if (svc.slug === 'saadani-national-park-safari' && (lower.includes('saadani') || lower.includes('wami'))) score += 500;
+    if (svc.slug === 'selous-nyerere-fly-in-safari' && (lower.includes('selous') || lower.includes('nyerere') || lower.includes('rufiji')) && !lower.includes('mikumi')) score += 500;
+
+    // Multi-day packages & partner packages
+    if (svc.slug === 'zanzibar-essentials-3day' && (lower.includes('essentials') || lower.includes('3 day package') || lower.includes('3-day package'))) score += 500;
+    if (svc.slug === 'zanzibar-hidden-gems-sacred-caves' && (lower.includes('hidden gems') || lower.includes('sacred caves'))) score += 500;
+    if (svc.slug === 'adrenaline-and-ocean-safari' && (lower.includes('adrenaline') || lower.includes('ocean safari'))) score += 500;
+    if (svc.slug === 'bush-to-beach-vip-luxury' && (lower.includes('bush to beach') || lower.includes('vip yacht'))) score += 500;
+    if (svc.slug === 'stone-town-starter' && lower.includes('stone town starter')) score += 500;
+    if (svc.slug === 'spice-beach-escape' && lower.includes('spice beach escape')) score += 500;
+    if (svc.slug === 'jambiani-rooftop-romance' && lower.includes('jambiani rooftop')) score += 500;
+    if (svc.slug === 'south-coast-family' && lower.includes('south coast family')) score += 500;
+    if (svc.slug === 'kokoni-city-sea' && lower.includes('kokoni city')) score += 500;
+
+    // Rare Experiences
+    if (svc.slug === 'horse-swimming' && (lower.includes('horse') || lower.includes('equestrian'))) score += 500;
+    if (svc.slug === 'quad-buggy-safari' && (lower.includes('quad') || lower.includes('buggy') || lower.includes('atv'))) score += 500;
+    if (svc.slug === 'maalum-kuza-caves' && (lower.includes('maalum') || lower.includes('cenote'))) score += 500;
+    if (svc.slug === 'uzi-island-moses-road' && (lower.includes('uzi') || lower.includes('moses road'))) score += 500;
+    if (svc.slug === 'cheetahs-rock' && lower.includes('cheetah')) score += 500;
+    if (svc.slug === 'private-catamaran-charter' && (lower.includes('catamaran') || lower.includes('yacht charter'))) score += 500;
+
+    // Self-drive & scooter rentals
+    if (svc.slug === 'self-drive-compact' && (lower.includes('compact') || lower.includes('yaris') || lower.includes('passo') || /\b(rent a car|car rental|car hire|self drive)\b/i.test(lower)) && !lower.includes('4x4') && !lower.includes('suv') && !lower.includes('prado')) score += 450;
+    if (svc.slug === 'self-drive-suv-4x4' && (lower.includes('4x4') || lower.includes('suv') || lower.includes('rav4') || lower.includes('prado') || lower.includes('escudo'))) score += 480;
+    if (svc.slug === 'scooter-moped-rental' && (lower.includes('scooter') || lower.includes('moped') || lower.includes('vespa') || lower.includes('motorbike'))) score += 500;
 
     // Multi-word exact fragment (distinctive 2+ words together)
     const nameWords = nameClean.split(/\s+/).filter(function (w) { return w.length > 3 && !STOP_WORDS.has(w); });
@@ -151,17 +219,62 @@ function matchServices(text) {
 const ZONE_ALIASES = {};
 (catalogue.zones || []).forEach(function (z) {
   ZONE_ALIASES[z.slug] = z.slug;
-  if (z.name) ZONE_ALIASES[z.name.toLowerCase()] = z.slug;
+  if (z.name) {
+    ZONE_ALIASES[z.name.toLowerCase()] = z.slug;
+    const primary = z.name.split('/')[0].trim().toLowerCase();
+    if (primary) ZONE_ALIASES[primary] = z.slug;
+  }
+});
+Object.assign(ZONE_ALIASES, {
+  makunduchi: 'kizimkazi',
+  pingwe: 'michamvi',
+  dongwe: 'bwejuu',
+  mbweni: 'fumba',
+  malindi: 'stone-town',
+  kokoni: 'stone-town',
+  ferry: 'stone-town',
 });
 
 /* ---- Profile entity extraction from free text ---- */
-const INTEREST_KEYWORDS = ['snorkeling', 'spice', 'safari', 'culture', 'beach', 'honeymoon', 'family', 'diving', 'kite'];
+const INTEREST_KEYWORDS = [
+  'snorkeling', 'spice', 'safari', 'culture', 'beach', 'honeymoon', 'family',
+  'diving', 'kite', 'wildlife', 'adventure', 'ocean', 'romance', 'caves',
+  'horses', 'quad', 'sunset', 'history', 'nature', 'package',
+];
+
+const MONTH_MAP = {
+  jan: '01', january: '01', feb: '02', february: '02', mar: '03', march: '03',
+  apr: '04', april: '04', may: '05', jun: '06', june: '06', jul: '07', july: '07',
+  aug: '08', august: '08', sep: '09', sept: '09', september: '09',
+  oct: '10', october: '10', nov: '11', november: '11', dec: '12', december: '12',
+};
+
+function toISODateHint(text) {
+  if (!text) return null;
+  const iso = String(text).match(/\b(\d{4}-\d{2}-\d{2})\b/);
+  if (iso) return iso[1];
+  const dmy = String(text).toLowerCase().match(/\b(\d{1,2})(?:st|nd|rd|th)?\s+(?:of\s+)?(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)(?:\s+(\d{4}))?\b/);
+  if (dmy) {
+    const yr = dmy[3] || String(new Date().getFullYear());
+    return yr + '-' + MONTH_MAP[dmy[2]] + '-' + String(dmy[1]).padStart(2, '0');
+  }
+  const mdy = String(text).toLowerCase().match(/\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\s+(\d{1,2})(?:st|nd|rd|th)?(?:\s*,?\s*(\d{4}))?\b/);
+  if (mdy) {
+    const yr = mdy[3] || String(new Date().getFullYear());
+    return yr + '-' + MONTH_MAP[mdy[1]] + '-' + String(mdy[2]).padStart(2, '0');
+  }
+  const inMonth = String(text).toLowerCase().match(/\b(?:in|for|during|on)\s+(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\b/);
+  if (inMonth) return String(new Date().getFullYear()) + '-' + MONTH_MAP[inMonth[1]] + '-15';
+  return null;
+}
 
 function extractEntities(text, profile) {
   const lower = (text || '').toLowerCase();
   const extracted = {};
 
   // dates — "12 December", "next week", "March 2026", "we arrive on the 5th"
+  const isoHint = toISODateHint(text);
+  if (isoHint) extracted.dateISO = isoHint;
   if (!profile.dates) {
     const datePatterns = [
       /(\d{1,2}\s+(?:january|february|march|april|may|june|july|august|september|october|november|december)(?:\s+\d{4})?)/i,
@@ -180,18 +293,28 @@ function extractEntities(text, profile) {
     }
   }
 
+  // days / nights duration for rentals and hotel stays
+  const daysMatch = lower.match(/\b(\d{1,2})\s*(?:days?|giorni|tage|jours|nights?|notti|nächte|nuits)\b/i);
+  if (daysMatch) {
+    const d = parseInt(daysMatch[1], 10);
+    if (d > 0 && d <= 60) extracted.days = d;
+  }
+
   // group_size → adults (and optionally children)
-  if (!profile.adults) {
-    const groupPatterns = [
-      { re: /\b(\d+)\s*adults?\b/i, field: 'adults' },
-      { re: /\bfamily\s+of\s+(\d+)\b/i, field: 'familyOf' },
-      { re: /\bwe\s+are\s+(\d+)\b/i, field: 'adults' },
-      { re: /\bjust\s+me\s+and\s+my\s+(?:wife|husband|partner)\b/i, field: 'couple' },
-      { re: /\b(\d+)\s+(?:people|persons?|travell?ers?|of\s+us|pax)\b/i, field: 'adults' },
-      { re: /\bcouple\b/i, field: 'couple' },
-      { re: /\bjust\s+me\b/i, field: 'solo' },
-      { re: /\bsolo\b/i, field: 'solo' },
-    ];
+  const groupPatterns = [
+    { re: /\b(\d+)\s*adults?\b/i, field: 'adults' },
+    { re: /\bfamily\s+of\s+(\d+)\b/i, field: 'familyOf' },
+    { re: /\bwe\s+are\s+(\d+)\b/i, field: 'adults' },
+    { re: /\bjust\s+me\s+and\s+my\s+(?:wife|husband|partner)\b/i, field: 'couple' },
+    { re: /\b(\d+)\s+(?:people|persons?|travell?ers?|of\s+us|pax|guests?|ospiti|personen|personnes)\b/i, field: 'adults' },
+    { re: /\bcouple\b/i, field: 'couple' },
+    { re: /\bjust\s+me\b/i, field: 'solo' },
+    { re: /\bsolo\b/i, field: 'solo' },
+  ];
+  const explicitlyUpdatingAdults = /\b(\d+)\s*(?:adults?|people|persons?|travell?ers?|of\s+us|pax|guests?|ospiti|personen|personnes)\b/i.test(lower) ||
+    /\bactually\s+(?:we\s+are|there\s+are|it'?s)\s+(\d+)\b/i.test(lower) ||
+    /\b(\d+)\s+not\s+\d+\b/i.test(lower);
+  if (!profile.adults || explicitlyUpdatingAdults) {
     for (const gp of groupPatterns) {
       const m = lower.match(gp.re);
       if (m) {
@@ -211,27 +334,21 @@ function extractEntities(text, profile) {
         break;
       }
     }
-    // Check for children mention even if adults already set
-    if (!profile.children && !extracted.children) {
-      const childMatch = lower.match(/\b(\d+)\s*(?:kids?|children|child)\b/i);
-      if (childMatch) {
-        const c = parseInt(childMatch[1], 10);
-        if (c > 0 && c <= 20) extracted.children = c;
-      }
-    }
-  } else {
-    // Profile already has adults — check for group_size update ("actually we are 6")
     const actuallyMatch = lower.match(/\bactually\s+(?:we\s+are|there\s+are|it'?s)\s+(\d+)\b/i);
     if (actuallyMatch) {
       const n = parseInt(actuallyMatch[1], 10);
       if (n > 0 && n <= 50) extracted.adults = n;
     }
-    // Also check "not X" pattern: "actually we are 6 not 4"
     const notMatch = lower.match(/\b(\d+)\s+not\s+\d+\b/i);
     if (notMatch) {
       const n = parseInt(notMatch[1], 10);
       if (n > 0 && n <= 50) extracted.adults = n;
     }
+  }
+  const childMatch = lower.match(/\b(\d+)\s*(?:kids?|children|child|bambini|kinder|enfants)\b/i);
+  if (childMatch) {
+    const c = parseInt(childMatch[1], 10);
+    if (c >= 0 && c <= 20) extracted.children = c;
   }
 
   // name — only when the guest explicitly introduces it
@@ -285,6 +402,8 @@ function mergeProfile(incomingProfile, extracted) {
   const merged = Object.assign({}, incomingProfile);
 
   if (extracted.dates) merged.dates = extracted.dates;
+  if (extracted.dateISO) merged.dateISO = extracted.dateISO;
+  if (extracted.days != null) merged.days = extracted.days;
   if (extracted.name) merged.name = extracted.name;
   if (extracted.adults != null) merged.adults = extracted.adults;
   if (extracted.children != null) merged.children = extracted.children;
@@ -346,7 +465,10 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   function unitLabel(svc) {
     const p = svc.pricing || {};
     if (p.basis === 'per_vehicle') return 'per vehicle';
-    if (p.basis === 'per_person') return 'per person';
+    if (p.basis === 'per_vehicle_per_day') return 'per vehicle/day';
+    if (p.basis === 'per_scooter_per_day') return 'per scooter/day';
+    if (p.basis === 'per_boat') return 'per boat';
+    if (p.basis === 'per_quad') return 'per quad';
     return 'per person';
   }
 
@@ -371,6 +493,27 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
       if (factReply) return factReply;
     }
   }
+
+  // ---- partner hotel soft mention ----
+  if (intent === 'hotel_mention') {
+    const hotelMentions = hotelContracts.matchHotelContracts(text);
+    if (hotelMentions.length > 0) {
+      const mentionReply = hotelContracts.partnerMentionReply(hotelMentions[0]);
+      if (mentionReply) return mentionReply;
+    }
+  }
+
+  // ---- partner hotels directory ----
+  if (intent === 'hotels_list') return hotelContracts.listPartnerHotelsReply();
+
+  // ---- domain knowledge intents (Zanzibar & Tanzania context) ----
+  if (intent === 'packages_list') return knowledge.packagesReply();
+  if (intent === 'safaris_list') return knowledge.safarisReply();
+  if (intent === 'rentals_list') return knowledge.rentalsReply();
+  if (intent === 'weather_seasons') return knowledge.weatherSeasonsReply(text);
+  if (intent === 'ferry_flights') return knowledge.ferryFlightsLogisticsReply();
+  if (intent === 'fees_overview') return knowledge.feesOverviewReply();
+  if (intent === 'area_guide') return knowledge.areaGuideReply(text);
 
   // ---- inclusions intent ----
   if (intent === 'inclusions') {
@@ -503,9 +646,16 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
     if (targetSlug) {
       const svc = getService(targetSlug);
       if (svc && svc.pricing && svc.pricing.min != null) {
-        const quote = getQuote({ serviceSlug: targetSlug, adults: profile.adults || 2 });
+        const quote = getQuote({
+          serviceSlug: targetSlug,
+          adults: profile.adults || 2,
+          children: profile.children || 0,
+          date: profile.dateISO || null,
+          pickupZone: profile.pickupZone || null,
+          days: profile.days || null,
+        });
         const depositPercent = svc.pricing.depositPercent || 0;
-        const depositAmount = depositPercent > 0 ? Math.round(quote.totalLow * (depositPercent / 100)) : 0;
+        const depositAmount = depositPercent > 0 && quote.totalLow != null ? Math.round(quote.totalLow * (depositPercent / 100)) : 0;
         
         // Build deposit notice from catalogue's authoritative depositPercent
         let depositNotice;
@@ -518,6 +668,8 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
             depositNotice = '(20% advance deposit via a DPO/Pesapal link sent on WhatsApp locks specialist guides & equipment)';
           } else if (svc.category === 'MAR') {
             depositNotice = '(20% advance deposit via a DPO/Pesapal link sent on WhatsApp locks boat captain & fresh seafood lunch, backed by our 100% Weather Guarantee)';
+          } else if (svc.type === 'rental') {
+            depositNotice = '(20% advance deposit holds your vehicle & prepares your temporary Zanzibar driving permit)';
           } else {
             depositNotice = '(20% advance deposit to confirm)';
           }
@@ -535,7 +687,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
 
         const waMsg = (svc.type === 'transfer'
           ? 'Jambo Spice & Sail! I would like to book a private transfer: ' + svc.name + (profile.dates ? ' on ' + profile.dates : '') + '.'
-          : 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + ' guests.') +
+          : 'Jambo Spice & Sail! I would like to check availability and book ' + svc.name + ' for ' + (profile.adults || 2) + (profile.children ? ' adults + ' + profile.children + ' children' : ' guests') + (profile.dates ? ' on ' + profile.dates : '') + '.') +
           (profile.name ? ' My name is ' + profile.name + '.' : '');
         const waUrl = 'https://wa.me/' + BUSINESS_WHATSAPP + '?text=' + encodeURIComponent(waMsg);
         const inc = (svc.includes || []).join(', ') || 'Licensed guide, gear & marine fees';
@@ -544,9 +696,16 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
           ? ['💬 Open WhatsApp to Reserve', 'Larger group?', 'How long to Nungwi?', 'Show all tours']
           : ['What is included?', '💬 Open WhatsApp', 'Check another tour', 'Airport transfers'];
 
+        const partyLabel = (profile.adults || 2) + ' adult' + ((profile.adults || 2) > 1 ? 's' : '') + (profile.children ? ' + ' + profile.children + ' child' + (profile.children > 1 ? 'ren' : '') : '');
+        const calcLine = (quote.status === 'quoted' && quote.totalDisplay)
+          ? '• **Estimated Total (' + partyLabel + (profile.days ? ', ' + profile.days + ' days' : '') + '):** ' + quote.totalDisplay + (depositAmount > 0 ? ' (approx. $' + depositAmount + ' deposit)' : '') + '\n'
+          : '';
+        const heading = svc.type === 'transfer' ? '**Airport Transfers — ' + svc.name + '**' : '**' + svc.name + '**';
+
         return {
-          message: '**' + svc.name + '**\n\n' +
+          message: heading + '\n\n' +
             '• **Planning Rate:** ' + svc.pricing.display + ' ' + unitLabel(svc) + (svc.pricing.tieredDisplay ? ' • ' + svc.pricing.tieredDisplay : '') + '\n' +
+            calcLine +
             '• **Duration:** ' + svc.duration + '\n' +
             '• **Includes:** ' + inc + '\n\n' +
             (profile.children ? '• **Family:** ' + profile.children + ' child' + (profile.children > 1 ? 'ren' : '') + ' — child pricing is confirmed by our team.\n\n' : '') +
@@ -600,7 +759,8 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
       const list = recs.map(function (r) { return '• **' + r.name + '** — ' + r.priceDisplay + ' (' + r.duration + ')'; }).join('\n');
       return {
         message: 'Based on what you\'ve told me, here are my top suggestions:\n\n' + list + '\n\nWould you like a quote for any of these? Our team confirms availability and the final price.' + hoursNote,
-        quickReplies: recs.slice(0, 3).map(function (r) { return r.name; }).concat(['Something else']),
+        quickReplies: recs.slice(0, 3).map(function (r) { return r.name; }).concat(['Partner hotels', 'Airport transfers']),
+        recommendedSlugs: recs.map(function (r) { return r.slug; }),
         requestContact: false,
       };
     }
@@ -681,16 +841,7 @@ function buildDeterministicReply(intent, text, profile, turnCount) {
   }
 
   if (intent === 'info') {
-    return {
-      message: '**Zanzibar Entry & Travel Information:**\n\n' +
-        '• **Tourist Visa**: Standard tourist visa is $50 USD on arrival (US passport holders require $100 multiple-entry; referral nationalities require advance online clearance via visa.immigration.go.tz).\n' +
-        '• **Mandatory Zanzibar Travel Insurance**: Mandatory for foreign visitors entering Zanzibar ($44 adult / $22 child via visitzanzibar.go.tz).\n' +
-        '• **Currency & Cash**: US Dollars (clean, crisp notes printed post-2013 per Tanzanian banking rules) and Tanzanian Shillings (TZS) are standard. Cards are widely accepted for tours.\n' +
-        '• **Health & Vaccines**: Yellow fever certificate is only required if arriving from or transiting through an endemic transmission country (>12h). Malaria prophylaxis is recommended.\n' +
-        '• **Cultural Dress Code**: Modest clothing (covering shoulders and knees) is respectful when walking through Stone Town, local fishing villages, and spice farms.' + hoursNote,
-      quickReplies: ['Airport transfers', 'Get a quote', 'Show all tours'],
-      requestContact: false,
-    };
+    return knowledge.entryTravelInfoReply(text);
   }
 
   if (intent === 'hours') {
@@ -804,15 +955,16 @@ exports.handler = async function (event) {
 
   // Count conversation turns from history
   const turnCount = Math.floor(history.length / 2) + 1;
+  const lang = String(body.lang || profile.lang || 'en').slice(0, 2).toLowerCase();
 
-  const intent = detectIntent(userMessage);
+  const intent = detectIntent(userMessage, mergedProfile);
 
   // 1. Deterministic engine produces the base reply and data
   const deterministicResult = buildDeterministicReply(intent, userMessage, mergedProfile, turnCount);
   let toolResults = deterministicResult.quote ? [deterministicResult.quote] : [];
-  if (intent === 'hotel_stay') {
-    const hotelMentions = hotelContracts.matchHotelContracts(userMessage);
-    if (hotelMentions.length > 0) toolResults = toolResults.concat(hotelContracts.approvedPriceSheets(hotelMentions));
+  const hotelMentions = hotelContracts.matchHotelContracts(userMessage);
+  if (intent === 'hotel_stay' && hotelMentions.length > 0) {
+    toolResults = toolResults.concat(hotelContracts.approvedPriceSheets(hotelMentions));
   }
 
   // 2. Try LLM enhancement (optional)
@@ -821,8 +973,8 @@ exports.handler = async function (event) {
 
   if (hasLLMKey && intent !== 'hours') {
     try {
-      const systemPrompt = buildSimpleSystemPrompt(mergedProfile, deterministicResult);
-      const llmResult = await tryLLM(systemPrompt, userMessage, toolResults);
+      const systemPrompt = buildSimpleSystemPrompt(mergedProfile, deterministicResult, lang);
+      const llmResult = await tryLLM(systemPrompt, userMessage, toolResults, history);
 
       if (llmResult && llmResult.message) {
         // 3. Guardrail check
@@ -834,9 +986,9 @@ exports.handler = async function (event) {
             requestContact: llmResult.requestContact || deterministicResult.requestContact,
           };
         } else {
-          // Use cleaned version if only minor violations
+          // If LLM invented multiple prices, prefer deterministic reply; otherwise clean
           finalReply = {
-            message: guardrailCheck.cleaned,
+            message: guardrailCheck.violations.length > 1 ? deterministicResult.message : guardrailCheck.cleaned,
             quickReplies: deterministicResult.quickReplies,
             requestContact: deterministicResult.requestContact,
           };
@@ -849,7 +1001,7 @@ exports.handler = async function (event) {
   }
 
   // Terminal response: explicit booking intent OR booking action (never force handoff prematurely on turn count)
-  const isBookingIntent = intent === 'book' || /\b(book|reserve|confirm|hold|whatsapp)\b/i.test(userMessage);
+  const isBookingIntent = intent === 'book' || /\b(book|reserve|confirm|hold|whatsapp|prenot|buch|réserv)\b/i.test(userMessage);
   const isTerminal = isBookingIntent;
 
   const responseBody = {
@@ -859,10 +1011,14 @@ exports.handler = async function (event) {
     quote: deterministicResult.quote || null,
     profile: mergedProfile,
     whatsapp_url: deterministicResult.whatsapp_url || null,
+    intent: intent,
+    matchedSlugs: matchedSlugs,
+    recommendedSlugs: deterministicResult.recommendedSlugs || [],
+    matchedHotels: deterministicResult.matchedHotels || hotelMentions.map(function (h) { return h.slug; }),
   };
 
   if (isTerminal) {
-    const staySlugs = hotelContracts.matchHotelContracts(userMessage).map(function (h) { return 'hotel:' + h.slug; });
+    const staySlugs = hotelMentions.map(function (h) { return 'hotel:' + h.slug; });
     const targetSlugs = [...new Set((matchedSlugs.length > 0
       ? matchedSlugs
       : (mergedProfile.activeSlug ? [mergedProfile.activeSlug] : (mergedProfile.serviceSlugs || []))).concat(staySlugs))];
@@ -880,17 +1036,27 @@ exports.handler = async function (event) {
   };
 };
 
-function buildSimpleSystemPrompt(profile, deterministicResult) {
+function buildSimpleSystemPrompt(profile, deterministicResult, lang) {
   const replyWindow = CONFIG.replyWindow || 'within a few hours during business hours';
   const afterHours = !isWithinBusinessHours();
+  const targetLang = ({ it: 'Italian', de: 'German', fr: 'French' })[lang] || 'English';
 
-  return 'You are the Spice & Sail Island Concierge — a warm Zanzibar travel consultant. ' +
-    'Reply concisely in English. Use the DETERMINISTIC DATA provided — never invent prices or availability. ' +
-    'Every price must come from the data below. Never say a booking is confirmed, locked, or reserved. ' +
+  return 'You are the Spice & Sail Island Concierge — a warm, expert Zanzibar & Tanzania travel consultant. ' +
+    'Reply concisely and helpfully in ' + targetLang + '. Use the DETERMINISTIC DATA and GUEST PROFILE provided — never invent prices, discounts, or availability. ' +
+    'Every dollar figure must come from the data below. Never say a booking is confirmed, locked, or reserved. ' +
     'Say "pending team confirmation". Our team replies ' + replyWindow + '. ' +
     (afterHours ? 'The team is offline now — mention messages are answered next business morning. ' : '') +
     'Never compare with OTAs. Never claim to be a registered tour operator. ' +
     'For insurance ($44) and hotel tax ($4-$5): say "verify current amounts on the official portal". ' +
+    '\n\nGUEST PROFILE:\n' + JSON.stringify({
+      adults: profile.adults || 2,
+      children: profile.children || 0,
+      dates: profile.dates || null,
+      pickupZone: profile.pickupZone || null,
+      interests: profile.interests || [],
+      activeSlug: profile.activeSlug || null,
+      discussed: profile.discussed_services || [],
+    }) +
     '\n\nDETERMINISTIC DATA:\n' + JSON.stringify({
       suggestedReply: deterministicResult.message,
       quickReplies: deterministicResult.quickReplies,

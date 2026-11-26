@@ -129,10 +129,23 @@
         if (!serviceSlug || !window.snsConcierge || typeof window.snsConcierge.openBooking !== 'function') {
           return;
         }
+        var bookingOpts = { serviceSlug: serviceSlug };
+        var hotelSlug = button.getAttribute('data-hotel-slug');
+        var hotelName = button.getAttribute('data-hotel-name');
+        var pickup = button.getAttribute('data-pickup');
+        var date = button.getAttribute('data-date');
+        var guests = button.getAttribute('data-guests');
+        var notes = button.getAttribute('data-notes');
+        if (hotelSlug) bookingOpts.hotelSlug = hotelSlug;
+        if (hotelName) bookingOpts.hotelName = hotelName;
+        if (pickup) bookingOpts.pickup = pickup;
+        if (date) bookingOpts.date = date;
+        if (guests) bookingOpts.guests = guests;
+        if (notes) bookingOpts.notes = notes;
         var originalText = button.textContent;
         button.disabled = true;
         button.textContent = 'Opening concierge…';
-        Promise.resolve(window.snsConcierge.openBooking({ serviceSlug: serviceSlug }))
+        Promise.resolve(window.snsConcierge.openBooking(bookingOpts))
           .then(function (opened) {
             if (opened) track('concierge_booking_opened', { service_slug: serviceSlug, source: 'hero_cta' });
           })

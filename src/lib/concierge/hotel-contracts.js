@@ -84,8 +84,8 @@ function extractTravelMonthDay(text) {
 
 const KEYWORDS = [
   { slug: 'stonetown-view-hotel', patterns: [/stone\s*town\s*view/i] },
-  { slug: 'the-island-stonetown', patterns: [/island\s*stonetown/i, /kokoni/i] },
-  { slug: 'mkeka-spice-lodge', patterns: [/mkeka/i] },
+  { slug: 'the-island-stonetown', patterns: [/(?:the\s+)?island\s*stone\s*town/i, /\bkokoni\b/i] },
+  { slug: 'mkeka-spice-lodge', patterns: [/\bmkeka\b/i] },
   { slug: 'le-paradis-boutique-hotel-zanzibar', patterns: [/le\s*paradis/i, /leparadis/i] },
   { slug: 'the-one-resort-zanzibar', patterns: [/the\s*one\s*resort/i, /one\s*resort\s*zanzibar/i, /the\s*one\s*zanzibar/i] },
 ];
@@ -93,7 +93,8 @@ const KEYWORDS = [
 /** Look up a hotel contract by slug. */
 function getHotelContract(slug) {
   if (!slug) return null;
-  return HOTELS.find(function (h) { return h.slug === slug; }) || null;
+  const normalized = slug === 'stone-town-view-hotel' ? 'stonetown-view-hotel' : slug;
+  return HOTELS.find(function (h) { return h.slug === normalized; }) || null;
 }
 
 /** Match hotel contracts mentioned in free text. */
@@ -112,13 +113,31 @@ function matchHotelContracts(text) {
 /** True when the text looks like a stay-rate question (not just a transfer query). */
 function isStayRateQuestion(text) {
   if (!text) return false;
-  return /\b(rate|rates|price|prices|pricing|cost|how much|per night|room rate|stay|rooms? available|sleeps?|book a room|hotel room)\b/i.test(text);
+  return /\b(rate|rates|price|prices|pricing|cost|how much|per night|room rate|stay|rooms? available|sleeps?|book a room|hotel room|all inclusive|half board|full board|single occupancy)\b/i.test(text);
 }
 
-/** True when the text asks about what a property has (rooms, views, facilities). */
+/** True when the text asks about what a property has (rooms, views, facilities, policies). */
 function isPropertyFactQuestion(text) {
   if (!text) return false;
-  return /\b(sea\s*view|ocean\s*view|beach\s*view|have a pool|swimming pool|does it have|do they have|is there|are there|facilities|amenities|what rooms|room types|breakfast|restaurant|spa|free wifi|wifi|airport distance|how far|how many rooms|family room|triple room|twins?)\b/i.test(text);
+  return /\b(sea\s*view|ocean\s*view|beach\s*view|have a pool|swimming pool|does it have|do they have|is there|are there|facilities|amenities|what rooms|room types|breakfast|restaurant|spa|free wifi|wifi|airport distance|how far|how many rooms|family room|triple room|twins?|check[\s-]?in|check[\s-]?out|late check|early check|min(?:imum)? stay|cancel|jacuzzi|massage|beachfront|bar|parking)\b/i.test(text);
+}
+
+/** Reply listing all 5 contracted partner hotels with verified public from-rates. */
+function listPartnerHotelsReply() {
+  const lines = HOTELS.map(function (c) {
+    const publicHotel = (publicHotelRates.hotels || []).find((h) => h.slug === c.slug);
+    const fromRate = publicFromRate(publicHotel);
+    const rateNote = fromRate != null ? 'From $' + fromRate + '/night' : 'Partner rates confirmed by team';
+    return '• **' + c.name + '** (' + (c.area || 'Zanzibar') + ') — ' + rateNote;
+  });
+  return {
+    message: '**Our 5 Contracted Partner Hotels in Zanzibar:**\n\n' +
+      lines.join('\n') +
+      '\n\nWe quote direct partner rates below published rack/OTA rates and bundle your stay with zero-deposit ZNZ airport transfers and licensed tours. Ask about any property or request a stay quote!',
+    quickReplies: HOTELS.slice(0, 3).map((c) => 'Stay rates for ' + c.name).concat(['Airport transfers']),
+    matchedHotels: HOTELS.map((c) => c.slug),
+    requestContact: false,
+  };
 }
 
 /** Reply answering property-fact questions from the verified research facts. */
@@ -137,6 +156,13 @@ function propertyFactReply(contract) {
   if (contract.distanceFacts) {
     lines.push('**Getting there:** ' + contract.distanceFacts);
   }
+  if (contract.policy) {
+    const polBits = [];
+    if (contract.policy.checkIn && contract.policy.checkOut) polBits.push('Check-in ' + contract.policy.checkIn + ' / Check-out ' + contract.policy.checkOut);
+    if (contract.policy.minStay) polBits.push('Min stay: ' + contract.policy.minStay);
+    if (contract.policy.cancellation || contract.policy.cancellationPolicy) polBits.push('Cancellation: ' + (contract.policy.cancellation || contract.policy.cancellationPolicy));
+    if (polBits.length) lines.push('**Policies:** ' + polBits.join(' • '));
+  }
   const publicHotel = (publicHotelRates.hotels || []).find((h) => h.slug === contract.slug);
   const fromRate = publicFromRate(publicHotel);
   if (fromRate != null) {
@@ -149,6 +175,7 @@ function propertyFactReply(contract) {
   return {
     message: lines.join('\n'),
     quickReplies: ['Stay rates for ' + contract.name, '💬 Open WhatsApp to Reserve', 'Airport transfer quote'],
+    matchedHotels: [contract.slug],
     requestContact: false,
   };
 }
@@ -253,6 +280,7 @@ function hotelStayReply(contract, text) {
   return {
     message: lines.join('\n'),
     quickReplies: ['💬 Open WhatsApp to Reserve', 'Airport transfer quote', 'Plan my trip'],
+    matchedHotels: [contract.slug],
     requestContact: false,
   };
 }
@@ -263,6 +291,7 @@ function partnerMentionReply(contract) {
   return {
     message: '**' + contract.name + '** (' + contract.area + ') is one of our contracted partner hotels — we can quote your stay together with licensed tours and private airport transfers. Ask me for stay rates or open WhatsApp to reserve!',
     quickReplies: ['Stay rates for ' + contract.name, '💬 Open WhatsApp to Reserve', 'Plan my trip'],
+    matchedHotels: [contract.slug],
     requestContact: false,
   };
 }
@@ -377,6 +406,7 @@ module.exports = {
   seasonForMonthDay: seasonForMonthDay,
   extractTravelMonthDay: extractTravelMonthDay,
   partnerMentionReply: partnerMentionReply,
+  listPartnerHotelsReply: listPartnerHotelsReply,
   approvedPriceSheets: approvedPriceSheets,
   hotelQuote: hotelQuote,
 };

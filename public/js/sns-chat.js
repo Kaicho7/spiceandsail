@@ -51,9 +51,11 @@
       i_adv: 'Adventure', i_rom: 'Romance', i_fam: 'Family-friendly', i_any: 'Surprise me',
       next: 'Continue', skip: 'Skip', thinking: 'Finding the best options…',
       cat_all: 'All', cat_MAR: 'Sea', cat_CUL: 'Culture', cat_NAT: 'Nature', cat_SAF: 'Safari',
-      cat_PKG: 'Packages', cat_EXP: 'Experiences', cat_TRF: 'Transfers',
+      cat_PKG: 'Packages', cat_EXP: 'Experiences', cat_TRF: 'Transfers', cat_SDR: 'Self-Drive', cat_HTL: 'Partner Hotels',
       from: 'From', onreq: 'Price on request', get_quote: 'Get a quote', ask_about: 'Ask about this',
       more: 'Show more', quote_title: 'Planning range', for_who: 'For', date: 'Date',
+      nights: 'Nights', rooms: 'Rooms', days: 'Days', bundle_quote: 'Combined trip quote',
+      add_to_trip: '+ Add to trip', added_trip: 'In trip plan ✓', partner_hotels: 'Partner hotels',
       recalc: 'Update', team_confirms: 'A planning range, not a booking. Our team confirms availability, the final price and any deposit before you pay.',
       includes: 'Includes', send_enquiry: 'Send my enquiry', wa_btn: 'Continue on WhatsApp',
       lead_title: 'Send your enquiry', name: 'Your name', wa: 'WhatsApp number (with +country code)',
@@ -65,7 +67,7 @@
       err_net: "I couldn't reach the server. You can still message our team directly on WhatsApp.",
       err_limit: 'Message limit reached. Please continue on WhatsApp.',
       err_generic: 'Something went wrong. Please try again, or use WhatsApp.',
-      lang_note: 'Replies here are in English. Our team can answer in Italian or German on WhatsApp.',
+      lang_note: 'Replies here are in English. Our team can answer in Italian, German or French on WhatsApp.',
       wa_hi: "Hi Spice & Sail! I'd like to book", wa_ref: 'Reference', wa_pax: 'Group', wa_date: 'Dates',
       wa_pickup: 'Pickup', wa_name: 'Name', wa_generic: 'a Zanzibar experience',
       adults_l: 'adults', children_l: 'children'
@@ -86,9 +88,11 @@
       i_adv: 'Avventura', i_rom: 'Romantico', i_fam: 'Per famiglie', i_any: 'Sorprendimi',
       next: 'Continua', skip: 'Salta', thinking: 'Cerco le opzioni migliori…',
       cat_all: 'Tutti', cat_MAR: 'Mare', cat_CUL: 'Cultura', cat_NAT: 'Natura', cat_SAF: 'Safari',
-      cat_PKG: 'Pacchetti', cat_EXP: 'Esperienze', cat_TRF: 'Transfer',
+      cat_PKG: 'Pacchetti', cat_EXP: 'Esperienze', cat_TRF: 'Transfer', cat_SDR: 'Auto/Scooter', cat_HTL: 'Hotel Partner',
       from: 'Da', onreq: 'Prezzo su richiesta', get_quote: 'Preventivo', ask_about: 'Chiedi info',
       more: 'Mostra altro', quote_title: 'Tariffa indicativa', for_who: 'Per', date: 'Data',
+      nights: 'Notti', rooms: 'Camere', days: 'Giorni', bundle_quote: 'Preventivo combinato',
+      add_to_trip: '+ Aggiungi al piano', added_trip: 'Nel piano ✓', partner_hotels: 'Hotel Partner',
       recalc: 'Aggiorna', team_confirms: 'Una tariffa indicativa, non una prenotazione. Il team conferma disponibilità, prezzo finale ed eventuale caparra prima del pagamento.',
       includes: 'Include', send_enquiry: 'Invia la richiesta', wa_btn: 'Continua su WhatsApp',
       lead_title: 'Invia la tua richiesta', name: 'Il tuo nome', wa: 'Numero WhatsApp (con prefisso +)',
@@ -121,9 +125,11 @@
       i_adv: 'Abenteuer', i_rom: 'Romantik', i_fam: 'Familienfreundlich', i_any: 'Überraschen Sie mich',
       next: 'Weiter', skip: 'Überspringen', thinking: 'Ich suche die besten Optionen…',
       cat_all: 'Alle', cat_MAR: 'Meer', cat_CUL: 'Kultur', cat_NAT: 'Natur', cat_SAF: 'Safari',
-      cat_PKG: 'Pakete', cat_EXP: 'Erlebnisse', cat_TRF: 'Transfers',
+      cat_PKG: 'Pakete', cat_EXP: 'Erlebnisse', cat_TRF: 'Transfers', cat_SDR: 'Mietwagen', cat_HTL: 'Partnerhotels',
       from: 'Ab', onreq: 'Preis auf Anfrage', get_quote: 'Preis anfragen', ask_about: 'Mehr erfahren',
       more: 'Mehr anzeigen', quote_title: 'Richtpreis', for_who: 'Für', date: 'Datum',
+      nights: 'Nächte', rooms: 'Zimmer', days: 'Tage', bundle_quote: 'Kombi-Angebot berechnen',
+      add_to_trip: '+ Zum Plan', added_trip: 'Im Reiseplan ✓', partner_hotels: 'Partnerhotels',
       recalc: 'Aktualisieren', team_confirms: 'Ein Richtpreis, keine Buchung. Unser Team bestätigt Verfügbarkeit, Endpreis und eine mögliche Anzahlung, bevor Sie zahlen.',
       includes: 'Inklusive', send_enquiry: 'Anfrage senden', wa_btn: 'Weiter auf WhatsApp',
       lead_title: 'Anfrage senden', name: 'Ihr Name', wa: 'WhatsApp-Nummer (mit +Ländervorwahl)',
@@ -139,6 +145,43 @@
       wa_hi: 'Hallo Spice & Sail! Ich möchte gern buchen', wa_ref: 'Referenz', wa_pax: 'Gruppe', wa_date: 'Datum',
       wa_pickup: 'Abholung', wa_name: 'Name', wa_generic: 'ein Erlebnis auf Sansibar',
       adults_l: 'Erwachsene', children_l: 'Kinder'
+    },
+    fr: {
+      title: 'Island Concierge', sub: 'Tarifs réels · équipe locale', online: 'Spice & Sail Zanzibar',
+      person: 'Parler à un conseiller', close: 'Fermer', open: 'Discuter avec nous', send: 'Envoyer',
+      placeholder: 'Tours, transferts, hôtels, prix…',
+      welcome: "**Karibu !** Je suis l'Island Concierge de Spice & Sail. Je recommande depuis notre catalogue officiel, j'affiche des tarifs indicatifs vérifiés et je transmets votre demande à notre équipe locale.",
+      welcome2: 'Aucun paiement dans ce chat. Nous utilisons vos réponses uniquement pour traiter votre demande ([confidentialité](/privacy/)).',
+      plan: 'Planifier mon voyage', browse: 'Voir les tours', transfer: 'Transfert aéroport', ask: 'Poser une question',
+      q_dates: 'Quand voyagez-vous ?', q_dates_unsure: 'Pas encore sûr',
+      q_who: 'Qui voyage ?', adults: 'Adultes', children: 'Enfants (6–14)',
+      q_interest: "Qu'aimez-vous ? Plusieurs choix possibles.", q_area: 'Où séjournez-vous ?',
+      area_stone: 'Stone Town', area_north: 'Nungwi / Kendwa', area_east: 'Paje / Jambiani',
+      area_ne: 'Kiwengwa / Matemwe', area_unsure: 'Pas décidé',
+      i_beach: 'Plage & océan', i_culture: 'Culture & histoire', i_wild: 'Faune & nature',
+      i_adv: 'Aventure', i_rom: 'Romantique', i_fam: 'En famille', i_any: 'Surprenez-moi',
+      next: 'Continuer', skip: 'Passer', thinking: 'Recherche des meilleures options…',
+      cat_all: 'Tout', cat_MAR: 'Mer', cat_CUL: 'Culture', cat_NAT: 'Nature', cat_SAF: 'Safari',
+      cat_PKG: 'Forfaits', cat_EXP: 'Expériences', cat_TRF: 'Transferts', cat_SDR: 'Location', cat_HTL: 'Hôtels partenaires',
+      from: 'Dès', onreq: 'Prix sur demande', get_quote: 'Obtenir un devis', ask_about: 'En savoir plus',
+      more: 'Voir plus', quote_title: 'Tarif indicatif', for_who: 'Pour', date: 'Date',
+      nights: 'Nuits', rooms: 'Chambres', days: 'Jours', bundle_quote: 'Devis combiné',
+      add_to_trip: '+ Ajouter au plan', added_trip: 'Dans le plan ✓', partner_hotels: 'Hôtels partenaires',
+      recalc: 'Actualiser', team_confirms: 'Tarif indicatif, pas une réservation ferme. Notre équipe confirme disponibilité, prix final et éventuel acompte avant tout paiement.',
+      includes: 'Inclus', send_enquiry: 'Envoyer ma demande', wa_btn: 'Continuer sur WhatsApp',
+      lead_title: 'Envoyer votre demande', name: 'Votre nom', wa: 'Numéro WhatsApp (avec +indicatif)',
+      email: 'Email (optionnel si WhatsApp indiqué)', consent: 'Me contacter au sujet de cette demande',
+      consent_hint: 'Requis pour enregistrer votre référence.', submit: 'Envoyer la demande', sending: 'Envoi…',
+      saved: 'Demande reçue ! Votre référence est', saved2: 'Notre équipe répond',
+      err_name: 'Veuillez saisir votre nom.', err_contact: 'Ajoutez un numéro WhatsApp ou un email.',
+      err_phone: 'Format international requis, ex. +255 707 939 265.', err_consent: 'Veuillez cocher le consentement.',
+      err_net: 'Serveur inaccessible. Écrivez directement à notre équipe sur WhatsApp.',
+      err_limit: 'Limite de messages atteinte. Continuez sur WhatsApp.',
+      err_generic: 'Une erreur est survenue. Réessayez ou passez sur WhatsApp.',
+      lang_note: 'Les réponses ici sont en anglais. Notre équipe répond en français sur WhatsApp.',
+      wa_hi: 'Bonjour Spice & Sail ! Je souhaite réserver', wa_ref: 'Référence', wa_pax: 'Groupe', wa_date: 'Dates',
+      wa_pickup: 'Prise en charge', wa_name: 'Nom', wa_generic: 'une expérience à Zanzibar',
+      adults_l: 'adultes', children_l: 'enfants'
     }
   };
 
@@ -146,6 +189,7 @@
     var p = (location.pathname || '').toLowerCase();
     if (/^\/it(\/|$)/.test(p)) return 'it';
     if (/^\/de(\/|$)/.test(p)) return 'de';
+    if (/^\/fr(\/|$)/.test(p)) return 'fr';
     var l = ((document.documentElement && document.documentElement.lang) || '').slice(0, 2).toLowerCase();
     return T[l] ? l : 'en';
   }
@@ -158,13 +202,14 @@
     session: 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8),
     serverProfile: {}, // returned by /chat, sent back verbatim
     guests: { adults: 2, children: 0 },
-    dateISO: null, interests: [], pickupLabel: null, name: '',
-    selected: [],       // service slugs the guest showed interest in
+    nights: 3, rooms: 1, days: 3,
+    dateISO: null, interests: [], pickupZone: null, pickupLabel: null, extraNotes: '', name: '',
+    selected: [],       // service/hotel slugs the guest showed interest in
     lastQuote: null,    // { slug, display }
     leadRef: null,
     history: [],        // [{role, content}] sent to /chat
     transcript: [],     // [{who, text}] persisted for this tab session
-    catalogue: [], bySlug: {}, whatsapp: CFG.whatsappFallback, replyWindow: '',
+    catalogue: [], hotels: [], bySlug: {}, whatsapp: CFG.whatsappFallback, replyWindow: '',
     formOpenedAt: 0
   };
 
@@ -181,8 +226,10 @@
     try {
       sessionStorage.setItem(CFG.storeKey, JSON.stringify({
         session: state.session, serverProfile: state.serverProfile, guests: state.guests,
-        dateISO: state.dateISO, interests: state.interests, pickupLabel: state.pickupLabel,
-        name: state.name, selected: state.selected, leadRef: state.leadRef,
+        nights: state.nights, rooms: state.rooms, days: state.days,
+        dateISO: state.dateISO, interests: state.interests, pickupZone: state.pickupZone,
+        pickupLabel: state.pickupLabel, extraNotes: state.extraNotes, name: state.name,
+        selected: state.selected, leadRef: state.leadRef,
         history: state.history.slice(-CFG.maxHistory), transcript: state.transcript.slice(-30)
       }));
     } catch (e) { /* storage may be unavailable; chat still works */ }
@@ -217,7 +264,9 @@
     catch (e) { return iso; }
   }
   function isSafeHref(u) {
+    if (!u || /[\u0000-\u001f\u007f\\]|%5c/i.test(u)) return false;
     if (/^https:\/\/wa\.me\/\d{8,15}(\?|$)/.test(u)) return true;
+    if (/^https:\/\/(?:inbound\.visitzanzibar\.go\.tz|visa\.immigration\.go\.tz)(?:\/|$)/.test(u)) return true;
     if (/^\/(?!\/)/.test(u)) return true;                 // same-site path
     try { return new URL(u, location.href).origin === location.origin; } catch (e) { return false; }
   }
@@ -413,16 +462,41 @@
     chips([
       { label: t('plan'), run: planTrip },
       { label: t('browse'), run: function () { userBubble(t('browse')); browse('all'); } },
+      { label: '🏨 ' + t('partner_hotels'), run: function () { userBubble(t('partner_hotels')); browse('HTL'); } },
       { label: t('transfer'), run: function () { userSays(t('transfer'), true); } },
       { label: t('ask'), run: function () { input.focus(); } }
     ]);
   }
 
   /* ------------------------------------------------------------ catalogue UI */
-  var CAT_ICON = { MAR: '🌊', CUL: '🌿', NAT: '🌳', SAF: '🦁', PKG: '📦', EXP: '✨', TRF: '🚗' };
+  var CAT_ICON = { MAR: '🌊', CUL: '🌿', NAT: '🌳', SAF: '🦁', PKG: '📦', EXP: '✨', TRF: '🚗', SDR: '🚙', HTL: '🏨' };
+
+  function addSelected(slug) {
+    if (slug && state.selected.indexOf(slug) < 0) {
+      state.selected.push(slug);
+      save();
+    }
+  }
 
   function serviceCard(s) {
     var price = s.onRequest || !s.priceDisplay ? t('onreq') : t('from') + ' ' + s.priceDisplay;
+    var inPlan = state.selected.indexOf(s.slug) >= 0;
+    var addBtn = h('button', {
+      class: 'sns3-btn sm ghost',
+      type: 'button',
+      text: inPlan ? t('added_trip') : t('add_to_trip'),
+      onclick: function () {
+        addSelected(s.slug);
+        addBtn.textContent = t('added_trip');
+        if (state.selected.length >= 2) {
+          chips([
+            { label: '🧾 ' + t('bundle_quote') + ' (' + state.selected.length + ')', run: function () { showBundleQuote(); } },
+            { label: t('send_enquiry'), run: function () { leadForm(); } },
+            { label: '💬 WhatsApp', run: function () { handoff(); } }
+          ]);
+        }
+      }
+    });
     return h('div', { class: 'sns3-card' }, [
       h('span', { class: 'sns3-tag', text: (CAT_ICON[s.category] || '📍') + ' ' + (t('cat_' + s.category) || s.category) }),
       h('h4', { text: s.name }),
@@ -430,14 +504,18 @@
       h('div', { class: 'sns3-price', text: price }),
       h('div', { class: 'sns3-actions' }, [
         h('button', { class: 'sns3-btn sm', type: 'button', text: t('get_quote'), onclick: function () { userBubble(t('get_quote') + ': ' + s.name); showQuote(s.slug); } }),
-        h('button', { class: 'sns3-btn sm ghost', type: 'button', text: t('ask_about'), onclick: function () { userSays(s.name); } })
+        addBtn,
+        h('button', { class: 'sns3-btn sm ghost', type: 'button', text: t('ask_about'), onclick: function () { userSays(s.category === 'HTL' ? 'Stay rates for ' + s.name : s.name); } })
       ])
     ]);
   }
 
   function browse(cat) {
-    var list = state.catalogue.filter(function (s) { return cat === 'all' || s.category === cat; });
+    var list = cat === 'HTL'
+      ? state.hotels.slice()
+      : state.catalogue.filter(function (s) { return cat === 'all' || s.category === cat; });
     var cats = []; state.catalogue.forEach(function (s) { if (cats.indexOf(s.category) < 0) cats.push(s.category); });
+    if (state.hotels.length && cats.indexOf('HTL') < 0) cats.push('HTL');
     var shown = 0, PAGE = 4;
     var wrap = h('div'); var holder = h('div'); wrap.appendChild(holder);
     var more = h('button', { class: 'sns3-btn sm ghost', type: 'button', text: t('more'), onclick: render });
@@ -470,15 +548,63 @@
 
   function showQuote(slug, replaceRow) {
     var svc = state.bySlug[slug];
-    if (state.selected.indexOf(slug) < 0) state.selected.push(slug);
-    save(); typing(true); clearChips();
-    post(CFG.quote, { serviceSlug: slug, adults: state.guests.adults, children: state.guests.children, date: state.dateISO || null, pickupZone: null }, 12000).then(function (r) {
+    addSelected(slug);
+    typing(true); clearChips();
+    var isHotel = slug.indexOf('hotel:') === 0;
+    var isRental = svc && svc.type === 'rental';
+    var payload = isHotel
+      ? { serviceSlugs: [slug], adults: state.guests.adults, children: state.guests.children, date: state.dateISO || null, nights: state.nights, rooms: state.rooms }
+      : { serviceSlug: slug, adults: state.guests.adults, children: state.guests.children, date: state.dateISO || null, pickupZone: state.pickupZone || null, nights: isRental ? state.days : undefined };
+    post(CFG.quote, payload, 12000).then(function (r) {
       typing(false);
       if (!r.ok || !r.json) { botSays(t('err_net')); chips([{ label: 'WhatsApp', run: function () { handoff(); } }]); return; }
       var q = r.json, card = quoteCard(slug, svc, q);
       if (replaceRow && replaceRow.parentNode) replaceRow.parentNode.replaceChild(card, replaceRow); else log.appendChild(card);
       state.lastQuote = { slug: slug, display: q.status === 'quoted' ? q.totalDisplay : null }; save();
       track('quote', { service: slug, status: q.status });
+      scrollDown();
+      var postChips = [
+        { label: t('send_enquiry'), run: function () { leadForm(); } },
+        { label: 'WhatsApp', run: function () { handoff(); } }
+      ];
+      if (state.selected.length >= 2) {
+        postChips.unshift({ label: '🧾 ' + t('bundle_quote') + ' (' + state.selected.length + ')', run: function () { showBundleQuote(); } });
+      } else {
+        postChips.push({ label: t('browse'), run: function () { userBubble(t('browse')); browse('all'); } });
+      }
+      chips(postChips);
+    });
+  }
+
+  function showBundleQuote() {
+    if (!state.selected.length) return;
+    userBubble(t('bundle_quote'));
+    typing(true); clearChips();
+    post(CFG.quote, {
+      serviceSlugs: state.selected.slice(0, 8),
+      adults: state.guests.adults,
+      children: state.guests.children,
+      date: state.dateISO || null,
+      pickupZone: state.pickupZone || null,
+      nights: state.nights,
+      rooms: state.rooms
+    }, 12000).then(function (r) {
+      typing(false);
+      if (!r.ok || !r.json) { botSays(t('err_net')); chips([{ label: 'WhatsApp', run: function () { handoff(); } }]); return; }
+      var q = r.json;
+      var body = h('div', { class: 'sns3-card sns3-quote' });
+      body.appendChild(h('span', { class: 'sns3-tag', text: t('bundle_quote') }));
+      body.appendChild(h('h4', { text: state.selected.length + ' selected items' }));
+      body.appendChild(h('div', { class: 'meta', text: t('for_who') + ' ' + guestsText() + (state.dateISO ? ' · ' + prettyDate(state.dateISO) : '') }));
+      body.appendChild(h('div', { class: 'big', text: q.status === 'quoted' && q.totalDisplay ? q.totalDisplay + ' USD' : t('onreq') }));
+      if (Array.isArray(q.lines) && q.lines.length) {
+        var ul = h('ul');
+        q.lines.forEach(function (l) { if (l && l.label) ul.appendChild(h('li', { text: l.label + (l.low != null ? ' — ' + money(l.low) + (l.high && l.high !== l.low ? '–' + money(l.high) : '') : ' (rate on request)') })); });
+        body.appendChild(ul);
+      }
+      body.appendChild(h('div', { class: 'sns3-note', text: t('team_confirms') }));
+      log.appendChild(h('div', { class: 'sns3-row bot' }, [h('div', { class: 'sns3-b', style: 'max-width:100%;width:100%;background:transparent;padding:0' }, [body])]));
+      state.lastQuote = { slug: q.serviceSlug, display: q.status === 'quoted' ? q.totalDisplay : null }; save();
       scrollDown();
       chips([
         { label: t('send_enquiry'), run: function () { leadForm(); } },
@@ -490,11 +616,13 @@
 
   function quoteCard(slug, svc, q) {
     var name = (svc && svc.name) || q.serviceName || slug;
+    var isHotel = slug.indexOf('hotel:') === 0;
+    var isRental = svc && svc.type === 'rental';
     var quoted = q.status === 'quoted' && q.totalDisplay && q.totalDisplay !== 'price on request';
     var body = h('div', { class: 'sns3-card sns3-quote' });
     body.appendChild(h('span', { class: 'sns3-tag', text: t('quote_title') }));
     body.appendChild(h('h4', { text: name }));
-    body.appendChild(h('div', { class: 'meta', text: t('for_who') + ' ' + guestsText() + (state.dateISO ? ' · ' + prettyDate(state.dateISO) : '') }));
+    body.appendChild(h('div', { class: 'meta', text: t('for_who') + ' ' + guestsText() + (isHotel ? ' · ' + state.nights + ' ' + t('nights').toLowerCase() + ' · ' + state.rooms + ' ' + t('rooms').toLowerCase() : '') + (isRental ? ' · ' + state.days + ' ' + t('days').toLowerCase() : '') + (state.dateISO ? ' · ' + prettyDate(state.dateISO) : '') }));
     body.appendChild(h('div', { class: 'big', text: quoted ? q.totalDisplay + ' USD' : t('onreq') }));
 
     var details = [];
@@ -504,12 +632,19 @@
     if (details.length) { var ul = h('ul'); details.slice(0, 5).forEach(function (d) { ul.appendChild(h('li', { text: d })); }); body.appendChild(ul); }
     if (q.includes && q.includes.length) body.appendChild(h('div', { class: 'meta', text: t('includes') + ': ' + q.includes.slice(0, 5).join(', ') }));
 
-    // edit guests/date and re-quote
+    // edit guests/nights/days/date and re-quote
     var date = h('input', { type: 'date', min: todayISO(), value: state.dateISO || '', 'aria-label': t('date') });
-    body.appendChild(h('div', { class: 'sns3-ctrl' }, [
+    var ctrlRow = [
       h('span', { text: t('adults') + ':' }), stepper(function () { return state.guests.adults; }, function (v) { state.guests.adults = v; }, 1, 50),
       h('span', { text: t('children') + ':' }), stepper(function () { return state.guests.children; }, function (v) { state.guests.children = v; }, 0, 20)
-    ]));
+    ];
+    if (isHotel) {
+      ctrlRow.push(h('span', { text: t('nights') + ':' }), stepper(function () { return state.nights; }, function (v) { state.nights = v; }, 1, 30));
+      ctrlRow.push(h('span', { text: t('rooms') + ':' }), stepper(function () { return state.rooms; }, function (v) { state.rooms = v; }, 1, 10));
+    } else if (isRental) {
+      ctrlRow.push(h('span', { text: t('days') + ':' }), stepper(function () { return state.days; }, function (v) { state.days = v; }, 1, 30));
+    }
+    body.appendChild(h('div', { class: 'sns3-ctrl' }, ctrlRow));
     body.appendChild(h('div', { class: 'sns3-ctrl' }, [h('div', { style: 'flex:1;min-width:140px' }, [date]),
       h('button', { class: 'sns3-btn sm ghost', type: 'button', text: t('recalc'), onclick: function () { state.dateISO = date.value || null; showQuote(slug, row); } })]));
     body.appendChild(h('div', { class: 'sns3-note', text: t('team_confirms') }));
@@ -603,16 +738,19 @@
     if (document.referrer) { try { bits.push('Referrer: ' + new URL(document.referrer).hostname); } catch (e) {} }
     bits.push('Group: ' + guestsText());
     if (state.pickupLabel) bits.push('Pickup/area: ' + state.pickupLabel);
+    if (state.extraNotes) bits.push('Details: ' + state.extraNotes);
     if (state.interests.length) bits.push('Interests: ' + state.interests.join(', '));
     if (state.lastQuote && state.lastQuote.display) bits.push('Quoted range: ' + state.lastQuote.display + ' USD');
     var names = serviceNames(); if (names.length) bits.push('Interested in: ' + names.join(', '));
     bits.push('Language: ' + LANG);
+    var hasHotel = state.selected.some(function (s) { return s.indexOf('hotel:') === 0; });
     var body = {
       name: name, consent_contact: true, consent_marketing: false,
       travellers: clamp(state.guests.adults + state.guests.children, 1, 50),
       notes: bits.join(' | ').slice(0, 1900),
       session_id: state.session, form_loaded_at: String(state.formOpenedAt), honeypot: honeypot || ''
     };
+    if (hasHotel) { body.nights = state.nights; body.rooms = state.rooms; }
     if (phone) body.whatsapp = phone;
     if (email) body.email = email;
     if (state.dateISO) body.date = state.dateISO;
@@ -678,7 +816,9 @@
         body.appendChild(wrap);
       });
     }).then(function (areaKey) {
-      state.pickupLabel = areaMap[areaKey] || null; save();
+      var areaZoneMap = { area_stone: 'stone-town', area_north: 'nungwi', area_east: 'paje', area_ne: 'kiwengwa' };
+      state.pickupLabel = areaMap[areaKey] || null;
+      state.pickupZone = areaZoneMap[areaKey] || null; save();
       var msg = 'Recommend tours for ' + state.guests.adults + ' adults' + (state.guests.children ? ' and ' + state.guests.children + ' children' : '') +
         (state.interests.length ? ', interested in ' + state.interests.join(' and ') : '') +
         (state.pickupLabel ? ', staying near ' + state.pickupLabel : '') + '.';
@@ -700,10 +840,13 @@
     state.history.push({ role: 'user', content: text });
     var profile = Object.assign({}, state.serverProfile, {
       adults: state.guests.adults, children: state.guests.children || undefined,
-      dates: state.dateISO || state.serverProfile.dates, interests: state.interests.length ? state.interests : state.serverProfile.interests,
+      dates: state.dateISO || state.serverProfile.dates,
+      dateISO: state.dateISO || state.serverProfile.dateISO,
+      pickupZone: state.pickupZone || state.serverProfile.pickupZone,
+      interests: state.interests.length ? state.interests : state.serverProfile.interests,
       name: state.name || state.serverProfile.name
     });
-    return post(CFG.chat, { message: text, profile: profile, history: state.history.slice(-CFG.maxHistory), session_id: state.session }, 20000).then(function (r) {
+    return post(CFG.chat, { message: text, profile: profile, history: state.history.slice(-CFG.maxHistory), session_id: state.session, lang: LANG }, 20000).then(function (r) {
       typing(false); state.busy = false; sendBtn.disabled = false;
       if (!r.ok || !r.json || typeof r.json.message !== 'string') {
         var m = r.status === 429 ? t('err_limit') : r.status === 0 ? t('err_net') : t('err_generic');
@@ -713,22 +856,45 @@
       if (j.profile && typeof j.profile === 'object') {
         state.serverProfile = j.profile;
         if (j.profile.name && !state.name) state.name = j.profile.name;
-        (j.profile.serviceSlugs || []).forEach(function (s) { if (state.bySlug[s] && state.selected.indexOf(s) < 0) state.selected.push(s); });
+        if (j.profile.pickupZone && !state.pickupZone) state.pickupZone = j.profile.pickupZone;
+        (j.profile.serviceSlugs || []).forEach(function (s) { if (state.bySlug[s]) addSelected(s); });
       }
       state.history.push({ role: 'assistant', content: j.message.slice(0, 600) });
       botSays(j.message);
-      track('reply', {});
+      track('reply', { intent: j.intent || '' });
 
-      // Service cards: only for services the reply names in bold, exactly as in the catalogue.
-      var names = {}; (j.message.match(/\*\*([^*]+)\*\*/g) || []).forEach(function (b) { names[b.slice(2, -2).trim().toLowerCase()] = true; });
-      var found = state.catalogue.filter(function (s) { return names[s.name.toLowerCase()]; }).slice(0, 4);
-      found.forEach(function (s) { log.appendChild(h('div', { class: 'sns3-row bot' }, [h('div', { class: 'sns3-b', style: 'max-width:100%;width:100%;background:transparent;padding:0' }, [serviceCard(s)])])); });
-      if (found.length) scrollDown();
+      // Render interactive cards from matched/recommended slugs + partner hotels + bold names fallback
+      var cardSlugs = [], seenCard = {};
+      function pushCardSlug(slug) {
+        if (slug && !seenCard[slug] && state.bySlug[slug]) { seenCard[slug] = true; cardSlugs.push(slug); }
+      }
+      (j.matchedSlugs || []).forEach(pushCardSlug);
+      (j.recommendedSlugs || []).forEach(pushCardSlug);
+      (j.matchedHotels || []).forEach(function (hSlug) {
+        var norm = hSlug === 'stone-town-view-hotel' ? 'stonetown-view-hotel' : hSlug;
+        pushCardSlug('hotel:' + norm);
+      });
+      if (!cardSlugs.length) {
+        var names = {}; (j.message.match(/\*\*([^*]+)\*\*/g) || []).forEach(function (b) { names[b.slice(2, -2).trim().toLowerCase()] = true; });
+        state.catalogue.forEach(function (s) { if (names[s.name.toLowerCase()]) pushCardSlug(s.slug); });
+        state.hotels.forEach(function (ht) { if (names[ht.name.toLowerCase()]) pushCardSlug(ht.slug); });
+      }
+      cardSlugs.slice(0, 4).forEach(function (slug) {
+        var s = state.bySlug[slug];
+        log.appendChild(h('div', { class: 'sns3-row bot' }, [h('div', { class: 'sns3-b', style: 'max-width:100%;width:100%;background:transparent;padding:0' }, [serviceCard(s)])]));
+      });
+      if (cardSlugs.length) scrollDown();
 
       var items = [];
-      (j.quickReplies || []).slice(0, 5).forEach(function (label) { items.push({ label: String(label), run: function () { quickReply(String(label)); } }); });
+      (j.quickReplies || []).slice(0, 4).forEach(function (label) { items.push({ label: String(label), run: function () { quickReply(String(label)); } }); });
+      if (j.quote || cardSlugs.length || j.intent === 'book' || j.intent === 'availability') {
+        items.push({ label: '📩 ' + t('send_enquiry'), run: function () { leadForm(); } });
+      }
+      if (state.selected.length >= 2) {
+        items.push({ label: '🧾 ' + t('bundle_quote') + ' (' + state.selected.length + ')', run: function () { showBundleQuote(); } });
+      }
       if (!items.some(function (i) { return /whatsapp/i.test(i.label); })) items.push({ label: '💬 WhatsApp', run: function () { handoff(); } });
-      chips(items);
+      chips(items.slice(0, 6));
     });
   }
 
@@ -736,7 +902,8 @@
     if (/whatsapp/i.test(label)) { userBubble(label); handoff(); return; }
     if (/^(plan (my )?(zanzibar )?trip|plan a (honeymoon|family) trip)$/i.test(label.trim())) { planTrip(); return; }
     if (/^(show all tours|view all tours|check another tour)$/i.test(label.trim())) { userBubble(label); browse('all'); return; }
-    // Exact catalogue service names go straight to a quote
+    if (/^partner hotels$/i.test(label.trim())) { userBubble(label); browse('HTL'); return; }
+    // Exact catalogue service names go straight to an interactive quote
     var hit = state.catalogue.filter(function (s) { return s.name.toLowerCase() === label.trim().toLowerCase(); })[0];
     if (hit) { userBubble(label); showQuote(hit.slug); return; }
     userSays(label);
@@ -763,8 +930,11 @@
     var prior = load();
     if (prior && prior.transcript && prior.transcript.length) {
       state.session = prior.session || state.session; state.serverProfile = prior.serverProfile || {};
-      state.guests = prior.guests || state.guests; state.dateISO = prior.dateISO || null;
-      state.interests = prior.interests || []; state.pickupLabel = prior.pickupLabel || null; state.name = prior.name || '';
+      state.guests = prior.guests || state.guests; state.nights = prior.nights || state.nights;
+      state.rooms = prior.rooms || state.rooms; state.days = prior.days || state.days;
+      state.dateISO = prior.dateISO || null; state.interests = prior.interests || [];
+      state.pickupZone = prior.pickupZone || null; state.pickupLabel = prior.pickupLabel || null;
+      state.extraNotes = prior.extraNotes || ''; state.name = prior.name || '';
       state.selected = prior.selected || []; state.leadRef = prior.leadRef || null;
       state.history = prior.history || []; state.transcript = prior.transcript;
       state.transcript.forEach(function (m) { bubble(m.who, m.text, null); });
@@ -773,11 +943,28 @@
       if (LANG !== 'en') botSays(t('lang_note'));
     }
     homeChips();
-    // catalogue + business config (names, prices, durations, WhatsApp number all come from the server)
+    // catalogue + partner hotels + business config (names, prices, durations, WhatsApp number all come from the server)
     api(CFG.quote, { method: 'GET' }, 10000).then(function (r) {
       if (r.ok && r.json && Array.isArray(r.json.services)) {
-        state.catalogue = r.json.services.filter(function (s) { return ['tour', 'experience', 'package', 'transfer'].indexOf(s.type) >= 0; });
+        state.catalogue = r.json.services.filter(function (s) { return ['tour', 'experience', 'package', 'transfer', 'rental'].indexOf(s.type) >= 0; });
         state.catalogue.forEach(function (s) { state.bySlug[s.slug] = s; });
+        state.hotels = Array.isArray(r.json.hotels) ? r.json.hotels.map(function (ht) {
+          return {
+            slug: ht.slug,
+            name: ht.name,
+            category: 'HTL',
+            type: 'hotel',
+            location: ht.area,
+            duration: ht.board || 'Partner stay',
+            priceDisplay: ht.fromRate ? '$' + ht.fromRate + '/night' : null,
+            onRequest: !ht.fromRate,
+            includes: ht.roomTypes || []
+          };
+        }) : [];
+        state.hotels.forEach(function (ht) {
+          state.bySlug[ht.slug] = ht;
+          if (ht.slug === 'hotel:stonetown-view-hotel') state.bySlug['hotel:stone-town-view-hotel'] = ht;
+        });
         if (r.json.whatsappNumber && /^\d{8,15}$/.test(String(r.json.whatsappNumber))) state.whatsapp = String(r.json.whatsappNumber);
         state.replyWindow = r.json.replyWindow || '';
         state.ready = true;
@@ -790,6 +977,8 @@
     build();
     // Optional triggers: any element with data-sns-chat-open (+ data-sns-service="slug")
     document.addEventListener('click', function (e) {
+      var openTrigger = e.target.closest && e.target.closest('[data-sns-open]');
+      if (openTrigger) { e.preventDefault(); openChat(); return; }
       var el = e.target.closest && e.target.closest('[data-sns-chat-open]');
       if (!el) return;
       e.preventDefault();
@@ -804,11 +993,26 @@
   }
   function whenReady(fn, n) { n = n || 0; if (state.ready || n > 40) fn(); else setTimeout(function () { whenReady(fn, n + 1); }, 150); }
   function quickService(slug, opts) {
-    var s = state.bySlug[slug]; if (!s) return;
+    var s = state.bySlug[slug];
+    var hotelTarget = opts && opts.hotelSlug ? 'hotel:' + (opts.hotelSlug === 'stone-town-view-hotel' ? 'stonetown-view-hotel' : opts.hotelSlug) : null;
     if (opts) {
       if (opts.date) state.dateISO = opts.date;
-      if (opts.adults) state.guests.adults = clamp(+opts.adults || 2, 1, 50);
+      var party = opts.adults || opts.guests;
+      if (party) state.guests.adults = clamp(+party || 2, 1, 50);
       if (opts.children != null) state.guests.children = clamp(+opts.children || 0, 0, 20);
+      if (opts.nights) state.nights = clamp(+opts.nights || 3, 1, 30);
+      if (opts.rooms) state.rooms = clamp(+opts.rooms || 1, 1, 10);
+      if (opts.pickup) state.pickupLabel = String(opts.pickup).slice(0, 120);
+      if (opts.notes) state.extraNotes = String(opts.notes).slice(0, 300);
+      save();
+    }
+    if (!s && hotelTarget && state.bySlug[hotelTarget]) {
+      s = state.bySlug[hotelTarget];
+      slug = hotelTarget;
+    }
+    if (!s) return;
+    if (hotelTarget && state.bySlug[hotelTarget] && hotelTarget !== slug) {
+      addSelected(hotelTarget);
     }
     userBubble(t('get_quote') + ': ' + s.name); showQuote(slug);
   }

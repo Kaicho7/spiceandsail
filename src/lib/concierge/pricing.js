@@ -247,6 +247,47 @@ function getQuote(input) {
     return finalize(base, lines, notes, flags, input);
   }
 
+  // Per-vehicle / per-scooter daily rentals: priced per unit per day, never multiplied by guests.
+  if (p.basis === 'per_vehicle_per_day' || p.basis === 'per_scooter_per_day') {
+    const days = Math.max(1, Math.floor(input.days || input.nights || 1));
+    let dailyRate = null;
+    if (p.tieredDisplay) {
+      for (const part of String(p.tieredDisplay).split('•')) {
+        const rangeMatch = part.match(/(\d+)\s*[–-]\s*(\d+)\s*days?\s*:\s*\$\s*([\d,]+)/i);
+        const plusMatch = part.match(/(\d+)\+\s*days?\s*:\s*\$\s*([\d,]+)/i);
+        if (rangeMatch && days >= Number(rangeMatch[1]) && days <= Number(rangeMatch[2])) {
+          dailyRate = Number(rangeMatch[3].replace(/,/g, ''));
+          break;
+        }
+        if (plusMatch && days >= Number(plusMatch[1]) && !/month/i.test(part)) {
+          dailyRate = Number(plusMatch[2].replace(/,/g, ''));
+        }
+      }
+    }
+    if (!dailyRate) {
+      if (days >= 14) dailyRate = p.min;
+      else if (days >= 7) dailyRate = p.weeklyRate ? Math.round(p.weeklyRate / 7) : p.min;
+      else if (days >= 4) dailyRate = Math.floor((p.min + p.max) / 2);
+      else dailyRate = p.max;
+    }
+    const total = dailyRate * days;
+    const unitNoun = p.basis === 'per_scooter_per_day' ? 'scooter' : 'vehicle';
+    lines.push({
+      label: svc.name + ' — ' + days + ' day' + (days > 1 ? 's' : '') + ' × ' + money(dailyRate) + '/' + unitNoun + '/day',
+      low: total,
+      high: total,
+      note: p.basisNote || 'per ' + unitNoun + ' per day',
+    });
+    base.status = 'quoted';
+    base.basis = p.basis;
+    base.totalLow = total;
+    base.totalHigh = total;
+    base.totalDisplay = money(total) + ' (' + days + ' day' + (days > 1 ? 's' : '') + ' @ ' + money(dailyRate) + '/day)';
+    if (p.permitFee) notes.push('Temporary Zanzibar driving permit ($10–$' + p.permitFee + ') arranged on delivery.');
+    if (svc.duration) notes.push('Duration: ' + svc.duration + '.');
+    return finalize(base, lines, notes, flags, input);
+  }
+
   // Per-person tours, experiences and packages.
   const tiers = parseTieredDisplay(p.tieredDisplay);
   const ladder = Array.isArray(p.groupLadder) && p.groupLadder.length

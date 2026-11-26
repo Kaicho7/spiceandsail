@@ -16,11 +16,45 @@ const AREA_GRAPH = {
   pemba: [],
 };
 
+const INTEREST_ALIASES = {
+  beach: ['beach', 'ocean', 'snorkeling', 'sailing', 'sandbank', 'sunset'],
+  ocean: ['ocean', 'beach', 'snorkeling', 'sailing', 'dolphins', 'sandbank'],
+  snorkeling: ['snorkeling', 'ocean', 'dolphins', 'turtle', 'tortoises'],
+  diving: ['snorkeling', 'ocean', 'adventure', 'chumbe'],
+  kite: ['beach', 'ocean', 'adventure', 'kite'],
+  adventure: ['adventure', 'quad', 'horses', 'ocean', 'snorkeling', 'safari', 'unique', 'cave'],
+  wildlife: ['wildlife', 'safari', 'dolphins', 'tortoises', 'monkeys', 'nature', 'animals'],
+  nature: ['nature', 'wildlife', 'monkeys', 'forest', 'cave', 'ecolodge'],
+  safari: ['safari', 'wildlife', 'coastal safari', 'boat safari', 'fly-in safari'],
+  culture: ['culture', 'history', 'town', 'spice', 'food', 'community'],
+  history: ['history', 'culture', 'town'],
+  spice: ['spice', 'food', 'culture'],
+  honeymoon: ['honeymoon', 'romance', 'couples', 'sunset'],
+  romance: ['romance', 'honeymoon', 'couples', 'sunset'],
+  family: ['family', 'tortoises', 'monkeys', 'beach'],
+  caves: ['cave', 'swimming', 'unique'],
+  cave: ['cave', 'swimming', 'unique'],
+  horses: ['horses', 'unique', 'adventure'],
+  quad: ['quad', 'adventure'],
+};
+
+function expandInterests(rawInterests) {
+  const expanded = new Set();
+  (rawInterests || []).forEach(function (item) {
+    const k = String(item || '').toLowerCase().trim();
+    if (!k) return;
+    expanded.add(k);
+    (INTEREST_ALIASES[k] || []).forEach(function (alias) { expanded.add(alias); });
+  });
+  return Array.from(expanded);
+}
+
 function recommend(profile, limit) {
   if (!limit) limit = 5;
   const zone = profile.pickupZone || null;
   const zoneArea = zone ? (catalogue.zones.find(function (z) { return z.slug === zone; }) || {}).area || null : null;
-  const interests = (profile.interests || []).map(function (i) { return i.toLowerCase(); });
+  const rawInterests = (profile.interests || []).map(function (i) { return String(i).toLowerCase(); });
+  const interests = expandInterests(rawInterests);
   const children = profile.children || 0;
   const childAges = profile.childrenAges || [];
   const hasSmallKids = childAges.some(function (a) { return a > 0 && a < 7; });
@@ -28,17 +62,29 @@ function recommend(profile, limit) {
   const items = [];
 
   for (const s of catalogue.services) {
-    if (s.type === 'transfer' || s.type === 'package') continue;
+    if (s.type === 'transfer' || s.type === 'rental') continue;
+    if (s.type === 'package' && !rawInterests.includes('package') && !rawInterests.includes('multi-day')) continue;
     let value = 0;
     const reasons = [];
     const sInterests = s.interests || [];
 
-    // interest overlap
-    for (const interest of interests) {
-      if (sInterests.some(function (si) { return si.includes(interest) || interest.includes(si); })) {
-        value += 3;
-        reasons.push('matches "' + interest + '"');
+    // interest overlap (direct match scores higher than alias)
+    let matchedInterest = false;
+    for (const ri of rawInterests) {
+      if (sInterests.some(function (si) { return si.includes(ri) || ri.includes(si); })) {
+        value += 4;
+        reasons.push('matches "' + ri + '"');
+        matchedInterest = true;
         break;
+      }
+    }
+    if (!matchedInterest) {
+      for (const interest of interests) {
+        if (sInterests.some(function (si) { return si.includes(interest) || interest.includes(si); })) {
+          value += 3;
+          reasons.push('matches "' + interest + '"');
+          break;
+        }
       }
     }
 
@@ -75,7 +121,7 @@ function recommend(profile, limit) {
 
     // budget band
     const budget = (profile.budgetBand || '').toLowerCase();
-    if (s.pricing.verified && s.pricing.min != null) {
+    if (s.pricing && s.pricing.verified && s.pricing.min != null) {
       if (budget.startsWith('low') && s.pricing.min >= 100) { value -= 2; }
       if (budget.startsWith('lux') && s.pricing.min < 80) value -= 1;
     }
@@ -85,9 +131,10 @@ function recommend(profile, limit) {
         slug: s.slug,
         name: s.name,
         type: s.type,
-        priceDisplay: s.pricing.display,
-        duration: s.duration,
-        zoneNames: s.zones.map(zoneName),
+        category: s.category,
+        priceDisplay: (s.pricing && s.pricing.display) || 'price on request',
+        duration: s.duration || '',
+        zoneNames: sZones.map(zoneName),
         score: value,
         reasons: reasons.slice(0, 3),
       });
