@@ -150,4 +150,7 @@ test('funnel: area pages keep hotel links on-site, packages hub exposes all 4 bo
 
   assert.ok(!/<a\b[^>]*>\s*\{%\s*include\s+["']hotel-card\.njk["']\s*%\}/.test(read('src/pages/hotels.njk')), 'hotels.njk must not wrap hotel-card.njk in outer anchor');
   assert.ok(read('src/_includes/hotel-card.njk').includes('/hotels/{{ hotelDetailSlug }}/'), 'hotel-card.njk must link internally to /hotels/{{ hotelDetailSlug }}/');
+  const redirects = read('_redirects');
+  assert.ok(!redirects.includes('/packages/zanzibar-hidden-gems-sacred-caves/'), '_redirects must not hijack active package zanzibar-hidden-gems-sacred-caves');
+  assert.ok(!redirects.includes('/packages/bush-to-beach-vip-luxury/'), '_redirects must not hijack active package bush-to-beach-vip-luxury');
 });
