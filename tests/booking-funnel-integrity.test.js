@@ -153,4 +153,7 @@ test('funnel: area pages keep hotel links on-site, packages hub exposes all 4 bo
   const redirects = read('_redirects');
   assert.ok(!redirects.includes('/packages/zanzibar-hidden-gems-sacred-caves/'), '_redirects must not hijack active package zanzibar-hidden-gems-sacred-caves');
   assert.ok(!redirects.includes('/packages/bush-to-beach-vip-luxury/'), '_redirects must not hijack active package bush-to-beach-vip-luxury');
+  assert.ok(redirects.includes('/it/hotels/* /hotels/:splat 301'), '_redirects must redirect retired /it/hotels/* to /hotels/:splat');
+  assert.ok(redirects.includes('/it/attractions/* /attractions/:splat 301'), '_redirects must redirect retired /it/attractions/* to /attractions/:splat');
+  assert.ok(redirects.includes('/de/attractions/* /attractions/:splat 301'), '_redirects must redirect retired /de/attractions/* to /attractions/:splat');
 });
